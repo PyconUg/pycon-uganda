@@ -24,7 +24,7 @@ While in the root project directory, activate a virtual environment by executing
 - For Unix/macOS run:
 
 ```sh
-source .venv/bin/activate
+source venv/bin/activate
 ```
 - For windows run:
 ```sh
