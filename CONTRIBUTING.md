@@ -9,9 +9,16 @@ We love your input! We want to make contributing to this project as easy and tra
 
 ## Setting up locally with venv
 ### 1. Create virtual environment
+#### Using venv
 ```sh
-python -m venv .venv
+python -m venv venv
 ```
+
+#### Using Virtualenv
+```sh
+python -m virtualenv venv
+```
+
 ### 2. Activate a virtual environment
 While in the root project directory, activate a virtual environment by executing the following command based on your operating system;
 - For Unix/macOS run:
@@ -28,21 +35,17 @@ Install Requirements
 pip install -r dev.requirements.txt
 ```
 
+### 3. Seeding your database
+```sh
+python3 manage.py shell < seeder.py  
+```
+
+-----------
+
 ### 3. Environment Variables
-Create a `secrets.py` inside the [pyconafrica](https://github.com/PyconUg/pycon-africa/tree/main/pyconafrica) Django app directory, in the same directory as `settings.py` file. The `secrets.py` file will hold all the environment variables. Below are the default environment variables. 
+Create a `.env` file at the root folder.
 
-```
-  SCRETE_KEY='your_secret_key'
-  CLOUDINARY_URL='your_cloudinary_url'
-  CLOUDINARY_STORAGE = {
-      'CLOUD_NAME': 'your_cloud_name',
-      'API_KEY': 'your_api',
-      'API_SECRET': 'your_api_secret'
-  }
-  SILENCED_SYSTEM_CHECKS = ['django_recaptcha.recaptcha_test_key_error']
-```
-
-> Please reference, the [.env.example](https://github.com/PyconUg/pycon-africa/tree/main/.env.example) file for the expected environment variables.
+> Please reference, the [.env.example](https://github.com/PyconUg/pycon-uganda/tree/main/.env.example) file for the expected environment variables.
 
 ### 4. Managing Database Migrations
 With an active virtual environment, run the command below while in the root project directory to apply the current migrations to your database. By default, the migrations will be applied to an SQLite Database that will be autocreated in your root project directory.
@@ -102,4 +105,3 @@ By contributing, you agree that your contributions will be licensed under its MI
 This document was adapted from the open-source contribution guidelines for [Facebook's Draft](https://github.com/facebook/draft-js/blob/master/CONTRIBUTING.md)
 
 
-python3 manage.py shell < seeder.py  
