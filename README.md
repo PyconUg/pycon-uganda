@@ -1,6 +1,8 @@
-# [PyCon Africa](https://pycon.africa/)
+# [PyCon Uganda](https://ug.pycon.org/)
 
-This is the source code for the https://pycon.africa/ website.
+This is the source code for the https://ug.pycon.org/ website.
+
+This Repository was bootstraped from a [PyconUg/pycon-africa@ca86f37](https://github.com/PyconUg/pycon-africa/commit/ca86f37ab7092d911581fa372dd054f9e72163b3)
 
 ## Running the site locally 
 
