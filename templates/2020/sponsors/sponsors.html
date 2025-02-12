@@ -1,0 +1,636 @@
+{% extends "2020/base.html" %}
+{% load i18n static  markdown_extras %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Sponsors || PyCon Africa" %}{% endif %}{% endblock %}
+ 
+
+{% block content %}
+
+<!-- ========== HEADER ========== --> 
+{% include '2020/navbar.html' %} 
+<!-- ========== END HEADER ========== -->
+ 
+   
+ 
+ 
+      <!-- Section Content -->
+      <section class="g-bg-img-hero g-pos-rel u-bg-overlay g-bg-darkblue-opacity-0_6--after g-pt-150" style="background-image: url(/static/2020/img/body1.png);">
+        <div class="container g-max-width-750 u-bg-overlay__inner g-color-white g-mb-60">
+            <h3 class="text-center text-uppercase h3 g-font-weight-700 g-font-size-20 g-font-size-50--md g-color-primary g-mb-20 g-mb-50--md">Our Sponsors</h3>
+            <br>
+            <br>
+        </div>
+
+      </section>
+      <!-- End Section Content -->
+      
+    
+    <section>
+        <div class="col-md-12">
+            <div class="panel panel-danger wow fadeInLeft">
+                    <div class="container">
+                        <div class="row ">
+                                            
+                        
+
+
+                        
+                        <div class="u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30 align-self-lg-center text-center" style="width: 100%;" role="alert">
+                          <ul class="list-unstyled align-self-lg-center">
+                            <img class=" img-responsive g-height-25 " src="/static/2020/img/sponsors/gold.png" alt="">
+                            <br>
+                            <hr class="g-brd-yellow g-my-20">
+                            <li class="media g-brd-around g-brd-gray-light-v4 g-brd-left-3 g-brd-yellow-left rounded g-pa-20 g-mb-200">
+                             <div class="row">
+                      
+                              
+                              
+                                <div class="col-md-4 g-mb-30">
+                                  
+                                  <a  href="#Ableton" data-modal-target="#Ableton" data-modal-effect="blur" >
+                                    <img class='img-responsive'  style="width: 100%;" src="/media/sponsors/ableton.png" alt="Ableton">
+                                  </a>
+                                  
+                                </div>
+                                
+                      
+                                
+                              
+                                <div class="col-md-4 g-mb-30">
+                                  
+                                  <a  href="#Vonage" data-modal-target="#Vonage" data-modal-effect="blur" >
+                                    <img class='img-responsive'  style="width: 100%;" src="/media/sponsors/vonage.png" alt="Vonage">
+                                  </a>
+                                  
+                                </div>
+                                
+                      
+                                
+                      
+                                
+                                 <!-- Sponsor modal window -->
+                                 <div id="Ableton" class="text-left g-max-width-auto g-bg-white g-overflow-y-auto g-pa-20" style="display: none;">
+                                  <button type="button" class="close" onclick="Custombox.modal.close();">
+                                    <i class="hs-icon hs-icon-close"></i>
+                                  </button>
+                                  
+                                  <div class="g-line-height-2 g-pa-40 g-mb-30 " role="alert">
+                                    <div class="g-brd-around g-brd-yellow g-pa-20 g-mb-40">
+                                      <div class="row">
+                            
+                                        <div class="col-lg-4 text-center align-items-center g-mb-40 g-mb-0--lg ">
+                                          <!-- Speaker Image -->
+                                          <div class="g-mb-20 align-items-center">
+                                            <img class="img-fluid" src="/media/sponsors/ableton.png" alt="Ableton">
+                                          </div>
+                                          <!-- Speaker Image -->
+                                        
+                                        </div>
+                            
+                            
+                                        <div class="col-lg-8">
+                                          <!-- Speaker Details -->
+                                          <div class="d-flex align-items-center justify-content-sm-between g-mb-5">
+                                            <h2 class="g-font-weight-400 g-mr-10">Ableton</h2>
+                                            <ul class="list-inline mb-0">
+                            
+                                              
+                                                <li class="list-inline-item g-mx-2">
+                                                  <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover g-color-primary g-bg-gray-light-v5 g-color-twitter--hover rounded-circle" href="https://www.twitter.com/Ableton" target="/">
+                                                    <i class="g-font-size-default g-line-height-1 u-icon__elem-regular fa fa-twitter"></i>
+                                                    <i class="g-font-size-default g-line-height-0_8 u-icon__elem-hover fa fa-twitter"></i>
+                                                  </a>
+                                                </li>
+                                                    
+                                              
+                                              
+                                              <li class="list-inline-item g-mx-2">
+                                                <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover g-color-primary g-bg-gray-light-v5 g-color-linkedin--hover rounded-circle" href="https://www.linkedin.com/company/ableton" target="/">
+                                                  <i class="g-font-size-default g-line-height-1 u-icon__elem-regular fa fa-linkedin"></i>
+                                                  <i class="g-font-size-default g-line-height-0_8 u-icon__elem-hover fa fa-linkedin"></i>
+                                                </a>
+                                              </li>
+                                              
+
+                                              
+                                                  <p></p>
+                                              
+
+                                              
+                      
+                                            </ul>
+                                          </div>
+                                          <!-- End Speaker Details -->
+                            
+                                         <!-- Speaker Position -->
+                                         <h4 class="h6 g-font-weight-300 g-mb-10">
+                                          <i class="icon-badge g-pos-rel g-top-1 g-mr-5 g-color-gray-dark-v5"></i> Gold Sponsor
+                                        </h4>
+                                      <!-- End Speaker Position -->
+                            
+                                          <hr class="g-brd-yellow g-my-20">
+                                         
+                                          <p class="g-color-black">
+                                            We at Ableton build products that shape the future of music culture. Our products include Live: a digital audio workstation, Link: a technology to keep music making software in sync, and Push: a hardware instrument for music making. Both our flagship product Live as well as the Link technology are written in C++. Push, our hardware product, interacts with Live through a communication layer written in Python. Our product development teams operate in smaller teams shaped around features, using Scrum and Agile methodologies. Working at Ableton means working in a dynamic and diverse environment, creating products that impact music culture around the world. We come from a wide variety of cultural and professional backgrounds and work together to foster an environment where anyone can grow both personally and professionally.
+                                          </p>
+                                          <hr class="g-brd-yellow g-my-20">
+                                            <a class="align-items-center btn u-shadow-v32 g-color-primary g-color-yellow--hover g-bg-white g-bg-main--hover g-rounded-30 g-px-35 g-py-13" href="http://bit.ly/A-PA20" target="/"><b>Visit our Website</b></a>
+                                        </div>
+                            
+                                        
+                                      </div>
+                                    </div>
+                            
+                            
+                                  </div>
+                                </div>
+                                <!-- End Sponsor modal window -->
+                                
+                                 <!-- Sponsor modal window -->
+                                 <div id="Vonage" class="text-left g-max-width-auto g-bg-white g-overflow-y-auto g-pa-20" style="display: none;">
+                                  <button type="button" class="close" onclick="Custombox.modal.close();">
+                                    <i class="hs-icon hs-icon-close"></i>
+                                  </button>
+                                  
+                                  <div class="g-line-height-2 g-pa-40 g-mb-30 " role="alert">
+                                    <div class="g-brd-around g-brd-yellow g-pa-20 g-mb-40">
+                                      <div class="row">
+                            
+                                        <div class="col-lg-4 text-center align-items-center g-mb-40 g-mb-0--lg ">
+                                          <!-- Speaker Image -->
+                                          <div class="g-mb-20 align-items-center">
+                                            <img class="img-fluid" src="/media/sponsors/vonage.png" alt="Vonage">
+                                          </div>
+                                          <!-- Speaker Image -->
+                                        
+                                        </div>
+                            
+                            
+                                        <div class="col-lg-8">
+                                          <!-- Speaker Details -->
+                                          <div class="d-flex align-items-center justify-content-sm-between g-mb-5">
+                                            <h2 class="g-font-weight-400 g-mr-10">Vonage</h2>
+                                            <ul class="list-inline mb-0">
+                            
+                                              
+                                                <li class="list-inline-item g-mx-2">
+                                                  <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover g-color-primary g-bg-gray-light-v5 g-color-twitter--hover rounded-circle" href="https://www.twitter.com/vonage" target="/">
+                                                    <i class="g-font-size-default g-line-height-1 u-icon__elem-regular fa fa-twitter"></i>
+                                                    <i class="g-font-size-default g-line-height-0_8 u-icon__elem-hover fa fa-twitter"></i>
+                                                  </a>
+                                                </li>
+                                                    
+                                              
+                                              
+                                              <li class="list-inline-item g-mx-2">
+                                                <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover g-color-primary g-bg-gray-light-v5 g-color-linkedin--hover rounded-circle" href="https://www.linkedin.com/company/vonage" target="/">
+                                                  <i class="g-font-size-default g-line-height-1 u-icon__elem-regular fa fa-linkedin"></i>
+                                                  <i class="g-font-size-default g-line-height-0_8 u-icon__elem-hover fa fa-linkedin"></i>
+                                                </a>
+                                              </li>
+                                              
+
+                                              
+                                                  <p></p>
+                                              
+
+                                              
+                      
+                                            </ul>
+                                          </div>
+                                          <!-- End Speaker Details -->
+                            
+                                         <!-- Speaker Position -->
+                                         <h4 class="h6 g-font-weight-300 g-mb-10">
+                                          <i class="icon-badge g-pos-rel g-top-1 g-mr-5 g-color-gray-dark-v5"></i> Gold Sponsor
+                                        </h4>
+                                      <!-- End Speaker Position -->
+                            
+                                          <hr class="g-brd-yellow g-my-20">
+                                         
+                                          <p class="g-color-black">
+                                            Vonage is a global cloud communications platform, providing APIs and SDKs for messaging, voice, phone verification, advanced multi-channel conversations and video calling with the Vonage Video API. We have officially supported open source libraries for PHP, Python, Ruby, Node.JS, Java and C# .NET enabling you to build scalable communications features such as two-factor authentication, notifications, two-way and group messaging, one to one or multi person calls, all with the technologies that you are already using. With our Messages and Dispatch APIs you can integrate with various communication channels including Facebook Messenger, WhatsApp and Viber.
+                                          </p>
+                                          <hr class="g-brd-yellow g-my-20">
+                                            <a class="align-items-center btn u-shadow-v32 g-color-primary g-color-yellow--hover g-bg-white g-bg-main--hover g-rounded-30 g-px-35 g-py-13" href="http://bit.ly/Vn-PA20" target="/"><b>Visit our Website</b></a>
+                                        </div>
+                            
+                                        
+                                      </div>
+                                    </div>
+                            
+                            
+                                  </div>
+                                </div>
+                                <!-- End Sponsor modal window -->
+                                
+                    
+                              
+                              </div>
+                              
+                            </li>
+                          </ul>
+                          <img class="d-inline-block g-width-80 g-brd-around g-brd-5 g-brd-white " src="/static/2020/img/sponsors/thank.png" alt="Image Description">
+      
+                      </div>
+                        
+            
+                         
+                        
+                        <div class="u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30 align-self-lg-center text-center" style="width: 100%;" role="alert">
+                          <ul class="list-unstyled align-self-lg-center">
+                            <img class="img-responsive g-height-25 " src="/static/2020/img/sponsors/silver.png" alt="">
+                            <br>
+                            <li class="media g-brd-around g-brd-gray-light-v4 g-brd-left-3 g-brd-gray-left rounded g-pa-20 g-mb-200">
+                             <div class="row">
+                      
+                              
+                              
+                                <div class="col-md-3 g-mb-30">
+                                  
+                                  <a  href="#Microsoft" data-modal-target="#Microsoft" data-modal-effect="blur" >
+                                    <img class='img-responsive'  style="width: 100%;" src="/media/sponsors/microsoft.png" alt="Microsoft">
+                                  </a>
+                                  
+                                </div>
+                                
+                      
+                                
+                      
+                                
+                                 <!-- Sponsor modal window -->
+                                 <div id="Microsoft" class="text-left g-max-width-auto g-bg-white g-overflow-y-auto g-pa-20" style="display: none;">
+                                  <button type="button" class="close" onclick="Custombox.modal.close();">
+                                    <i class="hs-icon hs-icon-close"></i>
+                                  </button>
+                                  
+                                  <div class="g-line-height-2 g-pa-40 g-mb-30 " role="alert">
+                                    <div class="g-brd-around g-brd-gray-light-v4 g-pa-20 g-mb-40">
+                                      <div class="row">
+                            
+                                        <div class="col-lg-4 text-center align-items-center g-mb-40 g-mb-0--lg ">
+                                          <!-- Speaker Image -->
+                                          <div class="g-mb-20 align-items-center">
+                                            <img class="img-fluid" src="/media/sponsors/microsoft.png" alt="Microsoft">
+                                          </div>
+                                          <!-- Speaker Image -->
+                                        
+                                        </div>
+                            
+                            
+                                        <div class="col-lg-8">
+                                          <!-- Speaker Details -->
+                                          <div class="d-flex align-items-center justify-content-sm-between g-mb-5">
+                                            <h2 class="g-font-weight-300 g-mr-10">Microsoft</h2>
+                                            <ul class="list-inline mb-0">
+                            
+                                              
+                                                <li class="list-inline-item g-mx-2">
+                                                  <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover g-color-primary g-bg-gray-light-v5 g-color-twitter--hover rounded-circle" href="https://www.twitter.com/microsoft" target="/">
+                                                    <i class="g-font-size-default g-line-height-1 u-icon__elem-regular fa fa-twitter"></i>
+                                                    <i class="g-font-size-default g-line-height-0_8 u-icon__elem-hover fa fa-twitter"></i>
+                                                  </a>
+                                                </li>
+                                              
+                                              
+                                              
+                                                  <p></p>
+                                              
+
+                                              
+                                                  <p></p>
+                                              
+                      
+                                            </ul>
+                                          </div>
+                                          <!-- End Speaker Details -->
+                            
+                                         <!-- Speaker Position -->
+                                         <h4 class="h6 g-font-weight-300 g-mb-10">
+                                          <i class="icon-badge g-pos-rel g-top-1 g-mr-5 g-color-gray-dark-v5"></i> Silver Sponsor
+                                        </h4>
+                                      <!-- End Speaker Position -->
+                            
+                                          <hr class="g-brd-gray-light-v4 g-my-20">
+                                         
+                                          <p class="g-color-black g-font-size-16">
+                                            Microsoft Corporation is an American multinational technology company with headquarters in Redmond, Washington. It develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.
+                                          </p>
+                                          <hr class="g-brd-gray-light-v4 g-my-20">
+                                            <a class="align-items-center btn u-shadow-v32 g-color-primary g-color-yellow--hover g-bg-white g-bg-main--hover g-rounded-30 g-px-35 g-py-13" href="https://bit.ly/PA20-MS" target="/"><b>Visit our Website</b></a>
+                                        </div>
+                            
+                                        
+                                      </div>
+                                    </div>
+                            
+                            
+                                  </div>
+                                </div>
+                                <!-- End Sponsor modal window -->
+                                
+                      
+                                <div class="col-md-3 g-mb-30">
+                                  <a  href="#" >
+                                    <img class="img-fluid" src="/static/2020/img/sponsors/blank.png" alt="">
+                                  </a>
+                                </div>
+                      
+                              
+                              </div>
+                            </li>
+                          </ul>
+                          <img class="d-inline-block g-width-80 g-brd-around g-brd-5 g-brd-white " src="/static/2020/img/sponsors/thank.png" alt="Image Description">
+      
+                      </div>
+                        
+
+                        
+                        
+                        <div class="u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30 align-self-lg-center text-center" style="width: 100%;"  role="alert">
+               
+                            <ul class="list-unstyled align-self-lg-center">
+                              <img class="img-responsive g-height-25 " src="/static/2020/img/sponsors/bronze.png" alt="">
+                              <br>
+                              <hr class="g-brd-brown g-my-20">
+                              <li class="media g-brd-around g-brd-gray-light-v4 g-brd-left-3 g-brd-brown-left rounded g-pa-20 g-mb-200">
+                                <div class="row">
+
+                                
+                                
+                                  <div class="col-md-3 g-mb-30">
+                                    
+                                    <a  href="#Afrolabs" data-modal-target="#Afrolabs" data-modal-effect="blur" >
+                                      <img class='img-responsive'  style="width: 100%;" src="/media/sponsors/afrolabs.png" alt="Afrolabs">
+                                    </a>
+                                    
+                                  </div>
+                                  
+
+                                  
+                                
+                                  <div class="col-md-3 g-mb-30">
+                                    
+                                    <a  href="#SikiLabs" data-modal-target="#SikiLabs" data-modal-effect="blur" >
+                                      <img class='img-responsive'  style="width: 100%;" src="/media/sponsors/sikilabs.png" alt="SikiLabs">
+                                    </a>
+                                    
+                                  </div>
+                                  
+
+                                  
+
+                                  
+                                   <!-- Sponsor modal window -->
+                                   <div id="Afrolabs" class="text-left g-max-width-auto g-bg-white g-overflow-y-auto g-pa-20" style="display: none;">
+                                    <button type="button" class="close" onclick="Custombox.modal.close();">
+                                      <i class="hs-icon hs-icon-close"></i>
+                                    </button>
+                                    
+                                    <div class="g-line-height-2 g-pa-40 g-mb-30 " role="alert">
+                                      <div class="g-brd-around g-brd-brown g-pa-30 g-mb-40">
+                                        <div class="row">
+                              
+                                          <div class="col-lg-4 text-center align-items-center g-mb-40 g-mb-0--lg ">
+                                            <!-- Speaker Image -->
+                                            <div class="g-mb-20 align-items-center">
+                                              <img class="img-fluid" src="/media/sponsors/afrolabs.png" alt="Afrolabs">
+                                            </div>
+                                            <!-- Speaker Image -->
+                                          
+                                          </div>
+                              
+                              
+                                          <div class="col-lg-8">
+                                            <!-- Speaker Details -->
+                                            <div class="d-flex align-items-center justify-content-sm-between g-mb-5">
+                                              <h2 class="g-font-weight-300 g-mr-10">Afrolabs</h2>
+                                              <ul class="list-inline mb-0">
+                              
+                                                
+                                                  <li class="list-inline-item g-mx-2">
+                                                    <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover g-color-primary g-bg-gray-light-v5 g-color-twitter--hover rounded-circle" href="https://www.twitter.com/afrolabs" target="/">
+                                                      <i class="g-font-size-default g-line-height-1 u-icon__elem-regular fa fa-twitter"></i>
+                                                      <i class="g-font-size-default g-line-height-0_8 u-icon__elem-hover fa fa-twitter"></i>
+                                                    </a>
+                                                  </li>
+                                                
+                                                
+                                                
+                                                <li class="list-inline-item g-mx-2">
+                                                  <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover g-color-primary g-bg-gray-light-v5 g-color-linkedin--hover rounded-circle" href="https://www.linkedin.com/company/afrolabs-experimental-software" target="/">
+                                                    <i class="g-font-size-default g-line-height-1 u-icon__elem-regular fa fa-linkedin"></i>
+                                                    <i class="g-font-size-default g-line-height-0_8 u-icon__elem-hover fa fa-linkedin"></i>
+                                                  </a>
+                                                </li>
+                                                
+
+                                              </ul>
+                                            </div>
+                                            <!-- End Speaker Details -->
+                              
+                                           <!-- Speaker Position -->
+                                           <h4 class="h6 g-font-weight-300 g-mb-10">
+                                            <i class="icon-badge g-pos-rel g-top-1 g-mr-5 g-color-gray-dark-v5"></i> Bronze Sponsor
+                                          </h4>
+                                        <!-- End Speaker Position -->
+                              
+                                            <hr class="g-brd-brown g-my-20">
+                                           
+                                            <p class="g-color-black">
+                                              We help tech startups create great products. Guiding ideas along the path to building the right thing, and to building the thing right.
+
+The Lean Iterator process we co-created starts with ideation and exploration, helping products journey from thought, through customer/market experiments, to iteration planning. This approach is based on Customer Development and Lean Startup.
+
+The Afrolabs Core dev &amp; design team then builds and tests working software as the product grows and adapts based on discoveries. Our teams work their magic in a lean-agile way, based on Scrum and Extreme Programming frameworks.
+
+Our server-side technologies of choice are almost exclusively Python and Google Cloud Platform, although there are other stacks in adopted projects. On the front-end, it’s mostly Angular with some Ionic and a little native Android where required. 
+
+After helping a product into the world, our Team Building approach helps our clients grow the right development team with great people and culture. 
+
+Coding is a super-power. To help fellow Africans learn to use this superpower, LevelUp (our NPC) is a local organiser for CoderDojo, CodeCombat in the township, CodeRetreats and Lean Iterator. This helps grow talent from 7-70+.
+
+
+We are creating the world we want to live in: products, work-places, communities.  
+                                            </p>
+                                            <hr class="g-brd-brown g-my-20">
+                                              <a class="align-items-center btn u-shadow-v32 g-color-primary g-color-yellow--hover g-bg-white g-bg-main--hover g-rounded-30 g-px-35 g-py-13" href="http://bit.ly/AL-PA20" target="/"><b>Visit our Website</b></a>
+                                          </div>
+                              
+                                          
+                                        </div>
+                                      </div>
+                              
+                              
+                                    </div>
+                                  </div>
+                                  <!-- End Sponsor modal window -->
+                                  
+                                   <!-- Sponsor modal window -->
+                                   <div id="SikiLabs" class="text-left g-max-width-auto g-bg-white g-overflow-y-auto g-pa-20" style="display: none;">
+                                    <button type="button" class="close" onclick="Custombox.modal.close();">
+                                      <i class="hs-icon hs-icon-close"></i>
+                                    </button>
+                                    
+                                    <div class="g-line-height-2 g-pa-40 g-mb-30 " role="alert">
+                                      <div class="g-brd-around g-brd-brown g-pa-30 g-mb-40">
+                                        <div class="row">
+                              
+                                          <div class="col-lg-4 text-center align-items-center g-mb-40 g-mb-0--lg ">
+                                            <!-- Speaker Image -->
+                                            <div class="g-mb-20 align-items-center">
+                                              <img class="img-fluid" src="/media/sponsors/sikilabs.png" alt="SikiLabs">
+                                            </div>
+                                            <!-- Speaker Image -->
+                                          
+                                          </div>
+                              
+                              
+                                          <div class="col-lg-8">
+                                            <!-- Speaker Details -->
+                                            <div class="d-flex align-items-center justify-content-sm-between g-mb-5">
+                                              <h2 class="g-font-weight-300 g-mr-10">SikiLabs</h2>
+                                              <ul class="list-inline mb-0">
+                              
+                                                
+                                                  <li class="list-inline-item g-mx-2">
+                                                    <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover g-color-primary g-bg-gray-light-v5 g-color-twitter--hover rounded-circle" href="https://www.twitter.com/sikilabs" target="/">
+                                                      <i class="g-font-size-default g-line-height-1 u-icon__elem-regular fa fa-twitter"></i>
+                                                      <i class="g-font-size-default g-line-height-0_8 u-icon__elem-hover fa fa-twitter"></i>
+                                                    </a>
+                                                  </li>
+                                                
+                                                
+                                                
+                                                <li class="list-inline-item g-mx-2">
+                                                  <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover g-color-primary g-bg-gray-light-v5 g-color-linkedin--hover rounded-circle" href="https://www.linkedin.com/company/sikilabs" target="/">
+                                                    <i class="g-font-size-default g-line-height-1 u-icon__elem-regular fa fa-linkedin"></i>
+                                                    <i class="g-font-size-default g-line-height-0_8 u-icon__elem-hover fa fa-linkedin"></i>
+                                                  </a>
+                                                </li>
+                                                
+
+                                              </ul>
+                                            </div>
+                                            <!-- End Speaker Details -->
+                              
+                                           <!-- Speaker Position -->
+                                           <h4 class="h6 g-font-weight-300 g-mb-10">
+                                            <i class="icon-badge g-pos-rel g-top-1 g-mr-5 g-color-gray-dark-v5"></i> Bronze Sponsor
+                                          </h4>
+                                        <!-- End Speaker Position -->
+                              
+                                            <hr class="g-brd-brown g-my-20">
+                                           
+                                            <p class="g-color-black">
+                                              SikiLabs is a product development firm that has contributed to awesome projects, opensource or not, ever since they&#39;ve been on the market since 2013.  
+                                            </p>
+                                            <hr class="g-brd-brown g-my-20">
+                                              <a class="align-items-center btn u-shadow-v32 g-color-primary g-color-yellow--hover g-bg-white g-bg-main--hover g-rounded-30 g-px-35 g-py-13" href="https://www.sikilabs.com/" target="/"><b>Visit our Website</b></a>
+                                          </div>
+                              
+                                          
+                                        </div>
+                                      </div>
+                              
+                              
+                                    </div>
+                                  </div>
+                                  <!-- End Sponsor modal window -->
+                                  
+         
+
+
+
+
+
+
+                                </div>
+                              </li>
+                            </ul>
+                            <img class="d-inline-block g-width-80 g-brd-around g-brd-5 g-brd-white " src="/static/2020/img/sponsors/thank.png" alt="Image Description">
+      
+                        </div>
+                        
+              
+    
+                        
+                        <div class="u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30 align-self-lg-center text-center" style="width: 100%;"  role="alert">
+               
+                <ul class="list-unstyled align-self-lg-center">
+                  <img class="img-responsive g-height-25 " src="/static/2020/img/sponsors/others.png" alt="Image Description">
+                  <br>
+                  <li class="media g-brd-around  g-mb-200">
+                    <br><br>
+                    <div class="row">
+
+                        
+                      <div class="col-md-3 g-mb-30">
+                        <a  href="https://www.manning.com/" >
+                          <img class="img-fluid" src="/media/sponsors/manning_lWeDSvR.png" alt="Image Description">
+                        </a>
+                      </div>
+                      
+                      <div class="col-md-3 g-mb-30">
+                        <a  href="https://www.feldroy.com/" >
+                          <img class="img-fluid" src="/media/sponsors/feldroy1.png" alt="Image Description">
+                        </a>
+                      </div>
+                      
+                    
+
+  
+                    </div>
+                  </li>
+                  
+                </ul>
+                <img class="d-inline-block g-width-80 g-brd-around g-brd-5 g-brd-white " src="/static/2020/img/sponsors/thank.png" alt="Image Description">
+      
+                        </div>
+                        
+    
+
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    
+
+
+
+
+
+<div class="u-divider u-divider-solid u-divider-center g-brd-gray-light-v3 g-my-80">
+  <img class="u-divider__icon u-divider__icon--indented rounded-circle" src="/static/2020/img/footer.png" alt="Image Description">
+</div>
+
+      <!-- Sponsors -->
+      <div class="js-carousel g-pb-70" data-infinite="true" data-arrows-classes="u-arrow-v1 g-width-40 g-height-40 g-color-gray-dark-v5 g-bg-white g-color-white--hover g-bg-primary--hover rounded g-absolute-centered--x g-bottom-0" data-arrow-left-classes="fa fa-angle-left g-ml-minus-25" data-arrow-right-classes="fa fa-angle-right g-ml-25">
+        <div class="js-slide">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="text-center">
+                
+                <a href="/our-sponsors"><img class="d-inline-block g-width-180 g-brd-around g-brd-5 g-brd-white " src="/static/2020/img/sponsors/thanks.png" alt="Image Description"></a>
+                <br><a class="btn u-shadow-v32 g-color-primary g-color-yellow--hover g-bg-white g-bg-main--hover g-rounded-30 g-px-35 g-py-13" href="/our-sponsors"><b>View our Sponsors making this possible</b></a>  
+                
+                </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      <!-- End Sponsors -->
+
+
+
+
+
+ 
+
+
+ 
+   
+{% endblock %}

@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+{% load i18n static avatar_tags crispy_forms_tags countries profile_tags %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Update Profile || PyCon Africa" %}{% endif %}{% endblock %}
+
+
+{% block content %}
+
+<!-- ========== HEADER ========== -->
+{% include '2024/navbar.html' %}
+<!-- ========== END HEADER ========== -->
+ 
+
+    <!-- Breadcrumbs -->
+    <section class="g-bg-gray-light-v5 g-py-80 g-pt-150">
+      <div class="container text-center">
+        <h2 class="h2 g-color-black g-font-weight-600">About Us</h2>
+
+        <ul class="u-list-inline">
+          <li class="list-inline-item g-mr-5">
+            <a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover" href="2024">Home</a>
+            <i class="g-color-gray-light-v2 g-ml-5">/</i>
+          </li> 
+          <li class="list-inline-item g-mr-5">
+            <a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover" href="/accounts/profile/">Profile</a>
+            <i class="g-color-gray-light-v2 g-ml-5">/</i>
+          </li> 
+          <li class="list-inline-item g-color-primary">
+            <span>Update</span>
+          </li>
+        </ul><br> 
+        <i class="fa-solid fa-user-pen" style="font-size:41px;"></i>
+      </div>
+      
+    </section>
+    <!-- End Breadcrumbs --> 
+    
+  
+      <section class="g-mb-100 g-pt-50">
+        <div class="container">
+          <div class="u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30" >  
+              <div class="row">
+              
+                <!-- Profile Sidebar -->
+                <div class="col-lg-3 g-mb-50 g-mb-0--lg"> 
+                  <!-- Profile Pic --> 
+                    {% include 'profiles/profilepic_side.html' %}
+                  <!-- End Profile Pic  -->   
+      
+                  <!-- Sidebar Navigation -->
+                  <div class="list-group list-group-border-0 g-mb-40">
+                    <div class="media"> 
+                      <div class="media-body">
+                        <div><b><small class="text-danger">LAST LOGIN</small></b></div>
+                        <div class="g-font-size-12 g-color-gray-dark-v2"><b><small>Date:</small></b>  {{ request.user.last_login.date }}</div>
+                        <div class="g-font-size-12  g-color-gray-dark-v2"><b><small>Time:</small></b>  {{ request.user.last_login.time }}</div> 
+                      </div>
+                    </div>
+                  </div> 
+                    
+                    <!-- Overall -->
+                    <a href="/accounts/profile/" class="list-group-item list-group-item-action justify-content-between">
+                      <span><i class="icon-home g-pos-rel g-top-1 g-mr-8"></i> My Profile</span> 
+                    </a>
+                    <!-- End Overall -->
+                    
+                    <!-- Overall -->
+                    <a href="{% url 'profiles:profile_update' pk=request.user.user_profile.profile_id.hashid  %}" class="list-group-item list-group-item-action justify-content-between active">
+                      <span><i class="fa-solid fa-fade fa-id-card g-pos-rel g-top-1 g-mr-8"></i>  Update my Profile</span> 
+                    </a>
+                    <!-- End Overall -->
+      
+                    <!-- Profile -->
+                    <a href="/accounts/password/change/" class="list-group-item list-group-item-action justify-content-between">
+                      <span><i class="fa-light fa-lock g-pos-rel g-top-1 g-mr-8"></i>  Change Password</span>
+                    </a>
+                    <!-- End Profile -->
+      
+                    <!-- Profile -->
+                    <a href="{% url 'talks:talk_list' year=year %}" class="list-group-item list-group-item-action justify-content-between">
+                      <span><i class="fa-light fa-podium-star g-pos-rel g-top-1 g-mr-8"></i>  My Submitted Talks</span>
+                    </a>
+                    <!-- End Profile -->
+
+                    <!-- My Submitted Talks -->
+                    <a href="{% url 'talks:submit_talk' year=year %}" class="list-group-item list-group-item-action justify-content-between">
+                        <span><i class="fa-light fa-podium g-pos-rel g-top-1 g-mr-8"></i>  Submit a new Talk</span>
+                      </a>
+                      <!-- End Profile -->
+        
+                      {% if perms.reviews.add_review %} 
+                      <!-- Review Talks -->
+                      <a href="{% url 'talks:talks_to_review' year=2024 %}" class="list-group-item list-group-item-action justify-content-between ">
+                        <span><i class="fa-thin fa-ballot-check g-pos-rel g-top-1 g-mr-8"></i> Review Proposals</span>
+                      </a>
+                      <!-- End Profile --> 
+                    {% endif %}
+
+                    
+                    
+                    {% if request.user.is_superuser %}
+                   <!-- Review Talks List-->
+                   <a href="{% url 'talks:reviewed_talks_by_category' year=2024 %}" class="list-group-item list-group-item-action justify-content-between ">
+                    <span><i class="fa-thin fa-list-check g-pos-rel g-top-1 g-mr-8"></i> Proposals by Category</span>
+                  </a>
+                  <!-- End Profile --> 
+                        {% endif %}
+    
+      
+                  </div>
+                  <!-- End Sidebar Navigation -->  
+                <!-- End Profile Sidebar -->  
+    
+      
+                  <div class="col-lg-9">
+                    <section class="g-brd-around g-brd-gray-light-v4">
+                      <div class="container g-py-50--md g-py-20">
+                        
+                        <div class="panel wow fadeInLeft ">  
+                          <h4 class="mad-sub-title">Update your details below</h4><br> 
+                            <form action="{% url 'profiles:create_profile' %}" enctype='multipart/form-data' method='Post'>{% csrf_token %}
+                            
+                                {{ form|crispy }} 
+                                {{ form.media }}
+                                <br> 
+                                <div class="d-grid gap-5">  
+                                    
+                                    <button class="btn btn-md u-btn-primary rounded-0" id="submit-id-update"  style="background-position: 0px 59px;" type="submit" >Update Profile<i class="licon-chevron-right-circle"></i></button>
+                                    
+                                </div> 
+                            </form>
+                        </div>
+
+
+                    </div>
+                    </section> 
+                  </div>    
+      
+              </div>
+          </div>
+        </div>
+      </section> 
+    <!-- end section.speakers -->
+ 
+ 
+
+
+{% endblock %}
+
+ 

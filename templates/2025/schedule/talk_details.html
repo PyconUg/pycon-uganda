@@ -1,0 +1,303 @@
+{% extends "base.html" %}
+{% load i18n static  avatar_tags crispy_forms_tags markdown_extras  embed_video_tags  %}
+
+{% block meta_title %}
+    {% if meta_title %}
+        {{ meta_title }}
+    {% else %}
+        {{ talk.title }} | PyCon Africa
+    {% endif %}
+{% endblock %}
+
+{% block og_title %}
+    {% if meta_title %}
+        {{ meta_title }}
+    {% else %}
+        {{ talk.title }} | PyCon Africa
+    {% endif %}
+{% endblock %}
+
+{% block meta_description %}
+    {% if meta_description %}
+        {{ meta_description }}
+    {% else %}
+        {{ talk.talk_abstract|truncatewords:30 }}  
+    {% endif %}
+{% endblock %}
+
+{% block og_description %}
+    {% if meta_description %}
+        {{ meta_description }}
+    {% else %}
+        {{ talk.talk_abstract|truncatewords:30 }}  
+    {% endif %}
+{% endblock %}
+
+{% block meta_og_image %}
+    {% if meta_og_image %}
+        {{ meta_og_image }}
+    {% else %}
+        /static/images/default-image-url.jpg  
+    {% endif %}
+{% endblock %}
+
+{% block og_image %}
+    {% if meta_og_image %}
+        {{ meta_og_image }}
+    {% else %}
+        /static/images/default-image-url.jpg  
+    {% endif %}
+{% endblock %}
+
+{% block meta_og_url %}
+    {{ request.build_absolute_uri }}
+{% endblock %}
+
+{% block og_url %}
+    {{ request.build_absolute_uri }}
+{% endblock %}
+
+{% block meta_og_type %}
+    website
+{% endblock %}
+
+{% block og_type %}
+    website
+{% endblock %}
+
+{% block meta_og_site_name %}
+    PyCon Africa
+{% endblock %}
+
+{% block og_site_name %}
+    PyCon Africa
+{% endblock %}
+
+{% block twitter_title %}
+    {% if meta_title %}
+        {{ meta_title }}
+    {% else %}
+        {{ talk.title }} | PyCon Africa
+    {% endif %}
+{% endblock %}
+
+{% block twitter_description %}
+    {% if meta_description %}
+        {{ meta_description }}
+    {% else %}
+        {{ talk.talk_abstract|truncatewords:30 }}  
+    {% endif %}
+{% endblock %}
+
+{% block twitter_image %}
+    {% if meta_og_image %}
+        {{ meta_og_image }}
+    {% else %}
+        /static/images/default-image-url.jpg  
+    {% endif %}
+{% endblock %}
+
+{% block twitter_card %}
+    summary_large_image
+{% endblock %}
+
+{% block twitter_site %}
+    @PyConAfrica
+{% endblock %}
+ 
+{% block content %} 
+
+{% include '2024/navbar.html' %}
+
+
+    <!-- Breadcrumbs -->
+    <section class="g-bg-gray-light-v5 g-py-80 g-pt-150">
+      <div class="container text-center">
+        <h2 class="h2 g-color-black g-font-weight-600">{{ talk.title }}</h2>
+
+        <ul class="u-list-inline">
+          <li class="list-inline-item g-mr-5">
+            <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="/">Home</a>
+            <i class="g-color-gray-light-v2 g-ml-5">/</i>
+          </li>  
+          <li class="list-inline-item g-mr-5">
+            <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="/2024/schedule/">Schedule</a>
+            <i class="g-color-gray-light-v2 g-ml-5">/</i>
+          </li>  
+          <li class="list-inline-item g-color-primary">
+            <span>{{ talk.title }}</span>
+          </li>
+        </ul><br> 
+        <i class="fa-solid fa-presentation-screen" style="font-size:41px;"></i>
+      </div>
+      
+    </section>
+    <!-- End Breadcrumbs --> 
+ 
+
+    <!-- Schedule Minimal Blocks -->
+    <div class="container g-pt-50"> 
+      <div class="row justify-content-between">
+        <div class="col-lg-9 g-mb-80">
+          <div class="g-pr-20--lg"> 
+            <div class="g-pa-30 g-pt-0  "> 
+              <div class=" ">
+                <h1 class="h2 g-color-black g-font-weight-600">{{ talk.title }}</h1>
+              </div> 
+              <div class="media-body">
+                
+                <span class=""> 
+                  {% if talk.talk_category == "GP / Web" %}
+                  <li class="btn btn-xs u-btn-outline-darkgray g-mr-10 g-mb-15"  ti  data-toggle="tooltip-show" data-placement="left" title="This talk is in our General Python, Web/DevOps category"><i class="fa-duotone fa-layer-group"></i> <b>General Python, Web/DevOps</b></li> 
+                  {% elif talk.talk_category == "GC" %}             
+                  <li class="btn btn-xs u-btn-outline-darkgray g-mr-10 g-mb-15"  ti  data-toggle="tooltip-show" data-placement="left" title="This talk is in our General Community category"><i class="fa-duotone fa-layer-group"></i> <b>General Community</b></li> 
+                  {% elif talk.talk_category == "ET" %}    
+                  <li class="btn btn-xs u-btn-outline-darkgray g-mr-10 g-mb-15" ti  data-toggle="tooltip-show" data-placement="left" title="This talk is in our Emerging Technologies category"><i class="fa-duotone fa-layer-group"></i> <b>Emerging Technologies</b></li> 
+                  {% elif talk.talk_category == "Education" %} 
+                  <li class="btn btn-xs u-btn-outline-darkgray g-mr-10 g-mb-15" ti  data-toggle="tooltip-show" data-placement="left" title="This talk is in our Education category"><i class="fa-duotone fa-layer-group"></i> <b>Education</b></li>        
+                  {% elif talk.talk_category == "O" %}   
+                  <li class="btn btn-xs u-btn-outline-darkgray g-mr-10 g-mb-15" ti  data-toggle="tooltip-show" data-placement="left" title="This talk is in our Other category"><i class="fa-duotone fa-layer-group"></i> <b>Other</b></li>               
+                  {% endif %}  
+  
+                </span> 
+                          
+                {% if talk.talk_type %}
+                <span class=" "> 
+                <li class="btn btn-xs u-btn-outline-darkgray g-mr-10 g-mb-15" ti  data-toggle="tooltip-show" data-placement="left" title="This talk is a {{talk.talk_type}}"><i class="fa-sharp fa-solid fa-podium"></i>  {{ talk.talk_type }} </li> 
+                </span>
+                {% else %} 
+                {% endif %}
+  
+                {% if talk.intended_audience == "BGN-L" %}
+                <li class="btn btn-xs u-btn-outline-darkgray g-mr-10 g-mb-15" ti  data-toggle="tooltip-show" data-placement="left" title="Beginners are welcome to attend - {{ talk.title }}"><i class="fa-solid fa-users-between-lines"></i> Beginner </li>
+                {% elif talk.intended_audience == "INT-L" %}
+                <li class="btn btn-xs u-btn-outline-darkgray g-mr-10 g-mb-15" ti  data-toggle="tooltip-show" data-placement="left" title="{{talk.title}} is okay for intermediate level"><i class="fa-solid fa-users-between-lines"></i> Intermediate </li>              
+                {% elif talk.intended_audience == "EXP-L" %} 
+                <li class="btn btn-xs u-btn-outline-darkgray g-mr-10 g-mb-15" ti  data-toggle="tooltip-show" data-placement="left" title="{{talk.title}} is for expert level"><i class="fa-solid fa-users-between-lines"></i> Expert </li>                 
+                {% else %} 
+                <li class="btn btn-xs u-btn-outline-darkgray g-mr-10 g-mb-15" ti  data-toggle="tooltip-show" data-placement="left" title="{{talk.title}} is for expert level"><i class="fa-solid fa-users-between-lines"></i> General </li>                 
+                {% endif %}  
+  
+              </div> 
+              <!-- Author -->
+              <div class="media align-items-center g-brd-bottom g-brd-gray-light-v4 pb-5 mb-5">
+                {% if talk.user.user_profile.profile_image %}
+                <img class="d-flex img-fluid g-width-40 g-height-40 rounded-circle mr-3" src="{{ talk.user.user_profile.profile_image.url }}" alt="Image Description"> 
+                {% else %}  
+                <img class="d-flex img-fluid g-width-40 g-height-40 rounded-circle mr-3" src="{% static '/2024/img/speakers/speaker.png' %}" alt="Image Description"> 
+                {% endif %}
+               
+                <div class="media-body">
+                  <h4 class="h6 g-color-black g-font-weight-600 mb-0">
+                    By  {% for speaker in speakers %} 
+                          <a href="{% url 'speakers:speaker_detail' year=year profile_id=speaker.profile_id %}">
+                            {{ speaker.name }}  {{ speaker.surname }}
+                          </a>
+                        {% endfor %} </h4>
+                  <span class="d-block g-color-gray-dark-v1 g-font-size-12">
+                    {% if talk.user.user_profile.profession %} 
+                    {% if talk.user.user_profile.organization %}
+                    <span>{{ talk.user.user_profile.profession }} at {{ talk.user.user_profile.organization }}</span> 
+                    {% else %}
+                    <span>{{ talk.user.user_profile.profession }}</span> 
+                    {% endif %} 
+                {% else %}
+                {% endif %}  
+                  </span>
+                </div> 
+              </div>
+              <!-- End Author -->
+  
+  
+              <p><strong>Abstract</strong>: {% if talk.talk_abstract %} {{ talk.talk_abstract | markdown | safe }} 
+                {{ form.media }}{% else %} 
+                <!--================ Filter ================-->
+                  <div role="alert" class="mad-alert-box mad-alert-box--info">
+                    <div class="mad-alert-box-inner"><b>{{ talk.user.user_profile.name }}'s</b> abstract will be updated shortly, please check back later.
+                      
+                    </div>
+                  </div>
+                  <!--================ End of Filter ================--> 
+                {% endif %} 
+              </p>
+              <hr> 
+              <a  onclick="goBack()"  class="btn u-btn-darkgray g-mr-10 g-mb-15 g-color-white"> <i class="fa-sharp fa-solid fa-rotate-left"></i> GO BACK</a>
+          
+            </div> 
+            
+          </div>
+        </div>
+ 
+        <div class="col-lg-3 g-brd-left--lg g-brd-gray-light-v4 g-mb-80">
+          <div class="g-pl-20--lg"> 
+            <hr class="g-brd-gray-light-v4 g-mt-50 mb-0"> 
+              <div id="stickyblock-start" class="js-sticky-block g-sticky-block--lg g-pt-50" data-start-point="#stickyblock-start" data-end-point="#stickyblock-end">
+           
+                <!-- Publications -->
+                <div class="g-mb-50">
+                  <h3 class="h5 g-color-black g-font-weight-600 mb-4">Other Talks</h3>
+                  <ul class="list-unstyled g-font-size-13 mb-0">
+                      
+                      {% if related_talks %}
+                          {% for related_talk in related_talks %}
+                    <li>
+                      <article class="media g-mb-35">
+                        
+                    {% if related_talk.user.user_profile.profile_image %}  
+                    <img class="d-flex g-width-40 g-height-40 rounded-circle mr-3" src="{{ related_talk.user.user_profile.profile_image.url }}" alt="Image Description">
+                         
+                    {% else %}  
+                    <img class="d-flex g-width-40 g-height-40 rounded-circle mr-3" src="{% static '/2024/img/speakers/speaker.png' %}" alt="Image Description">
+                         
+                    {% endif %}
+                      <div class="media-body">
+                          <h4 class="h6 g-color-black g-font-weight-600"><a href="/2025/talks/{{related_talk.proposal_id}}/detail/">{{related_talk.title}}</a></h4>
+                          by {{ related_talk.user.user_profile.name }} {{ related_talk.user.user_profile.surname }}
+                           
+                          {% if related_talk.intended_audience == "BGN-L" %}
+                          <li class="btn btn-small btn-style-12"  ti  data-toggle="tooltip-show" data-placement="left" title="Beginners are welcome to attend - {{related_talk.title}}"><i class="fa-solid fa-users-between-lines"> </i></li>
+                        {% elif related_talk.intended_audience == "INT-L" %}
+                          <li class="btn btn-small btn-style-11"  ti  data-toggle="tooltip-show" data-placement="left" title="{{related_talk.title}} is okay for those in intermediate level"><i class="fa-solid fa-users-between-lines"> </i></li>              
+                        {% elif related_talk.intended_audience == "EXP-L" %} 
+                          <li class="btn btn-small btn-style-9"  ti  data-toggle="tooltip-show" data-placement="left" title="{{related_talk.title}}  is for expert level"><i class="fa-solid fa-users-between-lines"> </i></li>                 
+                          {% else %} 
+                          <li class="btn btn-small btn-style-9"  ti  data-toggle="tooltip-show" data-placement="left" title="{{related_talk.title}}  is a general talk"><i class="fa-solid fa-users-between-lines"> </i></li>                 
+                        {% endif %}    
+                        </div>
+                      </article>
+                    </li>  
+                    {% endfor %} 
+                    {% else %}
+                        <div class="alert alert-warning"><b>No Related Talks</b></div>
+                    {% endif %}
+                  </ul> 
+                </div>
+                <!-- End Publications --> 
+ 
+              </div>
+            </div> 
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        </div> 
+    </div>
+    <!-- End Schedule Minimal Blocks -->
+
+ 
+
+ 
+
+
+  
+ 
+{% endblock %}

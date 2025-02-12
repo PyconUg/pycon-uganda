@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PyCon Africa Proposal Status Update</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        .content { max-width: 600px; margin: auto; border: 1px solid #ddd; padding: 20px; border-radius: 5px; }
+        .header { background-color: #ecc8a4; padding: 10px; text-align: center; border-radius: 5px 5px 0 0; }
+        .header h2 { margin: 0; }
+        .details { margin: 20px 0; }
+        .footer { margin-top: 20px; text-align: center; font-size: 0.9em; color: #777; }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="header">
+            <h2>Proposal Status Update</h2>
+        </div>
+        <div class="details">
+            <p>Dear {{ full_name }},</p>
+            <p>We wanted to inform you that the status of your proposal titled "<strong>{{ proposal.title }}</strong>" has been updated. The current status is: <strong>{{ proposal.get_status_display }}</strong>.</p>
+            <p>You can view more details about your proposal by visiting the <a href="{{ talk_url }}">proposal details page</a>.</p>
+            <p>If you have any questions or need further clarification, please don't hesitate to reach out to us at <a href="mailto:program@pycon.africa">program@pycon.africa</a>.</p>
+        </div>
+        <div class="footer">
+            <p>Best regards,<br>The PyCon Africa Program Team</p>
+            <p>© 2024 PyCon Africa. All rights reserved.</p>
+            <p>Contact us: <a href="mailto:program@pycon.africa">program@pycon.africa</a></p>
+        </div>
+    </div>
+</body>
+</html>

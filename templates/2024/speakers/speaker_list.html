@@ -1,0 +1,208 @@
+{% extends "base.html" %}
+{% load i18n static  avatar_tags crispy_forms_tags markdown_extras embed_video_tags  %}{% block og_title %}
+{% if meta_title %}
+    {{ meta_title }}
+{% elif page %}
+    {{ page.meta_title }}
+{% else %}
+    {% trans "Speakers | PyCon Africa" %}
+{% endif %}
+{% endblock %}
+
+{% block og_description %}
+{% if meta_description %}
+    {{ meta_description }}
+{% elif page %}
+    {{ page.meta_description }}
+{% else %}
+    {% trans "Meet the incredible speakers at PyCon Africa." %}
+{% endif %}
+{% endblock %}
+
+{% block twitter_title %}
+{% if meta_title %}
+    {{ meta_title }}
+{% elif page %}
+    {{ page.meta_title }}
+{% else %}
+    {% trans "Speakers | PyCon Africa" %}
+{% endif %}
+{% endblock %}
+
+{% block twitter_description %}
+{% if meta_description %}
+    {{ meta_description }}
+{% elif page %}
+    {{ page.meta_description }}
+{% else %}
+    {% trans "Meet the incredible speakers at PyCon Africa." %}
+{% endif %}
+{% endblock %}
+
+{% block content %} 
+{% include '2024/navbar.html' %}
+
+
+    <!-- Breadcrumbs -->
+    <section class="g-bg-gray-light-v5 g-py-80 g-pt-150">
+      <div class="container text-center">
+        <h2 class="h2 g-color-black g-font-weight-600">Speakers</h2>
+
+        <ul class="u-list-inline">
+          <li class="list-inline-item g-mr-5">
+            <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="/">Home</a>
+            <i class="g-color-gray-light-v2 g-ml-5">/</i>
+          </li>  
+          <li class="list-inline-item g-color-primary">
+            <span>Speakers</span>
+          </li>
+        </ul><br> 
+        <i class="fa-solid fa-podium-star" style="font-size:41px;"></i>
+      </div>
+      
+    </section>
+    <!-- End Breadcrumbs --> 
+ 
+
+
+
+
+       <!-- body -->
+    <div class="container  g-pt-50">
+
+            <div class=" u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30" role="alert">
+              <div class="shortcode-html">
+                <p class="g-color-black g-font-size-16">  
+                 <b>Note:</b> We are excited to announce that our speaker lineup is still growing! This page will be updated regularly as more speakers confirm their participation. Stay tuned for the latest additions and details about their talks.
+             </p>
+                <!-- Team Block -->
+                <div class="row">
+                  {% for speaker in keynote_speakers %}
+                  <div class="col-md-3 g-mb-30">
+                    <!-- Figure -->
+                    <figure class="u-info-v7-1 u-info-v7-1__item g-bg-white g-rounded-4 text-center">
+                      <div class="g-py-40 g-px-20">
+                        <!-- Figure Image -->
+                        {% if speaker.profile_image %}
+                          <img class="u-info-v7-1__item-child-v1 g-width-150 g-height-150 rounded-circle g-mb-20" src="{{ speaker.profile_image.url }}" alt="{{ speaker.name }}">
+                        {% else %}
+                          <img class="u-info-v7-1__item-child-v1 g-width-150 g-height-150 rounded-circle g-mb-20" src="{% static '/2024/img/speakers/speaker.png' %}" alt="{{ speaker.name }}">
+                        {% endif %}
+                        <!-- Figure Image -->
+              
+                        <!-- Figure Info -->
+                      <em class="d-block g-font-style-normal g-font-size-11 text-uppercase g-color-primary g-mb-5"><b>Keynote Speaker</b></em>
+                      <h4 class="h5 g-color-black-light-v3 g-mb-5  g-font-weight-700 "><a href="{% url 'speakers:speaker_detail' year=2024 profile_id=speaker.profile_id %}">{{ speaker.name }} {{ speaker.surname }}</a></h4>
+                        <div class="d-block">
+                          <ul class="list-unstyled">
+                            <li class="d-block g-font-size-13 g-color-gray-dark-v4 mb-1"> 
+                              {{ speaker.profession }}
+                            </li>
+                            <li class="d-block g-color-gray-dark-v5 g-font-size-13"> 
+                              {% if speaker.organization %}
+                         {{ speaker.organization }}  
+                        {% endif %}
+                            </li>
+                          </ul>    
+                      <!-- End Info -->
+                        </div>
+                        <!-- End Figure Info -->
+                      </div>
+              
+                      <hr class="g-brd-gray-light-v4 g-my-0">
+              
+                      <!-- Figure List --> 
+                      <!-- End Figure List -->
+                    </figure>
+                    <!-- End Figure -->
+                  </div>
+ 
+                  {% endfor %}
+                </div>
+                <!-- End Team Block --> 
+
+      <hr class="u-divider-linear-gradient u-divider-linear-gradient--gray-light-v2 g-my-50">
+
+                <!-- structure for regular speakers -->
+                <div class="row">
+                  {% for speaker in other_speakers %}
+                  <div class="col-md-3 g-mb-30">
+                    <!-- Figure -->
+                    <figure class="u-info-v7-1 u-info-v7-1__item g-bg-white g-rounded-4 text-center">
+                      <div class="g-py-40 g-px-20">
+                        <!-- Figure Image -->
+                        {% if speaker.profile_image %}
+                          <img class="u-info-v7-1__item-child-v1 g-width-100 g-height-100 rounded-circle g-mb-20" src="{{ speaker.profile_image.url }}" alt="{{ speaker.name }}">
+                        {% else %}
+                          <img class="u-info-v7-1__item-child-v1 g-width-100 g-height-100 rounded-circle g-mb-20" src="{% static '/2024/img/speakers/speaker.png' %}" alt="{{ speaker.name }}">
+                        {% endif %}
+                        <!-- Figure Image -->
+              
+                        <!-- Figure Info -->
+                        <h4 class="h5 g-font-weight-600 mb-1"><a href="{% url 'speakers:speaker_detail' year=2024 profile_id=speaker.profile_id %}">{{ speaker.name }} {{ speaker.surname }}</a></h4>
+                        <div class="d-block">  
+                          <ul class="list-unstyled">
+                            <li class="d-block g-font-size-13 g-color-gray-dark-v4 mb-1"> 
+                              {{ speaker.profession | truncatechars:20  }}
+                            </li>
+                            <li class="d-block g-color-gray-dark-v5 g-font-size-13"> 
+                              {% if speaker.organization %}
+                         {{ speaker.organization }}  
+                        {% endif %}
+                            </li>
+                          </ul>    
+                        </div>
+                        <!-- End Figure Info -->
+                      </div>
+              
+                      <hr class="g-brd-gray-light-v4 g-my-0">
+              
+                      <!-- Figure List  
+                      <ul class="row list-inline g-py-20 g-ma-0">
+                        {% if speaker.twitter_handle %}
+                        <li class="col g-brd-right g-brd-gray-light-v4">
+                          <a class="u-icon-v1 u-icon-size--sm g-color-gray-dark-v5 g-bg-transparent g-color-cyan--hover" href="https://twitter.com/{{ speaker.twitter_handle }}" target="_blank">
+                            <i class="fa fa-twitter"></i>
+                          </a>
+                        </li>
+                        {% endif %}
+                        {% if speaker.github_username %}
+                        <li class="col g-brd-right g-brd-gray-light-v4">
+                          <a class="u-icon-v1 u-icon-size--sm g-color-gray-dark-v5 g-bg-transparent g-color-purple--hover" href="https://github.com/{{ speaker.github_username }}" target="_blank">
+                            <i class="fa fa-github"></i>
+                          </a>
+                        </li>
+                        {% endif %}
+                        {% if speaker.linkedin %}
+                        <li class="col">
+                          <a class="u-icon-v1 u-icon-size--sm g-color-gray-dark-v5 g-bg-transparent g-color-blue--hover" href="https://linkedin.com/in/{{ speaker.linkedin }}" target="_blank">
+                            <i class="fa fa-linkedin"></i>
+                          </a>
+                        </li>
+                        {% endif %}
+                      </ul> 
+                       End Figure List -->
+                    </figure>
+                    <!-- End Figure -->
+                  </div>
+                  {% endfor %}
+                </div>
+                <!-- End Team Block -->
+              </div>
+              
+               
+ 
+ 
+          
+               </div>
+
+             
+
+      </div>
+    <!-- End body -->
+
+
+ 
+
+
+{% endblock %}

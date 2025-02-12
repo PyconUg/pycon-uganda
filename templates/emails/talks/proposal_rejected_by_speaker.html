@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Notification of Proposal Rejection by Speaker - PyCon Africa 2024</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .content { max-width: 600px; margin: auto; }
+        .header { background-color: #ecc8a4; padding: 10px; text-align: center; }
+        .details, .footer { margin: 20px 0; }
+        .details th, .details td { text-align: left; padding: 8px; }
+        .footer { text-align: center; font-size: 0.9em; color: #777; }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="header">
+            <h2>Proposal Rejected by Speaker</h2>
+        </div>
+        <div class="details">
+            <p>Dear {{ full_name }},</p>
+            <p>We regret to inform you that you have declined to present your talk titled "<a href="{{ talk_url }}"><strong>{{ proposal.title }}</strong></a>" at PyCon Africa {{ proposal.event_year.year }}.</p>
+            <p>We understand that circumstances can change, and we respect your decision. If there are any specific reasons or feedback you'd like to share, please don't hesitate to reach out. Your feedback is valuable to us and helps us improve future events.</p>
+            <p>Should you have any questions or need further assistance, feel free to contact us.</p>
+        </div>
+        <div class="footer">
+            <p>Thank you for considering participation in PyCon Africa. We hope to have you in future events.</p>
+            <p>Best regards,<br>The PyCon Africa Program Team</p>
+            <p>© 2024 PyCon Africa. All rights reserved.</p>
+            <p>Contact us: <a href="mailto:program@pycon.africa">program@pycon.africa</a></p>
+        </div>
+    </div>
+</body>
+</html>

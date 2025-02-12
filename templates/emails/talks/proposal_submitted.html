@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Proposal Submission Confirmation for PyCon Africa 2024</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .content { max-width: 600px; margin: auto; }
+        .header { background-color: #ecc8a4; padding: 10px; text-align: center; }
+        .details, .next-steps { margin: 20px 0; }
+        .details th, .details td, .next-steps th, .next-steps td { text-align: left; padding: 8px; }
+        .footer { margin-top: 20px; text-align: center; font-size: 0.9em; color: #777; }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="header">
+            <h2>Proposal Submission Confirmation</h2>
+        </div>
+        <div class="details">
+            <p>Dear {{ full_name }},</p>
+            <p>Thank you for submitting your proposal titled "<strong>{{ proposal.title }}</strong>" for PyCon Africa 2024. We have successfully received your submission.</p>
+        </div>
+        
+        <div class="next-steps">
+            <h3>What Happens Next?</h3>
+            <p>Our review committee will evaluate all submissions, and you will receive a notification about the status of your proposal by soon. In the meantime, here are a few ways to stay involved:</p>
+            <table>
+                <tr>
+                    <th>Join the Community:</th>
+                    <td>Connect with other Python enthusiasts on our <a href="https://discord.gg/Z9gXvGVcrB">Discord server</a>. It's a great place to share knowledge and engage with the community.</td>
+                </tr>
+                <tr>
+                    <th>Follow Us:</th>
+                    <td>Stay updated on all conference news by following us on <a href="https://twitter.com/PyConAfrica">Twitter</a> and <a href="https://www.linkedin.com/company/pyconafrica">LinkedIn</a>.</td>
+                </tr>
+                <tr>
+                    <th>Important Information:</th>
+                    <td>Ensure you have reviewed our <a href="https://africa.pycon.org/2024/speaker-guidelines/">Speaker Guidelines</a> for important information about preparing your presentation.</td>
+                </tr>
+            </table>
+        </div>
+
+        <p>We appreciate your effort in submitting a proposal and your interest in contributing to PyCon Africa 2024. We look forward to the possibility of including your presentation in our program.</p>
+        <p>If you have any questions or need further assistance, please do not hesitate to contact us.</p>
+        <br>
+        <p>Best regards,<br>The PyCon Africa Program Team</p>
+    </div>
+    <div class="footer">
+        <p>© 2024 PyCon Africa. All rights reserved.</p>
+        <p>Contact us: <a href="mailto:program@pycon.africa">program@pycon.africa</a></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Proposal Is On The Waiting List - PyCon Africa 2024</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .content { max-width: 600px; margin: auto; }
+        .header { background-color: #ecc8a4; padding: 10px; text-align: center; }
+        .details, .next-steps { margin: 20px 0; }
+        .details th, .details td, .next-steps th, .next-steps td { text-align: left; padding: 8px; }
+        .footer { margin-top: 20px; text-align: center; font-size: 0.9em; color: #777; }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="header">
+            <h2>Proposal Status Update</h2>
+        </div>
+        <div class="details">
+            <p>Dear {{ full_name }},</p>
+            <p>Thank you for submitting your proposal titled "<strong>{{ proposal.title }}</strong>" for PyCon Africa 2024. After careful consideration, we would like to inform you that your proposal has been placed on our waiting list.</p>
+        </div>
+        
+        <div class="next-steps">
+            <h3>What Does This Mean?</h3>
+            <p>Being on the waiting list means that your proposal is being considered as a potential addition to the conference schedule. Should an opportunity arise (due to cancellations or schedule adjustments), we will notify you promptly.</p>
+            <table>
+                <tr>
+                    <th>Stay Engaged:</th>
+                    <td>We encourage you to stay connected with our community through our <a href="https://discord.gg/Z9gXvGVcrB">Discord server</a> and follow us on <a href="https://twitter.com/PyConAfrica">Twitter</a> and <a href="https://www.linkedin.com/company/pyconafrica">LinkedIn</a> for the latest updates.</td>
+                </tr>
+                <tr>
+                    <th>Prepare Ahead:</th>
+                    <td>We recommend preparing your presentation materials in case your proposal is accepted. Please review the <a href="https://africa.pycon.org/2024/speaker-guidelines/">Speaker Guidelines</a> to ensure you are ready.</td>
+                </tr>
+                <tr>
+                    <th>Contact Us:</th>
+                    <td>If you have any questions or need more information, feel free to reach out to us at <a href="mailto:program@pycon.africa">program@pycon.africa</a>.</td>
+                </tr>
+            </table>
+        </div>
+
+        <p>We appreciate your contribution and your enthusiasm for PyCon Africa 2024. We hope to see you at the conference, whether as a speaker or an attendee.</p>
+        <br>
+        <p>Best regards,<br>The PyCon Africa Program Team</p>
+    </div>
+    <div class="footer">
+        <p>© 2024 PyCon Africa. All rights reserved.</p>
+        <p>Contact us: <a href="mailto:program@pycon.africa">program@pycon.africa</a></p>
+    </div>
+</body>
+</html>

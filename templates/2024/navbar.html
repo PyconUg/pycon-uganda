@@ -1,0 +1,206 @@
+{% load  %}
+{% load static base_extras %} 
+
+
+ <!-- Header -->
+ <header id="js-header" class="u-header u-header--abs-top u-header--show-hide u-header--change-logo u-header--change-appearance" data-header-fix-moment="500" data-header-fix-effect="slide">
+  <div class="u-header__section u-header__section--dark g-bg-black-opacity-0_7 g-py-10" data-header-fix-moment-exclude="u-header__section--dark g-bg-black-opacity-0_7 g-py-10" data-header-fix-moment-classes="u-header__section--light g-bg-white-opacity-0_3  g-py-0">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <!-- Responsive Toggle Button -->
+        <button class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
+          <span class="hamburger hamburger--slider">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+          </span>
+          </span>
+        </button>
+        <!-- End Responsive Toggle Button -->
+
+        <!-- Logo -->
+        <a href="/" class="navbar-brand u-header__logo">
+          <img class="u-header__logo-img u-header__logo-img--main" src="{% static '2024/img/logo-w.png' %}" alt="Image Description">
+
+          <img class="u-header__logo-img" src="{% static '2024/img/logo-w.png' %}" alt="Image Description">
+        </a>
+        <!-- End Logo -->
+
+         <!-- Navigation -->
+         <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg" id="navBar">
+          <ul class="navbar-nav text-uppercase g-font-weight-600 ml-auto"> 
+            <li class="nav-item dropdown g-mx-20--lg">
+              <a href="#" class="nav-link dropdown-toggle g-px-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+              <!-- Submenu (Bootstrap) -->
+              <ul class="dropdown-menu rounded-0 g-text-transform-none g-brd-none g-brd-top g-brd-primary g-brd-top-2 g-mt-20 g-mt-10--lg--scrolling">
+                <li class="dropdown-item ">
+                  <a class="nav-link g-px-0 g-color-black" href="/2024/about/">About Us</a>
+                </li> 
+                <li class="dropdown-item">
+                  <a class="nav-link g-px-0 g-color-black" href="/2024/about/team/">Team</a>
+                </li> 
+                <li class="dropdown-item">
+                  <a class="nav-link g-px-0 g-color-black" href="/2024/coc/">Code of Conduct</a>
+                </li> 
+                <li class="dropdown-item">
+                  <a class="nav-link g-px-0 g-color-black" href="/2024/fin-aid/">Financial Assistance</a>
+                </li>   
+                <!--
+                <li class="dropdown-item">
+                  <a class="nav-link g-px-0 g-color-black" href="/2024/faqs/">FAQs</a>
+                </li> 
+                -->
+                <li class="dropdown-item">
+                  <a class="nav-link g-px-0 g-color-black" href="/2024/h&g/">Health and Safety Guidelines</a>
+                </li>  
+                <li class="dropdown-item">
+                  <a class="nav-link g-px-0 g-color-black" href="/2024/privacy-policy/">Privacy Policy</a>
+                </li> 
+              </ul>
+              <!-- End Submenu (Bootstrap) -->
+            </li>      
+            <li class="nav-item g-mx-20--lg">
+              <a  href="https://pyconafrica.blogspot.com/" target="/" class="nav-link px-0">Blog</a>
+            </li>       
+            <li class="nav-item g-mx-20--lg">
+              <a href="/2024/schedule/"  class="nav-link px-0">Schedule</a>
+            </li>       
+            <li class="nav-item dropdown g-mx-20--lg">
+              <a href="#" class="nav-link dropdown-toggle g-px-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Speak at PyCon <i class="fa-solid fa-earth-africa"></i></a>
+              <!-- Submenu (Bootstrap) -->
+              <ul class="dropdown-menu rounded-0 g-text-transform-none g-brd-none g-brd-top g-brd-primary g-brd-top-2 g-mt-20 g-mt-10--lg--scrolling">
+                <li class="dropdown-item ">
+                  <a class="nav-link g-px-0 g-color-black" href="/2024/speakers/" class="mad-ln--independent">Our Speakers</a> 
+                </li> 
+                <hr>
+                <li class="dropdown-item ">
+                  <a class="nav-link g-px-0 g-color-black" href="/2025/talks/speaking/" class="mad-ln--independent">Proposals</a> 
+                </li>
+                <li class="dropdown-item">
+                  <a class="nav-link g-px-0 g-color-black " href="/2025/talks/proposing_a_talk/" class="mad-ln--independent">Proposing a Talk</a>
+                </li> 
+                <li class="dropdown-item">
+                  <a class="nav-link g-px-0 g-color-black " href="/2025/talks/submit_talk/" class="mad-ln--independent">Submit a Proposal</a>
+                </li> 
+                <li class="dropdown-item">
+                  <a class="nav-link g-px-0 g-color-black " href="/2025/talks/recording/" class="mad-ln--independent">Recording Release</a>
+                </li>  
+
+                 
+              </ul>
+              <!-- End Submenu (Bootstrap) -->
+            </li>
+            <li class="nav-item dropdown g-mx-20--lg">
+              <a href="#" class="nav-link dropdown-toggle g-px-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Sponsor</a>
+              <!-- Submenu (Bootstrap) -->
+              <ul class="dropdown-menu rounded-0 g-text-transform-none g-brd-none g-brd-top g-brd-primary g-brd-top-2 g-mt-20 g-mt-10--lg--scrolling">
+                <li class="dropdown-item ">
+                  <a class="nav-link g-px-0 g-color-black" href="/2025/sponsor-us/">Sponsor Us</a>
+                </li>
+                <li class="dropdown-item">
+                  <a class="nav-link g-px-0 g-color-black " href="/2025/our-sponsors/">Our Sponsors</a>
+                </li> 
+              </ul>
+              <!-- End Submenu (Bootstrap) -->
+            </li>            
+            <li class="nav-item dropdown g-mx-20--lg">
+              <a href="#" class="nav-link dropdown-toggle g-px-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Past</a>
+              <!-- Submenu (Bootstrap) -->
+              <ul class="dropdown-menu rounded-0 g-text-transform-none g-brd-none g-brd-top g-brd-primary g-brd-top-2 g-mt-20 g-mt-10--lg--scrolling">
+                <li class="dropdown-item">
+                  <a class="nav-link g-px-0 g-color-black" href="/2020/" target="/">2020</a>
+                </li>
+                <li class="dropdown-item">
+                  <a class="nav-link g-px-0 g-color-black" href="/2019/report/" target="/">2019</a>
+                </li> 
+              </ul>
+              <!-- End Submenu (Bootstrap) -->
+            </li> 
+            <li class="nav-item g-ml-15--lg ">
+              <a href="/2024/tickets/" class="btn btn-sm u-btn-yellow g-color-primary g-mr-10 g-mb-15"><b>Tickets &nbsp;<i class="fa-solid fa-tickets fa-beat-fade"></i></b></a>
+            </li>
+          </ul>
+
+          
+
+
+        {% if user.is_authenticated %} 
+        <div class="col-auto">
+         
+ 
+          <div class="nav-item dropdown  ">
+            <a href="#" class="nav-link dropdown-toggle g-px-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">  
+             {% if request.user.user_profile.profile_image %} 
+              <span class="d-inline-block g-pos-rel g-mr-20 g-mb-20"> 
+                <img class="rounded-circle g-width-50 g-height-50" src="{{ request.user.user_profile.profile_image.url }}" alt="avatar">  
+              </span> 
+               {% else %}
+  
+              <span class="d-inline-block g-pos-rel g-mr-20 g-mb-20"> 
+              <img class="g-width-40 g-height-40 rounded-circle mCS_img_loaded" src="/robohash/{% firstof user.get_short_name user.get_username|capfirst %}/?width=120&height=120" alt="Image Description">  
+            </span> 
+              {% endif %}  
+              </a>
+              
+           
+            <!-- Submenu (Bootstrap) -->
+            <ul class="dropdown-menu rounded-0 g-text-transform-none  g-brd-none g-brd-top g-brd-primary g-brd-top-2 g-mt-20 g-mt-10--lg--scrolling">
+              <div class="d-flex flex-row align-items-center text-center justify-content-between g-letter-spacing-1 g-mb-15"> 
+               
+                <strong class="g-color-black g-font-weight-600 g-font-size-18"><small  ti  data-toggle="tooltip-show" data-placement="left" title="Glad to have you here {% if request.user.user_profile %}{{ request.user.user_profile.first_name }} {% else %}@{{ request.user.username }}{% endif %}"> <b>Hi {% if request.user.user_profile %}{{ request.user.user_profile.name }}  {% else %}@{{ request.user.username }}{% endif %} 😊</b><br>&nbsp;&nbsp;&nbsp;&nbsp;{% time_of_day %}</small> </strong>
+                </div>
+              <li class="dropdown-item  g-color-black"> 
+                 <a href="{% url 'profiles:profile_home' %}" class="nav-link g-color-black g-color-dark--hover g-text-underline--none--hover g-font-size-16"><i class="far fa-address-card g-color-black g-font-size-16"></i> My Profile</a>
+              </li>
+              {% if request.user.is_superuser %}
+              <li class="dropdown-item g-color-black">
+                <a href="/organizers/" target="/" class="nav-link g-color-black g-color-dark--hover g-text-underline--none--hover g-font-size-16"><i class="fas fa-users-crown  g-color-black g-font-size-16"></i> Admin Dashboard</a>
+              </li>  
+                  {% endif %}
+                   
+              <li class="dropdown-item g-color-black">
+                <form action="/accounts/logout/" method="post" style="display: inline;">
+                  {% csrf_token %}
+                  <button type="submit" class="nav-link g-color-black g-color-dark--hover g-text-underline--none--hover g-font-size-16" style="background: none; border: none; padding: 0; cursor: pointer;">
+                    &nbsp;&nbsp;&nbsp;<i class="fal fa-sign-out-alt g-color-black g-font-size-16"></i> Log out
+                  </button>
+                </form>
+              </li>
+   
+            </ul>
+            <!-- End Submenu (Bootstrap) -->
+          </div> 
+  
+
+        </div>
+          {% else %} 
+        <div class="col-auto g-pos-rel">
+          <ul class="list-inline g-overflow-hidden g-pt-1 g-mx-minus-4 mb-0">
+              
+            <li class="list-inline-item g-mx-4">
+              <a class="g-color-white g-color-yellow--hover g-text-underline--none--hover" href="/accounts/login/">Login</a>
+            </li>
+            <li class="list-inline-item g-mx-4">|</li>
+            <li class="list-inline-item g-mx-4">
+              <a class="g-color-white g-color-yellow--hover g-text-underline--none--hover" href="/accounts/signup/">Signup</a>
+            </li>
+          </ul>
+        </div>
+      {% endif %} 
+
+      
+
+        </div>
+        <!-- End Navigation -->
+
+ 
+        
+
+           
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- End Header -->
+
+
+ 

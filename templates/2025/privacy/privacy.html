@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load i18n static  markdown_extras %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Privacy and Data Policy || PyCon Ghana" %}{% endif %}{% endblock %}
+ 
+
+{% block content %}
+
+{% include '2024/navbar.html' %}
+
+
+    <!-- Breadcrumbs -->
+    <section class="g-bg-gray-light-v5 g-py-80 g-pt-150">
+      <div class="container text-center">
+        <h2 class="h2 g-color-black g-font-weight-600">Privacy and Data Policy</h2>
+
+        <ul class="u-list-inline">
+          <li class="list-inline-item g-mr-5">
+            <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="/">Home</a>
+            <i class="g-color-gray-light-v2 g-ml-5">/</i>
+          </li>  
+          <li class="list-inline-item g-color-primary">
+            <span>Privacy and Data Policy</span>
+          </li>
+        </ul><br> 
+        <i class="fa-solid fa-file-shield" style="font-size:41px;"></i>
+      </div>
+      
+    </section>
+    <!-- End Breadcrumbs --> 
+  
+    <!-- body -->
+    <div class="container  g-pt-50">
+      <div class="row">  
+        <div class="u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30" > 
+          {% for privacypolicy in privacypolicies.all|slice:"0:1" %}<br><br>
+          <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-20 g-mb-30"> 
+            <span class="g-color-primary">{{ coc.title }}</span>
+          </h2>
+          <!--================ Icon Box ================-->
+          <article class="text-size-medium"> 
+            <div class="mad-icon-box-content markdownx-preview"> 
+              <p class="markdownx-preview">{{ privacypolicy.privacy_policy | markdown | safe }}</p>
+            {{ form.media }}
+            </div>
+          </article>
+          <!--================ End of Icon Box ================--> 
+          {% endfor %}
+        </div> 
+    </div> 
+  </div>
+  <!-- End body -->
+
+
+ 
+{% endblock %}

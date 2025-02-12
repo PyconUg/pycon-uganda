@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% load i18n static avatar_tags crispy_forms_tags %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Submit your Talk || PyCon Africa" %}{% endif %}{% endblock %}
+
+
+{% block content %}
+
+<!-- ========== HEADER ========== -->
+{% include '2024/navbar.html' %}
+<!-- ========== END HEADER ========== -->
+ 
+    <!--================ Breadcrumb ================-->
+    <div class="mad-breadcrumb">
+        <div class="container">
+          <h1 class="mad-page-title mad-title-with-line">Edit: {{ talk.title}}</h1>
+          <nav class="mad-breadcrumb-path"><span><a href="/">Home</a></span>/<span><a href="/talks/talk_list">Talks</a></span>/<span>{{ talk.title}}</span>
+          </nav>
+        </div>
+      </div>
+      <!--================ End of Breadcrumb ================-->
+      <div class="mad-content">
+        <div class="container">
+          <div class="row mad-row-size-3">
+            <main class="col-xl-9 col-lg-8">
+                <section class="speakers" id="speakers">
+                    <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-3"> 
+                                <div class="panel wow fadeInRight">
+                                        <div class="panel-body">
+                                           <div class="row">
+                                                    <div class="col-md-9"> 
+                                                            
+                                                                
+                                                            <!-- Profile Pic --> 
+                                                            {% include 'profiles/profilepic_side.html' %}
+                                                            <!-- End Profile Pic  -->   
+                                                    
+                 
+                                                            <div><b><small class="text-danger">LAST LOGIN</small></b></div>
+                                                            <div><b><small>Date:</small></b>  {{ request.user.last_login.date }}</div>
+                                                            <div><b><small>Time:</small></b>  {{ request.user.last_login.time }}</div>
+       
+                                                            <br> 
+                                                    <p><a href="{% url 'profiles:profile_update' pk=request.user.user_profile.profile_id.hashid  %}"class="btn warn"><i class="fa-light fa-id-card" style="font-size:21px;"></i>&nbsp;&nbsp; Update my Profile</a></p>
+                                                    <p><a href="/accounts/password/change/"class="btn warn"><i class="fa-light fa-lock" style="font-size:21px;"></i>&nbsp;&nbsp; Change Password</a></p>
+                                                    <p><a href="{% url 'talks:talk_list' year=year %}"class="btn warn"><i class="fa-solid fa-podium-star" style="font-size:21px;"></i>&nbsp;&nbsp; Back to submitted Talks</a></p>
+                                                      <p><a href="{% url 'talks:submit_talk' %}"class="btn warn"><i class="fa-light fa-podium" style="font-size:21px;"></i>&nbsp;&nbsp; Submit a new Talk</a></p>
+                                                       
+                                                    </div>
+                                            </div>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="col-sm-12 col-md-8"> 
+                            <div class="panel wow fadeInLeft col-md-7"> 
+
+                                <p class="mad-sub-title">Edit your talk - {{ talk.title}} below.</p>
+                                
+                                <form enctype='multipart/form-data' action="{% url 'talks:submit_talk' %}" method="post">
+                                    {% csrf_token %} 
+                                    {{ form.media }}
+                                    {{ form | crispy }}
+                                    <br> 
+                                    <div class="d-grid gap-5">
+                                        <button class="btn primaryAction btn-big" style="background-position: 0px 59px;" type="submit" >Update Talk<i class="licon-chevron-right-circle"></i></button>
+                                        
+                                    </div> 
+                                 </form>
+                                    </div>
+                
+                            </div>
+                        </div>
+                
+                    </div>
+                    <!-- end .container -->
+                </section>
+              
+            </main>
+           
+<!-- ========== ASIDE ========== -->
+
+<!-- ========== ASIDE ========== -->
+
+          </div>
+        </div>
+      </div>
+ 
+
+    <!-- end section.speakers -->
+  
+   
+{% endblock %}

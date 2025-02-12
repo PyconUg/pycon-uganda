@@ -1,0 +1,413 @@
+{% extends "base.html" %} 
+{% load i18n static avatar_tags crispy_forms_tags markdown_extras embed_video_tags %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Talk Detail || PyCon Africa" %}{% endif %}{% endblock %}
+{% trans 'cur_time' as datetime.datetime.now(tz=pytz.timezone(str(settings.TIME_ZONE))) %}
+
+{% block content %}
+
+<!-- ========== HEADER ========== -->
+{% include '2024/navbar.html' %}
+<!-- ========== END HEADER ========== -->
+ 
+
+    <!-- Breadcrumbs -->
+    <section class="g-bg-gray-light-v5 g-py-80 g-pt-150">
+      <div class="container text-center"> 
+        <h1 class="h2 g-color-black g-font-weight-600">{{ talk.title|truncatewords:7 }}</h1> 
+        <ul class="u-list-inline">
+          <li class="list-inline-item g-mr-5">
+            <a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover" href="/2024/">Home</a>
+            <i class="g-color-gray-light-v2 g-ml-5">/</i>
+          </li> 
+          <li class="list-inline-item g-mr-5">
+            <a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover" href="/accounts/profile/">Profile</a>
+            <i class="g-color-gray-light-v2 g-ml-5">/</i>
+          </li> 
+          <li class="list-inline-item g-mr-5">
+            <a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover" href="/2025/talks/talk_list/">Proposal(s)</a>
+            <i class="g-color-gray-light-v2 g-ml-5">/</i>
+          </li> 
+          <li class="list-inline-item g-color-primary">
+            <span>{{ talk.title|truncatewords:7 }}</span>
+          </li>
+        </ul><br>  
+        <i class="fa-solid fa-book-open-cover" style="font-size:41px;"></i> 
+      </div>
+      
+    </section>
+    <!-- End Breadcrumbs -->  
+
+
+   
+    <section class="g-mb-100 g-pt-50">
+      <div class="container"> 
+          <div class="u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30" > 
+              <div class="row">
+                
+                  <!-- Profile Sidebar -->
+                  <div class="col-lg-3 g-mb-50 g-mb-0--lg"> 
+                    <!-- Profile Pic --> 
+                      {% include 'profiles/profilepic_side.html' %}
+                    <!-- End Profile Pic  -->   
+        
+                    <!-- Sidebar Navigation -->
+                    <div class="list-group list-group-border-0 g-mb-40">
+                      <div class="media"> 
+                        <div class="media-body">
+                          <div><b><small class="text-danger">LAST LOGIN</small></b></div>
+                          <div class="g-font-size-12 g-color-gray-dark-v2"><b><small>Date:</small></b>  {{ request.user.last_login.date }}</div>
+                          <div class="g-font-size-12  g-color-gray-dark-v2"><b><small>Time:</small></b>  {{ request.user.last_login.time }}</div> 
+                        </div>
+                      </div>
+                    </div> 
+                      
+                   
+                      <!-- Overall -->
+                      <a href="/accounts/profile/" class="list-group-item list-group-item-action justify-content-between">
+                        <span><i class="fa-thin fa-house-user  g-pos-rel g-top-1 g-mr-8"></i> My Profile</span> 
+                      </a> 
+                      <!-- End Overall -->
+                      
+                      <!-- Overall -->
+                      <a href="{% url 'profiles:profile_update' pk=request.user.user_profile.profile_id.hashid  %}" class="list-group-item list-group-item-action justify-content-between">
+                        <span><i class="fa-light fa-id-card g-pos-rel g-top-1 g-mr-8"></i>  Update my Profile</span> 
+                      </a>
+                      <!-- End Overall -->
+        
+                      <!-- Profile -->
+                      <a href="/accounts/password/change/" class="list-group-item list-group-item-action justify-content-between">
+                        <span><i class="fa-light fa-lock g-pos-rel g-top-1 g-mr-8"></i>  Change Password</span>
+                      </a>
+                      <!-- End Profile -->
+        
+                      <!-- Profile -->
+                      <a href="{% url 'talks:talk_list' year=year %}" class="list-group-item list-group-item-action justify-content-between active">
+                        <span><i class="fa-solid fa-podium-star fa-fade g-pos-rel g-top-1 g-mr-8"></i>  My Submitted Talks</span>
+                      </a>
+                      <!-- End Profile -->
+      
+                      <!-- My Submitted Talks -->
+                      <a href="{% url 'talks:submit_talk' year=year %}" class="list-group-item list-group-item-action justify-content-between">
+                          <span><i class="fa-thin fa-podium g-pos-rel g-top-1 g-mr-8"></i>  Submit a new Talk</span>
+                        </a>
+                        <!-- End Profile -->
+
+
+                      {% if perms.reviews.add_review %} 
+                        <!-- Review Talks -->
+                        <a href="{% url 'talks:talks_to_review' year=year %}" class="list-group-item list-group-item-action justify-content-between">
+                          <span><i class="fa-thin fa-ballot-check g-pos-rel g-top-1 g-mr-8"></i> Review Proposals</span>
+                        </a>
+                        <!-- End Profile --> 
+                      {% endif %}
+                      
+                      {% if request.user.is_superuser %}
+                     <!-- Review Talks List-->
+                     <a href="{% url 'talks:reviewed_talks_by_category' year=2024 %}" class="list-group-item list-group-item-action justify-content-between">
+                      <span><i class="fa-thin fa-list-check g-pos-rel g-top-1 g-mr-8"></i> Proposals by Category</span>
+                    </a>
+                    <!-- End Profile --> 
+                          {% endif %}
+                    <!--Sidebar Navigation -->   
+ 
+        
+                    </div>
+                    <!-- End Sidebar Navigation -->  
+                  <!-- End Profile Sidebar -->   
+                <!-- End Profile Sidebar -->  
+      
+                
+            
+                <div class="col-lg-9">
+                  <section class="g-brd-around g-brd-gray-light-v4">
+                    <div class="container g-py-50--md g-py-20"> 
+                    <h2 class="g-mb-20"></h2> 
+    
+                    {% if request.user.username == talk.user.username %} 
+                        <div class="panel wow fadeInLeft "> 
+                            <div class="col-md-12">
+                                <div class="col-md-10">
+                                    <h4 class="page-title wow fadeInDown"><b>{{ talk.title }}</b> will be presented by {% if talk.user.user_profile.name %}{{ talk.user.user_profile.name }} {{ talk.user.user_profile.surname }}{% else %}@{{ talk.user.username|capfirst }}{% endif %}<br></h4>
+                                    
+                                    <div class="col-md-14">  
+                                        <p class="g-color-gray-dark-v3">
+                                            <strong>Talk Type:</strong> {{ talk.talk_type }}
+                                            <br><strong>Talk Category</strong>: {{ talk.talk_category }}
+                                            <br><strong>Intended Audience</strong>: {{ talk.intended_audience }}
+                                            {% if speakers %} 
+                                            <br><strong>Added Speaker(s)</strong>:
+                                            {% for speaker in speakers %}
+                                              {{ speaker.user_profile.name }} {{ speaker.user_profile.surname }} | 
+                                            {% endfor %}
+                                            {% else %} 
+                                            {% endif %} 
+                                            {% if talk.status == "S" %}
+                                            <li class="btn btn-small u-btn-yellow g-color-black"><b>Status:</b> Currently under Review</li>
+                                            {% elif talk.status == "A" %} 
+                                             <!-- Teal Alert -->
+                                              <div class="alert alert-dismissible fade show g-bg-teal g-color-white rounded-0" role="alert">
+                                                  <button type="button" class="close u-alert-close--light" data-dismiss="alert" aria-label="Close">
+                                                  <span aria-hidden="true">×</span>
+                                                  </button>
+                                          
+                                                  <div class="media">
+                                                  <span class="d-flex g-mr-10 g-mt-5">
+                                                      <i class="icon-check g-font-size-25"></i>
+                                                  </span>
+                                                  <span class="media-body align-self-center">
+                                                      <strong>Congratulations {% if talk.user.user_profile.name %}{{ talk.user.user_profile.name }}{% else %}@{{ talk.user.username|capfirst }}{% endif %}!</strong> This talk has been Accepted.
+                                                  </span>
+                                                  </div>
+                                              </div>
+                                              <!-- End Teal Alert -->          
+                                            {% elif talk.status == "W" %} 
+                                            <li class="btn btn-small  u-btn-aqua g-color-black"><b>Status:</b> On Waitlist</li>                  
+                                            {% elif talk.status == "R" %} 
+                                            <li class="btn btn-small u-btn-pink g-color-white"><b>Status:</b> Sorry, You didn't make the cut</li>         
+                                            {% elif talk.status == "RS" %} 
+                                            <li class="btn btn-small  u-btn-indigo g-color-white"><b>Status:</b> Sorry to see you won't be able to join us present your proposal.</li>               
+                                            {% endif %} 
+                                            
+                                            {% if talk.user_response == "P" %}     
+                                            {% elif talk.user_response == "A" %}  
+                                                <a class="btn  u-btn-teal g-color-white "><b>You've Accepted to Present</b></a> 
+                                            {% elif talk.user_response == "R" %} 
+                                                <a class="btn u-btn-red g-color-white">Rejected to Present</a> 
+                                            {% endif %}
+                                        
+
+                                        <!-- Trigger/Open The Modal -->
+                                        <a class="btn u-btn-primary" href="#modal1" data-modal-target="#modal1" data-modal-effect="fadein">Add Speakers to This Talk
+                                        </a>
+                                        
+                                        <!-- Demo modal window -->
+                                        <div id="modal1" class="text-left g-max-width-600 g-bg-white g-overflow-y-auto g-pa-20" style="display: none;">
+                                          <button type="button" class="close" onclick="Custombox.modal.close();">
+                                            <i class="hs-icon hs-icon-close"></i>
+                                          </button>
+                                          <h4 class="g-mb-20">Enter the speaker's email address:</h4>
+                                          (Make sure the person you are inviting already have an account on this website.)
+                                          <form action="{% url 'talks:send_speaker_invitation' year=talk.event_year.year pk=talk.pk %}" method="post">
+                                            {% csrf_token %}
+                                            <label for="user_email">Speaker's Email:</label>
+                                            <input type="email" name="user_email" id="user_email" required>
+                                            <button type="submit">Send Invitation</button>
+                                        </form>
+                                        
+                                        </div>
+                                        <!-- End Demo modal window -->
+                                         
+
+                                         <br><br>
+                                    {% if can_upload %}
+                                        
+                                        {% if has_uploaded_slide %}
+                                        <!-- Secondary Button -->
+                                        <div class="btn-group g-mr-10 g-mb-15">
+                                          <button type="button" class="btn btn-secondary dropdown-toggle  g-mr-10 g-mb-15" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            My Slides
+                                          </button>
+                                          <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="{{ latest_slide.document.url }}"  target="_blank">View Uploaded Slide</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#modal2" data-modal-target="#modal2" data-modal-effect="fadein">Upload New Slide</a></a> 
+                                          </div>
+                                        </div>
+                                        <!-- End Secondary Button -->  
+                                        
+                                        {% else %}
+                                            
+
+                                        <a class="btn u-btn-darkgray" href="#modal2" data-modal-target="#modal2" data-modal-effect="fadein">Upload Slides
+                                        </a>   
+                                        {% endif %} 
+
+                                    {% else %} 
+                                    {% endif %}
+                                              
+                                      <!-- Demo modal window -->
+                                      <div id="modal2" class="text-left g-max-width-600 g-bg-white g-overflow-y-auto g-pa-20" style="display: none;">
+                                        <button type="button" class="close" onclick="Custombox.modal.close();">
+                                          <i class="hs-icon hs-icon-close"></i>
+                                        </button>
+                                        <h4 class="g-mb-20">Upload Slides</h4>
+                                        <p> 
+                                          <form method="post" enctype="multipart/form-data">
+                                            {% csrf_token %}
+                                            {{ form|crispy }}
+                                            <br><button type="submit" class="btn btn-primary"> Upload Document</button>
+                                        </form>
+                                        </p>
+                                      </div>
+                                      <!-- End Demo modal window -->
+                                        </p>    
+                                        
+                    <hr class="u-divider-db-solid g-brd-gray-light-v3"> <p class="g-color-black"><strong>Talk Preview</strong>: </p>
+                                        {% if talk.link_to_preview_video_url %}
+  
+                                           <!-- Youtube Iframe --> 
+                                            <div class="embed-responsive  u-shadow-v36 g-brd-around g-brd-7 g-brd-white g-rounded-5 mb-4 embed-responsive-16by9 g-mb-30">
+                                                {% video talk.link_to_preview_video_url 'tiny' %}
+                                            </div> 
+                                            <!-- End Youtube Iframe -->
+                                            
+                                         {% else %} 
+                                         <div class="mad-entity-media">
+                                            <p class="mad-entity-link-element mad-ln--independent g-color-gray-dark-v3" style="background-position: 0% 129px;">
+                                                <i class="icon licon-play">
+                                                </i> 
+                                                You are yet to submit the preview video of this talk.
+                                            </p>
+                                          </div>
+                                            
+                                        {% endif %}<br> 
+                                        <p class="g-color-gray-dark-v3"><strong>Elevator Pitch</strong>: {{ talk.elevator_pitch  | markdown | safe  }} </p> 
+                                        
+                                        <p class="g-color-gray-dark-v3"><strong>Abstract</strong>: {{ talk.talk_abstract | markdown | safe  }}</p>
+                                          
+                                        
+                                            
+                    <hr class="u-divider-db-solid g-brd-gray-light-v3"> 
+                                        <div><br<br> <br />
+                                            <a  onclick="goBack()"   class="btn  btn-small  u-btn-outline-darkgray" style="font-size:16px"><i class="licon-undo "></i><span>GO BACK</span></a>
+                                            {% if active_period %}
+                                            <a href="{% url 'talks:edit_talk' year=year pk=talk.pk %}" style="font-size:16px" class="btn btn-small u-btn-outline-pink">
+                                                <i class="fa fa-edit" style="font-size:16px;"></i> Edit Talk
+                                            </a>
+                                        {% elif talk.user_response == 'A' or is_sponsor_or_keynote %}
+                                            <a href="{% url 'talks:edit_talk' year=year pk=talk.pk %}" style="font-size:16px" class="btn btn-small u-btn-outline-pink">
+                                                <i class="fa fa-edit" style="font-size:16px;"></i> Edit Talk
+                                            </a>
+                                        {% else %}
+                                            <a href="{% url 'talks:edit_talk' year=year pk=talk.pk %}" style="font-size:16px" class="btn btn-small u-btn-outline-pink disabled">
+                                                <i class="fa fa-edit" style="font-size:16px;"></i> Edit Talk
+                                            </a>  
+                                        {% endif %}
+
+                                            
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                        </div>
+                            
+                        </div> 
+                         
+                    {% else %}
+
+                    <div class="panel wow fadeInLeft "> 
+                      <div class="col-md-12">
+                          <div>
+                              <h4 class="page-title wow fadeInDown"><b>{{ talk.title }}</b> will be presented by {% if talk.user.user_profile.name %}{{ talk.user.user_profile.name }} {{ talk.user.user_profile.surname }}{% else %}@{{ talk.user.username|capfirst }}{% endif %}<br></h4>
+                               
+                                <div class="media-body">
+                                  <div class="d-flex justify-content-between">
+                                    <h5 class="h6 g-font-weight-600 g-color-black">You will be joining this session</h5>
+                                    <span class="small text-nowrap g-color-blue"> </span>
+                                  </div>  
+                                  <div class=" ">
+                                    <br>
+                                    <div class="col-md-14">  
+                                        <p class="g-color-gray-dark-v3">
+                                            <strong>Talk Type:</strong> {{ talk.talk_type }}
+                                            <br><strong>Talk Category</strong>: {{ talk.talk_category }}
+                                            <br><strong>Intended Audience</strong>: {{ talk.intended_audience }}
+  
+                                            {% if talk.status == "S" %}
+                                            <li class="btn btn-small u-btn-yellow g-color-black"><b>Status:</b> Currently under Review</li>
+                                            {% elif talk.status == "A" %} 
+                                             <!-- Teal Alert -->
+                                              <div class="alert alert-dismissible fade show g-bg-teal g-color-white rounded-0" role="alert">
+                                                  <button type="button" class="close u-alert-close--light" data-dismiss="alert" aria-label="Close">
+                                                  <span aria-hidden="true">×</span>
+                                                  </button>
+                                          
+                                                  <div class="media">
+                                                  <span class="d-flex g-mr-10 g-mt-5">
+                                                      <i class="icon-check g-font-size-25"></i>
+                                                  </span>
+                                                  <span class="media-body align-self-center">
+                                                      <strong>Congratulations {% if talk.user.user_profile.name %}{{ talk.user.user_profile.name }}{% else %}@{{ talk.user.username|capfirst }}{% endif %}!</strong> This talk has been Accepted.
+                                                  </span>
+                                                  </div>
+                                              </div>
+                                              <!-- End Teal Alert -->         
+                                            {% elif talk.status == "W" %} 
+                                            <li class="btn btn-small  u-btn-aqua g-color-black"><b>Status:</b> On Waitlist</li>                  
+                                            {% elif talk.status == "R" %} 
+                                            <li class="btn btn-small u-btn-pink g-color-white"><b>Status:</b> Sorry, You didn't make the cut</li>         
+                                            {% elif talk.status == "RS" %}                
+                                            <li class="btn btn-small u-btn-indigo g-color-white"><b>Status:</b> You rejected to present.</li> 
+                                            {% endif %} 
+                                            
+                                        
+ 
+
+                                        </p>    
+                                        
+                    <hr class="u-divider-db-solid g-brd-gray-light-v3"> <p class="g-color-black"><strong>Talk Preview</strong>: </p>
+                                        {% if talk.link_to_preview_video_url %}
+  
+                                           <!-- Youtube Iframe --> 
+                                            <div class="embed-responsive  u-shadow-v36 g-brd-around g-brd-7 g-brd-white g-rounded-5 mb-4 embed-responsive-16by9 g-mb-30">
+                                                {% video talk.link_to_preview_video_url 'tiny' %}
+                                            </div> 
+                                            <!-- End Youtube Iframe -->
+                                            
+                                         {% else %} 
+                                         <div class="mad-entity-media">
+                                            <p class="mad-entity-link-element mad-ln--independent g-color-gray-dark-v3" style="background-position: 0% 129px;">
+                                                <i class="icon licon-play">
+                                                </i> 
+                                                You are yet to submit the preview video of this talk.
+                                            </p>
+                                          </div>
+                                            
+                                        {% endif %}<br> 
+                                        <p class="g-color-gray-dark-v3"><strong>Elevator Pitch</strong>: {{ talk.elevator_pitch  | markdown | safe  }} </p> 
+                                        
+                                        <p class="g-color-gray-dark-v3"><strong>Abstract</strong>: {{ talk.talk_abstract | markdown | safe  }}</p>
+                                          
+                                        
+                                            
+                    <hr class="u-divider-db-solid g-brd-gray-light-v3"> 
+                                        <div><br<br> <br />
+                                            <a  onclick="goBack()"   class="btn  btn-small  u-btn-outline-darkgray" style="font-size:16px"><i class="licon-undo "></i><span>GO BACK</span></a>
+                                            
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                </div>
+                                 
+                              
+                          </div>
+                  </div>
+                      
+                  </div> 
+                    {% endif %} 
+                                    
+                  </div>
+                  </section> 
+                </div>    
+      
+              </div>
+          </div>
+        </div>
+      </section>  
+   
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+    
+{% endblock %}
+ 

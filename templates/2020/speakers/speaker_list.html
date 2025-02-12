@@ -1,0 +1,1403 @@
+{% extends "2020/base.html" %}
+{% load i18n static media_tags %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Speakers | PyCon Africa 2020" %}{% endif %}{% endblock %}
+
+
+
+{% block content %}
+{% include '2020/navbar.html' %}
+
+ 
+      <!-- Section Content -->
+      <section class="g-bg-img-hero g-pos-rel u-bg-overlay g-bg-darkblue-opacity-0_6--after g-pt-150" style="background-image: url({% static '2020/img/body1.png' %});">
+        <div class="container g-max-width-750 u-bg-overlay__inner g-color-white g-mb-60">
+       
+            <h3 class="text-center text-uppercase h3 g-font-weight-700 g-font-size-20 g-font-size-50--md g-color-primary g-mb-20 g-mb-50--md">Speakers</h3>
+            <br>
+            <br>
+        </div>
+
+      </section>
+      <!-- End Section Content -->
+       <!-- body -->
+       <div class="container">
+
+            <div class=" u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30" role="alert">
+                
+              
+                <!-- Speakers List Panel -->
+             <div class="card border-0 rounded-0 g-mb-50">
+               <div class="card-block g-pa-0">
+                 <!-- Speakers List -->
+
+
+                
+            <!-- Nav tabs -->
+            <ul class="nav text-center nav-justified u-nav-v7-1" role="tablist" data-target="nav-7-1-accordion-hor-left-big-icons" data-tabs-mobile-type="accordion" data-btn-classes="btn btn-md btn-block rounded-0 u-btn-outline-lightgray g-mb-20">
+              <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#nav-7-1-accordion-hor-left-big-icons--1" role="tab">
+                  <i class="icon-christmas-037 d-block g-font-size-25 u-tab-line-icon-pro"></i>
+                  <b>Speakers</b>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#nav-7-1-accordion-hor-left-big-icons--2" role="tab">
+                  <i class="icon-communication-025 d-block g-font-size-25 u-tab-line-icon-pro"></i>
+                  <b>Panelist</b>
+                </a>
+              </li>
+              
+            </ul>
+            <!-- End Nav tabs -->
+
+            <br><br>
+
+
+            <!-- Tab panes -->
+            <div id="nav-7-1-accordion-hor-left-big-icons" class="tab-content g-pt-20--md">
+              
+              <div class="tab-pane fade show active" id="nav-7-1-accordion-hor-left-big-icons--1" role="tabpanel">
+                
+                <p class="g-color-black g-font-size-16"> 
+                  Meet our Speakers 
+                </p>
+                <br>
+
+          <!-- Timeline Box -->
+          <div class="row">
+                 
+            
+            
+            
+              <div class="col-md-4 g-mb-30 g-mb-0--md">
+                <!-- Figure -->
+                <figure class="g-bg-white g-brd-around g-brd-gray-light-v4 g-brd-primary--hover g-transition-0_2 text-center">
+                  <div class="g-py-40 g-px-20">
+                    <!-- Figure Image -->
+                    <img class="g-width-150 g-height-150 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% media 'speakers/Rising_Odegua.jpg' %}" alt="Image Description">
+                    <!-- Figure Image -->
+
+                    <!-- Figure Info -->
+                    <h4 class="h5 g-mb-5">Rising Odegua</h4>
+                    <div class="d-block">
+                      <em class="g-color-gray-dark-v4 g-font-style-normal g-font-size-default">Building your First Open Source Py…</em>
+                      
+                    </div>
+                    <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15 g-px-10"><b>Tutorial/Workshop</b></span>                  
+       
+                    <!-- End Figure Info -->
+                  </div>
+
+                  <hr class="g-brd-gray-light-v4 g-my-0">
+
+                  <!-- Figure List -->
+                  <ul class="row list-inline g-py-20 g-ma-0"> 
+
+                    <li class="col g-brd-right g-brd-gray-light-v4">
+                      <a class="u-icon-v1 pulse g-color-youtube g-color-youtube--hover g-mr-15 g-mb-20"  data-toggle="tooltip" data-placement="bottom"  title="Watch Building your First Open Source Python Library on Youtube" href="https://youtu.be/mmx3JIAtUKA" target="/">
+                        <i class="fa-brands fa-youtube"></i>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  <!-- End Figure List -->
+                </figure>
+                <!-- End Figure -->
+              </div> 
+              <p> </p>
+            
+            
+            
+            
+              <div class="col-md-4 g-mb-30 g-mb-0--md">
+                <!-- Figure -->
+                <figure class="g-bg-white g-brd-around g-brd-gray-light-v4 g-brd-primary--hover g-transition-0_2 text-center">
+                  <div class="g-py-40 g-px-20">
+                    <!-- Figure Image -->
+                    <img class="g-width-150 g-height-150 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% media 'speakers/Psalms_kalu.jpg' %}" alt="Image Description">
+                    <!-- Figure Image -->
+
+                    <!-- Figure Info -->
+                    <h4 class="h5 g-mb-5">Psalms Kalu</h4>
+                    <div class="d-block">
+                      <em class="g-color-gray-dark-v4 g-font-style-normal g-font-size-default">Serving Deep Neural Networks throu…</em>
+                      
+                    </div>
+                    <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15 g-px-10"><b>Tutorial/Workshop</b></span>                  
+       
+                    <!-- End Figure Info -->
+                  </div>
+
+                  <hr class="g-brd-gray-light-v4 g-my-0">
+
+                  <!-- Figure List -->
+                  <ul class="row list-inline g-py-20 g-ma-0"> 
+
+                    <li class="col g-brd-right g-brd-gray-light-v4">
+                      <a class="u-icon-v1 pulse g-color-youtube g-color-youtube--hover g-mr-15 g-mb-20"  data-toggle="tooltip" data-placement="bottom"  title="Watch Serving Deep Neural Networks through Django on Youtube" href="https://youtu.be/TwJFVqF7XF8" target="/">
+                        <i class="fa-brands fa-youtube"></i>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  <!-- End Figure List -->
+                </figure>
+                <!-- End Figure -->
+              </div> 
+              <p> </p>
+            
+            
+            
+            
+              <div class="col-md-4 g-mb-30 g-mb-0--md">
+                <!-- Figure -->
+                <figure class="g-bg-white g-brd-around g-brd-gray-light-v4 g-brd-primary--hover g-transition-0_2 text-center">
+                  <div class="g-py-40 g-px-20">
+                    <!-- Figure Image -->
+                    <img class="g-width-150 g-height-150 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% media 'speakers/David_Pugh.jpg' %}" alt="Image Description">
+                    <!-- Figure Image -->
+
+                    <!-- Figure Info -->
+                    <h4 class="h5 g-mb-5">David R. Pugh</h4>
+                    <div class="d-block">
+                      <em class="g-color-gray-dark-v4 g-font-style-normal g-font-size-default">Managing your data science project…</em>
+                      
+                    </div>
+                    <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15 g-px-10"><b>Tutorial/Workshop</b></span>                  
+       
+                    <!-- End Figure Info -->
+                  </div>
+
+                  <hr class="g-brd-gray-light-v4 g-my-0"> 
+                  <!-- Figure List -->
+                  <ul class="row list-inline g-py-20 g-ma-0"> 
+                    <li class="col g-brd-right g-brd-gray-light-v4">
+                      <a class="u-icon-v1 pulse g-color-youtube g-color-youtube--hover g-mr-15 g-mb-20"  data-toggle="tooltip" data-placement="bottom"  title="Watch Managing your data science project environments with Conda (+pip) on Youtube" href="https://youtu.be/EiA__10cTkg" target="/">
+                        <i class="fa-brands fa-youtube"></i>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  <!-- End Figure List -->
+                </figure>
+                <!-- End Figure -->
+              </div> 
+              <p> </p>
+            
+            
+            
+            
+              <div class="col-md-4 g-mb-30 g-mb-0--md">
+                <!-- Figure -->
+                <figure class="g-bg-white g-brd-around g-brd-gray-light-v4 g-brd-primary--hover g-transition-0_2 text-center">
+                  <div class="g-py-40 g-px-20">
+                    <!-- Figure Image -->
+                    <img class="g-width-150 g-height-150 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% media 'speakers/Seth_Baah_Kusi.jpg' %}" alt="Image Description">
+                    <!-- Figure Image -->
+
+                    <!-- Figure Info -->
+                    <h4 class="h5 g-mb-5">Seth Baah Kusi</h4>
+                    <div class="d-block">
+                      <em class="g-color-gray-dark-v4 g-font-style-normal g-font-size-default">Blockchain development with python…</em>
+                      
+                    </div>
+                    <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15 g-px-10"><b>Tutorial/Workshop</b></span>                  
+       
+                    <!-- End Figure Info -->
+                  </div>
+
+                  <hr class="g-brd-gray-light-v4 g-my-0">
+
+                  <!-- Figure List -->
+                  <ul class="row list-inline g-py-20 g-ma-0"> 
+                    <li class="col g-brd-right g-brd-gray-light-v4">
+                      <a class="u-icon-v1 pulse g-color-youtube g-color-youtube--hover g-mr-15 g-mb-20"  data-toggle="tooltip" data-placement="bottom"  title="Watch Blockchain development with python on the Tezos Blockchain platform using SmartPy Library. on Youtube" href="https://youtu.be/08o9SvQr_pY" target="/">
+                        <i class="fa-brands fa-youtube"></i>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  <!-- End Figure List -->
+                </figure>
+                <!-- End Figure -->
+              </div> 
+              <p> </p>
+            
+            
+            
+            
+              <div class="col-md-4 g-mb-30 g-mb-0--md">
+                <!-- Figure -->
+                <figure class="g-bg-white g-brd-around g-brd-gray-light-v4 g-brd-primary--hover g-transition-0_2 text-center">
+                  <div class="g-py-40 g-px-20">
+                    <!-- Figure Image -->
+                    <img class="g-width-150 g-height-150 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% media 'speakers/Sandrine_Pataut.JPG' %}" alt="Image Description">
+                    <!-- Figure Image -->
+
+                    <!-- Figure Info -->
+                    <h4 class="h5 g-mb-5">Sandrine Pataut</h4>
+                    <div class="d-block">
+                      <em class="g-color-gray-dark-v4 g-font-style-normal g-font-size-default">Beginners Data Workshop</em>
+                      
+                    </div>
+                    <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15 g-px-10"><b>Tutorial/Workshop</b></span>                  
+       
+                    <!-- End Figure Info -->
+                  </div>
+
+                  <hr class="g-brd-gray-light-v4 g-my-0">
+
+                  <!-- Figure List -->
+                  <ul class="row list-inline g-py-20 g-ma-0"> 
+                  </ul>
+                  <!-- End Figure List -->
+                </figure>
+                <!-- End Figure -->
+              </div> 
+              <p> </p>
+            
+            
+            
+            
+              <div class="col-md-4 g-mb-30 g-mb-0--md">
+                <!-- Figure -->
+                <figure class="g-bg-white g-brd-around g-brd-gray-light-v4 g-brd-primary--hover g-transition-0_2 text-center">
+                  <div class="g-py-40 g-px-20">
+                    <!-- Figure Image -->
+                    <img class="g-width-150 g-height-150 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% media 'speakers/Leonardo_Giordani_yYAmlv7.jpg' %}" alt="Image Description">
+                    <!-- Figure Image -->
+
+                    <!-- Figure Info -->
+                    <h4 class="h5 g-mb-5">Leonardo Giordani</h4>
+                    <div class="d-block">
+                      <em class="g-color-gray-dark-v4 g-font-style-normal g-font-size-default">Dive into Object-oriented Python</em>
+                      
+                    </div>
+                    <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15 g-px-10"><b>Tutorial/Workshop</b></span>                  
+       
+                    <!-- End Figure Info -->
+                  </div>
+
+                  <hr class="g-brd-gray-light-v4 g-my-0">
+
+                  <!-- Figure List -->
+                  <ul class="row list-inline g-py-20 g-ma-0"> 
+                    <li class="col g-brd-right g-brd-gray-light-v4">
+                      <a class="u-icon-v1 pulse g-color-youtube g-color-youtube--hover g-mr-15 g-mb-20"  data-toggle="tooltip" data-placement="bottom"  title="Watch Dive into Object-oriented Python on Youtube" href="https://youtu.be/__NUbjZUXNY" target="/">
+                        <i class="fa-brands fa-youtube"></i>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  <!-- End Figure List -->
+                </figure>
+                <!-- End Figure -->
+              </div> 
+              <p> </p>
+            
+            
+            
+            
+              <div class="col-md-4 g-mb-30 g-mb-0--md">
+                <!-- Figure -->
+                <figure class="g-bg-white g-brd-around g-brd-gray-light-v4 g-brd-primary--hover g-transition-0_2 text-center">
+                  <div class="g-py-40 g-px-20">
+                    <!-- Figure Image -->
+                    <img class="g-width-150 g-height-150 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% media 'speakers/carla_-_Carla_Vieira.jpg' %}" alt="Image Description">
+                    <!-- Figure Image -->
+
+                    <!-- Figure Info -->
+                    <h4 class="h5 g-mb-5">Carla Vieira</h4>
+                    <div class="d-block">
+                      <em class="g-color-gray-dark-v4 g-font-style-normal g-font-size-default">Using Explainable Artificial Intel…</em>
+                      
+                    </div>
+                    <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15 g-px-10"><b>Talk</b></span>                  
+       
+                    <!-- End Figure Info -->
+                  </div>
+
+                  <hr class="g-brd-gray-light-v4 g-my-0">
+
+                  <!-- Figure List -->
+                  <ul class="row list-inline g-py-20 g-ma-0"> 
+                    <li class="col g-brd-right g-brd-gray-light-v4">
+                      <a class="u-icon-v1 pulse g-color-youtube g-color-youtube--hover g-mr-15 g-mb-20"  data-toggle="tooltip" data-placement="bottom"  title="Watch Using Explainable Artificial Intelligence to open black-box models on Youtube" href="https://youtu.be/8puefWLWkXU" target="/">
+                        <i class="fa-brands fa-youtube"></i>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  <!-- End Figure List -->
+                </figure>
+                <!-- End Figure -->
+              </div> 
+              <p> </p>
+            
+            
+            
+            
+              <div class="col-md-4 g-mb-30 g-mb-0--md">
+                <!-- Figure -->
+                <figure class="g-bg-white g-brd-around g-brd-gray-light-v4 g-brd-primary--hover g-transition-0_2 text-center">
+                  <div class="g-py-40 g-px-20">
+                    <!-- Figure Image -->
+                    <img class="g-width-150 g-height-150 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% media 'speakers/Robson_J%C3%BAnior.jpeg' %}" alt="Image Description">
+                    <!-- Figure Image -->
+
+                    <!-- Figure Info -->
+                    <h4 class="h5 g-mb-5">Robson Júnior</h4>
+                    <div class="d-block">
+                      <em class="g-color-gray-dark-v4 g-font-style-normal g-font-size-default">Mastering a data pipeline with Pyt…</em>
+                      
+                    </div>
+                    <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15 g-px-10"><b>Talk</b></span>                  
+       
+                    <!-- End Figure Info -->
+                  </div>
+
+                  <hr class="g-brd-gray-light-v4 g-my-0">
+
+                  <!-- Figure List -->
+                  <ul class="row list-inline g-py-20 g-ma-0"> 
+                    <li class="col g-brd-right g-brd-gray-light-v4">
+                      <a class="u-icon-v1 pulse g-color-youtube g-color-youtube--hover g-mr-15 g-mb-20"  data-toggle="tooltip" data-placement="bottom"  title="Watch Mastering a data pipeline with Python: 6 years of learned lessons from mistakes to success. on Youtube" href="https://youtu.be/dQnKiVxO0PY" target="/">
+                        <i class="fa-brands fa-youtube"></i>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  <!-- End Figure List -->
+                </figure>
+                <!-- End Figure -->
+              </div> 
+              <p> </p>
+            
+            
+            
+            
+              <div class="col-md-4 g-mb-30 g-mb-0--md">
+                <!-- Figure -->
+                <figure class="g-bg-white g-brd-around g-brd-gray-light-v4 g-brd-primary--hover g-transition-0_2 text-center">
+                  <div class="g-py-40 g-px-20">
+                    <!-- Figure Image -->
+                    <img class="g-width-150 g-height-150 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% media 'speakers/gcdprofile_-_Gajendra_Deshpande.jpg' %}" alt="Image Description">
+                    <!-- Figure Image -->
+
+                    <!-- Figure Info -->
+                    <h4 class="h5 g-mb-5">Gajendra Deshpande</h4>
+                    <div class="d-block">
+                      <em class="g-color-gray-dark-v4 g-font-style-normal g-font-size-default">Deceptive Security using Python</em>
+                      
+                    </div>
+                    <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15 g-px-10"><b>Talk</b></span>                  
+       
+                    <!-- End Figure Info -->
+                  </div>
+
+                  <hr class="g-brd-gray-light-v4 g-my-0">
+
+                  <!-- Figure List -->
+                  <ul class="row list-inline g-py-20 g-ma-0"> 
+                    <li class="col g-brd-right g-brd-gray-light-v4">
+                      <a class="u-icon-v1 pulse g-color-youtube g-color-youtube--hover g-mr-15 g-mb-20"  data-toggle="tooltip" data-placement="bottom"  title="Watch Deceptive Security using Python on Youtube" href="https://youtu.be/RQa7yt0-ktk" target="/">
+                        <i class="fa-brands fa-youtube"></i>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  <!-- End Figure List -->
+                </figure>
+                <!-- End Figure -->
+              </div> 
+              <p> </p>
+            
+            
+            
+            
+              <div class="col-md-4 g-mb-30 g-mb-0--md">
+                <!-- Figure -->
+                <figure class="g-bg-white g-brd-around g-brd-gray-light-v4 g-brd-primary--hover g-transition-0_2 text-center">
+                  <div class="g-py-40 g-px-20">
+                    <!-- Figure Image -->
+                    <img class="g-width-150 g-height-150 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% media 'speakers/Abimbola_Olawale.jpg' %}" alt="Image Description">
+                    <!-- Figure Image -->
+
+                    <!-- Figure Info -->
+                    <h4 class="h5 g-mb-5">Abimbola Olawale Victor</h4>
+                    <div class="d-block">
+                      <em class="g-color-gray-dark-v4 g-font-style-normal g-font-size-default">A Deep Dive into Interactive Geosp…</em>
+                      
+                    </div>
+                    <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15 g-px-10"><b>Talk</b></span>                  
+       
+                    <!-- End Figure Info -->
+                  </div>
+
+                  <hr class="g-brd-gray-light-v4 g-my-0">
+
+                  <!-- Figure List -->
+                  <ul class="row list-inline g-py-20 g-ma-0"> 
+                    <li class="col g-brd-right g-brd-gray-light-v4">
+                      <a class="u-icon-v1 pulse g-color-youtube g-color-youtube--hover g-mr-15 g-mb-20"  data-toggle="tooltip" data-placement="bottom"  title="Watch A Deep Dive into Interactive Geospatial Visualization in Python using IpyLeaflet on Youtube" href="https://youtu.be/mGoiTyfXGFg" target="/">
+                        <i class="fa-brands fa-youtube"></i>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  <!-- End Figure List -->
+                </figure>
+                <!-- End Figure -->
+              </div> 
+              <p> </p>
+            
+            
+            
+            
+              <div class="col-md-4 g-mb-30 g-mb-0--md">
+                <!-- Figure -->
+                <figure class="g-bg-white g-brd-around g-brd-gray-light-v4 g-brd-primary--hover g-transition-0_2 text-center">
+                  <div class="g-py-40 g-px-20">
+                    <!-- Figure Image -->
+                    <img class="g-width-150 g-height-150 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% media 'speakers/Amber_Vanderburg1.jpg' %}" alt="Image Description">
+                    <!-- Figure Image -->
+
+                    <!-- Figure Info -->
+                    <h4 class="h5 g-mb-5">Amber Vanderburg</h4>
+                    <div class="d-block">
+                      <em class="g-color-gray-dark-v4 g-font-style-normal g-font-size-default">The Innovation Ninja</em>
+                      
+                    </div>
+                    <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15 g-px-10"><b>Talk</b></span>                  
+       
+                    <!-- End Figure Info -->
+                  </div>
+
+                  <hr class="g-brd-gray-light-v4 g-my-0">
+
+                  <!-- Figure List -->
+                  <ul class="row list-inline g-py-20 g-ma-0"> 
+                    <li class="col g-brd-right g-brd-gray-light-v4">
+                      <a class="u-icon-v1 pulse g-color-youtube g-color-youtube--hover g-mr-15 g-mb-20"  data-toggle="tooltip" data-placement="bottom"  title="Watch The Innovation Ninja on Youtube" href="https://youtu.be/WmgpxXxd7IA" target="/">
+                        <i class="fa-brands fa-youtube"></i>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  <!-- End Figure List -->
+                </figure>
+                <!-- End Figure -->
+              </div> 
+              <p> </p>
+            
+            
+            
+            
+              <div class="col-md-4 g-mb-30 g-mb-0--md">
+                <!-- Figure -->
+                <figure class="g-bg-white g-brd-around g-brd-gray-light-v4 g-brd-primary--hover g-transition-0_2 text-center">
+                  <div class="g-py-40 g-px-20">
+                    <!-- Figure Image -->
+                    <img class="g-width-150 g-height-150 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% media 'speakers/flavio_clesio.jpeg' %}" alt="Image Description">
+                    <!-- Figure Image -->
+
+                    <!-- Figure Info -->
+                    <h4 class="h5 g-mb-5">Flávio Clésio</h4>
+                    <div class="d-block">
+                      <em class="g-color-gray-dark-v4 g-font-style-normal g-font-size-default">Security in Machine Learning Engin…</em>
+                      
+                    </div>
+                    <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15 g-px-10"><b>Talk</b></span>                  
+       
+                    <!-- End Figure Info -->
+                  </div>
+
+                  <hr class="g-brd-gray-light-v4 g-my-0">
+
+                  <!-- Figure List -->
+                  <ul class="row list-inline g-py-20 g-ma-0"> 
+                    <li class="col g-brd-right g-brd-gray-light-v4">
+                      <a class="u-icon-v1 pulse g-color-youtube g-color-youtube--hover g-mr-15 g-mb-20"  data-toggle="tooltip" data-placement="bottom"  title="Watch Security in Machine Learning Engineering: Adversarial attacks and countermeasures on Youtube" href="https://youtu.be/aVFkJX4IlM0" target="/">
+                        <i class="fa-brands fa-youtube"></i>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  <!-- End Figure List -->
+                </figure>
+                <!-- End Figure -->
+              </div> 
+              <p> </p>
+            
+            
+            
+            
+              <div class="col-md-4 g-mb-30 g-mb-0--md">
+                <!-- Figure -->
+                <figure class="g-bg-white g-brd-around g-brd-gray-light-v4 g-brd-primary--hover g-transition-0_2 text-center">
+                  <div class="g-py-40 g-px-20">
+                    <!-- Figure Image -->
+                    <img class="g-width-150 g-height-150 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% media 'speakers/Steven_Kolawole.jpg' %}" alt="Image Description">
+                    <!-- Figure Image -->
+
+                    <!-- Figure Info -->
+                    <h4 class="h5 g-mb-5">Steven Kolawole</h4>
+                    <div class="d-block">
+                      <em class="g-color-gray-dark-v4 g-font-style-normal g-font-size-default">Streamlit: The Fastest Way to buil…</em>
+                      
+                    </div>
+                    <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15 g-px-10"><b>Talk</b></span>                  
+       
+                    <!-- End Figure Info -->
+                  </div>
+
+                  <hr class="g-brd-gray-light-v4 g-my-0">
+
+                  <!-- Figure List -->
+                  <ul class="row list-inline g-py-20 g-ma-0"> 
+                    <li class="col g-brd-right g-brd-gray-light-v4">
+                      <a class="u-icon-v1 pulse g-color-youtube g-color-youtube--hover g-mr-15 g-mb-20"  data-toggle="tooltip" data-placement="bottom"  title="Watch Streamlit: The Fastest Way to build Data Apps on Youtube" href="https://youtu.be/lnUhQa2fYG0" target="/">
+                        <i class="fa-brands fa-youtube"></i>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  <!-- End Figure List -->
+                </figure>
+                <!-- End Figure -->
+              </div> 
+              <p> </p>
+            
+            
+            
+            
+              <div class="col-md-4 g-mb-30 g-mb-0--md">
+                <!-- Figure -->
+                <figure class="g-bg-white g-brd-around g-brd-gray-light-v4 g-brd-primary--hover g-transition-0_2 text-center">
+                  <div class="g-py-40 g-px-20">
+                    <!-- Figure Image -->
+                    <img class="g-width-150 g-height-150 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% media 'speakers/ichux-image_-_Chukwudi_Nwachukwu.jpeg' %}" alt="Image Description">
+                    <!-- Figure Image -->
+
+                    <!-- Figure Info -->
+                    <h4 class="h5 g-mb-5">Chukwudi Nwachukwu</h4>
+                    <div class="d-block">
+                      <em class="g-color-gray-dark-v4 g-font-style-normal g-font-size-default">Sqlraw- Migrating Databases in Raw…</em>
+                      
+                    </div>
+                    <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15 g-px-10"><b>Talk</b></span>                  
+       
+                    <!-- End Figure Info -->
+                  </div>
+
+                  <hr class="g-brd-gray-light-v4 g-my-0">
+
+                  <!-- Figure List -->
+                  <ul class="row list-inline g-py-20 g-ma-0"> 
+                    <li class="col g-brd-right g-brd-gray-light-v4">
+                      <a class="u-icon-v1 pulse g-color-youtube g-color-youtube--hover g-mr-15 g-mb-20"  data-toggle="tooltip" data-placement="bottom"  title="Watch Sqlraw- Migrating Databases in Raw SQL on Youtube" href="https://youtu.be/WCTs638V5_o" target="/">
+                        <i class="fa-brands fa-youtube"></i>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  <!-- End Figure List -->
+                </figure>
+                <!-- End Figure -->
+              </div> 
+              <p> </p>
+            
+            
+            
+            
+              <div class="col-md-4 g-mb-30 g-mb-0--md">
+                <!-- Figure -->
+                <figure class="g-bg-white g-brd-around g-brd-gray-light-v4 g-brd-primary--hover g-transition-0_2 text-center">
+                  <div class="g-py-40 g-px-20">
+                    <!-- Figure Image -->
+                    <img class="g-width-150 g-height-150 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% media 'speakers/Oluwafemi_Tairu.jpg' %}" alt="Image Description">
+                    <!-- Figure Image -->
+
+                    <!-- Figure Info -->
+                    <h4 class="h5 g-mb-5">Tairu Oluwafemi</h4>
+                    <div class="d-block">
+                      <em class="g-color-gray-dark-v4 g-font-style-normal g-font-size-default">Building production-worthy website…</em>
+                      
+                    </div>
+                    <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15 g-px-10"><b>Talk</b></span>                  
+       
+                    <!-- End Figure Info -->
+                  </div>
+
+                  <hr class="g-brd-gray-light-v4 g-my-0">
+
+                  <!-- Figure List -->
+                  <ul class="row list-inline g-py-20 g-ma-0"> 
+                    <li class="col g-brd-right g-brd-gray-light-v4">
+                      <a class="u-icon-v1 pulse g-color-youtube g-color-youtube--hover g-mr-15 g-mb-20"  data-toggle="tooltip" data-placement="bottom"  title="Watch Building production-worthy websites with Django on Youtube" href="https://youtu.be/HS6ykg41Fq4" target="/">
+                        <i class="fa-brands fa-youtube"></i>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  <!-- End Figure List -->
+                </figure>
+                <!-- End Figure -->
+              </div> 
+              <p> </p>
+            
+            
+            
+            
+              <div class="col-md-4 g-mb-30 g-mb-0--md">
+                <!-- Figure -->
+                <figure class="g-bg-white g-brd-around g-brd-gray-light-v4 g-brd-primary--hover g-transition-0_2 text-center">
+                  <div class="g-py-40 g-px-20">
+                    <!-- Figure Image -->
+                    <img class="g-width-150 g-height-150 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% media 'speakers/Thomas_Ayih-Akakpo.jpeg' %}" alt="Image Description">
+                    <!-- Figure Image -->
+
+                    <!-- Figure Info -->
+                    <h4 class="h5 g-mb-5">Thomas Ayih-Akakpo</h4>
+                    <div class="d-block">
+                      <em class="g-color-gray-dark-v4 g-font-style-normal g-font-size-default">Turn django-admin into a lightweig…</em>
+                      
+                    </div>
+                    <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15 g-px-10"><b>Talk</b></span>                  
+       
+                    <!-- End Figure Info -->
+                  </div>
+
+                  <hr class="g-brd-gray-light-v4 g-my-0">
+
+                  <!-- Figure List -->
+                  <ul class="row list-inline g-py-20 g-ma-0"> 
+
+                    <li class="col g-brd-right g-brd-gray-light-v4">
+                      <a class="u-icon-v1 pulse g-color-youtube g-color-youtube--hover g-mr-15 g-mb-20"  data-toggle="tooltip" data-placement="bottom"  title="Watch Turn django-admin into a lightweight dashboard on Youtube" href="https://youtu.be/_IeWyFvqp9o" target="/">
+                        <i class="fa-brands fa-youtube"></i>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  <!-- End Figure List -->
+                </figure>
+                <!-- End Figure -->
+              </div> 
+              <p> </p>
+            
+            
+            
+            
+              <div class="col-md-4 g-mb-30 g-mb-0--md">
+                <!-- Figure -->
+                <figure class="g-bg-white g-brd-around g-brd-gray-light-v4 g-brd-primary--hover g-transition-0_2 text-center">
+                  <div class="g-py-40 g-px-20">
+                    <!-- Figure Image -->
+                    <img class="g-width-150 g-height-150 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% media 'speakers/Emeka_Boris_Ama.jpg' %}" alt="Image Description">
+                    <!-- Figure Image -->
+
+                    <!-- Figure Info -->
+                    <h4 class="h5 g-mb-5">Emeka Boris Ama</h4>
+                    <div class="d-block">
+                      <em class="g-color-gray-dark-v4 g-font-style-normal g-font-size-default">Simplifying topic modeling with Py…</em>
+                      
+                    </div>
+                    <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15 g-px-10"><b>Talk</b></span>                  
+       
+                    <!-- End Figure Info -->
+                  </div>
+
+                  <hr class="g-brd-gray-light-v4 g-my-0">
+
+                  <!-- Figure List -->
+                  <ul class="row list-inline g-py-20 g-ma-0"> 
+
+                    <li class="col g-brd-right g-brd-gray-light-v4">
+                      <a class="u-icon-v1 pulse g-color-youtube g-color-youtube--hover g-mr-15 g-mb-20"  data-toggle="tooltip" data-placement="bottom"  title="Watch Simplifying topic modeling with Python on Youtube" href="https://youtu.be/jvEiCbnJWWA" target="/">
+                        <i class="fa-brands fa-youtube"></i>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  <!-- End Figure List -->
+                </figure>
+                <!-- End Figure -->
+              </div> 
+              <p> </p>
+            
+            
+            
+            
+              <div class="col-md-4 g-mb-30 g-mb-0--md">
+                <!-- Figure -->
+                <figure class="g-bg-white g-brd-around g-brd-gray-light-v4 g-brd-primary--hover g-transition-0_2 text-center">
+                  <div class="g-py-40 g-px-20">
+                    <!-- Figure Image -->
+                    <img class="g-width-150 g-height-150 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% media 'speakers/williamga_-_William_Arias.jpg' %}" alt="Image Description">
+                    <!-- Figure Image -->
+
+                    <!-- Figure Info -->
+                    <h4 class="h5 g-mb-5">William Galindez Arias</h4>
+                    <div class="d-block">
+                      <em class="g-color-gray-dark-v4 g-font-style-normal g-font-size-default">Deploy your Machine Learning Bots …</em>
+                      
+                    </div>
+                    <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15 g-px-10"><b>Talk</b></span>                  
+       
+                    <!-- End Figure Info -->
+                  </div>
+
+                  <hr class="g-brd-gray-light-v4 g-my-0">
+
+                  <!-- Figure List -->
+                  <ul class="row list-inline g-py-20 g-ma-0"> 
+                    <li class="col g-brd-right g-brd-gray-light-v4">
+                      <a class="u-icon-v1 pulse g-color-youtube g-color-youtube--hover g-mr-15 g-mb-20"  data-toggle="tooltip" data-placement="bottom"  title="Watch Deploy your Machine Learning Bots like a boss with CI/CD on Youtube" href="https://youtu.be/6mLAOgFoEJk" target="/">
+                        <i class="fa-brands fa-youtube"></i>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  <!-- End Figure List -->
+                </figure>
+                <!-- End Figure -->
+              </div> 
+              <p> </p>
+            
+            
+            
+            
+              <div class="col-md-4 g-mb-30 g-mb-0--md">
+                <!-- Figure -->
+                <figure class="g-bg-white g-brd-around g-brd-gray-light-v4 g-brd-primary--hover g-transition-0_2 text-center">
+                  <div class="g-py-40 g-px-20">
+                    <!-- Figure Image -->
+                    <img class="g-width-150 g-height-150 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% media 'speakers/SEGUN_EMMANUEL_-_olaniyan_oluwasegun.jpg' %}" alt="Image Description">
+                    <!-- Figure Image -->
+
+                    <!-- Figure Info -->
+                    <h4 class="h5 g-mb-5">Olaniyan Oluwasegun Emmanuel</h4>
+                    <div class="d-block">
+                      <em class="g-color-gray-dark-v4 g-font-style-normal g-font-size-default">Beginner approach to Web Scraping</em>
+                      
+                    </div>
+                    <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15 g-px-10"><b>Talk</b></span>                  
+       
+                    <!-- End Figure Info -->
+                  </div>
+
+                  <hr class="g-brd-gray-light-v4 g-my-0">
+
+                  <!-- Figure List -->
+                  <ul class="row list-inline g-py-20 g-ma-0"> 
+                    <li class="col g-brd-right g-brd-gray-light-v4">
+                      <a class="u-icon-v1 pulse g-color-youtube g-color-youtube--hover g-mr-15 g-mb-20"  data-toggle="tooltip" data-placement="bottom"  title="Watch Beginner approach to Web Scraping on Youtube" href="https://youtu.be/PYGCroZYuVw" target="/">
+                        <i class="fa-brands fa-youtube"></i>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  <!-- End Figure List -->
+                </figure>
+                <!-- End Figure -->
+              </div> 
+              <p> </p>
+            
+            
+            
+            
+              <div class="col-md-4 g-mb-30 g-mb-0--md">
+                <!-- Figure -->
+                <figure class="g-bg-white g-brd-around g-brd-gray-light-v4 g-brd-primary--hover g-transition-0_2 text-center">
+                  <div class="g-py-40 g-px-20">
+                    <!-- Figure Image -->
+                    <img class="g-width-150 g-height-150 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% media 'speakers/Serah_Njambi.jpg' %}" alt="Image Description">
+                    <!-- Figure Image -->
+
+                    <!-- Figure Info -->
+                    <h4 class="h5 g-mb-5">Serah Njambi Rono</h4>
+                    <div class="d-block">
+                      <em class="g-color-gray-dark-v4 g-font-style-normal g-font-size-default">Came for the code, stayed for the …</em>
+                      
+                    </div>
+                    <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15 g-px-10"><b>Talk</b></span>                  
+       
+                    <!-- End Figure Info -->
+                  </div>
+
+                  <hr class="g-brd-gray-light-v4 g-my-0">
+
+                  <!-- Figure List -->
+                  <ul class="row list-inline g-py-20 g-ma-0"> 
+
+                    <li class="col g-brd-right g-brd-gray-light-v4">
+                      <a class="u-icon-v1 pulse g-color-youtube g-color-youtube--hover g-mr-15 g-mb-20"  data-toggle="tooltip" data-placement="bottom"  title="Watch Came for the code, stayed for the community: Lessons in building and sustaining technical communities on Youtube" href="https://youtu.be/zGcIPFF3K8c" target="/">
+                        <i class="fa-brands fa-youtube"></i>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  <!-- End Figure List -->
+                </figure>
+                <!-- End Figure -->
+              </div> 
+              <p> </p>
+            
+            
+            
+            
+              <div class="col-md-4 g-mb-30 g-mb-0--md">
+                <!-- Figure -->
+                <figure class="g-bg-white g-brd-around g-brd-gray-light-v4 g-brd-primary--hover g-transition-0_2 text-center">
+                  <div class="g-py-40 g-px-20">
+                    <!-- Figure Image -->
+                    <img class="g-width-150 g-height-150 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% media 'speakers/Jasveen_Sandral1.jpg' %}" alt="Image Description">
+                    <!-- Figure Image -->
+
+                    <!-- Figure Info -->
+                    <h4 class="h5 g-mb-5">Jasveen Sandral</h4>
+                    <div class="d-block">
+                      <em class="g-color-gray-dark-v4 g-font-style-normal g-font-size-default">How drastically will NLP (as a com…</em>
+                      
+                    </div>
+                    <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15 g-px-10"><b>Talk</b></span>                  
+       
+                    <!-- End Figure Info -->
+                  </div>
+
+                  <hr class="g-brd-gray-light-v4 g-my-0">
+
+                  <!-- Figure List -->
+                  <ul class="row list-inline g-py-20 g-ma-0"> 
+                    <li class="col g-brd-right g-brd-gray-light-v4">
+                      <a class="u-icon-v1 pulse g-color-youtube g-color-youtube--hover g-mr-15 g-mb-20"  data-toggle="tooltip" data-placement="bottom"  title="Watch How drastically will NLP (as a computer software) change our life in the near future? on Youtube" href="https://youtu.be/TjQvPz4IKNQ" target="/">
+                        <i class="fa-brands fa-youtube"></i>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  <!-- End Figure List -->
+                </figure>
+                <!-- End Figure -->
+              </div> 
+              <p> </p>
+            
+            
+            
+            
+              <div class="col-md-4 g-mb-30 g-mb-0--md">
+                <!-- Figure -->
+                <figure class="g-bg-white g-brd-around g-brd-gray-light-v4 g-brd-primary--hover g-transition-0_2 text-center">
+                  <div class="g-py-40 g-px-20">
+                    <!-- Figure Image -->
+                    <img class="g-width-150 g-height-150 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% media 'speakers/Vince_Knight.jpg' %}" alt="Image Description">
+                    <!-- Figure Image -->
+
+                    <!-- Figure Info -->
+                    <h4 class="h5 g-mb-5">Vince Knight</h4>
+                    <div class="d-block">
+                      <em class="g-color-gray-dark-v4 g-font-style-normal g-font-size-default">Modelling epidemics with Python</em>
+                      
+                    </div>
+                    <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15 g-px-10"><b>Talk</b></span>                  
+       
+                    <!-- End Figure Info -->
+                  </div>
+
+                  <hr class="g-brd-gray-light-v4 g-my-0">
+
+                  <!-- Figure List -->
+                  <ul class="row list-inline g-py-20 g-ma-0"> 
+                    <li class="col g-brd-right g-brd-gray-light-v4">
+                      <a class="u-icon-v1 pulse g-color-youtube g-color-youtube--hover g-mr-15 g-mb-20"  data-toggle="tooltip" data-placement="bottom"  title="Watch Modelling epidemics with Python on Youtube" href="https://youtu.be/hW9O9LhlsbY" target="/">
+                        <i class="fa-brands fa-youtube"></i>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  <!-- End Figure List -->
+                </figure>
+                <!-- End Figure -->
+              </div> 
+              <p> </p>
+            
+            
+            
+            
+              <div class="col-md-4 g-mb-30 g-mb-0--md">
+                <!-- Figure -->
+                <figure class="g-bg-white g-brd-around g-brd-gray-light-v4 g-brd-primary--hover g-transition-0_2 text-center">
+                  <div class="g-py-40 g-px-20">
+                    <!-- Figure Image -->
+                    <img class="g-width-150 g-height-150 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% media 'speakers/Cheuk_Ting_Ho.JPG' %}" alt="Image Description">
+                    <!-- Figure Image -->
+
+                    <!-- Figure Info -->
+                    <h4 class="h5 g-mb-5">Cheuk Ting Ho</h4>
+                    <div class="d-block">
+                      <em class="g-color-gray-dark-v4 g-font-style-normal g-font-size-default">Untangle Spaghetti Python Paths - …</em>
+                      
+                    </div>
+                    <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15 g-px-10"><b>Talk</b></span>                  
+       
+                    <!-- End Figure Info -->
+                  </div>
+
+                  <hr class="g-brd-gray-light-v4 g-my-0">
+
+                  <!-- Figure List -->
+                  <ul class="row list-inline g-py-20 g-ma-0"> 
+                    <li class="col g-brd-right g-brd-gray-light-v4">
+                      <a class="u-icon-v1 pulse g-color-youtube g-color-youtube--hover g-mr-15 g-mb-20"  data-toggle="tooltip" data-placement="bottom"  title="Watch Untangle Spaghetti Python Paths -  How to manage your Python enviroments on Youtube" href="https://youtu.be/ec2qVxdOySU" target="/">
+                        <i class="fa-brands fa-youtube"></i>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  <!-- End Figure List -->
+                </figure>
+                <!-- End Figure -->
+              </div> 
+              <p> </p>
+            
+            
+            
+            
+              <div class="col-md-4 g-mb-30 g-mb-0--md">
+                <!-- Figure -->
+                <figure class="g-bg-white g-brd-around g-brd-gray-light-v4 g-brd-primary--hover g-transition-0_2 text-center">
+                  <div class="g-py-40 g-px-20">
+                    <!-- Figure Image -->
+                    <img class="g-width-150 g-height-150 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% media 'speakers/nikkie_pyconjp_talk_-_Takuya_Futatsugi.jpg' %}" alt="Image Description">
+                    <!-- Figure Image -->
+
+                    <!-- Figure Info -->
+                    <h4 class="h5 g-mb-5">Nikkie</h4>
+                    <div class="d-block">
+                      <em class="g-color-gray-dark-v4 g-font-style-normal g-font-size-default">How to automate PyCon staff activi…</em>
+                      
+                    </div>
+                    <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15 g-px-10"><b>Talk</b></span>                  
+       
+                    <!-- End Figure Info -->
+                  </div>
+
+                  <hr class="g-brd-gray-light-v4 g-my-0">
+
+                  <!-- Figure List -->
+                  <ul class="row list-inline g-py-20 g-ma-0"> 
+
+                    <li class="col g-brd-right g-brd-gray-light-v4">
+                      <a class="u-icon-v1 pulse g-color-youtube g-color-youtube--hover g-mr-15 g-mb-20"  data-toggle="tooltip" data-placement="bottom"  title="Watch How to automate PyCon staff activities with Python! ~In PyCon JP staff activities, I automated operation about Slack and Google Drive using AWS~ on Youtube" href="https://youtu.be/JqmGdlKLhaY" target="/">
+                        <i class="fa-brands fa-youtube"></i>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  <!-- End Figure List -->
+                </figure>
+                <!-- End Figure -->
+              </div> 
+              <p> </p>
+            
+            
+            
+            
+              <div class="col-md-4 g-mb-30 g-mb-0--md">
+                <!-- Figure -->
+                <figure class="g-bg-white g-brd-around g-brd-gray-light-v4 g-brd-primary--hover g-transition-0_2 text-center">
+                  <div class="g-py-40 g-px-20">
+                    <!-- Figure Image -->
+                    <img class="g-width-150 g-height-150 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% media 'speakers/Vuyisile_Ndlovu.JPG' %}" alt="Image Description">
+                    <!-- Figure Image -->
+
+                    <!-- Figure Info -->
+                    <h4 class="h5 g-mb-5">Vuyisile Ndlovu</h4>
+                    <div class="d-block">
+                      <em class="g-color-gray-dark-v4 g-font-style-normal g-font-size-default">PyPI in a box: Using a Raspberry P…</em>
+                      
+                    </div>
+                    <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15 g-px-10"><b>Talk</b></span>                  
+       
+                    <!-- End Figure Info -->
+                  </div>
+
+                  <hr class="g-brd-gray-light-v4 g-my-0">
+
+                  <!-- Figure List -->
+                  <ul class="row list-inline g-py-20 g-ma-0"> 
+                    <li class="col g-brd-right g-brd-gray-light-v4">
+                      <a class="u-icon-v1 pulse g-color-youtube g-color-youtube--hover g-mr-15 g-mb-20"  data-toggle="tooltip" data-placement="bottom"  title="Watch PyPI in a box: Using a Raspberry Pi as a portable PyPI server on Youtube" href="https://youtu.be/sqMSyYgp6Fc" target="/">
+                        <i class="fa-brands fa-youtube"></i>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  <!-- End Figure List -->
+                </figure>
+                <!-- End Figure -->
+              </div> 
+              <p> </p>
+            
+            
+            
+            
+              <div class="col-md-4 g-mb-30 g-mb-0--md">
+                <!-- Figure -->
+                <figure class="g-bg-white g-brd-around g-brd-gray-light-v4 g-brd-primary--hover g-transition-0_2 text-center">
+                  <div class="g-py-40 g-px-20">
+                    <!-- Figure Image -->
+                    <img class="g-width-150 g-height-150 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% media 'speakers/profile_-_Ric_da_Silva.jpg' %}" alt="Image Description">
+                    <!-- Figure Image -->
+
+                    <!-- Figure Info -->
+                    <h4 class="h5 g-mb-5">Ric da Silva</h4>
+                    <div class="d-block">
+                      <em class="g-color-gray-dark-v4 g-font-style-normal g-font-size-default">Building a serverless computation …</em>
+                      
+                    </div>
+                    <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15 g-px-10"><b>Talk</b></span>                  
+       
+                    <!-- End Figure Info -->
+                  </div>
+
+                  <hr class="g-brd-gray-light-v4 g-my-0">
+
+                  <!-- Figure List -->
+                  <ul class="row list-inline g-py-20 g-ma-0"> 
+                    
+
+                    <li class="col g-brd-right g-brd-gray-light-v4">
+                      <a class="u-icon-v1 pulse g-color-youtube g-color-youtube--hover g-mr-15 g-mb-20"  data-toggle="tooltip" data-placement="bottom"  title="Watch Building a serverless computation environment with Python on Youtube" href="https://youtu.be/I8VGfOBzmF4" target="/">
+                        <i class="fa-brands fa-youtube"></i>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  <!-- End Figure List -->
+                </figure>
+                <!-- End Figure -->
+              </div> 
+              <p> </p>
+            
+            
+            
+            
+              <div class="col-md-4 g-mb-30 g-mb-0--md">
+                <!-- Figure -->
+                <figure class="g-bg-white g-brd-around g-brd-gray-light-v4 g-brd-primary--hover g-transition-0_2 text-center">
+                  <div class="g-py-40 g-px-20">
+                    <!-- Figure Image -->
+                    <img class="g-width-150 g-height-150 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% media 'speakers/Aisha_Bello1.jpg' %}" alt="Image Description">
+                    <!-- Figure Image -->
+
+                    <!-- Figure Info -->
+                    <h4 class="h5 g-mb-5">Aisha Bello</h4>
+                    <div class="d-block">
+                      <em class="g-color-gray-dark-v4 g-font-style-normal g-font-size-default">Switching Careers: From Jupyter to…</em>
+                      
+                    </div>
+                    <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15 g-px-10"><b>Talk</b></span>                  
+       
+                    <!-- End Figure Info -->
+                  </div>
+
+                  <hr class="g-brd-gray-light-v4 g-my-0">
+
+                  <!-- Figure List -->
+                  <ul class="row list-inline g-py-20 g-ma-0"> 
+
+                    
+
+                    <li class="col g-brd-right g-brd-gray-light-v4">
+                      <a class="u-icon-v1 pulse g-color-youtube g-color-youtube--hover g-mr-15 g-mb-20"  data-toggle="tooltip" data-placement="bottom"  title="Watch Switching Careers: From Jupyter to the Cloud on Youtube" href="https://youtu.be/TKK4ZjCux1I" target="/">
+                        <i class="fa-brands fa-youtube"></i>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  <!-- End Figure List -->
+                </figure>
+                <!-- End Figure -->
+              </div> 
+              <p> </p> 
+            
+              <div class="col-md-4 g-mb-30 g-mb-0--md">
+                <!-- Figure -->
+                <figure class="g-bg-white g-brd-around g-brd-gray-light-v4 g-brd-primary--hover g-transition-0_2 text-center">
+                  <div class="g-py-40 g-px-20">
+                    <!-- Figure Image -->
+                    <img class="g-width-150 g-height-150 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% media 'speakers/Aly_Sivji.jpeg' %}" alt="Image Description">
+                    <!-- Figure Image -->
+
+                    <!-- Figure Info -->
+                    <h4 class="h5 g-mb-5">Aly Sivji</h4>
+                    <div class="d-block">
+                      <em class="g-color-gray-dark-v4 g-font-style-normal g-font-size-default">Busy Beaver: Chicago Python&#39;s Comm…</em>
+                      
+                    </div>
+                    <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15 g-px-10"><b>Talk</b></span>                  
+       
+                    <!-- End Figure Info -->
+                  </div>
+
+                  <hr class="g-brd-gray-light-v4 g-my-0">
+
+                  <!-- Figure List -->
+                  <ul class="row list-inline g-py-20 g-ma-0"> 
+
+                    <li class="col g-brd-right g-brd-gray-light-v4">
+                      <a class="u-icon-v1 pulse g-color-youtube g-color-youtube--hover g-mr-15 g-mb-20"  data-toggle="tooltip" data-placement="bottom"  title="Watch Busy Beaver: Chicago Python&#39;s Community Engagement Slack bot on Youtube" href="https://youtu.be/Mg1l_QFkx1I" target="/">
+                        <i class="fa-brands fa-youtube"></i>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  <!-- End Figure List -->
+                </figure>
+                <!-- End Figure -->
+              </div> 
+              <p> </p> 
+            
+              <div class="col-md-4 g-mb-30 g-mb-0--md">
+                <!-- Figure -->
+                <figure class="g-bg-white g-brd-around g-brd-gray-light-v4 g-brd-primary--hover g-transition-0_2 text-center">
+                  <div class="g-py-40 g-px-20">
+                    <!-- Figure Image -->
+                    <img class="g-width-150 g-height-150 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% media 'speakers/Leonardo_Giordani_Mtwzfgy.jpg' %}" alt="Image Description">
+                    <!-- Figure Image -->
+
+                    <!-- Figure Info -->
+                    <h4 class="h5 g-mb-5">Leonardo Giordani</h4>
+                    <div class="d-block">
+                      <em class="g-color-gray-dark-v4 g-font-style-normal g-font-size-default">Clean Architectures in Python</em>
+                      
+                    </div>
+                    <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15 g-px-10"><b>Talk</b></span>                  
+       
+                    <!-- End Figure Info -->
+                  </div>
+
+                  <hr class="g-brd-gray-light-v4 g-my-0">
+
+                  <!-- Figure List -->
+                  <ul class="row list-inline g-py-20 g-ma-0"> 
+                    <li class="col g-brd-right g-brd-gray-light-v4">
+                      <a class="u-icon-v1 pulse g-color-youtube g-color-youtube--hover g-mr-15 g-mb-20"  data-toggle="tooltip" data-placement="bottom"  title="Watch Clean Architectures in Python on Youtube" href="https://youtu.be/pKJ4FXijva0" target="/">
+                        <i class="fa-brands fa-youtube"></i>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  <!-- End Figure List -->
+                </figure>
+                <!-- End Figure -->
+              </div> 
+              <p> </p> 
+            
+              <div class="col-md-4 g-mb-30 g-mb-0--md">
+                <!-- Figure -->
+                <figure class="g-bg-white g-brd-around g-brd-gray-light-v4 g-brd-primary--hover g-transition-0_2 text-center">
+                  <div class="g-py-40 g-px-20">
+                    <!-- Figure Image -->
+                    <img class="g-width-150 g-height-150 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% media 'speakers/D%C3%A9bora_Azevedo.jpg' %}" alt="Image Description">
+                    <!-- Figure Image -->
+
+                    <!-- Figure Info -->
+                    <h4 class="h5 g-mb-5">Débora Azevedo</h4>
+                    <div class="d-block">
+                      <em class="g-color-gray-dark-v4 g-font-style-normal g-font-size-default">How PyLadies Brazil became the big…</em>
+                      
+                    </div>
+                    <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15 g-px-10"><b>Talk</b></span>                  
+       
+                    <!-- End Figure Info -->
+                  </div>
+
+                  <hr class="g-brd-gray-light-v4 g-my-0">
+
+                  <!-- Figure List -->
+                  <ul class="row list-inline g-py-20 g-ma-0"> 
+
+                    <li class="col g-brd-right g-brd-gray-light-v4">
+                      <a class="u-icon-v1 pulse g-color-youtube g-color-youtube--hover g-mr-15 g-mb-20"  data-toggle="tooltip" data-placement="bottom"  title="Watch How PyLadies Brazil became the biggest PyLadies chapter of the world on Youtube" href="https://youtu.be/dijTpK3O6so" target="/">
+                        <i class="fa-brands fa-youtube"></i>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  <!-- End Figure List -->
+                </figure>
+                <!-- End Figure -->
+              </div> 
+              <p> </p> 
+            
+              <div class="col-md-4 g-mb-30 g-mb-0--md">
+                <!-- Figure -->
+                <figure class="g-bg-white g-brd-around g-brd-gray-light-v4 g-brd-primary--hover g-transition-0_2 text-center">
+                  <div class="g-py-40 g-px-20">
+                    <!-- Figure Image -->
+                    <img class="g-width-150 g-height-150 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% media 'speakers/Reuven_Lerner.jpg' %}" alt="Image Description">
+                    <!-- Figure Image -->
+
+                    <!-- Figure Info -->
+                    <h4 class="h5 g-mb-5">Reuven M. Lerner</h4>
+                    <div class="d-block">
+                      <em class="g-color-gray-dark-v4 g-font-style-normal g-font-size-default">Generators, coroutines, and nanose…</em>
+                      
+                    </div>
+                    <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15 g-px-10"><b>Talk</b></span>                  
+       
+                    <!-- End Figure Info -->
+                  </div>
+
+                  <hr class="g-brd-gray-light-v4 g-my-0">
+
+                  <!-- Figure List -->
+                  <ul class="row list-inline g-py-20 g-ma-0"> 
+
+                    <li class="col g-brd-right g-brd-gray-light-v4">
+                      <a class="u-icon-v1 pulse g-color-youtube g-color-youtube--hover g-mr-15 g-mb-20"  data-toggle="tooltip" data-placement="bottom"  title="Watch Generators, coroutines, and nanoservices: Understanding and using on Youtube" href="https://youtu.be/tkoaeVS2zRQ" target="/">
+                        <i class="fa-brands fa-youtube"></i>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  <!-- End Figure List -->
+                </figure>
+                <!-- End Figure -->
+              </div> 
+              <p> </p> 
+            
+              <div class="col-md-4 g-mb-30 g-mb-0--md">
+                <!-- Figure -->
+                <figure class="g-bg-white g-brd-around g-brd-gray-light-v4 g-brd-primary--hover g-transition-0_2 text-center">
+                  <div class="g-py-40 g-px-20">
+                    <!-- Figure Image -->
+                    <img class="g-width-150 g-height-150 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% media 'speakers/Dustin_Haffner.jpg' %}" alt="Image Description">
+                    <!-- Figure Image -->
+
+                    <!-- Figure Info -->
+                    <h4 class="h5 g-mb-5">Dustin Haffner</h4>
+                    <div class="d-block">
+                      <em class="g-color-gray-dark-v4 g-font-style-normal g-font-size-default">Visualizing the Rubik&#39;s Cube in Py…</em>
+                      
+                    </div>
+                    <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15 g-px-10"><b>Talk</b></span>                  
+       
+                    <!-- End Figure Info -->
+                  </div>
+
+                  <hr class="g-brd-gray-light-v4 g-my-0">
+
+                  <!-- Figure List -->
+                  <ul class="row list-inline g-py-20 g-ma-0"> 
+
+                    <li class="col g-brd-right g-brd-gray-light-v4">
+                      <a class="u-icon-v1 pulse g-color-youtube g-color-youtube--hover g-mr-15 g-mb-20"  data-toggle="tooltip" data-placement="bottom"  title="Watch Visualizing the Rubik&#39;s Cube in Python on Youtube" href="https://youtu.be/iXIaCW2cxdw" target="/">
+                        <i class="fa-brands fa-youtube"></i>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  <!-- End Figure List -->
+                </figure>
+                <!-- End Figure -->
+              </div> 
+              <p> </p> 
+              <div class="col-md-4 g-mb-30 g-mb-0--md">
+                <!-- Figure -->
+                <figure class="g-bg-white g-brd-around g-brd-gray-light-v4 g-brd-primary--hover g-transition-0_2 text-center">
+                  <div class="g-py-40 g-px-20">
+                    <!-- Figure Image -->
+                    <img class="g-width-150 g-height-150 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% media 'speakers/Miroslav_%C5%A0ediv%C3%BD_3jmhRkw.jpg' %}" alt="Image Description">
+                    <!-- Figure Image -->
+
+                    <!-- Figure Info -->
+                    <h4 class="h5 g-mb-5">Miroslav Šedivý</h4>
+                    <div class="d-block">
+                      <em class="g-color-gray-dark-v4 g-font-style-normal g-font-size-default">A Day Has Only 24±1 Hours</em>
+                      
+                    </div>
+                    <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15 g-px-10"><b>Talk</b></span>                  
+       
+                    <!-- End Figure Info -->
+                  </div>
+
+                  <hr class="g-brd-gray-light-v4 g-my-0">
+
+                  <!-- Figure List -->
+                  <ul class="row list-inline g-py-20 g-ma-0"> 
+
+                    <li class="col g-brd-right g-brd-gray-light-v4">
+                      <a class="u-icon-v1 pulse g-color-youtube g-color-youtube--hover g-mr-15 g-mb-20"  data-toggle="tooltip" data-placement="bottom"  title="Watch A Day Has Only 24±1 Hours on Youtube" href="https://youtu.be/U1dKV1H0Rpg" target="/">
+                        <i class="fa-brands fa-youtube"></i>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  <!-- End Figure List -->
+                </figure>
+                <!-- End Figure -->
+              </div> 
+              <p> </p>
+             
+              <div class="col-md-4 g-mb-30 g-mb-0--md">
+                <!-- Figure -->
+                <figure class="g-bg-white g-brd-around g-brd-gray-light-v4 g-brd-primary--hover g-transition-0_2 text-center">
+                  <div class="g-py-40 g-px-20">
+                    <!-- Figure Image -->
+                    <img class="g-width-150 g-height-150 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% media 'speakers/tania-allard-v2.jpg' %}" alt="Image Description">
+                    <!-- Figure Image -->
+
+                    <!-- Figure Info -->
+                    <h4 class="h5 g-mb-5">Tania Allard</h4>
+                    <div class="d-block">
+                      <em class="g-color-gray-dark-v4 g-font-style-normal g-font-size-default">DevOps for Data Science? - automat…</em>
+                      
+                    </div>
+                    <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15 g-px-10"><b>Talk</b></span>                  
+       
+                    <!-- End Figure Info -->
+                  </div>
+
+                  <hr class="g-brd-gray-light-v4 g-my-0">
+
+                  <!-- Figure List -->
+                  <ul class="row list-inline g-py-20 g-ma-0"> 
+
+                    <li class="col g-brd-right g-brd-gray-light-v4">
+                      <a class="u-icon-v1 pulse g-color-youtube g-color-youtube--hover g-mr-15 g-mb-20"  data-toggle="tooltip" data-placement="bottom"  title="Watch DevOps for Data Science? - automate the boring stuff and leverage the OSS ecosystem on Youtube" href="https://youtu.be/VOf62bDxWTM" target="/">
+                        <i class="fa-brands fa-youtube"></i>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  <!-- End Figure List -->
+                </figure>
+                <!-- End Figure -->
+              </div> 
+              <p> </p>
+                
+            </div> 
+          <!-- End Timeline Box --> 
+              </div> 
+              </div> 
+
+                 <!-- End Speakers List -->
+               </div>
+             </div>
+             <!-- End Speakers List Panel --> 
+ 
+               </div> 
+
+      </div>
+    <!-- End body -->
+
+
+ 
+
+
+{% endblock %}

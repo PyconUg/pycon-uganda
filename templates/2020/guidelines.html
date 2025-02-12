@@ -1,0 +1,120 @@
+{% extends "2020/base.html" %}
+{% load i18n static %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Incident handling guidelines | PyCon Africa 2020" %}{% endif %}{% endblock %}
+
+ 
+
+
+
+{% block content %}
+{% include '2020/navbar.html' %}
+
+      <!-- Section Content -->
+      <section class="g-bg-img-hero g-pos-rel u-bg-overlay g-bg-darkblue-opacity-0_6--after g-pt-150" style="background-image: url({% static '2020/img/body1.png' %});">
+        <div class="container g-max-width-750 u-bg-overlay__inner g-color-white g-mb-60">
+       
+            <h3 class="text-center text-uppercase h3 g-font-weight-700 g-font-size-20 g-font-size-50--md g-color-primary g-mb-20 g-mb-50--md">Incident handling guidelines</h3>
+            <br>
+            <br>
+        </div>
+
+      </section>
+      <!-- End Section Content -->
+       <!-- body -->
+       <div class="container">
+        <div class="row">
+            <div class="u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30" >
+                <div >
+                  <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-20 g-mb-30">Reporting
+                    <span class="g-color-primary">a case</span></h2>
+                    <p class="g-color-black g-font-size-16">
+                        <p class="g-color-black g-font-size-16">All committee members should read this document and be familiar with its contents.</p>
+
+                        <p class="g-color-black g-font-size-16">Be sure to have a good understanding of our <a class="g-color-red" href="/coc" class>Code of Conduct</a>. Also have a good understanding of <a class="g-color-red" href="/coc/reporting-guidelines/" class>what is expected from an attendee who reports an incident</a>.</p>
+                        
+                        <h3 class="g-font-size-20 g-font-weight-700 g-color-primary">First response</h3>
+                        
+                        <p class="g-color-black g-font-size-16"><strong>If there is any general threat to attendees or the safety of anyone is in doubt, summon security or call the police.</strong></p>
+                        
+                        <h3  class="g-font-size-20 g-font-weight-700 g-color-primary">Gather information</h3>
+                        
+                        <p class="g-color-black g-font-size-16">Try to get as much of the incident in written form by the reporter. If you cannot, transcribe it yourself as it was told to you. The important information to gather includes the following:</p>
+                        
+                        <ul class="g-color-black g-font-size-16">
+                            <li>identifying information about the individuals involved</li>
+                            <li>the nature of the problematic behaviour</li>
+                            <li>the approximate time of the behaviour</li>
+                            <li>the circumstances surrounding the incident</li>
+                        </ul>
+                        
+                        <h3  class="g-font-size-20 g-font-weight-700 g-color-primary">If someone is in distress</h3>
+                        
+                        <ul class="g-color-black g-font-size-16">
+                            <li>Find them a quiet and private place to sit.</li>
+                            <li>Ask them if there is a friend whom they'd like to be with. </li>
+                            <li>Ask them "how can I help?".</li>
+                            <li>Ensure they have contact information for you and the committee.</li>
+                        </ul>
+                        
+                        <h3  class="g-font-size-20 g-font-weight-700 g-color-primary">Follow up the report</h3>
+                        
+                        <p class="g-color-black g-font-size-16">Alert the conference chair and other committee members. This meeting needs to establish, as far as possible:</p>
+                        
+                        <ul class="g-color-black g-font-size-16">
+                            <li>what happened</li>
+                            <li>what needs to be done, who will do it, and when</li>
+                        </ul>
+                        
+                        <p class="g-color-black g-font-size-16">If the committee decides that the complaint merits further action, the subject of the complaint needs to be informed about the matter. This must take place privately.</p>
+                        
+                        <p class="g-color-black g-font-size-16">Allow them to respond.</p>
+                        
+                        <p class="g-color-black g-font-size-16">On the basis of all the information you have received, the committee will need to decide on an appropriate action and communicate it to the parties involved.</p>
+                        
+                        <p class="g-color-black g-font-size-16">If appropriate, make a public announcement regarding the issue. This need not give any more details than "We received a code of conduct complaint, investigated it according to our published policy, and decided [your decision]."</p>
+                        
+                        <h3  class="g-font-size-20 g-font-weight-700 g-color-primary">Emergency action</h3>
+                        
+                        <p class="g-color-black g-font-size-16">Occasionally, you may be required to act immediately. For example, you may need to interrupt or even terminate a talk or session that is in serious violation of the code of conduct, or warn someone about language or behaviour on the spot.</p>
+                        
+                        <h3  class="g-font-size-20 g-font-weight-700 g-color-primary">What not to do</h3>
+                        
+                        <p class="g-color-black g-font-size-16">Do not:</p>
+                        
+                        <ul class="g-color-black g-font-size-16">
+                            <li>invite a complainant to withdraw a complaint, or imply that they might wish to (however, you can give them the option by using a form such as "We will [do such-and-such], as long as you are still happy with that."</li>
+                            <li>ask for their advice on how to deal with the issue</li>
+                            <li>ask for their opinion on an appropriate sanction</li>
+                        </ul>
+                        
+                        <p class="g-color-black g-font-size-16">However seriously you take a complaint, avoid implying that you will take a particular course of action until the committee has been able to consider the matter.</p>
+                        
+                        <h3  class="g-font-size-20 g-font-weight-700 g-color-primary">Keep a written record</h3>
+                        
+                        <p class="g-color-black g-font-size-16">It's important to have a written record of the complaint, decisions, and actions taken. Some actions will need to be taken after the event. A written record ensures that the matter can be followed up adequately.</p>
+                            
+                </div>
+            </div>
+
+
+
+        </div>
+       </div>
+
+
+
+        <!--
+            <div class="u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30 col col-12 col-sm-12 col-md-6" role="alert">
+                <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-20 g-mb-30">The
+                  <span class="g-font-weight-400 g-font-size-30">|</span>
+                  <span class="g-color-primary">Communication</span></h2>
+                
+                    <p class="g-color-black g-font-size-16"> </p>  
+              </div>
+              <a class="g-color-red" href="" </a>
+        -->
+   
+
+        {% include '2020/footer.html' %}        
+
+{% endblock %}

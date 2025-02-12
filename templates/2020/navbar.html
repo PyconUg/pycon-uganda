@@ -1,0 +1,148 @@
+{% load  %}
+{% load static %}
+
+
+ <!-- Header v1 -->
+ <header id="js-header" class="u-header u-header--sticky-top u-header--change-appearance g-z-index-9999"
+ data-header-fix-moment="100">
+<div class="light-theme u-header__section g-bg-darkblue-opacity-0_7 g-transition-0_3 g-py-10"
+data-header-fix-moment-exclude="light-theme g-bg-darkblue-opacity-0_7"
+data-header-fix-moment-classes="dark-theme u-shadow-v18 g-bg-white-opacity-0_9">
+<nav class="navbar navbar-expand-lg g-py-0">
+<div class="container g-pos-rel">
+ <!-- Logo -->
+ <a href="/" class=" navbar-brand u-header__logo"
+    data-type="static">
+   <img class="u-header__logo-img u-header__logo-img--main d-block" src="{% static '2020/img/logo-l.png' %}" alt="Image description"
+        data-header-fix-moment-exclude="d-block"
+        data-header-fix-moment-classes="d-none">
+
+   <img class="u-header__logo-img u-header__logo-img--main d-none" src="{% static '2020/img/logo-d.png' %}" alt="Image description"
+        data-header-fix-moment-exclude="d-none"
+        data-header-fix-moment-classes="d-block">
+ </a>
+ <!-- End Logo --> 
+
+  <!-- Navigation -->
+  <div class="collapse navbar-collapse align-items-center flex-sm-row" id="navBar" data-mobile-scroll-hide="true">
+    <ul class="navbar-nav text-uppercase g-font-weight-700 g-font-size-11 g-pt-20 g-pt-5--lg ml-auto">
+      <li class="nav-item g-mr-15--lg g-mb-7 g-mb-0--lg {{ home }}">
+        <a href="/2020/" class="nav-link p-0">Home <span class="sr-only">(current)</span></a>
+      </li>
+
+      
+      <div class="dropdown nav-item g-ml-15--lg {{ about }}">
+        <a href="#" class="dropbtn nav-link p-0">
+          <span>
+            About
+            <i class="g-color-yellow fa fa-chevron-circle-down g-mr-3"></i>
+          </span>
+        </a>
+        <div class="dropdown-content">
+          <a href="/2020/about/" class="nav-link p-0 {{ sponsor }}">About Us<span class="sr-only">(current)</span></a>
+          <a href="/2020/team/" class="nav-link p-0 {{ sponsor }}">Team<span class="sr-only">(current)</span></a>
+        </div>
+      </div> 
+      
+      <li class="nav-item g-mx-15--lg g-mb-7 g-mb-0--lg {{ speakers }}">
+        <a href="/2020/speakers_list/" class="nav-link p-0">Speakers <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item g-mx-15--lg g-mb-7 g-mb-0--lg {{ schedule }}">
+        <a href="/2020/scheduIe/" class="nav-link p-0">Schedule <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item g-mx-15--lg g-mb-7 g-mb-0--lg ">
+        <a href="https://pyconafrica.blogspot.com/" target="/" class="nav-link p-0">Blog</a>
+      </li>
+      <li class="nav-item g-ml-15--lg {{ coc }}">
+        <a href="/2020/coc/" class="nav-link p-0">Code of Conduct <span class="sr-only">(current)</span></a>
+      </li>
+      <div class="dropdown nav-item g-ml-15--lg {{ sponsors }}">
+        <a href="#" class="dropbtn nav-link p-0">
+          <span>
+            Sponsor
+            <i class="g-color-yellow fa fa-chevron-circle-down g-mr-3"></i>
+          </span>
+        </a>
+        <div class="dropdown-content">
+          <a href="/2020/sponsor-us/" class="nav-link p-0 {{ sponsor }}">Sponsor Us<span class="sr-only">(current)</span></a>
+          <a href="/2020/our-sponsors/" class="nav-link p-0 {{ sponsor }}">Our Sponsors<span class="sr-only">(current)</span></a>
+        </div>
+      </div> 
+     
+      <li class="nav-item g-ml-15--lg ">
+        <a href="/2019/report/" class="nav-link p-0" target="/">2019</a>
+      </li>
+
+      <li class="nav-item g-ml-15--lg ">
+        <a href="https://bit.ly/PA20-Reg" class="btn btn-sm u-btn-yellow g-color-primary g-mr-10 g-mb-15"><b>Register</b></a>
+      </li>
+
+
+    </ul>
+  </div>
+  <!-- End Navigation -->
+       
+
+ <!-- Responsive Toggle Button -->
+ <button class="navbar-toggler btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-15 g-right-0" type="button"
+         aria-label="Toggle navigation"
+         aria-expanded="false"
+         aria-controls="navBar"
+         data-toggle="collapse"
+         data-target="#navBar">
+   <span class="hamburger hamburger--slider">
+     <span class="hamburger-box">
+       <span class="hamburger-inner"></span>
+     </span>
+   </span>
+ </button>
+ <!-- End Responsive Toggle Button -->
+</div>
+</nav>
+</div>
+</header>
+<!-- End Header v1 -->
+
+
+<style>
+   /* Dropdown Button */
+.dropbtn {
+  padding: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #9b9badfe;
+  padding: 16px 18px;
+  font-size: 12px;
+  min-width: 140px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 16px 18px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #fee11bfc;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #090955fe;} 
+</style>

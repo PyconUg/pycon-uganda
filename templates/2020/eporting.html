@@ -1,0 +1,86 @@
+{% extends "2020/base.html" %}
+{% load i18n static %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Code of Conduct Reporting Guidelines | PyCon Africa 2020" %}{% endif %}{% endblock %}
+
+ 
+
+
+
+{% block content %}
+{% include '2020/navbar.html' %}
+
+      <!-- Section Content -->
+      <section class="g-bg-img-hero g-pos-rel u-bg-overlay g-bg-darkblue-opacity-0_6--after g-pt-150" style="background-image: url({% static '2020/img/body1.png' %});">
+        <div class="container g-max-width-750 u-bg-overlay__inner g-color-white g-mb-60">
+       
+          <h3 class="text-center text-uppercase h3 g-font-weight-700 g-font-size-20 g-font-size-50--md g-color-primary g-mb-20 g-mb-50--md">Code of Conduct Reporting Guidelines</h3>
+            <br>
+            <br>
+        </div>
+
+      </section>
+      <!-- End Section Content -->
+       <!-- body -->
+       <div class="container">
+        <div class="row">
+            <div class="u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30" >
+                <div >
+                  <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-20 g-mb-30">Reporting
+                    <span class="g-color-primary">a case</span></h2>
+                    <p class="g-color-black g-font-size-16">
+                          
+<p class="g-color-black g-font-size-16">If you want to make a code of conduct report, you can contact the Code of Conduct committee by:</p>
+
+<ul class="g-color-black g-font-size-16">
+	<li>calling or sending a text message (during the conference itself only)</li>
+	<li>emailing us</li>
+	<li>sending a private message to one of the organisers in the conference Slack channel</li>
+	<li>speaking to one of the conference organisers at the conference</li>
+</ul>
+
+<p class="g-color-black g-font-size-16">Should an incident occur, please report it, preferably in writing. If in doubt, report your concerns. There is very little harm in an unneccessary report, but potentially significant harm in an unreported problem. </p>
+
+<p class="g-color-black g-font-size-16"><strong>All reports will be kept confidential.</strong></p>
+
+<p class="g-color-black g-font-size-16">When reporting the incident, try to gather as much information as available. A committee member can assist you in writing the report or collecting information. Please do not interview people about the incident, but leave this to a committee member.</p>
+
+<p class="g-color-black g-font-size-16">The important information consists of:</p>
+
+<ul class="g-color-black g-font-size-16">
+	<li>identifying information about the individuals involved</li>
+	<li>the nature of the problematic behaviour</li>
+	<li>the approximate time of the behaviour</li>
+	<li>the circumstances surrounding the incident</li>
+</ul>
+
+<p class="g-color-black g-font-size-16">Committee members will be well-briefed on how to deal with incident reports, and on how to further proceed with the situation. See these guidelines for more information.</p>
+
+<p class="g-color-black g-font-size-16">Committee members will be happy to help participants contact venue security or the police, provide escorts, or otherwise assist attendees.</p>
+    
+                </div>
+            </div>
+
+
+
+        </div>
+       </div>
+
+
+
+        <!--
+            <div class="u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30 col col-12 col-sm-12 col-md-6" role="alert">
+                <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-20 g-mb-30">The
+                  <span class="g-font-weight-400 g-font-size-30">|</span>
+                  <span class="g-color-primary">Communication</span></h2>
+                
+                    <p class="g-color-black g-font-size-16"> </p>  
+              </div>
+              <a class="g-color-red" href="" </a>
+
+                <h3  class="g-font-size-20 g-font-weight-700 g-color-primary">
+        -->
+   
+
+        {% include '2020/footer.html' %}        
+
+{% endblock %}

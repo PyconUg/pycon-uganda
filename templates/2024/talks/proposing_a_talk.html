@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load i18n static  markdown_extras crispy_forms_tags %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Proposing a Talk || PyCon Africa" %}{% endif %}{% endblock %}
+ 
+
+{% block content %}
+
+<!-- ========== HEADER ========== -->
+{% include '2024/navbar.html' %}
+<!-- ========== END HEADER ========== -->
+
+
+
+    <!-- Breadcrumbs -->
+    <section class="g-bg-gray-light-v5 g-py-80 g-pt-150">
+      <div class="container text-center">
+        <h2 class="h2 g-color-black g-font-weight-600">Proposing a Talk </h2>
+
+        <ul class="u-list-inline">
+          <li class="list-inline-item g-mr-5">
+            <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="/2024">Home</a>
+            <i class="g-color-gray-light-v2 g-ml-5">/</i>
+          </li> 
+          <li class="list-inline-item g-color-primary">
+            <span>Proposing a Talk </span>
+          </li>
+        </ul><br>
+        <i class="fas fa-presentation" style="font-size:41px;"></i>
+      </div>
+      
+    </section>
+    <!-- End Breadcrumbs --> 
+
+     
+  
+  <div class="mad-content no-pd g-py-50">
+    <div class="container">
+      <section class="mad-section size-5"> 
+          <div class="mad-col">
+
+            <article class="text-size-medium"> 
+                <div class="mad-icon-box-content markdownx-preview"> 
+
+                    <div class="col-md-12"><br>
+                        <div class="col-md-12"> 
+                          <h2 class="h4 g-color-black g-font-weight-600 mb-3">
+                            {% if user.is_authenticated %}
+                            Hello{% if user.is_authenticated %} {% if request.user.user_profile %}{{ request.user.user_profile.name }}{% else %}@{{ request.user.username }}{% endif %}{% else %}{% endif %}, we are glad you are interested in speaking at PyCon Africa!<br> 
+                            {% else %}
+                            We are glad you are interested in speaking at PyCon Africa!<br> 
+                            {% endif %}
+                          </h2> 
+                               
+                            
+   
+                            {% for proposing_talk in proposing_talks.all|slice:"0:1" %}  
+                                <p class="markdownx-preview">{{ proposing_talk.content | markdown | safe }}</p>
+                              {{ form.media }} 
+                            {% endfor %} 
+
+                        </div>
+                </div> 
+                </div>
+            </article>
+ 
+          </div>   
+      </section>  
+    </div>
+  </div> <br><br><br>
+
+
+
+ 
+{% endblock %}
+
+ 

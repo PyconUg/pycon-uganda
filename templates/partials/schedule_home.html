@@ -1,0 +1,26 @@
+
+<div class="schedule-preview">
+    {% if day_schedules %}
+        <h3>Schedule Preview</h3>
+        {% for day_schedule in day_schedules %}
+            <h4>{{ day_schedule.day.conference_day }}</h4>
+            <ul>
+                {% for schedule in day_schedule.schedules %}
+                    <li>
+                        <strong>{{ schedule.start_time|time:"H:i" }} - {{ schedule.end_time|time:"H:i" }}</strong>
+                        <br>
+                        {% if schedule.is_an_event %}
+                            Event: {{ schedule.event }}
+                        {% else %}
+                            Talk: {{ schedule.talk.title }} by 
+                            {{ schedule.talk.user.get_full_name }}{% if schedule.talk.speakers.exists %} and others{% endif %}
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+        <a href="{% url 'schedule' year %}" class="btn btn-primary">View Full Schedule</a>
+    {% else %}
+        <p>No schedule available yet.</p>
+    {% endif %}
+</div>

@@ -1,0 +1,13 @@
+{% load  avatar_tags static profile_tags %} 
+
+<div class="mad-shedule-person">
+    <div class="mad-person-img">
+
+
+      {% if request.user.profile.is_visible == True %}          
+    <a class="mad-team-member-photo mad--ln-independent "><img  class="img-circle img-responsive"  src="{{ request.user.profile.profile_image.url}}" width=40 height=40 alt=""></a> 
+      {% else %} 
+      <img class="img-circle img-responsive" src="/robohash/{% firstof user.get_short_name user.get_username|capfirst %}/?width=40&height=40" alt="">
+      {% endif %}
+    </div>
+    </div>

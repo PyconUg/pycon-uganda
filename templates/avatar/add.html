@@ -1,0 +1,122 @@
+{% extends "base22.html" %}
+{% load i18n static avatar_tags crispy_forms_tags %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Profile || PyCon Africa" %}{% endif %}{% endblock %}
+
+
+{% block content %}
+
+<!-- ========== HEADER ========== -->
+{% include '2022/header.html' %}
+<!-- ========== END HEADER ========== -->
+ 
+    <!--================ Breadcrumb ================-->
+    <div class="mad-breadcrumb">
+        <div class="container">
+          <h1 class="mad-page-title mad-title-with-line">Update {% firstof user.get_short_name user.get_username|capfirst %}'s Profile</h1>
+          <nav class="mad-breadcrumb-path"><span><a href="/">Home</a></span>/<span><a href="/profile">Profile</a></span>/<span>Update Profile</span>
+          </nav>
+        </div>
+      </div>
+      <!--================ End of Breadcrumb ================-->
+
+      <div class="mad-content">
+        <div class="container">
+          <div class="row mad-row-size-3">
+            <main class="col-xl-9 col-lg-8">
+                
+                <section class="speakers" id="speakers">
+                    <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-4"> 
+                                <div class="panel wow fadeInRight">
+                                        <div class="panel-body">
+                                           <div class="row">
+                                                    <div class="col-md-10">
+                                                        <ul> 
+                                                          {% if request.user|has_avatar %} 
+                                                                                                          
+                                                          <div data-isotope-layout="grid" data-isotope-filter="#portfolio-filter" class="mad-team  mad-grid--isotope">
+                                                              <div class="mad-grid-sizer"></div>
+                                                              <div class="mad-grid-item mad-category-programming">
+                                                                  <!--================ Team Member ================--> 
+                                                                  <figure class="mad-team-member">
+                                                                  {% avatar user 110 class="img-circle img-responsive" id="user_avatar" %}
+                                                                  </figure>
+                                                                  <!--================ End Of Team Member ================-->
+                                                              </div>
+                                                          </div>      
+                                                          {% else %} 
+                                                          <div data-isotope-layout="grid" data-isotope-filter="#portfolio-filter" class="mad-team  mad-grid--isotope">
+                                                              <div class="mad-grid-sizer"></div>
+                                                              <div class="mad-grid-item mad-category-programming">
+                                                                  <!--================ Team Member ================-->
+                                                                  <figure class="mad-team-member">
+                                                                  <a class="mad-team-member-photo mad--ln-independent"><img src="/robohash/{% firstof user.get_short_name user.get_username|capfirst %}/?width=110&height=110" alt=""></a>
+                                                                      
+                                                              </figure>
+                                                                  <!--================ End Of Team Member ================-->
+                                                              </div>
+                                                          </div>
+                                                          {% endif %}
+              
+                                                            <div><b><small class="text-danger">LAST LOGIN</small></b></div>
+                                                            <div><b><small>Date:</small></b>  {{ request.user.last_login.date }}</div>
+                                                            <div><b><small>Time:</small></b>  {{ request.user.last_login.time }}</div>
+                                                             
+                                                            <br>    
+                                                            <p><a href="/profile"class="btn warn"><i class="fa-solid fa-user" style="font-size:21px;"></i>&nbsp;&nbsp; Back to My Profile</a></p>
+                                                            <p><a href="/accounts/password/change/"class="btn warn"><i class="fa-light fa-lock" style="font-size:21px;"></i>&nbsp;&nbsp; Change Password</a></p>
+                                                            <p><a href="{% url 'talks:talk_list' year=year %}"class="btn warn"><i class="fa-light fa-podium-star" style="font-size:21px;"></i>&nbsp;&nbsp; My Submitted Talks</a></p>
+                                                                  
+                                                            
+                                                        </ul>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                </div>
+                        </div>
+
+                        <div class="col-sm-12 col-md-8"> 
+                          <div class="panel wow fadeInLeft">
+                            <p class="mad-sub-title">Update your Avatar</p>
+                            <div class="shortcode-html align-items-center">
+                              <!-- Inline Forms -->
+                              <p>{% trans "Your current Gravatar avatar: " %}</p>
+                              {% avatar user %}<br>
+                              {% if not avatars %}
+                                  <p>{% trans "You haven't uploaded an avatar yet. Please upload one now." %}<br><small><b>Supported formats: jpg, jpeg</b></small></p>
+                              {% endif %}
+                              <form enctype="multipart/form-data" method="POST" action="{% url 'avatar_add' %}">
+                                  {{ upload_avatar_form.as_p }}
+                                  <br><small><b>Note! Supported formats: jpg, jpeg</b></small>
+                                  <p>{% csrf_token %}<input class="btn btn-sm" type="submit" value="{% trans "Upload New Image" %}" /></p>
+                              </form>
+                              <!-- End Inline Forms -->
+                          </div>
+                                  </div>
+              
+                          </div>
+ 
+                
+                    </div>
+                    <!-- end .container -->
+                </section>
+              
+            </main>
+            
+<!-- ========== ASIDE ========== -->
+
+<!-- ========== ASIDE ========== -->
+
+          </div>
+        </div>
+      </div>
+ 
+
+    <!-- end section.speakers -->
+
+
+
+{% endblock %}
+
+  

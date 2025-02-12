@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% load i18n static  markdown_extras %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Speakers || PyCon Africa" %}{% endif %}{% endblock %}
+
+ 
+{% block content %}
+
+<!-- ========== HEADER ========== -->
+{% include '2024/navbar.html' %}
+<!-- ========== END HEADER ========== -->
+
+  <!--================ Breadcrumb ================-->
+  <div class="mad-breadcrumb">
+    <div class="container">
+      <h1 class="mad-page-title mad-title-with-line">Speakers</h1>
+      <nav class="mad-breadcrumb-path"><span><a href="/">Home</a></span>/<span>Speakers</span>
+      </nav>
+    </div>
+  </div>
+  <!--================ End of Breadcrumb ================-->
+
+ 
+ 
+  <div class="mad-content no-pd">
+    <section class="mad-section size-3">
+      
+      <div class="container">
+      <!--================ Team Members ================-->
+
+
+
+      
+      <div class="col-md-10">
+        <h2>Announcing the PyCon Africa 2018 Talk Lineup!</h2>
+        <p>We'll publish the schedule including time slots as soon as it is finalized!</p>
+        <br />
+        {% if accepted_talks %}
+            <p>Attending to PyCon Africa 2018? Here are some of the talks to look forward to:</p>
+            {% for talk in accepted_talks %}
+                <p><a href="{% url 'talks:talk_details' pk=talk.pk %}">{{ talk.title }}  - {{ talk.user.name }}
+                    {{ talk.user.profile.last_name }}</a></p>
+            {% endfor %}
+
+        <div class="pager">
+            <span class="previous">
+            {% if accepted_talks.has_previous %}
+                <a href="?page={{ accepted_talks.previous_page_number }}">&larr; Previous</a>
+            {% endif %}
+            </span>
+            <span class="current">
+                Page {{ accepted_talks.number }} of {{ accepted_talks.paginator.num_pages }}
+            </span>
+            <span class="next">
+            {% if accepted_talks.has_next %}
+                <a href="?page={{ accepted_talks.next_page_number }}" >Next &rarr;</a>
+            {% endif %}
+            </span>
+        </div>
+
+        {% else %}
+            <p>We haven't accepted any talks yet. We will update this page as soon as we have closed our CFP and
+                accepted submitted talks.</p>
+        {% endif %}
+    </div>
+      <div class="mad-team style-2 item-col-4 ">  
+
+
+
+
+
+
+
+        {% if request.user.is_superuser %} 
+
+
+
+        {% for speaker in speakers %}
+            
+        {% if speaker.is_visible %}
+        
+        <div class="mad-col">
+          <!--================ Team Member ================-->
+          <figure class="mad-team-member">
+            <a href="{{speaker.slug}}" class="mad-team-member-photo mad--ln-independent"><img src="{{ speaker.profile_image.url }}" alt=""></a>
+            <figcaption class="mad-team-member-info">
+              <h2 class="mad-team-member-name"><a href="{{speaker.slug}}">{{ speaker.name }} {{ speaker.surname }}</a></h2>
+              {% if speaker.organization %}
+              <em class="mad-team-member-position">{{ speaker.profession }} at {{ speaker.organization }}
+                {% else %}
+                <em class="mad-team-member-position">{{ speaker.profession }}
+                {% endif %}
+              </em> 
+            </figcaption>
+          </figure>
+          <!--================ End Of Team Member ================-->
+        </div> 
+
+ 
+        {% else %}
+
+        {% endif %}
+        {% empty %} 
+       <h4>There is nothing in this list </h4> 
+        {% endfor %} 
+          
+
+
+
+
+        {% else %}
+        <h3 class="mad-team-member-name mad-title-with-line">Speaker will be announced on the <br>8th of September 2022</h3>
+        {% endif %}
+        
+
+      </div>
+      <!--================ End Of Team Members ================-->
+      </div>
+    </section> 
+  </div>
+ 
+
+
+{% endblock %}
+ 

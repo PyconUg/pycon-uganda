@@ -1,0 +1,4 @@
+{% load cloudinary %}
+
+<a class="mad-team-member-photo mad--ln-independent"><img src="{{  url }}" width="{{ size }}" height="{{ size }}" {% for key, value in kwargs.items %}{{key}}="{{value}}" {% endfor %}/></a>
+      

@@ -1,0 +1,17 @@
+{% load  avatar_tags static profile_tags %} 
+
+ <!-- User Image -->
+ <div class="u-block-hover g-pos-rel">
+    {% if request.user.user_profile.profile_image %} 
+    <figure>
+      <img class="img-fluid w-100 u-block-hover__main--zoom-v1" src="{{ request.user.user_profile.profile_image.url }}" alt="Image Description">
+    </figure>
+    {% else %}  
+    <figure>
+      <img class="img-fluid w-100 u-block-hover__main--zoom-v1" src="/robohash/{% firstof user.get_short_name user.get_username|capfirst %}/?width=110&height=110" alt="Image Description">
+    </figure>
+
+    {% endif %}   
+  </div>
+  <!-- User Image -->
+ 

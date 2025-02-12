@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+{% load i18n static  markdown_extras  %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Sponsor Us | PyCon Africa" %}{% endif %}{% endblock %}
+
+ 
+
+
+
+{% block content %}
+{% include '2024/navbar.html' %}
+
+    <!-- Breadcrumbs -->
+    <section class="g-bg-gray-light-v5 g-py-80 g-pt-150">
+      <div class="container text-center">
+        <h2 class="h2 g-color-black g-font-weight-600">Sponsor Us</h2>
+
+        <ul class="u-list-inline">
+          <li class="list-inline-item g-mr-5">
+            <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="#">Home</a>
+            <i class="g-color-gray-light-v2 g-ml-5">/</i>
+          </li> 
+          <li class="list-inline-item g-mr-5">
+            <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="/2024/sponsor-us/">Sponsor</a>
+            <i class="g-color-gray-light-v2 g-ml-5">/</i>
+          </li> 
+          <li class="list-inline-item g-color-primary">
+            <span>Sponsor Us</span>
+          </li>
+        </ul><br> 
+        <i class="fa-sharp fa-solid fa-money-check-dollar-pen" style="font-size:41px;"></i>
+      </div>
+      
+    </section>
+    <!-- End Breadcrumbs --> 
+ 
+
+
+       <!-- body -->
+       <div class="container g-pt-50">
+        <div class="row">
+            <!-- Displaying the sponsor us page content -->
+            <div class="u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30" role="alert">
+                <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-20 g-mb-30">Sponsorship
+                  <span class="g-color-primary">Packages</span></h2>
+                <p class="g-color-black g-font-size-16">{{ sponsor_us_page.why_sponsor_us | markdown | safe }} 
+                    {{ form.media }}</p>
+                <!-- Display download prospectus if link available -->
+                {% if sponsor_us_page.prospectus_link %}
+                
+              <a class="btn btn-md u-btn-inset u-btn-outline-darkgray g-brd-4 g-mr-10 g-mb-15" href="{{ sponsor_us_page.prospectus_link }}" target="_blank"><b>Download our Prospectus &nbsp;&nbsp; <i class="fa-regular fa-cloud-arrow-down fa-beat-fade"></i></b></a>
+                    {% endif %}
+            </div>
+    
+            <!-- Loop through each sponsorship tier and display its details and benefits -->
+            {% for tier in sponsorship_tiers %}
+            {% if forloop.counter <= 2 %}
+                <!-- Render first two tiers with specific layout -->
+                <div class="u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30" role="alert">
+                    <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-20 g-mb-30">{{ tier.name }}
+                      <span class="g-color-primary">${{ tier.amount }}</span></h2>
+                      
+                      <p class="g-color-black g-font-size-16">{{ tier.details | markdown | safe }} 
+                    {{ form.media }}</p>
+        
+                      {% if tier.benefits.exists %}
+                          <p class="g-color-black g-font-size-16"><strong>Highlights of this package:</strong></p>
+                          
+                              {% for benefit in tier.benefits.all %}
+                                  <p class="g-color-black g-font-size-16">{{ benefit.description | markdown | safe }}</p> 
+                              {% endfor %}
+                          
+                      {% endif %}
+                      
+                      {% if tier.additional_resources.exists %}
+                          <p class="g-color-black g-font-size-16"><strong>This package also includes:</strong></p>
+                          <ul class="g-color-black g-font-size-16">
+                              {% for additional_resource in tier.additional_resources.all %}
+                                  <li>{{ additional_resource.package }}</li>
+                              {% endfor %}
+                          </ul>
+                      {% endif %}
+                </div>
+                {% elif forloop.counter > 2 and forloop.counter <= 9 %}
+                <!-- Render other tiers with a different layout -->
+                <div class="u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30 col col-12 col-sm-12 col-md-6" role="alert">
+                  <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-20 g-mb-30">{{ tier.name }}
+                    <span class="g-color-primary">${{ tier.amount }}</span></h2> 
+                    <p class="g-color-black g-font-size-16">{{ tier.details | markdown | safe }}</p>
+        
+                    <!-- Assuming the same benefits and additional_resources structure applies -->
+                    {% if tier.benefits.exists %}
+                        <p class="g-color-black g-font-size-16"><strong>Highlights of this package:</strong></p> 
+                            {% for benefit in tier.benefits.all %}
+                            <p class="g-color-black g-font-size-16">{{ benefit.description | markdown | safe }}</p> 
+                            {% endfor %} 
+                    {% endif %}
+        
+                    {% if tier.additional_resources.exists %}
+                        <p class="g-color-black g-font-size-16"><strong>This package also includes:</strong></p>
+                        <ul class="g-color-black g-font-size-16">
+                            {% for additional_resource in tier.additional_resources.all %}
+                                <li>{{ additional_resource.package }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div> 
+              {% else %}
+            {% endif %}
+ 
+        {% endfor %}
+        
+     
+
+
+            <!-- Displaying the special sponsorship package -->
+            <div class="u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30" role="alert">
+                <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-20 g-mb-30">We are
+                  <span class="g-color-primary">Flexible!</span></h2>
+                  <p class="g-color-black g-font-size-16">{{ sponsor_us_page.special_sponsorship | markdown | safe }} 
+                    {{ form.media }}</p>
+                  <a href="mailto:sponsorship@pycon.africa" class="btn btn-md u-btn-skew u-btn-outline-primary g-mr-10 g-mb-15">
+                    <span class="u-btn-skew__inner">sponsorship@pycon.africa</span>
+                  </a>
+            </div>
+         
+        </div>
+    </div>
+    
+
+ 
+
+{% endblock %}

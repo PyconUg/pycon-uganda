@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+{% load i18n static avatar_tags crispy_forms_tags %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Submission Successful || PyCon Africa" %}{% endif %}{% endblock %}
+{% trans 'cur_time' as datetime.datetime.now(tz=pytz.timezone(str(settings.TIME_ZONE))) %}
+
+{% block content %}
+
+<!-- ========== HEADER ========== -->
+{% include '2024/navbar.html' %}
+<!-- ========== END HEADER ========== -->
+ 
+    <!-- Breadcrumbs -->
+    <section class="g-bg-gray-light-v5 g-py-80 g-pt-150">
+      <div class="container text-center"> 
+        <h1 class="h2 g-color-black g-font-weight-600">Proposal Submission Successful</h1> 
+        <ul class="u-list-inline">
+          <li class="list-inline-item g-mr-5">
+            <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="/2024/">Home</a>
+            <i class="g-color-gray-light-v2 g-ml-5">/</i>
+          </li> 
+          <li class="list-inline-item g-mr-5">
+            <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="/accounts/profile/">Profile</a>
+            <i class="g-color-gray-light-v2 g-ml-5">/</i>
+          </li> 
+          <li class="list-inline-item g-mr-5">
+            <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="/2025/talks/submit_talk/">Submit Your Talk</a>
+            <i class="g-color-gray-light-v2 g-ml-5">/</i>
+          </li> 
+          <li class="list-inline-item g-color-primary">
+            <span>Submission Successful</span>
+          </li>
+        </ul><br>
+        <i class="fa-solid fa-folder-check" style="font-size:41px;"></i> 
+      </div>
+      
+    </section>
+    <!-- End Breadcrumbs --> 
+   
+
+    
+  <section class="g-mb-100 g-pt-50">
+    <div class="container"> 
+        <div class="u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30" > 
+            <div class="row">
+              
+                <!-- Profile Sidebar -->
+                <div class="col-lg-3 g-mb-50 g-mb-0--lg"> 
+                  <!-- Profile Pic --> 
+                    {% include 'profiles/profilepic_side.html' %}
+                  <!-- End Profile Pic  -->   
+      
+                  <!-- Sidebar Navigation -->
+
+                  <div class="list-group list-group-border-0 g-mb-40">
+                    <div class="media"> 
+                      <div class="media-body">
+                        <div><b><small class="text-danger">LAST LOGIN</small></b></div>
+                        <div class="g-font-size-12 g-color-gray-dark-v2"><b><small>Date:</small></b>  {{ request.user.last_login.date }}</div>
+                        <div class="g-font-size-12  g-color-gray-dark-v2"><b><small>Time:</small></b>  {{ request.user.last_login.time }}</div> 
+                      </div>
+                    </div>
+                  </div> 
+                    
+                    <!-- Overall -->
+                    <a href="/accounts/profile/" class="list-group-item list-group-item-action justify-content-between">
+                      <span><i class="fa-thin fa-house-user  g-pos-rel g-top-1 g-mr-8"></i> My Profile</span> 
+                    </a>
+                    <!-- End Overall -->
+                    
+                    <!-- Overall -->
+                    <a href="{% url 'profiles:profile_update' pk=request.user.user_profile.profile_id.hashid  %}" class="list-group-item list-group-item-action justify-content-between">
+                      <span><i class="fa-light fa-id-card g-pos-rel g-top-1 g-mr-8"></i>  Update my Profile</span> 
+                    </a>
+                    <!-- End Overall -->
+      
+                    <!-- Profile -->
+                    <a href="/accounts/password/change/" class="list-group-item list-group-item-action justify-content-between">
+                      <span><i class="fa-light fa-lock g-pos-rel g-top-1 g-mr-8"></i>  Change Password</span>
+                    </a>
+                    <!-- End Profile -->
+      
+                    <!-- Profile -->
+                    <a href="{% url 'talks:talk_list' year=year %}" class="list-group-item list-group-item-action justify-content-between">
+                      <span><i class="fa-light fa-podium-star g-pos-rel g-top-1 g-mr-8"></i>  My Submitted Talks</span>
+                    </a>
+                    <!-- End Profile -->
+
+                    <!-- My Submitted Talks -->
+                    <a href="{% url 'talks:submit_talk' year=year %}" class="list-group-item list-group-item-action justify-content-between active">
+                        <span><i class="fa-solid fa-podium g-pos-rel g-top-1 g-mr-8"></i>  Submit a new Talk</span>
+                      </a>
+                      <!-- End Profile -->
+         
+      
+                  </div>
+                  <!-- End Sidebar Navigation -->  
+                <!-- End Profile Sidebar -->   
+              <!-- End Profile Sidebar -->  
+    
+              
+              
+              <div class="col-lg-9">
+                <section class="g-brd-around g-brd-gray-light-v4">
+                  <div class="container g-py-50--md g-py-20">
+                                    
+                                    <!-- Success Alert -->
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                      </button>
+                      <h4 class="h5">
+                        <i class="fa fa-check-circle-o"></i>
+                        Hey {% if request.user.user_profile %}{{ request.user.user_profile.name}}{% else %}@{{ request.user.username }}{% endif %}, your talk submission was successful.
+                      </h4>
+                      <p>Thank you for submitting your proposal. Our organising team will get back to you.</p> 
+                    </div>
+                    <!-- End Success Alert -->
+                    
+    
+                  <div class="panel wow fadeInLeft ">  
+                    <br>  
+                    
+        <span class="d-inline-block g-font-weight-600 text-uppercase mr-4">You can</span>
+        <a class="btn u-btn-outline-primary g-brd-2 g-font-weight-600 g-font-size-12 text-uppercase g-px-25 g-py-13" href="{% url 'talks:talk_list' year=year %}">
+          <i class="fa-solid fa-table-list" style="font-size:21px;"></i>&nbsp;&nbsp; <b>View submitted talk(s)</b>
+        </a>
+        <span class="d-inline-block g-font-weight-600 text-uppercase mx-4">or</span>
+        <a class="btn u-btn-primary g-font-weight-600 g-font-size-12 text-uppercase g-px-25 g-py-13" href="{% url 'talks:submit_talk' year=year %}">
+          <i class="fa-light fa-podium" style="font-size:21px;"></i>&nbsp;&nbsp; <b>Submit another talk</b>
+        </a>
+                </div> 
+   
+  
+                </div>
+                </section> 
+              </div>    
+              
+    
+            </div>
+        </div>
+      </div>
+    </section> 
+   
+ 
+    
+{% endblock %}
+
+ 
+  

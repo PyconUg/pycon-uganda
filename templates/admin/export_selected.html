@@ -1,0 +1,55 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_urls %}
+
+
+{% block content %}
+<div class="grp-content">
+    <h1 class="grp-page-title">{% trans "Select Fields to Export" %}</h1>
+    <form method="post" class="grp-form">{% csrf_token %}
+        <fieldset class="module aligned">
+            <div class="form-row grp-readonly">
+                <label>{% trans "Fields to export:" %}</label>
+                <div class="grp-td">
+                    <div class="grp-row grp-check-row">
+                        {% for checkbox in form.fields_to_export %}
+                            <div class="grp-field">
+                                {{ checkbox }}
+                                <label for="{{ checkbox.id_for_label }}">{{ checkbox.choice_label }}</label>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="form-row grp-readonly">
+                <label>{% trans "Export format:" %}</label>
+                <div class="grp-td">
+                    <div class="grp-row grp-radio-row">
+                        {% for radio in form.export_format %}
+                            <div class="grp-field">
+                                {{ radio }}
+                                <label for="{{ radio.id_for_label }}">{{ radio.choice_label }}</label>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="form-row grp-readonly">
+                <label>{% trans "Filter by Talk Type:" %}</label>
+                <div class="grp-td">
+                    <div class="grp-row grp-check-row">
+                        {% for checkbox in form.talk_types %}
+                            <div class="grp-field">
+                                {{ checkbox }}
+                                <label for="{{ checkbox.id_for_label }}">{{ checkbox.choice_label }}</label>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="form-row grp-submit-row">
+                <button type="submit" class="grp-button grp-default">{% trans 'Export' %}</button>
+            </div>
+        </fieldset>
+    </form>
+</div>
+{% endblock %}

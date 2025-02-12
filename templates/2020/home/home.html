@@ -1,0 +1,1128 @@
+{% extends "2020/base.html" %}
+{% load i18n static %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Home | PyCon Africa 2020" %}{% endif %}{% endblock %}
+
+
+
+
+{% block content %}
+
+
+{% include '2020/navbar.html' %}
+<script src="//code.tidio.co/00hkw5reeffaallvkbjizeykysxulx6p.js" async></script>
+  
+
+      <!-- Section Content -->
+      <section class="g-bg-img-hero g-pos-rel u-bg-overlay g-bg-darkblue-opacity-0_6--after g-pt-150" style="background-image: url({% static '2020/img/header.png' %});">
+        <div class="container g-max-width-750 u-bg-overlay__inner g-color-white g-mb-60">
+          <!-- Countdown v4 -->
+          <div class="js-countdown text-center text-uppercase u-countdown-v4 g-mb-40 g-mb-70--md"
+               data-end-date="2020/08/04"
+               data-month-format="%m"
+               data-days-format="%D"
+               data-hours-format="%H"
+               data-minutes-format="%M"
+               data-seconds-format="%S">
+            <div class="d-inline-block g-font-size-12 g-px-10 g-px-50--md g-py-15">
+              <div class="js-cd-days g-font-size-20 g-font-size-40--md g-font-weight-700 g-line-height-1 g-mb-5">12</div>
+              <span>Days</span>
+            </div>
+
+            <div class="d-inline-block g-font-size-12 g-brd-left g-brd-white-opacity-0_4 g-px-10 g-px-60--md g-py-15">
+              <div class="js-cd-hours g-font-size-20 g-font-size-40--md g-font-weight-700 g-line-height-1 g-mb-5">01</div>
+              <span>Hours</span>
+            </div>
+
+            <div class="d-inline-block g-font-size-12 g-brd-left g-brd-white-opacity-0_4 g-px-10 g-px-60--md g-py-15">
+              <div class="js-cd-minutes g-font-size-20 g-font-size-40--md g-font-weight-700 g-line-height-1 g-mb-5">52</div>
+              <span>Minutes</span>
+            </div>
+
+            <div class="d-inline-block g-font-size-12 g-brd-left g-brd-white-opacity-0_4 g-px-10 g-px-50--md g-py-15">
+              <div class="js-cd-seconds g-font-size-20 g-font-size-40--md g-font-weight-700 g-line-height-1 g-mb-5">52</div>
+              <span>Seconds</span>
+            </div>
+          </div>
+          <!-- End Countdown v4 -->
+
+          <h2 class="text-center text-uppercase h2 g-font-weight-700 g-font-size-40 g-font-size-60--md g-color-white g-mb-30 g-mb-70--md">PyCon Africa</h2>
+
+          <div class="row">
+            <div class="col-sm-8 col-md-4 text-center text-md-left g-mb-30 g-mb-0--md">
+              <div class="media">
+                <div class="media-left d-flex align-self-center g-hidden-sm-down g-mr-20">
+                  <i class="fa fa-calendar g-font-size-27 g-color-white-opacity-0_5"></i>
+                </div>
+
+                <div class="media-body text-uppercase">
+                  <p class="g-mb-5"><strong class="g-font-size-14 g-color-white-opacity-0_5">When</strong></p>
+                  <h3 class="h3 g-font-size-15 g-color-white mb-0">4th - 8th Aug, 2020</h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-8 col-md-5 text-center text-md-left g-mb-30 g-mb-0--md">
+              <div class="media">
+                <div class="media-left d-flex align-self-center g-hidden-sm-down g-mr-20">
+                  <i class="fa fa-map-marker g-font-size-27 g-color-white-opacity-0_5"></i>
+                </div>
+
+                <div class="media-body text-uppercase">
+                  <p class="g-mb-5"><strong class="g-font-size-14 g-color-white-opacity-0_5">Where</strong></p>
+                  <h3 class="h3 g-font-size-15 g-color-white mb-0">Online</h3>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+
+        <div class="container u-bg-overlay__inner g-bottom-minus-70 px-0">
+          <div class="row u-shadow-v23 g-theme-bg-blue-dark-v2 mx-0">
+            <div class="col-md-6 px-0">
+              <div class="js-carousel text-center u-carousel-v5 g-overflow-hidden h-100 g-max-height-50vh"
+                   data-infinite="true" data-autoplay="true" data-speed="7000" data-pause-hover="true" data-fade="true"
+                   data-open-speed="1000" data-close-speed="1000"
+                   data-arrows-classes="u-arrow-v1 g-absolute-centered--y g-width-40 g-height-40 g-font-size-20 g-color-white g-color-primary--hover g-bg-primary g-bg-white--hover g-transition-0_2 g-transition--ease-in"
+                   data-arrow-left-classes="fa fa-angle-left g-left-0"
+                   data-arrow-right-classes="fa fa-angle-right g-right-0">
+                <div class="js-slide g-bg-img-hero g-min-height-50vh" style="background-image: url({% static '2020/img/1.jpg' %});"></div>
+                <div class="js-slide g-bg-img-hero g-min-height-50vh" style="background-image: url({% static '2020/img/2.jpg' %});"></div>
+                <div class="js-slide g-bg-img-hero g-min-height-50vh" style="background-image: url({% static '2020/img/3.jpg' %});"></div>
+                <div class="js-slide g-bg-img-hero g-min-height-50vh" style="background-image: url({% static '2020/img/4.jpg' %});"></div>
+                <div class="js-slide g-bg-img-hero g-min-height-50vh" style="background-image: url({% static '2020/img/5.jpg' %});"></div>
+                <div class="js-slide g-bg-img-hero g-min-height-50vh" style="background-image: url({% static '2020/img/6.jpg' %});"></div>
+                <div class="js-slide g-bg-img-hero g-min-height-50vh" style="background-image: url({% static '2020/img/7.jpg' %});"></div>
+                <div class="js-slide g-bg-img-hero g-min-height-50vh" style="background-image: url({% static '2020/img/8.jpg' %});"></div>
+                <div class="js-slide g-bg-img-hero g-min-height-50vh" style="background-image: url({% static '2020/img/9.jpg' %});"></div>
+                <div class="js-slide g-bg-img-hero g-min-height-50vh" style="background-image: url({% static '2020/img/10.jpg' %});"></div>
+                <div class="js-slide g-bg-img-hero g-min-height-50vh" style="background-image: url({% static '2020/img/11.jpg' %});"></div>
+                <div class="js-slide g-bg-img-hero g-min-height-50vh" style="background-image: url({% static '2020/img/13.jpg' %});"></div>
+              </div>
+            </div>
+
+            <div class="col-md-6 d-flex g-min-height-50vh g-theme-color-gray-dark-v1 g-px-50 g-py-80 g-py-50--md g-py-20--lg">
+              <div class="align-self-center w-100">
+                <h2 class="text-uppercase g-font-weight-700 g-font-size-20 g-color-white g-mb-10">PyCon Africa 2020 will be Online</h2>
+                <h3 class="text-uppercase g-font-weight-500 g-font-size-13 g-color-white g-mb-20">PyCon Africa is the gathering of the Pan African Python Community.</h3>
+                <p class="g-font-size-14 g-color-white ">We had the very first edition in 2019 and while the conference cannot take place in person this year, we would still be having it online making it PycOnline Africa 2020!</p>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Section Content -->
+
+      <!-- Timeline -->
+      <section class="g-pt-150 g-pb-90 g-pb-170--md ">
+        <div class="container">
+          <div class="text-center g-mb-70 align-self-center">
+            <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-30 g-mb-30">Important
+              <span class="g-font-weight-400 g-font-size-40">|</span>
+              <span class="g-color-primary">Timelines</span></h2>
+
+              
+          <div class="row justify-content-center">
+
+            <div class="col-sm-8 col-md-2 text-center text-md-left g-mb-30 g-mb-0--md">
+              <div class="media">
+                <div class="media-left d-flex align-self-center g-hidden-sm-down g-color-black g-mr-20">
+                  <i class="fa fa-calendar g-font-size-27 "></i>
+                </div>
+
+                <div class="media-body text-uppercase">
+                  <p class="g-mb-5"><strong class="g-font-size-12 g-color-black">Day 1</strong></p>
+                  <h3 class="h3 g-font-size-15 g-color-black mb-0">4<sup>th</sup> Aug</h3>
+               
+               </div>
+              </div>
+            </div>
+           
+            <div class="col-sm-8 col-md-2 text-center text-md-left g-mb-30 g-mb-0--md">
+              <div class="media">
+                <div class="media-body text-uppercase">
+                  <p class="g-mb-5"><strong class="g-font-size-12 g-color-black">Day 2</strong></p>
+                  <h3 class="h3 g-font-size-15 g-color-black mb-0">5<sup>th</sup> Aug</h3>
+                  </div>
+              </div>
+            </div>
+           
+            <div class="col-sm-8 col-md-2 text-center text-md-left g-mb-30 g-mb-0--md">
+              <div class="media">
+                <div class="media-body text-uppercase">
+                  <p class="g-mb-5"><strong class="g-font-size-12 g-color-black">Day 3</strong></p>
+                  <h3 class="h3 g-font-size-15 g-color-black mb-0">6<sup>th</sup> Aug</h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-8 col-md-2 text-center text-md-left g-mb-30 g-mb-0--md">
+              <div class="media">
+                <div class="media-body text-uppercase">
+                  <p class="g-mb-5"><strong class="g-font-size-12 g-color-black">Day 4</strong></p>
+                  <h3 class="h3 g-font-size-15 g-color-black mb-0">7<sup>th</sup> Aug</h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-8 col-md-2 text-center text-md-left g-mb-30 g-mb-0--md">
+              <div class="media">
+                <div class="media-body text-uppercase">
+                  <p class="g-mb-5"><strong class="g-font-size-12 g-color-black">Day 5</strong></p>
+                  <h3 class="h3 g-font-size-15 g-color-black mb-0">8<sup>th</sup> Aug</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+          <br><br><br>
+
+
+          <div class="u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30" role="alert">
+            <!-- Border Alert -->
+              <div class="alert fade show g-brd-around g-brd-gray-dark-v2 rounded-0" role="alert">
+                <button type="button" class="close u-alert-close--light g-ml-10 g-mt-1" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+                <br><br>
+                 <!-- Quote -->
+                 <div class="js-carousel g-pb-70" data-infinite="true" data-arrows-classes="u-arrow-v1 g-width-40 g-height-40 g-color-gray-dark-v5 g-bg-white g-color-white--hover g-bg-primary--hover rounded g-absolute-centered--x g-bottom-0" data-arrow-left-classes="fa fa-angle-left g-ml-minus-25" data-arrow-right-classes="fa fa-angle-right g-ml-25">
+                  <div class="js-slide">
+                    <div class="row justify-content-center">
+                      <div class="col-lg-8">
+                        <div class="text-center">
+                          
+                          <blockquote class="lead g-line-height-1_8 g-mb-25 g-color-primary">
+                            
+                            <span class="align-self-end g-color-black g-font-secondary g-font-size-40 g-opacity-0_3 g-line-height-0 align-bottom g-pos-rel g-top-minus-10">“</span>
+                            
+                            Physical distancing… is absolutely essential, but it doesn’t mean that socially, we have to disconnect.…
+                            We want people to still remain connected, so find ways to do that, find ways through the internet and social media 
+                            to remain connected, because your mental health going through this is just as important as your physical health.
+                            
+                            <span class="align-self-end g-color-black g-font-secondary g-font-size-40 g-opacity-0_3 g-line-height-0 align-bottom g-pos-rel g-top-minus-10">”</span>
+                                                        
+                            </blockquote>
+                
+                
+                
+                          <img class="d-inline-block g-width-120 g-height-120 g-brd-around g-brd-5 g-brd-white rounded-circle" src="{% static '2020/img/DrMaria.jpg' %}" alt="Image Description">
+                
+                          <div class="g-py-25">
+                            <h4 class="h5 g-color-black text-uppercase g-mb-0">Dr Maria Van Kerkhove</h4>
+                            <em class="g-color-primary">— Infectious disease epidemiologist and WHO COVID-19 technical lead</em>
+                          </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                <!-- End Quote -->
+
+
+              </div>
+              <!-- End Border Alert -->
+              <br><br><br>
+
+              <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-20 g-mb-30">Hello 
+                <span class="g-color-primary">Everyone!</span></h2>
+                <p class="g-color-black g-font-size-16">
+                  The Pycon Africa team is very excited to announce that Pycon Africa 2020 will be held online this 
+                  year! We are grateful for your support as we make this change in the interest of protecting the 
+                  health and safety of our community. 
+                </p> 
+                <p class="g-color-black g-font-size-16"> 
+                  We are excited to continue the Pycon tradition of sharing knowledge and bringing our community 
+                  together. Throughout the 4th - 8th of August, you can expect talks from speakers from across Africa 
+                  and the world, interactive sessions with fellow community members and collaborative projects that you are invited to join.
+                </p> 
+                <p class="g-color-black g-font-size-16"> 
+                  We realise that internet access and stability in Africa is still inequitable, and therefore most of 
+                  our content, with a few exceptions, will be pre-recorded not live. This also gives community members 
+                  from around the world the ability to enjoy Pycon Africa 2020, at your own convenience.   
+              </p> 
+              <p class="g-color-black g-font-size-16"> 
+                Our call for proposals is open immediately and will close on the 5th of June. We look forward to 
+                receiving your talk submission. Our sponsorship prospectus is also open and you can find it <a target="/" href="https://papercall.io/pyconafrica2020"><b>here</b></a>. 
+                We would love your support for this event! Finally, to stay up to date, follow our social media pages 
+                on <a target="/" href="https://twitter.com/pyconafrica"><b>Twitter</b></a> and <a href="https://facebook.com/pyconafrica" target="/"><b>Facebook</b></a>.   
+                <br><br>All my very best,
+                <h4 class="h5 g-color-black text-uppercase g-mb-0">Marlene Mhangami</h4>
+                <em class="g-color-primary">—  Conference Chair</em>
+            </p> 
+          </div>
+          </div>
+      </section>
+      <!-- End Timeline -->
+
+
+
+       <!-- Schedule Section Content -->
+      <section class=" g-color-white g-py-40 g-px-30">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 align-self-lg-center">
+              <img class="img-fluid w-100 g-mb-30 g-mb-0--lg" src="{% static '2020/img/schedule.png' %}" alt="Image description">
+            </div>
+      
+            <div class="text-center g-color-primary col-lg-7 align-self-lg-center">
+              <h2 class="h2 g-font-weight-700 g-color-primary text-uppercase g-font-weight-300">Our Schedules are up!</h2>
+          <p class="g-color-black g-font-size-16"> 
+            Pycon Africa is going virtual in August 2020! 
+            <br>Click on the link below to view our full schedule
+          </p>
+          <br>
+          <a href="https://bit.ly/PA20-Schedule" class="btn btn-md u-btn-inset u-btn-inset--rounded u-btn-outline-primary g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-brd-2 g-rounded-50 g-mr-10 g-mb-15"> 
+            View Schedule
+            <i class="fa fa-calendar g-ml-3"></i>
+          </a>
+        </div>
+       
+          </div>
+        </div>
+      </section>
+      <!-- End Schedule Section Content -->
+
+
+
+      <!-- Speakers Section Content -->
+      <section id="keynotes" class=" g-py-100">
+          <div class="text-center">
+            <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-30 g-mb-30">Our
+              <span class="g-font-weight-400 g-font-size-40">|</span>
+              <span class="g-color-primary">Speakers</span></h2>
+          </div>
+
+            <div class="shortcode-html">
+              <div class="row">
+
+                {% for keynote in keynotes %}
+                {% if keynote.is_visible %}
+                <div class="col-lg-3 g-mb-30">
+                  <!-- Testimonials -->
+                  <div class="u-shadow-v19 g-brd-bottom g-brd-3 g-brd-primary-gradient-opacity-v1 g-bg-white text-center g-px-35 g-py-60">
+                    <img class="g-height-250 img-fluid img-thumbnail g-brd-primary g-rounded-10" src="{{ keynote.profile_image.url }}" alt="Image description"><br>
+                    <h3 class="text-uppercase g-font-weight-700 g-color-primary- g-font-size-20 mb-0">
+                      {{ keynote.speaker_name }}
+                    </h3>
+                    <h4 class="g-font-weight-700 g-font-size-14 g-color-primary g-mb-5">KEYNOTE SPEAKER</h4>
+                    <hr class="g-brd-gray-light-v4 g-my-15">
+                    <em class="d-block g-color-gray-dark-v4 g-font-style-normal g-font-size-13 g-mb-20"><b>{{ keynote.organization }}</b></em>
+                    <!-- Figure List -->
+                  <ul class="row list-inline g-py-20 g-ma-0">
+                    <li class="col g-brd-right g-brd-gray-light-v4">
+                      <a class="u-icon-v1 u-icon-size--sm g-color-primary g-bg-transparent g-color-primary--hover"  data-toggle="tooltip" data-placement="bottom" title="{{ keynote.speaker_name }}'s Profile" href="{% url 'home:keynote_details' keynote.slug %}">
+                        
+                        <i class="icon-user"></i>
+                      </a>
+                    </li>
+
+                    <li class="col g-brd-right g-brd-gray-light-v4">
+                      <a class="u-icon-v1 u-icon-size--sm g-color-primary g-bg-transparent g-color-yellow--hover"  data-toggle="tooltip" data-placement="bottom"  title="Connect with {{ keynote.speaker_name }}" target="/" href="https://www.twitter.com/{{ keynote.twitter }}">
+                        <i class="icon-social-twitter"></i>
+                      </a>
+                    </li>
+                  </ul>
+                  <!-- End Figure List -->
+                  </div>
+                  <!-- End Testimonials -->
+                </div>
+                {% else %}
+                {% endif %}
+                {% empty %} 
+                <h4>There is nothing in this list </h4> 
+                {% endfor %} 
+
+                
+              </div>
+            </div>
+            <div class="text-center"><br><br> 
+              <a href="/speakers" class="btn btn-md u-btn-inset u-btn-inset--rounded u-btn-outline-primary g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-brd-2 g-rounded-50 g-mr-10 g-mb-15"> 
+                View more speakers
+              <i class="fa fa-vcard g-ml-3"></i>
+              </a>
+            </div>
+        </section>
+
+
+        <!-- End Speakers Section Content -->
+ 
+        
+        <section class="g-pt-150 g-pb-90 g-pb-190--md ">
+          <div class="container">
+            <div class="u-shadow-v1-5 g-mb-80 align-self-center">
+              <div class="col-lg-12 align-self-center"><br>
+          <div class="text-center">
+            <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-30 g-mb-30">Our
+              <span class="g-font-weight-400 g-font-size-40">|</span>
+              <span class="g-color-primary">Panelist</span></h2>
+          </div> 
+          
+          <div class="shortcode-html">
+            <!-- Team Block -->
+            <div class="u-carousel-v10 g-max-width-800 mx-auto">
+              <div id="js-carousel-sync-for" class="js-carousel" data-slides-show="1" data-slides-scroll="1" data-infinite="true" 
+              data-fade="true" data-center-mode="true" data-pagi="true" data-adaptive-height="true" data-nav-for="#js-carousel-sync-nav"
+                data-autoplay="true" data-speed="4000" data-pause-hover="true" data-fade="true"
+                   data-open-speed="1000" data-close-speed="1000">
+                
+                
+                   <div class="js-slide">
+                    <!-- Figure -->
+                    <figure class="row">
+                       
+                      <!-- Figure Image -->
+                      <div class="col-sm-5 order-sm-1">
+                        <img class="g-width-200 g-height-200 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% static '2020/img/speakers/Scott.jpg' %}" alt="Image Description">
+                    
+                      </div>
+                      <!-- End Figure Image -->
+                      <div class="col-sm-6 order-sm-2">
+                        <!-- Figure Info -->
+                        <div class="g-mb-30">
+                          <h4 class="h5 g-color-black g-mb-5">Scott Hanselman</h4>
+                          <em class="d-block u-info-v1-5__item g-color-primary g-font-style-normal g-font-size-11 text-uppercase">Partner Program Manager</em>
+                          <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15"><b>Session:</b> 
+                            Technical content creation and personal productivity.</span>                  
+                       
+                          <br>
+                        </div>
+                        <p class="mb-5">
+                          Scott Hanselman is a former professor, former Chief Architect in finance, now speaker, consultant, father, diabetic, and Microsoft employee. He is a failed stand-up comic, a cornrower, and a book author.
+                        </p>
+  
+                        <!-- End Figure Info -->
+                        
+                        <!-- Social Icons -->
+                        <ul class="list-inline mb-3">
+                         <li class="list-inline-item g-mx-2">
+                           <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover g-color-cyan g-bg-cyan-opacity-0_1 g-color-cyan--hover rounded-circle" href="https://twitter.com/shanselman" target="/">
+                             <i class="g-font-size-default g-line-height-1 u-icon__elem-regular fa fa-twitter"></i>
+                             <i class="g-font-size-default g-line-height-0_8 u-icon__elem-hover fa fa-twitter"></i>
+                           </a>
+                         </li>
+                       </ul>
+                   <!-- End Social Icons -->
+                      </div>
+                     
+                    </figure>
+                    <!-- End Figure -->
+                  </div>
+  
+                
+                
+                   <div class="js-slide">
+                  <!-- Figure -->
+                  <figure class="row">
+                     
+                    <!-- Figure Image -->
+                    <div class="col-sm-5 order-sm-1">
+                      <img class="g-width-200 g-height-200 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% static '2020/img/speakers/aniediudo.png' %}" alt="Image Description">
+                  
+                    </div>
+                    <!-- End Figure Image -->
+                    <div class="col-sm-6 order-sm-2">
+                      <!-- Figure Info -->
+                      <div class="g-mb-30">
+                        <h4 class="h5 g-color-black g-mb-5">Aniedi Udo-Obong</h4>
+                        <em class="d-block u-info-v1-5__item g-color-primary g-font-style-normal g-font-size-11 text-uppercase">Support Manager</em>
+                        <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15"><b>Panel Session:</b> The Future of Open Source in Africa</span>                  
+                     
+                        <br>
+                      </div>
+                      <p class="mb-10">Aniedi Udo-Obong is a developer, product manager, open source evangelist with over 10 years experience 
+                        working with startups in HR, media, finance, education & logistics.</p>
+
+                      <!-- End Figure Info -->
+                       
+                      <!-- Social Icons -->
+                      <ul class="list-inline mb-3">
+                       <li class="list-inline-item g-mx-2">
+                         <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover g-color-cyan g-bg-cyan-opacity-0_1 g-color-cyan--hover rounded-circle" href="https://twitter.com/aniediudo" target="/">
+                           <i class="g-font-size-default g-line-height-1 u-icon__elem-regular fa fa-twitter"></i>
+                           <i class="g-font-size-default g-line-height-0_8 u-icon__elem-hover fa fa-twitter"></i>
+                         </a>
+                       </li>
+                     </ul>
+                 <!-- End Social Icons -->
+                    </div>
+                   
+                  </figure>
+                  <!-- End Figure -->
+                </div>
+
+
+
+                <div class="js-slide">
+                  <!-- Figure -->
+                  <figure class="row">
+                       
+                    <!-- Figure Image -->
+                    <div class="col-sm-5 order-sm-1">
+                      <img class="g-width-200 g-height-200 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% static '2020/img/speakers/PaulEveritt.jpeg' %}" alt="Image Description">
+                  
+                    </div>
+                    <!-- End Figure Image -->
+                    <div class="col-sm-6 order-sm-2">
+                      <!-- Figure Info -->
+                      <div class="g-mb-30">
+                        <h4 class="h5 g-color-black g-mb-5">Paul Everitt</h4>
+                        <em class="d-block u-info-v1-5__item g-color-primary g-font-style-normal g-font-size-11 text-uppercase">Developer Advocate</em>
+                        <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15"><b>Panel Session:</b> Entrepreneurship and Python</span>                  
+                     
+                        <br>
+                      </div>
+                      <p class="mb-6"> 
+                        Paul is the PyCharm Developer Advocate at JetBrains. Before that, Paul was a co-founder of Zope Corporation, taking the first open source application server through $14M of funding. Paul has bootstrapped both the Python Software Foundation and the Plone Foundation. Prior to that, Paul was an officer in the US Navy, starting www.navy.mil in 1993.
+
+                      </p>
+
+                      <!-- End Figure Info -->
+                       
+                      <!-- Social Icons -->
+                      <ul class="list-inline mb-3">
+                       <li class="list-inline-item g-mx-2">
+                         <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover g-color-cyan g-bg-cyan-opacity-0_1 g-color-cyan--hover rounded-circle" href="https://twitter.com/pauleveritt" target="/">
+                           <i class="g-font-size-default g-line-height-1 u-icon__elem-regular fa fa-twitter"></i>
+                           <i class="g-font-size-default g-line-height-0_8 u-icon__elem-hover fa fa-twitter"></i>
+                         </a>
+                       </li>
+                     </ul>
+                 <!-- End Social Icons -->
+                    </div>
+                 
+                  </figure>
+                  <!-- End Figure -->
+                </div>
+
+
+                <div class="js-slide">
+                  <!-- Figure -->
+                  <figure class="row">
+                     
+                    <!-- Figure Image -->
+                    <div class="col-sm-5 order-sm-1">
+                      <img class="g-width-200 g-height-200 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% static '2020/img/speakers/EdidiongAsikpo.jpeg' %}" alt="Image Description">
+                  
+                    </div>
+                    <!-- End Figure Image -->
+                    <div class="col-sm-6 order-sm-2">
+                      <!-- Figure Info -->
+                      <div class="g-mb-30">
+                        <h4 class="h5 g-color-black g-mb-5">Edidiong Asikpo</h4>
+                        <em class="d-block u-info-v1-5__item g-color-primary g-font-style-normal g-font-size-11 text-uppercase">Software Engineer</em>
+                        <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15"><b>Panel Session:</b> The Future of Open Source in Africa</span>                  
+                     
+                        <br>
+                      </div>
+                      <p class="mb-5">
+                        Edidiong Asikpo is a software engineer from Akwa Ibom, Nigeria. She is a passionate professional with multi-faceted skills and experience spanning across Software Engineering, Developer Relations, community building, technical writing, and Open Source contributions.
+                      </p>
+
+                      <!-- End Figure Info -->
+                       
+                      <!-- Social Icons -->
+                      <ul class="list-inline mb-3">
+                       <li class="list-inline-item g-mx-2">
+                         <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover g-color-cyan g-bg-cyan-opacity-0_1 g-color-cyan--hover rounded-circle" href="https://twitter.com/didicodes" target="/">
+                           <i class="g-font-size-default g-line-height-1 u-icon__elem-regular fa fa-twitter"></i>
+                           <i class="g-font-size-default g-line-height-0_8 u-icon__elem-hover fa fa-twitter"></i>
+                         </a>
+                       </li>
+                     </ul>
+                 <!-- End Social Icons -->
+                    </div>
+                   
+                  </figure>
+                  <!-- End Figure -->
+                </div>
+
+
+
+                <div class="js-slide">
+                  <!-- Figure -->
+                  <figure class="row">
+                       
+                    <!-- Figure Image -->
+                    <div class="col-sm-5 order-sm-1">
+                      <img class="g-width-200 g-height-200 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% static '2020/img/speakers/ReuvenLerner.jpg' %}" alt="Image Description">
+                  
+                    </div>
+                    <!-- End Figure Image -->
+                    <div class="col-sm-6 order-sm-2">
+                      <!-- Figure Info -->
+                      <div class="g-mb-30">
+                        <h4 class="h5 g-color-black g-mb-5">Reuven M. Lerner</h4>
+                        <em class="d-block u-info-v1-5__item g-color-primary g-font-style-normal g-font-size-11 text-uppercase">Python trainer</em>
+                        <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15"><b>Panel Session:</b> Entrepreneurship and Python</span>                  
+                     
+                        <br>
+                      </div>
+                      <p class="mb-6"> 
+                        Reuven Lerner is a full-time Python trainer. In a given year, he teaches courses at companies in the United States, Europe, Israel, India, and China — as well as to people around the world, via his online courses, including Weekly Python Exercise.
+                      </p>
+
+                      <!-- End Figure Info -->
+                       
+                      <!-- Social Icons -->
+                      <ul class="list-inline mb-3">
+                       <li class="list-inline-item g-mx-2">
+                         <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover g-color-cyan g-bg-cyan-opacity-0_1 g-color-cyan--hover rounded-circle" href="https://twitter.com/reuvenmlerner" target="/">
+                           <i class="g-font-size-default g-line-height-1 u-icon__elem-regular fa fa-twitter"></i>
+                           <i class="g-font-size-default g-line-height-0_8 u-icon__elem-hover fa fa-twitter"></i>
+                         </a>
+                       </li>
+                     </ul>
+                 <!-- End Social Icons -->
+                    </div>
+                 
+                  </figure>
+                  <!-- End Figure -->
+                </div>
+
+                
+
+                <div class="js-slide">
+                  <!-- Figure -->
+                  <figure class="row">
+                     
+                    <!-- Figure Image -->
+                    <div class="col-sm-5 order-sm-1">
+                      <img class="g-width-200 g-height-200 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% static '2020/img/speakers/DanielPhiri.jpg' %}" alt="Image Description">
+                  
+                    </div>
+                    <!-- End Figure Image -->
+                    <div class="col-sm-6 order-sm-2">
+                      <!-- Figure Info -->
+                      <div class="g-mb-30">
+                        <h4 class="h5 g-color-black g-mb-5">Daniel Madalitso Phiri</h4>
+                        <em class="d-block u-info-v1-5__item g-color-primary g-font-style-normal g-font-size-11 text-uppercase">Developer Relations</em>
+                        <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15"><b>Panel Session:</b> The Future of Open Source in Africa</span>                  
+                     
+                        <br>
+                      </div>
+                      <p class="mb-5">Daniel Madalitso Phiri is a Developer Advocate, Builder of Wacky things, Disk Jockey, Lorde superfan and Community Builder from Lusaka, Zambia.</p>
+
+                      <!-- End Figure Info -->
+                       
+                      <!-- Social Icons -->
+                      <ul class="list-inline mb-3">
+                       <li class="list-inline-item g-mx-2">
+                         <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover g-color-cyan g-bg-cyan-opacity-0_1 g-color-cyan--hover rounded-circle" href="https://twitter.com/malgamves" target="/">
+                           <i class="g-font-size-default g-line-height-1 u-icon__elem-regular fa fa-twitter"></i>
+                           <i class="g-font-size-default g-line-height-0_8 u-icon__elem-hover fa fa-twitter"></i>
+                         </a>
+                       </li>
+                     </ul>
+                 <!-- End Social Icons -->
+                    </div>
+                   
+                  </figure>
+                  <!-- End Figure -->
+                </div>
+
+
+
+                <div class="js-slide">
+                  <!-- Figure -->
+                  <figure class="row">
+                       
+                    <!-- Figure Image -->
+                    <div class="col-sm-5 order-sm-1">
+                      <img class="g-width-200 g-height-200 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% static '2020/img/speakers/Untitled.png' %}" alt="Image Description">
+                  
+                    </div>
+                    <!-- End Figure Image -->
+                    <div class="col-sm-6 order-sm-2">
+                      <!-- Figure Info -->
+                      <div class="g-mb-30">
+                        <h4 class="h5 g-color-black g-mb-5">Trey Hunner</h4>
+                        <em class="d-block u-info-v1-5__item g-color-primary g-font-style-normal g-font-size-11 text-uppercase">Developer Advocate</em>
+                        <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15"><b>Panel Session:</b> Entrepreneurship and Python</span>                  
+                     
+                        <br>
+                      </div>
+                      <p class="mb-6"> 
+                        Trey Hunner helps Python developers level-up their skills through his weekly Python skill-building service, <a href="https://www.pythonmorsels.com/">Python Morsels</a>. He also helps teams turn experienced developers into experienced Python developers through on-site and remote <a href="https://truthful.technology">Python trainings</a>.
+                      </p>
+
+                      <!-- End Figure Info -->
+                       
+                      <!-- Social Icons -->
+                      <ul class="list-inline mb-3">
+                       <li class="list-inline-item g-mx-2">
+                         <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover g-color-cyan g-bg-cyan-opacity-0_1 g-color-cyan--hover rounded-circle" href="https://twitter.com/treyhunner" target="/">
+                           <i class="g-font-size-default g-line-height-1 u-icon__elem-regular fa fa-twitter"></i>
+                           <i class="g-font-size-default g-line-height-0_8 u-icon__elem-hover fa fa-twitter"></i>
+                         </a>
+                       </li>
+                     </ul>
+                 <!-- End Social Icons -->
+                    </div>
+                 
+                  </figure>
+                  <!-- End Figure -->
+                </div>
+
+
+
+
+                <div class="js-slide">
+                  <!-- Figure -->
+                  <figure class="row">
+                       
+                    <!-- Figure Image -->
+                    <div class="col-sm-5 order-sm-1">
+                      <img class="g-width-200 g-height-200 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% static '2020/img/speakers/AkintundeSultan.JPG' %}" alt="Image Description">
+                  
+                    </div>
+                    <!-- End Figure Image -->
+                    <div class="col-sm-6 order-sm-2">
+                      <!-- Figure Info -->
+                      <div class="g-mb-30">
+                        <h4 class="h5 g-color-black g-mb-5">Akintunde Sultan</h4>
+                        <em class="d-block u-info-v1-5__item g-color-primary g-font-style-normal g-font-size-11 text-uppercase">Developer Avocado</em>
+                        <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15"><b>Panel Session:</b> The Future of Open Source in Africa</span>                  
+                     
+                        <br>
+                      </div>
+                      <p class="mb-6"> 
+                        Ambassador at GrantfortheWeb -  Working with the team from Mozilla, Coil and Creative Common to foster the adoption of Web monetization in Africa
+                      </p>
+
+                      <!-- End Figure Info -->
+                      
+                      <br>
+                      <!-- Social Icons -->
+                      <ul class="list-inline mb-3">
+                       <li class="list-inline-item g-mx-2">
+                         <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover g-color-cyan g-bg-cyan-opacity-0_1 g-color-cyan--hover rounded-circle" href="https://twitter.com/hackSultan" target="/">
+                           <i class="g-font-size-default g-line-height-1 u-icon__elem-regular fa fa-twitter"></i>
+                           <i class="g-font-size-default g-line-height-0_8 u-icon__elem-hover fa fa-twitter"></i>
+                         </a>
+                       </li>
+                     </ul>
+                 <!-- End Social Icons -->
+                    </div>
+                 
+                  </figure>
+                  <!-- End Figure -->
+                </div>
+
+
+
+                <div class="js-slide">
+                  <!-- Figure -->
+                  <figure class="row">
+                       
+                    <!-- Figure Image -->
+                    <div class="col-sm-5 order-sm-1">
+                      <img class="g-width-200 g-height-200 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% static '2020/img/speakers/image12.png' %}" alt="Image Description">
+                  
+                    </div>
+                    <!-- End Figure Image -->
+                    <div class="col-sm-6 order-sm-2">
+                      <!-- Figure Info -->
+                      <div class="g-mb-30">
+                        <h4 class="h5 g-color-black g-mb-5">Bob Belderbos</h4>
+                        <em class="d-block u-info-v1-5__item g-color-primary g-font-style-normal g-font-size-11 text-uppercase">Software developer / Co-founder PyBites</em>
+                        <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15"><b>Panel Session:</b> Entrepreneurship and Python</span>                  
+                     
+                        <br>
+                      </div>
+                      <p class="mb-6"> 
+                        Bob is a software developer and co-founder of PyBites. He is passionate about writing software, 
+                        quality code and helping other people grow their careers using Python. 
+                      </p>
+
+                      <!-- End Figure Info -->
+                       
+                      <!-- Social Icons -->
+                      <ul class="list-inline mb-3">
+                       <li class="list-inline-item g-mx-2">
+                         <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover g-color-cyan g-bg-cyan-opacity-0_1 g-color-cyan--hover rounded-circle" href="https://twitter.com/bbelderbos" target="/">
+                           <i class="g-font-size-default g-line-height-1 u-icon__elem-regular fa fa-twitter"></i>
+                           <i class="g-font-size-default g-line-height-0_8 u-icon__elem-hover fa fa-twitter"></i>
+                         </a>
+                       </li>
+                     </ul>
+                 <!-- End Social Icons -->
+                    </div>
+                 
+                  </figure>
+                  <!-- End Figure -->
+                </div>
+
+
+
+                <div class="js-slide">
+                  <!-- Figure -->
+                  <figure class="row">
+                     
+                    <!-- Figure Image -->
+                    <div class="col-sm-5 order-sm-1">
+                      <img class="g-width-200 g-height-200 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% static '2020/img/speakers/FrankTamre.JPG' %}" alt="Image Description">
+                  
+                    </div>
+                    <!-- End Figure Image -->
+                    <div class="col-sm-6 order-sm-2">
+                      <!-- Figure Info -->
+                      <div class="g-mb-30">
+                        <h4 class="h5 g-color-black g-mb-5">Frank Tamre</h4>
+                        <em class="d-block u-info-v1-5__item g-color-primary g-font-style-normal g-font-size-11 text-uppercase">Software Engineer</em>
+                        <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15"><b>Panel Session:</b> The Future of Open Source in Africa</span>                  
+                     
+                        <br>
+                      </div>
+                      <p class="mb-5">
+I worked at Intel as an Applications Engineer. I consult on various Android projects both as a developer and as a systems architect. I then co-founded one of the first coding boot camps in Africa - Moringa School. Then started EarlyCamp that trains young children aged 4-17 years old how to solve problems with technology. Lead organizer at droidconke, KotlinKenya and Android254 - the largest Android developer community in Africa. A chef, reader and swimmer when not programming or teaching."
+                      </p>
+
+                      <!-- End Figure Info -->
+                      
+                      <!-- Social Icons -->
+                      <ul class="list-inline mb-3">
+                       <li class="list-inline-item g-mx-2">
+                         <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover g-color-cyan g-bg-cyan-opacity-0_1 g-color-cyan--hover rounded-circle" href="https://twitter.com/tamrefrank" target="/">
+                           <i class="g-font-size-default g-line-height-1 u-icon__elem-regular fa fa-twitter"></i>
+                           <i class="g-font-size-default g-line-height-0_8 u-icon__elem-hover fa fa-twitter"></i>
+                         </a>
+                       </li>
+                     </ul>
+                 <!-- End Social Icons -->
+                    </div>
+                   
+                  </figure>
+                  <!-- End Figure -->
+                </div>
+
+
+
+                <div class="js-slide">
+                  <!-- Figure -->
+                  <figure class="row">
+                       
+                    <!-- Figure Image -->
+                    <div class="col-sm-5 order-sm-1">
+                      <img class="g-width-200 g-height-200 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% static '2020/img/speakers/MattHarrison.jpg' %}" alt="Image Description">
+                  
+                    </div>
+                    <!-- End Figure Image -->
+                    <div class="col-sm-6 order-sm-2">
+                      <!-- Figure Info -->
+                      <div class="g-mb-30">
+                        <h4 class="h5 g-color-black g-mb-5">Matt Harrison</h4>
+                        <em class="d-block u-info-v1-5__item g-color-primary g-font-style-normal g-font-size-11 text-uppercase">Corporate trainer and consultant</em>
+                        <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15"><b>Panel Session:</b> Entrepreneurship and Python</span>                  
+                     
+                        <br>
+                      </div>
+                      <p class="mb-6"> 
+                        Matt runs MetaSnake, a Python training and consulting company. He has authored many books on Python and ran the local use group for 5 years.
+                      </p>
+
+                      <!-- End Figure Info -->
+                       
+                      <!-- Social Icons -->
+                      <ul class="list-inline mb-3">
+                       <li class="list-inline-item g-mx-2">
+                         <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover g-color-cyan g-bg-cyan-opacity-0_1 g-color-cyan--hover rounded-circle" href="https://twitter.com/__mharrison__" target="/">
+                           <i class="g-font-size-default g-line-height-1 u-icon__elem-regular fa fa-twitter"></i>
+                           <i class="g-font-size-default g-line-height-0_8 u-icon__elem-hover fa fa-twitter"></i>
+                         </a>
+                       </li>
+                     </ul>
+                 <!-- End Social Icons -->
+                    </div>
+                 
+                  </figure>
+                  <!-- End Figure -->
+                </div>
+
+
+
+                <div class="js-slide">
+                  <!-- Figure -->
+                  <figure class="row">
+                     
+                    <!-- Figure Image -->
+                    <div class="col-sm-5 order-sm-1">
+                      <img class="g-width-200 g-height-200 rounded-circle g-mb-20 img-fluid u-shadow-v2 g-brd-around g-brd-primary" src="{% static '2020/img/speakers/JulianSequeira.png' %}" alt="Image Description">
+                  
+                    </div>
+                    <!-- End Figure Image -->
+                    <div class="col-sm-6 order-sm-2">
+                      <!-- Figure Info -->
+                      <div class="g-mb-30">
+                        <h4 class="h5 g-color-black g-mb-5">Julian Sequeira</h4>
+                        <em class="d-block u-info-v1-5__item g-color-primary g-font-style-normal g-font-size-11 text-uppercase">Global Project Manager</em>
+                        <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-primary g-rounded-15"><b>Panel Session:</b> Entrepreneurship and Python</span>                  
+                     
+                        <br>
+                      </div>
+                      <p class="mb-5">
+                        Julian is a self-taught Python programmer. Coming from a career in Enterprise grade servers and Data Centres he made the transition to Python Programming using the "learn by teaching" methodology. Creating PyBites with his best friend has not only taught him what he knows about Python but has also sparked his passion for the Entrepreneur world. You'll find Julian coaching people in Python, Careers and Mindset all while cracking terrible dad jokes.
+
+                      </p>
+
+                      <!-- End Figure Info -->
+                      
+                      <!-- Social Icons -->
+                      <ul class="list-inline mb-3">
+                       <li class="list-inline-item g-mx-2">
+                         <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover g-color-cyan g-bg-cyan-opacity-0_1 g-color-cyan--hover rounded-circle" href="https://twitter.com/juliansequeira" target="/">
+                           <i class="g-font-size-default g-line-height-1 u-icon__elem-regular fa fa-twitter"></i>
+                           <i class="g-font-size-default g-line-height-0_8 u-icon__elem-hover fa fa-twitter"></i>
+                         </a>
+                       </li>
+                     </ul>
+                 <!-- End Social Icons -->
+                    </div>
+                   
+                  </figure>
+                  <!-- End Figure -->
+                </div>
+
+
+                
+              </div>
+<br><br><br>
+              <div class="row">
+                <div class="col-md-6 ml-md-auto">
+                  <!-- Carousel Nav -->
+                  <div id="js-carousel-sync-nav" class="js-carousel u-carousel-v10-nav" data-slides-show="4" data-slides-scroll="1" data-focus-on-select="true" data-center-mode="true" data-nav-for="#js-carousel-sync-for">
+                    
+                    <div class="js-slide g-mx-3">
+                      <img class="w-100" src="{% static '2020/img/speakers/Scott.jpg' %}" alt="Image Description">
+                    </div>
+                   
+                    <div class="js-slide g-mx-3">
+                      <img class="w-100" src="{% static '2020/img/speakers/aniediudo.png' %}" alt="Image Description">
+                    </div>
+
+                    <div class="js-slide g-mx-3">
+                      <img class="w-100" src="{% static '2020/img/speakers/PaulEveritt.jpeg' %}" alt="Image Description">
+                    </div>
+
+                    <div class="js-slide g-mx-3">
+                      <img class="w-100" src="{% static '2020/img/speakers/EdidiongAsikpo.jpeg' %}" alt="Image Description">
+                    </div>
+
+                    <div class="js-slide g-mx-3">
+                      <img class="w-100" src="{% static '2020/img/speakers/ReuvenLerner.jpg' %}" alt="Image Description">
+                    </div>
+
+                    <div class="js-slide g-mx-3">
+                      <img class="w-100" src="{% static '2020/img/speakers/DanielPhiri.jpg' %}" alt="Image Description">
+                    </div>
+
+                    <div class="js-slide g-mx-3">
+                      <img class="w-100" src="{% static '2020/img/speakers/Untitled.png' %}" alt="Image Description">
+                    </div>
+
+                    <div class="js-slide g-mx-3">
+                      <img class="w-100" src="{% static '2020/img/speakers/AkintundeSultan.JPG' %}" alt="Image Description">
+                    </div>
+
+                    <div class="js-slide g-mx-3">
+                      <img class="w-100" src="{% static '2020/img/speakers/image12.png' %}" alt="Image Description">
+                    </div>
+
+                    <div class="js-slide g-mx-3">
+                      <img class="w-100" src="{% static '2020/img/speakers/FrankTamre.JPG' %}" alt="Image Description">
+                    </div>
+
+                    <div class="js-slide g-mx-3">
+                      <img class="w-100" src="{% static '2020/img/speakers/MattHarrison.jpg' %}" alt="Image Description">
+                    </div>
+
+                    <div class="js-slide g-mx-3">
+                      <img class="w-100" src="{% static '2020/img/speakers/JulianSequeira.png' %}" alt="Image Description">
+                    </div>
+
+                    
+                  </div>
+                  <!-- End Carousel Nav -->
+                </div>
+              </div>
+            </div>
+            <!-- End Team Block -->
+          </div>
+
+          <div class="shortcode-styles">
+            <!-- CSS Implementing Plugins -->
+            <link  rel="stylesheet" href="{% static 'uni-theme/vendor/slick-carousel/slick/slick.css' %}">
+          </div>
+
+          <div class="shortcode-scripts">
+            <!-- JS Implementing Plugins -->
+            <script  src="{% static '2020/slick-carousel/slick/slick.js' %}"></script>
+
+            <!-- JS Unify -->
+            <script  src="{% static '2020/js/components/hs.carousel.js' %}"></script>
+
+            <!-- JS Plugins Init. -->
+            <script >
+              $(document).ready(function () {
+                // initialization of carousel
+                $.HSCore.components.HSCarousel.init('[class*="js-carousel"]');
+
+                $('#js-carousel-sync-for').on('init', function (event, slick) {
+                  $(slick.$slides).css('height', 'auto');
+                });
+
+                $('#js-carousel-sync-nav').on('init', function (event, slick) {
+                  $(slick.$slides).css('height', 'auto');
+                });
+              });
+            </script>
+          </div>
+        
+     </div>
+        </div>
+        </div>
+        </section>
+
+      
+      <section class="g-pt-20 g-pb-90 g-pb-170--md ">
+        <div class="text-center g-mb-70">
+          <br>
+            <p class="g-color-black g-font-size-16">
+              PyCon Africa will be organized into four distinct tracks, namely PyData, Web / DevOps, General Python, and Python Community.
+          </p> <br>
+            <div class="container">
+              <div class="row">
+                <div class="col-md-6 align-self-center g-py-20">
+                  
+                  <h2 class="h4 text-uppercase g-color-primary g-font-weight-700 g-letter-spacing-1 g-mb-20" data-animation="fadeIn" data-animation-delay="500" data-animation-duration="2000">PyData</h2>
+                  <p class="g-font-size-16 mb-0 g-line-height-2 g-color-black" data-animation="fadeIn" data-animation-delay="500" data-animation-duration="2000">
+                    The topics of interest for PyData include, but are not limited to:<br>
+                    Numerical and Scientific Computations Machine Learning Text Mining and Natural language Processing Data mining and Analytics Big Data Data visualization tools and libraries Reproducible Research Linked Data and Semantic Web</p>
+                  </div>
+                  
+                <div class=" col-md-6 align-self-center g-py-20">
+                  <img class="w-100" src="{% static '2020/img/pydata.png' %}" alt="Iamge Description" data-animation="fadeIn" data-animation-delay="500" data-animation-duration="000">
+                </div>
+                
+                <br>
+                
+    
+                <div class=" col-md-6 align-self-center g-py-20">
+                  <img class="w-100" src="{% static '2020/img/webops.png' %}" alt="Iamge Description" data-animation="fadeIn" data-animation-delay="600" data-animation-duration="2000">
+                </div>
+    
+                <div class="col-md-6 align-self-center g-py-20">
+                  <h2 class="h4 text-uppercase g-font-weight-700 g-color-primary g-letter-spacing-1 g-mb-20" data-animation="fadeIn" data-animation-delay="600" data-animation-duration="2000">Web / Devops</h2>
+                  <p class="g-font-size-16 mb-0 g-line-height-2 g-color-black" data-animation="fadeIn" data-animation-delay="600" data-animation-duration="2000">
+                     The topics of interest for Web/DevOps include, but are not limited to:<br>
+
+                    Frameworks (Django, Flask, Pyramid, etc) Background Tasks (Celery, etc) WSGI Orchestration (Ansible, Fabric, etc) Continuos Integration Core & Internals Testing Enterprise
+                    
+                    </p>
+                  </div>
+                  
+                  <br>
+
+                  <div class="col-md-6 align-self-center g-py-20">
+                  
+                    <h2 class="h4 text-uppercase g-color-primary g-font-weight-700 g-letter-spacing-1 g-mb-20" data-animation="fadeIn" data-animation-delay="700" data-animation-duration="2000">General Python</h2>
+                    <p class="g-font-size-16 mb-0 g-line-height-2 g-color-black" data-animation="fadeIn" data-animation-delay="700" data-animation-duration="2000">
+                      Suggested topics for this track include, but are not limited to:<br>
+
+                      Python libraries and extensions Databases Documentation Open Source Python projects Packaging 
+                      Issues Programming Tools Project Best Practices
+                    </div>
+                    
+                  <div class=" col-md-6 align-self-center g-py-20">
+                    <img class="w-100" src="{% static '2020/img/generalpython.png' %}" alt="Iamge Description" data-animation="fadeIn" data-animation-delay="700" data-animation-duration="2000">
+                  </div>
+                  
+                  <br>
+                  
+      
+                  <div class=" col-md-6 align-self-center g-py-20">
+                    <img class="w-100" src="{% static '2020/img/comm.png' %}" alt="Iamge Description" data-animation="fadeIn" data-animation-delay="800" data-animation-duration="2000">
+                  </div>
+      
+                  <div class="col-md-6 align-self-center g-py-20">
+                    <h2 class="h4 text-uppercase g-font-weight-700 g-color-primary g-letter-spacing-1 g-mb-20" data-animation="fadeIn" data-animation-delay="800" data-animation-duration="2000">Python Community</h2>
+                    <p class="g-font-size-16 mb-0 g-line-height-2 g-color-black" data-animation="fadeIn" data-animation-delay="800" data-animation-duration="2000">
+                      
+                      Diversity in the Python Community, Organising a Conference or Meetup
+                      </p>
+                    </div>
+                    
+               
+              </div>
+            </div>
+        </div>
+      </section>
+
+
+
+
+
+
+      <!-- Section Content -->
+      <section class="u-bg-overlay g-bg-img-hero g-bg-darkblue-opacity-0_4--after g-py-100" style="background-image: url({% static '2020/img/body.png' %});">
+        <div class="container u-bg-overlay__inner">
+          <div class="text-center g-mb-70">
+            <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-30 g-mb-30">2019
+              <span class="g-font-weight-400 g-font-size-40">|</span>
+              <span class="g-color-primary">Highlights</span></h2>
+
+            <p class="g-color-black g-font-size-18">PyCon Africa 2019 was the first-ever pan-African meeting of the Python programming community, 
+              and took place in Accra, Ghana from the 6th - 10th August. It included five days of workshops, talks, sprints and events 
+              such as a Django Girls tutorial.</p>
+          </div>
+
+          <div class="embed-responsive embed-responsive-16by9 event-video-effect">
+            <iframe width="530" height="300" src="https://www.youtube.com/embed/43wJnYZ6Zd0" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          
+        </div>
+      </section>
+      <!-- End Section Content -->
+
+
+
+
+  <!-- Modal window 
+
+
+
+    <div id="modal-type-aftersometime" class="js-autonomous-popup text-left g-max-width-600 g-bg-white g-overflow-y-auto g-pa-20" style="display: none;" data-modal-type="aftersometime" data-effect="blur" 
+data-delay="9000" data-speed="500">
+  <button type="button" class="close" onclick="Custombox.modal.close();">
+    <i class="hs-icon hs-icon-close"></i>
+  </button>
+  <h4 class="g-mb-20">This modal window have been shown by "after some time"</h4>
+
+  <hr>
+
+  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+    specimen book.</p>
+  <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
+    recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+</div>
+
+
+
+End Modal window -->
+
+
+      {% include '2020/footer.html' %}
+
+
+
+     
+{% endblock %}
+
+
+
+
+
+
+

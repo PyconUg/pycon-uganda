@@ -1,0 +1,172 @@
+{% load static crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}">
+
+    <!-- Page Title -->
+   <title>{% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}</title>
+
+
+    <!-- Bootstrap -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom Google Font : Open Sans & Montserrat -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- Plugins -->
+    <link href="{% static 'css/plugins/animate.css' %}" rel="stylesheet">
+    <link href="{% static 'css/plugins/slick.css' %}" rel="stylesheet">
+    <link href="{% static 'css/plugins/magnific-popup.css' %}" rel="stylesheet">
+    <link href="{% static 'css/plugins/font-awesome.css' %}" rel="stylesheet">
+    <link href="{% static 'css/plugins/streamline-icons.css' %}" rel="stylesheet">
+
+    <!-- Event Style -->
+    <link href="{% static 'css/event.css' %}" rel="stylesheet">
+
+    <!-- Color Theme -->
+    <!-- Options: green, purple, red, yellow, mint, blue, black  -->
+    <link href="{% static 'css/themes/red.css' %}" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js' %} for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js' %} doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+  <script src="{% static 'js/ie/respond.min.js' %}"></script>
+  <![endif]-->
+
+    <!-- Modernizr -->
+    <script src="{% static 'js/modernizr.min.js' %}"></script>
+    <!-- Subtle Loading bar -->
+    <script src="{% static 'js/plugins/pace.js' %}"></script>
+</head>
+
+<body>
+    <!--Preloader div-->
+    <div class="preloader"></div>
+
+     <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"><img src="{% static 'images/navbarlogo3b.png' %}" alt="PyCon Africa" style="width:auto;"> </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/about">PyCon Africa</a></li>
+                            <li><a href="/coc">Code of Conduct</a></li>
+                            <li><a href="/privacypolicy">Privacy Policy</a></li>
+                            <li><a href="/faq">FAQ</a></li>
+                            <li role="separator" class="divider"></li>
+                        </ul>
+                    </li>
+                    <li><a href="/schedule">Schedule</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SPEAK AT PYCON GH<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/talks/submit">Submit a Talk</a></li>
+
+                            <li role="separator" class="divider"></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sponsors<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/sponsors">Our Sponsors</a></li>
+                            <li><a href="/support_us">Support Us</a></li>
+                            <li role="separator" class="divider"></li>
+                        </ul>
+                    </li>
+                     {% if user.is_authenticated %}
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{% firstof user.get_short_name user.get_username %}<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li role="separator" class="divider"></li>
+                            <li><a href="{% url 'profiles:profile_home' %}">My Profile</a></li>
+                            <li><a href="{% url 'auth_logout' %}">Logout</a></li>
+                            <li role="separator" class="divider"></li>
+                        </ul>
+                    </li>
+                    {% else %}
+                    <li><a href="/accounts/login/">LOGIN | SIGNUP</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </nav>
+    <!-- // End Fixed navbar -->
+
+    <!-- Red header -->
+    <header id="top" class="sub-header">
+    </header>
+    <!-- end .sub-header -->
+
+        <div class="container">
+
+            <div class="nav-center bottom-space-lg">
+                <font color="black">
+
+                <!-- Nav tabs -->
+                 {% block content %}
+
+                  {% endblock %}
+                </font>
+            </div>
+        </div>
+
+    <!--
+     Javascripts : Nerd Stuff :)
+     ====================================== -->
+
+    <!-- jQuery Library -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+    <!-- 3rd party Plugins -->
+    <script src="{% static 'js/plugins/countdown.js' %}"></script>
+    <script src="{% static 'js/plugins/wow.js' %}"></script>
+    <script src="{% static 'js/plugins/slick.js' %}"></script>
+    <script src="{% static 'js/plugins/magnific-popup.js' %}"></script>
+    <script src="{% static 'js/plugins/validate.js' %}"></script>
+    <script src="{% static 'js/plugins/appear.js' %}"></script>
+    <script src="{% static 'js/plugins/count-to.js' %}"></script>
+    <script src="{% static 'js/plugins/nicescroll.js' %}"></script>
+
+    <!-- Google Map -->
+    <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script src="{% static 'js/plugins/infobox.js' %}"></script>
+    <script src="{% static 'js/plugins/google-map.js' %}"></script>
+    <script src="{% static 'js/plugins/directions.js' %}"></script>
+
+    <!-- JS Includes -->
+    <script src="{% static 'js/includes/subscribe.js' %}"></script>
+    <script src="{% static 'js/includes/contact_form.js' %}"></script>
+
+    <!-- Main Script -->
+    <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>

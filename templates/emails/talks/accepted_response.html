@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thank You for Accepting to Speak at PyCon Africa 2024</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .content { max-width: 600px; margin: auto; }
+        .header { background-color: #ecc8a4; padding: 10px; text-align: center; }
+        .details, .next-steps { margin: 20px 0; }
+        .details th, .details td, .next-steps th, .next-steps td { text-align: left; padding: 8px; }
+        .footer { margin-top: 20px; text-align: center; font-size: 0.9em; color: #777; }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="header">
+            <h2>Thank You for Accepting, {{ full_name }}!</h2>
+        </div>
+        <div class="details">
+            <p>We are thrilled to confirm your acceptance to present your talk titled "<a href="{{ talk_url }}"><strong>{{ proposal.title }}</strong></a>" at PyCon Africa {{ proposal.event_year.year }}.</p>
+        </div>
+        
+        <div class="next-steps">
+            <h3>What's Next</h3>
+            <p>To ensure a smooth experience, please follow these steps:</p>
+            <table>
+                <tr>
+                    <th>Step 1:</th>
+                    <td>Review the <a href="https://africa.pycon.org/2024/speaker-guidelines/">Speaker Guidelines</a> to align your presentation with our standards.</td>
+                </tr>
+                <tr>
+                    <th>Step 2:</th>
+                    <td>Join our <a href="https://discord.gg/MKcMmJawJX">speakers' community on Discord</a> to interact with other speakers and organizers.</td>
+                </tr>
+                <tr>
+                    <th>Step 3:</th>
+                    <td>Ensure your profile, photo, and social media links are updated on your <a href="https://africa.pycon.org/accounts/profile/">Profile</a>. This information is crucial for our announcements. Please complete this within <b>two</b> weeks. <strong>Missing information may result in your talk not being announced.</strong></td>
+                </tr>
+                <tr>
+                    <th>Step 4:</th>
+                    <td>Submit your final presentation slides/materials at least two weeks before the conference <a href="{{ talk_url }}"><b>here</b></a>. Simply use the upload button to submit.</td>
+                </tr>
+                <tr>
+                    <th>Step 5:</th>
+                    <td>Get your speaker's ticket using the provided link and coupon code. <a href="https://africa.pycon.org/2024/tickets/">Get Ticket</a>. Use the coupon code <strong>PA24-Speakers-1a4</strong> at checkout.</td>
+                </tr>
+            </table>
+        </div>
+
+        <p>We appreciate your contribution and look forward to an exciting presentation at the conference!</p>
+        <p>If you have any questions, please contact us at <a href="mailto:program@pycon.africa">program@pycon.africa</a>.</p>
+        <br>
+        <p>Best regards,<br>The PyCon Africa Program Team</p>
+    </div>
+    <div class="footer">
+        <p>© 2024 PyCon Africa. All rights reserved.</p>
+        <p>Contact us: <a href="mailto:program@pycon.africa">program@pycon.africa</a></p>
+    </div>
+</body>
+</html>

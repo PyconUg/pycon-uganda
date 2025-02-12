@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% load i18n static  markdown_extras  %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "About | PyCon Africa 2024" %}{% endif %}{% endblock %}
+
+ 
+
+
+
+{% block content %}
+{% include '2024/navbar.html' %}
+
+
+    <!-- Breadcrumbs -->
+    <section class="g-bg-gray-light-v5 g-py-80 g-pt-150">
+      <div class="container text-center">
+        <h2 class="h2 g-color-black g-font-weight-600">About Us</h2>
+
+        <ul class="u-list-inline">
+          <li class="list-inline-item g-mr-5">
+            <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="/2024/">Home</a>
+            <i class="g-color-gray-light-v2 g-ml-5">/</i>
+          </li> 
+          <li class="list-inline-item g-color-primary">
+            <span>About Us</span>
+          </li>
+        </ul><br> 
+        <i class="fa-brands fa-python" style="font-size:41px;"></i>
+      </div>
+      
+    </section>
+    <!-- End Breadcrumbs --> 
+
+ 
+    <!-- body -->
+    <div class="container  g-pt-50">
+        <div class="row"> 
+          {% for about in abouts.all|slice:"0:1" %} 
+          <div class="u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30" >
+            <!-- Hero Info #14 -->
+            <div class="g-bg-img-hero g-bg-pos-top-center g-bg-size-cover g-bg-cover g-bg-white-gradient-opacity-v5--after" style="background-image: url({{ about.about_image_one.url }});">
+              <div class="container g-pos-rel g-z-index-1">
+                <div class="row justify-content-between">
+                  <div class="col-md-5 g-py-100">
+                    <div class="mb-5">
+                      <span class="d-block text-uppercase g-color-dark-light-v1 g-font-weight-500 g-font-size-13 mb-4">{{ about.about_tagline }}</span>
+                      <h2 class="mb-4 g-color-black"><b>{{ about.about_title }}</b></h2> 
+                    </div> 
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Hero Info #14 -->
+
+              <div ><br><br>
+                <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-20 g-mb-30"> 
+                  <span class="g-color-primary">{{ about.section_one_title }}</span>
+                </h2>
+                  <p class="g-color-black g-font-size-16 markdownx-preview">
+                    {{ about.section_one | markdown | safe }} 
+                    {{ form.media }}
+                  </p> 
+              </div>
+          </div>
+ 
+            <div class="u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30 col col-12 col-sm-12 col-md-6" role="alert">
+              <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-20 g-mb-30"> 
+                <span class="g-color-primary">{{ about.section_two_title }}</span>
+              </h2>
+              <p class="g-color-black g-font-size-16 markdownx-preview">
+                {{ about.section_two | markdown | safe }} 
+                {{ form.media }}
+              </p>  
+            </div>
+
+
+
+            <div class="u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30 col col-12 col-sm-12 col-md-6" role="alert">
+              <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-20 g-mb-30"> 
+                <span class="g-color-primary">{{ about.section_three_title }}</span>
+              </h2>
+              
+              <p class="g-color-black g-font-size-16 markdownx-preview">
+                {{ about.section_three | markdown | safe }} 
+                {{ form.media }}
+              </p>  
+            </div>  
+
+            {% if about.section_four %}
+            <div class="u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30 col col-12 col-sm-12  " role="alert"> 
+              
+                <p class="g-color-black g-font-size-16 markdownx-preview">
+                  {{ about.section_four | markdown | safe }} 
+                  {{ form.media }}
+                </p> 
+            </div>
+            {% else %} 
+            {% endif %} 
+
+          {% endfor %} 
+
+    
+      </div> 
+    </div>
+    <!-- End body -->
+  
+{% endblock %}

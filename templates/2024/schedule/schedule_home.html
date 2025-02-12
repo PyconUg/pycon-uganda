@@ -1,0 +1,221 @@
+{% load i18n static markdown_extras  %}
+
+<!-- Our Schedule -->
+<section class="container g-pt-100 g-pb-60">
+    <!-- Heading -->
+    <div class="row justify-content-center text-center g-mb-50">
+        <div class="col-lg-9">
+            <h2 class="h2 g-color-black g-font-weight-600 mb-2">Our Schedule</h2>
+            <div class="d-inline-block g-width-30 g-height-2 g-bg-primary mb-2"></div>
+        </div>
+    </div>
+    <!-- End Heading -->
+
+
+
+    {% if request.user.is_superuser or is_schedule_live or perms.conference_schedule.add_schedule or perms.conference_schedule.change_schedule %}
+               
+
+     <!-- Nav tabs -->
+<ul class="nav nav-justified u-nav-v2-1 u-nav-primary u-nav-rounded-5 g-mb-20" role="tablist" data-target="nav-2-1-accordion-primary-hor-justified" data-tabs-mobile-type="accordion" data-btn-classes="btn btn-md btn-block u-btn-outline-primary g-mb-20">
+    {% for day_schedule in day_schedules %}
+        <li class="nav-item">
+            <a class="nav-link {% if forloop.first %}active{% endif %}" data-toggle="tab" href="#tab-day-{{ forloop.counter }}" role="tab">
+                {{ day_schedule.day.conference_day }}<br>{{ day_schedule.day.actual_date|date:"d-m-Y" }}
+            </a>
+        </li>
+    {% endfor %}
+</ul>
+<!-- End Nav tabs -->
+
+<!-- Tab panes -->
+<div id="nav-1-1-default-hor-left-rounded-underline" class="tab-content">
+    {% for day_schedule in day_schedules %}
+        <div class="tab-pane fade {% if forloop.first %}show active{% endif %}" id="tab-day-{{ forloop.counter }}" role="tabpanel">
+            <!-- Check if there are schedules for the day -->
+            {% if day_schedule.schedules %}
+            <ul class="list-unstyled">
+                {% for schedule in day_schedule.schedules|slice:":3" %}
+                <li class="g-brd-around g-brd-gray-light-v4 g-brd-left-3 
+                {% if schedule.concurrent_talk %}
+                    g-brd-yellow-left
+                {% elif schedule.is_a_keynote_speaker %}
+                    g-brd-darkred-left
+                {% elif schedule.is_a_panel %}
+                    g-brd-bluegray-left
+                {% elif schedule.is_an_event %}
+                    g-brd-green-left
+                {% else %}
+                    g-brd-blue-left
+                {% endif %}
+                rounded g-pa-10 g-mb-10"> <!-- Reduced padding for mobile -->
+
+                    <div class="row">
+                        <div class="col-12 col-md-8">
+                            <!-- Event or Talk Title -->
+                            {% if schedule.is_an_event %}
+                            <h5 class="text-uppercase g-font-weight-700 g-font-size-16 g-mb-5">
+                                {% if schedule.fa_icon %}<i class="{{ schedule.fa_icon }}"></i> |{% endif %}
+                                <a {% if schedule.event_url %} href="/2024/events/{{ schedule.event_url }}"{% elif schedule.external_url %} href="{{ schedule.external_url }}" target="/" {% endif %}>
+                                    {{ schedule.event }}
+                                </a>
+                            </h5>
+                            {% else %}
+                            <h5 class="text-uppercase g-font-weight-700 g-font-size-16 g-mb-5">
+                                <!-- Display Icon Based on Talk Type (Smaller icons for mobile) -->
+                                {% if schedule.talk.talk_type == 'Lightning Talk' or schedule.talk.talk_type == 'Short Talk' or schedule.talk.talk_type == 'Long Talk' %}
+                                    <img class="rounded-circle g-width-30 g-height-30" title="{{ schedule.talk.talk_type }}" src="https://res.cloudinary.com/pycon-africa/image/upload/v1722881110/website_storage_location/media/speaker.png" alt="Speaker">
+                                {% elif schedule.talk.talk_type == 'Tutorial' %}
+                                    <img class="rounded-circle g-width-30 g-height-30" title="Tutorial" src="https://res.cloudinary.com/pycon-africa/image/upload/v1722881110/website_storage_location/media/workshop.png" alt="Tutorial">
+                                {% elif schedule.talk.talk_type == 'Sponsored Talk' %}
+                                    <img class="rounded-circle g-width-30 g-height-30" title="Sponsored Talk" src="https://res.cloudinary.com/pycon-africa/image/upload/v1726054543/website_storage_location/media/sponortalk.png" alt="Sponsored Talk">
+                                {% elif schedule.talk.talk_type == 'Keynote Speaker' %}
+                                    <img class="rounded-circle g-width-30 g-height-30" title="Keynote Speaker" src="https://res.cloudinary.com/pycon-africa/image/upload/v1722881110/website_storage_location/media/keynote-speaker.png" alt="Keynote Speaker">
+                                {% endif %}
+                                {% if schedule.fa_icon %}<i class="{{ schedule.fa_icon }}"></i> {% endif %}
+                                |  <a href="/2025/talks/{{ schedule.talk.proposal_id }}/detail/">{{ schedule.talk.title }}</a>
+                            </h5>
+                            {% endif %}
+
+                            <!-- Time & Room Info -->
+                            <p class="g-color-gray-dark-v2 g-font-size-14 g-font-weight-600">
+                                <i class="fa-solid fa-clock g-mr-5"></i>Time: {{ schedule.start_time|time:"h:i A" }} - {{ schedule.end_time|time:"h:i A" }} 
+                                |
+                                {% if schedule.allocated_room %}
+                                    <i class="fa fa-map-marker-alt g-mr-5 "></i>Room:  {{ schedule.allocated_room.room_name }} 
+                                {% endif %}
+                            </p>
+
+                            <!-- Abstract or Description -->
+                            <p class="g-color-gray-dark-v2 g-font-size-14">
+                                {% if schedule.is_an_event %}
+                                    {{ schedule.event_description | truncatechars:150 }}
+                                {% else %}
+                                    {{ schedule.talk.talk_abstract | truncatechars:150 }}
+                                {% endif %}
+                            </p>
+                                                                
+                        <ul class="list-inline my-0">
+                        {% if schedule.is_an_event %}
+                        {% else %}
+                            {% if schedule.talk.user.user_profile.profile_image %}
+                            <li class="list-inline-item mr-0">
+                                <img class="g-brd-around g-brd-gray-light-v3 g-pa-2 g-width-40 g-height-40 rounded" 
+                                     data-toggle="tooltip" 
+                                     data-placement="top" 
+                                     title="Speaker:  {{ schedule.talk.user.user_profile.name }} {{ schedule.talk.user.user_profile.surname }}" 
+                                     src="{{ schedule.talk.user.user_profile.profile_image.url }}" 
+                                     alt="Speaker Image">
+                            </li>
+                            {% else %}
+                            <li class="list-inline-item mr-0">
+                                <img class="g-brd-around g-brd-gray-light-v3 g-pa-2 g-width-40 g-height-40 rounded" 
+                                     data-toggle="tooltip" 
+                                     data-placement="top" 
+                                     title="Speaker:  {{ schedule.talk.user.user_profile.name }} {{ schedule.talk.user.user_profile.surname }}" 
+                                     src="{% static '2024/img/speakers/speaker.png' %}" 
+                                     alt="Default Image">
+                            </li>
+                            {% endif %}
+                        
+                        <!-- Speaker's Name -->
+                        <li class="list-inline-item">
+                            {{ schedule.talk.user.user_profile.name|default:"PyCon Africa" }} {{ schedule.talk.user.user_profile.surname|default:"Speaker" }}
+                        </li>
+
+                        <!-- Additional Speakers -->
+                        {% for speaker in schedule.talk.speakers.all %}
+                            | <li class="list-inline-item mr-0">
+                                {% if speaker.user_profile.profile_image %}
+                                    <img class="g-brd-around g-brd-gray-light-v3 g-pa-2 g-width-40 g-height-40 rounded" 
+                                         data-toggle="tooltip" 
+                                         data-placement="top" 
+                                         title="Speaker:  {{ speaker.user_profile.name }} {{ speaker.user_profile.surname }}" 
+                                         src="{{ speaker.user_profile.profile_image.url }}" 
+                                         alt="Speaker Image">
+                                {% else %}
+                                    <img class="g-brd-around g-brd-gray-light-v3 g-pa-2 g-width-40 g-height-40 rounded" 
+                                         data-toggle="tooltip" 
+                                         data-placement="top" 
+                                         title="Speaker:  {{ speaker.user_profile.name }} {{ speaker.user_profile.surname }}" 
+                                         src="{% static '2024/img/speakers/speaker.png' %}" 
+                                         alt="Default Image">
+                                {% endif %}
+                            </li>
+                            <li class="list-inline-item">
+                                {{ speaker.user_profile.name }} {{ speaker.user_profile.surname }}{% if not forloop.last %}, {% endif %}
+                            </li>
+                        {% endfor %}
+                        {% endif %}
+                        </ul>
+                        </div>
+
+                        <div class="col-12 col-md-4 text-md-right">
+                            <!-- Buttons for Talk Type -->
+                            {% if schedule.talk.talk_type == 'Lightning Talk' or schedule.talk.talk_type == 'Short Talk' or schedule.talk.talk_type == 'Long Talk' %}
+                            <a class="btn u-btn btn-xs rounded-0 g-mb-5">
+                                <i class="fa fa-comments g-mr-2"></i>
+                                Talk
+                            </a>
+                            {% elif schedule.talk.talk_type == 'Tutorial' %}
+                            <a class="btn u-btn btn-xs rounded-0 g-mb-5">
+                                <i class="fa fa-chalkboard-teacher g-mr-2"></i>
+                                Tutorial
+                            </a>
+                            {% elif schedule.talk.talk_type == 'Sponsored Talk' %}
+                            <a class="btn u-btn btn-xs rounded-0 g-mb-5">
+                                <i class="fa fa-bullhorn g-mr-2"></i>
+                                Sponsored Talk
+                            </a>
+                            {% elif schedule.talk.talk_type == 'Keynote Speaker' %}
+                            <a class="btn u-btn btn-xs rounded-0 g-mb-5">
+                                <i class="fa fa-microphone g-mr-2"></i>
+                                Keynote Speaker
+                            </a> 
+                            {% else %}
+                            {% endif %}
+
+                            <!-- Concurrent Talk Indicator -->
+                            {% if schedule.concurrent_talk %}
+                            <a class="btn u-btn-inset u-btn-yellow btn-xs rounded-0 g-mb-5" data-toggle="tooltip" data-placement="top" title="This session will run concurrently with another session"><i class="fa-sharp fa-solid fa-screen-users"></i> 
+                            </a>
+                            {% endif %} 
+                        {% if schedule.is_a_keynote_speaker %}
+                        <a class="btn u-btn-inset u-btn-darkred btn-xs rounded-0 g-mb-5" data-toggle="tooltip" data-placement="top" title="This will be a Keynote session"><i class="fa-solid fa-keynote" style="color: #ffffff;"></i></a> 
+                        {% endif %}
+                        {% if schedule.is_a_panel %}
+                        <a class="btn u-btn-inset u-btn-bluegray btn-xs rounded-0 g-mb-5"  data-toggle="tooltip" data-placement="top" title="This will be a Panel Discussion session"><i class="fa-solid fa-users-line" style="color: #ffffff;"></i></a> 
+                        {% endif %}
+                        </div>
+                    </div> 
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+                <p>No events or talks scheduled for this day.</p>
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>
+
+                    <!-- View Full Schedule Button -->
+                    <div class="col-12 text-center g-mt-30">
+                        <a href="/{{ year }}/schedule/" class="btn btn-lg u-btn-outline-darkgray g-rounded-50">View Full Schedule</a>
+                    </div>              
+                  
+    {% else %}
+        <div class="alert alert-warning" role="alert">
+            <strong>Schedule Coming Soon!</strong> The schedule is currently being finalized. Please check back later.
+        </div>
+    {% endif %}
+
+
+
+
+
+
+
+</section>
+<!-- End Our Schedule -->
+
+ 

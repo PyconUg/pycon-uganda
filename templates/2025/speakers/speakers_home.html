@@ -1,0 +1,81 @@
+<!-- home.html -->
+{% load keynote_tags %}
+
+<!-- Speakers Section -->
+<section id="speakers" class="g-pt-50 g-pb-50">
+  <div class="container">
+    <div class="text-center g-mb-50">
+      <h2 class="h1 g-font-weight-300">Our Speakers</h2>
+      <p class="lead">Meet some of our distinguished speakers for PyCon Africa 2024</p>
+    </div>
+
+    <div class="row">
+      {% get_speakers as keynote_speakers other_speakers %}
+
+      <!-- Keynote Speakers -->
+      <div class="col-12">
+        <h3>Keynote Speakers</h3>
+        <div class="row">
+          {% for speaker in keynote_speakers %}
+          <div class="col-md-3 g-mb-30">
+            <div class="card text-center">
+              <div class="card-body">
+                <div class="g-mb-20">
+                  {% if speaker.profile_image %}
+                  <img class="g-width-100 g-height-100 rounded-circle" src="{{ speaker.profile_image.url }}" alt="{{ speaker.name }}">
+                  {% else %}
+                  <img class="g-width-100 g-height-100 rounded-circle" src="{% static '/2024/img/speakers/speaker.png' %}" alt="{{ speaker.name }}">
+                  {% endif %}
+                </div>
+                <h4 class="h5 g-mb-5">{{ speaker.name }}</h4>
+                <p class="g-color-gray-dark-v4">{{ speaker.job_title }}<br>{{ speaker.company }}</p>
+                <a href="{% url 'speakers:speaker_detail' year=2024 profile_id=speaker.profile_id %}" class="btn btn-outline-primary">View Profile</a>
+              </div>
+            </div>
+          </div>
+          {% empty %}
+          <div class="col-12 text-center">
+            <p>No keynote speakers announced yet. Stay tuned!</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <!-- End Keynote Speakers -->
+
+      <!-- Random Speakers -->
+      <div class="col-12">
+        <h3>Featured Speakers</h3>
+        <div class="row">
+          {% for speaker in other_speakers %}
+          <div class="col-md-3 g-mb-30">
+            <div class="card text-center">
+              <div class="card-body">
+                <div class="g-mb-20">
+                  {% if speaker.profile_image %}
+                  <img class="g-width-100 g-height-100 rounded-circle" src="{{ speaker.profile_image.url }}" alt="{{ speaker.name }}">
+                  {% else %}
+                  <img class="g-width-100 g-height-100 rounded-circle" src="{% static '/2024/img/speakers/speaker.png' %}" alt="{{ speaker.name }}">
+                  {% endif %}
+                </div>
+                <h4 class="h5 g-mb-5">{{ speaker.name }}</h4>
+                <p class="g-color-gray-dark-v4">{{ speaker.job_title }}<br>{{ speaker.company }}</p>
+                <a href="{% url 'speakers:speaker_detail' year=2024 profile_id=speaker.profile_id %}" class="btn btn-outline-primary">View Profile</a>
+              </div>
+            </div>
+          </div>
+          {% empty %}
+          <div class="col-12 text-center">
+            <p>No featured speakers announced yet. Stay tuned!</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <!-- End Random Speakers -->
+
+      <div class="col-12 text-center g-mt-30">
+        <a href="{% url 'speakers:speaker_list' %}" class="btn btn-lg u-btn-outline-darkgray g-rounded-50">See More Speakers</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Speakers Section -->

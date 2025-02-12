@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Proposal Has Been Accepted for PyCon Africa 2024</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .content { max-width: 600px; margin: auto; }
+        .header { background-color: #ecc8a4; padding: 10px; text-align: center; }
+        .details, .next-steps { margin: 20px 0; }
+        .details th, .details td, .next-steps th, .next-steps td { text-align: left; padding: 8px; }
+        .footer { margin-top: 20px; text-align: center; font-size: 0.9em; color: #777; }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="header">
+            <h2>Congratulations {{ full_name }}!</h2>
+        </div>
+        <div class="details">
+            <p>We are pleased to inform you that your proposal titled "<a href="{{ talk_url }}"><strong>{{ proposal.title }}</strong></a>" has been accepted for PyCon Africa {{ proposal.event_year.year }}.</p>
+        </div>
+        
+        <div class="next-steps">
+            <h3>Next Steps</h3> 
+            <p>We are excited to have you present at our conference. Please let us know if you accept this invitation to speak by clicking the link below:</p>
+            <p><a href="{{ response_url }}"><b>Accept or Reject</b></a> to present.</p>
+        </div>
+
+         <p>For any further information or queries, please feel free to reach out to us.</p>
+        <br>
+        <p>Best regards,<br>The PyCon Africa Program Team</p>
+    </div>
+    <div class="footer">
+        <p>© 2024 PyCon Africa. All rights reserved.</p>
+        <p>Contact us: <a href="mailto:program@pycon.africa">program@pycon.africa</a></p>
+    </div>
+</body>
+</html>

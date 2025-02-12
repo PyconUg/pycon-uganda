@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4">Create Schedule for PyCon {{ year }}</h2>
+
+    <!-- Display any messages (success, error, etc.) -->
+    {% if messages %}
+        <div class="alert-messages">
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <!-- Crispy form rendering -->
+    <form method="POST">
+        {% csrf_token %}
+        {{ form|crispy }}
+
+        <!-- Submit Button -->
+        <div class="form-group text-right">
+            <button type="submit" class="btn btn-primary btn-lg">Save Schedule</button>
+        </div>
+    </form>
+
+    <!-- Link to go back to the schedule overview -->
+    <div class="mt-3">
+        <a href="{% url 'conference_schedule:schedule' year=year %}" class="btn btn-secondary">
+            Back to Schedule Overview
+        </a>
+    </div>
+</div>
+{% endblock %}

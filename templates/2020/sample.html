@@ -1,0 +1,56 @@
+{% extends "2020/base.html" %}
+{% load i18n static %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Code of Conduct Reporting Guidelines | PyCon Africa 2020" %}{% endif %}{% endblock %}
+
+ 
+
+
+
+{% block content %}
+
+      <!-- Section Content -->
+      <section class="g-bg-img-hero g-pos-rel u-bg-overlay g-bg-darkblue-opacity-0_6--after g-pt-150" style="background-image: url({% static '2020/img/body1.png' %});">
+        <div class="container g-max-width-750 u-bg-overlay__inner g-color-white g-mb-60">
+       
+            <h3 class="text-center text-uppercase h3 g-font-weight-700 g-font-size-20 g-font-size-50--md g-color-primary g-mb-20 g-mb-50--md">Code of Conduct Reporting Guidelines</h3>
+            <br>
+            <br>
+        </div>
+
+      </section>
+      <!-- End Section Content -->
+       <!-- body -->
+       <div class="container">
+        <div class="row">
+            <div class="u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30 col col-12 col-sm-12 col-md-6" role="alert">
+                <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-20 g-mb-30">The
+                  <span class="g-font-weight-400 g-font-size-30">|</span>
+                  <span class="g-color-primary">Communication</span></h2>
+                
+                    <p class="g-color-black g-font-size-16"> </p>  
+              </div>
+              <a class="g-color-red" href="" </a>
+
+                <h3  class="g-font-size-20 g-font-weight-700 g-color-primary">
+        </div>
+       </div>
+
+
+
+        <!--
+            <div class="u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30 col col-12 col-sm-12 col-md-6" role="alert">
+                <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-20 g-mb-30">The
+                  <span class="g-font-weight-400 g-font-size-30">|</span>
+                  <span class="g-color-primary">Communication</span></h2>
+                
+                    <p class="g-color-black g-font-size-16"> </p>  
+              </div>
+              <a class="g-color-red" href="" </a>
+
+                <h3  class="g-font-size-20 g-font-weight-700 g-color-primary">
+        -->
+   
+
+        {% include '2020/footer.html' %}        
+
+{% endblock %}

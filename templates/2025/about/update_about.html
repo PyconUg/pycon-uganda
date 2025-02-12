@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load i18n static  crispy_forms_tags markdown_extras %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "About-Update || PyCon Africa" %}{% endif %}{% endblock %}
+
+ 
+{% block content %}
+
+<!-- ========== HEADER ========== -->
+{% include '2024/navbar.html' %}
+<!-- ========== END HEADER ========== -->
+
+
+  <!--================ Breadcrumb ================-->
+  <div class="mad-breadcrumb">
+    <div class="container">
+      <h1 class="mad-page-title mad-title-with-line">About</h1>
+      <nav class="mad-breadcrumb-path"><span><a href="/">Home</a></span>/<span>About</span>
+      </nav>
+    </div>
+  </div>
+  <!--================ End of Breadcrumb ================-->
+ 
+  <div class="mad-content no-pd">
+    <div class="container">
+ 
+      <section class="mad-section size-5"> 
+        <div class="mad-col"> 
+          <!--================ Icon Box ================-->
+          <article class="text-size-medium">
+            <div class="mad-icon-box-content markdownx-preview"> 
+                <form action="" enctype='multipart/form-data' method='Post'>{% csrf_token %}  
+                    {{ form | crispy }}
+                    <br> 
+                    <div class="d-grid gap-5">
+                        <button class="btn primaryAction btn-big" style="background-position: 0px 59px;" type="submit" >Update Page<i class="licon-chevron-right-circle"></i></button>
+                                           
+                    </div> 
+                 </form>
+                 {{ form.media }}
+                 
+            </div>
+          </article>
+          <!--================ End of Icon Box ================-->  
+        </div>   
+    </section> 
+ 
+    </div>
+  </div>
+{% endblock %}

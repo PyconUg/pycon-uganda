@@ -1,0 +1,114 @@
+{% extends "2020/base.html" %}
+{% load i18n static %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Code of Conduct | PyCon Africa 2020" %}{% endif %}{% endblock %}
+
+ 
+
+
+{% block content %}
+{% include '2020/navbar.html' %}
+
+      <!-- Section Content -->
+      <section class="g-bg-img-hero g-pos-rel u-bg-overlay g-bg-darkblue-opacity-0_6--after g-pt-150" style="background-image: url({% static '2020/img/body1.png' %});">
+        <div class="container g-max-width-750 u-bg-overlay__inner g-color-white g-mb-60">
+       
+            <h3 class="text-center text-uppercase h3 g-font-weight-700 g-font-size-20 g-font-size-50--md g-color-primary g-mb-20 g-mb-50--md">Code of Conduct</h3>
+            <br>
+            <br>
+        </div>
+
+      </section>
+      <!-- End Section Content -->
+       <!-- body -->
+       <div class="container">
+        <div class="row">
+
+          
+            <div class="u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30" >
+                <div >
+                    <p class="g-color-black g-font-size-16">
+                        We want all attendees to have an enjoyable experience at PyCon Africa. All attendees - delegates, speakers, volunteers, sponsors, exhibitors and organisers - are expected to abide by this Code of Conduct. If necessary, the organisers will act to enforce it.
+                    </p>
+                    <p class="g-color-black g-font-size-16"> <strong>All attendees are expected to show respect and courtesy to others throughout the conference and at all conference events.</strong> This includes social and fringe events, whether officially sponsored by PyCon Africa or not.</p>
+
+                </div>
+            </div>
+  
+
+
+            <div class="u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30 col col-12 col-sm-12 col-md-6" role="alert">
+              <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-20 g-mb-30">
+                <span class="g-color-primary">Communication</span></h2>
+              <p class="g-color-black g-font-size-16">All communication should be appropriate for a general audience, which will include people from many different religions, cultures and nations.</p>
+              <p class="g-color-black g-font-size-16">Sexual language and imagery are not welcome.</p>
+              <p class="g-color-black g-font-size-16">Please be thoughtful when making jokes or discussing sensitive topics or issues that are likely to have a strong personal effect on some people. If in doubt, ask for advice or simply moderate your expression.</p>
+
+             <!-- <p class="g-color-black g-font-size-16"> </p>   -->
+            </div>
+
+            <div class="u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30 col col-12 col-sm-12 col-md-6" role="alert">
+                <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-20 g-mb-30">
+                  <span class="g-color-primary">Harassment</span></h2>
+                <p class="g-color-black g-font-size-16">PyCon Africa will not tolerate harassment in any form, or language, imagery or behaviour that are:</p>
+                <ul class="g-color-black g-font-size-16">
+                    <li>sexist, racist or exclusionary</li>
+                    <li>intimidating or threatening</li>
+                    <li>insulting or unpleasant</li>
+                </ul>
+
+                <p class="g-color-black g-font-size-16">Harassment can include any unwelcome behaviour directed at another person.</p> 
+              </div>
+
+              <div class="u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30" >
+                <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-20 g-mb-30">
+                    <span class="g-color-primary">In the event of a problem</span></h2>
+                <div >
+                    <p class="g-color-black g-font-size-16">
+                        If you are troubled by the behaviour of another attendee at the conference, or are concerned that another attendee may be in distress, please speak immediately to any member of conference staff or contact our code of conduct liaison volunteers. See <a class="g-color-red" href="/coc/reporting-guidelines">how to report a code of conduct concern</a>.
+                    </p>
+
+                    <p class="g-color-black g-font-size-16">Your concern will be heard in confidence, taken seriously, and dealt with according to <a class="g-color-red" href="/coc/guidelines">a documented procedure for handling code of conduct reports</a>.</p>
+
+                    
+<p class="g-color-black g-font-size-16">Conference staff - volunteers and organisers - will be on hand throughout the conference. Any concern, whatever it is, will be immediately passed on to a member of the conference committee. The committee will investigate promptly and if necessary will take appropriate action. This could include:</p>
+
+<ul class="g-color-black g-font-size-16">
+	<li>asking a violator of the Code of Conduct to leave the event immediately (no refunds will be forthcoming)</li>
+	<li>passing on details of the incident to the <a class="g-color-red" href="https://www.python.org/psf/" class>Python Software Foundation</a></li>
+	<li>informing the police about the incident</li>
+</ul>
+
+<p class="g-color-black g-font-size-16">We will provide you with a written statement of the outcome, whatever it is.</p>
+
+<h3  class="g-font-size-20 g-font-weight-700 g-color-primary">Transparency report</h3>
+
+<p class="g-color-black g-font-size-16">We will publish a Code of Conduct report after the conference, containing an anonymised list of any reports we received, and how we responded.</p>
+ 
+                </div>
+            </div>
+
+
+        <!--
+            <div class="u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30 col col-12 col-sm-12 col-md-6" role="alert">
+                <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-20 g-mb-30">The
+                  <span class="g-font-weight-400 g-font-size-30">|</span>
+                  <span class="g-color-primary">Communication</span></h2>
+                
+                    <p class="g-color-black g-font-size-16"> </p>  
+              </div>
+              <a class="g-color-red" href="" </a>
+        -->
+           
+
+
+
+        </div>
+      </div>
+    <!-- End body -->
+
+
+
+    {% include '2020/footer.html' %}
+
+
+{% endblock %}

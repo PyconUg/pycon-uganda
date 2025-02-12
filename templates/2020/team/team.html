@@ -1,0 +1,246 @@
+{% extends "2020/base.html" %}
+{% load i18n static %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Team | PyCon Africa 2020" %}{% endif %}{% endblock %}
+
+
+
+{% block content %}
+{% include '2020/navbar.html' %}
+
+      <!-- Section Content -->
+      <section class="g-bg-img-hero g-pos-rel u-bg-overlay g-bg-darkblue-opacity-0_6--after g-pt-150" style="background-image: url({% static '2020/img/body1.png' %});">
+        <div class="container g-max-width-750 u-bg-overlay__inner g-color-white g-mb-60">
+            <h3 class="text-center text-uppercase h3 g-font-weight-700 g-font-size-20 g-font-size-50--md g-color-primary g-mb-20 g-mb-50--md">Team</h3>
+            <br>
+            <br>
+        </div>
+
+      </section>
+      <!-- End Section Content -->
+      
+
+
+
+      <div class="container">
+        <div class="row">
+          <div class="u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30 g-mb-20 col-md-12" >
+            <div >
+                <p class="g-color-black g-font-size-16">
+                    PyCon Africa is organized by a multi-national team of volunteers on behalf of the global Python 
+                    programming community. This page will list all the commitees and their members to highlight 
+                    their involvement with the PyCon Africa 2020 conference.</p>
+
+                    <p class="g-color-black g-font-size-16"><em>Speaking of involvement:</em>&nbsp;<strong>We can always use 
+                    more help</strong>. If you’re interested, please send a mail to the&nbsp;<a href="mailto:team@pycon.africa">
+                    PyCon Africa Team</a>&nbsp;. Many thanks !
+                        </p>
+                    
+            </div>
+        </div>
+
+
+            <div class="u-shadow-v1-5 g-line-height-2 g-pa-30 g-mb-20 col-md-12" role="alert">
+                <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-20 g-mb-30">
+                    <span class="g-color-primary">PyCon Africa Board Commitee</span></h2>
+                    <p class="g-color-black g-font-size-16">We have an active board with members each 
+                        investing a lot of time into the organization of the PyCon Africa 
+                        conference:</p>
+                    <ul class="g-color-black g-font-size-16">
+                        <li>Marlene Mhangami (Chair)</li>
+                        <li>Daniele Procida</li>
+                        <li>Aisha Bello</li>
+                        <li>Michael Young</li>
+                        <li>Abigail Mesrenyame Dogbe</li>
+                        <li>Noah Alorwu</li>
+                        <li>Kelvin Oyanna</li>
+                        <li>Ngazetungue Muheue</li>
+                        <li>Mannie Young</li>
+                  </ul>
+  
+                    <p class="g-color-black g-font-size-16">Among other things, the board manages and organizes the 
+                    administration side of the conference, in particular: contracts, venue 
+                    contact, catering contact, ticket support, satellite conferences, legal 
+                    support, insurance, licensing.</p>
+                <br>
+                <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-20 g-mb-30">
+                    <span class="g-color-primary">Sponsors Commitee</span></h2>
+                  <p class="g-color-black g-font-size-16">
+                    Manages and organizes the sponsor activities of the conference, in particular: sponsor 
+                    contacts, sponsor logistics, room/booth assignment, recruiting session, jobs fair, exhibit hall.
+                  </p>
+                  <ul class="g-color-black g-font-size-16">
+                    <li>Michael Young</li>
+                    <li>Marlene Mhangami</li>
+                </ul>
+                <br>
+                <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-20 g-mb-30">
+                    <span class="g-color-primary">Program Commitee</span></h2>
+                <p class="g-color-black g-font-size-16">
+                    Manages and organizes the conference program of the conference, in particular: 
+                    talk selection/voting, scheduling, session chairs, sprint/openspace/keynote/lightning 
+                    talks/poster session organization.
+                </p>
+                <ul class="g-color-black g-font-size-16">
+                    <li>Marlene Mhangami</li>
+                    <li>Rising Odegua</li>
+                    <li>Noah Alorwu</li>
+                    <li>Michael Young</li>
+                    <li>Psalms Kalu</li>
+                    <li>Aisha Bello</li>
+                    <li>Chukwudi Nwachukwu</li>
+                    <li>Mannie Young</li>
+                </ul>
+                <br>
+                <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-20 g-mb-30">
+                    <span class="g-color-primary">Web Commitee</span></h2>
+                <p class="g-color-black g-font-size-16">
+                    Manages and organizes the web site, in particular: web site support, helpdesk ticket system, 
+                    administration, backups, payment system integration, hosting, setup of the conference and 
+                    volunteers apps, ticket search and social event search apps.
+                </p>
+                <ul class="g-color-black g-font-size-16">
+                    <li>Marlene Mhangami</li>
+                    <li>Mannie Young</li>
+                </ul>
+                <br>
+                
+                <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-20 g-mb-30">
+                    <span class="g-color-primary">Communications Commitee</span></h2>
+                <p class="g-color-black g-font-size-16">
+                    Manages and organizes the public communication and community relations of the conference, 
+                    in particular: press, community relations, announcements, social media, attendee tools, 
+                    volunteer coordination, mailing lists, Telegram groups.
+                </p>
+                <ul class="g-color-black g-font-size-16">
+                    <li>Michael Young</li>
+                    <li>Marlene Mhangami</li>
+                    <li>Mannie Young</li>
+                    
+                </ul>
+                <br>
+                <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-20 g-mb-30">
+                    <span class="g-color-primary">Support Commitee</span></h2>
+                <p class="g-color-black g-font-size-16">
+                    Manages and organizes the attendee/speaker support of the conference, in particular: 
+                    helpdesk, attendee support contact, volunteer coordination.
+                </p>
+                <ul class="g-color-black g-font-size-16">
+                    <li>Michael Young</li>
+                    <li>Abigail Mesrenyame Dogbe</li>
+                    <li>Mannie Young</li>
+                    
+                </ul>
+                <br>
+                <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-20 g-mb-30">
+                    <span class="g-color-primary">Marketing/Design Commitee</span></h2>
+                <p class="g-color-black g-font-size-16">
+                    Create and manage marketing and design aspects of the conference, in particular: 
+                    brochures, advertisements, banners, flyers, travel guide, t-shirts, lanyards, badges, 
+                    panels, logo.
+                </p>
+                <ul class="g-color-black g-font-size-16">
+                    <li>Mannie Young</li>
+                    
+                </ul>
+                <br>
+                <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-20 g-mb-30">
+                    <span class="g-color-primary">Media Commitee</span></h2>
+                <p class="g-color-black g-font-size-16">
+                    Manage and organize the talk and session recordings of the conference, in particular: 
+                    social media handles, video recording, live streaming, uploads to YouTube and archive.org.
+                </p>
+                <ul class="g-color-black g-font-size-16">
+                    <li>Mannie Young</li>
+                    
+                </ul>
+                <br>
+                <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-20 g-mb-30">
+                    <span class="g-color-primary">Code of Conduct Commitee</span></h2>
+                <p class="g-color-black g-font-size-16">
+                    Manage and organize the code of conduct (CoC) workflows, create CoC documents, provide CoC 
+                    contacts and handle CoC requests.    
+                </p>
+                <ul class="g-color-black g-font-size-16">
+                    <li>Michael Young</li>
+                    <li>Marlene Mhangami</li>
+                    <li>Abigail Mesrenyame Dogbe</li>
+                </ul>
+                <br>
+
+
+
+
+            
+
+
+
+
+
+
+              </div>
+
+
+              <div id="volunteers" class="u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30 g-mb-20 col-md-12" >
+                <div >
+                    <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-20 g-mb-30">
+                        <span class="g-color-primary">Volunteers</span></h2>
+                       
+                    <p class="g-color-black g-font-size-16">
+                        Volunteers generously give their time and dedication just to make nonprofit and charity organization events or programs run smoothly.
+                    During PyCon Africa we had some great people who gave their time to help make this event a success and we would love to say thank you to them all.</p>
+
+                        <p class="g-color-black g-font-size-16">
+                            <b>Social Media Team</b>
+                        </p>
+                        <ul class="g-color-black g-font-size-16">
+                            <li><a href="https://twitter.com/chal_pang" target="/">Adam Rubainatu Chalpang</a></li>
+                            <li><a href="https://twitter.com/ArianeDjeupang" target="/">Ariane Djeupang Jocelyne</a></li> 
+                      </ul>
+
+                        <p class="g-color-black g-font-size-16">
+                            <b>Blogging Team</b>
+                        </p>
+                        <ul class="g-color-black g-font-size-16">
+                            <li><a href="https://twitter.com/" target="/">Ahmad Bilesanmi</a></li>
+                            <li><a href="https://twitter.com/" target="/">Linda Oranya</a></li>
+                            <li><a href="https://twitter.com/N_Ashiorkor" target="/">Naa Ashiorkor</a></li> 
+                            <li><a href="https://twitter.com/ikegahruth" target="/">Ruth Ikegah</a></li> 
+                            <li><a href="https://twitter.com/ikegahruth" target="/">Ruth Ikegah</a></li>  
+                        </ul>
+
+                        <p class="g-color-black g-font-size-16">
+                            <b>Technical Team</b>
+                        </p>
+                        <ul class="g-color-black g-font-size-16">
+                            <li><a href="https://twitter.com/" target="/">Dartey Yawenam S.</a></li>
+                            <li><a href="https://twitter.com/" target="/">Quaye Worsley</a></li> 
+                            <li><a href="https://twitter.com/" target="/">Agyeman Belinda Adwoa</a></li>  
+                        </ul>
+
+                        <p class="g-color-black g-font-size-16">
+                            <b>Workshop Support</b>
+                        </p>
+                        <ul class="g-color-black g-font-size-16">
+                            <li><a href="https://twitter.com/brunokimaru" target="/">Bruno Couto Kummel</a></li>
+                            <li><a href="https://twitter.com/2ayasalama" target="/">Salama Aya</a></li> 
+                            <li><a href="https://twitter.com/" target="/">Rufai Aminah Mardiyyah</a></li>
+                            <li><a href="https://twitter.com/" target="/">Joseph Anyetei Sowah</a></li>  
+                        </ul>
+
+                        <p class="g-color-black g-font-size-16">
+                            <b>Daily Moderators</b>
+                        </p>
+                        <ul class="g-color-black g-font-size-16">
+                            <li><a href="https://twitter.com/Kwadodoofan" target="/">Kwado Benedicta</a></li>
+                            <li><a href="https://twitter.com/NanaYaaSally" target="/">Osei Salomey</a></li> 
+                            <li><a href="https://twitter.com/" target="/">Adedapo Adedamola</a></li> 
+                        </ul>
+            
+                </div>
+            </div>
+        </div>
+      </div>
+
+ 
+
+    {% endblock %}

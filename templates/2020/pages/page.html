@@ -1,0 +1,68 @@
+{% extends "base.html" %} 
+{% load i18n static markdown_extras %}{% block meta_title %}
+{% if page.meta_title %}
+    {{ page.meta_title }}
+{% else %}
+    {{ page.page_name }} | {% trans "PyCon Africa" %}
+{% endif %}
+{% endblock %}
+
+
+{% block title %}{{ meta_title }}{% endblock %}
+{% block description %}{{ meta_description }}{% endblock %}
+{% block author %}{{ meta_author }}{% endblock %}
+
+{% block og_title %}{{ meta_title }}{% endblock %}
+{% block og_description %}{{ meta_description }}{% endblock %}
+{% block og_image %}{{ meta_og_image }}{% endblock %}
+{% block og_url %}{{ request.build_absolute_uri }}{% endblock %}
+{% block og_type %}website{% endblock %}
+{% block og_site_name %}PyCon Africa{% endblock %}
+
+{% block twitter_title %}{{ meta_title }}{% endblock %}
+{% block twitter_description %}{{ meta_description }}{% endblock %}
+{% block twitter_image %}{{ meta_og_image }}{% endblock %}
+{% block twitter_site %}@PyConAfrica{% endblock %}
+
+{% block content %}
+{% include '2024/navbar.html' %}
+
+<!-- Breadcrumbs -->
+<section class="g-bg-gray-light-v5 g-py-80 g-pt-150">
+  <div class="container text-center">
+    <h2 class="h2 g-color-black g-font-weight-600">{{ page.page_name }}</h2>
+
+    <ul class="u-list-inline">
+      <li class="list-inline-item g-mr-5">
+        <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="/">Home</a>
+        <i class="g-color-gray-light-v2 g-ml-5">/</i>
+      </li> 
+      <li class="list-inline-item g-color-primary">
+        <span>{{ page.page_name }}</span>
+      </li>
+    </ul><br>
+    <i class="{{ page.font_icon_code }}" style="font-size:41px;"></i>
+  </div>
+</section>
+<!-- End Breadcrumbs -->
+
+<!-- Body -->
+<div class="container g-pt-50">
+  <div class="row">
+    <div class="u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30">
+      <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-20 g-mb-30">
+        <span class="g-color-primary">{{ page.page_title }}</span>
+      </h2>
+      <!-- Content Box -->
+      <article class="text-size-medium">
+        <div class="mad-icon-box-content markdownx-preview">
+          <p class="markdownx-preview">{{ page.content | markdown | safe }}</p>
+        </div>
+      </article>
+      <!-- End of Content Box -->
+    </div>
+  </div>
+</div>
+<!-- End Body -->
+
+{% endblock %}

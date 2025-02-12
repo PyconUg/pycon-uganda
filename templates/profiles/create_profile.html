@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+{% load i18n static avatar_tags crispy_forms_tags %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Create Profile || PyCon Africa" %}{% endif %}{% endblock %}
+
+
+{% block content %}
+
+<!-- ========== HEADER ========== -->
+{% include '2024/navbar.html' %}
+<!-- ========== END HEADER ========== -->
+ 
+
+    <!-- Breadcrumbs -->
+    <section class="g-bg-gray-light-v5 g-py-80 g-pt-150">
+      <div class="container text-center">
+        <h2 class="h2 g-color-black g-font-weight-600">Create your Profile {% if user_profile.surname %}{{ request.user.user_profile.name }} {% else %}{% firstof user.get_short_name user.get_username|capfirst %}{% endif %}</h2>
+
+        <ul class="u-list-inline">
+          <li class="list-inline-item g-mr-5">
+            <a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover" href="#">Home</a>
+            <i class="g-color-gray-light-v2 g-ml-5">/</i>
+          </li> 
+          <li class="list-inline-item g-color-primary">
+            <span>Create Profile</span>
+          </li>
+        </ul><br> 
+        <i class="fa-solid fa-user-plus" style="font-size:41px;"></i>
+      </div>
+      
+    </section>
+    <!-- End Breadcrumbs --> 
+   
+  
+      <section class="g-mb-100">
+        <div class="container">
+          <div class="row">
+            <!-- Profile Sidebar -->
+            <div class="col-lg-3 g-mb-50 g-mb-0--lg"> 
+              <!-- Profile Pic --> 
+                {% include 'profiles/profilepic_side.html' %}
+              <!-- End Profile Pic  -->   
+  
+              <!-- Sidebar Navigation -->
+              <div class="list-group list-group-border-0 g-mb-40">
+                <div class="media"> 
+                  <div class="media-body">
+                    <div><b><small class="text-danger">LAST LOGIN</small></b></div>
+                    <div class="g-font-size-12 g-color-gray-dark-v2"><b><small>Date:</small></b>  {{ request.user.last_login.date }}</div>
+                    <div class="g-font-size-12  g-color-gray-dark-v2"><b><small>Time:</small></b>  {{ request.user.last_login.time }}</div> 
+                  </div>
+                </div>
+              </div> 
+                
+              
+              {% if user_profile %}   
+              
+                <!-- Overall -->
+                <a href="{% url 'profiles:profile_update' pk=request.user.user_profile.profile_id.hashid  %}" class="list-group-item justify-content-between active">
+                  <span><i class="icon-home g-pos-rel g-top-1 g-mr-8"></i> Overall</span>
+                  <span class="u-label g-font-size-11 g-bg-white g-color-main g-rounded-20 g-px-10">2</span>
+                </a>
+                <!-- End Overall -->
+                
+                <!-- Overall -->
+                <a href="{% url 'profiles:profile_update' pk=request.user.user_profile.profile_id.hashid  %}" class="list-group-item justify-content-between active">
+                  <span><i class="fa-light fa-id-card g-pos-rel g-top-1 g-mr-8"></i>  Update my Profile</span> 
+                </a>
+                <!-- End Overall -->
+  
+                <!-- Profile -->
+                <a href="/accounts/password/change/" class="list-group-item list-group-item-action justify-content-between">
+                  <span><i class="fa-light fa-lock g-pos-rel g-top-1 g-mr-8"></i>  Change Password</span>
+                </a>
+                <!-- End Profile -->
+   
+                <!-- Profile -->
+                <a href="{% url 'talks:talk_list' year=year %}" class="list-group-item list-group-item-action justify-content-between">
+                  <span><i class="fa-light fa-podium-star g-pos-rel g-top-1 g-mr-8"></i>  My Submitted Talks</span>
+                </a>
+                <!-- End Profile -->
+    
+              
+                <br> 
+                <p><a href=""class="btn warn"><i class="fa-light fa-id-card" style="font-size:21px;"></i>&nbsp;&nbsp; Update my Profile</a></p>
+                <p><a href="/accounts/password/change/"class="btn warn"><i class="fa-light fa-lock" style="font-size:21px;"></i>&nbsp;&nbsp; Change Password</a></p>
+                <p><a href="{% url 'talks:talk_list' year=year %}"class="btn warn"><i class="fa-light fa-podium-star" style="font-size:21px;"></i>&nbsp;&nbsp; My Submitted Talks</a></p>
+                       
+                
+              {% else %}
+              
+              {% endif %}<br>
+  
+              </div>
+              <!-- End Sidebar Navigation -->  
+            <!-- End Profile Sidebar -->  
+   
+              <div class="col-lg-9">
+                <section class="g-brd-around g-brd-gray-light-v4">
+                  <div class="container g-py-50--md g-py-20">
+                    
+                    <div class="panel wow fadeInLeft col-md-7">  
+                        <p class="mad-sub-title">Enter your profile details below</p>
+                        <form action="{% url 'profiles:create_profile' %}" enctype='multipart/form-data' method='Post'>{% csrf_token %}
+                        
+                            {{ form|crispy }} 
+                            {{ form.media }}
+                            <br> 
+                            <div class="d-grid gap-5">  
+                                
+                                <button class="btn btn-md u-btn-primary rounded-0" id="submit-id-update"  style="background-position: 0px 59px;" type="submit" >Create Profile<i class="licon-chevron-right-circle"></i></button>
+                                 
+                            </div> 
+                         </form>
+                    </div>
+
+
+                </div>
+                </section> 
+              </div>    
+   
+          </div>
+        </div>
+      </section> 
+    <!-- end section.speakers -->
+ 
+    
+{% endblock %}
+
+ 

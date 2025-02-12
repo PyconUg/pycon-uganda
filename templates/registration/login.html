@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% load i18n static current_year crispy_forms_tags %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Log in || PyCon Africa" %}{% endif %}{% endblock %}
+
+
+{% block content %}
+
+<!-- ========== HEADER ========== --> 
+{% include '2024/navbar.html' %}
+<!-- ========== END HEADER ========== -->
+   
+    <!-- Login -->
+    <section class="g-bg-gray-light-v5 g-pt-80">
+      <div class="container g-py-100">
+        <div class="row justify-content-center">
+          <div class="col-sm-8 col-lg-5">
+            <div class="u-shadow-v21 g-bg-white rounded g-py-40 g-px-30">
+              <header class="text-center mb-4">
+                <h2 class="h2 g-color-black g-font-weight-600">Login</h2>
+              </header>
+
+          <!-- Alert Info -->
+          <div class="alert fade show g-bg-blue-opacity-0_1 g-color-blue rounded-0" role="alert">
+            <button type="button" class="close u-alert-close--light g-ml-10 g-mt-1" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+
+            <div class="media">
+              <div class="d-flex g-mr-10">
+                <span class="u-icon-v3 u-icon-size--sm g-bg-blue g-color-white g-rounded-50x">
+                  <i class="icon-info"></i>
+                </span>
+              </div>
+              <div class="media-body">
+                <p class="m-0 g-font-size-14">Accounts from the previous years are not carried over year-to-year.</p> 
+              </div>
+            </div>
+          </div>
+          <!-- End Alert Info -->
+
+              <!-- Form -->
+              <form novalidate class="g-py-15 mad-contact-form mad-form--fields-white login" method="POST" action="">
+                            {% csrf_token %} 
+                          <div class="form-group g-mb-35">
+                            <div class="form-col">
+                                {{ form | crispy }}
+                            </div>
+                          </div>
+                          <div class="d-flex justify-content-end mb-4">
+                            <a class="form-label-link secondaryAction d-inline-block g-font-size-14 mb-2" href="{% url 'auth_password_reset' %}">Forgot Password?</a>
+                          </div> 
+                <div class="mb-4">
+                  <button class="btn btn-md btn-block u-btn-primary rounded g-py-13primaryAction" type="submit">Login</button>
+                </div>
+              </form>
+              <!-- End Form -->
+
+              <footer class="text-center">
+                <p class="g-color-gray-dark-v5 g-font-size-13 mb-0">Don't have an account? <a class="g-font-weight-600" href="{% url 'registration_register' %}"><b>Sign up here</b></a>
+                </p>
+              </footer>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Login --> 
+ 
+{% endblock %}

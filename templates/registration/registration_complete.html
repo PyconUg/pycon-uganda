@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load i18n static crispy_forms_tags %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Log in || PyCon Africa" %}{% endif %}{% endblock %}
+
+
+{% block content %}
+
+<!-- ========== HEADER ========== -->
+{% include '2024/navbar.html' %}
+<!-- ========== END HEADER ========== -->
+ 
+<div class="shortcode-html">
+  <section class="g-bg-size-cover g-bg-pos-center g-bg-cover g-bg-black-opacity-0_5--after g-color-white g-py-50 g-mb-20" style="background-image: url(../../assets/img-temp/1920x800/img4.jpg);">
+    <div class="container g-bg-cover__inner">
+      <header class="g-mb-20">
+        <h3 class="h5 g-font-weight-300 g-mb-5"> </h3>
+        <h2 class="h1 g-font-weight-300 text-uppercase"> 
+        </h2>
+      </header>
+ 
+    </div>
+  </section>
+</div>
+
+
+
+
+    <!-- Signup -->
+    <section class="g-bg-gray-light-v5">
+      <div class="container g-py-100">
+        <div class="row justify-content-center">
+          <div class="col-sm-10 col-md-9 col-lg-6">
+            <div class="u-shadow-v21 g-bg-white rounded g-py-40 g-px-30">
+              <header class="text-center mb-4">
+                <h2 class="h2 g-color-black g-font-weight-600">Activation email sent</h2>
+              </header>
+              <div class=" "> 
+                <div class="align-center">
+                    <h4>Activate your account 🙂</h3>
+                    <p class="text-size-medium">{% trans "Please check your email/spam to complete the registration process." %}</p>
+                       
+
+                          <p><a class="btn btn-lg btn-md btn-block u-btn-primary rounded " href="/accounts/activate/resend">Resend activation code</a></p>
+                       
+                  </div>
+                
+              </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Signup -->
+
+ 
+ 
+{% endblock %}
+
+ 
+
+{% comment %}
+**registration/registration_complete.html**
+
+Used after successful completion of the registration form. This
+template has no context variables of its own, and should simply inform
+the user that an email containing account-activation information has
+been sent.
+{% endcomment %}
