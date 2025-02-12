@@ -11,7 +11,7 @@ django.setup()
 
 # Handle migrations
 try:
-    call_command("makemigrations")
+    call_command("makemigrations","home", "cms", "coc", "fin_aid", "registration", "talks", "about", "conference_schedule", "health_safety_guideline","privacypolicy","speakers","sponsor_us","tickets")
     call_command("migrate")
     print("Migrations completed successfully.")
 except Exception as e:

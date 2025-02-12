@@ -17,11 +17,11 @@ While in the root project directory, activate a virtual environment by executing
 - For Unix/macOS run:
 
 ```sh
-source .venv/bin/activate
+source venv/bin/activate
 ```
 - For windows run:
 ```sh
-.venv/Scripts/activate
+venv/Scripts/activate
 ```
 Install Requirements
 ```sh
