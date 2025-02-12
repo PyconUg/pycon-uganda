@@ -9,9 +9,16 @@ We love your input! We want to make contributing to this project as easy and tra
 
 ## Setting up locally with venv
 ### 1. Create virtual environment
+#### Using venv
 ```sh
 python -m venv venv
 ```
+
+#### Using Virtualenv
+```sh
+python -m virtualenv venv
+```
+
 ### 2. Activate a virtual environment
 While in the root project directory, activate a virtual environment by executing the following command based on your operating system;
 - For Unix/macOS run:
