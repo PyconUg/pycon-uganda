@@ -16,6 +16,7 @@ import os
 # import cloudinary.api
 from datetime import datetime
 from pathlib import Path
+from sre_constants import IN
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -73,7 +74,6 @@ INSTALLED_APPS = [
     "rest_framework",
     "tinymce",
     "sorl.thumbnail",
-    "debug_toolbar",
     #'newsletter',
     "markdownx",
     #'mdeditor',
@@ -118,7 +118,11 @@ DEBUG = True
 SECRET_KEY="django-insecure-7!6"
 
 if DEBUG:
+    INSTALLED_APPS += ["debug_toolbar"]
     MIDDLEWARE.insert(0, "debug_toolbar.middleware.DebugToolbarMiddleware")
+    INTERNAL_IPS = [
+    "127.0.0.1",
+    ]
 
 ROOT_URLCONF = "pyconafrica.urls"
 
@@ -355,3 +359,4 @@ CLOUDINARY_STORAGE = {
     "API_KEY": os.getenv("CLOUDINARY_API_KEY"),
     "API_SECRET": os.getenv("CLOUDINARY_API_SECRET"),
 }
+
