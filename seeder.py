@@ -4,6 +4,8 @@ from django.db import IntegrityError
 from django.core.management import call_command
 from home.models import EventYear
 from cms.models import Page
+from django.contrib.sites.models import Site
+
 
 # Set up the Django environment
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "pyconafrica.settings")
@@ -17,7 +19,7 @@ try:
 except Exception as e:
     print(f"An error occurred while running migrations: {e}")
 
-# Create EventYear and Pages
+# Create EventYear, Site data and Pages
 try:
     event_year, created = EventYear.objects.get_or_create(
         year=2025,
@@ -38,6 +40,12 @@ try:
         print("Page created successfully")
     else:
         print(f"Page '{page.page_name}' already exists for event year {event_year.year}.")
+
+    site = Site.objects.get(id=1)
+    site.domain = "ug.pycon.org"
+    site.name = "PyCon Uganda"
+    site.save()
+    print("Site updated successfully.")
 
 except IntegrityError as e:
     print(f"Database error: {e}")
