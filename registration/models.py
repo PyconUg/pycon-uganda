@@ -186,7 +186,7 @@ class RegistrationManager(models.Manager):
 
         return (False, False)
 
-    def create_inactive_user(self, site, new_user=None, send_email=False,
+    def create_inactive_user(self, site, new_user=None, send_email=True,
                              request=None, profile_info={}, **user_info):
         """
         Create a new, inactive ``User``, generate a
