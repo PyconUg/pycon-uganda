@@ -244,7 +244,7 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 # Registration App account settings
 ACCOUNT_ACTIVATION_DAYS = 7
-REGISTRATION_EMAIL_SUBJECT_PREFIX = "[PyCon Africa]"
+REGISTRATION_EMAIL_SUBJECT_PREFIX = "[PyCon Uganda]"
 SEND_ACTIVATION_EMAIL = True
 REGISTRATION_AUTO_LOGIN = False
 
@@ -355,3 +355,11 @@ CLOUDINARY_STORAGE = {
     "API_KEY": os.getenv("CLOUDINARY_API_KEY"),
     "API_SECRET": os.getenv("CLOUDINARY_API_SECRET"),
 }
+
+# emailer config
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = os.getenv("EMAIL_SMTP_SERVER")
+EMAIL_PORT = 587
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
+EMAIL_USE_TLS = True

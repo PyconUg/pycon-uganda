@@ -215,11 +215,11 @@ class RegistrationManager(models.Manager):
                 new_user, **profile_info)
 
             # send email only if desired and transaction succeeds
-            # if send_email:
-            #     transaction.on_commit(
-            #         lambda: registration_profile.send_activation_email(
-            #             site, request)
-            #     )
+            if send_email:
+                transaction.on_commit(
+                    lambda: registration_profile.send_activation_email(
+                        site, request)
+                )
 
         return new_user
 
