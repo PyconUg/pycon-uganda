@@ -79,6 +79,6 @@ handler404 = 'home.views.handler404'
 
 
 # Modifies default django admin titles and headers with custom app detail.
-admin.site.site_header = "PyCon Africa Admin"
-admin.site.site_title = "PyCon Africa Admin Portal"
-admin.site.index_title = "Welcome to PyCon Africa Portal"
+admin.site.site_header = "PyCon Uganda Admin"
+admin.site.site_title = "PyCon Uganda Admin Portal"
+admin.site.index_title = "Welcome to PyCon Uganda Portal"

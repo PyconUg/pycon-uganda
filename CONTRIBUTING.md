@@ -1,4 +1,4 @@
-# Contributing to the PyCon Africa Website
+# Contributing to the PyCon Uganda Website
 
 
 ## We Develop with Github

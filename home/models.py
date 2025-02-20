@@ -41,7 +41,7 @@ class EventYear(models.Model):
     template_path = models.CharField(max_length=255, default="home/home.html", help_text="Path to the year's templates, e.g., '2020/home/home.html'")
 
     def __str__(self):
-        return f"PyCon Africa {self.year}"
+        return f"PyCon Uganda {self.year}"
 
     class Meta:
         verbose_name = 'Event Year'
