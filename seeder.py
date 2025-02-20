@@ -1,12 +1,14 @@
 import os
 import django
 
-# Set up the Django environment
+# Set up Django environment first
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "pyconafrica.settings")
 django.setup()
 
+# Now import Django-related modules after setup
 from django.db import IntegrityError
 from django.core.management import call_command
+from home.models import EventYear 
 from home.models import EventYear 
 from cms.models import Page
 from django.contrib.sites.models import Site
