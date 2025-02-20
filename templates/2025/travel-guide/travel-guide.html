@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load i18n static markdown_extras  permissions %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Financial Aid || PyCon Uganda" %}{% endif %}{% endblock %}
+
+
+{% block content %}
+
+{% include '2024/navbar.html' %}
+
+<section class="g-bg-gray-light-v5 g-py-80 g-pt-150">
+    <div class="container text-center">
+        <h2 class="h2 g-color-black g-font-weight-600">Travel Guide</h2>
+        
+        <ul class="list-inline">
+            <li class="list-inline-item">
+                <a class="u-link-v5 g-color-gray-dark-v1" href="#">Home</a>
+                <i class="g-color-gray-light-v2">/</i>
+            </li>
+            <li class="list-inline-item">
+                <a class="u-link-v5 g-color-gray-dark-v1" href="/2024/about/">About</a>
+                <i class="g-color-gray-light-v2">/</i>
+            </li>
+            <li class="list-inline-item g-color-primary">
+                <span>Travel Guide</span>
+            </li>
+        </ul><br>
+        <i class="fa-solid fa-plane" style="font-size:41px;"></i>
+    </div>
+</section>
+
+<!-- Main Content -->
+<div class="container g-pt-50">
+    <div class="row">
+        <div class="u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30">
+            <p>We are excited to welcome you to PyCon Uganda 2024. We are excited to have you join us for this year's conference in Kampala. Here's some important information to make your trip smooth and enjoyable.</p>
+
+            <h3 class="section-title">UGANDA - The Pearl of Africa</h3>
+            <p>Uganda, often referred to as the "Pearl of Africa," is an East African nation that provides a captivating backdrop for PyCon Uganda. Just as Uganda's diverse landscapes and wildlife make it a true gem, PyCon Uganda brings together a diverse community of Python enthusiasts, creating a unique and enriching experience. Join us in the heart of the "Pearl of Africa" for PyCon Uganda, where technology and the natural world harmonize to create something truly exceptional.</p>
+
+            <h3 class="section-title">Accommodation</h3>
+            <p>We have identified a variety of accommodation options in Kampala, to suit different preferences and budgets. Here are some suggestions:</p>
+            
+            <ul class="accommodation-list">
+                <li><a href="https://www.agoda.com/dolphin-suites/hotel/kampala-ug.html" target="_blank">Dolphin Suites</a> (2.7km to venue) ~ 69$ - 90$</li>
+                <li><a href="https://www.booking.com/Share-INaU9I" target="_blank">Silver Springs Hotel</a> (2.1km to venue) ~ 80$ - 90$</li>
+                <li><a href="https://spekeapartments.com" target="_blank">Speke Apartments</a> (3.1km to venue) ~ 295$ - 531$</li>
+                <li><a href="https://www.airbnb.com/rooms/933843370371672796" target="_blank">AirBnB 2 Private Rooms in a Condo</a> (7.4km to venue) ~ 30$ - 35$</li>
+            </ul>
+
+            <h3 class="section-title">Transportation</h3>
+            <p>There are several means you can use to travel to the PyCon Uganda venue as well as in Kampala and these include Minibus taxis(Matatus), Motorcycles(Boda Bodas), Uber taxi, among others. For more information, <a href="https://www.kampalacityguide.com/getting-around.html" target="_blank">see here</a></p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
