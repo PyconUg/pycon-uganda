@@ -16,7 +16,7 @@ from django.contrib.sites.models import Site
 
 # Handle migrations
 try:
-    call_command("makemigrations","home", "cms", "coc", "fin_aid", "registration", "talks", "about", "conference_schedule", "health_safety_guideline","privacypolicy","speakers","sponsor_us","tickets")
+    call_command("makemigrations","home", "cms", "coc", "fin_aid", "registration", "talks", "about", "conference_schedule", "health_safety_guideline","privacypolicy","speakers","sponsor_us","tickets", "travel_guide")
     call_command("migrate")
     print("Migrations completed successfully.")
 
