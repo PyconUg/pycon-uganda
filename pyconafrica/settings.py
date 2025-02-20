@@ -101,6 +101,7 @@ INSTALLED_APPS = [
     "talks",
     "tickets",
     'cms',
+    "travel_guide",
 ]
 
 MIDDLEWARE = [ 
