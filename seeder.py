@@ -1,5 +1,10 @@
 import os
 import django
+
+# Set up the Django environment
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "pyconafrica.settings")
+django.setup()
+
 from django.db import IntegrityError
 from django.core.management import call_command
 from home.models import EventYear
@@ -7,9 +12,7 @@ from cms.models import Page
 from django.contrib.sites.models import Site
 
 
-# Set up the Django environment
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "pyconafrica.settings")
-django.setup()
+
 
 # Handle migrations
 try:

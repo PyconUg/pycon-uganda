@@ -35,11 +35,7 @@
         <div class="col-lg-10">
           <!-- Blog Minimal Blocks -->
           <article class="g-mb-100">
-            <div class="g-mb-30">
-              <h2 class="h4 g-color-black g-font-weight-600 mb-3">
-                Thank you{% if user.is_authenticated %} {% if request.user.user_profile %}{{ request.user.user_profile.name }}  {% else %}@{{ request.user.username }}{% endif %} {% else %} {% endif %} for wanting to Speak at PyCon Africa!<br>
-              </h2> 
-                      
+            <div class="g-mb-30">                      
               {% for speak in speaks.all|slice:"0:1" %}   
                   <p class="markdownx-preview">{{ speak.content | markdown | safe }}</p>
                 {{ form.media }} 
