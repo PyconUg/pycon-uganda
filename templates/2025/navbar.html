@@ -1,8 +1,8 @@
 {% load %} {% load static base_extras %}
 
 <!-- Header -->
-<header id="js-header" class="u-header u-header--abs-top u-header--show-hide u-header--change-logo u-header--change-appearance" data-header-fix-moment="500" data-header-fix-effect="slide">
-  <div class="u-header__section u-header__section--dark g-bg-black-opacity-0_7 g-py-10" data-header-fix-moment-exclude="u-header__section--dark g-bg-black-opacity-0_7 g-py-10" data-header-fix-moment-classes="u-header__section--light g-bg-white-opacity-0_3  g-py-0">
+<header id="js-header" class="u-header u-header--static">
+  <div class="u-header__section g-bg-black-opacity-0_7 g-py-10">
     <nav class="navbar navbar-expand-lg">
       <div class="container">
         <!-- Responsive Toggle Button -->
@@ -38,7 +38,6 @@
             style="max-width: 100px"
           />
         </a>
-
         <!-- End Logo -->
 
         <!-- Navigation -->
@@ -72,15 +71,16 @@
                     >Team</a
                   >
                 </li>
-                
-
-                <!-- Commented out some links in the About dropdown as they are catered for in the Attendee Guide dropdown now -->
                 <li class="dropdown-item">
                   <a class="nav-link g-px-0 g-color-black" href="/2025/fin-aid/"
                     >Financial Assistance</a
                   >
                 </li>
-              
+                <!--
+                <li class="dropdown-item">
+                  <a class="nav-link g-px-0 g-color-black" href="/2025/faqs/">FAQs</a>
+                </li> 
+                -->
                 <li class="dropdown-item">
                   <a
                     class="nav-link g-px-0 g-color-black"
@@ -91,7 +91,7 @@
               </ul>
               <!-- End Submenu (Bootstrap) -->
             </li>
-            <li class="nav-item dropdown g-mx-20--lg">
+            <li class="nav-item g-mx-20--lg">
               <a
                 href="https://pyconug.blogspot.com/"
                 target="/"
@@ -101,6 +101,44 @@
             </li>
             <li class="nav-item g-mx-20--lg">
               <a href="/2025/schedule/" class="nav-link px-0">Schedule</a>
+            </li>
+            <li class="nav-item dropdown g-mx-20--lg">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle g-px-0"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Attendee Guide <i class="fa-solid fa-book-open-reader"></i>
+              </a>
+              <!-- Submenu (Bootstrap) -->
+              <ul
+                class="dropdown-menu rounded-0 g-text-transform-none g-brd-none g-brd-top g-brd-primary g-brd-top-2 g-mt-20 g-mt-10--lg--scrolling"
+              >
+                <li class="dropdown-item">
+                  <a
+                    class="nav-link g-px-0 g-color-black"
+                    href="/2025/travel-guide/"
+                    >Travel Guide</a
+                  >
+                </li>
+                <li class="dropdown-item">
+                  <a
+                    class="nav-link g-px-0 g-color-black"
+                    href="/2025/coc/"
+                    >Code of Conduct</a
+                  >
+                </li>
+                <li class="dropdown-item">
+                  <a
+                    class="nav-link g-px-0 g-color-black"
+                    href="/2025/h&g/"
+                    >Health & Safety</a
+                  >
+                </li>
+              </ul>
+              <!-- End Submenu (Bootstrap) -->
             </li>
             <li class="nav-item dropdown g-mx-20--lg">
               <a
@@ -207,14 +245,6 @@
                 <li class="dropdown-item">
                   <a
                     class="nav-link g-px-0 g-color-black"
-                    href="/2024/"
-                    target="/"
-                    >2024</a
-                  >
-                </li>
-                <li class="dropdown-item">
-                  <a
-                    class="nav-link g-px-0 g-color-black"
                     href="/2020/"
                     target="/"
                     >2020</a
@@ -262,7 +292,6 @@
                   />
                 </span>
                 {% else %}
-
                 <span class="d-inline-block g-pos-rel g-mr-20 g-mb-20">
                   <img
                     class="g-width-40 g-height-40 rounded-circle mCS_img_loaded"
