@@ -1,8 +1,8 @@
 {% load %} {% load static base_extras %}
 
 <!-- Header -->
-<header id="js-header" class="u-header u-header--static">
-  <div class="u-header__section g-bg-black-opacity-0_7 g-py-10">
+<header id="js-header" class="u-header u-header--abs-top u-header--show-hide u-header--change-logo u-header--change-appearance" data-header-fix-moment="500" data-header-fix-effect="slide">
+  <div class="u-header__section u-header__section--dark g-bg-black-opacity-0_7 g-py-10" data-header-fix-moment-exclude="u-header__section--dark g-bg-black-opacity-0_7 g-py-10" data-header-fix-moment-classes="u-header__section--light g-bg-white-opacity-0_3  g-py-0">
     <nav class="navbar navbar-expand-lg">
       <div class="container">
         <!-- Responsive Toggle Button -->
@@ -129,6 +129,12 @@
               </ul>
               <!-- End Submenu (Bootstrap) -->
             </li>
+            <li class="nav-item g-mx-20--lg">
+              <a href="https://pyconafrica.blogspot.com/" target="/" class="nav-link px-0">Blog</a>
+            </li>       
+            <li class="nav-item g-mx-20--lg">
+              <a href="/2025/schedule/" class="nav-link px-0">Schedule</a>
+            </li>
             <li class="nav-item dropdown g-mx-20--lg">
               <a
                 href="#"
@@ -137,21 +143,10 @@
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                Attendee Guide <i class="fa-solid fa-book-open-reader"></i>
+                Speak at PyCon <i class="fa-solid fa-earth-africa"></i>
               </a>
               <!-- Submenu (Bootstrap) -->
               <ul
-                class="dropdown-menu rounded-0 g-text-transform-none g-brd-none g-brd-top g-brd-primary g-brd-top-2 g-mt-20 g-mt-10--lg--scrolling"
-              >
-                <li class="dropdown-item">
-                  <a
-                    class="nav-link g-px-0 g-color-black"
-                    href="/2025/travel-guide/"
-                    >Travel Guide</a
-                  >
-                </li>
-                <li class="dropdown-item">
-                  <a
                 class="dropdown-menu rounded-0 g-text-transform-none g-brd-none g-brd-top g-brd-primary g-brd-top-2 g-mt-20 g-mt-10--lg--scrolling"
               >
                 <li class="dropdown-item">
@@ -242,6 +237,14 @@
               <ul
                 class="dropdown-menu rounded-0 g-text-transform-none g-brd-none g-brd-top g-brd-primary g-brd-top-2 g-mt-20 g-mt-10--lg--scrolling"
               >
+                <li class="dropdown-item">
+                  <a
+                    class="nav-link g-px-0 g-color-black"
+                    href="/2024/"
+                    target="/"
+                    >2024</a
+                  >
+                </li>
                 <li class="dropdown-item">
                   <a
                     class="nav-link g-px-0 g-color-black"
