@@ -9,12 +9,8 @@ django.setup()
 from django.db import IntegrityError
 from django.core.management import call_command
 from home.models import EventYear 
-from home.models import EventYear 
 from cms.models import Page
 from django.contrib.sites.models import Site
-
-
-
 
 # Handle migrations
 try:
