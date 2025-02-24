@@ -80,8 +80,8 @@ class Schedule(models.Model):
         
         if self.talk:
             if self.talk.speakers.exists():
-                # Safely retrieve either the profile name or fall back to "PyCon Africa"
-                speakers_names = ', '.join([getattr(speaker.user_profile, 'name', 'PyCon Africa') for speaker in self.talk.speakers.all()])
+                # Safely retrieve either the profile name or fall back to "PyCon Uganda"
+                speakers_names = ', '.join([getattr(speaker.user_profile, 'name', 'PyCon Uganda') for speaker in self.talk.speakers.all()])
                 return f"{self.talk.title} by {speakers_names}"
             else:
                 return self.talk.title

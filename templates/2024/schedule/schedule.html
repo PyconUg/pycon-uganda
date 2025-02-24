@@ -5,7 +5,7 @@
 {% if meta_title %}
     {{ meta_title }}
 {% else %}
-    {% trans "Schedule | PyCon Africa" %}
+    {% trans "Schedule | PyCon Uganda" %}
 {% endif %}
 {% endblock %}
 
@@ -13,7 +13,7 @@
 {% if meta_title %}
     {{ meta_title }}
 {% else %}
-    {% trans "Schedule | PyCon Africa" %}
+    {% trans "Schedule | PyCon Uganda" %}
 {% endif %}
 {% endblock %}
 
@@ -21,7 +21,7 @@
 {% if meta_description %}
     {{ meta_description }}
 {% else %}
-    {% trans "Explore the exciting schedule of PyCon Africa, filled with insightful talks, keynotes, and tutorials." %}
+    {% trans "Explore the exciting schedule of PyCon Uganda, filled with insightful talks, keynotes, and tutorials." %}
 {% endif %}
 {% endblock %}
 
@@ -29,7 +29,7 @@
 {% if meta_title %}
     {{ meta_title }}
 {% else %}
-    {% trans "Schedule | PyCon Africa" %}
+    {% trans "Schedule | PyCon Uganda" %}
 {% endif %}
 {% endblock %}
 
@@ -37,7 +37,7 @@
 {% if meta_description %}
     {{ meta_description }}
 {% else %}
-    {% trans "Explore the exciting schedule of PyCon Africa, filled with insightful talks, keynotes, and tutorials." %}
+    {% trans "Explore the exciting schedule of PyCon Uganda, filled with insightful talks, keynotes, and tutorials." %}
 {% endif %}
 {% endblock %}
 
@@ -71,7 +71,7 @@
           {% if perms.conference_schedule.add_schedule or perms.conference_schedule.change_schedule %}                      
           <a href="/organizers/conference_schedule/" target="/" class="btn btn-md u-btn-inset u-btn-inset--rounded u-btn-lightred g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-brd-2 g-rounded-50 g-mr-10 g-mb-15">
               <i class="fa fa-check-circle g-mr-3"></i>
-              Hi {% if request.user.user_profile and request.user.user_profile.name %}{{ request.user.user_profile.name }}  {% else %}PyCon Africa{% endif %} 😊,  Create/Add to the Schedule
+              Hi {% if request.user.user_profile and request.user.user_profile.name %}{{ request.user.user_profile.name }}  {% else %}PyCon Uganda{% endif %} 😊,  Create/Add to the Schedule
           </a>
           <br> 
           {% endif %}
@@ -201,7 +201,7 @@
                                         
                                         <!-- Speaker's Name -->
                                         <li class="list-inline-item">
-                                            {{ schedule.talk.user.user_profile.name|default:"PyCon Africa" }} {{ schedule.talk.user.user_profile.surname|default:"Speaker" }}
+                                            {{ schedule.talk.user.user_profile.name|default:"PyCon Uganda" }} {{ schedule.talk.user.user_profile.surname|default:"Speaker" }}
                                         </li>
 
                                         <!-- Additional Speakers -->

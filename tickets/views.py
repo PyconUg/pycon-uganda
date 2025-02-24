@@ -49,9 +49,9 @@ def ticket(request, year):
     context = {
         'tickets': tickets,
         'event_year': event_year,
-        'meta_title': f"Tickets for PyCon Africa {year}",
-        'meta_description': "Join us at PyCon Africa! Get your tickets for this year's event and don't miss out.",
-        'meta_author': "PyCon Africa",
+        'meta_title': f"Tickets for PyCon Uganda {year}",
+        'meta_description': "Join us at PyCon Uganda! Get your tickets for this year's event and don't miss out.",
+        'meta_author': "PyCon Uganda",
         'meta_og_image': meta_og_image,
     }
     template_name = f'{year}/tickets/tickets.html'  # Dynamically set based on the year

@@ -12,20 +12,20 @@ from django_countries.fields import CountryField
 
 
 class About(models.Model):
-    about_title =  models.CharField(max_length=250, null=False, blank=False, help_text='About PyCon Africa') 
+    about_title =  models.CharField(max_length=250, null=False, blank=False, help_text='About PyCon Uganda') 
     about_tagline =  models.CharField(max_length=250, null=False, blank=True, help_text='Tagline for the year')
     about_image_one = models.ImageField(help_text="Upload your cover image or leave blank to use our default image",
                               upload_to='about_page') 
-    section_one_title =  models.CharField(max_length=250, null=False, blank=True, default="WHAT IS | PYCON AFRICA?", help_text='About PyCon Africa') 
-    section_one = MarkdownxField(default='', help_text = "[Supports Markdown] - About PyCon Africa.", null=False, blank=False
+    section_one_title =  models.CharField(max_length=250, null=False, blank=True, default="WHAT IS | PyCon Uganda?", help_text='About PyCon Uganda') 
+    section_one = MarkdownxField(default='', help_text = "[Supports Markdown] - About PyCon Uganda.", null=False, blank=False
                              )
-    section_two_title =  models.CharField(max_length=250, null=False, blank=True, default="THE | PROGRAM", help_text='About PyCon Africa') 
-    section_two = MarkdownxField(default='', help_text = "[Supports Markdown] - About PyCon Africa.", null=False, blank=False
+    section_two_title =  models.CharField(max_length=250, null=False, blank=True, default="THE | PROGRAM", help_text='About PyCon Uganda') 
+    section_two = MarkdownxField(default='', help_text = "[Supports Markdown] - About PyCon Uganda.", null=False, blank=False
                              )
-    section_three_title =  models.CharField(max_length=250, null=False, blank=True, default="THE | TEAM", help_text='About PyCon Africa') 
-    section_three = MarkdownxField(default='', help_text = "[Supports Markdown] - About PyCon Africa.", null=False, blank=False
+    section_three_title =  models.CharField(max_length=250, null=False, blank=True, default="THE | TEAM", help_text='About PyCon Uganda') 
+    section_three = MarkdownxField(default='', help_text = "[Supports Markdown] - About PyCon Uganda.", null=False, blank=False
                              )
-    section_four = MarkdownxField(default='', help_text = "[Supports Markdown] - More about PyCon Africa.", null=False, blank=True
+    section_four = MarkdownxField(default='', help_text = "[Supports Markdown] - More about PyCon Uganda.", null=False, blank=True
                              )
     user = models.ForeignKey(settings.AUTH_USER_MODEL, blank=False, null=True, related_name='about_us', on_delete=models.CASCADE)
     event_year = models.ForeignKey(EventYear, on_delete=models.CASCADE, default="2024", related_name='abouts')
@@ -41,7 +41,7 @@ class About(models.Model):
 
  
 class Venue(models.Model):
-    name = models.CharField(max_length=250, null=False, blank=False, help_text='Venue of PyCon Africa') 
+    name = models.CharField(max_length=250, null=False, blank=False, help_text='Venue of PyCon Uganda') 
     content = MarkdownxField(default='', help_text = "[Supports Markdown] - Content.", null=False, blank=False
                              )
     content_two = MarkdownxField(default='', help_text = "[Supports Markdown] - Content side two.", null=False, blank=False
@@ -72,8 +72,8 @@ class Venue(models.Model):
  
  
 class Travel_Advice(models.Model): 
-    title =  models.CharField(max_length=250, null=False, blank=False, help_text='Travel Advice PyCon Africa') 
-    advice = MarkdownxField(default='', help_text = "[Supports Markdown] - Travel Advice PyCon Africa.", null=False, blank=False
+    title =  models.CharField(max_length=250, null=False, blank=False, help_text='Travel Advice PyCon Uganda') 
+    advice = MarkdownxField(default='', help_text = "[Supports Markdown] - Travel Advice PyCon Uganda.", null=False, blank=False
                              )
     user = models.ForeignKey(User, on_delete=models.CASCADE,
                                related_name='travel_advice',default=User) 
