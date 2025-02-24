@@ -7,8 +7,8 @@ from django.utils import timezone
 from home.models import EventYear
 
 class Health_Safety_Guideline(models.Model):
-    title =  models.CharField(max_length=250, null=False, blank=False, help_text='Code of Conduct PyCon Africa') 
-    health_safety_guideline = MarkdownxField(default='', help_text = "[Supports Markdown] - COC PyCon Africa.", null=False, blank=False
+    title =  models.CharField(max_length=250, null=False, blank=False, help_text='Code of Conduct PyCon Uganda') 
+    health_safety_guideline = MarkdownxField(default='', help_text = "[Supports Markdown] - COC PyCon Uganda.", null=False, blank=False
                              )
     user = models.ForeignKey(User, on_delete=models.CASCADE,
                                related_name='health_safety_guideline',default=User) 

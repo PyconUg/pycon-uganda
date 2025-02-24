@@ -28,8 +28,8 @@ class CFPSubmissionPeriod(models.Model):
     
 
 class Speak(models.Model):
-    title =  models.CharField(max_length=250, null=False, blank=False, help_text='Speak at PyCon Africa') 
-    content = MarkdownxField(default='', help_text = "[Supports Markdown] - Content for speaking at PyCon Africa.", null=False, blank=False
+    title =  models.CharField(max_length=250, null=False, blank=False, help_text='Speak at PyCon Uganda') 
+    content = MarkdownxField(default='', help_text = "[Supports Markdown] - Content for speaking at PyCon Uganda.", null=False, blank=False
                              )
     user = models.ForeignKey(User, on_delete=models.CASCADE,
                                related_name='speak',default=User) 
@@ -46,7 +46,7 @@ class Speak(models.Model):
  
 
 class Proposing_talk(models.Model):
-    title =  models.CharField(max_length=250, null=False, blank=False, help_text='Speak at PyCon Africa') 
+    title =  models.CharField(max_length=250, null=False, blank=False, help_text='Speak at PyCon Uganda') 
     content = MarkdownxField(default='', help_text = "[Supports Markdown] - Content.", null=False, blank=False
                              )
     user = models.ForeignKey(User, on_delete=models.CASCADE,
@@ -64,7 +64,7 @@ class Proposing_talk(models.Model):
  
 
 class Recording(models.Model):
-    title =  models.CharField(max_length=250, null=False, blank=False, help_text='Recording GL at PyCon Africa') 
+    title =  models.CharField(max_length=250, null=False, blank=False, help_text='Recording GL at PyCon Uganda') 
     content = MarkdownxField(default='', help_text = "[Supports Markdown] - Content.", null=False, blank=False
                              )
     user = models.ForeignKey(User, on_delete=models.CASCADE,

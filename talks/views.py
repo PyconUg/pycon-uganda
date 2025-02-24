@@ -275,8 +275,8 @@ class TalksDetailView(DetailView):
         speaker_profiles = Profile.objects.filter(user__in=speakers)
 
         # Generate the meta tags dynamically
-        meta_title = f"{proposal.title} | PyCon Africa {proposal.event_year.year}"
-        meta_description = Truncator(proposal.talk_abstract).words(30, truncate='...') if proposal.talk_abstract else "Join us at PyCon Africa for an insightful talk."
+        meta_title = f"{proposal.title} | PyCon Uganda {proposal.event_year.year}"
+        meta_description = Truncator(proposal.talk_abstract).words(30, truncate='...') if proposal.talk_abstract else "Join us at PyCon Uganda for an insightful talk."
         meta_og_image = speaker_profiles.first().profile_image.url if speaker_profiles.exists() and speaker_profiles.first().profile_image else 'https://res.cloudinary.com/pycon-africa/image/upload/v1722977619/website_storage_location/media/pyconafrica.png' 
 
         context.update({
@@ -417,11 +417,11 @@ def send_speaker_invitation(request, year, pk):
         invitation, created = SpeakerInvitation.objects.get_or_create(talk=proposal, invitee=user)
 
         if created:
-            email_body = f"Dear Speaker,\n\nYou have been invited by {sender_name} to join a session titled '{proposal.title}' during  PyCon Africa {event_year.year}. \n\nPlease visit our site (https://africa.pycon.org/) to respond to this invitation.\n\nBest,\nPyCon Africa's Team"
+            email_body = f"Dear Speaker,\n\nYou have been invited by {sender_name} to join a session titled '{proposal.title}' during  PyCon Uganda {event_year.year}. \n\nPlease visit our site (https://africa.pycon.org/) to respond to this invitation.\n\nBest,\nPyCon Uganda's Team"
             send_mail(
-                f'Invitation to Speak at PyCon Africa - {proposal.title}',
+                f'Invitation to Speak at PyCon Uganda - {proposal.title}',
                 email_body,
-                'noreply@pycon.africa',
+                'noreply@pycon.ug',
                 [user_email],
                 fail_silently=False,
             ) 
@@ -769,7 +769,7 @@ def respond_to_invitation(request, year, pk):
             html_template = ""
             
             if proposal.user_response == 'A':
-                subject = "Thank You for Accepting to Speak at PyCon Africa"
+                subject = "Thank You for Accepting to Speak at PyCon Uganda"
                 html_template = 'emails/talks/accepted_response.html'
             elif proposal.user_response == 'R':
                 subject = "Thank You for Your Response"
@@ -784,7 +784,7 @@ def respond_to_invitation(request, year, pk):
             email = EmailMultiAlternatives(
                 subject,
                 text_content,
-                'PyCon Africa Program\'s Team <program@pycon.africa>',
+                'PyCon Uganda Program\'s Team <program@pycon.ug>',
                 [proposal.user.email]
             )
             email.attach_alternative(html_content, "text/html")

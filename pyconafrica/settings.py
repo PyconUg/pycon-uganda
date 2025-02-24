@@ -27,7 +27,7 @@ DEBUG = os.getenv("DEBUG_STATE", "False").strip().lower() in ("true", "1", "yes"
 
 SECRET_KEY = os.getenv("SECRET_KEY")
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split()
+ALLOWED_HOSTS = ["*"]
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -102,6 +102,7 @@ INSTALLED_APPS = [
     "tickets",
     'cms',
     "travel_guide",
+    "pycon2025"
 ]
 
 MIDDLEWARE = [ 
@@ -188,7 +189,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "Africa/Accra"
+TIME_ZONE = "Africa/Kampala"
 
 USE_I18N = True
 

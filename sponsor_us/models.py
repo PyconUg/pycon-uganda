@@ -8,8 +8,8 @@ from home.models import EventYear
 
 
 class SponsorUsPage(models.Model):
-    title = models.CharField(max_length=250, help_text='Support PyCon Africa')
-    why_sponsor_us = MarkdownxField(help_text="[Supports Markdown] - Support PyCon Africa.")
+    title = models.CharField(max_length=250, help_text='Support PyCon Uganda')
+    why_sponsor_us = MarkdownxField(help_text="[Supports Markdown] - Support PyCon Uganda.")
     special_sponsorship = MarkdownxField(help_text="[Supports Markdown] - Special sponsorship package.")
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='supportus_pages')
     event_year = models.ForeignKey(EventYear, on_delete=models.CASCADE, related_name='supportus_pages')
