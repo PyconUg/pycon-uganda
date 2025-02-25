@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
+
+/* ----------------- basic HTML elements ------------- */
+
+html {
+  /* required for the sticky footer */
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    min-height: 100vh;
+
+    }
+
+h1, h2, h3, h4, h5, h6 {font-family: 'Montserrat', sans-serif;}
+
+h1 {
+  font-size: 130%;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 140%;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 110%;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 100%;
+  font-weight: 500;
+}
+
+h5 {
+  font-size: 110%;
+  font-weight: 300;
+}
+
+
+/* -------------- layout components ---------------- */
+
+.masthead {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  margin-top: 10px;
+
+  font-family: 'Roboto';
+  font-weight: 500;
+}
+
+
+main {margin-top: 10px;}
+
+/* for larger viewports only, we display the background image */
+
+@media all and (min-width:720px) {
+
+  main {
+    /* Center and scale the image nicely */
+    position: relative;
+  	background-image: url("../img/africa-dotted.a056de8c9ec6.png");
+    background-position: center 100%;
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    }
+}
+
+footer {
+  background-color: #3F79A8;
+  color: white;
+  padding: 10px 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200;
+  margin-top: 50px;
+}
+
+footer a:link, footer a:hover, footer a:visited {color: white; font-weight: bold;}
+
+/* ----------------- menu ------------- */
+
+.navbar-brand {
+  display: block;
+  text-align: center;
+}
+
+.navbar-brand img {max-width: 100%;}
+
+nav.navbar {
+  padding-left: 0;
+  padding-right: 0;
+  font-size: 120%;
+  color: #FFD44E;
+  }
+
+nav .navbar-toggler {
+  color: #3F79A8;
+  border: 2px solid #3F79A8;
+  background: #FFD44E;
+}
+
+nav .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+
+nav li a:hover {color: #FFD44E;}
+
+nav li a {
+    text-decoration: none;
+    color: #3F79A8;
+    position: relative;
+    }
+
+@media all and (min-width:992px) {
+  nav li:first-child {border: none;}
+
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-left: .25rem;
+    padding-right: .25rem;
+  }
+
+  nav.navbar {
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 105%;
+    font-weight: 300;
+    color: #FFD44E;
+    }
+  nav li a:after {
+      content: '';
+      position: absolute;
+      height: 1px;
+      display: block;
+      margin-top: 5px;
+      left: 5px;
+      right: 5px;
+      background: #3F79A8;
+      transition: all .2s ease;
+      -webkit-transition: all .2s ease;
+  }
+  nav li a:hover:after {
+      height: 3px;
+      left: 0;
+      right: 0;
+      background: #FFD44E;
+      text-decoration: none;
+  }
+}
+
+
+/* ----------------- card basics ------------- */
+
+.card-columns {column-count: 1;}
+
+@media all and (min-width:992px) {
+  .card-columns {column-count: 2;}
+}
+
+@media all and (min-width:1200px) {
+  .card-columns {column-count: 3;}
+}
+
+.card {
+    box-shadow: 0 15px 30px 0 rgba(0, 0, 0, .11), 0 5px 15px 0 rgba(0, 0, 0, .08);
+    background: #fff;
+    margin-bottom: 10px;
+}
+
+.card .card {
+  box-shadow: none;
+}
+
+.card-header {
+    padding: 12px
+}
+
+.card-header h2, .card-header h3, .card-header h4,  {
+    margin: 0px;
+}
+
+.card-body {
+    padding: 10px
+}
+
+
+/* For the programme listing */
+
+.card {border: 0px;}
+.card-group .card {margin-bottom: 0;}
+.card-group.programme .card-header {
+  border: 0;
+  border-radius:0;
+  background: #444;
+  color: white;}
+
+.card-group.programme .card-header p {margin-bottom: 0}
+.card-group.programme .card-body p {margin-bottom: 0}
+
+div.card-group.programme .card-header::before {
+  font-size: 40%;
+  text-transform: uppercase;
+}
+
+div.tuesday .card-group.programme .card-header::before {content: "Tues";}
+div.tuesday .card-group.programme .card-header {background: #FFEAAD; color: black;}
+div.wednesday .card-group.programme .card-header::before {content: "Weds";}
+div.wednesday .card-group.programme .card-header {background: #8AB9D9; color: black;}
+div.thursday .card-group.programme .card-header::before {content: "Thurs";}
+div.thursday .card-group.programme .card-header {background: black;}
+div.friday .card-group.programme .card-header::before {content: "Fri";}
+div.friday .card-group.programme .card-header {background: #3F79A8;}
+div.saturday .card-group.programme .card-header::before {content: "Sat";}
+div.saturday .card-group.programme .card-header {background: gray;}
+
+/* ----------------- card colours -------------
+
+strong blue #3F79A8
+medium blue #8AB9D9
+pale blue #D8EEFF
+
+strong yellow #FFD44E
+medium yellow #FFEAAD
+pale yellow #FFF9E5
+
+*/
+
+.card.bg-primary .card-header {background-color: #3F79A8; color: white;}
+.card.bg-primary .card-body {background-color: #D8EEFF}
+.card.bg-primary .card-footer {background-color: #8AB9D9}
+
+.card.bg-secondary .card-header {background-color: #FFD44E; color: black;}
+.card.bg-secondary .card-body {background-color: #FFF9E5}
+.card.bg-secondary .card-footer {background-color: #FFEAAD}
