@@ -277,7 +277,9 @@ class TalksDetailView(DetailView):
         # Generate the meta tags dynamically
         meta_title = f"{proposal.title} | PyCon Uganda {proposal.event_year.year}"
         meta_description = Truncator(proposal.talk_abstract).words(30, truncate='...') if proposal.talk_abstract else "Join us at PyCon Uganda for an insightful talk."
-        meta_og_image = speaker_profiles.first().profile_image.url if speaker_profiles.exists() and speaker_profiles.first().profile_image else 'https://res.cloudinary.com/pycon-africa/image/upload/v1722977619/website_storage_location/media/pyconafrica.png' 
+                
+        # todo: find a fallback og image 
+        meta_og_image = speaker_profiles.first().profile_image.url if speaker_profiles.exists() and speaker_profiles.first().profile_image else '' 
 
         context.update({
             'title': "Talk Details",
