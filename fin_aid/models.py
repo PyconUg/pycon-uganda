@@ -7,8 +7,8 @@ from django.utils import timezone
 from home.models import EventYear
 
 class Fin_aid(models.Model):
-    title = models.CharField(max_length=250, null=False, blank=False, help_text='Financial Assistance PyCon Africa') 
-    financial_assistance = MarkdownxField(default='', help_text="[Supports Markdown] - Financial Assistance PyCon Africa.", null=False, blank=False)
+    title = models.CharField(max_length=250, null=False, blank=False, help_text='Financial Assistance PyCon Uganda') 
+    financial_assistance = MarkdownxField(default='', help_text="[Supports Markdown] - Financial Assistance PyCon Uganda.", null=False, blank=False)
     google_form_formfacade_code = models.TextField(default='', help_text='Link to your google form', blank=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='fin_aid', default=User)
     event_year = models.ForeignKey(EventYear, on_delete=models.CASCADE, default="2024", related_name='fin_aids')

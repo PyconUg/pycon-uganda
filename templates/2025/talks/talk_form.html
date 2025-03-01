@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load i18n static avatar_tags crispy_forms_tags %}
-{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Submit your Talk || PyCon Africa" %}{% endif %}{% endblock %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Submit your Talk || PyCon Uganda" %}{% endif %}{% endblock %}
 {% trans 'cur_time' as datetime.datetime.now(tz=pytz.timezone(str(settings.TIME_ZONE))) %}
 
 {% block content %}
@@ -192,7 +192,7 @@
         So stay tuned and reload this page on the due date. <br>Let's make waves together this year! 🚀
     </p>
 {% else %}
-    <h3 class="g-mb-20">🚀 The PyCon Africa's Call for Proposals is now Wrapped Up! </h3>  
+    <h3 class="g-mb-20">🚀 The PyCon Uganda's Call for Proposals is now Wrapped Up! </h3>  
 
     <!-- Border Alert -->
     <div class="alert fade show g-brd-around g-brd-red rounded-0" role="alert">
@@ -220,7 +220,7 @@
                     <br><br>
                     With gratitude and Python vibes,
                     <br>
-                    The PyCon Africa Team
+                    The PyCon Uganda Team
                 </p>
             </div>
         </div>

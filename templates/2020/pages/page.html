@@ -3,7 +3,7 @@
 {% if page.meta_title %}
     {{ page.meta_title }}
 {% else %}
-    {{ page.page_name }} | {% trans "PyCon Africa" %}
+    {{ page.page_name }} | {% trans "PyCon Uganda" %}
 {% endif %}
 {% endblock %}
 
@@ -17,7 +17,7 @@
 {% block og_image %}{{ meta_og_image }}{% endblock %}
 {% block og_url %}{{ request.build_absolute_uri }}{% endblock %}
 {% block og_type %}website{% endblock %}
-{% block og_site_name %}PyCon Africa{% endblock %}
+{% block og_site_name %}PyCon Uganda{% endblock %}
 
 {% block twitter_title %}{{ meta_title }}{% endblock %}
 {% block twitter_description %}{{ meta_description }}{% endblock %}

@@ -30,28 +30,62 @@
  
 
     <!-- body -->
-    <div class="container  g-pt-50">
+    <div class="container g-pt-50">
       <div class="row">  
-        <div class="u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30" > 
-          {% for guideline in health_safety_guidelines.all|slice:"0:1" %}<br><br>
+        <div class="u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30">
           <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-20 g-mb-30"> 
-            <span class="g-color-primary">{{ guideline.title }}</span>
+            <span class="g-color-primary">Health and Safety Guidelines</span>
           </h2>
           <!--================ Icon Box ================-->
           <article class="text-size-medium"> 
-            <div class="mad-icon-box-content markdownx-preview"> 
-              <p class="markdownx-preview">{{ guideline.health_safety_guideline | markdown | safe }}</p>
-            {{ form.media }}
+            <div class="mad-icon-box-content markdownx-preview">
+              <p>Our attendees' health and safety remain our top priority and we look to the venue, and Ministry of Health guidelines to make the best and most informed decisions around onsite safety and requirements so we will be erring on the side of safety for all participants.</p>
+              
+              <p>PyCon Uganda will continue to provide social distancing where possible in the venue. Hand sanitizer will also be available for all attendees. The guidelines implemented for PyCon Uganda 2025 are subject to change based on health and safety recommendations at the time of the event. We are committing, however, to only make changes in the direction of greater protections.</p>
+              
+              <h3 class="section-title">Mask Requirement</h3>
+              <p>Face coverings will be required of everyone inside the conference venue at PyCon Uganda. This is necessary since PyCon Uganda hosts attendees from all over the world who travel in and may have unknowingly been exposed to COVID-19. This allows us to host the safest event possible for everyone in attendance. We will not be rolling back our mask requirement.</p>
+              
+              <p>Exceptions are:</p>
+              <ul>
+                <li>Outdoor Spaces</li>
+                <li>Indoors while consuming food and while socially distanced from other participants</li>
+                <li>While necessary for communicating with someone who is hearing impaired when the ability to see the mouth is essential for communication</li>
+                <li>Speakers while presenting</li>
+              </ul>
+              
+              <p>Masks must be worn over the nose and mouth and must be made of a tight-knit, non-permeable material. N95 or equivalent masks are required. As N95 is an American standard, masks certified by other governments to similar standards (e.g. PM2.5, KN95, and KF94) will also be allowed.</p>
+              
+              <p>Speakers will not be required to wear masks while presenting. Participants should provide their own masks for the event, though extras will be available at no cost during the conference at the registration desk while supplies last. Participants who are unwilling to follow the mask requirement will be asked to leave.</p>
+              
+              <h3 class="section-title">Vaccination Requirement</h3>
+              <p>PyCon Uganda 2025 will require vaccine verification. COVID-19 vaccines are effective at protecting people from getting seriously ill, being hospitalized, and dying. As with other diseases, you are protected best from COVID-19 when you stay up to date with the recommended vaccines, including locally available boosters.</p>
+              
+              <h3 class="section-title">Rapid Testing</h3>
+              <p>We encourage attendees to do a rapid test before traveling and consider testing during the event, especially if you will be eating indoors with people. We did look into providing free, rapid onsite testing for participants but it is not feasible (logistically or financially) for an event like ours.</p>
+              
+              <h3 class="section-title">Attendance</h3>
+              <p>Individuals should not attend the event if they are COVID-positive, are exhibiting COVID symptoms (<a href="https://www.health.go.ug/covid/"> as defined by the Ministry of Health </a>), or have been exposed, within 7 days prior to the event, to someone who was COVID-positive or showed COVID symptoms.</p>
+              
+              <p>If you are feeling sick or exhibiting symptoms of COVID-19, or test positive for COVID-19, prior to the start of the conference, or on any day of the conference, please contact us at pyconug@pycon.org, and we will exchange your ticket type for an online ticket or grant you a refund.</p>
+              
+              <h3 class="section-title">Travel</h3>
+              <p>Anyone traveling to the event should read and abide by the <a href="https://ug.usembassy.gov/covid-19-information-page/"> Travel Guidelines </a> for domestic and international travel. We ask that participants respect fellow attendees and do everything possible to ensure an environment that is as safe as possible.</p>
+              
+              <h3 class="section-title">Ebola Update</h3>
+              <p>Uganda was officially declared Ebola-free as of 11th January 2025. <a href="https://www.afro.who.int/countries/uganda/news/uganda-declares-end-ebola-disease-outbreak">More details...</a></p>
+              
+              <h3 class="section-title">Monitoring of the Requirements Will Continue</h3>
+              <p>We have monitored COVID-related news and data since the pandemic started, and we will continue to do so moving forward. We continue to follow all Ministry of Health guidelines in addition to those of the local government and venue. International, national, regional, and local sources are closely watched and will result in a change of policy if warranted.</p>
+              
+              <h3 class="section-title">Commitment to Compliance</h3>
+              <p>PyCon Uganda takes these Health & Safety Guidelines very seriously and will therefore enforce a 3-strike rule. Anyone who violates these guidelines on three separate accounts, such as continuing not to wear a proper mask or disregarding social distancing, is subject to removal from the conference.</p>
             </div>
           </article>
-          <!--================ End of Icon Box ================--> 
-          {% endfor %}
+          <!--================ End of Icon Box ================-->
         </div> 
-    </div> 
-  </div>
-  <!-- End body -->
-
-
- 
+      </div> 
+    </div>
+    <!-- End body -->
 
 {% endblock %}

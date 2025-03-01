@@ -2,7 +2,7 @@
 
 <!-- Header -->
 <header id="js-header" class="u-header u-header--static">
-  <div class="u-header__section g-bg-black-opacity-0_7 g-py-10">
+  <div class="u-header__section g-py-10">
     <nav class="navbar navbar-expand-lg">
       <div class="container">
         <!-- Responsive Toggle Button -->
@@ -24,20 +24,13 @@
         <!-- End Responsive Toggle Button -->
 
         <!-- Logo -->
-        <a href="/2025/home" class="navbar-brand u-header__logo">
-          <img
-            class="u-header__logo-img u-header__logo-img--main img-fluid"
-            src="{% static '2025/img/logo.png' %}"
-            alt="Image Description"
-            style="max-width: 150px"
-          />
-          <img
-            class="u-header__logo-img img-fluid"
-            src="{% static '2025/img/logo.png' %}"
-            alt="Image Description"
-            style="max-width: 100px"
-          />
+        <a href="/" class="navbar-brand u-header__logo">
+          <img class="u-header__logo-img u-header__logo-img--main img-fluid"
+               src="{% static '2025/img/logo.png' %}" 
+               alt="PyCon Uganda 2025"
+               style="max-width: 150px; height: auto;">
         </a>
+<!-- End Logo -->
 
         <!-- End Logo -->
 
@@ -47,7 +40,7 @@
           id="navBar"
         >
           <ul class="navbar-nav text-uppercase g-font-weight-600 ml-auto">
-            <li class="nav-item dropdown g-mx-20--lg">
+            <!-- <li class="nav-item dropdown g-mx-20--lg">
               <a
                 href="#"
                 class="nav-link dropdown-toggle g-px-0"
@@ -55,53 +48,43 @@
                 aria-haspopup="true"
                 aria-expanded="false"
                 >About</a
-              >
+              > -->
               <!-- Submenu (Bootstrap) -->
-              <ul
+              <!-- <ul
                 class="dropdown-menu rounded-0 g-text-transform-none g-brd-none g-brd-top g-brd-primary g-brd-top-2 g-mt-20 g-mt-10--lg--scrolling"
               >
                 <li class="dropdown-item">
                   <a class="nav-link g-px-0 g-color-black" href="/2025/about/"
                     >About Us</a
-                  >
+                  > -->
                 </li>
-                <li class="dropdown-item">
+                <!-- <li class="dropdown-item">
                   <a
                     class="nav-link g-px-0 g-color-black"
                     href="/2025/about/team/"
                     >Team</a
                   >
-                </li>
-                <li class="dropdown-item">
-                  <a class="nav-link g-px-0 g-color-black" href="/2025/coc/"
-                    >Code of Conduct</a
-                  >
-                </li>
-                <li class="dropdown-item">
+                </li> -->
+                <!-- <li class="dropdown-item">
                   <a class="nav-link g-px-0 g-color-black" href="/2025/fin-aid/"
                     >Financial Assistance</a
                   >
-                </li>
+                </li> -->
                 <!--
                 <li class="dropdown-item">
                   <a class="nav-link g-px-0 g-color-black" href="/2025/faqs/">FAQs</a>
                 </li> 
                 -->
-                <li class="dropdown-item">
-                  <a class="nav-link g-px-0 g-color-black" href="/2025/h&g/"
-                    >Health and Safety Guidelines</a
-                  >
-                </li>
-                <li class="dropdown-item">
+                <!-- <li class="dropdown-item">
                   <a
                     class="nav-link g-px-0 g-color-black"
                     href="/2025/privacy-policy/"
                     >Privacy Policy</a
                   >
-                </li>
-              </ul>
+                </li> -->
+              <!-- </ul> -->
               <!-- End Submenu (Bootstrap) -->
-            </li>
+            <!-- </li> -->
             <li class="nav-item g-mx-20--lg">
               <a
                 href="https://pyconug.blogspot.com/"
@@ -110,8 +93,47 @@
                 >Blog</a
               >
             </li>
-            <li class="nav-item g-mx-20--lg">
+            <!-- <li class="nav-item g-mx-20--lg">
               <a href="/2025/schedule/" class="nav-link px-0">Schedule</a>
+            </li> -->
+            <li class="nav-item dropdown g-mx-20--lg">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle g-px-0"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Attendee Guide <i class="fa-solid fa-book-open-reader"></i>
+              </a>
+              <!-- Submenu (Bootstrap) -->
+              <ul
+                class="dropdown-menu rounded-0 g-text-transform-none g-brd-none g-brd-top g-brd-primary g-brd-top-2 g-mt-20 g-mt-10--lg--scrolling"
+              >
+                <li class="dropdown-item">
+                  <a
+                    class="nav-link g-px-0 g-color-black"
+                    href="/2025/travel-guide/"
+                    >Travel Guide</a
+                  >
+                </li>
+                <li class="dropdown-item">
+                  <a
+                    class="nav-link g-px-0 g-color-black"
+                    href="/2025/coc/"
+                    >Code of Conduct</a
+                  >
+                </li>
+                
+                <li class="dropdown-item">
+                  <a
+                    class="nav-link g-px-0 g-color-black"
+                    href="/2025/h&g/"
+                    >Health & Safety</a
+                  >
+                </li>
+              </ul>
+              <!-- End Submenu (Bootstrap) -->
             </li>
             <li class="nav-item dropdown g-mx-20--lg">
               <a
@@ -121,8 +143,8 @@
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                Speak at PyCon <i class="fa-solid fa-earth-africa"></i
-              ></a>
+                Speak at PyCon <i class="fa-solid fa-earth-africa"></i>
+              </a>
               <!-- Submenu (Bootstrap) -->
               <ul
                 class="dropdown-menu rounded-0 g-text-transform-none g-brd-none g-brd-top g-brd-primary g-brd-top-2 g-mt-20 g-mt-10--lg--scrolling"
@@ -160,18 +182,18 @@
                     >Submit a Proposal</a
                   >
                 </li>
-                <li class="dropdown-item">
+                {% comment %} <li class="dropdown-item">
                   <a
                     class="nav-link g-px-0 g-color-black"
                     href="/2025/talks/recording/"
                     class="mad-ln--independent"
                     >Recording Release</a
                   >
-                </li>
+                </li> {% endcomment %}
               </ul>
               <!-- End Submenu (Bootstrap) -->
             </li>
-            <li class="nav-item dropdown g-mx-20--lg">
+            <!-- <li class="nav-item dropdown g-mx-20--lg">
               <a
                 href="#"
                 class="nav-link dropdown-toggle g-px-0"
@@ -181,7 +203,6 @@
               >
                 Sponsor</a
               >
-              <!-- Submenu (Bootstrap) -->
               <ul
                 class="dropdown-menu rounded-0 g-text-transform-none g-brd-none g-brd-top g-brd-primary g-brd-top-2 g-mt-20 g-mt-10--lg--scrolling"
               >
@@ -200,9 +221,8 @@
                   >
                 </li>
               </ul>
-              <!-- End Submenu (Bootstrap) -->
-            </li>
-            <li class="nav-item dropdown g-mx-20--lg">
+            </li> -->
+           <!-- <li class="nav-item dropdown g-mx-20--lg">
               <a
                 href="#"
                 class="nav-link dropdown-toggle g-px-0"
@@ -211,7 +231,6 @@
                 aria-expanded="false"
                 >Past</a
               >
-              <!-- Submenu (Bootstrap) -->
               <ul
                 class="dropdown-menu rounded-0 g-text-transform-none g-brd-none g-brd-top g-brd-primary g-brd-top-2 g-mt-20 g-mt-10--lg--scrolling"
               >
@@ -232,8 +251,7 @@
                   >
                 </li>
               </ul>
-              <!-- End Submenu (Bootstrap) -->
-            </li>
+            </li>  -->
             <li class="nav-item g-ml-15--lg">
               <a
                 href="/2025/tickets/"
@@ -265,7 +283,6 @@
                   />
                 </span>
                 {% else %}
-
                 <span class="d-inline-block g-pos-rel g-mr-20 g-mb-20">
                   <img
                     class="g-width-40 g-height-40 rounded-circle mCS_img_loaded"

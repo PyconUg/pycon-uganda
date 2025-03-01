@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load i18n static  markdown_extras crispy_forms_tags %}
-{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Proposing a Talk || PyCon Africa" %}{% endif %}{% endblock %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Proposing a Talk || PyCon Uganda" %}{% endif %}{% endblock %}
  
 
 {% block content %}
@@ -45,9 +45,9 @@
                         <div class="col-md-12"> 
                           <h2 class="h4 g-color-black g-font-weight-600 mb-3">
                             {% if user.is_authenticated %}
-                            Hello{% if user.is_authenticated %} {% if request.user.user_profile %}{{ request.user.user_profile.name }}{% else %}@{{ request.user.username }}{% endif %}{% else %}{% endif %}, we are glad you are interested in speaking at PyCon Africa!<br> 
+                            Hello{% if user.is_authenticated %} {% if request.user.user_profile %}{{ request.user.user_profile.name }}{% else %}@{{ request.user.username }}{% endif %}{% else %}{% endif %}, we are glad you are interested in speaking at PyCon Uganda!<br> 
                             {% else %}
-                            We are glad you are interested in speaking at PyCon Africa!<br> 
+                            We are glad you are interested in speaking at PyCon Uganda!<br> 
                             {% endif %}
                           </h2> 
                                

@@ -29,6 +29,7 @@ urlpatterns = [
     path('', include('home.urls', namespace='homepage')), 
     path('2019/', include('pyconafrica2019.urls', namespace='pyconafrica2019')),
     path('2020/', include('pycon2020.urls')),
+    path('2025/', include('pycon2025.urls')),
     path('<int:year>/', include([
         path('', include('home.urls')),
         path('about/', include('about.urls')),
@@ -43,7 +44,7 @@ urlpatterns = [
         path('fin-aid/', include('fin_aid.urls', namespace='fin_aid')),
         path('privacy-policy/', include('privacypolicy.urls', namespace='privacypolicy')),
         path('tickets/', include('tickets.urls', namespace='ticket')),
-
+        path('travel-guide/', include('travel_guide.urls', namespace='travel_guide')),
         
         #Leave this last to catch all pages
         path('', include('cms.urls')),   
@@ -79,6 +80,6 @@ handler404 = 'home.views.handler404'
 
 
 # Modifies default django admin titles and headers with custom app detail.
-admin.site.site_header = "PyCon Africa Admin"
-admin.site.site_title = "PyCon Africa Admin Portal"
-admin.site.index_title = "Welcome to PyCon Africa Portal"
+admin.site.site_header = "PyCon Uganda Admin"
+admin.site.site_title = "PyCon Uganda Admin Portal"
+admin.site.index_title = "Welcome to PyCon Uganda Portal"
