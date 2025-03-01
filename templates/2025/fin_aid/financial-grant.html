@@ -16,10 +16,10 @@
                   {% for status in fin_aid_status %}
                     {% if status.is_open %}
                       <h3 class="h2">Our Financial Grant is now open.</h3>
-                      <p>Interested in attending PyCon Africa but worried about the costs? We’ve got you covered! 🎉 Our generous financial assistance programme is here to support attendees who would otherwise find it difficult to join us.</p>
+                      <p>Interested in attending PyCon Uganda but worried about the costs? We’ve got you covered! 🎉 Our generous financial assistance programme is here to support attendees who would otherwise find it difficult to join us.</p>
                     {% elif status.is_closed %}
                       <h3 class="h2">Our Financial Grant is now <b>closed</b>.</h3>
-                      <p>Thank you for your interest in PyCon Africa. Unfortunately, our financial assistance programme is now <b>closed</b>. Stay tuned for future opportunities!</p>
+                      <p>Thank you for your interest in PyCon Uganda. Unfortunately, our financial assistance programme is now <b>closed</b>. Stay tuned for future opportunities!</p>
                     {% elif status.not_open_yet %}
                       <h3 class="h2">Our Financial Grant is not open yet.</h3>
                       <p>Our financial assistance programme is not open yet. Please check back later for more information on how to apply.</p>
@@ -33,7 +33,7 @@
                {% if status.is_closed %}
               <button class="btn btn-block u-shadow-v33 g-color-white g-bg-primary g-bg-main--hover g-rounded-30 g-px-25 g-py-13 disabled" type="button" disabled>Apply now . . .</button>
             {% else %}
-              <a href="/2024/fin-aid/" class="btn btn-block u-shadow-v33 g-color-white g-bg-primary g-bg-main--hover g-rounded-30 g-px-25 g-py-13">Apply now . . .</a>
+              <a href="/2025/fin-aid/" class="btn btn-block u-shadow-v33 g-color-white g-bg-primary g-bg-main--hover g-rounded-30 g-px-25 g-py-13">Apply now . . .</a>
             {% endif %}
             </div>
           </div>

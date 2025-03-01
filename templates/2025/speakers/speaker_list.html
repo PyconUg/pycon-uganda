@@ -5,7 +5,7 @@
 {% elif page %}
     {{ page.meta_title }}
 {% else %}
-    {% trans "Speakers | PyCon Africa" %}
+    {% trans "Speakers | PyCon Uganda" %}
 {% endif %}
 {% endblock %}
 
@@ -15,7 +15,7 @@
 {% elif page %}
     {{ page.meta_description }}
 {% else %}
-    {% trans "Meet the incredible speakers at PyCon Africa." %}
+    {% trans "Meet the incredible speakers at PyCon Uganda." %}
 {% endif %}
 {% endblock %}
 
@@ -25,7 +25,7 @@
 {% elif page %}
     {{ page.meta_title }}
 {% else %}
-    {% trans "Speakers | PyCon Africa" %}
+    {% trans "Speakers | PyCon Uganda" %}
 {% endif %}
 {% endblock %}
 
@@ -35,12 +35,12 @@
 {% elif page %}
     {{ page.meta_description }}
 {% else %}
-    {% trans "Meet the incredible speakers at PyCon Africa." %}
+    {% trans "Meet the incredible speakers at PyCon Uganda." %}
 {% endif %}
 {% endblock %}
 
 {% block content %} 
-{% include '2024/navbar.html' %}
+{% include '2025/navbar.html' %}
 
 
     <!-- Breadcrumbs -->
@@ -86,13 +86,13 @@
                         {% if speaker.profile_image %}
                           <img class="u-info-v7-1__item-child-v1 g-width-150 g-height-150 rounded-circle g-mb-20" src="{{ speaker.profile_image.url }}" alt="{{ speaker.name }}">
                         {% else %}
-                          <img class="u-info-v7-1__item-child-v1 g-width-150 g-height-150 rounded-circle g-mb-20" src="{% static '/2024/img/speakers/speaker.png' %}" alt="{{ speaker.name }}">
+                          <img class="u-info-v7-1__item-child-v1 g-width-150 g-height-150 rounded-circle g-mb-20" src="{% static '/2025/img/speakers/speaker.png' %}" alt="{{ speaker.name }}">
                         {% endif %}
                         <!-- Figure Image -->
               
                         <!-- Figure Info -->
                       <em class="d-block g-font-style-normal g-font-size-11 text-uppercase g-color-primary g-mb-5"><b>Keynote Speaker</b></em>
-                      <h4 class="h5 g-color-black-light-v3 g-mb-5  g-font-weight-700 "><a href="{% url 'speakers:speaker_detail' year=2024 profile_id=speaker.profile_id %}">{{ speaker.name }} {{ speaker.surname }}</a></h4>
+                      <h4 class="h5 g-color-black-light-v3 g-mb-5  g-font-weight-700 "><a href="{% url 'speakers:speaker_detail' year=2025 profile_id=speaker.profile_id %}">{{ speaker.name }} {{ speaker.surname }}</a></h4>
                         <div class="d-block">
                           <ul class="list-unstyled">
                             <li class="d-block g-font-size-13 g-color-gray-dark-v4 mb-1"> 
@@ -134,12 +134,12 @@
                         {% if speaker.profile_image %}
                           <img class="u-info-v7-1__item-child-v1 g-width-100 g-height-100 rounded-circle g-mb-20" src="{{ speaker.profile_image.url }}" alt="{{ speaker.name }}">
                         {% else %}
-                          <img class="u-info-v7-1__item-child-v1 g-width-100 g-height-100 rounded-circle g-mb-20" src="{% static '/2024/img/speakers/speaker.png' %}" alt="{{ speaker.name }}">
+                          <img class="u-info-v7-1__item-child-v1 g-width-100 g-height-100 rounded-circle g-mb-20" src="{% static '/2025/img/speakers/speaker.png' %}" alt="{{ speaker.name }}">
                         {% endif %}
                         <!-- Figure Image -->
               
                         <!-- Figure Info -->
-                        <h4 class="h5 g-font-weight-600 mb-1"><a href="{% url 'speakers:speaker_detail' year=2024 profile_id=speaker.profile_id %}">{{ speaker.name }} {{ speaker.surname }}</a></h4>
+                        <h4 class="h5 g-font-weight-600 mb-1"><a href="{% url 'speakers:speaker_detail' year=2025 profile_id=speaker.profile_id %}">{{ speaker.name }} {{ speaker.surname }}</a></h4>
                         <div class="d-block">  
                           <ul class="list-unstyled">
                             <li class="d-block g-font-size-13 g-color-gray-dark-v4 mb-1"> 
