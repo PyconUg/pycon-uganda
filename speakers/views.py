@@ -71,8 +71,8 @@ class Speakers(ListView):
         other_speakers = [speaker for speaker in speakers if not speaker.is_keynote_speaker]
 
         # Meta Information
-        meta_description = "Meet the incredible speakers at PyCon Africa. From keynotes to sponsored talks, our speakers bring a wealth of knowledge and insight to the stage."
-        meta_title = f"Speakers at PyCon Africa {self.kwargs.get('year', 'default')}" if keynote_speakers else f"Speakers at PyCon Africa {self.kwargs.get('year', 'default')}"
+        meta_description = "Meet the incredible speakers at PyCon Uganda. From keynotes to sponsored talks, our speakers bring a wealth of knowledge and insight to the stage."
+        meta_title = f"Speakers at PyCon Uganda {self.kwargs.get('year', 'default')}" if keynote_speakers else f"Speakers at PyCon Uganda {self.kwargs.get('year', 'default')}"
 
         context.update({
             'keynote_speakers': keynote_speakers,
@@ -123,10 +123,12 @@ class SpeakerDetailView(HitCountDetailView):
         truncated_biography = Truncator(self.object.biography).words(50, truncate='...')
 
         # Meta tags information
-        meta_title = f"{self.object.name} {self.object.surname} | PyCon Africa {year}"
-        meta_description = f"Meet {self.object.name}, a speaker at PyCon Africa {year}. {truncated_biography}"
-        meta_author = "PyCon Africa"
-        meta_og_image = self.object.profile_image.url if self.object.profile_image else "https://res.cloudinary.com/pycon-africa/image/upload/v1722977619/website_storage_location/media/pyconafrica.png"
+        meta_title = f"{self.object.name} {self.object.surname} | PyCon Uganda {year}"
+        meta_description = f"Meet {self.object.name}, a speaker at PyCon Uganda {year}. {truncated_biography}"
+        meta_author = "PyCon Uganda"
+
+        # todo: find a fallback og image 
+        meta_og_image = self.object.profile_image.url if self.object.profile_image else ""
 
         context.update({
             'talks': talks,

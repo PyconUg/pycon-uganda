@@ -16,16 +16,18 @@ import os
 # import cloudinary.api
 from datetime import datetime
 from pathlib import Path
+from sre_constants import IN
 from dotenv import load_dotenv
 
 load_dotenv()
 
 SILENCED_SYSTEM_CHECKS = ['django_recaptcha.recaptcha_test_key_error']
 
-DEBUG=os.getenv("DEBUG")
+DEBUG = os.getenv("DEBUG_STATE", "False").strip().lower() in ("true", "1", "yes")
+
 SECRET_KEY = os.getenv("SECRET_KEY")
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split()
+ALLOWED_HOSTS = ["*"]
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -73,7 +75,6 @@ INSTALLED_APPS = [
     "rest_framework",
     "tinymce",
     "sorl.thumbnail",
-    "debug_toolbar",
     #'newsletter',
     "markdownx",
     #'mdeditor',
@@ -100,6 +101,8 @@ INSTALLED_APPS = [
     "talks",
     "tickets",
     'cms',
+    "travel_guide",
+    "pycon2025"
 ]
 
 MIDDLEWARE = [ 
@@ -113,12 +116,20 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-DEBUG = True
-
-SECRET_KEY="django-insecure-7!6"
-
 if DEBUG:
+    INSTALLED_APPS += ["debug_toolbar"]
     MIDDLEWARE.insert(0, "debug_toolbar.middleware.DebugToolbarMiddleware")
+    INTERNAL_IPS = [
+    "127.0.0.1",
+    ]
+    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+else:
+    EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+    EMAIL_HOST = os.getenv("EMAIL_SMTP_SERVER")
+    EMAIL_PORT = 587
+    EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
+    EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
+    EMAIL_USE_TLS = True
 
 ROOT_URLCONF = "pyconafrica.urls"
 
@@ -178,7 +189,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "Africa/Accra"
+TIME_ZONE = "Africa/Kampala"
 
 USE_I18N = True
 
@@ -244,7 +255,7 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 # Registration App account settings
 ACCOUNT_ACTIVATION_DAYS = 7
-REGISTRATION_EMAIL_SUBJECT_PREFIX = "[PyCon Africa]"
+REGISTRATION_EMAIL_SUBJECT_PREFIX = "[PyCon Uganda]"
 SEND_ACTIVATION_EMAIL = True
 REGISTRATION_AUTO_LOGIN = False
 
