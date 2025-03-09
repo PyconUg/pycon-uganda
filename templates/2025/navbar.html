@@ -193,7 +193,7 @@
               </ul>
               <!-- End Submenu (Bootstrap) -->
             </li>
-            <!-- <li class="nav-item dropdown g-mx-20--lg">
+            <li class="nav-item dropdown g-mx-20--lg">
               <a
                 href="#"
                 class="nav-link dropdown-toggle g-px-0"
@@ -221,7 +221,7 @@
                   >
                 </li>
               </ul>
-            </li> -->
+            </li>
            <!-- <li class="nav-item dropdown g-mx-20--lg">
               <a
                 href="#"
@@ -252,10 +252,10 @@
                 </li>
               </ul>
             </li>  -->
-            <li class="nav-item g-ml-15--lg">
+            <li class="nav-item g-mx-20--lg">
               <a
                 href="/2025/tickets/"
-                class="btn btn-sm u-btn-yellow g-color-primary g-mr-10 g-mb-15"
+                class="btn btn-sm u-btn-yellow g-color-primary g-mt-2 g-mb-10"
                 ><b
                   >Tickets &nbsp;<i
                     class="fa-solid fa-tickets fa-beat-fade"
@@ -300,20 +300,7 @@
                 <div
                   class="d-flex flex-row align-items-center text-center justify-content-between g-letter-spacing-1 g-mb-15"
                 >
-                  <strong class="g-color-black g-font-weight-600 g-font-size-18"
-                    ><small
-                      ti
-                      data-toggle="tooltip-show"
-                      data-placement="left"
-                      title="Glad to have you here {% if request.user.user_profile %}{{ request.user.user_profile.first_name }} {% else %}@{{ request.user.username }}{% endif %}"
-                    >
-                      <b
-                        >Hi {% if request.user.user_profile %}{{
-                        request.user.user_profile.name }} {% else %}@{{
-                        request.user.username }}{% endif %} 😊</b
-                      ><br />&nbsp;&nbsp;&nbsp;&nbsp;{% time_of_day %}</small
-                    >
-                  </strong>
+                <strong class="g-color-black g-font-weight-600 g-font-size-18"><small  ti  data-toggle="tooltip-show" data-placement="left" title="Glad to have you here {% if request.user.user_profile %}{{ request.user.user_profile.first_name }} {% else %}@{{ request.user.username }}{% endif %}"> <b>Hi {% if request.user.user_profile %}{{ request.user.user_profile.name }}  {% else %}@{{ request.user.username }}{% endif %} 😊</b><br>&nbsp;&nbsp;&nbsp;&nbsp;{% time_of_day %}</small> </strong>
                 </div>
                 <li class="dropdown-item g-color-black">
                   <a
@@ -372,7 +359,7 @@
             <ul class="list-inline g-overflow-hidden g-pt-1 g-mx-minus-4 mb-0">
               <li class="list-inline-item g-mx-4">
                 <a
-                  class="g-color-white g-color-yellow--hover g-text-underline--none--hover"
+                  class="nav-link g-px-0 g-color-yellow--hover g-text-underline--none--hover"
                   href="/accounts/login/"
                   >Login</a
                 >
@@ -380,7 +367,7 @@
               <li class="list-inline-item g-mx-4">|</li>
               <li class="list-inline-item g-mx-4">
                 <a
-                  class="g-color-white g-color-yellow--hover g-text-underline--none--hover"
+                  class="nav-link g-px-0 g-color-yellow--hover g-text-underline--none--hover"
                   href="/accounts/signup/"
                   >Signup</a
                 >
