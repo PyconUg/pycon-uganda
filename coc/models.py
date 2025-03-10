@@ -13,7 +13,7 @@ class Coc(models.Model):
                              )
     user = models.ForeignKey(User, on_delete=models.CASCADE,
                                related_name='coc',default=User) 
-    event_year = models.ForeignKey(EventYear, on_delete=models.CASCADE, default="2024", related_name='cocs')
+    event_year = models.ForeignKey(EventYear, on_delete=models.CASCADE, default="2025", related_name='cocs')
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
 

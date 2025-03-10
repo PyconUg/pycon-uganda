@@ -24,7 +24,7 @@ class Ticket(models.Model):
     embedded_codes = MarkdownxField(default='', help_text = "[Supports Markdown] - If the Ticket Platform allows you to embed the tickets into your site.", null=True, blank=True)
     donation_link = models.CharField(max_length=250, null=True, blank=True, help_text='Donation for PyCon Uganda if any')
     user = models.ForeignKey(settings.AUTH_USER_MODEL, blank=False, null=True, related_name='ticket_us', on_delete=models.CASCADE)
-    event_year = models.ForeignKey(EventYear, on_delete=models.CASCADE, default="2024", related_name='tickets')
+    event_year = models.ForeignKey(EventYear, on_delete=models.CASCADE, default="2025", related_name='tickets')
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
 

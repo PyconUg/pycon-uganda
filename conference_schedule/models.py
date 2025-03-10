@@ -14,7 +14,7 @@ import datetime
 
 class Day(models.Model):
     conference_day = models.CharField(max_length=30, unique=True, help_text="The name of the conference day (e.g., Day 1, Day 2).") 
-    actual_date = models.DateField(help_text="The actual date of the conference day.", default=datetime.date(2024, 9, 9))
+    actual_date = models.DateField(help_text="The actual date of the conference day.", default=datetime.date(2025, 9, 9))
 
     class Meta:
         verbose_name = "Conference Day"

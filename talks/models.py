@@ -14,7 +14,7 @@ from home.models import EventYear
  
  
 class CFPSubmissionPeriod(models.Model):
-    event_year = models.ForeignKey(EventYear, on_delete=models.CASCADE, default="2024", related_name='submission_periods', help_text="The event year this submission period is for")
+    event_year = models.ForeignKey(EventYear, on_delete=models.CASCADE, default="2025", related_name='submission_periods', help_text="The event year this submission period is for")
     start_date = models.DateTimeField(help_text="Date and time when proposal submissions start")
     end_date = models.DateTimeField(help_text="Date and time when proposal submissions end")
 
@@ -35,7 +35,7 @@ class Speak(models.Model):
                                related_name='speak',default=User) 
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
-    event_year = models.ForeignKey(EventYear, on_delete=models.CASCADE, default="2024", related_name='speaks')
+    event_year = models.ForeignKey(EventYear, on_delete=models.CASCADE, default="2025", related_name='speaks')
 
     def __str__(self):
         return self.title
@@ -53,7 +53,7 @@ class Proposing_talk(models.Model):
                                related_name='proposing_talk',default=User) 
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True) 
-    event_year = models.ForeignKey(EventYear, on_delete=models.CASCADE, default="2024", related_name='proposing_talks')
+    event_year = models.ForeignKey(EventYear, on_delete=models.CASCADE, default="2025", related_name='proposing_talks')
 
     def __str__(self):
         return self.title
@@ -71,7 +71,7 @@ class Recording(models.Model):
                                related_name='recording',default=User) 
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
-    event_year = models.ForeignKey(EventYear, on_delete=models.CASCADE, default="2024", related_name='recordings')
+    event_year = models.ForeignKey(EventYear, on_delete=models.CASCADE, default="2025", related_name='recordings')
 
     def __str__(self):
         return self.title
