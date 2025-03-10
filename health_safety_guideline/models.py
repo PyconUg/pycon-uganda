@@ -12,7 +12,7 @@ class Health_Safety_Guideline(models.Model):
                              )
     user = models.ForeignKey(User, on_delete=models.CASCADE,
                                related_name='health_safety_guideline',default=User) 
-    event_year = models.ForeignKey(EventYear, on_delete=models.CASCADE, default="2024", related_name='health_safety_guidelines')
+    event_year = models.ForeignKey(EventYear, on_delete=models.CASCADE, default="2025", related_name='health_safety_guidelines')
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
 
