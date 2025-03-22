@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% load i18n static avatar_tags crispy_forms_tags %}
-{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Response to your Talk || PyCon Africa" %}{% endif %}{% endblock %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Response to your Talk || PyCon Uganda" %}{% endif %}{% endblock %}
 {% trans 'cur_time' as datetime.datetime.now(tz=pytz.timezone(str(settings.TIME_ZONE))) %}
 
 {% block content %}
 
 <!-- ========== HEADER ========== -->
-{% include '2024/navbar.html' %}
+{% include '2025/navbar.html' %}
 <!-- ========== END HEADER ========== -->
  
 
@@ -121,7 +121,7 @@
                   <div class="container g-py-50--md g-py-20">
                     
                     <h4 class="g-mb-20"><b>Respond to Your Proposal Invitation</b></h4> 
-                    <p>We are excited to have you participate in PyCon Africa 2024! <br>Please confirm your availability by accepting or rejecting the invitation below. If you accept, you will receive further instructions regarding the next steps and preparation. Should you decide to decline, we appreciate your time and consideration.</p>
+                    <p>We are excited to have you participate in PyCon Uganda 2024! <br>Please confirm your availability by accepting or rejecting the invitation below. If you accept, you will receive further instructions regarding the next steps and preparation. Should you decide to decline, we appreciate your time and consideration.</p>
                    
                     <p><b>Proposal: </b>{{ proposal.title }}</p>
                                   

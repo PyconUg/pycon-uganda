@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% load i18n tz static avatar_tags crispy_forms_tags markdown_extras countries profile_tags talks_tags %}
-{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Profile || PyCon Africa" %}{% endif %}{% endblock %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Profile || PyCon Uganda" %}{% endif %}{% endblock %}
 
 
 {% block content %}
 
 <!-- ========== HEADER ========== -->
-{% include '2024/navbar.html' %}
+{% include '2025/navbar.html' %}
 <!-- ========== END HEADER ========== -->
   
     <!-- Breadcrumbs -->
@@ -226,9 +226,9 @@
                           <li class="media g-brd-around g-brd-gray-light-v4 g-brd-left-3 g-brd-blue-left rounded g-pa-20 g-mb-10"> 
                             <div class="media-body">
                               <div class="d-flex justify-content-between">
-                                <h5 class="h6 g-font-weight-600 g-color-black">What it takes to speak at PyCon Africa</h5> 
+                                <h5 class="h6 g-font-weight-600 g-color-black">What it takes to speak at PyCon Uganda</h5> 
                               </div>
-                              <p>We are inviting speakers of all experience levels and backgrounds to contribute to our conference program at PyCon Africa 2024! ...</p>
+                              <p>We are inviting speakers of all experience levels and backgrounds to contribute to our conference program at PyCon Uganda 2025! ...</p>
                               
                               <p><a href="/2025/talks/speaking/"class="btn btn-sm u-btn-outline-darkgray g-rounded-50 g-mr-10 g-mb-15"><b>Read more...</b></a></p>
                                     
@@ -277,7 +277,7 @@
                       <p class="mb-0   g-mb-25"><br>
                         We're thrilled to have you join this vibrant community of Python enthusiasts, developers, 
                         and innovators from across Africa and beyond. To get started, we kindly ask you to create your profile.  
-                        Please click on the "Create Profile" button below to begin. <br><br>🥂 Here's to an exciting journey ahead at PyCon Africa 2024!
+                        Please click on the "Create Profile" button below to begin. <br><br>🥂 Here's to an exciting journey ahead at PyCon Uganda 2025!
                       </p>
                       <a class="btn btn-md u-btn-primary rounded-0 text-center "  href="{% url 'profiles:create_profile' %}">Create Profile &raquo;</a>
                     </div>

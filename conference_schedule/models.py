@@ -14,7 +14,7 @@ import datetime
 
 class Day(models.Model):
     conference_day = models.CharField(max_length=30, unique=True, help_text="The name of the conference day (e.g., Day 1, Day 2).") 
-    actual_date = models.DateField(help_text="The actual date of the conference day.", default=datetime.date(2024, 9, 9))
+    actual_date = models.DateField(help_text="The actual date of the conference day.", default=datetime.date(2025, 9, 9))
 
     class Meta:
         verbose_name = "Conference Day"
@@ -80,8 +80,8 @@ class Schedule(models.Model):
         
         if self.talk:
             if self.talk.speakers.exists():
-                # Safely retrieve either the profile name or fall back to "PyCon Africa"
-                speakers_names = ', '.join([getattr(speaker.user_profile, 'name', 'PyCon Africa') for speaker in self.talk.speakers.all()])
+                # Safely retrieve either the profile name or fall back to "PyCon Uganda"
+                speakers_names = ', '.join([getattr(speaker.user_profile, 'name', 'PyCon Uganda') for speaker in self.talk.speakers.all()])
                 return f"{self.talk.title} by {speakers_names}"
             else:
                 return self.talk.title

@@ -8,12 +8,12 @@ from home.models import EventYear
 
 
 class FrequentlyAskedQuestion(models.Model):
-    title =  models.CharField(max_length=250, null=False, blank=False, help_text='FAQs PyCon Africa') 
-    faqs = MarkdownxField(default='', help_text = "[Supports Markdown] - FAQs PyCon Africa.", null=False, blank=False
+    title =  models.CharField(max_length=250, null=False, blank=False, help_text='FAQs PyCon Uganda') 
+    faqs = MarkdownxField(default='', help_text = "[Supports Markdown] - FAQs PyCon Uganda.", null=False, blank=False
                              )
     user = models.ForeignKey(User, on_delete=models.CASCADE,
                                related_name='faq',default=User) 
-    event_year = models.ForeignKey(EventYear, on_delete=models.CASCADE, default="2024", related_name='faqs')
+    event_year = models.ForeignKey(EventYear, on_delete=models.CASCADE, default="2025", related_name='faqs')
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
 

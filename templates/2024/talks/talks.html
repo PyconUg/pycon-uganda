@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load i18n static  markdown_extras %}
-{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Speak at PyCon Africa  || PyCon Africa" %}{% endif %}{% endblock %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Speak at PyCon Uganda  || PyCon Uganda" %}{% endif %}{% endblock %}
  
 
 {% block content %}
@@ -13,7 +13,7 @@
     <!-- Breadcrumbs -->
     <section class="g-bg-gray-light-v5 g-py-80 g-pt-150">
       <div class="container text-center">
-        <h2 class="h2 g-color-black g-font-weight-600">Speak at PyCon Africa</h2>
+        <h2 class="h2 g-color-black g-font-weight-600">Speak at PyCon Uganda</h2>
 
         <ul class="u-list-inline">
           <li class="list-inline-item g-mr-5">
@@ -21,7 +21,7 @@
             <i class="g-color-gray-light-v2 g-ml-5">/</i>
           </li> 
           <li class="list-inline-item g-color-primary">
-            <span>Speak at PyCon Africa</span>
+            <span>Speak at PyCon Uganda</span>
           </li>
         </ul><br>
         <i class="fa-solid fa-keynote" style="font-size:41px;"></i>
@@ -37,7 +37,7 @@
           <article class="g-mb-100">
             <div class="g-mb-30">
               <h2 class="h4 g-color-black g-font-weight-600 mb-3">
-                Thank you{% if user.is_authenticated %} {% if request.user.user_profile %}{{ request.user.user_profile.name }}  {% else %}@{{ request.user.username }}{% endif %} {% else %} {% endif %} for wanting to Speak at PyCon Africa!<br>
+                Thank you{% if user.is_authenticated %} {% if request.user.user_profile %}{{ request.user.user_profile.name }}  {% else %}@{{ request.user.username }}{% endif %} {% else %} {% endif %} for wanting to Speak at PyCon Uganda!<br>
               </h2> 
                       
               {% for speak in speaks.all|slice:"0:1" %}   

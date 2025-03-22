@@ -13,7 +13,7 @@ class Page(models.Model):
     slug = models.SlugField(max_length=200, unique=True, blank=True)
     font_icon_code = models.CharField(max_length=200, default='fa-brands fa-python', help_text = "The font icon for the page, use the following format - fa-brands fa-python")
     content = MarkdownxField(default='', help_text = "[Supports Markdown] - Content for the page", null=False, blank=False)
-    event_year = models.ForeignKey(EventYear, on_delete=models.CASCADE, default="2024", related_name='pages')
+    event_year = models.ForeignKey(EventYear, on_delete=models.CASCADE, default="2025", related_name='pages')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

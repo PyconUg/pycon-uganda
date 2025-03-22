@@ -8,12 +8,12 @@ from home.models import EventYear
 
 
 class Coc(models.Model):
-    title =  models.CharField(max_length=250, null=False, blank=False, help_text='Code of Conduct PyCon Africa') 
-    code_of_conduct = MarkdownxField(default='', help_text = "[Supports Markdown] - COC PyCon Africa.", null=False, blank=False
+    title =  models.CharField(max_length=250, null=False, blank=False, help_text='Code of Conduct PyCon Uganda') 
+    code_of_conduct = MarkdownxField(default='', help_text = "[Supports Markdown] - COC PyCon Uganda.", null=False, blank=False
                              )
     user = models.ForeignKey(User, on_delete=models.CASCADE,
                                related_name='coc',default=User) 
-    event_year = models.ForeignKey(EventYear, on_delete=models.CASCADE, default="2024", related_name='cocs')
+    event_year = models.ForeignKey(EventYear, on_delete=models.CASCADE, default="2025", related_name='cocs')
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
 

@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% load i18n static  markdown_extras  %}
-{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Sponsor Us | PyCon Africa" %}{% endif %}{% endblock %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Sponsor Us | PyCon Uganda" %}{% endif %}{% endblock %}
 
  
 
 
 
 {% block content %}
-{% include '2024/navbar.html' %}
+{% include '2025/navbar.html' %}
 
     <!-- Breadcrumbs -->
     <section class="g-bg-gray-light-v5 g-py-80 g-pt-150">
@@ -19,10 +19,10 @@
             <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="#">Home</a>
             <i class="g-color-gray-light-v2 g-ml-5">/</i>
           </li> 
-          <li class="list-inline-item g-mr-5">
+          <!-- <li class="list-inline-item g-mr-5">
             <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="/2024/sponsor-us/">Sponsor</a>
             <i class="g-color-gray-light-v2 g-ml-5">/</i>
-          </li> 
+          </li>  -->
           <li class="list-inline-item g-color-primary">
             <span>Sponsor Us</span>
           </li>
@@ -118,8 +118,8 @@
                   <span class="g-color-primary">Flexible!</span></h2>
                   <p class="g-color-black g-font-size-16">{{ sponsor_us_page.special_sponsorship | markdown | safe }} 
                     {{ form.media }}</p>
-                  <a href="mailto:sponsorship@pycon.africa" class="btn btn-md u-btn-skew u-btn-outline-primary g-mr-10 g-mb-15">
-                    <span class="u-btn-skew__inner">sponsorship@pycon.africa</span>
+                  <a href="mailto:sponsorship@pycon.ug" class="btn btn-md u-btn-skew u-btn-outline-primary g-mr-10 g-mb-15">
+                    <span class="u-btn-skew__inner">sponsorship@pycon.ug</span>
                   </a>
             </div>
          

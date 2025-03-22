@@ -10,7 +10,7 @@ def page_view(request, year, slug):
     # Generate metadata if not explicitly provided
     meta_title = page.meta_title or page.page_title or page.page_name
     meta_description = page.meta_description or strip_tags(page.content)[:160]  # Get the first 160 characters of content as a description
-    meta_author = page.meta_author or "PyCon Africa"
+    meta_author = page.meta_author or "PyCon Uganda"
     meta_og_image = page.meta_og_image or 'default_image_url'  # Provide a default image URL if not set
 
     context = {

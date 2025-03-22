@@ -52,8 +52,8 @@ def schedule(request, year):
         ).select_related('talk', 'talk__user').prefetch_related('talk__speakers').order_by('start_time')
 
     # Meta information for Open Graph and Twitter Cards
-    meta_title = f"Schedule | PyCon Africa {year}"
-    meta_description = f"Explore the schedule for PyCon Africa {year}, including keynotes, talks, tutorials, and more. Plan your conference experience with us."
+    meta_title = f"Schedule | PyCon Uganda {year}"
+    meta_description = f"Explore the schedule for PyCon Uganda {year}, including keynotes, talks, tutorials, and more. Plan your conference experience with us."
     meta_og_image = "https://res.cloudinary.com/pycon-africa/image/upload/v1722977619/website_storage_location/media/schedule_og_image.png"  # Replace with a suitable image
 
     # Render the schedule page with days and their respective schedules

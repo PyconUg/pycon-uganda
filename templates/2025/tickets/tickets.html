@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load i18n static markdown_extras %}
-{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Tickets | PyCon Africa" %}{% endif %}{% endblock %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Tickets | PyCon Uganda" %}{% endif %}{% endblock %}
 
 {% block title %}{{ meta_title }}{% endblock %}
 {% block description %}{{ meta_description }}{% endblock %}
@@ -11,7 +11,7 @@
 {% block og_image %}{{ meta_og_image }}{% endblock %}
 {% block og_url %}{{ request.build_absolute_uri }}{% endblock %}
 {% block og_type %}website{% endblock %}
-{% block og_site_name %}PyCon Africa{% endblock %}
+{% block og_site_name %}PyCon Uganda{% endblock %}
 
 {% block twitter_title %}{{ meta_title }}{% endblock %}
 {% block twitter_description %}{{ meta_description }}{% endblock %}
@@ -19,7 +19,7 @@
 {% block twitter_site %}@PyConAfrica{% endblock %}
 
 {% block content %}
-{% include '2024/navbar.html' %}
+{% include '2025/navbar.html' %}
 
 <!-- Breadcrumbs -->
 <section class="g-bg-gray-light-v5 g-py-80 g-pt-150">
@@ -31,10 +31,10 @@
                 <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="#">Home</a>
                 <i class="g-color-gray-light-v2 g-ml-5">/</i>
             </li>
-            <li class="list-inline-item g-mr-5">
+            <!-- <li class="list-inline-item g-mr-5">
                 <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="/2024/about/">About</a>
                 <i class="g-color-gray-light-v2 g-ml-5">/</i>
-            </li>
+            </li> -->
             <li class="list-inline-item g-color-primary">
                 <span>Tickets</span>
             </li>
@@ -63,7 +63,7 @@
 
         <div id="paypal" class="u-shadow-v1-5 g-line-height-2 g-pa-30 g-mb-20 col-md-12" role="alert">
             <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-20 g-mb-30">
-                <span class="g-color-primary">Register to Attend Pycon Africa!</span></h2>
+                <span class="g-color-primary">Register to Attend PyCon Uganda!</span></h2>
 
             <p class="markdownx-preview">{{ ticket.section_two | markdown | safe }}</p>
             <br><br>

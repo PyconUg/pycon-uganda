@@ -16,6 +16,7 @@ import os
 # import cloudinary.api
 from datetime import datetime
 from pathlib import Path
+from sre_constants import IN
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -26,7 +27,7 @@ DEBUG = os.getenv("DEBUG_STATE", "False").strip().lower() in ("true", "1", "yes"
 
 SECRET_KEY = os.getenv("SECRET_KEY")
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split()
+ALLOWED_HOSTS = ["*"]
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -74,7 +75,6 @@ INSTALLED_APPS = [
     "rest_framework",
     "tinymce",
     "sorl.thumbnail",
-    "debug_toolbar",
     #'newsletter',
     "markdownx",
     #'mdeditor',
@@ -101,6 +101,8 @@ INSTALLED_APPS = [
     "talks",
     "tickets",
     'cms',
+    "travel_guide",
+    "pycon2025"
 ]
 
 MIDDLEWARE = [ 
@@ -115,7 +117,11 @@ MIDDLEWARE = [
 ]
 
 if DEBUG:
+    INSTALLED_APPS += ["debug_toolbar"]
     MIDDLEWARE.insert(0, "debug_toolbar.middleware.DebugToolbarMiddleware")
+    INTERNAL_IPS = [
+    "127.0.0.1",
+    ]
     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 else:
     EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
@@ -183,7 +189,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "Africa/Accra"
+TIME_ZONE = "Africa/Kampala"
 
 USE_I18N = True
 
@@ -360,4 +366,3 @@ CLOUDINARY_STORAGE = {
     "API_KEY": os.getenv("CLOUDINARY_API_KEY"),
     "API_SECRET": os.getenv("CLOUDINARY_API_SECRET"),
 }
-

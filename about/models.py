@@ -12,23 +12,23 @@ from django_countries.fields import CountryField
 
 
 class About(models.Model):
-    about_title =  models.CharField(max_length=250, null=False, blank=False, help_text='About PyCon Africa') 
+    about_title =  models.CharField(max_length=250, null=False, blank=False, help_text='About PyCon Uganda') 
     about_tagline =  models.CharField(max_length=250, null=False, blank=True, help_text='Tagline for the year')
     about_image_one = models.ImageField(help_text="Upload your cover image or leave blank to use our default image",
                               upload_to='about_page') 
-    section_one_title =  models.CharField(max_length=250, null=False, blank=True, default="WHAT IS | PYCON AFRICA?", help_text='About PyCon Africa') 
-    section_one = MarkdownxField(default='', help_text = "[Supports Markdown] - About PyCon Africa.", null=False, blank=False
+    section_one_title =  models.CharField(max_length=250, null=False, blank=True, default="WHAT IS | PyCon Uganda?", help_text='About PyCon Uganda') 
+    section_one = MarkdownxField(default='', help_text = "[Supports Markdown] - About PyCon Uganda.", null=False, blank=False
                              )
-    section_two_title =  models.CharField(max_length=250, null=False, blank=True, default="THE | PROGRAM", help_text='About PyCon Africa') 
-    section_two = MarkdownxField(default='', help_text = "[Supports Markdown] - About PyCon Africa.", null=False, blank=False
+    section_two_title =  models.CharField(max_length=250, null=False, blank=True, default="THE | PROGRAM", help_text='About PyCon Uganda') 
+    section_two = MarkdownxField(default='', help_text = "[Supports Markdown] - About PyCon Uganda.", null=False, blank=False
                              )
-    section_three_title =  models.CharField(max_length=250, null=False, blank=True, default="THE | TEAM", help_text='About PyCon Africa') 
-    section_three = MarkdownxField(default='', help_text = "[Supports Markdown] - About PyCon Africa.", null=False, blank=False
+    section_three_title =  models.CharField(max_length=250, null=False, blank=True, default="THE | TEAM", help_text='About PyCon Uganda') 
+    section_three = MarkdownxField(default='', help_text = "[Supports Markdown] - About PyCon Uganda.", null=False, blank=False
                              )
-    section_four = MarkdownxField(default='', help_text = "[Supports Markdown] - More about PyCon Africa.", null=False, blank=True
+    section_four = MarkdownxField(default='', help_text = "[Supports Markdown] - More about PyCon Uganda.", null=False, blank=True
                              )
     user = models.ForeignKey(settings.AUTH_USER_MODEL, blank=False, null=True, related_name='about_us', on_delete=models.CASCADE)
-    event_year = models.ForeignKey(EventYear, on_delete=models.CASCADE, default="2024", related_name='abouts')
+    event_year = models.ForeignKey(EventYear, on_delete=models.CASCADE, default="2025", related_name='abouts')
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
 
@@ -41,7 +41,7 @@ class About(models.Model):
 
  
 class Venue(models.Model):
-    name = models.CharField(max_length=250, null=False, blank=False, help_text='Venue of PyCon Africa') 
+    name = models.CharField(max_length=250, null=False, blank=False, help_text='Venue of PyCon Uganda') 
     content = MarkdownxField(default='', help_text = "[Supports Markdown] - Content.", null=False, blank=False
                              )
     content_two = MarkdownxField(default='', help_text = "[Supports Markdown] - Content side two.", null=False, blank=False
@@ -55,7 +55,7 @@ class Venue(models.Model):
     image_two = models.URLField(default="", blank=False, help_text='Link to image')
     first_day_of_event = models.DateTimeField(blank=True, null=True)
     last_day_of_event = models.DateTimeField(blank=True, null=True)
-    event_year = models.ForeignKey(EventYear, on_delete=models.CASCADE, default="2024", related_name='venues')
+    event_year = models.ForeignKey(EventYear, on_delete=models.CASCADE, default="2025", related_name='venues')
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
     
@@ -72,12 +72,12 @@ class Venue(models.Model):
  
  
 class Travel_Advice(models.Model): 
-    title =  models.CharField(max_length=250, null=False, blank=False, help_text='Travel Advice PyCon Africa') 
-    advice = MarkdownxField(default='', help_text = "[Supports Markdown] - Travel Advice PyCon Africa.", null=False, blank=False
+    title =  models.CharField(max_length=250, null=False, blank=False, help_text='Travel Advice PyCon Uganda') 
+    advice = MarkdownxField(default='', help_text = "[Supports Markdown] - Travel Advice PyCon Uganda.", null=False, blank=False
                              )
     user = models.ForeignKey(User, on_delete=models.CASCADE,
                                related_name='travel_advice',default=User) 
-    event_year = models.ForeignKey(EventYear, on_delete=models.CASCADE, default="2024", related_name='travel_advices')
+    event_year = models.ForeignKey(EventYear, on_delete=models.CASCADE, default="2025", related_name='travel_advices')
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
 
@@ -93,7 +93,7 @@ class IOCGroup(models.Model):
     Represents a group or category of IOC.
     """
     name = models.CharField(max_length=100)  # e.g., Moderating Team, Talks & Workshop Support
-    event_year = models.ForeignKey(EventYear, on_delete=models.CASCADE, default="2024", related_name="ioc_groups")
+    event_year = models.ForeignKey(EventYear, on_delete=models.CASCADE, default="2025", related_name="ioc_groups")
 
     def __str__(self):
         return self.name
@@ -107,7 +107,7 @@ class IOCMember(models.Model):
     groups = models.ManyToManyField(IOCGroup, related_name="iocs",blank=True) 
     country = CountryField(default="GH",blank=False, blank_label='(select member contributing country)')
     country_2 = models.CharField(max_length=50, default="",blank=True, help_text='(enter member"s 2nd contributing country if any)')
-    event_year = models.ForeignKey(EventYear, on_delete=models.CASCADE, default="2024", related_name='ioc_members')
+    event_year = models.ForeignKey(EventYear, on_delete=models.CASCADE, default="2025", related_name='ioc_members')
     is_lead = models.BooleanField(default=False, help_text='Indicate if this member is a lead')
 
     def __str__(self):
@@ -119,7 +119,7 @@ class LOCGroup(models.Model):
     Represents a group or category within the Local Organizing Committee.
     """
     name = models.CharField(max_length=100)  # e.g., Logistics Team, Venue Coordination
-    event_year = models.ForeignKey(EventYear, on_delete=models.CASCADE, default="2024", related_name="loc_groups")
+    event_year = models.ForeignKey(EventYear, on_delete=models.CASCADE, default="2025", related_name="loc_groups")
 
     def __str__(self):
         return self.name
@@ -132,7 +132,7 @@ class LOCMember(models.Model):
     link = models.CharField(default="",blank=True, max_length=100)
     groups = models.ManyToManyField(LOCGroup, related_name="members", blank=True)
     country = CountryField(default="GH", blank=False, blank_label='(select member’s country)')
-    event_year = models.ForeignKey(EventYear, on_delete=models.CASCADE, default="2024", related_name='loc_members')
+    event_year = models.ForeignKey(EventYear, on_delete=models.CASCADE, default="2025", related_name='loc_members')
     is_lead = models.BooleanField(default=False, help_text='Indicate if this member is a lead')
 
     def __str__(self):
@@ -144,7 +144,7 @@ class VolunteerGroup(models.Model):
     Represents a group or category of volunteers.
     """
     name = models.CharField(max_length=100)  # e.g., Moderating Team, Talks & Workshop Support
-    event_year = models.ForeignKey(EventYear, on_delete=models.CASCADE, default="2024", related_name="volunteer_groups")
+    event_year = models.ForeignKey(EventYear, on_delete=models.CASCADE, default="2025", related_name="volunteer_groups")
 
     def __str__(self):
         return self.name
@@ -156,7 +156,7 @@ class Volunteer(models.Model):
     name = models.CharField(max_length=100)
     link = models.CharField(default="",blank=True, max_length=100)
     groups = models.ManyToManyField(VolunteerGroup, related_name="volunteers") 
-    event_year = models.ForeignKey(EventYear, on_delete=models.CASCADE, default="2024", related_name="volunteers") 
+    event_year = models.ForeignKey(EventYear, on_delete=models.CASCADE, default="2025", related_name="volunteers") 
 
     def __str__(self):
         return self.name
