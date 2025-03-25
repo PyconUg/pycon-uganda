@@ -1,34 +1,132 @@
 /* Add here all your css styles (customizations) */
+.promo {
+    background: #fff;
+    min-width: 100vw;
+}
+
+.promo-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+    .promo-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* @media (min-width: 1200px) {
+    .promo-grid {
+        grid-template-columns: 2fr 3fr;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+} */
 
 .promo-detail {
-    align-items: start;
-    justify-content: center;
-    padding-left: 1rem;
-    margin-bottom: 1rem;
-}
-
-.promo-detail h1 {
-    font-weight: 700;
-    font-size: 5rem;
-}
-
-.promo-detail .detail-text {
-    margin-left: 2rem;
-}
-
-.promo-detail .buttons {
     display: flex;
-    flex-direction: row;
-    gap: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
 }
 
-.promo-detail .buttons a, .tickets a {
-    background: #177E89;
-    border-radius: .4rem;
-    border: solid 1.2px white;
-    font-weight: 700;
-    padding: 1rem;
+@media (min-width: 1200px) {
+    .promo-detail {
+        padding: 3rem 4rem;
+    }
 }
+
+.promo-title {
+    font-weight: bold;
+    font-size: 5rem;
+    line-height: 1.2;
+    color: #000;
+}
+
+@media (max-width: 767px) {
+    .promo-title {
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .promo-title {
+        font-size: 6rem;
+        line-height: 1.1;
+    }
+}
+
+.text-danger {
+    color: #dc3545;
+}
+
+.promo-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+@media (min-width: 769px) {
+    .promo-buttons {
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .promo-buttons {
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+}
+
+.promo-btn, .tickets a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: 750;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #177e89;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border: 1px solid #177e89;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+@media (min-width: 1200px) {
+    .promo-btn {
+        font-size: 1.125rem;
+        padding: 1rem 2rem;
+    }
+}
+
+.promo-btn:hover {
+    background-color: #fff;
+    color: #177e89;
+    border-color: #177e89;
+}
+
+.promo-bg {
+    display: none;
+}
+
+@media (min-width: 769px) {
+    .promo-bg {
+        display: block;
+        background-size: cover;
+        height: 90vh;
+    }
+}
+
+@media (min-width: 1200px) {
+    .promo-bg {
+        height: 100vh;
+    }
+}
+
 
 .bg-section {
     background-repeat: no-repeat;
@@ -195,46 +293,18 @@
     }
 }
 
-/* 
-.footer {
-    background: #525252;
+.subscribe {
+    background-color: #ffffff;
+    border: 2px solid #177e89;
+    border-radius: .5rem;
+    padding: 1rem;
+}
+
+.subscribe:hover {
+    background: #177e89;
     color: #e5e5e5;
 }
 
-.footer p a {
-    color: #e5e5e5;
-}
-
-.footer ul a {
-    color: #60a5fb;
-    text-decoration: underline;
-    line-height: 1.25rem;
-    font-size: 1rem;
-}
-
-.footer h6 {
-    font-size: 1.4rem;
-    color: #e5e5e5;
-}
-
-.footer-svg {
-    width: 1.25rem;
-    height: 1.25rem;
-    margin-right: 0.75rem;
-    align-items: start;
-    fill: #e5e5e5;
-    transition: fill 0.3s ease, transform 0.3s ease;
-}
-
-.footer-svg:hover {
-    fill: #60a5fa;
-    transform: scale(1.1);
-}
-
-.copyright {
-    background-color: #404040;
-    padding: 1.5rem;
-} */
 .footer {
     background: #525252;
     color: #e5e5e5;
