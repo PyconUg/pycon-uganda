@@ -93,7 +93,7 @@
           
         
         
-                        {% if perms.reviews.add_review %} 
+                        {% if perms.reviews.add_review and request.user.reviewer_profile %} 
                         <!-- Review Talks -->
                         <a href="{% url 'talks:talks_to_review' year=year %}" class="list-group-item list-group-item-action justify-content-between">
                           <span><i class="fa-solid fa-ballot-check g-pos-rel g-top-1 g-mr-8"></i> Review Proposals</span>
