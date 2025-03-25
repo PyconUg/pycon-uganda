@@ -155,7 +155,8 @@
                   <tr>
                       <th style="color: #161515;"><p>Title</p></th>
                       <th style="color: #161515;"><p>Session</p></th>
-                      <th style="color: #161515;"><p>Audience</p></th> 
+                      <th style="color: #161515;"><p>Audience</p></th>
+                      <th style="color: #161515;"><p>Author</p></th>
                       <th style="color: #161515;"><p>Actions</p></th>
                   </tr>
               </thead>
@@ -170,6 +171,9 @@
                       </td>
                       <td class="hidden-sm">
                           <small>{{ talk.intended_audience }}</small>
+                      </td>
+                      <td>
+                          <small>{% if talk.user.user_profile.name %}{{ talk.user.user_profile.name }} {{ talk.user.user_profile.surname }}{% else %}{{ talk.user.username }}{% endif %}</small>
                       </td>
                       <td>
                           <a href="{% url 'talks:review_talk' year=year pk=talk.pk %}" style="font-size:12px" class="btn btn-xs u-btn-outline-purple">Review <i class="fa fa-edit"></i></a>
@@ -285,5 +289,4 @@
     
 {% endblock %}
 
- 
- 
+
