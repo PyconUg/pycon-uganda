@@ -16,7 +16,7 @@
         <h1 class="h2 g-color-black g-font-weight-600">Edit: {{ proposal.title|truncatewords:7 }}</h1> 
         <ul class="u-list-inline">
           <li class="list-inline-item g-mr-5">
-            <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="/2025/">Home</a>
+            <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="/2024/">Home</a>
             <i class="g-color-gray-light-v2 g-ml-5">/</i>
           </li> 
           <li class="list-inline-item g-mr-5">
@@ -103,7 +103,7 @@
                       
                       {% if request.user.is_superuser %}
                      <!-- Review Talks List-->
-                     <a href="{% url 'talks:reviewed_talks_by_category' year=2025 %}" class="list-group-item list-group-item-action justify-content-between">
+                     <a href="{% url 'talks:reviewed_talks_by_category' year=2024 %}" class="list-group-item list-group-item-action justify-content-between">
                       <span><i class="fa-thin fa-list-check g-pos-rel g-top-1 g-mr-8"></i> Proposals by Category</span>
                     </a>
                     <!-- End Profile --> 
