@@ -1,83 +1,62 @@
-{% load  %}
 {% load static %}
 
-
 {% block footer %}
-
-<div class="u-divider u-divider-solid u-divider-center g-brd-gray-light-v3 g-my-80">
-  <img class="u-divider__icon u-divider__icon--indented rounded-circle" src="{% static '2025/img/footer.png' %}" alt="Image Description">
-</div>
- 
-      <!-- Sponsors  
-      <div class="js-carousel g-pb-70" data-infinite="true" data-arrows-classes="u-arrow-v1 g-width-40 g-height-40 g-color-gray-dark-v1 g-bg-white g-color-white--hover g-bg-primary--hover rounded g-absolute-centered--x g-bottom-0" data-arrow-left-classes="fa fa-angle-left g-ml-minus-25" data-arrow-right-classes="fa fa-angle-right g-ml-25">
-        <div class="js-slide">
-          <div class="row justify-content-center">
-            <div class="col-lg-8">
-              <div class="text-center">
-                
-                <a href="/our-sponsors"><img class="d-inline-block g-width-180 g-brd-around g-brd-5 g-brd-white " src="{% static '2020/img/sponsors/thanks.png' %}" alt="Image Description"></a>
-                <br><a class="btn u-shadow-v32 g-color-primary g-color-yellow--hover g-bg-white g-bg-main--hover g-rounded-30 g-px-35 g-py-13" href="/our-sponsors"><b>View our Sponsors making this possible</b></a>  
-                
-                </div>
-            </div>
-          </div>
-        </div>
-        </div>
-    End Sponsors -->
-
-
-
-
-
-
-
-
-      <!-- Footer -->
-      <footer class="text-center   g-py-50"> 
-        <div class="container">
-          <div class="g-py-40 g-color-gray-dark-v1">
-            
-
-            <p class="g-mb-30">PyCon Uganda is organised by a 
-              team of volunteers on behalf of the Python programming community. 
-             
-            </p>
- 
-          </div> 
-
-    <!-- Copyright -->
-    <div class="row">
-      <div class="col-md-6 d-flex align-items-center g-mb-15 g-mb-0--md">
-        <small class="g-font-size-default"><b>Contact us:</b>   
-          <a class="" href="mailto:team@pycon.ug">team@pycon.ug</a> 
-        </small>
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-grid">
+      <div class="footer-section footer-about">
+        <img src="{% static '2025/img/logo.png' %}" alt="PyCon Uganda Logo" class="footer-logo">
+        <p class="footer-text">
+          PyCon Uganda is one of the Python Conferences you can attend in East Africa. We shall talk about Python applications in data, web, and other domains. This is a platform where Python users, developers, library developers, and companies that use Python come together. This is going to be the <strong>2nd</strong> PyCon Conference in Uganda!
+        </p>
       </div>
-
-      <div class="col-md-6">
-        <ul class="list-inline text-md-right mb-0"> 
-            <!-- <li class="list-inline-item g-mr-10">
-              <a class="u-icon-v3 g-width-35 g-height-35 g-font-size-14 g-color-yellow--hover g-bg-white g-transition-0_2 g-transition--ease-in" href="https://mastodon.social/@pyconafrica" target="/"><i class="fa-brands fa-mastodon"></i></a>
-            </li> -->
-            <li class="list-inline-item g-mr-10">
-              <a class="u-icon-v3 g-width-35 g-height-35 g-font-size-14 g-color-yellow--hover g-bg-white g-transition-0_2 g-transition--ease-in" href="https://x.com/pyconuganda" target="/"><i class="fa-brands fa-twitter"></i></a>
-            </li>
-            <!-- <li class="list-inline-item g-mr-10">
-              <a class="u-icon-v3 g-width-35 g-height-35 g-font-size-14 g-color-yellow--hover g-bg-white g-transition-0_2 g-transition--ease-in" href="https://instagram.com/pyconafrica" target="/"><i class="fa-brands fa-instagram"></i></a>
-            </li> -->
-            <!-- <li class="list-inline-item g-mr-10">
-              <a class="u-icon-v3 g-width-35 g-height-35 g-font-size-14 g-color-yellow--hover g-bg-white g-transition-0_2 g-transition--ease-in" href="https://facebook.com/pyconafrica" target="/"><i class="fa-brands fa-facebook"></i></a>
-            </li> -->
-            <li class="list-inline-item">
-              <a class="u-icon-v3 g-width-35 g-height-35 g-font-size-14 g-color-yellow--hover g-bg-white g-transition-0_2 g-transition--ease-in" href="https://www.linkedin.com/company/pycon-ug/" target="/"><i class="fa-brands fa-linkedin"></i></a>
-            </li>   
-            <li class="list-inline-item">
-              <a class="u-icon-v3 g-width-35 g-height-35 g-font-size-14 g-color-yellow--hover g-bg-white g-transition-0_2 g-transition--ease-in" href="https://www.youtube.com/@PyconAfrica" target="/"><i class="fa-brands fa-youtube"></i></a>
-            </li>
-          </ul>
+      <div class="footer-section footer-links">
+        <h6 class="footer-heading">Useful Links</h6>
+        <ul class="footer-link-list">
+          <li><a href="/" class="footer-link">Home</a></li>
+          <li><a href="#!" class="footer-link">About Us</a></li>
+          <li><a href="#!" class="footer-link">Tickets</a></li>
+          <li><a href="/privacy-policy" class="footer-link">Privacy Policy</a></li>
+          <li><a href="/health-and-safety" class="footer-link">Health and Safety Guidelines</a></li>
+          <li>
+            Our PyCon Uganda Editions:
+            <ul class="footer-sublist">
+              <li><a href="https://pyconug.netlify.app/2024" target="_blank" class="footer-sublink">PyCon Uganda 2024</a></li>
+              <li><a href="https://pyconug.netlify.app/2023" target="_blank" class="footer-sublink">PyCon Uganda 2023</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-section footer-contact">
+        <h6 class="footer-heading">Contact</h6>
+        <ul class="footer-contact-list">
+          <li class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="footer-icon">
+              <path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z" />
+              <path d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" />
+            </svg>
+            <span>Kampala, Uganda</span>
+          </li>
+          <li class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="footer-icon">
+              <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
+              <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
+            </svg>
+            <span>pyconug@gmail.com</span>
+          </li>
+          <li class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="footer-icon">
+              <path fillRule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clipRule="evenodd" />
+            </svg>
+            <span>+256 755 488 697</span>
+          </li>
+        </ul>
       </div>
     </div>
-    <!-- End Copyright -->
   </div>
 </footer>
-<!-- End Footer -->
+<div class="copyright">
+  <span>© <script>document.write(new Date().getFullYear());</script> Copyright: </span>
+  <a href="https://ug.pycon.org/" class="copyright-link">Python Software Society of Uganda (PSSU)</a>
+</div>
 {% endblock %}
