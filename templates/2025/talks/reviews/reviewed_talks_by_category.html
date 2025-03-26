@@ -105,7 +105,7 @@
                       
                       {% if request.user.is_superuser and request.user.reviewer_profile %}
                      <!-- Review Talks List-->
-                      <a href="{% url 'talks:reviewed_talks_by_category' year=year %}" class="list-group-item list-group-item-action justify-content-between active">
+                      <a href="{% url 'talks:reviewed_talks_by_category' year=2025 %}" class="list-group-item list-group-item-action justify-content-between active">
                       <span><i class="fa-solid fa-fade fa-list-check g-pos-rel g-top-1 g-mr-8"></i> Proposals by Category</span>
                     </a>
                     <a href="{% url 'talks:reviewed_talks_by_type' year=year %}" class="list-group-item list-group-item-action justify-content-between ">
