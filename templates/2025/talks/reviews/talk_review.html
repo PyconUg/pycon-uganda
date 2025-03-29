@@ -93,7 +93,7 @@
           
         
         
-                        {% if perms.reviews.add_review %} 
+                        {% if perms.reviews.add_review or request.user.reviewer_profile or request.user.is_superuser %} 
                         <!-- Review Talks -->
                         <a href="{% url 'talks:talks_to_review' year=year %}" class="list-group-item list-group-item-action justify-content-between active">
                           <span><i class="fa-solid fa-ballot-check g-pos-rel g-top-1 g-mr-8"></i> Review Proposals</span>
@@ -116,20 +116,13 @@
                   <div class="container g-py-50--md g-py-20">
                     
    
-                    <h2>{{ talk.title }}</h2> 
-                    <div> 
-                      <p class="g-color-black"><strong>Proposal Category</strong>: {{ talk.talk_category  }} </p> 
-
-                      <p class="g-color-black"><strong>Proposal Type</strong>: {{ talk.talk_type  }} </p> 
-                      <p class="g-color-black"><strong>Intended Audience</strong>: {{ talk.intended_audience  }} </p> 
-                      
-
-                      
-                      
-                      
-                    <hr class="u-divider-db-solid g-brd-gray-light-v3"> 
-
-                      
+                    <h2>{{ talk.title }}</h2>
+                    <div>
+                      <p class="g-color-black"><strong>Presenter:</strong> {% if talk.user.user_profile.name %}{{ talk.user.user_profile.name }} {{ talk.user.user_profile.surname }}{% else %}{{ talk.user.username }}{% endif %}</p>
+                      <p class="g-color-black"><strong>Proposal Category:</strong> {{ talk.talk_category }}</p>
+                      <p class="g-color-black"><strong>Proposal Type:</strong> {{ talk.talk_type }}</p>
+                      <p class="g-color-black"><strong>Intended Audience:</strong> {{ talk.intended_audience }}</p>
+                      <hr class="u-divider-db-solid g-brd-gray-light-v3"> 
                       <p class="g-color-black"><strong>Elevator Pitch</strong>: {{ talk.elevator_pitch  | markdown | safe  }} </p> 
                         
                       <p class="g-color-black"><strong>Abstract</strong>: {{ talk.talk_abstract | markdown | safe  }}</p>
@@ -188,5 +181,4 @@
     
 {% endblock %}
 
- 
- 
+

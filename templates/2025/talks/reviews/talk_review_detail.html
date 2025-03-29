@@ -89,7 +89,7 @@
                       <span><i class="fa-thin fa-podium g-pos-rel g-top-1 g-mr-8"></i>  Submit a new Talk</span>
                     </a>
                     <!-- End Profile --> 
-                    {% if perms.reviews.add_review %} 
+                    {% if perms.reviews.add_review or request.user.reviewer_profile or request.user.is_superuser %} 
                     <!-- Review Talks -->
                     <a href="{% url 'talks:talks_to_review' year=year %}" class="list-group-item list-group-item-action justify-content-between active">
                       <span><i class="fa-solid fa-fade fa-ballot-check g-pos-rel g-top-1 g-mr-8"></i> Review Proposals</span>
@@ -99,7 +99,7 @@
 
                   
                   
-                  {% if request.user.is_superuser %}
+                  {% if request.user.is_superuser or request.user.reviewer_profile %}
                  <!-- Review Talks List-->
                  <a href="{% url 'talks:reviewed_talks_by_category' year=2025 %}" class="list-group-item list-group-item-action justify-content-between ">
                   <span><i class="fa-thin fa-list-check g-pos-rel g-top-1 g-mr-8"></i> Proposals by Category</span>
