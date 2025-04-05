@@ -1,8 +1,9 @@
-{% extends "base.html" %} {% load i18n static markdown_extras crispy_forms_tags
-%} {% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans
-"Proposing a Talk || PyCon Uganda" %}{% endif %}{% endblock %} {% block content
-%} {% include '2025/navbar.html' %}
+{% extends "base.html" %} {% load i18n static markdown_extras crispy_forms_tags %} 
+{% block meta_title %} {% if page %}{{ page.meta_title }}{% else %} 
+{% trans "Proposing a Talk || PyCon Uganda" %}{% endif %} {% endblock %} {% block content %} 
+{% include '2025/navbar.html' %}
 
+<!-- Breadcrumbs -->
 <section class="g-bg-gray-light-v5 g-py-80 g-pt-150">
   <div class="container text-center">
     <h2 class="h2 g-color-black g-font-weight-600">Proposing a Talk</h2>
@@ -41,7 +42,7 @@
                   passionate about Python or programming and open-source
                   communities, we would kindly love to hear from you.
                 </p>
-                <p class="">
+                <p>
                   We are excited and humbled to receive your talk and kindly, we
                   request you to read the following information before
                   submitting your proposal.
@@ -103,6 +104,16 @@
                     >
                   </p>
                 </div>
+
+                {% for proposing_talk in proposing_talks.all|slice:"0:1" %}
+                <hr />
+                <div class="mt-4">
+                  <div class="markdownx-preview">
+                    {{ proposing_talk.content|markdown|safe }}
+                  </div>
+                  {{ form.media }}
+                </div>
+                {% endfor %}
               </div>
             </div>
           </div>
@@ -112,5 +123,4 @@
   </div>
 </div>
 <br /><br /><br />
-
 {% endblock %}
