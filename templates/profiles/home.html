@@ -88,7 +88,7 @@
                         <!-- End Profile -->
 
 
-                      {% if perms.reviews.add_review %} 
+                      {% if perms.reviews.add_review or request.user.reviewer_profile or request.user.is_superuser %} 
                         <!-- Review Talks -->
                         <a href="{% url 'talks:talks_to_review' year=year %}" class="list-group-item list-group-item-action justify-content-between">
                           <span><i class="fa-thin fa-ballot-check g-pos-rel g-top-1 g-mr-8"></i> Review Proposals</span>
@@ -96,9 +96,9 @@
                         <!-- End Profile --> 
                       {% endif %}
                       
-                      {% if request.user.is_superuser %}
+                      {% if request.user.is_superuser or request.user.reviewer_profile %}
                      <!-- Review Talks List-->
-                     <a href="{% url 'talks:reviewed_talks_by_category' year=2024 %}" class="list-group-item list-group-item-action justify-content-between">
+                     <a href="{% url 'talks:reviewed_talks_by_category' year=year %}" class="list-group-item list-group-item-action justify-content-between">
                       <span><i class="fa-thin fa-list-check g-pos-rel g-top-1 g-mr-8"></i> Proposals by Category</span>
                     </a>
                     
@@ -228,7 +228,7 @@
                               <div class="d-flex justify-content-between">
                                 <h5 class="h6 g-font-weight-600 g-color-black">What it takes to speak at PyCon Uganda</h5> 
                               </div>
-                              <p>We are inviting speakers of all experience levels and backgrounds to contribute to our conference program at PyCon Uganda 2024! ...</p>
+                              <p>We are inviting speakers of all experience levels and backgrounds to contribute to our conference program at PyCon Uganda 2025! ...</p>
                               
                               <p><a href="/2025/talks/speaking/"class="btn btn-sm u-btn-outline-darkgray g-rounded-50 g-mr-10 g-mb-15"><b>Read more...</b></a></p>
                                     
@@ -277,7 +277,7 @@
                       <p class="mb-0   g-mb-25"><br>
                         We're thrilled to have you join this vibrant community of Python enthusiasts, developers, 
                         and innovators from across Africa and beyond. To get started, we kindly ask you to create your profile.  
-                        Please click on the "Create Profile" button below to begin. <br><br>🥂 Here's to an exciting journey ahead at PyCon Uganda 2024!
+                        Please click on the "Create Profile" button below to begin. <br><br>🥂 Here's to an exciting journey ahead at PyCon Uganda 2025!
                       </p>
                       <a class="btn btn-md u-btn-primary rounded-0 text-center "  href="{% url 'profiles:create_profile' %}">Create Profile &raquo;</a>
                     </div>
