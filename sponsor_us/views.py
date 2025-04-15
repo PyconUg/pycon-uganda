@@ -13,16 +13,16 @@ def sponsor_us(request, year):
     event_year = get_object_or_404(EventYear, year=year)
 
     # Fetch the SponsorUsPage for the specified year or raise a 404 error if not found
-    # sponsor_us_page = get_object_or_404(SponsorUsPage, event_year=event_year)
+    sponsor_us_page = get_object_or_404(SponsorUsPage, event_year=event_year)
 
     # Fetch all SponsorshipTier instances for the specified year, ordered by 'display_order'
-    # sponsorship_tiers = SponsorshipTier.objects.filter(user=sponsor_us_page.user).order_by('display_order')
+    sponsorship_tiers = SponsorshipTier.objects.filter(user=sponsor_us_page.user).order_by('display_order')
 
     # Building the context
     context = {
         'event_year': event_year,
-        # 'sponsor_us_page': sponsor_us_page,
-        # 'sponsorship_tiers': sponsorship_tiers,
+        'sponsor_us_page': sponsor_us_page,
+        'sponsorship_tiers': sponsorship_tiers,
     }
 
     # Dynamically building the template path based on the event year
