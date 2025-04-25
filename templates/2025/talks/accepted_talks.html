@@ -31,11 +31,11 @@
 
       
       <div class="col-md-10">
-        <h2>Announcing the PyCon Uganda 2018 Talk Lineup!</h2>
+        <h2>Announcing the PyCon Uganda 2025 Talk Lineup!</h2>
         <p>We'll publish the schedule including time slots as soon as it is finalized!</p>
         <br />
         {% if accepted_talks %}
-            <p>Attending to PyCon Uganda 2018? Here are some of the talks to look forward to:</p>
+            <p>Attending to PyCon Uganda 2025? Here are some of the talks to look forward to:</p>
             {% for talk in accepted_talks %}
                 <p><a href="{% url 'talks:talk_details' pk=talk.pk %}">{{ talk.title }}  - {{ talk.user.name }}
                     {{ talk.user.profile.last_name }}</a></p>

@@ -65,13 +65,18 @@
                  <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-20 g-mb-30"> 
                    <span class="g-color-primary">Form</span>
                  </h2> 
-                  <div class="overflow-h">    
-                    {{ fin_aid.google_form_formfacade_code|safe  }}
-                </div>
-                
-                  <!--================ End of Icon Box ================-->  
-                </div>  
-                         
+                 <div class="overflow-h">
+                  {% if fin_aid.google_form_formfacade_code %}
+                      <a href="{{ fin_aid.google_form_formfacade_code }}" target="_blank" class="btn btn-primary">
+                          Apply for an Opportunity Grant
+                      </a>
+                  {% else %}
+                      <p>No application link available.</p>
+                  {% endif %}
+                  </div>   
+                        
+                <!--================ End of Icon Box ================-->  
+                </div>                         
                
               </div> {{ form.media }}
               {% endfor %}
@@ -105,7 +110,7 @@
                         <span class="align-self-center small text-nowrap">Just Now</span>
                       </div>
                       <p class="m-0 g-font-size-14">
-                        The financial aid application form is now closed.
+                        The Opportunity Grant application form is now closed.
                     </p>
                     
                     </div>

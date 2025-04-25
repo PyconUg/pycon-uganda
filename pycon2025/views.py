@@ -66,7 +66,7 @@ def traveladvice(request):
 
 def fin_aid(request):
     context = {}
-    template = '2025/financial-assistance/fin-aid.html'
+    template = '2025/fin-aid/fin-aid.html'
     return render(request, template, context)
 
 def team(request):

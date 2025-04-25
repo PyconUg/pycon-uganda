@@ -46,7 +46,7 @@
 
 {% block content %} 
 
-{% include '2024/navbar.html' %}
+{% include '2025/navbar.html' %}
 
 
     <!-- Breadcrumbs -->
@@ -137,7 +137,7 @@
                                             {% if schedule.is_an_event %}
                                             <h5 class="text-uppercase g-font-weight-700 g-font-size-16 g-mb-5">
                                                 {% if schedule.fa_icon %}<i class="{{ schedule.fa_icon }}"></i> |{% endif %}
-                                                <a {% if schedule.event_url %} href="/2024/events/{{ schedule.event_url }}"{% elif schedule.external_url %} href="{{ schedule.external_url }}" target="/" {% endif %}>
+                                                <a {% if schedule.event_url %} href="/2025/events/{{ schedule.event_url }}"{% elif schedule.external_url %} href="{{ schedule.external_url }}" target="/" {% endif %}>
                                                     {{ schedule.event }}
                                                 </a>
                                             </h5>
@@ -194,7 +194,7 @@
                                                      data-toggle="tooltip" 
                                                      data-placement="top" 
                                                      title="Speaker:  {{ schedule.talk.user.user_profile.name }} {{ schedule.talk.user.user_profile.surname }}" 
-                                                     src="{% static '2024/img/speakers/speaker.png' %}" 
+                                                     src="{% static '2025/img/speakers/speaker.png' %}" 
                                                      alt="Default Image">
                                             </li>
                                             {% endif %}
@@ -219,7 +219,7 @@
                                                          data-toggle="tooltip" 
                                                          data-placement="top" 
                                                          title="Speaker:  {{ speaker.user_profile.name }} {{ speaker.user_profile.surname }}" 
-                                                         src="{% static '2024/img/speakers/speaker.png' %}" 
+                                                         src="{% static '2025/img/speakers/speaker.png' %}" 
                                                          alt="Default Image">
                                                 {% endif %}
                                             </li>

@@ -1,60 +1,111 @@
 {% extends "base.html" %}
-{% load i18n static  markdown_extras crispy_forms_tags %}
-{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Proposing a Talk || PyCon Uganda" %}{% endif %}{% endblock %}
- 
+{% load i18n static markdown_extras crispy_forms_tags %}
 
-{% block content %}
-
-<!-- ========== HEADER ========== -->
-{% include '2025/navbar.html' %}
-<!-- ========== END HEADER ========== -->
-
-    <!-- Breadcrumbs -->
-    <section class="g-bg-gray-light-v5 g-py-80 g-pt-150">
-      <div class="container text-center">
-        <h2 class="h2 g-color-black g-font-weight-600">Proposing a Talk </h2>
-
-        <ul class="u-list-inline">
-          <li class="list-inline-item g-mr-5">
-            <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="/2025">Home</a>
-            <i class="g-color-gray-light-v2 g-ml-5">/</i>
-          </li> 
-          <li class="list-inline-item g-color-primary">
-            <span>Proposing a Talk </span>
-          </li>
-        </ul><br>
-        <i class="fas fa-presentation" style="font-size:41px;"></i>
-      </div>
-      
-    </section>
-    <!-- End Breadcrumbs -->      
-  
-  <div class="mad-content no-pd g-py-50">
-    <div class="container">
-      <section class="mad-section size-5"> 
-          <div class="mad-col">
-
-            <article class="text-size-medium"> 
-                <div class="mad-icon-box-content markdownx-preview"> 
-
-                    <div class="col-md-12"><br>
-                        <div class="col-md-12"> 
-                            {% for proposing_talk in proposing_talks.all|slice:"0:1" %}  
-                                <p class="markdownx-preview">{{ proposing_talk.content | markdown | safe }}</p>
-                              {{ form.media }} 
-                            {% endfor %} 
-                        </div>
-                </div> 
-                </div>
-            </article>
-          </div>   
-      </section>  
-    </div>
-  </div> <br><br><br>
-
-
-
- 
+{% block meta_title %}
+  {% if page %}
+    {{ page.meta_title }}
+  {% else %}
+    {% trans "Proposing a Talk || PyCon Uganda" %}
+  {% endif %}
 {% endblock %}
 
- 
+{% block content %}
+  {% include '2025/navbar.html' %}
+
+  <!-- Breadcrumbs -->
+  <section class="g-bg-gray-light-v5 g-py-80 g-pt-150">
+    <div class="container text-center">
+      <h2 class="h2 g-color-black g-font-weight-600">Proposing a Talk</h2>
+      <ul class="u-list-inline">
+        <li class="list-inline-item g-mr-5">
+          <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="/2025">Home</a>
+          <i class="g-color-gray-light-v2 g-ml-5">/</i>
+        </li>
+        <li class="list-inline-item g-color-primary">
+          <span>Proposing a Talk</span>
+        </li>
+      </ul>
+      <br />
+      <i class="fas fa-presentation" style="font-size: 41px"></i>
+    </div>
+  </section>
+
+  <div class="mad-content no-pd g-py-50">
+    <div class="container">
+      <section class="mad-section size-5">
+        <div class="mad-col">
+          <article class="text-size-medium">
+            <div class="mad-icon-box-content markdownx-preview">
+              <div class="col-md-12">
+                <br />
+                <div class="col-md-12 text-justify">
+                  <h2 class="h3 font-weight-bold">Why you should be a Speaker</h2>
+                  <p>
+                    PyCon Uganda is looking for speakers of all experience levels and backgrounds to contribute to the conference program! If you are a professional Python user, hobbyist, or just passionate about Python or programming and open-source communities, we would kindly love to hear from you.
+                  </p>
+                  <p>
+                    We are excited and humbled to receive your talk and kindly, we request you to read the following information before submitting your proposal.
+
+                  </p>
+                  <p>
+                    Everyone is encouraged to submit a proposal regardless of their experience level. PyCon Uganda thrives on having talks ranging from introductory to advanced.
+
+                  </p>
+                  <p>
+                    <strong>Before writing a proposal</strong>, read the following descriptions of the four kinds of presentations at PyCon Uganda:
+                  </p>
+
+                  <h3 class="mt-4">Talks</h3>
+                  <p>These are the traditional talk sessions given during the main conference days and they are 28 minutes long.</p>
+
+                  <h3 class="mt-4">Tutorials</h3>
+                  <p>
+                    Each tutorial session runs for 3 hours and takes place on the 6th and 7th of August, 2024, before the main conference days. We're looking for sessions that advance the Python community.
+                  </p>
+
+                  <h3 class="mt-4">Full-time Trainers
+                  </h3>
+                  <p>We invite educators to share their coursework and engage the community through practical training sessions.
+
+                  </p>
+
+                  <h3 class="mt-4">Lightning Talks
+                  </h3>
+                  <p>
+                    Lightning talks are short, 10–15 minute presentations. If your main proposal isn't selected, this is another chance to share your ideas!
+
+                  </p>
+
+                  <p>
+                    All speakers must follow the
+                    <a href="/2025/coc/" class="text-primary">Code of Conduct</a>.
+                    Slides and content must be suitable for a professional and inclusive audience.
+                  </p>
+
+                  <div class="text-center mt-5">
+                    <p class="lead">
+                      Ready to submit a proposal?
+                      <a href="/2025/talks/submit_talk/" class="btn btn-outline-primary">Click here</a>
+                    </p>
+                  </div>
+
+                  {% for proposing_talk in proposing_talks.all|slice:"0:1" %}
+                    <hr />
+                    <div class="mt-4">
+                      <div class="markdownx-preview">
+                        {{ proposing_talk.content|markdown|safe }}
+                      </div>
+                      {{ form.media }}
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <br /><br /><br />
+{% endblock %}
