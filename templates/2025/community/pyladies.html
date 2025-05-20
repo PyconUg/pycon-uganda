@@ -1,0 +1,197 @@
+{% extends "base.html" %}
+{% load i18n static markdown_extras %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Pyladies | PyCon Uganda" %}{% endif %}{% endblock %}
+
+{% block content %}
+{% include '2025/navbar.html' %}
+<style>
+    .hero {
+        background: #ffe8f0;
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+        color: #b1004a;
+    }
+
+    .section {
+        padding: 40px 20px;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .section h2 {
+        color: #b1004a;
+        margin-bottom: 20px;
+    }
+
+    .card-group {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .sponsor-card {
+        background: white;
+        border: 2px solid #b1004a;
+        border-radius: 10px;
+        padding: 20px;
+        width: 280px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .sponsor-card h3 {
+        color: #b1004a;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .sponsor-card ul {
+        padding-left: 20px;
+        margin-bottom: 10px;
+    }
+
+    .schedule-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .schedule-table th, .schedule-table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    .schedule-table th {
+        background-color: #ffd7d7;
+        color: #333;
+    }
+
+    .btn-primary {
+        background-color: #b1004a;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 6px;
+        text-decoration: none;
+    }
+
+    .btn-primary:hover {
+        background-color: #a1003e;
+    }
+</style>
+
+<!-- Hero Section -->
+<section class="hero"  style="margin-top: 100px;">
+    <h1>PyLadies Anniversary</h1>
+    <p>Join us in celebrating the PyLadies Anniversary Event at PyCon Uganda!</p>
+</section>
+
+<!-- About Section -->
+<section class="section">
+    <h2>About the Event</h2>
+    <p>
+        This special occasion marks a significant milestone for PyLadies, an international mentorship group dedicated to empowering women to become active participants and leaders in the Python open-source community.
+    </p>
+    <p>
+        Our mission is to promote, educate, and advance a diverse Python community through outreach, education, conferences, events, and social gatherings.
+    </p>
+</section>
+
+<!-- Workshop Call-to-Action -->
+<section class="section" style="background: #fff0f7;">
+    <h2>Join Our Anniversary Workshop!</h2>
+    <p>
+        Don't miss this chance to start your Python journey and join a supportive community. Apply now for the PyLadies Anniversary Workshop!
+    </p>
+    <ul>
+        <li><strong>Learn Python Basics:</strong> Start writing your first Python programs with guidance from experienced mentors.</li>
+        <li><strong>Network and Connect:</strong> Meet and connect with fellow women in tech and share your experiences.</li>
+        <li><strong>Engage with Experts:</strong> Interact with organizers and sponsors to enhance your learning journey.</li>
+    </ul>
+    <a href="#" class="btn-primary">Apply Now</a>
+</section>
+
+<!-- FAQ Section -->
+<section class="section">
+    <h2>PyLadies Workshop FAQ</h2>
+    <p><strong>Do I need programming experience to join?</strong></p>
+    <p>No! This workshop is for beginners. You don't need any prior knowledge. If you have some technical knowledge (like knowing what HTML or CSS are), you can still apply!</p>
+    <p><strong>Should I bring my Own Laptop</strong></p>
+    <p>Yes, please bring your own laptop. We don't provide hardware, and it's important for you to have your computer to take home everything you create during the workshop.</p>
+    <p><strong>Do I need to Install anything on my Laptop before hand?</strong></p>
+    <p>It would be helpful to have Python installed, but don't worry if you haven't done it yet. We'll have an installation session before the workshop to help you get set up.</p>
+    <p><strong>Do I need to be a PyLady already to attend?</strong></p>
+    <p>No. Simply sign up for the workshop session, and you're welcome to join other activities if you're interested.</p>
+</section>
+
+<!-- Schedule Section -->
+<section class="section" style="background: #fdf6fa;">
+    <h2>Schedule</h2>
+    <table class="schedule-table">
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Activity</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>10:00 - 11:00</td><td>Welcome Remarks and Introductions</td><td>Workshop</td></tr>
+            <tr><td>11:00 - 12:00</td><td>Keynote Session</td><td>Workshop</td></tr>
+            <tr><td>12:00 - 12:30</td><td>Women in STEM! Championing Diversity</td><td>Workshop</td></tr>
+            <tr><td>12:30 - 13:00</td><td>Teach me through Python</td><td>Workshop</td></tr>
+            <tr><td>13:00</td><td>Lunch Break</td><td>-</td></tr>
+            <tr><td>14:30 - 15:00</td><td>Women Tech Makers in Kampala</td><td>Workshop</td></tr>
+            <tr><td>15:00 - 15:30</td><td>Harnessing Collective Intelligence</td><td>Workshop</td></tr>
+            <tr><td>15:30 - 16:00</td><td>Advanced Django as a Professional</td><td>Workshop</td></tr>
+            <tr><td>16:00 - 16:30</td><td>Closing Remarks and End</td><td>Workshop</td></tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- Sponsor Section -->
+<section class="section">
+    <h2>Become a Sponsor</h2>
+    <p>
+        Your support will directly contribute to the success of PyLadies workshops at PyCon Uganda 2024. Explore our sponsorship tiers below and join us in making a difference.
+    </p>
+    <div class="card-group">
+        <div class="sponsor-card">
+            <h3>Silver</h3>
+            <p><strong>$5,000</strong></p>
+            <ul>
+                <li>Bronze package</li>
+                <li>Swag shirt</li>
+                <li>Website footer</li>
+                <li>1 Pull-up banner</li>
+                <li>1 announcement</li>
+                <li>Youtube CTA links</li>
+            </ul>
+            <p><strong>10 Free Tickets</strong></p>
+        </div>
+        <div class="sponsor-card">
+            <h3>Bronze</h3>
+            <p><strong>$2,000</strong></p>
+            <ul>
+                <li>Press Release</li>
+                <li>Distribute Swag</li>
+                <li>Links in videos</li>
+            </ul>
+            <p><strong>5 Free Tickets</strong></p>
+        </div>
+        <div class="sponsor-card">
+            <h3>Basic</h3>
+            <p><strong>$500</strong></p>
+            <ul>
+                <li>Branding</li>
+                <li>Workshops</li>
+                <li>Job Fair Access</li>
+            </ul>
+            <p><strong>3 Free Tickets</strong></p>
+        </div>
+    </div>
+    <p style="margin-top: 20px;">Ready to sponsor? Please contact us at <a href="mailto:sponsorship@pycon.ug">sponsorship@pycon.ug</a></p>
+</section>
+{% endblock %}

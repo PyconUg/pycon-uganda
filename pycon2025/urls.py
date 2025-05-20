@@ -20,5 +20,7 @@ urlpatterns = [
     path('team/', view=views.team, name='team'),
     path('report/', view=views.report, name='report'),
     path('platform/', view=views.hopin, name='hopin'), 
+    path('community/pyladies/', view=views.pyladies, name='pyladies'),
+    path('community/django-girls/', view=views.django_girls, name='django_girls'),
 ]
 
