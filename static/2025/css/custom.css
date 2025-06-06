@@ -2,6 +2,7 @@
 .promo {
     background: #fff;
     min-width: 100vw;
+    margin-top: 4rem;
 }
 
 .promo-grid {
@@ -43,7 +44,7 @@
     color: #000;
 }
 
-@media (max-width: 76px) {
+@media (max-width: 768px) {
     .promo {
         margin-top: 10rem;
     }
@@ -466,4 +467,73 @@
     .buttons a {
         width: auto;
     }
+}
+
+/* Force navbar to collapse for screens less than 1024px */
+@media (max-width: 1025px) {
+    .promo{
+        margin-top: 8rem;
+    }
+  .navbar-expand-md .navbar-collapse {
+    display: none !important;
+  }
+  .navbar-expand-md .navbar-collapse.show {
+    display: block !important;
+  }
+  .navbar-expand-md .navbar-toggler {
+    display: block !important;
+  }
+  .navbar-expand-md .navbar-collapse {
+    width: 100%;
+    background: #fff;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.1);
+    padding: 1.5rem;
+  }
+  .navbar-expand-md .navbar-nav {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    width: 100%;
+  }
+  .navbar-expand-md .navbar-nav .nav-item {
+    width: 100%;
+  }
+  .navbar-expand-md .navbar-nav .nav-link {
+    width: 100%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+  /* Dropdown menu full width and left-aligned */
+  .navbar-expand-md .dropdown-menu {
+    position: static !important;
+    float: none;
+    width: 100%;
+    margin: 0;
+    box-shadow: none;
+    background: #f9f9f9;
+    border-radius: 0;
+    border: none;
+    padding: 0.5rem 0;
+  }
+  .navbar-expand-md .dropdown-item {
+    width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background: transparent;
+  }
+  .navbar-expand-md .dropdown-item .nav-link {
+    padding: 0;
+    width: 100%;
+  }
+  /* Show dropdown on toggle click */
+  .navbar-expand-md .dropdown.show .dropdown-menu {
+    display: block;
+  }
 }
