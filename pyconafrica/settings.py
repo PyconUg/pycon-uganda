@@ -102,7 +102,8 @@ INSTALLED_APPS = [
     "tickets",
     'cms',
     "travel_guide",
-    "pycon2025"
+    "pycon2025",
+    "community"
 ]
 
 MIDDLEWARE = [ 

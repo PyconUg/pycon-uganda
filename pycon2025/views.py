@@ -78,3 +78,13 @@ def report(request):
     context = {}
     template = '2025/report/report.html'
     return render(request, template, context)
+
+def pyladies(request):
+    context = {}
+    template = '2025/community/pyladies.html'
+    return render(request, template, context)
+    
+def django_girls(request):
+    context = {}
+    template = '2025/community/django_girls.html'
+    return render(request, template, context)

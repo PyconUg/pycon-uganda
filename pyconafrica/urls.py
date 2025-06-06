@@ -45,7 +45,7 @@ urlpatterns = [
         path('privacy-policy/', include('privacypolicy.urls', namespace='privacypolicy')),
         path('tickets/', include('tickets.urls', namespace='ticket')),
         path('travel-guide/', include('travel_guide.urls', namespace='travel_guide')),
-        
+
         #Leave this last to catch all pages
         path('', include('cms.urls')),   
     ])),
@@ -75,9 +75,6 @@ if settings.DEBUG:
 # pages can use JS, CSS and images.
 
 handler404 = 'home.views.handler404'
-
-
-
 
 # Modifies default django admin titles and headers with custom app detail.
 admin.site.site_header = "PyCon Uganda Admin"
