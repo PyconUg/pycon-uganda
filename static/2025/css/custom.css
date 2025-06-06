@@ -43,7 +43,11 @@
     color: #000;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 76px) {
+    .promo {
+        margin-top: 10rem;
+    }
+
     .promo-title {
         font-size: 3rem;
     }
