@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load i18n static markdown_extras %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "PyLadies | Ngombor Capacity Building Workshop" %}{% endif %}{% endblock %}
+
+{% block content %}
+<!-- {% include '2025/navbar.html' %} -->
+
+<section class="max-w-4xl mx-auto px-4 pt-4">
+    <h2 class="text-3xl font-bold m-4 text-center">About The Summit</h2>
+    <p class=" text-center">
+        PyLadies Kampala has partnered with the NgomBor Community Development Alliance and is hosting a zero to hero program 
+        at PyCon Uganda 2025 for women affected by the LRA war. Our hope is that the women will take back home some tech skills that 
+        will be the starting point for income generating capacity. The women will join our other mentorship programs like Outreachy
+        and Google summer of code preparatory programs to apply for paid opportuntities
+        The NgomBor Community supports rural youths with computer education and also works with individuals and families who fled from Congo, 
+        helping them rebuild through learning. Pyladies is excited to open our workshop doors this year.
+    </p>
+  </section>
+
+  <div class="md:container mx-auto px-4 py-12">
+    <div class="grid md:grid-cols-2 gap-12">
+      <div class="shadow-lg p-4 md:p-8 rounded-lg hover:shadow-none">
+        <h2 class="text-2xl font-bold mb-4 text-center">
+          Your Open Source Journey Starts Here
+        </h2>
+
+        <p class="mb-4">
+          This annual open source summit brings together members of the
+          Pyladies and Python open source community to grow our
+          community&#39;s contribution to open source. Expect inspiring
+          keynotes and productive collaboration with local open source
+          maintainers. Exceptional contributions will be awarded (T.Shirts
+          and other Swag).
+        </p>
+        <p class="mb-4">
+          Attendance for this event will be invite only in collaboration with the NgomBor Community Development Alliance.
+          We want the organization to invite the right women who will benefit from this event.
+          <br />
+        </p>
+      </div>
+      <div class="shadow-lg p-8 rounded-lg hover:shadow-none">
+        <h2 class="text-2xl font-bold mb-4 text-center">
+          Are you a Python expert?
+        </h2>
+        <p class="mb-4">
+          Are you passionate about teaching beginner-intermediate Python topics  and ready to Make an impact?
+          Express your interest to coach at this event.
+        </p>
+
+        <p>
+          Email your statements of interest to:&nbsp;
+          <a
+            href="mailto:kampala@pyladies.com"
+            class="text-blue-500 text-lg hover:underline"
+          >
+            kampala@pyladies.com
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+  
+{% endblock %}
