@@ -3,61 +3,91 @@
 {% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "PyLadies | Ngombor Capacity Building Workshop" %}{% endif %}{% endblock %}
 
 {% block content %}
-<!-- {% include '2025/navbar.html' %} -->
+{% include '2025/navbar.html' %}
 
-<section class="max-w-4xl mx-auto px-4 pt-4">
-    <h2 class="text-3xl font-bold m-4 text-center">About The Summit</h2>
-    <p class=" text-center">
-        PyLadies Kampala has partnered with the NgomBor Community Development Alliance and is hosting a zero to hero program 
-        at PyCon Uganda 2025 for women affected by the LRA war. Our hope is that the women will take back home some tech skills that 
-        will be the starting point for income generating capacity. The women will join our other mentorship programs like Outreachy
-        and Google summer of code preparatory programs to apply for paid opportuntities
-        The NgomBor Community supports rural youths with computer education and also works with individuals and families who fled from Congo, 
-        helping them rebuild through learning. Pyladies is excited to open our workshop doors this year.
-    </p>
-  </section>
-
-  <div class="md:container mx-auto px-4 py-12">
-    <div class="grid md:grid-cols-2 gap-12">
-      <div class="shadow-lg p-4 md:p-8 rounded-lg hover:shadow-none">
-        <h2 class="text-2xl font-bold mb-4 text-center">
-          Your Open Source Journey Starts Here
-        </h2>
-
-        <p class="mb-4">
-          This annual open source summit brings together members of the
-          Pyladies and Python open source community to grow our
-          community&#39;s contribution to open source. Expect inspiring
-          keynotes and productive collaboration with local open source
-          maintainers. Exceptional contributions will be awarded (T.Shirts
-          and other Swag).
-        </p>
-        <p class="mb-4">
-          Attendance for this event will be invite only in collaboration with the NgomBor Community Development Alliance.
-          We want the organization to invite the right women who will benefit from this event.
-          <br />
-        </p>
-      </div>
-      <div class="shadow-lg p-8 rounded-lg hover:shadow-none">
-        <h2 class="text-2xl font-bold mb-4 text-center">
-          Are you a Python expert?
-        </h2>
-        <p class="mb-4">
-          Are you passionate about teaching beginner-intermediate Python topics  and ready to Make an impact?
-          Express your interest to coach at this event.
-        </p>
-
-        <p>
-          Email your statements of interest to:&nbsp;
-          <a
-            href="mailto:kampala@pyladies.com"
-            class="text-blue-500 text-lg hover:underline"
-          >
-            kampala@pyladies.com
-          </a>
-        </p>
-      </div>
+<section class="container-fluid py-5 bg-light" style="margin-top: 100px;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12 text-center mb-5">
+                <h1 class="display-4 fw-bold" style="color: #b86e06;">NgomBor Community Workshop</h1>
+                <p class="">
+                    PyLadies Kampala has partnered with the NgomBor Community Development Alliance and is hosting a zero to hero program 
+                    at PyCon Uganda 2025 for women affected by the LRA war. 
+                </p>
+                <p>
+                    Our hope is that the women will take back home some tech skills that will be the starting point for income generating capacity.
+                    The women will join our other mentorship programs like Outreachy and Google Summer of Code preparatory programs to apply for paid opportunities.
+                </p>
+                <p>
+                    The NgomBor Community supports rural youths with computer education and also works with individuals and families who fled from Congo, 
+                    helping them rebuild through learning. Pyladies is excited to open our workshop doors this year.
+                </p>
+            </div>
+        </div>
     </div>
-  </div>
-  
+</section>
+
+<section class="container py-5">
+    <div class="row">
+        <div class="col-12 text-center mb-5">
+            <h2 class="fw-bold">Your Tech Career Journey Starts Here</h2>
+        </div>
+    </div>
+
+    <p class="text-center"><strong>During the event, you can look forward to:</strong></p><br>
+
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body text-center">
+                    <h3 class="card-title h4">Inspiring Keynotes & Collaboration</h3>
+                    <p class="card-text">Connect and collaborate with open source maintainers and developers from across the region.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body text-center">
+                    <h3 class="card-title h4">Exclusive Swag for Contributors</h3>
+                    <p class="card-text">Exceptional contributions will be awarded with T-shirts and other awesome swag.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body text-center">
+                    <h3 class="card-title h4">Invite-Only Attendance</h3>
+                    <p class="card-text">The NgomBor Community will help invite the right women who will benefit most from the workshop.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container py-5 section">
+    <p class="text-center">
+        If you live in Neebi, are part of the NgomBor Community, and would like to join this workshop at PyCon Uganda 2025, 
+        please contact Liz at 
+        <a href="mailto:liz.argall@gmail.com">liz.argall@gmail.com</a> or Vincent Ulargiw at 
+        <a href="mailto:viular@gmail.com">viular@gmail.com</a>.
+    </p>
+</section>
+
+<section class="container py-5 section">
+    <h2 class="text-center mb-4">Are you a Python Expert?</h2>
+    <p class="text-center">
+        Are you passionate about teaching beginner-intermediate Python topics and ready to make an impact? 
+        Express your interest to coach at this event.
+    </p>
+    <p class="text-center">
+        Email your statement of interest to:&nbsp;
+        <a href="mailto:kampala@pyladies.com" class="text-blue-500 text-lg hover:underline">
+            kampala@pyladies.com
+        </a>
+    </p>
+</section>
+
+
 {% endblock %}
