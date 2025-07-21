@@ -93,7 +93,7 @@ INSTALLED_APPS = [
     "privacypolicy",
     "pycon2020",
     "pyconafrica2019",
-   #"schedule",
+   "schedule",
     'conference_schedule',
     "speakers",
     "sponsors",

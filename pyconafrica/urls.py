@@ -21,20 +21,18 @@ from django.conf.urls import handler404, handler500
 from django_robohash.views import robohash 
 from django.views.static import serve  
 
-from pyconafrica2019 import views
-
 urlpatterns = [
 
 #Apps
     path('', include('home.urls', namespace='homepage')), 
     path('2019/', include('pyconafrica2019.urls', namespace='pyconafrica2019')),
     path('2020/', include('pycon2020.urls')),
-    path('2025/', include('pycon2025.urls')),
     path('<int:year>/', include([
         path('', include('home.urls')),
         path('about/', include('about.urls')),
         path('speakers/', include('speakers.urls')),
-        path('schedule/', include('conference_schedule.urls')),
+        path('schedule/', include('schedule.urls')),
+        path('schedule-legacy/', include('conference_schedule.urls')),
         path('our-sponsors/', include('sponsors.urls', namespace='sponsors')),
         path('talks/', include('talks.urls', namespace='talks')),
         path('coc/', include('coc.urls')),
