@@ -10,7 +10,7 @@ urlpatterns = [
     path('conduct/', view=views.conduct, name='conduct'),
     path('coc/eporting-guidelines/', TemplateView.as_view(template_name='conduct/eporting-guidelines/eporting-guidelines.html')),
     path('coc/guidelines/', TemplateView.as_view(template_name='conduct/guidelines/guidelines.html')),
-    # path('sponsor-us/', view=views.sponsor_us, name='sponsor_us'),
+    path('sponsor-us/', view=views.sponsor_us, name='sponsor_us'),
     path('speakers_list/', view=views.speakers, name='speakers'),
     path('schedule/', view=views.scheduIe, name='schedule'),
     path('our-sponsors/', view=views.sponsors, name='sponsors'),

@@ -48,6 +48,7 @@ urlpatterns = [
         path('', include('cms.urls')),   
     ])),
     path('organizers/', admin.site.urls),  
+    path('2025/', include('pycon2025.urls')),
 
 #Thrid party Apps 
     path('summernote/', include('django_summernote.urls')),
