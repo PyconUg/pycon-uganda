@@ -46,63 +46,44 @@
       </div>
     </div>
 
-    <!-- Legend -->
-    <div class="row justify-content-center mb-4">
-      <div class="col-12">
-        <div class="legend d-flex flex-wrap justify-content-center gap-3">
-          <div class="legend-item">
-            <span class="legend-dot break"></span>
-            <span class="legend-text">Breakfast/Lunch Break</span>
-          </div>
-          <div class="legend-item">
-            <span class="legend-dot django-girls"></span>
-            <span class="legend-text">Django Girls</span>
-          </div>
-          <div class="legend-item">
-            <span class="legend-dot community"></span>
-            <span class="legend-text">Community Summit</span>
-          </div>
-          <div class="legend-item">
-            <span class="legend-dot pyladies"></span>
-            <span class="legend-text">PyLadies</span>
-          </div>
-          <div class="legend-item">
-            <span class="legend-dot pydata"></span>
-            <span class="legend-text">PyData</span>
-          </div>
-          <div class="legend-item">
-            <span class="legend-dot open-source"></span>
-            <span class="legend-text">Open Source Sprints</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- Tab Content -->
     <div class="tab-content-wrapper">
       {% for tab in tabs %}
       <div class="tab-content {% if forloop.first %}active{% endif %}" id="{{ tab.id }}-content">
-        <div class="row">
-          {% for room, sessions in tab.rooms.items %}
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="room-column">
-              <div class="room-header">
-                <h5 class="room-title">{{ room }}</h5>
+        {% for room, sessions in tab.rooms.items %}
+        <div class="schedule-day-section mb-5">
+          <div class="day-header">
+            <div class="day-icon">
+    <i class="fa-solid fa-calendar-alt" ></i>
+            </div>
+            <h3 class="day-title">{{ tab.label }} – {{ room }}</h3>
+          </div>
+          
+          <div class="schedule-table">
+            <div class="schedule-header">
+              <div class="header-time">Time</div>
+              <div class="header-title">Title</div>
+              <div class="header-speaker">Speaker</div>
+              <div class="header-copy"></div>
+            </div>
+            
+            {% for session in sessions %}
+            <div class="schedule-row {{ session.category }}">
+              <div class="row-time">{{ session.time }}</div>
+              <div class="row-title">{{ session.title }}</div>
+              <div class="row-speaker">
+                {% if session.speaker %}{{ session.speaker }}{% else %}—{% endif %}
               </div>
-              <div class="sessions-container">
-                {% for session in sessions %}
-                <div class="session-item {{ session.category }}">
-                  <div class="session-content">
-                    <div class="session-title">{{ session.title }}</div>
-                    <div class="session-time">{{ session.time }}</div>
-                  </div>
-                </div>
-                {% endfor %}
+              <div class="row-copy">
+                <button class="copy-btn" onclick="copyToClipboard('{{ session.title }} - {{ session.time }}')">
+                  <i class="fa-regular fa-copy"></i>
+                </button>
               </div>
             </div>
+            {% endfor %}
           </div>
-          {% endfor %}
         </div>
+        {% endfor %}
       </div>
       {% endfor %}
     </div>
@@ -147,33 +128,6 @@
   border-color: #4a5568;
 }
 
-/* Legend */
-.legend {
-  margin-bottom: 2rem;
-  padding: 1rem;
-  background-color: #f8f9fa;
-  border-radius: 8px;
-}
-
-.legend-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-right: 16px;
-}
-
-.legend-dot {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.legend-text {
-  font-size: 13px;
-  color: #666;
-}
-
 /* Tab Content */
 .tab-content-wrapper {
   min-height: 500px;
@@ -193,139 +147,241 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Room Layout */
-.room-column {
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+/* Day Header */
+.schedule-day-section {
+  background: #2d3748;
+  border-radius: 12px;
   overflow: hidden;
-  height: 100%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.room-header {
-  background-color: #f8f9fa;
-  padding: 1rem;
-  border-bottom: 1px solid #e0e0e0;
-  text-align: center;
+.day-header {
+  background: #2d3748;
+  color: white;
+  padding: 20px 30px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.room-title {
+.day-icon {
+  font-size: 10px;
+  margin-top: 2px;
+}
+
+.day-title {
   margin: 0;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 600;
-  color: #333;
+  color: #fff;
+}
+
+/* Schedule Table */
+.schedule-table {
+  background: white;
+}
+
+.schedule-header {
+  display: grid;
+  grid-template-columns: 140px 1fr 200px 40px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e2e8f0;
+  font-weight: 600;
+  font-size: 14px;
+  color: #4a5568;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
-.sessions-container {
-  padding: 0;
+.schedule-header > div {
+  padding: 16px 20px;
+  border-right: 1px solid #e2e8f0;
 }
 
-/* Session Items */
-.session-item {
-  padding: 1rem;
-  border-bottom: 1px solid #f0f0f0;
-  transition: all 0.2s ease;
-  cursor: pointer;
+.schedule-header > div:last-child {
+  border-right: none;
 }
 
-.session-item:last-child {
-  border-bottom: none;
+.schedule-row {
+  display: grid;
+  grid-template-columns: 140px 1fr 200px 40px;
+  border-bottom: 1px solid #f1f5f9;
+  transition: background-color 0.2s ease;
 }
 
-.session-item:hover {
-  background-color: #f8f9fa;
-  transform: translateX(2px);
+.schedule-row:hover {
+  background-color: #f8fafc;
 }
 
-.session-content {
-  width: 100%;
+.schedule-row > div {
+  padding: 16px 20px;
+  border-right: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
 }
 
-.session-title {
-  font-size: 14px;
+.schedule-row > div:last-child {
+  border-right: none;
+  justify-content: center;
+}
+
+.row-time {
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  font-size: 13px;
+  color: #64748b;
   font-weight: 500;
-  color: #333;
-  margin-bottom: 4px;
-  line-height: 1.3;
 }
 
-.session-time {
-  font-size: 12px;
-  color: #666;
-  font-weight: 400;
+.row-title {
+  font-size: 14px;
+  color: #1e293b;
+  font-weight: 500;
+  line-height: 1.4;
 }
 
-/* Category Colors */
-.session-item.break { background-color: #f7f7f7; border-left: 4px solid #d1d5db; }
-.session-item.django-girls { background-color: #fef3c7; border-left: 4px solid #f59e0b; }
-.session-item.community { background-color: #dcfce7; border-left: 4px solid #22c55e; }
-.session-item.pyladies { background-color: #1e293b; border-left: 4px solid #0f172a; }
-.session-item.pyladies .session-title,
-.session-item.pyladies .session-time { color: white; }
-.session-item.pydata { background-color: #f3e8ff; border-left: 4px solid #a855f7; }
-.session-item.open-source { background-color: #fef2f2; border-left: 4px solid #ef4444; }
-.session-item.keynote { background-color: #dbeafe; border-left: 4px solid #3b82f6; }
-.session-item.talk { background-color: #ffffff; border-left: 4px solid #6b7280; }
-.session-item.workshop { background-color: #ecfdf5; border-left: 4px solid #10b981; }
-.session-item.networking { background-color: #fdf4ff; border-left: 4px solid #c084fc; }
-.session-item.lightning { background-color: #fffbeb; border-left: 4px solid #f59e0b; }
-.session-item.logistics { background-color: #f9fafb; border-left: 4px solid #9ca3af; }
-.session-item.ceremony { background-color: #fef7ff; border-left: 4px solid #d946ef; }
-.session-item.showcase { background-color: #f0f9ff; border-left: 4px solid #0ea5e9; }
-.session-item.startup { background-color: #fff7ed; border-left: 4px solid #ea580c; }
-.session-item.social { background-color: #fefce8; border-left: 4px solid #eab308; }
+.row-speaker {
+  font-size: 13px;
+  color: #64748b;
+}
 
-/* Legend dots colors */
-.legend-dot.break { background-color: #d1d5db; }
-.legend-dot.django-girls { background-color: #f59e0b; }
-.legend-dot.community { background-color: #22c55e; }
-.legend-dot.pyladies { background-color: #0f172a; }
-.legend-dot.pydata { background-color: #a855f7; }
-.legend-dot.open-source { background-color: #ef4444; }
+.copy-btn {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.copy-btn:hover {
+  background-color: #f1f5f9;
+  color: #64748b;
+}
+
+/* Category specific styles for rows */
+.schedule-row.keynote {
+  background-color: #eff6ff;
+}
+
+.schedule-row.keynote .row-title {
+  color: #1e40af;
+  font-weight: 600;
+}
+
+.schedule-row.break {
+  background-color: #f9fafb;
+}
+
+.schedule-row.break .row-title {
+  color: #6b7280;
+  font-style: italic;
+}
+
+.schedule-row.talk .row-title {
+  color: #1e293b;
+}
+
+.schedule-row.tutorial {
+  background-color: #f0fdf4;
+}
+
+.schedule-row.tutorial .row-title {
+  color: #166534;
+  font-weight: 600;
+}
+
+.schedule-row.lightning {
+  background-color: #fffbeb;
+}
+
+.schedule-row.lightning .row-title {
+  color: #92400e;
+}
+
+.schedule-row.logistics {
+  background-color: #f9fafb;
+}
+
+.schedule-row.ceremony {
+  background-color: #fdf4ff;
+}
+
+.schedule-row.ceremony .row-title {
+  color: #a21caf;
+  font-weight: 600;
+}
+
+.schedule-row.announcement {
+  background-color: #fef7ff;
+}
+
+.schedule-row.announcement .row-title {
+  color: #c026d3;
+  font-weight: 600;
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .schedule-header,
+  .schedule-row {
+    grid-template-columns: 120px 1fr 140px 30px;
+  }
+
+  .schedule-header > div,
+  .schedule-row > div {
+    padding: 12px 15px;
+  }
+
+  .day-header {
+    padding: 16px 20px;
+  }
+
+  .day-title {
+    font-size: 18px;
+  }
+
+  .row-time {
+    font-size: 12px;
+  }
+
+  .row-title {
+    font-size: 13px;
+  }
+
+  .row-speaker {
+    font-size: 12px;
+  }
+
   .tab-btn {
     padding: 10px 16px;
     font-size: 13px;
     margin-bottom: 8px;
   }
-
-  .room-title {
-    font-size: 13px;
-  }
-
-  .session-title {
-    font-size: 13px;
-  }
-
-  .session-time {
-    font-size: 11px;
-  }
-
-  .legend {
-    padding: 0.75rem;
-  }
-
-  .legend-item {
-    flex-wrap: wrap;
-    gap: 4px;
-  }
-
-  .legend-text {
-    font-size: 12px;
-  }
 }
 
 @media (max-width: 576px) {
-  .col-lg-4 {
-    margin-bottom: 1rem;
+  .schedule-header,
+  .schedule-row {
+    grid-template-columns: 100px 1fr 30px;
   }
 
-  .session-item:hover {
-    transform: none;
+  .header-speaker,
+  .row-speaker {
+    display: none;
+  }
+
+  .schedule-header > div,
+  .schedule-row > div {
+    padding: 10px 12px;
+  }
+
+  .day-header {
+    padding: 14px 16px;
+  }
+
+  .day-title {
+    font-size: 16px;
   }
 }
 </style>
@@ -340,6 +396,22 @@ function switchTab(tabId) {
   if (selectedTabContent) selectedTabContent.classList.add('active');
   const selectedButton = document.querySelector(`[data-tab="${tabId}"]`);
   if (selectedButton) selectedButton.classList.add('active');
+}
+
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(function() {
+    // Optional: Show a brief success message
+    const btn = event.target.closest('.copy-btn');
+    const originalIcon = btn.innerHTML;
+    btn.innerHTML = '<i class="fa-solid fa-check"></i>';
+    btn.style.color = '#22c55e';
+    setTimeout(() => {
+      btn.innerHTML = originalIcon;
+      btn.style.color = '';
+    }, 2000);
+  }).catch(function() {
+    console.log('Failed to copy text');
+  });
 }
 
 document.addEventListener('DOMContentLoaded', function() {
