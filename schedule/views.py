@@ -1,0 +1,71 @@
+from django.shortcuts import render
+
+
+def schedule(request, year):
+    tabs = [
+        {
+            "id": "day1",
+            "label": "Day 1 (8th August)",
+            "rooms": {
+                "MAIN AUDITORIUM": [
+                    {"title": "Registration", "time": "8:30 - 9:00", "category": "logistics"},
+                    {"title": "Welcome to PyCon Uganda 2025", "time": "9:00 - 9:15", "category": "keynote", "speaker": "-"},
+                    {"title": "Opening Keynote", "time": "9:15 - 10:15", "category": "keynote", "speaker": ""},
+                    {"title": "Coffee/Tea Break", "time": "10:15 - 11:55", "category": "break"},
+                    {"title": "Getting Started with MLOps", "time": "11:00 - 11:40", "category": "talk", "speaker": "Rashid Kissejjere"},
+                    {"title": "USSD and Python: Bridging the Digital Divide in Africa", "time": "11:45 - 12:15", "category": "talk", "speaker": "Gilbert Chris"},
+                    {"title": "Robots Think in Python: The Language Behind Intelligent Machines", "time": "12:20 - 12:50", "category": "talk", "speaker": "Tirzah Atwiine"},
+                    {"title": "Lunch and Group Photo", "time": "12:50 - 13:55", "category": "break", "speaker": "PyCon Volunteers"},
+                    {"title": "AI in Cyber Security", "time": "14:00 - 14:45", "category": "talk", "speaker": "George Ssemaganda"},
+                    {"title": "Automatic Repair of Security Vulnerabilities in Python Source Code", "time": "14:50 - 15:20", "category": "talk", "speaker": "Steven Kakaire"},
+                    {"title": "Voiceflow & Python for User Assistance and Data Collection", "time": "15:30 - 16:00", "category": "talk", "speaker": "Bashir Kassujja"},
+                    {"title": "PyChain: Building Decentralized Applications with Python", "time": "16:05 - 16:35", "category": "talk", "speaker": "Oliseh Genesis"},
+                    {"title": "Python + GenAI: Building Chatbots and Assistants with LangChain and OpenAI", "time": "16:40 - 17:05", "category": "talk", "speaker": "Charles Moruri"},
+                    {"title": "Closing Keynote", "time": "17:05 - 18:05", "category": "keynote", "speaker": ""},
+                    {"title": "Lightning Talks and Close", "time": "18:10 - 18:30", "category": "lightning"},
+                ]
+            },
+        },
+        {
+            "id": "day2",
+            "label": "Day 2 (9th August)",
+            "rooms": {
+                "MAIN HALL": [
+                    {"title": "Registration", "time": "8:30 - 9:00", "category": "logistics"},
+                    {"title": "Welcome to PyCon Uganda 2025", "time": "9:00 - 9:15", "category": "keynote", "speaker": "Kirabo Atuhurira"},
+                    {"title": "Opening Keynote", "time": "9:15 - 10:15", "category": "keynote", "speaker": ""},
+                    {"title": "Coffee/Tea Break", "time": "10:15 - 11:00", "category": "break"},
+                    {"title": "Build single-page apps, without building an API In Django", "time": "11:05 - 11:35", "category": "talk", "speaker": "Afasha Isakiye"},
+                    {"title": "Crafting Real-World Agents: Web, Email, and Your Desktop", "time": "11:40 - 12:10", "category": "talk", "speaker": "Edmond Musiitwa"},
+                    {"title": "The FastAPI Beyond CRUD: Build Powerful, Scalable Applications With Python", "time": "12:15 - 13:00", "category": "talk", "speaker": "Jonathan Ssali"},
+                    {"title": "Lunch", "time": "13:00 - 14:00", "category": "break"},
+                    {"title": "When Code Becomes Art: Building Animations with Python and Manim", "time": "14:05 - 14:35", "category": "talk", "speaker": "Daniel Mwiine"},
+                    {"title": "Simulating MicroPython Projects with Raspberry Pi Pico Using Wokwi", "time": "14:40 - 15:10", "category": "talk", "speaker": "Samuel Lunghe"},
+                    {"title": "Deploy Django APIs Fearlessly: Azure Terraform & Postman Power!", "time": "15:15 - 15:45", "category": "talk", "speaker": "Samuel Macharis"},
+                    {"title": "Closing Keynote", "time": "15:45 - 16:45", "category": "keynote", "speaker": ""},
+                    {"title": "PyCon Africa 2026 Announcement", "time": "17:00 - 18:00", "category": "announcement", "speaker": "Brian Kayongo"},
+                    {"title": "Closing", "time": "18:00 - 18:30", "category": "ceremony"},
+                ]
+            },
+        },
+        {
+            "id": "day3",
+            "label": "Day 3 (10th August - Tutorials Track)",
+            "rooms": {
+                "MAIN HALL": [
+                    {"title": "Coffee/Tea and Registration", "time": "8:00 - 8:55", "category": "break"},
+                    {"title": "Beyond the Model: Engineering Intelligent Systems with Python and Kubernetes", "time": "9:00 - 11:00", "category": "tutorial", "speaker": "Ernest Kabahima"},
+                    {"title": "Building Serverless Web Apps with Python and AWS Amplify", "time": "11:00 - 13:00", "category": "tutorial", "speaker": "Felix Jumason"},
+                    {"title": "Lunch", "time": "13:00 - 14:00", "category": "break"},
+                    {"title": "End-to-End ML Pipelines in Python: From Notebook to Production", "time": "14:00 - 16:00", "category": "tutorial", "speaker": "Wesley Kambale"},
+                    {"title": "Supercharge Your API Development with FastAPI", "time": "16:00 - 18:00", "category": "tutorial", "speaker": "Anne Namuli"},
+                    {"title": "Close", "time": "18:00", "category": "ceremony"},
+                ]
+            },
+        },
+    ]
+
+    template_name = f"{year}/schedule/schedule.html"
+    context = {"tabs": tabs, "year": year}
+
+    return render(request, template_name, context)

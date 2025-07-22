@@ -1,308 +1,436 @@
 {% extends "base.html" %}
-{% load i18n static markdown_extras  schedule_tags %}
+{% load i18n static markdown_extras %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Schedule | PyCon Uganda 2025" %}{% endif %}{% endblock %}
 
-{% block title %}
-{% if meta_title %}
-    {{ meta_title }}
-{% else %}
-    {% trans "Schedule | PyCon Uganda" %}
-{% endif %}
-{% endblock %}
-
-{% block meta_title %}
-{% if meta_title %}
-    {{ meta_title }}
-{% else %}
-    {% trans "Schedule | PyCon Uganda" %}
-{% endif %}
-{% endblock %}
-
-{% block og_description %}
-{% if meta_description %}
-    {{ meta_description }}
-{% else %}
-    {% trans "Explore the exciting schedule of PyCon Uganda, filled with insightful talks, keynotes, and tutorials." %}
-{% endif %}
-{% endblock %}
-
-{% block twitter_title %}
-{% if meta_title %}
-    {{ meta_title }}
-{% else %}
-    {% trans "Schedule | PyCon Uganda" %}
-{% endif %}
-{% endblock %}
-
-{% block twitter_description %}
-{% if meta_description %}
-    {{ meta_description }}
-{% else %}
-    {% trans "Explore the exciting schedule of PyCon Uganda, filled with insightful talks, keynotes, and tutorials." %}
-{% endif %}
-{% endblock %}
-
-
-
-
-{% block content %} 
-
+{% block content %}
 {% include '2025/navbar.html' %}
 
+<!-- Breadcrumbs -->
+<section class="g-bg-gray-light-v5 g-py-80 g-pt-150">
+  <div class="container text-center">
+    <h2 class="h2 g-color-black g-font-weight-600">PyCon Uganda 2025 Schedule</h2>
 
-    <!-- Breadcrumbs -->
-    <section class="g-bg-gray-light-v5 g-py-80 g-pt-150">
-      <div class="container text-center">
-        <h2 class="h2 g-color-black g-font-weight-600">Schedule</h2>
+    <ul class="u-list-inline">
+      <li class="list-inline-item g-mr-5">
+        <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="/">Home</a>
+        <i class="g-color-gray-light-v2 g-ml-5">/</i>
+      </li>
+      <li class="list-inline-item g-color-primary">
+        <span>Schedule</span>
+      </li>
+    </ul>
+    <br />
+    <i class="fa-solid fa-calendar-alt" style="font-size: 41px;"></i>
+  </div>
+</section>
+<!-- End Breadcrumbs -->
 
-        <ul class="u-list-inline">
-          <li class="list-inline-item g-mr-5">
-            <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="/">Home</a>
-            <i class="g-color-gray-light-v2 g-ml-5">/</i>
-          </li>  
-          <li class="list-inline-item g-color-primary">
-            <span>Schedule</span>
-          </li>
-        </ul><br> 
-        <i class="fa-regular fa-calendar-week" style="font-size:41px;"></i>
+<!-- Schedule Section -->
+<section class="g-py-80">
+  <div class="container-fluid col-xl-10 col-lg-12 col-md-12 col-sm-12">
+    {% if tabs %}
+    
+    <!-- Tab Navigation -->
+    <div class="row justify-content-center mb-4">
+      <div class="col-12">
+        <div class="tab-navigation d-flex flex-wrap justify-content-center gap-2">
+          {% for tab in tabs %}
+          <button 
+            class="tab-btn {% if forloop.first %}active{% endif %}"
+            data-tab="{{ tab.id }}"
+            onclick="switchTab('{{ tab.id }}')">
+            {{ tab.label }}
+          </button>
+          {% endfor %}
+        </div>
       </div>
-       
-        <div class="container"> 
-          <hr class="g-brd-gray-light-v4 g-my-60"> 
-          {% if perms.conference_schedule.add_schedule or perms.conference_schedule.change_schedule %}                      
-          <a href="/organizers/conference_schedule/" target="/" class="btn btn-md u-btn-inset u-btn-inset--rounded u-btn-lightred g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-brd-2 g-rounded-50 g-mr-10 g-mb-15">
-              <i class="fa fa-check-circle g-mr-3"></i>
-              Hi {% if request.user.user_profile and request.user.user_profile.name %}{{ request.user.user_profile.name }}  {% else %}PyCon Uganda{% endif %} 😊,  Create/Add to the Schedule
-          </a>
-          <br> 
-          {% endif %}
-          <p class="g-color-black g-font-size-16">
-              This is our provisional schedule and is subject to change, and all times listed are based on the 
-              <a href="https://www.timeanddate.com/time/zones/gmt" target="/"><b><u>Greenwich Mean Time (GMT+0)</u></b></a> zone.
-          </p> 
-          <br>
-          <div class="mad-shedule-head">
-              <small><li class="btn btn-md u-btn-inset u-btn-yellow g-mr-10 g-mb-15 g-color-black" data-toggle="tooltip" data-placement="top" title="This indicates the session will run concurrently with another session">
-                  <i class="fa-sharp fa-solid fa-screen-users"></i><i class="fa-regular fa-screen-users"></i> <b>Concurrent Sessions</b></li></small>
-              <small><li class="btn btn-md u-btn-inset u-btn-darkred g-mr-10 g-mb-15" data-toggle="tooltip" data-placement="top" title="This indicates the session will be a Keynote session">
-                  <i class="fa-solid fa-keynote"></i> <b>Keynote</b></li></small>
-              <small><li class="btn btn-md u-btn-inset u-btn-bluegray g-mr-10 g-mb-15" data-toggle="tooltip" data-placement="top" title="This indicates the session will be a Panel Discussion session">
-                  <i class="fa-solid fa-users-line"></i> <b>Panel Discussion</b></li></small>
+    </div>
+
+    <!-- Tab Content -->
+    <div class="tab-content-wrapper">
+      {% for tab in tabs %}
+      <div class="tab-content {% if forloop.first %}active{% endif %}" id="{{ tab.id }}-content">
+        {% for room, sessions in tab.rooms.items %}
+        <div class="schedule-day-section mb-5">
+          <div class="day-header">
+            <div class="day-icon">
+    <i class="fa-solid fa-calendar-alt" ></i>
+            </div>
+            <h3 class="day-title">{{ tab.label }} – {{ room }}</h3>
           </div>
-          <br>
- 
-   
-          <section>   
-            <!-- Primary color, horizontal, navigation justified, rounded corners -->
-            <div class="row"> 
-              <div class="col-md-12">
-                <div id="shortcode16">
-                  <div class="shortcode-html">
-
-
-                    <!-- Nav tabs -->
-                    <ul class="nav nav-justified u-nav-v2-1 u-nav-primary u-nav-rounded-5 g-mb-20" role="tablist" data-target="nav-2-1-accordion-primary-hor-justified" data-tabs-mobile-type="accordion" data-btn-classes="btn btn-md btn-block u-btn-outline-primary g-mb-20">
-                    {% for day in days %} 
-                    <li class="nav-item">
-                        <a class="nav-link {% if forloop.first %}active{% endif %}" data-toggle="tab" href="#nav-2-1-accordion-primary-hor-justified--{{ forloop.counter }}" role="tab"> {{ day.conference_day }}<br>{{ day.actual_date|date:"d-m-Y" }}</a>
-                      </li>
-                    {% endfor %} 
-                    </ul>
-                    <!-- End Nav tabs -->
-  
-                    <!-- Tab panes -->
-                    <div id="nav-2-1-accordion-primary-hor-justified" class="tab-content"> 
-                      
-                        {% for day in days %} 
-                        <div class="tab-pane fade show {% if forloop.first %}show active{% endif %}" id="nav-2-1-accordion-primary-hor-justified--{{ forloop.counter }}" role="tabpanel">
-                            {% if schedules|get_item:day %} 
-                            <ul class="list-unstyled">
-                                {% for schedule in schedules|get_item:day %}
-                                <li class="g-brd-around g-brd-gray-light-v4 g-brd-left-3 
-                                {% if schedule.concurrent_talk %}
-                                    g-brd-yellow-left
-                                {% elif schedule.is_a_keynote_speaker %}
-                                    g-brd-darkred-left
-                                {% elif schedule.is_a_panel %}
-                                    g-brd-bluegray-left
-                                {% elif schedule.is_an_event %}
-                                    g-brd-green-left
-                                {% else %}
-                                    g-brd-blue-left
-                                {% endif %}
-                                rounded g-pa-10 g-mb-10"> <!-- Reduced padding for mobile -->
-                
-                                    <div class="row">
-                                        <div class="col-12 col-md-8">
-                                            <!-- Event or Talk Title -->
-                                            {% if schedule.is_an_event %}
-                                            <h5 class="text-uppercase g-font-weight-700 g-font-size-16 g-mb-5">
-                                                {% if schedule.fa_icon %}<i class="{{ schedule.fa_icon }}"></i> |{% endif %}
-                                                <a {% if schedule.event_url %} href="/2025/events/{{ schedule.event_url }}"{% elif schedule.external_url %} href="{{ schedule.external_url }}" target="/" {% endif %}>
-                                                    {{ schedule.event }}
-                                                </a>
-                                            </h5>
-                                            {% else %}
-                                            <h5 class="text-uppercase g-font-weight-700 g-font-size-16 g-mb-5">
-                                                <!-- Display Icon Based on Talk Type (Smaller icons for mobile) -->
-                                                {% if schedule.talk.talk_type == 'Lightning Talk' or schedule.talk.talk_type == 'Short Talk' or schedule.talk.talk_type == 'Long Talk' %}
-                                                    <img class="rounded-circle g-width-30 g-height-30" title="{{ schedule.talk.talk_type }}" src="https://res.cloudinary.com/pycon-africa/image/upload/v1722881110/website_storage_location/media/speaker.png" alt="Speaker">
-                                                {% elif schedule.talk.talk_type == 'Tutorial' %}
-                                                    <img class="rounded-circle g-width-30 g-height-30" title="Tutorial" src="https://res.cloudinary.com/pycon-africa/image/upload/v1722881110/website_storage_location/media/workshop.png" alt="Tutorial">
-                                                {% elif schedule.talk.talk_type == 'Sponsored Talk' %}
-                                                    <img class="rounded-circle g-width-30 g-height-30" title="Sponsored Talk" src="https://res.cloudinary.com/pycon-africa/image/upload/v1726054543/website_storage_location/media/sponortalk.png" alt="Sponsored Talk">
-                                                {% elif schedule.talk.talk_type == 'Keynote Speaker' %}
-                                                    <img class="rounded-circle g-width-30 g-height-30" title="Keynote Speaker" src="https://res.cloudinary.com/pycon-africa/image/upload/v1722881110/website_storage_location/media/keynote-speaker.png" alt="Keynote Speaker">
-                                                {% endif %}
-                                                {% if schedule.fa_icon %}<i class="{{ schedule.fa_icon }}"></i> {% endif %}
-                                                |  <a href="/2025/talks/{{ schedule.talk.proposal_id }}/detail/">{{ schedule.talk.title }}</a>
-                                            </h5>
-                                            {% endif %}
-                
-                                            <!-- Time & Room Info -->
-                                            <p class="g-color-gray-dark-v2 g-font-size-14 g-font-weight-600">
-                                                <i class="fa-solid fa-clock g-mr-5"></i>Time: {{ schedule.start_time|time:"h:i A" }} - {{ schedule.end_time|time:"h:i A" }} 
-                                                |
-                                                {% if schedule.allocated_room %}
-                                                    <i class="fa fa-map-marker-alt g-mr-5 "></i>Room:  {{ schedule.allocated_room.room_name }} 
-                                                {% endif %}
-                                            </p>
-                
-                                            <!-- Abstract or Description -->
-                                            <p class="g-color-gray-dark-v2 g-font-size-14">
-                                                {% if schedule.is_an_event %}
-                                                    {{ schedule.event_description | truncatechars:150 }}
-                                                {% else %}
-                                                    {{ schedule.talk.talk_abstract | truncatechars:150 }}
-                                                {% endif %}
-                                            </p>
-                                                                                
-                                        <ul class="list-inline my-0">
-                                        {% if schedule.is_an_event %}
-                                        {% else %}
-                                            {% if schedule.talk.user.user_profile.profile_image %}
-                                            <li class="list-inline-item mr-0">
-                                                <img class="g-brd-around g-brd-gray-light-v3 g-pa-2 g-width-40 g-height-40 rounded" 
-                                                     data-toggle="tooltip" 
-                                                     data-placement="top" 
-                                                     title="Speaker:  {{ schedule.talk.user.user_profile.name }} {{ schedule.talk.user.user_profile.surname }}" 
-                                                     src="{{ schedule.talk.user.user_profile.profile_image.url }}" 
-                                                     alt="Speaker Image">
-                                            </li>
-                                            {% else %}
-                                            <li class="list-inline-item mr-0">
-                                                <img class="g-brd-around g-brd-gray-light-v3 g-pa-2 g-width-40 g-height-40 rounded" 
-                                                     data-toggle="tooltip" 
-                                                     data-placement="top" 
-                                                     title="Speaker:  {{ schedule.talk.user.user_profile.name }} {{ schedule.talk.user.user_profile.surname }}" 
-                                                     src="{% static '2025/img/speakers/speaker.png' %}" 
-                                                     alt="Default Image">
-                                            </li>
-                                            {% endif %}
-                                        
-                                        <!-- Speaker's Name -->
-                                        <li class="list-inline-item">
-                                            {{ schedule.talk.user.user_profile.name|default:"PyCon Uganda" }} {{ schedule.talk.user.user_profile.surname|default:"Speaker" }}
-                                        </li>
-
-                                        <!-- Additional Speakers -->
-                                        {% for speaker in schedule.talk.speakers.all %}
-                                            | <li class="list-inline-item mr-0">
-                                                {% if speaker.user_profile.profile_image %}
-                                                    <img class="g-brd-around g-brd-gray-light-v3 g-pa-2 g-width-40 g-height-40 rounded" 
-                                                         data-toggle="tooltip" 
-                                                         data-placement="top" 
-                                                         title="Speaker:  {{ speaker.user_profile.name }} {{ speaker.user_profile.surname }}" 
-                                                         src="{{ speaker.user_profile.profile_image.url }}" 
-                                                         alt="Speaker Image">
-                                                {% else %}
-                                                    <img class="g-brd-around g-brd-gray-light-v3 g-pa-2 g-width-40 g-height-40 rounded" 
-                                                         data-toggle="tooltip" 
-                                                         data-placement="top" 
-                                                         title="Speaker:  {{ speaker.user_profile.name }} {{ speaker.user_profile.surname }}" 
-                                                         src="{% static '2025/img/speakers/speaker.png' %}" 
-                                                         alt="Default Image">
-                                                {% endif %}
-                                            </li>
-                                            <li class="list-inline-item">
-                                                {{ speaker.user_profile.name }} {{ speaker.user_profile.surname }}{% if not forloop.last %}, {% endif %}
-                                            </li>
-                                        {% endfor %}
-                                        {% endif %}
-                                        </ul>
-                                        </div>
-                
-                                        <div class="col-12 col-md-4 text-md-right">
-                                            <!-- Buttons for Talk Type -->
-                                            {% if schedule.talk.talk_type == 'Lightning Talk' or schedule.talk.talk_type == 'Short Talk' or schedule.talk.talk_type == 'Long Talk' %}
-                                            <a class="btn u-btn btn-xs rounded-0 g-mb-5">
-                                                <i class="fa fa-comments g-mr-2"></i>
-                                                Talk
-                                            </a>
-                                            {% elif schedule.talk.talk_type == 'Tutorial' %}
-                                            <a class="btn u-btn btn-xs rounded-0 g-mb-5">
-                                                <i class="fa fa-chalkboard-teacher g-mr-2"></i>
-                                                Tutorial
-                                            </a>
-                                            {% elif schedule.talk.talk_type == 'Sponsored Talk' %}
-                                            <a class="btn u-btn btn-xs rounded-0 g-mb-5">
-                                                <i class="fa fa-bullhorn g-mr-2"></i>
-                                                Sponsored Talk
-                                            </a>
-                                            {% elif schedule.talk.talk_type == 'Keynote Speaker' %}
-                                            <a class="btn u-btn btn-xs rounded-0 g-mb-5">
-                                                <i class="fa fa-microphone g-mr-2"></i>
-                                                Keynote Speaker
-                                            </a> 
-                                            {% else %}
-                                            {% endif %}
-                
-                                            <!-- Concurrent Talk Indicator -->
-                                            {% if schedule.concurrent_talk %}
-                                            <a class="btn u-btn-inset u-btn-yellow btn-xs rounded-0 g-mb-5" data-toggle="tooltip" data-placement="top" title="This session will run concurrently with another session"><i class="fa-sharp fa-solid fa-screen-users"></i> 
-                                            </a>
-                                            {% endif %} 
-                                        {% if schedule.is_a_keynote_speaker %}
-                                        <a class="btn u-btn-inset u-btn-darkred btn-xs rounded-0 g-mb-5" data-toggle="tooltip" data-placement="top" title="This will be a Keynote session"><i class="fa-solid fa-keynote" style="color: #ffffff;"></i></a> 
-                                        {% endif %}
-                                        {% if schedule.is_a_panel %}
-                                        <a class="btn u-btn-inset u-btn-bluegray btn-xs rounded-0 g-mb-5"  data-toggle="tooltip" data-placement="top" title="This Panel Discussion session"><i class="fa-solid fa-users-line" style="color: #ffffff;"></i></a> 
-                                        {% endif %}
-                                        </div>
-                                    </div> 
-                                </li>
-                                {% endfor %}
-                            </ul>
-                            {% else %}
-                                <p>No events or talks scheduled for this day.</p>
-                            {% endif %}
-                                 
-                          </div> 
-                          {% endfor %} 
-
-
-                    </div>
-                    <!-- End Tab panes -->
-                  </div>
-   
-                </div>
-  
-   
-  
+          
+          <div class="schedule-table">
+            <div class="schedule-header">
+              <div class="header-time">Time</div>
+              <div class="header-title">Title</div>
+              <div class="header-speaker">Speaker</div>
+              <div class="header-copy"></div>
+            </div>
+            
+            {% for session in sessions %}
+            <div class="schedule-row {{ session.category }}">
+              <div class="row-time">{{ session.time }}</div>
+              <div class="row-title">{{ session.title }}</div>
+              <div class="row-speaker">
+                {% if session.speaker %}{{ session.speaker }}{% else %}—{% endif %}
+              </div>
+              <div class="row-copy">
+                <button class="copy-btn" onclick="copyToClipboard('{{ session.title }} - {{ session.time }}')">
+                  <i class="fa-regular fa-copy"></i>
+                </button>
               </div>
             </div>
-            <!-- End Primary color, horizontal, navigation justified, rounded corners -->
-   
-      
-          </section>
-          <!-- End Tab v2-1 (accordion) -->
+            {% endfor %}
+          </div>
         </div>
-      </section>
-  
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </div>
 
+    {% else %}
+    <div class="alert alert-warning border-0 shadow-sm text-center">
+      <i class="fa-solid fa-exclamation-triangle me-2"></i>
+      No schedule data available. Please check back later.
+    </div>
+    {% endif %}
+  </div>
+</section>
 
+<style>
+/* Tab Navigation */
+.tab-navigation {
+  margin-bottom: 2rem;
+}
 
+.tab-btn {
+  background-color: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  color: #666;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  margin: 0 6px;
+}
 
+.tab-btn:hover {
+  background-color: #e9ecef;
+  border-color: #ccc;
+}
 
+.tab-btn.active {
+  background-color: #4a5568;
+  color: white;
+  border-color: #4a5568;
+}
 
+/* Tab Content */
+.tab-content-wrapper {
+  min-height: 500px;
+}
+
+.tab-content {
+  display: none;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Day Header */
+.schedule-day-section {
+  background: #2d3748;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.day-header {
+  background: #2d3748;
+  color: white;
+  padding: 20px 30px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.day-icon {
+  font-size: 10px;
+  margin-top: 2px;
+}
+
+.day-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Schedule Table */
+.schedule-table {
+  background: white;
+}
+
+.schedule-header {
+  display: grid;
+  grid-template-columns: 140px 1fr 200px 40px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e2e8f0;
+  font-weight: 600;
+  font-size: 14px;
+  color: #4a5568;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.schedule-header > div {
+  padding: 16px 20px;
+  border-right: 1px solid #e2e8f0;
+}
+
+.schedule-header > div:last-child {
+  border-right: none;
+}
+
+.schedule-row {
+  display: grid;
+  grid-template-columns: 140px 1fr 200px 40px;
+  border-bottom: 1px solid #f1f5f9;
+  transition: background-color 0.2s ease;
+}
+
+.schedule-row:hover {
+  background-color: #f8fafc;
+}
+
+.schedule-row > div {
+  padding: 16px 20px;
+  border-right: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+}
+
+.schedule-row > div:last-child {
+  border-right: none;
+  justify-content: center;
+}
+
+.row-time {
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.row-title {
+  font-size: 14px;
+  color: #1e293b;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.row-speaker {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.copy-btn {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.copy-btn:hover {
+  background-color: #f1f5f9;
+  color: #64748b;
+}
+
+/* Category specific styles for rows */
+.schedule-row.keynote {
+  background-color: #eff6ff;
+}
+
+.schedule-row.keynote .row-title {
+  color: #1e40af;
+  font-weight: 600;
+}
+
+.schedule-row.break {
+  background-color: #f9fafb;
+}
+
+.schedule-row.break .row-title {
+  color: #6b7280;
+  font-style: italic;
+}
+
+.schedule-row.talk .row-title {
+  color: #1e293b;
+}
+
+.schedule-row.tutorial {
+  background-color: #f0fdf4;
+}
+
+.schedule-row.tutorial .row-title {
+  color: #166534;
+  font-weight: 600;
+}
+
+.schedule-row.lightning {
+  background-color: #fffbeb;
+}
+
+.schedule-row.lightning .row-title {
+  color: #92400e;
+}
+
+.schedule-row.logistics {
+  background-color: #f9fafb;
+}
+
+.schedule-row.ceremony {
+  background-color: #fdf4ff;
+}
+
+.schedule-row.ceremony .row-title {
+  color: #a21caf;
+  font-weight: 600;
+}
+
+.schedule-row.announcement {
+  background-color: #fef7ff;
+}
+
+.schedule-row.announcement .row-title {
+  color: #c026d3;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .schedule-header,
+  .schedule-row {
+    grid-template-columns: 120px 1fr 140px 30px;
+  }
+
+  .schedule-header > div,
+  .schedule-row > div {
+    padding: 12px 15px;
+  }
+
+  .day-header {
+    padding: 16px 20px;
+  }
+
+  .day-title {
+    font-size: 18px;
+  }
+
+  .row-time {
+    font-size: 12px;
+  }
+
+  .row-title {
+    font-size: 13px;
+  }
+
+  .row-speaker {
+    font-size: 12px;
+  }
+
+  .tab-btn {
+    padding: 10px 16px;
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 576px) {
+  .schedule-header,
+  .schedule-row {
+    grid-template-columns: 100px 1fr 30px;
+  }
+
+  .header-speaker,
+  .row-speaker {
+    display: none;
+  }
+
+  .schedule-header > div,
+  .schedule-row > div {
+    padding: 10px 12px;
+  }
+
+  .day-header {
+    padding: 14px 16px;
+  }
+
+  .day-title {
+    font-size: 16px;
+  }
+}
+</style>
+
+<script>
+function switchTab(tabId) {
+  const allTabContents = document.querySelectorAll('.tab-content');
+  allTabContents.forEach(content => content.classList.remove('active'));
+  const allTabButtons = document.querySelectorAll('.tab-btn');
+  allTabButtons.forEach(btn => btn.classList.remove('active'));
+  const selectedTabContent = document.getElementById(tabId + '-content');
+  if (selectedTabContent) selectedTabContent.classList.add('active');
+  const selectedButton = document.querySelector(`[data-tab="${tabId}"]`);
+  if (selectedButton) selectedButton.classList.add('active');
+}
+
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(function() {
+    // Optional: Show a brief success message
+    const btn = event.target.closest('.copy-btn');
+    const originalIcon = btn.innerHTML;
+    btn.innerHTML = '<i class="fa-solid fa-check"></i>';
+    btn.style.color = '#22c55e';
+    setTimeout(() => {
+      btn.innerHTML = originalIcon;
+      btn.style.color = '';
+    }, 2000);
+  }).catch(function() {
+    console.log('Failed to copy text');
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+      const activeButton = document.querySelector('.tab-btn.active');
+      const allButtons = [...document.querySelectorAll('.tab-btn')];
+      const currentIndex = allButtons.indexOf(activeButton);
+      let newIndex = e.key === 'ArrowLeft'
+        ? (currentIndex > 0 ? currentIndex - 1 : allButtons.length - 1)
+        : (currentIndex < allButtons.length - 1 ? currentIndex + 1 : 0);
+      const newButton = allButtons[newIndex];
+      if (newButton) {
+        newButton.click();
+        newButton.focus();
+      }
+    }
+  });
+});
+</script>
 
 {% endblock %}
