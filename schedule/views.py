@@ -10,7 +10,7 @@ def schedule(request, year):
                 "MAIN AUDITORIUM": [
                     {"title": "Registration", "time": "8:30 - 9:00", "category": "logistics"},
                     {"title": "Welcome to PyCon Uganda 2025", "time": "9:00 - 9:15", "category": "keynote", "speaker": "-"},
-                    {"title": "Opening Keynote", "time": "9:15 - 10:15", "category": "keynote", "speaker": ""},
+                    {"title": "Opening Keynote", "time": "9:15 - 10:15", "category": "keynote", "speaker": "Dr. Tonny J. Oyana"},
                     {"title": "Coffee/Tea Break", "time": "10:15 - 11:55", "category": "break"},
                     {"title": "Getting Started with MLOps", "time": "11:00 - 11:40", "category": "talk", "speaker": "Rashid Kissejjere"},
                     {"title": "USSD and Python: Bridging the Digital Divide in Africa", "time": "11:45 - 12:15", "category": "talk", "speaker": "Gilbert Chris"},
@@ -21,7 +21,7 @@ def schedule(request, year):
                     {"title": "Voiceflow & Python for User Assistance and Data Collection", "time": "15:30 - 16:00", "category": "talk", "speaker": "Bashir Kassujja"},
                     {"title": "PyChain: Building Decentralized Applications with Python", "time": "16:05 - 16:35", "category": "talk", "speaker": "Oliseh Genesis"},
                     {"title": "Python + GenAI: Building Chatbots and Assistants with LangChain and OpenAI", "time": "16:40 - 17:05", "category": "talk", "speaker": "Charles Moruri"},
-                    {"title": "Closing Keynote", "time": "17:05 - 18:05", "category": "keynote", "speaker": ""},
+                    {"title": "Open Source Panel", "time": "17:05 - 18:05", "category": "keynote", "speaker": "Dorothy Kabarozi (Moderator)"},
                     {"title": "Lightning Talks and Close", "time": "18:10 - 18:30", "category": "lightning"},
                 ]
             },
