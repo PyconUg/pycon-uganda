@@ -42,7 +42,7 @@ def schedule(request, year):
                     {"title": "When Code Becomes Art: Building Animations with Python and Manim", "time": "14:05 - 14:35", "category": "talk", "speaker": "Daniel Mwiine"},
                     {"title": "Simulating MicroPython Projects with Raspberry Pi Pico Using Wokwi", "time": "14:40 - 15:10", "category": "talk", "speaker": "Samuel Lunghe"},
                     {"title": "Deploy Django APIs Fearlessly: Azure Terraform & Postman Power!", "time": "15:15 - 15:45", "category": "talk", "speaker": "Samuel Macharis"},
-                    {"title": "Closing Keynote", "time": "15:45 - 16:45", "category": "keynote", "speaker": ""},
+                    {"title": "Closing Keynote", "time": "15:45 - 16:45", "category": "keynote", "speaker": "Lynn Asiimwe, Software Engineer, Google"},
                     {"title": "PyCon Africa 2026 Announcement", "time": "17:00 - 18:00", "category": "announcement", "speaker": "Brian Kayongo"},
                     {"title": "Closing", "time": "18:00 - 18:30", "category": "ceremony"},
                 ]
