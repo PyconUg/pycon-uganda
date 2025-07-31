@@ -33,7 +33,7 @@ def schedule(request, year):
                 "MAIN HALL": [
                     {"title": "Registration", "time": "8:30 - 9:00", "category": "logistics"},
                     {"title": "Welcome to PyCon Uganda 2025", "time": "9:00 - 9:15", "category": "keynote", "speaker": "Kirabo Atuhurira"},
-                    {"title": "Opening Keynote", "time": "9:15 - 10:15", "category": "keynote", "speaker": ""},
+                    {"title": "Opening Keynote", "time": "9:15 - 10:15", "category": "keynote", "speaker": "Dan Carpenter"},
                     {"title": "Coffee/Tea Break", "time": "10:15 - 11:00", "category": "break"},
                     {"title": "Build single-page apps, without building an API In Django", "time": "11:05 - 11:35", "category": "talk", "speaker": "Afasha Isakiye"},
                     {"title": "Crafting Real-World Agents: Web, Email, and Your Desktop", "time": "11:40 - 12:10", "category": "talk", "speaker": "Edmond Musiitwa"},
