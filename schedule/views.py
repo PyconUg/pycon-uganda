@@ -9,9 +9,9 @@ def schedule(request, year):
             "rooms": {
                 "Seminar Room 1": [
                     {
-                        "title": "Registration",
-                        "time": "8:30 - 9:00",
-                        "category": "logistics",
+                        "title": "Coffee/Tea and Registration",
+                        "time": "8:00 - 8:55",
+                        "category": "break",
                     },
                     {
                         "title": "Beyond the Model: Engineering Intelligent Systems with Python and Kubernetes",
@@ -25,18 +25,14 @@ def schedule(request, year):
                         "category": "keynote",
                         "speaker": "Felix Jumason",
                     },
-                    {
-                        "title": "Lunch",
-                        "time": "13:00 - 14:00",
-                        "category": "break",
-                        "speaker": "PyCon Volunteers",
-                    },
+                    {"title": "Lunch", "time": "13:00 - 14:00", "category": "break"},
                     {
                         "title": "Supercharge Your API Development with FastAPI",
                         "time": "14:00 - 16:30",
                         "category": "talk",
                         "speaker": "Anne Namuli",
                     },
+                    {"title": "Close", "time": "17:00", "category": "ceremony"},
                 ]
             },
         },
@@ -46,9 +42,9 @@ def schedule(request, year):
             "rooms": {
                 "Seminar Room 2": [
                     {
-                        "title": "Registration",
-                        "time": "8:30 - 9:00",
-                        "category": "logistics",
+                        "title": "Coffee/Tea and Registration",
+                        "time": "8:00 - 8:55",
+                        "category": "break",
                     },
                     {
                         "title": "An Introduction to Plotnine: Visualising Data using The Grammar of Graphics",
@@ -56,24 +52,115 @@ def schedule(request, year):
                         "category": "keynote",
                         "speaker": "Hassan Kibirige",
                     },
-                    {
-                        "title": "Lunch",
-                        "time": "12:50 - 13:55",
-                        "category": "break",
-                        "speaker": "PyCon Volunteers",
-                    },
+                    {"title": "Lunch", "time": "13:00 - 14:00", "category": "break"},
                     {
                         "title": "Use Your Python to Create Documents and Reproducible Reports with Quarto",
                         "time": "14:00 - 16:30",
                         "category": "talk",
                         "speaker": "Kirabo Atuhurira",
                     },
+                    {"title": "Close", "time": "17:00", "category": "ceremony"},
                 ]
             },
         },
         {
             "id": "day2",
             "label": "Day 2 (8th August)",
+            "rooms": {
+                "MAIN AUDITORIUM": [
+                    {
+                        "title": "Registration",
+                        "time": "8:30 - 9:00",
+                        "category": "logistics",
+                    },
+                    {
+                        "title": "Welcome to PyCon Uganda 2025",
+                        "time": "9:00 - 9:15",
+                        "category": "keynote",
+                        "speaker": "-",
+                    },
+                    {
+                        "title": "Opening Keynote",
+                        "time": "9:15 - 10:15",
+                        "category": "keynote",
+                        "speaker": "Dr. Tonny J. Oyana",
+                    },
+                    {
+                        "title": "Coffee/Tea Break",
+                        "time": "10:15 - 11:55",
+                        "category": "break",
+                    },
+                    {
+                        "title": "Getting Started with MLOps",
+                        "time": "11:00 - 11:40",
+                        "category": "talk",
+                        "speaker": "Rashid Kissejjere",
+                    },
+                    {
+                        "title": "USSD and Python: Bridging the Digital Divide in Africa",
+                        "time": "11:45 - 12:15",
+                        "category": "talk",
+                        "speaker": "Gilbert Chris",
+                    },
+                    {
+                        "title": "Robots Think in Python: The Language Behind Intelligent Machines",
+                        "time": "12:20 - 12:50",
+                        "category": "talk",
+                        "speaker": "Tirzah Atwiine",
+                    },
+                    {
+                        "title": "Lunch and Group Photo",
+                        "time": "12:50 - 13:55",
+                        "category": "break",
+                        "speaker": "PyCon Volunteers",
+                    },
+                    {
+                        "title": "AI in Cyber Security",
+                        "time": "14:00 - 14:45",
+                        "category": "talk",
+                        "speaker": "George Ssemaganda",
+                    },
+                    {
+                        "title": "Automatic Repair of Security Vulnerabilities in Python Source Code",
+                        "time": "14:50 - 15:20",
+                        "category": "talk",
+                        "speaker": "Steven Kakaire",
+                    },
+                    {
+                        "title": "Voiceflow & Python for User Assistance and Data Collection",
+                        "time": "15:30 - 16:00",
+                        "category": "talk",
+                        "speaker": "Bashir Kassujja",
+                    },
+                    {
+                        "title": "PyChain: Building Decentralized Applications with Python",
+                        "time": "16:05 - 16:35",
+                        "category": "talk",
+                        "speaker": "Oliseh Genesis",
+                    },
+                    {
+                        "title": "Python + GenAI: Building Chatbots and Assistants with LangChain and OpenAI",
+                        "time": "16:40 - 17:05",
+                        "category": "talk",
+                        "speaker": "Charles Moruri",
+                    },
+                    {
+                        "title": "Open Source Panel",
+                        "time": "17:05 - 18:05",
+                        "category": "keynote",
+                        "speaker": "Dorothy Kabarozi (Moderator)",
+                    },
+                    {
+                        "title": "Lightning Talks and Close",
+                        "time": "18:10 - 18:30",
+                        "category": "lightning",
+                    },
+                ]
+            },
+        },
+        {
+            "id": "day3",
+            "label": "Day 3 (9th August)",
             "rooms": {
                 "MAIN HALL": [
                     {
@@ -152,45 +239,6 @@ def schedule(request, year):
                         "time": "18:00 - 18:30",
                         "category": "ceremony",
                     },
-                ]
-            },
-        },
-        {
-            "id": "day3",
-            "label": "Day 3 (9th August - Tutorials Track)",
-            "rooms": {
-                "MAIN HALL": [
-                    {
-                        "title": "Coffee/Tea and Registration",
-                        "time": "8:00 - 8:55",
-                        "category": "break",
-                    },
-                    {
-                        "title": "Beyond the Model: Engineering Intelligent Systems with Python and Kubernetes",
-                        "time": "9:00 - 11:00",
-                        "category": "tutorial",
-                        "speaker": "Ernest Kabahima",
-                    },
-                    {
-                        "title": "Building Serverless Web Apps with Python and AWS Amplify",
-                        "time": "11:00 - 13:00",
-                        "category": "tutorial",
-                        "speaker": "Felix Jumason",
-                    },
-                    {"title": "Lunch", "time": "13:00 - 14:00", "category": "break"},
-                    {
-                        "title": "End-to-End ML Pipelines in Python: From Notebook to Production",
-                        "time": "14:00 - 16:00",
-                        "category": "tutorial",
-                        "speaker": "Wesley Kambale",
-                    },
-                    {
-                        "title": "Supercharge Your API Development with FastAPI",
-                        "time": "16:00 - 18:00",
-                        "category": "tutorial",
-                        "speaker": "Anne Namuli",
-                    },
-                    {"title": "Close", "time": "18:00", "category": "ceremony"},
                 ]
             },
         },
