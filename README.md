@@ -9,7 +9,7 @@ This Repository was bootstraped from a [PyconUg/pycon-africa@ca86f37](https://gi
 1. Before you can run the site, you will need to install these requirements:
 
 * [Python 3.11](https://python.org)
-* [Poetry](https://python-poetry.org/)
+* [uv](https://docs.astral.sh/uv/)
 
 Once those are installed, you can do the following:
 
@@ -19,33 +19,47 @@ Once those are installed, you can do the following:
 Follow the guide on [GitHub Help - Fork a Repo](https://help.github.com/articles/fork-a-repo) to understand how to clone or fork a repo.
 
 
-3. Use poetry to install all the prerequisite Python packages
+3. Use uv to install all the prerequisite Python packages. 
 
 ```
-poetry install 
+uv sync
 ```
 
-4. Get your database set up 
+This will also create the virtual environment with the project name, in which you will run the project. This is under the .venv folder
+
+4. Activate the virtual environment.
+
+For Linux/MacOS
+```
+source .venv/bin/activate
+```
+
+For Windows
+```
+.venv\Scripts\activate.bat
+```
+
+5. Create and populate the environment variables file
+```
+cp .env.example .env
+```
+
+6. Get your database set up 
 
 ```
-# open a poetry shell. This activates the virtual environment associated with the project 
-
-poetry shell
-
-# look at the shell prompt, it will look a little different. This means that the virtual environment is active
-
-# Then run the migrations 
+# run the migrations 
 
 python manage.py migrate 
 ```
 
-5. Now everything is set up; you can run the application
+7. Run the seeder script to add some tables to the database
+```
+python manage.py runscript -v2 seeder.py
+```
+
+8. Now everything is set up; you can run the application
 
 ```
-# If your virtual environment is not active, then activate it
-
-poetry shell
-
 # Run the server 
 
 python manage.py runserver
