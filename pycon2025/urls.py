@@ -23,6 +23,6 @@ urlpatterns = [
     # path('community/pyladies/', view=views.pyladies, name='pyladies'),
     path('community/django-girls/', view=views.django_girls, name='django_girls'),
     path('community/pyladies-wksp/', view=views.pyladies_wksp, name='pyladies_wksp'),   
-    path('community/ngombor/', view=views.ngombor, name='ngombor')
+    # path('community/ngombor/', view=views.ngombor, name='ngombor')
 ]
 
