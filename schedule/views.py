@@ -19,12 +19,12 @@ def schedule(request, year):
                         "category": "",
                         "speaker": "Ernest Kabahima",
                     },
-                    {
-                        "title": "Building Serverless Web Apps with Python and AWS Amplify",
-                        "time": "11:00 - 13:00",
-                        "category": "keynote",
-                        "speaker": "Felix Jumason",
-                    },
+                    # {
+                    #     "title": "Building Serverless Web Apps with Python and AWS Amplify",
+                    #     "time": "11:00 - 13:00",
+                    #     "category": "keynote",
+                    #     "speaker": "Felix Jumason",
+                    # },
                     {"title": "Lunch", "time": "13:00 - 14:00", "category": "break"},
                     {
                         "title": "Supercharge Your API Development with FastAPI",
