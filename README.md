@@ -50,11 +50,19 @@ cp .env.example .env
 # run the migrations 
 
 python manage.py migrate 
+
+# OR
+
+uv run manage.py migrate
 ```
 
 7. Run the seeder script to add some tables to the database
 ```
 python manage.py runscript -v2 seeder.py
+
+# OR 
+
+uv run manage.py runscript -v2 seeder.py
 ```
 
 8. Now everything is set up; you can run the application
