@@ -62,7 +62,7 @@ python manage.py runscript -v2 seeder.py
 ```
 # Run the server 
 
-python manage.py runserver
+uv run manage.py runserver
 
 ```
 
