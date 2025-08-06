@@ -59,7 +59,19 @@ def schedule(request, year):
                         "category": "talk",
                         "speaker": "Kirabo Atuhurira",
                     },
-                    {"title": "Close", "time": "17:00", "category": "ceremony"},
+                    {
+                        "title": "The API-First Approach",
+                        "time": "17:00 - 17:30",
+                        "category": "talk",
+                        "speaker": "Felix Jumason",
+                    },
+                    {
+                        "title": "The Python and the Soul: A Journey of Courage, Mistakes, and Second Chances",
+                        "time": "17:00 - 17:30",
+                        "category": "talk",
+                        "speaker": " Winena Joann",
+                    },
+                    {"title": "Close", "time": "18:00", "category": "ceremony"},
                 ]
             },
         },
@@ -68,8 +80,7 @@ def schedule(request, year):
             "label": "Day 2 (8th August)",
             "rooms": {
                 "MAIN AUDITORIUM": [
-                    
-                     {
+                    {
                         "title": "Coffee/Tea and Registration",
                         "time": "8:00 - 10:00",
                         "category": "break",
@@ -86,7 +97,6 @@ def schedule(request, year):
                         "category": "keynote",
                         "speaker": "Dr. Tonny J. Oyana",
                     },
-                   
                     {
                         "title": "Getting Started with MLOps",
                         "time": "11:00 - 11:40",
@@ -103,7 +113,7 @@ def schedule(request, year):
                         "title": "Robots Think in Python: The Language Behind Intelligent Machines",
                         "time": "12:20 - 12:50",
                         "category": "talk",
-                        "speaker": "Tirzah Atwiine",
+                        "speaker": "Tirzah Atwiine, Diana Nansubuga",
                     },
                     {
                         "title": "Lunch and Group Photo",
@@ -160,7 +170,7 @@ def schedule(request, year):
             "label": "Day 3 (9th August)",
             "rooms": {
                 "MAIN HALL": [
-                     {
+                    {
                         "title": "Coffee/Tea and Registration",
                         "time": "8:00 - 10:00",
                         "category": "break",
@@ -177,7 +187,6 @@ def schedule(request, year):
                         "category": "keynote",
                         "speaker": "Dan Carpenter",
                     },
-                    
                     {
                         "title": "Build single-page apps, without building an API In Django",
                         "time": "11:05 - 11:35",
