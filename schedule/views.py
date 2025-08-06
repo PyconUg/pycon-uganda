@@ -10,15 +10,15 @@ def schedule(request, year):
                 "Seminar Room 1": [
                     {
                         "title": "Coffee/Tea and Registration",
-                        "time": "8:00 - 8:55",
+                        "time": "8:00 - 10:00",
                         "category": "break",
                     },
-                    {
-                        "title": "Beyond the Model: Engineering Intelligent Systems with Python and Kubernetes",
-                        "time": "9:00 - 11:00",
-                        "category": "",
-                        "speaker": "Ernest Kabahima",
-                    },
+                    # {
+                    #     "title": "Beyond the Model: Engineering Intelligent Systems with Python and Kubernetes",
+                    #     "time": "9:00 - 11:00",
+                    #     "category": "",
+                    #     "speaker": "Ernest Kabahima",
+                    # },
                     # {
                     #     "title": "Building Serverless Web Apps with Python and AWS Amplify",
                     #     "time": "11:00 - 13:00",
@@ -43,12 +43,12 @@ def schedule(request, year):
                 "Seminar Room 2": [
                     {
                         "title": "Coffee/Tea and Registration",
-                        "time": "8:00 - 8:55",
+                        "time": "8:00 - 10:00",
                         "category": "break",
                     },
                     {
                         "title": "An Introduction to Plotnine: Visualising Data using The Grammar of Graphics",
-                        "time": "9:00 - 12:30",
+                        "time": "10:15 - 12:30",
                         "category": "keynote",
                         "speaker": "Hassan Kibirige",
                     },
@@ -68,28 +68,25 @@ def schedule(request, year):
             "label": "Day 2 (8th August)",
             "rooms": {
                 "MAIN AUDITORIUM": [
-                    {
-                        "title": "Registration",
-                        "time": "8:30 - 9:00",
-                        "category": "logistics",
+                    
+                     {
+                        "title": "Coffee/Tea and Registration",
+                        "time": "8:00 - 10:00",
+                        "category": "break",
                     },
                     {
                         "title": "Welcome to PyCon Uganda 2025",
-                        "time": "9:00 - 9:15",
+                        "time": "10:15 - 10:30",
                         "category": "keynote",
                         "speaker": "-",
                     },
                     {
                         "title": "Opening Keynote",
-                        "time": "9:15 - 10:15",
+                        "time": "10:30 - 11:00",
                         "category": "keynote",
                         "speaker": "Dr. Tonny J. Oyana",
                     },
-                    {
-                        "title": "Coffee/Tea Break",
-                        "time": "10:15 - 11:55",
-                        "category": "break",
-                    },
+                   
                     {
                         "title": "Getting Started with MLOps",
                         "time": "11:00 - 11:40",
@@ -163,28 +160,24 @@ def schedule(request, year):
             "label": "Day 3 (9th August)",
             "rooms": {
                 "MAIN HALL": [
-                    {
-                        "title": "Registration",
-                        "time": "8:30 - 9:00",
-                        "category": "logistics",
+                     {
+                        "title": "Coffee/Tea and Registration",
+                        "time": "8:00 - 10:00",
+                        "category": "break",
                     },
                     {
                         "title": "Welcome to PyCon Uganda 2025",
-                        "time": "9:00 - 9:15",
+                        "time": "10:15 - 10:30",
                         "category": "keynote",
                         "speaker": "Kirabo Atuhurira",
                     },
                     {
                         "title": "Opening Keynote",
-                        "time": "9:15 - 10:15",
+                        "time": "10:30 - 11:00",
                         "category": "keynote",
                         "speaker": "Dan Carpenter",
                     },
-                    {
-                        "title": "Coffee/Tea Break",
-                        "time": "10:15 - 11:00",
-                        "category": "break",
-                    },
+                    
                     {
                         "title": "Build single-page apps, without building an API In Django",
                         "time": "11:05 - 11:35",
