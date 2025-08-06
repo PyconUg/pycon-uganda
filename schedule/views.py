@@ -210,7 +210,7 @@ def schedule(request, year):
                         "title": "When Code Becomes Art: Building Animations with Python and Manim",
                         "time": "14:05 - 14:35",
                         "category": "talk",
-                        "speaker": "Daniel Mwiine",
+                        "speaker": "Daniel Mwiine, Collins Mesue Asibong",
                     },
                     {
                         "title": "Simulating MicroPython Projects with Raspberry Pi Pico Using Wokwi",
