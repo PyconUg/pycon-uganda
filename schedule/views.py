@@ -13,12 +13,12 @@ def schedule(request, year):
                         "time": "8:00 - 10:00",
                         "category": "break",
                     },
-                    # {
-                    #     "title": "Beyond the Model: Engineering Intelligent Systems with Python and Kubernetes",
-                    #     "time": "9:00 - 11:00",
-                    #     "category": "",
-                    #     "speaker": "Ernest Kabahima",
-                    # },
+                    {
+                        "title": "Use Your Python to Create Documents and Reproducible Reports with Quarto",
+                        "time": "10:15 - 13:00",
+                        "category": "talk",
+                        "speaker": "Kirabo Atuhurira",
+                    },
                     # {
                     #     "title": "Building Serverless Web Apps with Python and AWS Amplify",
                     #     "time": "11:00 - 13:00",
@@ -54,10 +54,10 @@ def schedule(request, year):
                     },
                     {"title": "Lunch", "time": "13:00 - 14:00", "category": "break"},
                     {
-                        "title": "Use Your Python to Create Documents and Reproducible Reports with Quarto",
+                        "title": "Beyond the Model: Engineering Intelligent Systems with Python and Kubernetes",
                         "time": "14:00 - 16:30",
-                        "category": "talk",
-                        "speaker": "Kirabo Atuhurira",
+                        "category": "",
+                        "speaker": "Ernest Kabahima",
                     },
                     {
                         "title": "The API-First Approach",
