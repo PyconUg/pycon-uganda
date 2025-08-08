@@ -158,16 +158,16 @@ def schedule(request, year):
                         "speaker": "Dorothy Kabarozi (Moderator)",
                     },
                     {
-                        "title": "The API-First Approach",
-                        "time": "18:10 - 18:30",
+                        "title": "Lightning Talk: The API-First Approach",
+                        "time": "18:10 - 18:25",
                         "category": "lightning",
                         "speaker": "Felix Jumason",
                     },
                     {
-                        "title": "The Python and the Soul: A Journey of Courage, Mistakes, and Second Chances",
-                        "time": "18:10 - 18:30",
+                        "title": "Lightning Talk: The Python and the Soul: A Journey of Courage, Mistakes, and Second Chances",
+                        "time": "18:10 - 18:25",
                         "category": "lightning",
-                        "speaker": " Winena Joann",
+                        "speaker": " Winena Joann, Gilbert Chris",
                     },
                 ]
             },
