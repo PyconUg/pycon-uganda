@@ -159,13 +159,13 @@ def schedule(request, year):
                     },
                     {
                         "title": "Lightning Talk: The API-First Approach",
-                        "time": "18:10 - 18:25",
+                        "time": "18:10 - 18:15",
                         "category": "lightning",
                         "speaker": "Felix Jumason",
                     },
                     {
                         "title": "Lightning Talk: The Python and the Soul: A Journey of Courage, Mistakes, and Second Chances",
-                        "time": "18:10 - 18:25",
+                        "time": "18:15 - 18:30",
                         "category": "lightning",
                         "speaker": " Winena Joann, Gilbert Chris",
                     },
