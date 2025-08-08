@@ -141,13 +141,13 @@ def schedule(request, year):
                     },
                     {
                         "title": "USSD and Python: Bridging the Digital Divide in Africa",
-                        "time": "11:45 - 12:15",
+                        "time": "16:00 - 16:30",
                         "category": "talk",
                         "speaker": "Gilbert Chris",
                     },
                     {
                         "title": "Python + GenAI: Building Chatbots and Assistants with LangChain and OpenAI",
-                        "time": "16:40 - 17:05",
+                        "time": "16:30 - 17:00",
                         "category": "talk",
                         "speaker": "Charles Moruri",
                     },
