@@ -167,7 +167,7 @@ def schedule(request, year):
                         "title": "Lightning Talk: The Python and the Soul: A Journey of Courage, Mistakes, and Second Chances",
                         "time": "18:15 - 18:30",
                         "category": "lightning",
-                        "speaker": " Winena Joann, Gilbert Chris",
+                        "speaker": " Winena Joann",
                     },
                 ]
             },
