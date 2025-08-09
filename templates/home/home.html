@@ -36,8 +36,7 @@
         </div>
       </div>
     </div>
-    <div class="promo-bg" style="background: url({% static "2025/img/pyconug-pallet.webp"%}) no-repeat;
-    "></div>
+    <div class="promo-bg" style="background: url({% static '2025/img/pyconug-pallet.webp' %}) no-repeat;"></div>
   </div>
 </section>
 
@@ -117,19 +116,38 @@
 
 <section class="sponsor-section">
   <div class="sponsor-container">
-    <!-- Sticky Sponsor Call-to-Action -->
-    <aside class="sponsor-cta">
-      <h1 class="sponsor-title">Sponsors!</h1>
-      <p class="sponsor-description">
-        With  300+ attendees expected, this is your chance to boost
-        brand visibility, connect with top Python professionals, generate
-        leads, and showcase your commitment to the Python community.
-        Encourage your company to sponsor and be a part of this dynamic
-        event!
-      </p>
-      <a href="/2025/sponsor-us/" target="_blank"
-        class="sponsor-button">Sponsor Us!</a>
-    </aside>
+    <!-- Current Sponsors Display -->
+    <div class="current-sponsors" style="display: flex; align-items: flex-start; gap: 40px;">
+      <!-- Sponsor Call-to-Action -->
+      <div class="sponsor-cta" style="flex: 1;">
+        <h1 class="sponsor-title">Sponsors!</h1>
+        <p class="sponsor-description">
+          With  300+ attendees expected, this is your chance to boost
+          brand visibility, connect with top Python professionals, generate
+          leads, and showcase your commitment to the Python community.
+          Encourage your company to sponsor and be a part of this dynamic
+          event!
+        </p>
+        <a href="/2025/sponsor-us/" target="_blank"
+          class="sponsor-button">Sponsor Us!</a>
+      </div>
+
+      <!-- Current Sponsors -->
+      <div class="sponsor-showcase" style="flex: 1;">
+        <h2 class="current-sponsors-title">Our Sponsors</h2>
+        <!-- Gold Sponsor -->
+        <div class="sponsor-tier">
+          <h3 class="sponsor-tier-title" style="color: #000; font-weight: bold; margin-bottom: 15px;">
+            Gold
+          </h3>
+          <div class="sponsor-logo-container" style="background: white; border: 1px solid #000; padding: 20px; border-radius: 5px; display: inline-block;">
+            <a href="https://www.python.org/psf/" target="_blank" class="d-inline-block">
+              <img src="{% static 'psf.png' %}" alt="Python Software Foundation" class="img-fluid" style="max-height: 120px; max-width: 200px; display: block;">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Sponsor List -->
     <div class="sponsor-list">
@@ -232,3 +250,65 @@
 <!-- End Team Blocks -->
 
 {% endblock %}
+
+<style>
+  /* Mobile responsiveness for sponsor section */
+  @media (max-width: 768px) {
+    .current-sponsors {
+      flex-direction: column !important;
+      gap: 20px !important;
+    }
+    
+    .sponsor-cta, .sponsor-showcase {
+      flex: 1 1 100% !important;
+      text-align: center;
+    }
+    
+    .sponsor-logo-container {
+      margin: 0 auto;
+    }
+    
+    .sponsor-title {
+      font-size: 1.5rem !important;
+    }
+    
+    .current-sponsors-title {
+      font-size: 1.25rem !important;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .current-sponsors {
+      gap: 15px !important;
+    }
+    
+    .sponsor-logo-container {
+      padding: 15px !important;
+    }
+    
+    .sponsor-logo-container img {
+      max-height: 100px !important;
+      max-width: 150px !important;
+    }
+    
+    .sponsor-title {
+      font-size: 1.25rem !important;
+    }
+    
+    .sponsor-description {
+      font-size: 0.9rem !important;
+    }
+  }
+  
+  /* Ensure sponsor section has proper spacing */
+  .sponsor-section {
+    margin: 60px 0;
+    padding: 40px 0;
+  }
+  
+  .sponsor-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+</style>
