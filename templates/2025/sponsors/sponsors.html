@@ -9,23 +9,23 @@
 {% include '2025/navbar.html' %} 
 <!-- ========== END HEADER ========== -->
 
-<!-- Breadcrumbs -->
-<section class="g-bg-gray-light-v5 g-py-80 g-pt-150">
-    <div class="container text-center">
-        <h2 class="h2 g-color-black g-font-weight-600">Our Sponsors</h2>
-        <ul class="u-list-inline">
+    <!-- Breadcrumbs -->
+    <section class="g-bg-gray-light-v5 g-py-80 g-pt-150">
+        <div class="container text-center">
+          <h2 class="h2 g-color-black g-font-weight-600">Our Sponsors</h2>
+          <ul class="u-list-inline">
             <li class="list-inline-item g-mr-5">
-                <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="#">Home</a>
+              <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="#">Home</a>
                 <i class="g-color-gray-light-v1 g-ml-5">/</i>
-            </li>
+            </li> 
             <li class="list-inline-item g-color-primary">
                 <span>Sponsors</span>
             </li>
         </ul>
-    </div>
-</section>
-<!-- End Breadcrumbs -->
-
+        </div>
+      </section>
+      <!-- End Breadcrumbs --> 
+   
 <!-- Sponsors Section -->
 <section class="g-py-80">
     <div class="container">
@@ -47,8 +47,8 @@
                                             <img src="{% static sponsor.logo %}" alt="{{ sponsor.name }}" class="img-fluid" style="max-height: 150px; max-width: 250px;">
                                         </a>
                                     </div>
-                                </div>
-                            {% endfor %}
+                                    </div>
+                                    {% endfor %}
                         </div>
                     </div>
                 {% endif %}
@@ -62,8 +62,8 @@
                 </a>
             </div>
         {% endif %}
-    </div>
-</section>
+        </div>
+    </section>
 <!-- End Sponsors Section -->
-
+   
 {% endblock %}
