@@ -4,14 +4,14 @@
   {% if page %}
     {{ page.meta_title }}
   {% else %}
-    {% trans "Team || PyCon Uganda" %}
+    {% trans "Team || PyCon Africa" %}
   {% endif %}
 {% endblock %}
 
 {% block content %}
 
 <!-- ========== HEADER ========== -->
-{% include '2025/navbar.html' %}
+{% include '2026/navbar.html' %}
 <!-- ========== END HEADER ========== -->
 
 <!-- Breadcrumbs -->
@@ -21,11 +21,11 @@
 
     <ul class="u-list-inline">
       <li class="list-inline-item g-mr-5">
-        <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="/2025/">Home</a>
+        <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="/2026/">Home</a>
         <i class="g-color-gray-light-v2 g-ml-5">/</i>
       </li>
       <li class="list-inline-item g-mr-5">
-        <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="/2025/about/">About Us</a>
+        <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="/2026/about/">About Us</a>
         <i class="g-color-gray-light-v2 g-ml-5">/</i>
       </li>
       <li class="list-inline-item g-color-primary">
@@ -42,14 +42,14 @@
   <div class="row">
     <div class="u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30 g-mb-20 col-md-12">
       <p class="g-color-black g-font-size-16">
-        PyCon Uganda is organized by a multi-national team of volunteers on behalf of the global Python
+        PyCon Africa is organized by a multi-national team of volunteers on behalf of the global Python
         programming community. This page will list all the committees and their members to highlight
-        their involvement with the PyCon Uganda {{ event_year.year }} conference.
+        their involvement with the PyCon Africa {{ event_year.year }} conference.
       </p>
 
       <p class="g-font-size-16">
         <em>Speaking of involvement:</em>&nbsp;<strong>We can always use more help</strong>. If you're interested, please send a mail to the&nbsp;
-        <a href="mailto:team@pycon.ug">PyCon Uganda Team</a>. Many thanks!
+        <a href="mailto:team@pycon.ug">PyCon Africa Team</a>. Many thanks!
       </p><br>
 
       <div class="u-divider u-divider-solid u-divider-center g-brd-gray-light-v3 g-my-80">
@@ -62,11 +62,11 @@
           <!-- International Organizing Committee -->
           <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-20 g-mb-30">
             <span class="g-color-primary">
-              PyCon Uganda {{ event_year.year }} International Organizing Committee Members
+              PyCon Africa {{ event_year.year }} International Organizing Committee Members
             </span>
           </h2>
           <p class="g-color-black g-font-size-16">
-            We have an active team, with each member investing a lot of time into the organizing of PyCon Uganda:
+            We have an active team, with each member investing a lot of time into the organizing of PyCon Africa:
           </p>
           <ul>
             {% for item in ioc_groups_with_members %}
@@ -128,7 +128,7 @@
           </div>
           <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-20 g-mb-30">
             <span class="g-color-primary">
-              PyCon Uganda {{ event_year.year }} Local Organizing Committee Members
+              PyCon Africa {{ event_year.year }} Local Organizing Committee Members
             </span>
           </h2>
           {% for item in loc_groups_with_members %} 

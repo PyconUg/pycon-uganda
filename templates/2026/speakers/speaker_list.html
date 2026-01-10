@@ -1,16 +1,16 @@
 {% extends "base.html" %} {% load i18n static avatar_tags crispy_forms_tags
 markdown_extras embed_video_tags %}{% block og_title %} {% if meta_title %} {{
 meta_title }} {% elif page %} {{ page.meta_title }} {% else %} {% trans
-"Speakers | PyCon Uganda" %} {% endif %} {% endblock %} {% block og_description
+"Speakers | PyCon Africa" %} {% endif %} {% endblock %} {% block og_description
 %} {% if meta_description %} {{ meta_description }} {% elif page %} {{
 page.meta_description }} {% else %} {% trans "Meet the incredible speakers at
-PyCon Uganda." %} {% endif %} {% endblock %} {% block twitter_title %} {% if
+PyCon Africa." %} {% endif %} {% endblock %} {% block twitter_title %} {% if
 meta_title %} {{ meta_title }} {% elif page %} {{ page.meta_title }} {% else %}
-{% trans "Speakers | PyCon Uganda" %} {% endif %} {% endblock %} {% block
+{% trans "Speakers | PyCon Africa" %} {% endif %} {% endblock %} {% block
 twitter_description %} {% if meta_description %} {{ meta_description }} {% elif
 page %} {{ page.meta_description }} {% else %} {% trans "Meet the incredible
-speakers at PyCon Uganda." %} {% endif %} {% endblock %} {% block content %} {%
-include '2025/navbar.html' %}
+speakers at PyCon Africa." %} {% endif %} {% endblock %} {% block content %} {%
+include '2026/navbar.html' %}
 
 <!-- Breadcrumbs -->
 <section class="g-bg-gray-light-v5 g-py-80 g-pt-150">
@@ -43,7 +43,7 @@ include '2025/navbar.html' %}
       <p class="g-color-black g-font-size-16">
         <b>Note:</b> Our speaker lineup has not yet been selected. We are still
         accepting talks, you to can be one of speakers.
-        <a href="{% url 'talks:submit_talk' year=2025 %}"
+        <a href="{% url 'talks:submit_talk' year=2026 %}"
           ><span>Submit a talk</span></a
         >
       </p>
@@ -66,7 +66,7 @@ include '2025/navbar.html' %}
               {% else %}
               <img
                 class="u-info-v7-1__item-child-v1 g-width-150 g-height-150 rounded-circle g-mb-20"
-                src="{% static '/2025/img/speakers/speaker.png' %}"
+                src="{% static '/2026/img/speakers/speaker.png' %}"
                 alt="{{ speaker.name }}"
               />
               {% endif %}
@@ -79,7 +79,7 @@ include '2025/navbar.html' %}
               >
               <h4 class="h5 g-color-black-light-v3 g-mb-5 g-font-weight-700">
                 <a
-                  href="{% url 'speakers:speaker_detail' year=2025 profile_id=speaker.profile_id %}"
+                  href="{% url 'speakers:speaker_detail' year=2026 profile_id=speaker.profile_id %}"
                   >{{ speaker.name }} {{ speaker.surname }}</a
                 >
               </h4>
@@ -133,7 +133,7 @@ include '2025/navbar.html' %}
               {% else %}
               <img
                 class="u-info-v7-1__item-child-v1 g-width-100 g-height-100 rounded-circle g-mb-20"
-                src="{% static '/2025/img/speakers/speaker.png' %}"
+                src="{% static '/2026/img/speakers/speaker.png' %}"
                 alt="{{ speaker.name }}"
               />
               {% endif %}
@@ -142,7 +142,7 @@ include '2025/navbar.html' %}
               <!-- Figure Info -->
               <h4 class="h5 g-font-weight-600 mb-1">
                 <a
-                  href="{% url 'speakers:speaker_detail' year=2025 profile_id=speaker.profile_id %}"
+                  href="{% url 'speakers:speaker_detail' year=2026 profile_id=speaker.profile_id %}"
                   >{{ speaker.name }} {{ speaker.surname }}</a
                 >
               </h4>
