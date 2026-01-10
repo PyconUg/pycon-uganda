@@ -18,15 +18,77 @@
 ></script>
 
 <section class="promo">
+  <!-- YouTube Video Background -->
+  <div class="promo-video-background">
+    <iframe
+      src="https://www.youtube.com/embed/icJPsERJ3Ag?autoplay=1&loop=1&playlist=icJPsERJ3Ag&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen
+      class="promo-video-iframe"
+    ></iframe>
+  </div>
+  
+  <!-- Dark Overlay for Readability -->
+  <div class="promo-video-overlay"></div>
+  
   <div class="promo-grid">
     <div class="promo-detail">
       <div class="detail-text">
         <h1 class="promo-title">
-          <span class="text-danger">PyCon</span> Africa 2026
+          <span>PyCon</span> Africa 2026
         </h1>
-        <h1 class="promo-title"></h1>
+        
+        <!-- Tagline -->
+        <h2 class="promo-tagline">Where Africa Builds the Future with Python.</h2>
 
-        <div class="flex space-x-4">
+        <!-- Description with vertical pink bar -->
+        <div class="promo-description-wrapper">
+          <div class="promo-description-bar"></div>
+          <p class="promo-description">
+            Join developers, data scientists, startups, educators, and tech leaders from across Africa and beyond for Africa's largest Python conference, hosted in Uganda.
+          </p>
+        </div>
+
+        <!-- Date and Location Info -->
+        <div class="promo-event-info">
+          <div class="promo-info-item">
+            <i class="fa fa-calendar-alt" aria-hidden="true"></i>
+            <span>7th October - 11th October</span>
+          </div>
+          <div class="promo-info-item">
+            <i class="fa fa-map-marker-alt" aria-hidden="true"></i>
+            <span>Kampala, Uganda</span>
+          </div>
+        </div>
+
+        <!-- Main CTA Buttons -->
+        <div class="promo-main-buttons">
+          <a
+            class="btn promo-btn-learn-more"
+            href="#about"
+            >Learn More</a
+          >
+          <a
+            class="btn promo-btn-get-ticket"
+            target="_self"
+            href="/2026/sponsor-us/"
+            >Sponsor Us</a
+          >
+        </div>
+
+        <!-- Keyword Buttons -->
+        <div class="promo-keyword-buttons">
+          <span class="keyword-btn keyword-learn">Learn</span>
+          <span class="keyword-btn keyword-build">Build</span>
+          <span class="keyword-btn keyword-connect">Connect</span>
+          <span class="keyword-btn keyword-grow">Grow</span>
+        </div>
+
+        <!-- Commented out old content -->
+        <!-- <h1 class="promo-title"></h1> -->
+        
+        <!-- <div class="flex space-x-4">
           <div>
             <span class="font-semibold">Date</span>
             <p class="text-gray-500 md:text-xl text-lg">TBA</p>
@@ -34,12 +96,12 @@
           <div>
             <span class="font-semibold">Venue</span>
             <p class="text-gray-500 md:text-xl text-lg">
-              Ivory Tower, Makerere University
+              Kampala, Uganda
             </p>
           </div>
-        </div>
+        </div> -->
 
-        <div class="promo-buttons">
+        <!-- <div class="promo-buttons">
           <a
             class="btn promo-btn"
             target="_blank"
@@ -52,25 +114,28 @@
             href="https://www.quicket.co.ug/events/309365-pycon-africa-2026/#merchandise"
             >Buy Merch</a
           >
-          <!-- <a class="btn promo-btn" href="/2026/talks/submit_talk/">Submit A Talk</a> -->
+          <a class="btn promo-btn" href="/2026/talks/submit_talk/">Submit A Talk</a>
           <a class="btn promo-btn" target="_self" href="/2026/sponsor-us/"
             >Sponsor Us</a
           >
-        </div>
+        </div> -->
       </div>
     </div>
-    <div
+    <!-- Commented out side image -->
+    <!-- <div
       class="promo-bg"
       style="
         background: url({% static '2026/img/pyconug-pallet.webp' %}) no-repeat;
+        background-size: cover;
+        background-position: center;
       "
-    ></div>
+    ></div> -->
   </div>
 </section>
 
 <!-- End Promo Block -->
 
-<section class="py-5 bg-gray-800 about-section">
+<section id="about" class="py-5 bg-gray-800 about-section">
   <div class="container mx-auto max-w-screen-xl px-4">
     <div class="row">
       <div class="col-md-6 mt-4 col-lg-6 max-w-xl text-white">

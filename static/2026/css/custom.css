@@ -1,20 +1,84 @@
 /* Add here all your css styles (customizations) */
 .promo {
-    background: #fff;
+    background: #2d2d2d;
     min-width: 100vw;
     margin-top: 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* YouTube Video Background */
+.promo-video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.promo-video-iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    /* Scale video to cover entire area while maintaining aspect ratio */
+    width: 100vw;
+    height: 100vh;
+    /* For landscape screens, ensure full width coverage */
+    min-width: 177.77vh; /* 16:9 aspect ratio calculation */
+    /* For portrait screens, ensure full height coverage */
+    min-height: 56.25vw; /* 16:9 aspect ratio calculation */
+}
+
+/* For smaller screens, optimize video coverage */
+@media (max-width: 768px) {
+    .promo-video-iframe {
+        width: 177.77vh;
+        min-width: 100vw;
+        height: 100vh;
+        min-height: 56.25vw;
+    }
+}
+
+/* Gradient Overlay for Readability 
+   Gradient from darker at top to lighter at bottom for better visual effect */
+.promo-video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
+    z-index: 2;
 }
 
 .promo-grid {
     display: grid;
     grid-template-columns: 1fr;
+    min-height: 90vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 3;
 }
 
-@media (min-width: 768px) {
+/* Commented out two-column layout for side image */
+/* @media (min-width: 768px) {
     .promo-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 40% 60%;
+        min-height: 90vh;
     }
 }
+
+@media (min-width: 1200px) {
+    .promo-grid {
+        grid-template-columns: 35% 65%;
+        min-height: 100vh;
+    }
+} */
 
 /* @media (min-width: 1200px) {
     .promo-grid {
@@ -29,6 +93,26 @@
     flex-direction: column;
     justify-content: center;
     padding: 2rem;
+    position: relative;
+    background: transparent;
+    z-index: 3;
+}
+
+@media (min-width: 768px) {
+    .promo-detail {
+        padding: 3rem 4rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .promo-detail {
+        padding: 4rem 5rem;
+    }
+}
+
+.detail-text {
+    position: relative;
+    z-index: 3;
 }
 
 @media (min-width: 1200px) {
@@ -41,16 +125,256 @@
     font-weight: bold;
     font-size: 5rem;
     line-height: 1.2;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.promo-tagline {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 2rem;
+    line-height: 1.4;
+}
+
+@media (min-width: 1200px) {
+    .promo-tagline {
+        font-size: 2.5rem;
+        font-weight: 700;
+    }
+}
+
+.promo-description-wrapper {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    align-items: flex-start;
+}
+
+.promo-description-bar {
+    width: 6px;
+    background-color: #FD6B6B;
+    flex-shrink: 0;
+    align-self: stretch;
+    min-height: 80px;
+}
+
+.promo-description {
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.6;
+    margin: 0;
+    flex: 1;
+}
+
+@media (min-width: 1200px) {
+    .promo-description {
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+}
+
+.promo-event-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.promo-info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.promo-info-item i {
+    font-size: 1.125rem;
+    color: #fff;
+    width: 20px;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .promo-event-info {
+        flex-direction: row;
+        gap: 2rem;
+    }
+    
+    .promo-info-item {
+        font-size: 1.125rem;
+    }
+    
+    .promo-info-item i {
+        font-size: 1.25rem;
+    }
+}
+
+.promo-main-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.promo-btn-learn-more {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.375rem;
+    color: #fff;
+    background-color: #ff6b6b;
+    padding: 1.25rem 2.75rem;
+    text-decoration: none;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border-radius: 4px;
+}
+
+.promo-btn-learn-more:hover {
+    background-color: #ff5252;
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+.promo-btn-get-ticket {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.375rem;
     color: #000;
+    background-color: #fff;
+    padding: 1.25rem 2.75rem;
+    text-decoration: none;
+    border: 2px solid #000;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    border-radius: 4px;
+}
+
+.promo-btn-get-ticket:hover {
+    background-color: #000;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.promo-keyword-buttons {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.keyword-btn {
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 20px;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    cursor: default;
+}
+
+.keyword-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.keyword-learn {
+    background-color: #000;
+    border-color: #fff;
+}
+
+.keyword-build {
+    background-color: #ff9800;
+}
+
+.keyword-connect {
+    background-color: #dc3545;
+}
+
+.keyword-grow {
+    background-color: #2196f3;
 }
 
 @media (max-width: 768px) {
     .promo {
         margin-top: 10rem;
     }
+    
+    .promo-grid {
+        min-height: auto;
+    }
+    
+    /* Increase overlay gradient on mobile for better readability */
+    .promo-video-overlay {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.6));
+    }
 
     .promo-title {
         font-size: 3rem;
+    }
+    
+    .promo-tagline {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+    }
+    
+    .promo-description-wrapper {
+        margin-bottom: 1.5rem;
+    }
+    
+    .promo-description {
+        font-size: 1.125rem;
+        font-weight: 500;
+    }
+    
+    .promo-event-info {
+        margin-bottom: 1.5rem;
+        gap: 0.75rem;
+    }
+    
+    .promo-info-item {
+        font-size: 0.9375rem;
+    }
+    
+    .promo-info-item i {
+        font-size: 1rem;
+        width: 18px;
+    }
+    
+    .promo-main-buttons {
+        flex-direction: column;
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .promo-btn-learn-more,
+    .promo-btn-get-ticket {
+        font-size: 1.125rem;
+        padding: 1.125rem 2.25rem;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .promo-keyword-buttons {
+        gap: 0.5rem;
+    }
+    
+    .keyword-btn {
+        font-size: 0.8125rem;
+        padding: 0.4375rem 1rem;
+    }
+    
+    .promo-detail {
+        padding: 1.5rem;
     }
 }
 
@@ -58,6 +382,12 @@
     .promo-title {
         font-size: 6rem;
         line-height: 1.1;
+    }
+    
+    .promo-btn-learn-more,
+    .promo-btn-get-ticket {
+        font-size: 1.5rem;
+        padding: 1.5rem 3.5rem;
     }
 }
 
@@ -114,7 +444,8 @@
     border-color: #177e89;
 }
 
-.promo-bg {
+/* Commented out side image background styles */
+/* .promo-bg {
     display: none;
 }
 
@@ -122,15 +453,17 @@
     .promo-bg {
         display: block;
         background-size: cover;
-        height: 90vh;
+        background-position: center;
+        height: 100%;
+        min-height: 90vh;
     }
 }
 
 @media (min-width: 1200px) {
     .promo-bg {
-        height: 100vh;
+        min-height: 100vh;
     }
-}
+} */
 
 
 .bg-section {
