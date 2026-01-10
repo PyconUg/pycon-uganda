@@ -1,7 +1,16 @@
-{% extends "base.html" %} {% load i18n static sponsors_tags keynotes_tag
-schedule_tags %} {% block meta_title %}{% if page %}{{ page.meta_title }}{% else
-%}{% trans "Home | PyCon Africa 2026" %}{% endif %}{% endblock %} {% block
-content %} {% include '2026/navbar.html' %}
+{% extends "base.html" %}
+{% load i18n static sponsors_tags keynotes_tag schedule_tags %}
+
+{% block meta_title %}
+  {% if page %}
+    {{ page.meta_title }}
+  {% else %}
+    {% trans "Home | PyCon Africa 2026" %}
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+{% include '2026/navbar.html' %}
 
 <script
   src="//code.tidio.co/00hkw5reeffaallvkbjizeykysxulx6p.js"
@@ -53,7 +62,7 @@ content %} {% include '2026/navbar.html' %}
     <div
       class="promo-bg"
       style="
-        background: url({%static'2026/img/pyconug-pallet.webp'%}) no-repeat;
+        background: url({% static '2026/img/pyconug-pallet.webp' %}) no-repeat;
       "
     ></div>
   </div>
