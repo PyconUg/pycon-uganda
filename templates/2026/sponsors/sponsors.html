@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% load i18n static markdown_extras %}
 
-{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Sponsors || PyCon Uganda" %}{% endif %}{% endblock %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Sponsors || PyCon Africa" %}{% endif %}{% endblock %}
 
 {% block content %}
 
 <!-- ========== HEADER ========== --> 
-{% include '2025/navbar.html' %} 
+{% include '2026/navbar.html' %} 
 <!-- ========== END HEADER ========== -->
 
     <!-- Breadcrumbs -->
@@ -56,7 +56,7 @@
         {% else %}
             <div class="text-center">
                 <h3 class="h4 g-color-gray-dark-v3 g-font-weight-400">No sponsors yet</h3>
-                <p class="g-color-gray-dark-v4">We're working on securing sponsors for PyCon Uganda 2025.</p>
+                <p class="g-color-gray-dark-v4">We're working on securing sponsors for PyCon Africa 2026.</p>
                 <a href="{% url 'sponsor_us' year %}" class="btn u-btn-primary g-font-size-16 g-py-12 g-px-25 g-mt-20">
                     Become a Sponsor
                 </a>

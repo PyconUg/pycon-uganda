@@ -56,7 +56,7 @@
                             {% if schedule.is_an_event %}
                             <h5 class="text-uppercase g-font-weight-700 g-font-size-16 g-mb-5">
                                 {% if schedule.fa_icon %}<i class="{{ schedule.fa_icon }}"></i> |{% endif %}
-                                <a {% if schedule.event_url %} href="/2025/events/{{ schedule.event_url }}"{% elif schedule.external_url %} href="{{ schedule.external_url }}" target="/" {% endif %}>
+                                <a {% if schedule.event_url %} href="/2026/events/{{ schedule.event_url }}"{% elif schedule.external_url %} href="{{ schedule.external_url }}" target="/" {% endif %}>
                                     {{ schedule.event }}
                                 </a>
                             </h5>
@@ -73,7 +73,7 @@
                                     <img class="rounded-circle g-width-30 g-height-30" title="Keynote Speaker" src="https://res.cloudinary.com/pycon-africa/image/upload/v1722881110/website_storage_location/media/keynote-speaker.png" alt="Keynote Speaker">
                                 {% endif %}
                                 {% if schedule.fa_icon %}<i class="{{ schedule.fa_icon }}"></i> {% endif %}
-                                |  <a href="/2025/talks/{{ schedule.talk.proposal_id }}/detail/">{{ schedule.talk.title }}</a>
+                                |  <a href="/2026/talks/{{ schedule.talk.proposal_id }}/detail/">{{ schedule.talk.title }}</a>
                             </h5>
                             {% endif %}
 
@@ -113,14 +113,14 @@
                                      data-toggle="tooltip" 
                                      data-placement="top" 
                                      title="Speaker:  {{ schedule.talk.user.user_profile.name }} {{ schedule.talk.user.user_profile.surname }}" 
-                                     src="{% static '2025/img/speakers/speaker.png' %}" 
+                                     src="{% static '2026/img/speakers/speaker.png' %}" 
                                      alt="Default Image">
                             </li>
                             {% endif %}
                         
                         <!-- Speaker's Name -->
                         <li class="list-inline-item">
-                            {{ schedule.talk.user.user_profile.name|default:"PyCon Uganda" }} {{ schedule.talk.user.user_profile.surname|default:"Speaker" }}
+                            {{ schedule.talk.user.user_profile.name|default:"PyCon Africa" }} {{ schedule.talk.user.user_profile.surname|default:"Speaker" }}
                         </li>
 
                         <!-- Additional Speakers -->
@@ -138,7 +138,7 @@
                                          data-toggle="tooltip" 
                                          data-placement="top" 
                                          title="Speaker:  {{ speaker.user_profile.name }} {{ speaker.user_profile.surname }}" 
-                                         src="{% static '2025/img/speakers/speaker.png' %}" 
+                                         src="{% static '2026/img/speakers/speaker.png' %}" 
                                          alt="Default Image">
                                 {% endif %}
                             </li>

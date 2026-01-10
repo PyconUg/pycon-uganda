@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% load i18n static avatar_tags crispy_forms_tags markdown_extras embed_video_tags %}
-{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Create Schedule || PyCon Uganda" %}{% endif %}{% endblock %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Create Schedule || PyCon Africa" %}{% endif %}{% endblock %}
 {% trans 'cur_time' as datetime.datetime.now(tz=pytz.timezone(str(settings.TIME_ZONE))) %}
 
 {% block content %}
 
 <!-- ========== HEADER ========== -->
-{% include '2025/navbar.html' %}
+{% include '2026/navbar.html' %}
 <!-- ========== END HEADER ========== -->
  
 
@@ -16,7 +16,7 @@
         <h1 class="h2 g-color-black g-font-weight-600">Create Schedule</h1> 
         <ul class="u-list-inline">
           <li class="list-inline-item g-mr-5">
-            <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="/2025/">Home</a>
+            <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="/2026/">Home</a>
             <i class="g-color-gray-light-v2 g-ml-5">/</i>
           </li> 
           <li class="list-inline-item g-mr-5">
@@ -24,7 +24,7 @@
             <i class="g-color-gray-light-v2 g-ml-5">/</i>
           </li> 
           <li class="list-inline-item g-mr-5">
-            <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="/2025/schedule/">Our Schedule</a>
+            <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="/2026/schedule/">Our Schedule</a>
             <i class="g-color-gray-light-v2 g-ml-5">/</i>
           </li> 
           <li class="list-inline-item g-color-primary">
@@ -102,7 +102,7 @@
                       {% endif %} 
                       <!-- Review Talks -->
                       {% if perms.schedule.add_talkschedule or perms.schedule.change_talkschedule %}
-                      <a href="{% url 'conference_schedule:create_talk_schedule' year=2025 %}" class="list-group-item list-group-item-action justify-content-between active">
+                      <a href="{% url 'conference_schedule:create_talk_schedule' year=2026 %}" class="list-group-item list-group-item-action justify-content-between active">
                           <span><i class="fa-solid fa-calendar-week g-pos-rel g-top-1 g-mr-8"></i> Create/Add to the Schedule</span>
                       </a> 
                   {% endif %}   

@@ -8,7 +8,7 @@
     {% if meta_title %}
         {{ meta_title }}
     {% else %}
-        Speaker | PyCon Uganda
+        Speaker | PyCon Africa
     {% endif %}
 {% endblock %} 
 
@@ -33,7 +33,7 @@
 {% endblock %}
 
 {% block og_site_name %}
-    PyCon Uganda
+    PyCon Africa
 {% endblock %}
 
 {% block twitter_title %}
@@ -49,7 +49,7 @@
 {% endblock %}
 
 {% block twitter_site %}
-    @pyconuganda
+    @pyconafrica
 {% endblock %}
 
 
@@ -59,7 +59,7 @@
 
 
 {% block content %} 
-{% include '2025/navbar.html' %}
+{% include '2026/navbar.html' %}
 
 
     <!-- Breadcrumbs -->
@@ -73,7 +73,7 @@
             <i class="g-color-gray-light-v2 g-ml-5">/</i>
           </li>  
           <li class="list-inline-item g-mr-5">
-            <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="/2025/speakers/">Speakers</a>
+            <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="/2026/speakers/">Speakers</a>
             <i class="g-color-gray-light-v2 g-ml-5">/</i>
           </li>  
           <li class="list-inline-item g-color-primary">
@@ -99,7 +99,7 @@
                         {% if speaker.profile_image %}
                         <img class="w-100" src="{{ speaker.profile_image.url }}" alt="{{ speaker.name|capfirst }} Profile Picture">
                         {% else %}
-                        <img class="w-100" src="{% static '/2025/img/speakers/speaker.png' %}" alt="{{ speaker.profile_image }}">
+                        <img class="w-100" src="{% static '/2026/img/speakers/speaker.png' %}" alt="{{ speaker.profile_image }}">
                         {% endif %}
                     </div>
                     <!-- End Figure Image -->
@@ -182,7 +182,7 @@
                         <div class="media-body">
                             <div class="d-flex justify-content-between">
                                 <h5 class="h4 g-font-weight-600 g-color-black">
-                                    <a href="/2025/talks/{{ talk.proposal_id }}/detail/">{{ talk.title }}</a>
+                                    <a href="/2026/talks/{{ talk.proposal_id }}/detail/">{{ talk.title }}</a>
                                 </h5>
                                 <span class="small text-nowrap g-color-black">{{  schedules.start_time.time|time:"h:iA" }}</span>
                             </div>
@@ -227,12 +227,12 @@
                                 {% if speaker.profile_image %}
                                 <img class="g-width-50 g-height-50 rounded-circle" src="{{ speaker.profile_image.url }}" alt="{{ speaker.name }}">
                                 {% else %}
-                                <img class="g-width-50 g-height-50 rounded-circle" src="{% static '/2025/img/speakers/speaker.png' %}" alt="{{ speaker.name }}">
+                                <img class="g-width-50 g-height-50 rounded-circle" src="{% static '/2026/img/speakers/speaker.png' %}" alt="{{ speaker.name }}">
                                 {% endif %}
                             </div>
                             <div class="align-self-center g-px-10">
                                 <h5 class="h6 g-font-weight-600 g-color-black g-mb-3">
-                                    <span class="g-mr-5"><a href="{% url 'speakers:speaker_detail' year=2025 profile_id=speaker.profile_id %}">{{ speaker.name }} {{ speaker.surname }}</a></span>
+                                    <span class="g-mr-5"><a href="{% url 'speakers:speaker_detail' year=2026 profile_id=speaker.profile_id %}">{{ speaker.name }} {{ speaker.surname }}</a></span>
                                 </h5>
                                 <small class="g-font-size-12 g-color-black">{{ speaker.profession|truncatewords:2 }}</small>
                             </div>
