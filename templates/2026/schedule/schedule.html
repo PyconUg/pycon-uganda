@@ -1,0 +1,436 @@
+{% extends "base.html" %}
+{% load i18n static markdown_extras %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Schedule | PyCon Uganda 2025" %}{% endif %}{% endblock %}
+
+{% block content %}
+{% include '2025/navbar.html' %}
+
+<!-- Breadcrumbs -->
+<section class="g-bg-gray-light-v5 g-py-80 g-pt-150">
+  <div class="container text-center">
+    <h2 class="h2 g-color-black g-font-weight-600">PyCon Uganda 2025 Schedule</h2>
+
+    <ul class="u-list-inline">
+      <li class="list-inline-item g-mr-5">
+        <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="/">Home</a>
+        <i class="g-color-gray-light-v2 g-ml-5">/</i>
+      </li>
+      <li class="list-inline-item g-color-primary">
+        <span>Schedule</span>
+      </li>
+    </ul>
+    <br />
+    <i class="fa-solid fa-calendar-alt" style="font-size: 41px;"></i>
+  </div>
+</section>
+<!-- End Breadcrumbs -->
+
+<!-- Schedule Section -->
+<section class="g-py-80">
+  <div class="container-fluid col-xl-10 col-lg-12 col-md-12 col-sm-12">
+    {% if tabs %}
+    
+    <!-- Tab Navigation -->
+    <div class="row justify-content-center mb-4">
+      <div class="col-12">
+        <div class="tab-navigation d-flex flex-wrap justify-content-center gap-2">
+          {% for tab in tabs %}
+          <button 
+            class="tab-btn {% if forloop.first %}active{% endif %}"
+            data-tab="{{ tab.id }}"
+            onclick="switchTab('{{ tab.id }}')">
+            {{ tab.label }}
+          </button>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab Content -->
+    <div class="tab-content-wrapper">
+      {% for tab in tabs %}
+      <div class="tab-content {% if forloop.first %}active{% endif %}" id="{{ tab.id }}-content">
+        {% for room, sessions in tab.rooms.items %}
+        <div class="schedule-day-section mb-5">
+          <div class="day-header">
+            <div class="day-icon">
+    <i class="fa-solid fa-calendar-alt" ></i>
+            </div>
+            <h3 class="day-title">{{ tab.label }} – {{ room }}</h3>
+          </div>
+          
+          <div class="schedule-table">
+            <div class="schedule-header">
+              <div class="header-time">Time</div>
+              <div class="header-title">Title</div>
+              <div class="header-speaker">Speaker</div>
+              <div class="header-copy"></div>
+            </div>
+            
+            {% for session in sessions %}
+            <div class="schedule-row {{ session.category }}">
+              <div class="row-time">{{ session.time }}</div>
+              <div class="row-title">{{ session.title }}</div>
+              <div class="row-speaker">
+                {% if session.speaker %}{{ session.speaker }}{% else %}—{% endif %}
+              </div>
+              <div class="row-copy">
+                <button class="copy-btn" onclick="copyToClipboard('{{ session.title }} - {{ session.time }}')">
+                  <i class="fa-regular fa-copy"></i>
+                </button>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+
+    {% else %}
+    <div class="alert alert-warning border-0 shadow-sm text-center">
+      <i class="fa-solid fa-exclamation-triangle me-2"></i>
+      No schedule data available. Please check back later.
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+/* Tab Navigation */
+.tab-navigation {
+  margin-bottom: 2rem;
+}
+
+.tab-btn {
+  background-color: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  color: #666;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  margin: 0 6px;
+}
+
+.tab-btn:hover {
+  background-color: #e9ecef;
+  border-color: #ccc;
+}
+
+.tab-btn.active {
+  background-color: #4a5568;
+  color: white;
+  border-color: #4a5568;
+}
+
+/* Tab Content */
+.tab-content-wrapper {
+  min-height: 500px;
+}
+
+.tab-content {
+  display: none;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Day Header */
+.schedule-day-section {
+  background: #2d3748;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.day-header {
+  background: #2d3748;
+  color: white;
+  padding: 20px 30px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.day-icon {
+  font-size: 10px;
+  margin-top: 2px;
+}
+
+.day-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Schedule Table */
+.schedule-table {
+  background: white;
+}
+
+.schedule-header {
+  display: grid;
+  grid-template-columns: 140px 1fr 200px 40px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e2e8f0;
+  font-weight: 600;
+  font-size: 14px;
+  color: #4a5568;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.schedule-header > div {
+  padding: 16px 20px;
+  border-right: 1px solid #e2e8f0;
+}
+
+.schedule-header > div:last-child {
+  border-right: none;
+}
+
+.schedule-row {
+  display: grid;
+  grid-template-columns: 140px 1fr 200px 40px;
+  border-bottom: 1px solid #f1f5f9;
+  transition: background-color 0.2s ease;
+}
+
+.schedule-row:hover {
+  background-color: #f8fafc;
+}
+
+.schedule-row > div {
+  padding: 16px 20px;
+  border-right: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+}
+
+.schedule-row > div:last-child {
+  border-right: none;
+  justify-content: center;
+}
+
+.row-time {
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.row-title {
+  font-size: 14px;
+  color: #1e293b;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.row-speaker {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.copy-btn {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.copy-btn:hover {
+  background-color: #f1f5f9;
+  color: #64748b;
+}
+
+/* Category specific styles for rows */
+.schedule-row.keynote {
+  background-color: #eff6ff;
+}
+
+.schedule-row.keynote .row-title {
+  color: #1e40af;
+  font-weight: 600;
+}
+
+.schedule-row.break {
+  background-color: #f9fafb;
+}
+
+.schedule-row.break .row-title {
+  color: #6b7280;
+  font-style: italic;
+}
+
+.schedule-row.talk .row-title {
+  color: #1e293b;
+}
+
+.schedule-row.tutorial {
+  background-color: #f0fdf4;
+}
+
+.schedule-row.tutorial .row-title {
+  color: #166534;
+  font-weight: 600;
+}
+
+.schedule-row.lightning {
+  background-color: #fffbeb;
+}
+
+.schedule-row.lightning .row-title {
+  color: #92400e;
+}
+
+.schedule-row.logistics {
+  background-color: #f9fafb;
+}
+
+.schedule-row.ceremony {
+  background-color: #fdf4ff;
+}
+
+.schedule-row.ceremony .row-title {
+  color: #a21caf;
+  font-weight: 600;
+}
+
+.schedule-row.announcement {
+  background-color: #fef7ff;
+}
+
+.schedule-row.announcement .row-title {
+  color: #c026d3;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .schedule-header,
+  .schedule-row {
+    grid-template-columns: 120px 1fr 140px 30px;
+  }
+
+  .schedule-header > div,
+  .schedule-row > div {
+    padding: 12px 15px;
+  }
+
+  .day-header {
+    padding: 16px 20px;
+  }
+
+  .day-title {
+    font-size: 18px;
+  }
+
+  .row-time {
+    font-size: 12px;
+  }
+
+  .row-title {
+    font-size: 13px;
+  }
+
+  .row-speaker {
+    font-size: 12px;
+  }
+
+  .tab-btn {
+    padding: 10px 16px;
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 576px) {
+  .schedule-header,
+  .schedule-row {
+    grid-template-columns: 100px 1fr 30px;
+  }
+
+  .header-speaker,
+  .row-speaker {
+    display: none;
+  }
+
+  .schedule-header > div,
+  .schedule-row > div {
+    padding: 10px 12px;
+  }
+
+  .day-header {
+    padding: 14px 16px;
+  }
+
+  .day-title {
+    font-size: 16px;
+  }
+}
+</style>
+
+<script>
+function switchTab(tabId) {
+  const allTabContents = document.querySelectorAll('.tab-content');
+  allTabContents.forEach(content => content.classList.remove('active'));
+  const allTabButtons = document.querySelectorAll('.tab-btn');
+  allTabButtons.forEach(btn => btn.classList.remove('active'));
+  const selectedTabContent = document.getElementById(tabId + '-content');
+  if (selectedTabContent) selectedTabContent.classList.add('active');
+  const selectedButton = document.querySelector(`[data-tab="${tabId}"]`);
+  if (selectedButton) selectedButton.classList.add('active');
+}
+
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(function() {
+    // Optional: Show a brief success message
+    const btn = event.target.closest('.copy-btn');
+    const originalIcon = btn.innerHTML;
+    btn.innerHTML = '<i class="fa-solid fa-check"></i>';
+    btn.style.color = '#22c55e';
+    setTimeout(() => {
+      btn.innerHTML = originalIcon;
+      btn.style.color = '';
+    }, 2000);
+  }).catch(function() {
+    console.log('Failed to copy text');
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+      const activeButton = document.querySelector('.tab-btn.active');
+      const allButtons = [...document.querySelectorAll('.tab-btn')];
+      const currentIndex = allButtons.indexOf(activeButton);
+      let newIndex = e.key === 'ArrowLeft'
+        ? (currentIndex > 0 ? currentIndex - 1 : allButtons.length - 1)
+        : (currentIndex < allButtons.length - 1 ? currentIndex + 1 : 0);
+      const newButton = allButtons[newIndex];
+      if (newButton) {
+        newButton.click();
+        newButton.focus();
+      }
+    }
+  });
+});
+</script>
+
+{% endblock %}

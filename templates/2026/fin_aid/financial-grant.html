@@ -1,0 +1,52 @@
+<!-- financial-grant.html -->
+<div id="shortcode32">
+    <div class="shortcode-html">
+      <div class="g-bg-img-hero" style="background-image: url(../../assets/include/svg/svg-bg3.svg);">
+        <div class="container g-pt-60 g-pb-30">
+          <div class="row justify-content-lg-center align-items-md-center">
+            <div class="col-md-9 col-lg-7 g-mb-30">
+              <!-- Media -->
+              <div class="media align-items-center g-pr-15--lg">
+                <div class="d-flex mr-5">
+                  <span class="u-icon-v3 u-icon-size--lg g-color-primary g-bg-primary-opacity-0_1 rounded-circle">
+                    <i class="fa-solid fa-hands-holding-heart" style="font-size:41px;"></i>
+                  </span>
+                </div>
+                <div class="media-body">
+                  {% for status in fin_aid_status %}
+                    {% if status.is_open %}
+                      <h3 class="h2">Our Opportunity Grant is now open.</h3>
+                      <p>PyCon Uganda 2025 is offering grants to attendees and speakers, so
+                        that those who might otherwise not be able to attend won’t hesitate to
+                        participate. Some expenses for the conference attendance (which can
+                        include travel, hotel, registration etc.) will be covered for
+                        opportunity grant recipients. We actively encourage people to apply
+                        for an opportunity grant. While we wish we could give grants to
+                        everyone who applies, we do not have the funds to do that. Our goal is
+                        to maximise the impact our grant program has, within the limited funds
+                        we have.</p>
+                    {% elif status.is_closed %}
+                      <h3 class="h2">Our Opportunity Grant is now <b>closed</b>.</h3>
+                      <p>Thank you for your interest in PyCon Uganda. Unfortunately, our Opportunity assistance programme is now <b>closed</b>. Stay tuned for future opportunities!</p>
+                    {% elif status.not_open_yet %}
+                      <h3 class="h2">Our Opportunity Grant is not open yet.</h3>
+                      <p>Our Opportunity assistance programme is not open yet. Please check back later for more information on how to apply.</p>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              </div>
+              <!-- End Media -->
+            </div>
+            <div class="col-5 col-md-3 col-lg-2 mx-auto g-mx-0--lg g-mb-30">
+               {% if status.is_closed %}
+              <button class="btn btn-block u-shadow-v33 g-color-white g-bg-primary g-bg-main--hover g-rounded-30 g-px-25 g-py-13 disabled" type="button" disabled>Apply now . . .</button>
+            {% else %}
+              <a href="/2025/fin-aid/" class="btn btn-block u-shadow-v33 g-color-white g-bg-primary g-bg-main--hover g-rounded-30 g-px-25 g-py-13">Apply now . . .</a>
+            {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

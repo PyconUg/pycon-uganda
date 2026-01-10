@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% load i18n static markdown_extras %}
+
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Sponsors || PyCon Uganda" %}{% endif %}{% endblock %}
+
+{% block content %}
+
+<!-- ========== HEADER ========== --> 
+{% include '2025/navbar.html' %} 
+<!-- ========== END HEADER ========== -->
+
+    <!-- Breadcrumbs -->
+    <section class="g-bg-gray-light-v5 g-py-80 g-pt-150">
+        <div class="container text-center">
+          <h2 class="h2 g-color-black g-font-weight-600">Our Sponsors</h2>
+          <ul class="u-list-inline">
+            <li class="list-inline-item g-mr-5">
+              <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="#">Home</a>
+                <i class="g-color-gray-light-v1 g-ml-5">/</i>
+            </li> 
+            <li class="list-inline-item g-color-primary">
+                <span>Sponsors</span>
+            </li>
+        </ul>
+        </div>
+      </section>
+      <!-- End Breadcrumbs --> 
+   
+<!-- Sponsors Section -->
+<section class="g-py-80">
+    <div class="container">
+        {% if has_sponsors %}
+            {% for tier in sponsors_data %}
+                {% if tier.sponsors %}
+                    <div class="g-mb-60">
+                        <h3 class="h3 g-color-black g-font-weight-600 text-center g-mb-50">
+                            {% if tier.id == "gold" %}
+                                <i class="fa-duotone fa-medal g-color-warning g-mr-10"></i>
+                            {% endif %}
+                            {{ tier.label }}
+                        </h3>
+                        <div class="row justify-content-center">
+                            {% for sponsor in tier.sponsors %}
+                                <div class="col-lg-3 col-md-4 col-sm-6 g-mb-30">
+                                    <div class="text-center">
+                                        <a href="{{ sponsor.website }}" target="_blank" class="d-block">
+                                            <img src="{% static sponsor.logo %}" alt="{{ sponsor.name }}" class="img-fluid" style="max-height: 150px; max-width: 250px;">
+                                        </a>
+                                    </div>
+                                    </div>
+                                    {% endfor %}
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            <div class="text-center">
+                <h3 class="h4 g-color-gray-dark-v3 g-font-weight-400">No sponsors yet</h3>
+                <p class="g-color-gray-dark-v4">We're working on securing sponsors for PyCon Uganda 2025.</p>
+                <a href="{% url 'sponsor_us' year %}" class="btn u-btn-primary g-font-size-16 g-py-12 g-px-25 g-mt-20">
+                    Become a Sponsor
+                </a>
+            </div>
+        {% endif %}
+        </div>
+    </section>
+<!-- End Sponsors Section -->
+   
+{% endblock %}
