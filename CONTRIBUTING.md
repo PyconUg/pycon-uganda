@@ -65,7 +65,7 @@ uv sync
 With an active virtual environment, run the command below while in the root project directory to apply the current migrations to your database. By default, the migrations will be applied to an SQLite Database that will be autocreated in your root project directory.
 
 ```sh
-python3 manage.py shell < seeder.py  
+uv run manage.py shell < seeder.py  
 ```
 
 ### 4. Environment Variables
