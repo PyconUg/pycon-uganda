@@ -4,6 +4,57 @@
     min-width: 100vw;
     margin-top: 4rem;
     position: relative;
+    overflow: hidden;
+}
+
+/* YouTube Video Background */
+.promo-video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.promo-video-iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    /* Scale video to cover entire area while maintaining aspect ratio */
+    width: 100vw;
+    height: 100vh;
+    /* For landscape screens, ensure full width coverage */
+    min-width: 177.77vh; /* 16:9 aspect ratio calculation */
+    /* For portrait screens, ensure full height coverage */
+    min-height: 56.25vw; /* 16:9 aspect ratio calculation */
+}
+
+/* For smaller screens, optimize video coverage */
+@media (max-width: 768px) {
+    .promo-video-iframe {
+        width: 177.77vh;
+        min-width: 100vw;
+        height: 100vh;
+        min-height: 56.25vw;
+    }
+}
+
+/* Dark Overlay for Readability 
+   Adjust the opacity value (0.0 to 1.0) to make content more or less readable
+   Higher values (closer to 1.0) = darker overlay = more readable text
+   Lower values (closer to 0.0) = lighter overlay = more visible video */
+.promo-video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 2;
 }
 
 .promo-grid {
@@ -12,6 +63,8 @@
     min-height: 90vh;
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
+    z-index: 3;
 }
 
 /* Commented out two-column layout for side image */
@@ -43,8 +96,8 @@
     justify-content: center;
     padding: 2rem;
     position: relative;
-    background: #2d2d2d;
-    z-index: 1;
+    background: transparent;
+    z-index: 3;
 }
 
 @media (min-width: 768px) {
@@ -61,7 +114,7 @@
 
 .detail-text {
     position: relative;
-    z-index: 2;
+    z-index: 3;
 }
 
 @media (min-width: 1200px) {
@@ -219,6 +272,11 @@
     
     .promo-grid {
         min-height: auto;
+    }
+    
+    /* Increase overlay opacity on mobile for better readability */
+    .promo-video-overlay {
+        background: rgba(0, 0, 0, 0.75);
     }
 
     .promo-title {
