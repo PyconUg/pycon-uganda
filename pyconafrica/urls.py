@@ -49,6 +49,7 @@ urlpatterns = [
     ])),
     path('organizers/', admin.site.urls),  
     path('2025/', include('pycon2025.urls')),
+    path('2026/', include('pycon2026.urls')),
 
 #Thrid party Apps 
     path('summernote/', include('django_summernote.urls')),

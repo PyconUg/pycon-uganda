@@ -20,10 +20,10 @@ try:
 
     # Create EventYear
     event_year, created = EventYear.objects.get_or_create(
-        year=2025,
+        year=2026,
         defaults={
-            "home_info": "This is the 2025 event year",
-            "template_path": "home/2025/home.html"
+            "home_info": "This is the 2026 event year",
+            "template_path": "home/2026/home.html"
         }
     )
     

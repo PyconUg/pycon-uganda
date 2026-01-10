@@ -103,6 +103,7 @@ INSTALLED_APPS = [
     'cms',
     "travel_guide",
     "pycon2025",
+    "pycon2026",
     "community"
 ]
 
