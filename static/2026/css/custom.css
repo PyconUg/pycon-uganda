@@ -1,20 +1,33 @@
 /* Add here all your css styles (customizations) */
 .promo {
-    background: #fff;
+    background: #2d2d2d;
     min-width: 100vw;
     margin-top: 4rem;
+    position: relative;
 }
 
 .promo-grid {
     display: grid;
     grid-template-columns: 1fr;
+    min-height: 90vh;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-@media (min-width: 768px) {
+/* Commented out two-column layout for side image */
+/* @media (min-width: 768px) {
     .promo-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 40% 60%;
+        min-height: 90vh;
     }
 }
+
+@media (min-width: 1200px) {
+    .promo-grid {
+        grid-template-columns: 35% 65%;
+        min-height: 100vh;
+    }
+} */
 
 /* @media (min-width: 1200px) {
     .promo-grid {
@@ -29,6 +42,26 @@
     flex-direction: column;
     justify-content: center;
     padding: 2rem;
+    position: relative;
+    background: #2d2d2d;
+    z-index: 1;
+}
+
+@media (min-width: 768px) {
+    .promo-detail {
+        padding: 3rem 4rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .promo-detail {
+        padding: 4rem 5rem;
+    }
+}
+
+.detail-text {
+    position: relative;
+    z-index: 2;
 }
 
 @media (min-width: 1200px) {
@@ -41,16 +74,195 @@
     font-weight: bold;
     font-size: 5rem;
     line-height: 1.2;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.promo-tagline {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 2rem;
+    line-height: 1.4;
+}
+
+@media (min-width: 1200px) {
+    .promo-tagline {
+        font-size: 1.75rem;
+    }
+}
+
+.promo-description-wrapper {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    align-items: flex-start;
+}
+
+.promo-description-bar {
+    width: 4px;
+    background-color: #ff69b4;
+    flex-shrink: 0;
+    align-self: stretch;
+    min-height: 60px;
+}
+
+.promo-description {
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+    flex: 1;
+}
+
+@media (min-width: 1200px) {
+    .promo-description {
+        font-size: 1.125rem;
+    }
+}
+
+.promo-main-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.promo-btn-learn-more {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #ff6b6b;
+    padding: 0.875rem 2rem;
+    text-decoration: none;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border-radius: 4px;
+}
+
+.promo-btn-learn-more:hover {
+    background-color: #ff5252;
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+.promo-btn-get-ticket {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1rem;
     color: #000;
+    background-color: #fff;
+    padding: 0.875rem 2rem;
+    text-decoration: none;
+    border: 2px solid #000;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    border-radius: 4px;
+}
+
+.promo-btn-get-ticket:hover {
+    background-color: #000;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.promo-keyword-buttons {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.keyword-btn {
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 20px;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    cursor: default;
+}
+
+.keyword-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.keyword-learn {
+    background-color: #000;
+    border-color: #fff;
+}
+
+.keyword-build {
+    background-color: #ff9800;
+}
+
+.keyword-connect {
+    background-color: #dc3545;
+}
+
+.keyword-grow {
+    background-color: #2196f3;
 }
 
 @media (max-width: 768px) {
     .promo {
         margin-top: 10rem;
     }
+    
+    .promo-grid {
+        min-height: auto;
+    }
 
     .promo-title {
         font-size: 3rem;
+    }
+    
+    .promo-tagline {
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .promo-description-wrapper {
+        margin-bottom: 1.5rem;
+    }
+    
+    .promo-description {
+        font-size: 0.9375rem;
+    }
+    
+    .promo-main-buttons {
+        flex-direction: column;
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .promo-btn-learn-more,
+    .promo-btn-get-ticket {
+        font-size: 0.9375rem;
+        padding: 0.75rem 1.5rem;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .promo-keyword-buttons {
+        gap: 0.5rem;
+    }
+    
+    .keyword-btn {
+        font-size: 0.8125rem;
+        padding: 0.4375rem 1rem;
+    }
+    
+    .promo-detail {
+        padding: 1.5rem;
     }
 }
 
@@ -114,7 +326,8 @@
     border-color: #177e89;
 }
 
-.promo-bg {
+/* Commented out side image background styles */
+/* .promo-bg {
     display: none;
 }
 
@@ -122,15 +335,17 @@
     .promo-bg {
         display: block;
         background-size: cover;
-        height: 90vh;
+        background-position: center;
+        height: 100%;
+        min-height: 90vh;
     }
 }
 
 @media (min-width: 1200px) {
     .promo-bg {
-        height: 100vh;
+        min-height: 100vh;
     }
-}
+} */
 
 
 .bg-section {
