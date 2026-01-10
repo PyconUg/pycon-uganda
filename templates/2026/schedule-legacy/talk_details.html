@@ -5,7 +5,7 @@
     {% if meta_title %}
         {{ meta_title }}
     {% else %}
-        {{ talk.title }} | PyCon Uganda
+        {{ talk.title }} | PyCon Africa
     {% endif %}
 {% endblock %}
 
@@ -13,7 +13,7 @@
     {% if meta_title %}
         {{ meta_title }}
     {% else %}
-        {{ talk.title }} | PyCon Uganda
+        {{ talk.title }} | PyCon Africa
     {% endif %}
 {% endblock %}
 
@@ -66,18 +66,18 @@
 {% endblock %}
 
 {% block meta_og_site_name %}
-    PyCon Uganda
+    PyCon Africa
 {% endblock %}
 
 {% block og_site_name %}
-    PyCon Uganda
+    PyCon Africa
 {% endblock %}
 
 {% block twitter_title %}
     {% if meta_title %}
         {{ meta_title }}
     {% else %}
-        {{ talk.title }} | PyCon Uganda
+        {{ talk.title }} | PyCon Africa
     {% endif %}
 {% endblock %}
 
@@ -107,7 +107,7 @@
  
 {% block content %} 
 
-{% include '2025/navbar.html' %}
+{% include '2026/navbar.html' %}
 
 
     <!-- Breadcrumbs -->
@@ -121,7 +121,7 @@
             <i class="g-color-gray-light-v2 g-ml-5">/</i>
           </li>  
           <li class="list-inline-item g-mr-5">
-            <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="/2025/schedule/">Schedule</a>
+            <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="/2026/schedule/">Schedule</a>
             <i class="g-color-gray-light-v2 g-ml-5">/</i>
           </li>  
           <li class="list-inline-item g-color-primary">
@@ -184,7 +184,7 @@
                 {% if talk.user.user_profile.profile_image %}
                 <img class="d-flex img-fluid g-width-40 g-height-40 rounded-circle mr-3" src="{{ talk.user.user_profile.profile_image.url }}" alt="Image Description"> 
                 {% else %}  
-                <img class="d-flex img-fluid g-width-40 g-height-40 rounded-circle mr-3" src="{% static '/2025/img/speakers/speaker.png' %}" alt="Image Description"> 
+                <img class="d-flex img-fluid g-width-40 g-height-40 rounded-circle mr-3" src="{% static '/2026/img/speakers/speaker.png' %}" alt="Image Description"> 
                 {% endif %}
                
                 <div class="media-body">
@@ -247,11 +247,11 @@
                     <img class="d-flex g-width-40 g-height-40 rounded-circle mr-3" src="{{ related_talk.user.user_profile.profile_image.url }}" alt="Image Description">
                          
                     {% else %}  
-                    <img class="d-flex g-width-40 g-height-40 rounded-circle mr-3" src="{% static '/2025/img/speakers/speaker.png' %}" alt="Image Description">
+                    <img class="d-flex g-width-40 g-height-40 rounded-circle mr-3" src="{% static '/2026/img/speakers/speaker.png' %}" alt="Image Description">
                          
                     {% endif %}
                       <div class="media-body">
-                          <h4 class="h6 g-color-black g-font-weight-600"><a href="/2025/talks/{{related_talk.proposal_id}}/detail/">{{related_talk.title}}</a></h4>
+                          <h4 class="h6 g-color-black g-font-weight-600"><a href="/2026/talks/{{related_talk.proposal_id}}/detail/">{{related_talk.title}}</a></h4>
                           by {{ related_talk.user.user_profile.name }} {{ related_talk.user.user_profile.surname }}
                            
                           {% if related_talk.intended_audience == "BGN-L" %}
