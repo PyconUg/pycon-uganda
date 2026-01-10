@@ -58,7 +58,7 @@ venv/Scripts/activate
 ```
 Install Requirements
 ```sh
-pip install -r dev.requirements.txt
+uv sync
 ```
 
 ### 3. Seeding your database
@@ -76,13 +76,13 @@ Create a `.env` file at the root folder.
 ### 5. Creating a Super User
 Create a superuser account
 ```sh
-python manage.py createsuperuser
+uv run manage.py createsuperuser
 ```
 
 ### 6. Running the Application
 Run the server by executing the command below
 ```sh
-python manage.py runserver
+uv run manage.py runserver
 ```
 Access the Home Page [http://127.0.0.1:8000]
 Log into the superuser account [http://localhost/accounts/login]
