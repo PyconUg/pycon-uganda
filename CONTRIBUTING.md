@@ -65,7 +65,7 @@ pip install -r dev.requirements.txt
 With an active virtual environment, run the command below while in the root project directory to apply the current migrations to your database. By default, the migrations will be applied to an SQLite Database that will be autocreated in your root project directory.
 
 ```sh
-python3 manage.py shell < seeder.py  
+uv run manage.py shell < seeder.py  
 ```
 
 ### 4. Environment Variables
@@ -76,13 +76,13 @@ Create a `.env` file at the root folder.
 ### 5. Creating a Super User
 Create a superuser account
 ```sh
-python manage.py createsuperuser
+uv run manage.py createsuperuser
 ```
 
 ### 6. Running the Application
 Run the server by executing the command below
 ```sh
-python manage.py runserver
+uv run manage.py runserver
 ```
 Access the Home Page [http://127.0.0.1:8000]
 Log into the superuser account [http://localhost/accounts/login]
