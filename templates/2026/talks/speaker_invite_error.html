@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    {% if error %}
+    <div class="alert alert-danger" role="alert">
+        {{ error }}
+    </div>
+    {% else %}
+    <p>This page is used to send invitations to potential speakers. Please use the form provided to submit an invitation.</p>
+    {% endif %}
+</div>
+{% endblock %}
