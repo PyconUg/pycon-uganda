@@ -876,3 +876,89 @@
     display: block;
   }
 }
+
+/* Navbar Black Background Styling */
+.u-header__section.g-bg-black {
+  background-color: #000 !important;
+}
+
+.navbar-link-white {
+  color: #fff !important;
+}
+
+.navbar-link-white:hover,
+.navbar-link-white:focus {
+  color: #fff !important;
+  opacity: 0.8;
+}
+
+.navbar-nav .nav-link.navbar-link-white {
+  color: #fff !important;
+}
+
+.navbar-nav .nav-link.navbar-link-white:hover {
+  color: #fff !important;
+  opacity: 0.8;
+}
+
+/* Ensure all nav links in black navbar are white */
+.g-bg-black .navbar-nav .nav-link {
+  color: #fff !important;
+}
+
+.g-bg-black .navbar-nav .nav-link:hover {
+  color: #fff !important;
+  opacity: 0.8;
+}
+
+/* Hide Bootstrap's default dropdown caret */
+.navbar-nav .dropdown-toggle::after {
+  display: none !important;
+}
+
+/* Dropdown toggle chevron styling */
+.navbar-nav .dropdown-toggle .fa-chevron-down {
+  font-size: 0.75rem;
+  margin-left: 0.25rem;
+  vertical-align: middle;
+}
+
+/* Dropdown menu styling for black navbar */
+.g-bg-black .dropdown-menu {
+  background-color: #fff;
+  border: none;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.g-bg-black .dropdown-item .nav-link {
+  color: #000 !important;
+}
+
+.g-bg-black .dropdown-item .nav-link:hover {
+  color: #000 !important;
+  background-color: #f8f9fa;
+}
+
+/* Hamburger menu color for black navbar */
+.g-bg-black .hamburger-inner,
+.g-bg-black .hamburger-inner::before,
+.g-bg-black .hamburger-inner::after {
+  background-color: #fff !important;
+}
+
+/* Sponsor page header spacing to account for fixed navbar */
+.sponsor-header-section {
+  margin-top: 80px;
+  padding-top: 120px !important;
+}
+
+@media (max-width: 768px) {
+  .sponsor-header-section {
+    margin-top: 60px;
+    padding-top: 80px !important;
+  }
+  
+  .sponsor-main-title {
+    font-size: 2.5rem !important;
+  }
+}

@@ -12,11 +12,15 @@ def sponsor_us(request, year):
     # Fetch the EventYear instance or raise a 404 error if not found
     event_year = get_object_or_404(EventYear, year=year)
 
-    # Fetch the SponsorUsPage for the specified year or raise a 404 error if not found
-    sponsor_us_page = get_object_or_404(SponsorUsPage, event_year=event_year)
-
-    # Fetch all SponsorshipTier instances for the specified year, ordered by 'display_order'
-    sponsorship_tiers = SponsorshipTier.objects.filter(user=sponsor_us_page.user).order_by('display_order')
+    # Try to fetch the SponsorUsPage for the specified year, but make it optional
+    try:
+        sponsor_us_page = SponsorUsPage.objects.get(event_year=event_year)
+        # Fetch all SponsorshipTier instances for the specified year, ordered by 'display_order'
+        sponsorship_tiers = SponsorshipTier.objects.filter(user=sponsor_us_page.user).order_by('display_order')
+    except SponsorUsPage.DoesNotExist:
+        # If no SponsorUsPage exists, set to None (for static templates)
+        sponsor_us_page = None
+        sponsorship_tiers = []
 
     # Building the context
     context = {
