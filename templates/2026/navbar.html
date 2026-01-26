@@ -1,448 +1,185 @@
-{% load %} {% load static base_extras %}
+{% load static %}
 
-<!-- Header -->
-<header id="js-header" class="u-header u-header--abs-top u-header--show-hide u-header--change-appearance" data-header-fix-moment="500" data-header-fix-effect="slide">
-  <div class="u-header__section g-bg-black g-py-10" style="background-color: #000 !important;">
-<nav class="navbar navbar-expand-md">
-  <div class="container-fluid">
-    <!-- Responsive Toggle Button -->
-    <button class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
-      <span class="hamburger hamburger--slider">
-        <span class="hamburger-box">
-          <span class="hamburger-inner"></span>
-        </span>
-      </span>
-    </button>
-    <!-- End Responsive Toggle Button -->
-
+<header class="bg-black" id="main-header">
+  <div class="navbar-container">
     <!-- Logo -->
-    <a href="/" class="navbar-brand u-header__logo">
-      <img class="u-header__logo-img u-header__logo-img--main img-fluid"
-           src="{% static '2026/img/logo.png' %}" 
-           alt="PyCon Africa 2026"
-           src="{% static '2026/img/logo.png' %}" 
-           alt="PyCon Africa 2026"
-           style="max-width: 150px; height: auto;">
-    </a>
-    <!-- End Logo -->
+    <div>
+      <a href="/">
+        <img src="{% static '2026/img/logo.png' %}" class="navbar-logo-img" alt="PyCon Africa 2026" style="max-width: 150px; height: auto;">
+      </a>
+    </div>
 
-    <!-- Navigation -->
-    <div
-      class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--md"
-      id="navBar"
-    >
-      <ul class="navbar-nav text-uppercase g-font-weight-600 ml-auto">
-        <!-- <li class="nav-item dropdown g-mx-15--lg">
-          <a
-            href="#"
-            class="nav-link dropdown-toggle g-px-0"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-            >About</a
-          > -->
-          <!-- Submenu (Bootstrap) -->
-          <!-- <ul
-            class="dropdown-menu rounded-0 g-text-transform-none g-brd-none g-brd-top g-brd-primary g-brd-top-2 g-mt-20 g-mt-10--lg--scrolling"
-          >
-            <li class="dropdown-item">
-              <a class="nav-link g-px-0 g-color-black" href="/2026/about/"
-              <a class="nav-link g-px-0 g-color-black" href="/2026/about/"
-                >About Us</a
-              > -->
-            </li>
-            <!-- <li class="dropdown-item">
-              <a
-                class="nav-link g-px-0 g-color-black"
-                href="/2026/about/team/"
-                href="/2026/about/team/"
-                >Team</a
-              >
-            </li> -->
-            <!-- <li class="dropdown-item">
-              <a class="nav-link g-px-0 g-color-black" href="/2026/fin-aid/"
-              <a class="nav-link g-px-0 g-color-black" href="/2026/fin-aid/"
-                >Financial Assistance</a
-              >
-            </li> -->
-            <!--
-            <li class="dropdown-item">
-              <a class="nav-link g-px-0 g-color-black" href="/2026/faqs/">FAQs</a>
-              <a class="nav-link g-px-0 g-color-black" href="/2026/faqs/">FAQs</a>
-            </li> 
-            -->
-            <!-- <li class="dropdown-item">
-              <a
-                class="nav-link g-px-0 g-color-black"
-                href="/2026/privacy-policy/"
-                href="/2026/privacy-policy/"
-                >Privacy Policy</a
-              >
-            </li> -->
-          <!-- </ul> -->
-          <!-- End Submenu (Bootstrap) -->
-        <!-- </li> -->
-        <li class="nav-item g-mx-15--lg">
-          <a
-            href="https://pyconug.blogspot.com/"
-            target="/"
-            class="nav-link px-0 navbar-link-white"
-            >Blog</a
-          >
-        </li>
-        <!-- <li class="nav-item g-mx-15--lg">
-          <a href="/2026/schedule/" class="nav-link px-0">Schedule</a>
-          <a href="/2026/schedule/" class="nav-link px-0">Schedule</a>
-        </li> -->
-            <li class="nav-item dropdown g-mx-15--lg">
-              <a
-                href="#"
-                class="nav-link dropdown-toggle g-px-0 navbar-link-white"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Attendee Guide <i class="fa fa-chevron-down"></i>
-              </a>
-              <!-- Submenu (Bootstrap) -->
-              <ul
-                class="dropdown-menu rounded-0 g-text-transform-none g-brd-none g-brd-top g-brd-primary g-brd-top-2 g-mt-20 g-mt-10--lg--scrolling"
-              >
-                <li class="dropdown-item">
-                  <a
-                    class="nav-link g-px-0 g-color-black"
-                    href="/2026/travel-guide/"
-                    href="/2026/travel-guide/"
-                    >Travel Guide</a
-                  >
-                </li>
-                <li class="dropdown-item">
-                  <a
-                    class="nav-link g-px-0 g-color-black"
-                    href="/2026/coc/"
-                    href="/2026/coc/"
-                    >Code of Conduct</a
-                  >
-                </li>
-                
-                <li class="dropdown-item">
-                  <a
-                    class="nav-link g-px-0 g-color-black"
-                    href="/2026/h&g/"
-                    href="/2026/h&g/"
-                    >Health & Safety</a
-                  >
-                </li>
-              </ul>
-              <!-- End Submenu (Bootstrap) -->
-            </li>
-        <!-- <li class="nav-item dropdown g-mx-15--lg">
-          <a
-            href="#"
-            class="nav-link dropdown-toggle g-px-0 navbar-link-white"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            Program <i class="fa fa-chevron-down"></i>
-          </a>
-          Submenu (Bootstrap)
-          <ul
-            class="dropdown-menu rounded-0 g-text-transform-none g-brd-none g-brd-top g-brd-primary g-brd-top-2 g-mt-20 g-mt-10--lg--scrolling"
-          >
-            <li class="dropdown-item">
-              <a
-                class="nav-link g-px-0 g-color-black"
-                href="/2026/speakers/"
-                href="/2026/speakers/"
-                class="mad-ln--independent"
-                >Our Speakers</a
-              >
-            </li>
-            <hr />
-            <li class="dropdown-item">
-              <a
-                class="nav-link g-px-0 g-color-black"
-                href="/2026/talks/speaking/"
-                href="/2026/talks/speaking/"
-                class="mad-ln--independent"
-                >Proposals</a
-              >
-            </li>
-            <li class="dropdown-item">
-              <a
-                class="nav-link g-px-0 g-color-black"
-                href="/2026/schedule/"
-                href="/2026/schedule/"
-                class="mad-ln--independent"
-                >Schedule</a
-              >
-            </li>
-            <li class="dropdown-item">
-              <a
-                class="nav-link g-px-0 g-color-black"
-                href="/2026/talks/submit_talk/"
-                href="/2026/talks/submit_talk/"
-                class="mad-ln--independent"
-                >Submit a Proposal</a
-              >
-            </li>
-            <li class="dropdown-item">
-              <a
-                class="nav-link g-px-0 g-color-black"
-                href="/2026/talks/recording/"
-                href="/2026/talks/recording/"
-                class="mad-ln--independent"
-                >Recording Release</a
-              >
-            </li>
-          </ul>
-          End Submenu (Bootstrap)
-        </li> -->
-        <li class="nav-item dropdown g-mx-15--lg">
-          <a
-            href="#"
-            class="nav-link dropdown-toggle g-px-0 navbar-link-white"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            Sponsor <i class="fa fa-chevron-down"></i></a
-          >
-          <ul
-            class="dropdown-menu rounded-0 g-text-transform-none g-brd-none g-brd-top g-brd-primary g-brd-top-2 g-mt-20 g-mt-10--lg--scrolling"
-          >
-            <li class="dropdown-item">
-              <a
-                class="nav-link g-px-0 g-color-black"
-                href="/2026/sponsor-us/"
-                >Sponsor Us</a
-              >
-            </li>
-            <!-- <li class="dropdown-item">
-              <a
-                class="nav-link g-px-0 g-color-black"
-                href="/2026/our-sponsors/"
-                >Our Sponsors</a
-              >
-            </li> -->
-            <li class="dropdown-item">
-              <a
-                class="nav-link g-px-0 g-color-black"
-                href="https://drive.google.com/file/d/1kFroSEsjlMDYiGPmuYnvSxAaTe-HfIRp/view?usp=drive_link"
-                target="_blank"
-                >PyCon Uganda 2026 Sponsorship Prospectus</a
-              >
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item g-mx-15--lg">
-          <a
-            href="/2026/fin-aid/"
-            target="/"
-            class="nav-link px-0 navbar-link-white"
-            >Opportunity Grants</a
-          >
-        </li>
+    <!-- Desktop Navigation -->
+    <div class="nav-desktop">
+      <!-- About Dropdown -->
+      <div class="nav-dropdown-wrapper" x-data="{open:false}">
+        <button class="nav-item" @click="open=!open">
+          ABOUT
+          <i class="fa fa-chevron-up" aria-hidden="true" x-show="open" style="display: none;"></i>
+          <i class="fa fa-chevron-down" aria-hidden="true" x-show="!open" style="display: none;"></i>
+        </button>
+        <div x-show="open" @click.outside="open = false" class="nav-dropdown-menu" style="display: none;">
+          <a class="nav-item" href="/2026/about/">About Us</a>
+          <a class="nav-item" href="/2026/about/team/">Team</a>
+          <a class="nav-item" href="/2026/fin-aid/">Financial Assistance</a>
+        </div>
+      </div>
 
-        <li class="nav-item dropdown g-mx-15--lg">
-          <!-- <a
-            href="#"
-            class="nav-link dropdown-toggle g-px-0"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            Community</a
-          > -->
-          <ul
-            class="dropdown-menu rounded-0 g-text-transform-none g-brd-none g-brd-top g-brd-primary g-brd-top-2 g-mt-20 g-mt-10--lg--scrolling"
-          >
-            <li class="dropdown-item">
-              <a
-                class="nav-link g-px-0 g-color-black"
-                href="/2026/community/django-girls/"
-                href="/2026/community/django-girls/"
-                >Django Girls</a
-              >
-            </li>
-            <li class="dropdown-item">
-              <a
-                class="nav-link g-px-0 g-color-black"
-                href="/2026/community/pyladies-wksp/"
-                href="/2026/community/pyladies-wksp/"
-                >Pyladies Workshop</a
-              >
-            </li>
-            <!-- <li class="dropdown-item">
-              <a
-                class="nav-link g-px-0 g-color-black"
-                href="/2026/community/ngombor/"
-                href="/2026/community/ngombor/"
-                >NgomBor Community</a
-              >
-            </li> -->
-          </ul>
-        </li>
-       <!-- <li class="nav-item dropdown g-mx-15--lg">
-          <a
-            href="#"
-            class="nav-link dropdown-toggle g-px-0"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-            >Past</a
-          >
-          <ul
-            class="dropdown-menu rounded-0 g-text-transform-none g-brd-none g-brd-top g-brd-primary g-brd-top-2 g-mt-20 g-mt-10--lg--scrolling"
-          >
-            <li class="dropdown-item">
-              <a
-                class="nav-link g-px-0 g-color-black"
-                href="/2020/"
-                target="/"
-                >2020</a
-              >
-            </li>
-            <li class="dropdown-item">
-              <a
-                class="nav-link g-px-0 g-color-black"
-                href="/2019/report/"
-                target="/"
-                >2019</a
-              >
-            </li>
-          </ul>
-        </li>  -->
-        <li class="nav-item g-mx-15--lg">
-          <!-- <a
-            href="https://www.quicket.co.ug/events/309365-pycon-uganda-2026/" target="_blank" rel="noopener noreferrer"
-            href="https://www.quicket.co.ug/events/309365-pycon-uganda-2026/" target="_blank" rel="noopener noreferrer"
-            class="btn btn-sm u-btn-yellow g-color-primary g-mt-2 g-mb-10"
-            ><b
-              >Tickets &nbsp;<i
-                class="fa-solid fa-tickets fa-beat-fade"
-              ></i></b
-          ></a> -->
-        </li>
-      </ul>
+      <!-- Events Dropdown -->
+      <div class="nav-dropdown-wrapper" x-data="{open:false}">
+        <button class="nav-item" @click="open=!open">
+          EVENTS
+          <i class="fa fa-chevron-up" aria-hidden="true" x-show="open" style="display: none;"></i>
+          <i class="fa fa-chevron-down" aria-hidden="true" x-show="!open" style="display: none;"></i>
+        </button>
+        <div x-show="open" @click.outside="open = false" class="nav-dropdown-menu" style="display: none;">
+          <a class="nav-item" href="/2026/schedule/">Schedule</a>
+          <a class="nav-item" href="/2026/speakers_list/">Speakers</a>
+        </div>
+      </div>
 
+      <!-- Venue -->
+      <div class="nav-dropdown-wrapper" x-data="{open:false}">
+        <button class="nav-item" @click="open=!open">
+          VENUE
+          <i class="fa fa-chevron-up" aria-hidden="true" x-show="open" style="display: none;"></i>
+          <i class="fa fa-chevron-down" aria-hidden="true" x-show="!open" style="display: none;"></i>
+        </button>
+        <div x-show="open" @click.outside="open = false" class="nav-dropdown-menu" style="display: none;">
+          <a class="nav-item" href="/2026/travel/">Travel Guide</a>
+          <a class="nav-item" href="/2026/coc/">Code of Conduct</a>
+        </div>
+      </div>
+
+      <!-- Talks Dropdown -->
+      <div class="nav-dropdown-wrapper" x-data="{open:false}">
+        <button class="nav-item" @click="open=!open">
+          TALKS
+          <i class="fa fa-chevron-up" aria-hidden="true" x-show="open" style="display: none;"></i>
+          <i class="fa fa-chevron-down" aria-hidden="true" x-show="!open" style="display: none;"></i>
+        </button>
+        <div x-show="open" @click.outside="open = false" class="nav-dropdown-menu" style="display: none;">
+          <a class="nav-item" href="/2026/schedule/">Schedule</a>
+          <a class="nav-item" href="/2026/speakers_list/">Speakers</a>
+          <a class="nav-item" href="/2026/talks/submit_talk/">Submit a Proposal</a>
+        </div>
+      </div>
+
+      <!-- Past Events Dropdown -->
+      <div class="nav-dropdown-wrapper" x-data="{open:false}">
+        <button class="nav-item" @click="open=!open">
+          PAST EVENTS
+          <i class="fa fa-chevron-up" aria-hidden="true" x-show="open" style="display: none;"></i>
+          <i class="fa fa-chevron-down" aria-hidden="true" x-show="!open" style="display: none;"></i>
+        </button>
+        <div x-show="open" @click.outside="open = false" class="nav-dropdown-menu" style="display: none;">
+          <a class="nav-item" href="/2020/">2020</a>
+          <a class="nav-item" href="/2019/report/">2019</a>
+        </div>
+      </div>
+
+      <!-- South Africa -->
+      <a class="nav-item" href="/pyconza2025/">SOUTH AFRICA</a>
+
+      <!-- Sponsors Dropdown -->
+      <div class="nav-dropdown-wrapper" x-data="{open:false}">
+        <button class="nav-item" @click="open=!open">
+          SPONSORS
+          <i class="fa fa-chevron-up" aria-hidden="true" x-show="open" style="display: none;"></i>
+          <i class="fa fa-chevron-down" aria-hidden="true" x-show="!open" style="display: none;"></i>
+        </button>
+        <div x-show="open" @click.outside="open = false" class="nav-dropdown-menu" style="display: none;">
+          <a class="nav-item" href="/2026/sponsor-us/">Sponsor Us</a>
+          <a class="nav-item" href="/2026/our-sponsors/">Our Sponsors</a>
+          <a class="nav-item" href="https://drive.google.com/file/d/1kFroSEsjlMDYiGPmuYnvSxAaTe-HfIRp/view?usp=drive_link" target="_blank">PyCon Uganda 2026 Sponsorship Prospectus</a>
+        </div>
+      </div>
+
+      <!-- User Authentication -->
       {% if user.is_authenticated %}
-      <div class="col-auto">
-        <div class="nav-item dropdown">
-          <a
-            href="#"
-            class="nav-link dropdown-toggle g-px-5"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            {% if request.user.user_profile.profile_image %}
-            <span class="d-inline-block g-pos-rel g-mr-20 g-mb-20">
-              <img
-                class="rounded-circle g-width-50 g-height-50"
-                src="{{ request.user.user_profile.profile_image.url }}"
-                alt="avatar"
-              />
-            </span>
-            {% else %}
-            <span class="d-inline-block g-pos-rel g-mr-20 g-mb-20">
-              <img
-                class="g-width-40 g-height-40 rounded-circle mCS_img_loaded"
-                src="/robohash/{% firstof user.get_short_name user.get_username|capfirst %}/?width=120&height=120"
-                alt="Image Description"
-              />
-            </span>
-            {% endif %}
-          </a>
-
-          <!-- Submenu (Bootstrap) -->
-          <ul
-          class="dropdown-menu rounded-0 g-text-transform-none g-brd-none g-brd-top g-brd-primary g-brd-top-2 g-mt-20 g-mt-10--lg--scrolling"
-            style="right: 0; left: auto; max-width: calc(100vw - 20px);"
-  >
-            <div
-              class="d-flex flex-row align-items-center text-center justify-content-between g-letter-spacing-1 g-mb-15"
-            >
-            <strong class="g-color-black g-font-weight-600 g-font-size-18"><small  ti  data-toggle="tooltip-show" data-placement="left" title="Glad to have you here {% if request.user.user_profile %}{{ request.user.user_profile.first_name }} {% else %}@{{ request.user.username }}{% endif %}"> <b>Hi {% if request.user.user_profile %}{{ request.user.user_profile.name }}  {% else %}@{{ request.user.username }}{% endif %} 😊</b><br>&nbsp;&nbsp;&nbsp;&nbsp;{% time_of_day %}</small> </strong>
-            </div>
-            <li class="dropdown-item g-color-black">
-              <a
-                href="{% url 'profiles:profile_home' %}"
-                class="nav-link g-color-black g-color-dark--hover g-text-underline--none--hover g-font-size-16"
-                ><i
-                  class="far fa-address-card g-color-black g-font-size-16"
-                ></i>
-                My Profile</a
-              >
-            </li>
-            {% if request.user.is_superuser %}
-            <li class="dropdown-item g-color-black">
-              <a
-                href="/organizers/"
-                target="/"
-                class="nav-link g-color-black g-color-dark--hover g-text-underline--none--hover g-font-size-16"
-                ><i
-                  class="fas fa-users-crown g-color-black g-font-size-16"
-                ></i>
-                Admin Dashboard</a
-              >
-            </li>
-            {% endif %}
-
-            <li class="dropdown-item g-color-black">
-              <form
-                action="/accounts/logout/"
-                method="post"
-                style="display: inline"
-              >
-                {% csrf_token %}
-                <button
-                  type="submit"
-                  class="nav-link g-color-black g-color-dark--hover g-text-underline--none--hover g-font-size-16"
-                  style="
-                    background: none;
-                    border: none;
-                    padding: 0;
-                    cursor: pointer;
-                  "
-                >
-                  &nbsp;&nbsp;&nbsp;<i
-                    class="fal fa-sign-out-alt g-color-black g-font-size-16"
-                  ></i>
-                  Log out
-                </button>
-              </form>
-            </li>
-          </ul>
-          <!-- End Submenu (Bootstrap) -->
+      <div class="nav-dropdown-wrapper" x-data="{open:false}">
+        <button class="nav-item" @click="open=!open">
+          <i class='fa-solid fa-user' aria-hidden='true'></i> {{ user.username }}
+          <i class="fa fa-chevron-up" aria-hidden="true" x-show="open" style="display: none;"></i>
+          <i class="fa fa-chevron-down" aria-hidden="true" x-show="!open" style="display: none;"></i>
+        </button>
+        <div x-show="open" @click.outside="open = false" class="nav-dropdown-menu" style="display: none;">
+          <a class="nav-item" href="{% url 'profiles:profile_home' %}">My Profile</a>
+          {% if request.user.is_superuser %}
+          <a class="nav-item" href="/organizers/">Admin Dashboard</a>
+          {% endif %}
+          <form method="POST" action="/accounts/logout/" style="display: inline;">
+            {% csrf_token %}
+            <button type="submit" class="nav-item">Log out</button>
+          </form>
         </div>
       </div>
       {% else %}
-      <div class="col-auto g-pos-rel">
-        <ul class="list-inline g-overflow-hidden g-pt-1 g-mx-minus-4 mb-0">
-          <li class="list-inline-item g-mx-4">
-            <a
-              class="nav-link g-px-0 navbar-link-white g-text-underline--none--hover"
-              href="/accounts/login/"
-              >Login</a
-            >
-          </li>
-          <li class="list-inline-item g-mx-4 navbar-link-white">|</li>
-          <li class="list-inline-item g-mx-4">
-            <a
-              class="nav-link g-px-0 navbar-link-white g-text-underline--none--hover"
-              href="/accounts/signup/"
-              >Signup</a
-            >
-          </li>
-        </ul>
-      </div>
+      <a class="nav-item" href="/accounts/login/">SIGN UP / LOG IN</a>
       {% endif %}
     </div>
-    <!-- End Navigation -->
-  </div>
-</nav>
+
+    <!-- Mobile Navigation -->
+    <div class="nav-mobile" x-data="{ open: false }">
+      <button class="nav-mobile-toggle" @click="open = !open">
+        <i class="fa fa-bars" aria-hidden="true" x-show="!open" style="display:none;"></i>
+        <i class="fa fa-caret-down" aria-hidden="true" x-show="open" style="display:none;"></i>
+      </button>
+
+      <div x-show="open" style="display:none;" class="nav-mobile-menu" @click.outside="open = false">
+        <!-- About -->
+        <span class="nav-item">ABOUT</span>
+        <a class="nav-item nav-item-indent" href="/2026/about/">About Us</a>
+        <a class="nav-item nav-item-indent" href="/2026/about/team/">Team</a>
+        <a class="nav-item nav-item-indent" href="/2026/fin-aid/">Financial Assistance</a>
+
+        <!-- Events -->
+        <span class="nav-item">EVENTS</span>
+        <a class="nav-item nav-item-indent" href="/2026/schedule/">Schedule</a>
+        <a class="nav-item nav-item-indent" href="/2026/speakers_list/">Speakers</a>
+
+        <!-- Venue -->
+        <span class="nav-item">VENUE</span>
+        <a class="nav-item nav-item-indent" href="/2026/travel/">Travel Guide</a>
+        <a class="nav-item nav-item-indent" href="/2026/coc/">Code of Conduct</a>
+
+        <!-- Talks -->
+        <span class="nav-item">TALKS</span>
+        <a class="nav-item nav-item-indent" href="/2026/schedule/">Schedule</a>
+        <a class="nav-item nav-item-indent" href="/2026/speakers_list/">Speakers</a>
+        <a class="nav-item nav-item-indent" href="/2026/talks/submit_talk/">Submit a Proposal</a>
+
+        <!-- Past Events -->
+        <span class="nav-item">PAST EVENTS</span>
+        <a class="nav-item nav-item-indent" href="/2020/">2020</a>
+        <a class="nav-item nav-item-indent" href="/2019/report/">2019</a>
+
+        <!-- South Africa -->
+        <a class="nav-item" href="/pyconza2025/">SOUTH AFRICA</a>
+
+        <!-- Sponsors -->
+        <span class="nav-item">SPONSORS</span>
+        <a class="nav-item nav-item-indent" href="/2026/sponsor-us/">Sponsor Us</a>
+        <a class="nav-item nav-item-indent" href="/2026/our-sponsors/">Our Sponsors</a>
+        <a class="nav-item nav-item-indent" href="https://drive.google.com/file/d/1kFroSEsjlMDYiGPmuYnvSxAaTe-HfIRp/view?usp=drive_link" target="_blank">PyCon Uganda 2026 Sponsorship Prospectus</a>
+
+        <!-- User Authentication -->
+        {% if user.is_authenticated %}
+        <span class="nav-item">
+          <i class='fa-solid fa-user' aria-hidden='true'></i> {{user.username}}
+        </span>
+        <a class="nav-item nav-item-indent" href="{% url 'profiles:profile_home' %}">My Profile</a>
+        {% if request.user.is_superuser %}
+        <a class="nav-item nav-item-indent" href="/organizers/">Admin Dashboard</a>
+        {% endif %}
+        <form method="POST" action="/accounts/logout/" style="display: inline;">
+          {% csrf_token %}
+          <button type="submit" class="nav-item nav-item-indent">Log out</button>
+        </form>
+        {% else %}
+        <a class="nav-item" href="/accounts/login/">SIGN UP / LOG IN</a>
+        {% endif %}
+      </div>
+    </div>
   </div>
 </header>
-<!-- End Header -->

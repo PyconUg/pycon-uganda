@@ -20,7 +20,7 @@
     <link rel="manifest" href="{% static 'fav/site.webmanifest' %}">
 
     <!-- Google Fonts -->
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,500,600,700,800">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Kanchenjunga:wght@400;500;600;700&family=Open+Sans:400,300,500,600,700,800">
 
     <!-- CSS Global Compulsory -->
     <link rel="stylesheet" href="{% static 'uni-theme/vendor/bootstrap/bootstrap.min.css' %}">
@@ -45,14 +45,15 @@
     <link rel="stylesheet" href="{% static '2026/css/styles-24.css' %}">
 
     <!-- CSS Customization -->
-    <!--<link rel="stylesheet" href="{% static '2026/css/custom.css' %}">-->
+    <link rel="stylesheet" href="{% static '2026/css/custom.css' %}">
+    
+    <!-- Alpine.js for dropdown functionality -->
+    <script src="//unpkg.com/alpinejs" defer></script>
   </head>
 
   <body>
 
-
-
-
+  {% include '2026/navbar.html' %}
 
 <main>
   
@@ -248,6 +249,19 @@
     function goBack() {
       window.history.back();
     }
-    </script>
+    
+    // Change header color based on page
+    document.addEventListener('DOMContentLoaded', function() {
+      const header = document.getElementById('main-header');
+      if (header) {
+        const path = window.location.pathname;
+        // Keep header black on home page, change to gray-700 on other pages
+        if (path !== '/' && path !== '/2026/' && !path.match(/^\/2026\/?$/)) {
+          header.classList.remove('bg-black');
+          header.classList.add('bg-gray-700');
+        }
+      }
+    });
+  </script>
 </body>
 </html>

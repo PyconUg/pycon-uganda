@@ -1,4 +1,150 @@
 /* Add here all your css styles (customizations) */
+
+/* Apply Kanchenjunga font similar to pyconza2025 */
+body,
+a, li, p, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Kanchenjunga', sans-serif;
+}
+
+/* Navbar styling matching pyconza2025 */
+.navbar-container {
+  max-width: 1280px; /* max-w-7xl */
+  margin: 0 auto;
+  padding: 1.25rem 1.25rem; /* py-5 px-5 */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo-img {
+  height: 100%;
+  width: auto;
+}
+
+.nav-desktop {
+  display: flex;
+  gap: 1rem; /* space-x-4 */
+}
+
+@media (max-width: 1023px) {
+  .nav-desktop {
+    display: none; /* hidden lg:block */
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav-desktop {
+    display: flex;
+  }
+}
+
+/* Nav item styling matching pyconza2025 */
+.nav-item {
+  font-weight: 600; /* font-semibold */
+  color: #e5e7eb; /* text-gray-200 */
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: 'Kanchenjunga', sans-serif;
+}
+
+.nav-item:hover {
+  color: #ffffff; /* text-white */
+}
+
+.nav-item:focus {
+  outline: none;
+}
+
+/* Nav dropdown wrapper */
+.nav-dropdown-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* Nav dropdown menu */
+.nav-dropdown-menu {
+  position: absolute;
+  left: 0;
+  margin-top: 0.5rem; /* mt-2 */
+  min-width: fit-content;
+  background-color: #1f2937; /* bg-gray-800 */
+  border: 1px solid #475569; /* border-slate-700 */
+  border-radius: 0.375rem; /* rounded-md */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; /* gap-5 */
+  padding: 0.5rem; /* p-2 */
+  white-space: nowrap; /* text-nowrap */
+}
+
+.nav-dropdown-menu .nav-item {
+  display: block;
+  padding: 0.25rem 0;
+}
+
+/* Mobile navigation */
+.nav-mobile {
+  display: block;
+  position: relative;
+  padding-right: 1rem; /* pr-4 */
+}
+
+@media (min-width: 1024px) {
+  .nav-mobile {
+    display: none; /* lg:hidden */
+  }
+}
+
+.nav-mobile-toggle {
+  padding: 0.75rem 0; /* py-3 */
+  color: #ffffff; /* text-white */
+  font-weight: 700; /* font-bold */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  font-family: 'Kanchenjunga', sans-serif;
+}
+
+.nav-mobile-menu {
+  position: absolute;
+  width: 20rem; /* w-80 */
+  right: 0.75rem; /* right-3 */
+  margin-top: 0.5rem; /* mt-2 */
+  background-color: #374151; /* bg-gray-700 */
+  border: 1px solid #6b7280; /* border-gray-500 */
+  border-radius: 0.375rem; /* rounded-md */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; /* gap-5 */
+  padding: 0.5rem; /* p-2 */
+}
+
+.nav-item-indent {
+  margin-left: 1rem; /* ml-4 */
+}
+
+/* Header background matching pyconza2025 */
+header.bg-gray-700,
+header[class*="bg-gray-700"] {
+  background-color: #374151; /* bg-gray-700 */
+}
+
+header.bg-black,
+header[class*="bg-black"] {
+  background-color: #000000; /* bg-black */
+}
+
 .promo {
     background: #2d2d2d;
     min-width: 100vw;
