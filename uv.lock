@@ -109,6 +109,19 @@ wheels = [
 ]
 
 [[package]]
+name = "crispy-tailwind"
+version = "1.0.3"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "django" },
+    { name = "django-crispy-forms" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/ae/ac/a307ae5ce869d7151b90d4b8b042a48eb454a936dacc695f6418486e5bd8/crispy-tailwind-1.0.3.tar.gz", hash = "sha256:2bc9f616d406e4b003f25d46fcb0079f1c2522719d97adb107667271d849459a", size = 19172, upload-time = "2024-02-13T09:52:37.895Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c9/ca/11f65e24f3c182dfaf90fd3710d2dcca0fbc3026923e47b43f52a4a2349b/crispy_tailwind-1.0.3-py3-none-any.whl", hash = "sha256:31427f66b1c4fd0d6fb040f4197cfb97d104cdbe7641ea2dea940c0057c4db4b", size = 25700, upload-time = "2024-02-13T09:52:35.928Z" },
+]
+
+[[package]]
 name = "defusedxml"
 version = "0.7.1"
 source = { registry = "https://pypi.org/simple" }
@@ -634,6 +647,7 @@ source = { virtual = "." }
 dependencies = [
     { name = "cloudinary" },
     { name = "crispy-bootstrap5" },
+    { name = "crispy-tailwind" },
     { name = "django" },
     { name = "django-avatar" },
     { name = "django-cloudinary-storage" },
@@ -671,6 +685,7 @@ dependencies = [
 requires-dist = [
     { name = "cloudinary", specifier = ">=1.39.1,<2" },
     { name = "crispy-bootstrap5", specifier = "~=2024.2" },
+    { name = "crispy-tailwind", specifier = ">=1.0.3" },
     { name = "django", specifier = ">=5.0.3,<6" },
     { name = "django-avatar", specifier = ">=8.0.0,<9" },
     { name = "django-cloudinary-storage", specifier = ">=0.3.0,<0.4" },

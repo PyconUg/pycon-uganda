@@ -45,7 +45,7 @@
 
     <!-- Breadcrumbs -->
     <section class="g-bg-gray-light-v5 g-py-80 g-pt-150">
-      <div class="container text-center">
+      <div class="max-w-7xl mx-auto px-4 text-center">
         <h2 class="h2 g-color-black g-font-weight-600">Speakers</h2>
 
         <ul class="u-list-inline">
@@ -68,7 +68,7 @@
 
 
        <!-- body -->
-    <div class="container  g-pt-50">
+    <div class="max-w-7xl mx-auto px-4  g-pt-50">
 
             <div class=" u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30" role="alert">
               <div class="shortcode-html">
@@ -76,7 +76,7 @@
                  <b>Note:</b> We are excited to announce that our speaker lineup is still growing! This page will be updated regularly as more speakers confirm their participation. Stay tuned for the latest additions and details about their talks.
              </p>
                 <!-- Team Block -->
-                <div class="row">
+                <div class="flex flex-wrap gap-4">
                   {% for speaker in keynote_speakers %}
                   <div class="col-md-3 g-mb-30">
                     <!-- Figure -->
@@ -124,7 +124,7 @@
       <hr class="u-divider-linear-gradient u-divider-linear-gradient--gray-light-v2 g-my-50">
 
                 <!-- structure for regular speakers -->
-                <div class="row">
+                <div class="flex flex-wrap gap-4">
                   {% for speaker in other_speakers %}
                   <div class="col-md-3 g-mb-30">
                     <!-- Figure -->

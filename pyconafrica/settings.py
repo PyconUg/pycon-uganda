@@ -62,6 +62,7 @@ INSTALLED_APPS = [
     # Third party apps
     "avatar",
     "crispy_forms",
+    "crispy_tailwind",
     "crispy_bootstrap5",
     "django_recaptcha",
     "django_slugify_processor",
@@ -249,10 +250,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
  
 
 
-# Sets the default template pack for the project
-CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+# Sets the default template pack for the project (Tailwind for main site)
+CRISPY_ALLOWED_TEMPLATE_PACKS = ("tailwind", "bootstrap5")
 
-CRISPY_TEMPLATE_PACK = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "tailwind"
 
 
 # Registration App account settings

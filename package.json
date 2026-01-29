@@ -1,0 +1,15 @@
+{
+  "name": "pycon-uganda",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.0.0",
+    "@tailwindcss/cli": "^4.0.5",
+    "tailwindcss": "^4.0.5"
+  },
+  "scripts": {
+    "postinstall": "rsync -a --delete node_modules/* static/vendor/",
+    "tailwind": "npx @tailwindcss/cli -i ./static/css/main.css -o ./static/vendor/main.css",
+    "tailwind-w": "npx @tailwindcss/cli -i ./static/css/main.css -o ./static/vendor/main.css --watch"
+  }
+}

@@ -11,7 +11,7 @@
   
     <!-- Breadcrumbs -->
     <section class="g-bg-gray-light-v5 g-py-80 g-pt-150">
-      <div class="container text-center"> 
+      <div class="max-w-7xl mx-auto px-4 text-center"> 
         <h1 class="h2 g-color-black g-font-weight-600"> Hello {% if user_profile %}{{ request.user.user_profile.name }} {% else %}{% firstof user.get_short_name user.get_username|capfirst %}{% endif %}</h1> 
         <span class="d-block text-white mb-3 h6"><a class="badge bg-dark text-white rounded-pill ms-1" ><span class=" fw-bold">Welcome to your Profile</span></a></span>
        
@@ -34,9 +34,9 @@
  
 
     <section class="g-mb-100 g-pt-50">
-      <div class="container"> 
+      <div class="max-w-7xl mx-auto px-4"> 
           <div class="u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30" > 
-            <div class="row">
+            <div class="flex flex-wrap gap-4">
               <!-- Profile Sidebar -->
               <div class="col-lg-3 g-mb-50 g-mb-0--lg"> 
                 <!-- Profile Pic --> 
@@ -272,7 +272,7 @@
     
                 <div class="col-lg-9">
                   <section class="g-brd-around g-brd-gray-light-v4">
-                    <div class="container g-py-50--md g-py-20">
+                    <div class="max-w-7xl mx-auto px-4 g-py-50--md g-py-20">
                       <h2 class="h2 text-uppercase text-center  g-font-weight-300"> Thanks for Signing up! @{% firstof user.get_short_name user.get_username %} 🥳</h2>
                       <p class="mb-0   g-mb-25"><br>
                         We're thrilled to have you join this vibrant community of Python enthusiasts, developers, 
