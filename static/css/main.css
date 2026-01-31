@@ -114,11 +114,13 @@
     }
 
     .navbar-container {
-        @apply max-w-7xl mx-auto py-5 px-5 flex flex-row justify-between items-center;
+        @apply max-w-7xl mx-auto py-1 px-5 flex flex-row justify-between items-center;
     }
 
     .navbar-logo-img {
-        @apply h-full w-auto;
+        @apply w-auto;
+        max-height: 100px;
+        height: auto;
     }
 
     .nav-desktop {
@@ -164,7 +166,7 @@
     }
 
     .nav-mobile-toggle {
-        @apply py-3 text-white font-bold cursor-pointer flex items-center bg-transparent border-0;
+        @apply py-1 text-white font-bold cursor-pointer flex items-center bg-transparent border-0;
     }
 
     .nav-mobile-menu {
@@ -245,12 +247,16 @@
 
     /* Promo / hero section */
     .promo {
-        @apply min-w-screen relative overflow-hidden mt-16;
+        @apply min-w-screen relative overflow-hidden mt-0;
         background: #2d2d2d;
     }
 
     .promo-video-background {
         @apply absolute inset-0 z-[1] overflow-hidden;
+    }
+
+    .promo-image-background {
+        @apply absolute inset-0 z-[1] bg-cover bg-center bg-no-repeat;
     }
 
     .promo-video-iframe {
@@ -270,7 +276,9 @@
     }
 
     .promo-grid {
-        @apply grid grid-cols-1 min-h-[90vh] max-w-6xl mx-auto relative z-[3];
+        @apply grid grid-cols-1 min-h-[90vh] max-w-6xl relative z-[3];
+        margin-left: 6%;
+        margin-right: auto;
     }
 
     .promo-detail {
@@ -318,20 +326,20 @@
 
     .promo-btn-learn-more {
         @apply inline-flex justify-center items-center font-semibold text-white no-underline border-0 transition-colors duration-300 rounded;
-        font-size: 1.375rem;
-        padding: 1.25rem 2.75rem;
-        background-color: #ff6b6b;
+        font-size: 1rem;
+        padding: 0.625rem 1.5rem;
+        background-color: #dc3545;
     }
 
     .promo-btn-learn-more:hover {
-        background-color: #ff5252;
+        background-color: #c82333;
         color: #fff;
     }
 
     .promo-btn-get-ticket {
         @apply inline-flex justify-center items-center font-semibold no-underline border-2 border-black transition-colors duration-300 rounded;
-        font-size: 1.375rem;
-        padding: 1.25rem 2.75rem;
+        font-size: 1rem;
+        padding: 0.625rem 1.5rem;
         color: #000;
         background-color: #fff;
     }
@@ -358,7 +366,7 @@
     }
 
     .keyword-btn {
-        @apply inline-block py-2 px-5 text-sm font-semibold text-white rounded-full no-underline border-2 border-transparent cursor-default transition-all duration-200;
+        @apply inline-block py-1.5 px-3 text-xs font-semibold text-white rounded-full no-underline border-2 border-transparent cursor-default transition-all duration-200;
     }
 
     .keyword-learn {
@@ -714,14 +722,14 @@
     }
 
     .promo-btn-learn-more, .promo-btn-get-ticket {
-        font-size: 1.5rem;
-        padding: 1.5rem 3.5rem;
+        font-size: 1.125rem;
+        padding: 0.75rem 2rem;
     }
 }
 
 @media (max-width: 768px) {
     .promo {
-        margin-top: 10rem;
+        margin-top: 0;
     }
 
     .promo-grid {
@@ -750,8 +758,8 @@
     }
 
     .promo-btn-learn-more, .promo-btn-get-ticket {
-        font-size: 1.125rem;
-        padding: 1.125rem 2.25rem;
+        font-size: 0.9375rem;
+        padding: 0.5rem 1.25rem;
         @apply w-full text-center;
     }
 
@@ -771,6 +779,6 @@
 
 @media (max-width: 1025px) {
     .promo {
-        margin-top: 8rem;
+        margin-top: 0;
     }
 }

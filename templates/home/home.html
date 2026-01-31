@@ -18,18 +18,9 @@
 ></script>
 
 <section class="promo">
-  <!-- YouTube Video Background -->
-  <div class="promo-video-background">
-    <iframe
-      src="https://www.youtube.com/embed/icJPsERJ3Ag?autoplay=1&loop=1&playlist=icJPsERJ3Ag&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
-      frameborder="0"
-      allow="autoplay; encrypted-media"
-      allowfullscreen
-      class="promo-video-iframe"
-    ></iframe>
-  </div>
-  
-  <!-- Dark Overlay for Readability -->
+  <!-- Hero background image (conference/audience) -->
+  <div class="promo-image-background" style="background-image: url('{% static '2026/img/PyConAfrica-0309.jpg' %}');"></div>
+  <!-- Dark overlay for readability -->
   <div class="promo-video-overlay"></div>
   
   <div class="promo-grid">
@@ -66,7 +57,7 @@
         <div class="promo-main-buttons">
           <a
             class="btn promo-btn-learn-more"
-            href="#about"
+            href="/2026/about/pycon-africa-2026"
             >Learn More</a
           >
           <a
@@ -332,6 +323,7 @@
   </div>
 </section> -->
 
+{% comment %}
 <!-- Team Blocks -->
 <section class="max-w-7xl mx-auto px-4 g-pt-30 g-pb-70">
   <!-- Heading -->
@@ -373,6 +365,7 @@
     </div>
   </div>
 </section>
+{% endcomment %}
 <!-- End Team Blocks -->
 
 {% endblock %}
