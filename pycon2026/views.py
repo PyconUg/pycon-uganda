@@ -93,6 +93,10 @@ def traveladvice(request):
     template = '2026/travel/travel.html'
     return render(request, template, context)
 
+def visa_apply(request):
+    context = {}
+    return render(request, '2026/visa/apply.html', context)
+
 def fin_aid(request):
     context = {}
     template = '2026/fin-aid/fin-aid.html'

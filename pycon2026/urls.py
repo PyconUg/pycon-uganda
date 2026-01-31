@@ -22,6 +22,7 @@ urlpatterns = [
     path('our-sponsors/', view=views.sponsors, name='sponsors'),
     path('register/', view=views.register, name='register'),
     path('travel/', view=views.traveladvice, name='traveladvice'),
+    path('visa/apply/', view=views.visa_apply, name='applying_for_visa'),
     # path('fin-aid/', view=views.fin_aid, name='fin_aid'),
     path('team/', view=views.team, name='team'),
     path('report/', view=views.report, name='report'),
