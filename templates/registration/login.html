@@ -1,69 +1,42 @@
 {% extends "base.html" %}
-{% load i18n static current_year crispy_forms_tags %}
-{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Log in || PyCon Uganda" %}{% endif %}{% endblock %}
-
+{% load i18n static crispy_forms_tags %}
+{% block meta_title %}{% trans "Login | PyCon Africa 2026" %}{% endblock %}
 
 {% block content %}
+{% include '2026/navbar.html' %}
 
-<!-- ========== HEADER ========== --> 
-{% include '2025/navbar.html' %}
-<!-- ========== END HEADER ========== -->
-   
-    <!-- Login -->
-    <section class="g-bg-gray-light-v5 g-pt-80">
-      <div class="max-w-7xl mx-auto px-4 g-py-100">
-        <div class="row justify-content-center">
-          <div class="col-sm-8 col-lg-5">
-            <div class="u-shadow-v21 g-bg-white rounded g-py-40 g-px-30">
-              <header class="text-center mb-4">
-                <h2 class="h2 g-color-black g-font-weight-600">Login</h2>
-              </header>
+<section class="bg-gray-100 py-20 pt-32 pb-20">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="max-w-md mx-auto">
+      <div class="shadow-lg bg-white rounded-lg p-8 md:p-10">
+        <h1 class="text-2xl font-bold text-gray-900 text-center mb-8">Login</h1>
 
-          <!-- Alert Info -->
-          <div class="alert fade show g-bg-blue-opacity-0_1 g-color-blue rounded-0" role="alert">
-            <button type="button" class="close u-alert-close--light g-ml-10 g-mt-1" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-
-            <div class="media">
-              <div class="d-flex g-mr-10">
-                <span class="u-icon-v3 u-icon-size--sm g-bg-blue g-color-white g-rounded-50x">
-                  <i class="icon-info"></i>
-                </span>
-              </div>
-              <div class="media-body">
-                <p class="m-0 g-font-size-14">Accounts from the previous years are not carried over year-to-year.</p> 
-              </div>
-            </div>
-          </div>
-          <!-- End Alert Info -->
-
-              <!-- Form -->
-              <form novalidate class="g-py-15 mad-contact-form mad-form--fields-white login" method="POST" action="">
-                            {% csrf_token %} 
-                          <div class="form-group g-mb-35">
-                            <div class="form-col">
-                                {{ form | crispy }}
-                            </div>
-                          </div>
-                          <div class="d-flex justify-content-end mb-4">
-                            <a class="form-label-link secondaryAction d-inline-block g-font-size-14 mb-2" href="{% url 'auth_password_reset' %}">Forgot Password?</a>
-                          </div> 
-                <div class="mb-4">
-                  <button class="btn btn-md btn-block u-btn-primary rounded g-py-13primaryAction" type="submit">Login</button>
-                </div>
-              </form>
-              <!-- End Form -->
-
-              <footer class="text-center">
-                <p class="g-color-gray-dark-v5 g-font-size-13 mb-0">Don't have an account? <a class="g-font-weight-600" href="{% url 'registration_register' %}"><b>Sign up here</b></a>
-                </p>
-              </footer>
-            </div>
-          </div>
+        <div class="bg-blue-50 rounded-lg p-5 mb-8" role="alert">
+          <p class="text-gray-900 text-sm leading-relaxed m-0">
+            Accounts from the previous years are not carried over year-to-year.
+          </p>
         </div>
+
+        <form method="post" action="" class="space-y-5">
+          {% csrf_token %}
+          <div class="form-group">
+            {{ form | crispy }}
+          </div>
+          <div class="flex justify-end pt-1">
+            <a href="{% url 'auth_password_reset' %}" class="text-sm text-teal-600 hover:underline font-medium">Forgot Password?</a>
+          </div>
+          <div class="pt-4">
+            <button type="submit" class="w-full text-center text-white font-semibold py-3.5 px-4 rounded-lg transition" style="background-color: #d97706; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" onmouseover="this.style.backgroundColor='#b45309';" onmouseout="this.style.backgroundColor='#d97706';">
+              Login
+            </button>
+          </div>
+        </form>
+
+        <p class="text-center text-gray-600 text-sm mt-8 mb-0">
+          Don't have an account? <a href="{% url 'registration_register' %}" class="text-teal-600 hover:underline font-semibold">Sign up here</a>
+        </p>
       </div>
-    </section>
-    <!-- End Login --> 
- 
+    </div>
+  </div>
+</section>
 {% endblock %}

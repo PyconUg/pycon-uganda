@@ -1,76 +1,39 @@
 {% extends "base.html" %}
 {% load i18n static crispy_forms_tags %}
-{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Sign up || PyCon Uganda" %}{% endif %}{% endblock %}
-
+{% block meta_title %}{% trans "Sign up | PyCon Africa 2026" %}{% endblock %}
 
 {% block content %}
+{% include '2026/navbar.html' %}
 
-<!-- ========== HEADER ========== -->
-{% include '2025/navbar.html' %}
-<!-- ========== END HEADER ========== -->
- 
+<section class="bg-gray-100 py-20 pt-32">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="max-w-md mx-auto">
+      <div class="shadow-lg bg-white rounded-lg p-8 md:p-10">
+        <h1 class="text-2xl font-bold text-gray-900 text-center mb-6">Sign up</h1>
 
+        <div class="bg-amber-50 rounded-lg p-4 mb-6" role="alert">
+          <p class="text-gray-900 text-sm leading-relaxed m-0">
+            Please read and agree to our <a href="/2026/coc/" class="text-teal-600 hover:underline font-semibold">Code of Conduct</a> before creating an account to ensure a respectful and safe environment during PyCon Africa 2026.
+          </p>
+        </div>
 
+        <form method="post" action="" class="space-y-4">
+          {% csrf_token %}
+          <div class="form-group">
+            {{ form | crispy }}
+          </div>
+          <div class="pt-2">
+            <button type="submit" class="w-full text-center text-white font-semibold py-3 px-4 rounded-lg transition" style="background-color: #d97706; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" onmouseover="this.style.backgroundColor='#b45309';" onmouseout="this.style.backgroundColor='#d97706';">
+              Sign up
+            </button>
+          </div>
+        </form>
 
-
-    <!-- Signup -->
-    <section class="g-bg-gray-light-v5  g-pt-80">
-      <div class="max-w-7xl mx-auto px-4 g-py-100">
-        <div class="row justify-content-center">
-          <div class="col-sm-10 col-md-9 col-lg-6">
-            <div class="u-shadow-v21 g-bg-white rounded g-py-40 g-px-30">
-              <header class="text-center mb-4">
-                <h2 class="h2 g-color-black g-font-weight-600">Signup</h2>
-              </header>
-
-              <!-- Alert with Box Shadow -->
-<div class="alert fade show u-shadow-v1-3 g-pa-20" role="alert">
-  <button type="button" class="close u-alert-close--light g-ml-10 g-mt-1" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">×</span>
-  </button>
-
-  <div class="media">
-    <div class="d-flex g-mr-10">
-      <span class="u-icon-v3 u-icon-size--sm g-bg-cyan g-color-white">
-        <i class="fa-solid fa-exclamation fa-bounce fa-xl" style="color: #ea0b0b;"></i>
-      </span>
-    </div>
-    <div class="media-body">
-      <p class="m-0 g-font-size-14">Please read and agree to our <a href="/2024/coc/" class="g-font-weight-bold g-color-cyan g-text-underline--none--hover"><b>Code of Conduct</b></a> before creating an account to ensure a respectful and safe environment during PyCon Uganda.</p>
+        <p class="text-center text-gray-600 text-sm mt-6 mb-0">
+          Already have an account? <a href="{% url 'auth_login' %}" class="text-teal-600 hover:underline font-semibold">Login here</a>
+        </p>
+      </div>
     </div>
   </div>
-</div>
-<!-- End Alert with Box Shadow -->
-
-
-              <!-- Form --> 
-                <form novalidate class="g-py-15 mad-contact-form mad-form--fields-white login" method="POST" action="">
-                  {% csrf_token %} 
-                <div class="form-group">
-                  <div class="form-col">
-                      {{ form | crispy }}
-                  </div>
-                </div>
-                 <br> 
-                <div class="d-grid gap-5">
-                  <button class="btn btn-lg btn-md btn-block u-btn-primary rounded primaryAction" type="submit">Sign up</button> <br>
-                </div> 
-              </form> 
-              <!-- End Form -->
-
-              <footer class="text-center">
-                <p class="g-color-gray-dark-v5 g-font-size-13 mb-0">Already have an account? <a class="g-font-weight-600"  href="/accounts/login/"><b>Login here</b></a>
-                </p>
-              </footer>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- End Signup -->
- 
- 
+</section>
 {% endblock %}
-
-
- 
