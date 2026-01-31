@@ -10,7 +10,7 @@ a, li, p, h1, h2, h3, h4, h5, h6 {
 .navbar-container {
   max-width: 1280px; /* max-w-7xl */
   margin: 0 auto;
-  padding: 1.25rem 1.25rem; /* py-5 px-5 */
+  padding: 0.5rem 1rem; /* reduced from py-5 px-5 */
   display: flex;
   flex-direction: row;
   justify-content: space-between;

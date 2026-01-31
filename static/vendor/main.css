@@ -4477,8 +4477,8 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding-inline: calc(var(--spacing) * 5);
-    padding-block: calc(var(--spacing) * 5);
+    padding-inline: calc(var(--spacing) * 4);
+    padding-block: calc(var(--spacing) * 2);
   }
   .navbar-logo-img {
     height: 100%;
@@ -5048,6 +5048,7 @@
   .footer-grid {
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
+    align-items: flex-start;
     gap: calc(var(--spacing) * 8);
   }
   .footer-section {
