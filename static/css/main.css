@@ -324,8 +324,8 @@
 
     .promo-btn-learn-more {
         @apply inline-flex justify-center items-center font-semibold text-white no-underline border-0 transition-colors duration-300 rounded;
-        font-size: 1.375rem;
-        padding: 1.25rem 2.75rem;
+        font-size: 1rem;
+        padding: 0.625rem 1.5rem;
         background-color: #dc3545;
     }
 
@@ -336,8 +336,8 @@
 
     .promo-btn-get-ticket {
         @apply inline-flex justify-center items-center font-semibold no-underline border-2 border-black transition-colors duration-300 rounded;
-        font-size: 1.375rem;
-        padding: 1.25rem 2.75rem;
+        font-size: 1rem;
+        padding: 0.625rem 1.5rem;
         color: #000;
         background-color: #fff;
     }
@@ -364,7 +364,7 @@
     }
 
     .keyword-btn {
-        @apply inline-block py-2 px-5 text-sm font-semibold text-white rounded-full no-underline border-2 border-transparent cursor-default transition-all duration-200;
+        @apply inline-block py-1.5 px-3 text-xs font-semibold text-white rounded-full no-underline border-2 border-transparent cursor-default transition-all duration-200;
     }
 
     .keyword-learn {
@@ -720,8 +720,8 @@
     }
 
     .promo-btn-learn-more, .promo-btn-get-ticket {
-        font-size: 1.5rem;
-        padding: 1.5rem 3.5rem;
+        font-size: 1.125rem;
+        padding: 0.75rem 2rem;
     }
 }
 
@@ -756,8 +756,8 @@
     }
 
     .promo-btn-learn-more, .promo-btn-get-ticket {
-        font-size: 1.125rem;
-        padding: 1.125rem 2.25rem;
+        font-size: 0.9375rem;
+        padding: 0.5rem 1.25rem;
         @apply w-full text-center;
     }
 
