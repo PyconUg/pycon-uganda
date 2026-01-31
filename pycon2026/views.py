@@ -97,6 +97,10 @@ def visa_apply(request):
     context = {}
     return render(request, '2026/visa/apply.html', context)
 
+def visa_letter(request):
+    context = {}
+    return render(request, '2026/visa/letter.html', context)
+
 def fin_aid(request):
     context = {}
     template = '2026/fin-aid/fin-aid.html'

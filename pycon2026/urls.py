@@ -23,6 +23,7 @@ urlpatterns = [
     path('register/', view=views.register, name='register'),
     path('travel/', view=views.traveladvice, name='traveladvice'),
     path('visa/apply/', view=views.visa_apply, name='applying_for_visa'),
+    path('visa/letter/', view=views.visa_letter, name='visa_letter'),
     # path('fin-aid/', view=views.fin_aid, name='fin_aid'),
     path('team/', view=views.team, name='team'),
     path('report/', view=views.report, name='report'),
