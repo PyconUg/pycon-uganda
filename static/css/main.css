@@ -114,12 +114,12 @@
     }
 
     .navbar-container {
-        @apply max-w-7xl mx-auto py-4 px-5 flex flex-row justify-between items-center;
+        @apply max-w-7xl mx-auto py-1 px-5 flex flex-row justify-between items-center;
     }
 
     .navbar-logo-img {
         @apply w-auto;
-        max-height: 56px;
+        max-height: 100px;
         height: auto;
     }
 
@@ -166,7 +166,7 @@
     }
 
     .nav-mobile-toggle {
-        @apply py-3 text-white font-bold cursor-pointer flex items-center bg-transparent border-0;
+        @apply py-1 text-white font-bold cursor-pointer flex items-center bg-transparent border-0;
     }
 
     .nav-mobile-menu {
