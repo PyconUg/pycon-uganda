@@ -245,12 +245,16 @@
 
     /* Promo / hero section */
     .promo {
-        @apply min-w-screen relative overflow-hidden mt-16;
+        @apply min-w-screen relative overflow-hidden mt-0;
         background: #2d2d2d;
     }
 
     .promo-video-background {
         @apply absolute inset-0 z-[1] overflow-hidden;
+    }
+
+    .promo-image-background {
+        @apply absolute inset-0 z-[1] bg-cover bg-center bg-no-repeat;
     }
 
     .promo-video-iframe {
@@ -320,11 +324,11 @@
         @apply inline-flex justify-center items-center font-semibold text-white no-underline border-0 transition-colors duration-300 rounded;
         font-size: 1.375rem;
         padding: 1.25rem 2.75rem;
-        background-color: #ff6b6b;
+        background-color: #dc3545;
     }
 
     .promo-btn-learn-more:hover {
-        background-color: #ff5252;
+        background-color: #c82333;
         color: #fff;
     }
 
@@ -721,7 +725,7 @@
 
 @media (max-width: 768px) {
     .promo {
-        margin-top: 10rem;
+        margin-top: 0;
     }
 
     .promo-grid {
@@ -771,6 +775,6 @@
 
 @media (max-width: 1025px) {
     .promo {
-        margin-top: 8rem;
+        margin-top: 0;
     }
 }
