@@ -1,7 +1,7 @@
 {% load i18n static markdown_extras  %}
 
 <!-- Our Schedule -->
-<section class="container g-pt-100 g-pb-60">
+<section class="max-w-7xl mx-auto px-4 g-pt-100 g-pb-60">
     <!-- Heading -->
     <div class="row justify-content-center text-center g-mb-50">
         <div class="col-lg-9">
@@ -50,7 +50,7 @@
                 {% endif %}
                 rounded g-pa-10 g-mb-10"> <!-- Reduced padding for mobile -->
 
-                    <div class="row">
+                    <div class="flex flex-wrap gap-4">
                         <div class="col-12 col-md-8">
                             <!-- Event or Talk Title -->
                             {% if schedule.is_an_event %}

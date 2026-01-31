@@ -11,7 +11,7 @@
 
     <!-- Breadcrumbs -->
     <section class="g-bg-gray-light-v5 g-py-80 g-pt-150">
-        <div class="container text-center">
+        <div class="max-w-7xl mx-auto px-4 text-center">
           <h2 class="h2 g-color-black g-font-weight-600">Our Sponsors</h2>
   
           <ul class="u-list-inline">
@@ -35,7 +35,7 @@
    
  
       <section>
-        <div class="container g-pt-50">
+        <div class="max-w-7xl mx-auto px-4 g-pt-50">
       {% for tier in sponsorship_tiers %}
           {% if tier.sponsors.exists %}
               {% if not tier.show_in_grid %}
@@ -47,12 +47,12 @@
                       </h2>
                       <hr class="g-brd-{{ tier.colour }} g-my-20">
                       <li class="media g-brd-around rounded g-pa-20 g-mb-200">
-                          <div class="row">
+                          <div class="flex flex-wrap gap-4">
                               {% for sponsor in tier.sponsors %}
                                   {% if sponsor.show_biography %}
                                   <!-- Section -->
-                                  <section class="container g-pt-50 g-pb-40">
-                                      <div class="row">
+                                  <section class="max-w-7xl mx-auto px-4 g-pt-50 g-pb-40">
+                                      <div class="flex flex-wrap gap-4">
                                           <div class="col-lg-3 g-mb-60">
                                               <div class=" ">
                                                   <img class='img-responsive' style="width: 100%;" src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}">
@@ -74,8 +74,8 @@
                                   </section>
                                   <!-- End Section -->
                                   {% else %}
-                                  <section class="container g-pt-100 g-pb-40">
-                                      <div class="row">
+                                  <section class="max-w-7xl mx-auto px-4 g-pt-100 g-pb-40">
+                                      <div class="flex flex-wrap gap-4">
                                           <div class="col-lg-3 g-mb-60">
                                               <div class=" ">
                                                   <img class='img-responsive' style="width: 100%;" src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}">
@@ -103,7 +103,7 @@
                           {{ tier.name }}
                       </h2>
                       <hr class="g-brd-{{ tier.colour }} g-my-20">
-                      <div class="row">
+                      <div class="flex flex-wrap gap-4">
                           {% for sponsor in tier.sponsors %}
                           <div class="col-md-3 col-sm-6 g-mb-30"> 
                             {% if sponsor.website %}
@@ -144,8 +144,8 @@
       <section>
         <div class="col-md-12">
             <div class="panel panel-danger wow fadeInLeft">
-                    <div class="container">
-                        <div class="row ">
+                    <div class="max-w-7xl mx-auto px-4">
+                        <div class="flex flex-wrap gap-4 ">
                                             
                         {% if diamond %}
                         <div class=" g-line-height-2 g-pa-40 g-mb-30 align-self-lg-center text-center" style="width: 100%;" role="alert">
@@ -153,7 +153,7 @@
                             <img class="img-responsive g-height-25 " src="{% static '2020/img/sponsors/diamond.png' %}" alt="{{ sponsor.name }}">
                             <br>
                             <li class="media g-brd-around g-brd-gray-light-v4 g-brd-left-3 g-brd-blue-left rounded g-pa-20 g-mb-200">
-                              <div class="row">
+                              <div class="flex flex-wrap gap-4">
                               {% for sponsor in diamond %}
                               {% if sponsor.is_visible %}
  
@@ -186,7 +186,7 @@
                                   
                                   <div class="g-line-height-2 g-pa-40 g-mb-30 " role="alert">
                                     <div class="g-brd-around g-brd-gray-light-v4 g-pa-20 g-mb-40">
-                                      <div class="row">
+                                      <div class="flex flex-wrap gap-4">
                             
                                         <div class="col-lg-4 text-center align-items-center g-mb-40 g-mb-0--lg ">
                                           <!-- Speaker Image -->
@@ -290,7 +290,7 @@
                             <br>
                             <hr class="g-brd-yellow g-my-20">
                             <li class="media g-brd-around g-brd-gray-light-v4 g-brd-left-3 g-brd-yellow-left rounded g-pa-20 g-mb-200">
-                             <div class="row">
+                             <div class="flex flex-wrap gap-4">
                       
                               {% for sponsor in gold %}
                               {% if sponsor.is_visible %}
@@ -321,7 +321,7 @@
                                   
                                   <div class="g-line-height-2 g-pa-40 g-mb-30 " role="alert">
                                     <div class="g-brd-around g-brd-yellow g-pa-20 g-mb-40">
-                                      <div class="row">
+                                      <div class="flex flex-wrap gap-4">
                             
                                         <div class="col-lg-4 text-center align-items-center g-mb-40 g-mb-0--lg ">
                                           <!-- Speaker Image -->
@@ -420,7 +420,7 @@
                             <img class="img-responsive g-height-25 " src="{% static '2020/img/sponsors/silver.png' %}" alt="{{ sponsor.name }}">
                             <br>
                             <li class="media g-brd-around g-brd-gray-light-v4 g-brd-left-3 g-brd-gray-left rounded g-pa-20 g-mb-200">
-                             <div class="row">
+                             <div class="flex flex-wrap gap-4">
                       
                               {% for sponsor in silver %}
                               {% if sponsor.is_visible %}
@@ -451,7 +451,7 @@
                                   
                                   <div class="g-line-height-2 g-pa-40 g-mb-30 " role="alert">
                                     <div class="g-brd-around g-brd-gray-light-v4 g-pa-20 g-mb-40">
-                                      <div class="row">
+                                      <div class="flex flex-wrap gap-4">
                             
                                         <div class="col-lg-4 text-center align-items-center g-mb-40 g-mb-0--lg ">
                                           <!-- Speaker Image -->
@@ -555,7 +555,7 @@
                               <br>
                               <hr class="g-brd-brown g-my-20">
                               <li class="media g-brd-around g-brd-gray-light-v4 g-brd-left-3 g-brd-brown-left rounded g-pa-20 g-mb-200">
-                                <div class="row">
+                                <div class="flex flex-wrap gap-4">
 
                                 {% for sponsor in bronze %}
                                 {% if sponsor.is_visible %}
@@ -586,7 +586,7 @@
                                     
                                     <div class="g-line-height-2 g-pa-40 g-mb-30 " role="alert">
                                       <div class="g-brd-around g-brd-brown g-pa-30 g-mb-40">
-                                        <div class="row">
+                                        <div class="flex flex-wrap gap-4">
                               
                                           <div class="col-lg-4 text-center align-items-center g-mb-40 g-mb-0--lg ">
                                             <!-- Speaker Image -->
@@ -678,7 +678,7 @@
                   <br>
                   <li class="media g-brd-around  g-mb-200">
                     <br><br>
-                    <div class="row">
+                    <div class="flex flex-wrap gap-4">
 
                         {% for sponsor in other %}
                       <div class="col-md-3 g-mb-30">
@@ -695,7 +695,7 @@
                   {% if individual %}
                   <br><br>
                         <div class="container-fluid">
-                            <div class="row">
+                            <div class="flex flex-wrap gap-4">
                                     {% for sponsor in individual %}
                                     <div class="col-md-2">
                                         <h6><a href="{{ sponsor.website }}" target="_blank">{{ sponsor.name }}</a></h6>

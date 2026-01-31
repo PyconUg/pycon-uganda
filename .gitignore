@@ -129,3 +129,5 @@ dmypy.json
 # Secrets configuration
 secrets.py
 **/secrets.py
+
+node_modules/

@@ -1,132 +1,381 @@
 {% extends "base.html" %}
-{% load i18n static  markdown_extras  %}
-{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Sponsor Us | PyCon Africa" %}{% endif %}{% endblock %}
-
- 
-
-
+{% load i18n static %}
+{% block meta_title %}{% trans "Sponsorship Packages | PyCon Africa 2026" %}{% endblock %}
 
 {% block content %}
 {% include '2026/navbar.html' %}
 
-    <!-- Breadcrumbs -->
-    <section class="g-bg-gray-light-v5 g-py-80 g-pt-150">
-      <div class="container text-center">
-        <h2 class="h2 g-color-black g-font-weight-600">Sponsor Us</h2>
+<!-- Breadcrumbs -->
+<section class="bg-gray-100 py-20 pt-32">
+  <div class="max-w-7xl mx-auto px-4 text-center">
+    <h1 class="text-3xl font-bold text-gray-900">Sponsorship Packages</h1>
+    <ul class="flex flex-wrap gap-2 list-none justify-center mt-4">
+      <li><a class="text-gray-700 hover:text-blue-600 no-underline" href="/2026/">Home</a><i class="text-gray-400 ml-2">/</i></li>
+      <li class="text-blue-600"><span>Sponsorship Packages</span></li>
+    </ul>
+    <i class="fa-solid fa-handshake text-4xl mt-4 inline-block text-gray-400"></i>
+  </div>
+</section>
 
-        <ul class="u-list-inline">
-          <li class="list-inline-item g-mr-5">
-            <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="#">Home</a>
-            <i class="g-color-gray-light-v2 g-ml-5">/</i>
-          </li> 
-          <!-- <li class="list-inline-item g-mr-5">
-            <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="/2024/sponsor-us/">Sponsor</a>
-            <i class="g-color-gray-light-v2 g-ml-5">/</i>
-          </li>  -->
-          <li class="list-inline-item g-color-primary">
-            <span>Sponsor Us</span>
-          </li>
-        </ul><br> 
-        <i class="fa-sharp fa-solid fa-money-check-dollar-pen" style="font-size:41px;"></i>
+<!-- body -->
+<div class="max-w-7xl mx-auto px-4 pt-12 pb-16">
+  <div class="flex flex-wrap gap-6">
+    <div class="w-full">
+      <p class="text-gray-900 text-base leading-relaxed mb-4">
+        Sponsorship of PyCon Africa will give your organisation global visibility and recognition. It is an excellent way to support the Python community, promote your products to our hundreds of delegates, and meet Python developers who are looking for work.
+      </p>
+      <p class="text-gray-900 text-base leading-relaxed mb-4">
+        In return for your support, we will ensure that your company is given exposure before, during, and after the event, and we will work with you so that you get exactly what you're looking for out of sponsoring the conference.
+      </p>
+      <p class="text-gray-900 text-base leading-relaxed mb-4">
+        Please contact <a href="mailto:sponsorship@pycon.africa" class="text-pycon-teal hover:underline font-medium">sponsorship@pycon.africa</a> if you are interested in sponsoring PyCon Africa 2026, or if you have any questions about sponsorship.
+      </p>
+      <p class="text-gray-900 text-base leading-relaxed mb-6">
+        Please note that these packages are flexible - if you are interested in sponsoring, but none of our packages quite fit your needs or budget, our sponsorship team will be happy to work with you to customise your package benefits.
+      </p>
+
+      <!-- Regional Packages box -->
+      <div class="bg-amber-50 rounded-lg p-6 mb-8">
+        <h2 class="text-xl font-bold text-gray-900 mb-3">Regional Packages for African Organisations</h2>
+        <p class="text-gray-900 text-base leading-relaxed mb-0">
+          You'll notice that most packages have 2 versions. The standard packages and Regional packages are both priced in US Dollars. The regional packages are there to make participation possible for African companies.
+        </p>
       </div>
-      
-    </section>
-    <!-- End Breadcrumbs --> 
- 
 
+      <!-- Download Full Prospectus button -->
+      <div class="text-center mb-12">
+        <a href="https://drive.google.com/file/d/1kFroSEsjlMDYiGPmuYnvSxAaTe-HfIRp/view?usp=drive_link" target="_blank" rel="noopener" class="inline-block no-underline text-center" style="background-color: #d97706; color: #ffffff; padding: 14px 32px; font-size: 1.125rem; font-weight: 600; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.15); transition: background-color 0.2s, box-shadow 0.2s;" onmouseover="this.style.backgroundColor='#b45309'; this.style.boxShadow='0 6px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.backgroundColor='#d97706'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.15)';">
+          <i class="fa fa-download" aria-hidden="true" style="margin-right: 8px;"></i>Download Full Prospectus
+        </a>
+      </div>
 
-       <!-- body -->
-       <div class="container g-pt-50">
-        <div class="row">
-            <!-- Displaying the sponsor us page content -->
-            <div class="u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30" role="alert">
-                <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-20 g-mb-30">Sponsorship
-                  <span class="g-color-primary">Packages</span></h2>
-                <p class="g-color-black g-font-size-16">{{ sponsor_us_page.why_sponsor_us | markdown | safe }} 
-                    {{ form.media }}</p>
-                <!-- Display download prospectus if link available -->
-                {% if sponsor_us_page.prospectus_link %}
-                
-              <a class="btn btn-md u-btn-inset u-btn-outline-darkgray g-brd-4 g-mr-10 g-mb-15" href="{{ sponsor_us_page.prospectus_link }}" target="_blank"><b>Download our Prospectus &nbsp;&nbsp; <i class="fa-regular fa-cloud-arrow-down fa-beat-fade"></i></b></a>
-                    {% endif %}
-            </div>
-    
-            <!-- Loop through each sponsorship tier and display its details and benefits -->
-            {% for tier in sponsorship_tiers %}
-            {% if forloop.counter <= 2 %}
-                <!-- Render first two tiers with specific layout -->
-                <div class="u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30" role="alert">
-                    <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-20 g-mb-30">{{ tier.name }}
-                      <span class="g-color-primary">${{ tier.amount }}</span></h2>
-                      
-                      <p class="g-color-black g-font-size-16">{{ tier.details | markdown | safe }} 
-                    {{ form.media }}</p>
-        
-                      {% if tier.benefits.exists %}
-                          <p class="g-color-black g-font-size-16"><strong>Highlights of this package:</strong></p>
-                          
-                              {% for benefit in tier.benefits.all %}
-                                  <p class="g-color-black g-font-size-16">{{ benefit.description | markdown | safe }}</p> 
-                              {% endfor %}
-                          
-                      {% endif %}
-                      
-                      {% if tier.additional_resources.exists %}
-                          <p class="g-color-black g-font-size-16"><strong>This package also includes:</strong></p>
-                          <ul class="g-color-black g-font-size-16">
-                              {% for additional_resource in tier.additional_resources.all %}
-                                  <li>{{ additional_resource.package }}</li>
-                              {% endfor %}
-                          </ul>
-                      {% endif %}
-                </div>
-                {% elif forloop.counter > 2 and forloop.counter <= 9 %}
-                <!-- Render other tiers with a different layout -->
-                <div class="u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30 col col-12 col-sm-12 col-md-6" role="alert">
-                  <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-20 g-mb-30">{{ tier.name }}
-                    <span class="g-color-primary">${{ tier.amount }}</span></h2> 
-                    <p class="g-color-black g-font-size-16">{{ tier.details | markdown | safe }}</p>
-        
-                    <!-- Assuming the same benefits and additional_resources structure applies -->
-                    {% if tier.benefits.exists %}
-                        <p class="g-color-black g-font-size-16"><strong>Highlights of this package:</strong></p> 
-                            {% for benefit in tier.benefits.all %}
-                            <p class="g-color-black g-font-size-16">{{ benefit.description | markdown | safe }}</p> 
-                            {% endfor %} 
-                    {% endif %}
-        
-                    {% if tier.additional_resources.exists %}
-                        <p class="g-color-black g-font-size-16"><strong>This package also includes:</strong></p>
-                        <ul class="g-color-black g-font-size-16">
-                            {% for additional_resource in tier.additional_resources.all %}
-                                <li>{{ additional_resource.package }}</li>
-                            {% endfor %}
-                        </ul>
-                    {% endif %}
-                </div> 
-              {% else %}
-            {% endif %}
- 
-        {% endfor %}
-        
-     
+      <!-- Headline Sponsor -->
+      <div class="shadow-lg leading-relaxed p-10 mb-8 rounded-lg bg-white w-full">
+        <h2 class="text-2xl font-bold text-gray-900 mb-2">Headline Sponsor ($ 20000)</h2>
+        <p class="text-gray-700 italic mb-6">The absolute best sponsorship package with the best benefits</p>
+        <h3 class="text-lg font-bold text-gray-900 mb-4">Details</h3>
+        <p class="font-semibold text-gray-900 mb-2">Exclusive benefits</p>
+        <ul class="list-disc list-inside text-gray-900 text-base leading-relaxed mb-4 space-y-1">
+          <li>Named travel grant awardees: 5</li>
+          <li>Spotlight sponsor talk: 10 minutes (after keynote)</li>
+          <li>Sponsored Tutorial/Workshop: Max 3 hrs</li>
+          <li>Send an exclusive email to all delegates of PyCon Africa: 1</li>
+          <li>Company Logo and link on the website homepage: 1</li>
+        </ul>
+        <p class="font-semibold text-gray-900 mb-2">Premium benefits</p>
+        <ul class="list-disc list-inside text-gray-900 text-base leading-relaxed mb-4 space-y-1">
+          <li>Exhibition Booth: 3m x 3m</li>
+          <li>Pullup banner at conference entrance: 2</li>
+          <li>Sponsored talk/demo (subject to approval): 45 minutes</li>
+          <li>Blogpost on PyCon Africa blog: 1</li>
+          <li>On-site recruitment session - interview room</li>
+          <li>Host an exclusive session or fun event during the conference (subject to approval)</li>
+        </ul>
+        <p class="font-semibold text-gray-900 mb-2">Standard benefits</p>
+        <ul class="list-disc list-inside text-gray-900 text-base leading-relaxed mb-4 space-y-1">
+          <li>Video ad(s) on visual display during breaks</li>
+          <li>Pullup banner in conference hall: 2</li>
+          <li>Pullup banner (if provided): 1-2</li>
+          <li>Complimentary conference passes: 10</li>
+          <li>Company swag in welcome pack (if provided)</li>
+          <li>Recruiting email to attendees: 1</li>
+          <li>Recruiting channel in Pycon Africa Slack/Discord workspace</li>
+          <li>Recruiting ads on website</li>
+          <li>Social media posts on all platforms to all subscribers: 2</li>
+          <li>Retweet to all PyCon Africa's subscribers: 1</li>
+        </ul>
+        <p class="font-semibold text-gray-900 mb-2">Basic benefits</p>
+        <ul class="list-disc list-inside text-gray-900 text-base leading-relaxed space-y-1">
+          <li>Company Logo and Link on PyCon Africa Sponsors page</li>
+          <li>Company biography on PyCon Africa website sponsors page: 750 words</li>
+          <li>Company Logo on program overview</li>
+          <li>Company name and logo in attendees emails</li>
+          <li>Company name and quotes in press releases</li>
+        </ul>
+      </div>
 
+      <!-- Platinum Sponsor -->
+      <div class="shadow-lg leading-relaxed p-10 mb-8 rounded-lg bg-white w-full">
+        <h2 class="text-2xl font-bold text-gray-900 mb-2">Platinum Sponsor ($ 16000)</h2>
+        <p class="text-gray-700 italic mb-6">Platinum sponsors get the following benefits:</p>
+        <h3 class="text-lg font-bold text-gray-900 mb-4">Details</h3>
+        <p class="font-semibold text-gray-900 mb-2">Exclusive benefits</p>
+        <ul class="list-disc list-inside text-gray-900 text-base leading-relaxed mb-4 space-y-1">
+          <li>Named travel grant awardees: 3</li>
+          <li>Spotlight sponsor talk: 5 minutes (before/after any regular talk)</li>
+          <li>Company Logo and link on the website homepage: 1</li>
+        </ul>
+        <p class="font-semibold text-gray-900 mb-2">Premium benefits</p>
+        <ul class="list-disc list-inside text-gray-900 text-base leading-relaxed mb-4 space-y-1">
+          <li>Exhibition Booth: 3m x 3m</li>
+          <li>Pullup banner at conference entrance: 1</li>
+          <li>Sponsored talk/demo (subject to approval): 30 minutes</li>
+          <li>Blogpost on PyCon Africa blog: 1</li>
+          <li>On-site recruitment session - interview room</li>
+          <li>Host an exclusive session or fun event during the conference (subject to approval)</li>
+        </ul>
+        <p class="font-semibold text-gray-900 mb-2">Standard benefits</p>
+        <ul class="list-disc list-inside text-gray-900 text-base leading-relaxed mb-4 space-y-1">
+          <li>Video ad(s) on visual display during breaks</li>
+          <li>Pullup banner in conference hall: 1</li>
+          <li>Pullup banner (if provided): 1-2</li>
+          <li>Complimentary conference passes: 7</li>
+          <li>Company swag in welcome pack (if provided)</li>
+          <li>Recruiting email to attendees: 1</li>
+          <li>Recruiting channel in Pycon Africa Slack/Discord workspace</li>
+          <li>Recruiting ads on website</li>
+          <li>Social media posts on all platforms to all subscribers: 1</li>
+          <li>Retweet to all PyCon Africa's subscribers: 1</li>
+        </ul>
+        <p class="font-semibold text-gray-900 mb-2">Basic benefits</p>
+        <ul class="list-disc list-inside text-gray-900 text-base leading-relaxed space-y-1">
+          <li>Company Logo and Link on PyCon Africa Sponsors page</li>
+          <li>Company biography on PyCon Africa website sponsors page: 650 words</li>
+          <li>Company Logo on program overview</li>
+          <li>Company name and logo in attendees emails</li>
+          <li>Company name and quotes in press releases</li>
+        </ul>
+      </div>
 
-            <!-- Displaying the special sponsorship package -->
-            <div class="u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30" role="alert">
-                <h2 class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-20 g-mb-30">We are
-                  <span class="g-color-primary">Flexible!</span></h2>
-                  <p class="g-color-black g-font-size-16">{{ sponsor_us_page.special_sponsorship | markdown | safe }} 
-                    {{ form.media }}</p>
-                  <a href="mailto:sponsorship@pycon.ug" class="btn btn-md u-btn-skew u-btn-outline-primary g-mr-10 g-mb-15">
-                    <span class="u-btn-skew__inner">sponsorship@pycon.ug</span>
-                  </a>
-            </div>
-         
-        </div>
+      <!-- Regional Platinum -->
+      <div class="shadow-lg leading-relaxed p-10 mb-8 rounded-lg bg-white w-full">
+        <h2 class="text-2xl font-bold text-gray-900 mb-2">Regional Platinum ($ 7900)</h2>
+        <p class="text-gray-700 italic mb-6">Regional sponsorship packages can be claimed only by organisations based in Africa.</p>
+        <h3 class="text-lg font-bold text-gray-900 mb-4">Details</h3>
+        <p class="text-gray-900 text-base leading-relaxed">Regional Platinum sponsors can enjoy the same benefits as our international Platinum sponsors, except the "Named travel grant awardees" benefit.</p>
+      </div>
+
+      <!-- Diamond Sponsor -->
+      <div class="shadow-lg leading-relaxed p-10 mb-8 rounded-lg bg-white w-full">
+        <h2 class="text-2xl font-bold text-gray-900 mb-2">Diamond Sponsor ($ 12000)</h2>
+        <p class="text-gray-700 italic mb-6">Diamond sponsors enjoy the following benefits</p>
+        <h3 class="text-lg font-bold text-gray-900 mb-4">Details</h3>
+        <p class="font-semibold text-gray-900 mb-2">Exclusive benefits</p>
+        <ul class="list-disc list-inside text-gray-900 text-base leading-relaxed mb-4 space-y-1">
+          <li>Names travel grant awardees: 1</li>
+        </ul>
+        <p class="font-semibold text-gray-900 mb-2">Premium benefits</p>
+        <ul class="list-disc list-inside text-gray-900 text-base leading-relaxed mb-4 space-y-1">
+          <li>Exhibition Booth: 2m x 2m</li>
+          <li>Sponsored talk/demo (subject to approval): 25 minutes</li>
+        </ul>
+        <p class="font-semibold text-gray-900 mb-2">Standard benefits</p>
+        <ul class="list-disc list-inside text-gray-900 text-base leading-relaxed mb-4 space-y-1">
+          <li>Video ad(s) on visual display during breaks</li>
+          <li>Pullup banner (if provided): 1-2</li>
+          <li>Complimentary conference passes: 5</li>
+          <li>Company swag in welcome pack (if provided)</li>
+          <li>Recruiting email to attendees: 1</li>
+          <li>Recruiting channel in Pycon Africa Slack/Discord workspace</li>
+          <li>Recruiting ads on website</li>
+          <li>Retweet to all PyCon Africa's subscribers: 1</li>
+        </ul>
+        <p class="font-semibold text-gray-900 mb-2">Basic benefits</p>
+        <ul class="list-disc list-inside text-gray-900 text-base leading-relaxed space-y-1">
+          <li>Company Logo and Link on PyCon Africa Sponsors page</li>
+          <li>Company biography on PyCon Africa website sponsors page: 500 words</li>
+          <li>Company Logo on program overview</li>
+          <li>Company name and logo in attendees emails</li>
+          <li>Company name and quotes in press releases</li>
+        </ul>
+      </div>
+
+      <!-- Regional Diamond -->
+      <div class="shadow-lg leading-relaxed p-10 mb-8 rounded-lg bg-white w-full">
+        <h2 class="text-2xl font-bold text-gray-900 mb-2">Regional Diamond ($ 5000)</h2>
+        <p class="text-gray-700 italic mb-6">Regional sponsorship packages can be claimed only by organisations based in Africa.</p>
+        <h3 class="text-lg font-bold text-gray-900 mb-4">Details</h3>
+        <p class="text-gray-900 text-base leading-relaxed">Regional Diamond sponsors can enjoy the same benefits as our international Diamond sponsors, except the "Named travel grant awardees" benefit.</p>
+      </div>
+
+      <!-- Gold Sponsor -->
+      <div class="shadow-lg leading-relaxed p-10 mb-8 rounded-lg bg-white w-full">
+        <h2 class="text-2xl font-bold text-gray-900 mb-2">Gold Sponsor ($ 7000)</h2>
+        <p class="text-gray-700 italic mb-6">Gold sponsors enjoy the following benefits:</p>
+        <h3 class="text-lg font-bold text-gray-900 mb-4">Details</h3>
+        <p class="font-semibold text-gray-900 mb-2">Premium benefits</p>
+        <ul class="list-disc list-inside text-gray-900 text-base leading-relaxed mb-4 space-y-1">
+          <li>Exhibition Booth: Provided area</li>
+          <li>Sponsored talk/demo (subject to approval): 15 minutes</li>
+        </ul>
+        <p class="font-semibold text-gray-900 mb-2">Standard benefits</p>
+        <ul class="list-disc list-inside text-gray-900 text-base leading-relaxed mb-4 space-y-1">
+          <li>Video ad(s) on visual display during breaks</li>
+          <li>Pullup banner (if provided): 1-2</li>
+          <li>Complimentary conference passes: 3</li>
+          <li>Company swag in welcome pack (if provided)</li>
+          <li>Recruiting email to attendees: 1</li>
+          <li>Recruiting channel in Pycon Africa Slack/Discord workspace</li>
+          <li>Retweet to all PyCon Africa's subscribers: 1</li>
+        </ul>
+        <p class="font-semibold text-gray-900 mb-2">Basic benefits</p>
+        <ul class="list-disc list-inside text-gray-900 text-base leading-relaxed space-y-1">
+          <li>Company Logo and Link on PyCon Africa Sponsors page</li>
+          <li>Company biography on PyCon Africa website sponsors page: 250 words</li>
+          <li>Company Logo on program overview</li>
+          <li>Company name and logo in attendees emails</li>
+          <li>Company name and quotes in press releases</li>
+        </ul>
+      </div>
+
+      <!-- Regional Gold -->
+      <div class="shadow-lg leading-relaxed p-10 mb-8 rounded-lg bg-white w-full">
+        <h2 class="text-2xl font-bold text-gray-900 mb-2">Regional Gold ($ 3400)</h2>
+        <p class="text-gray-700 italic mb-6">Regional sponsorship packages can be claimed only by organisations based in Africa.</p>
+        <h3 class="text-lg font-bold text-gray-900 mb-4">Details</h3>
+        <p class="text-gray-900 text-base leading-relaxed">Regional Gold sponsors can enjoy the same benefits as our international Gold sponsors.</p>
+      </div>
+
+      <!-- Silver Sponsor -->
+      <div class="shadow-lg leading-relaxed p-10 mb-8 rounded-lg bg-white w-full">
+        <h2 class="text-2xl font-bold text-gray-900 mb-2">Silver Sponsor ($ 3500)</h2>
+        <p class="text-gray-700 italic mb-6">Silver sponsors enjoy the following benefits:</p>
+        <h3 class="text-lg font-bold text-gray-900 mb-4">Details</h3>
+        <p class="font-semibold text-gray-900 mb-2">Standard benefits</p>
+        <ul class="list-disc list-inside text-gray-900 text-base leading-relaxed mb-4 space-y-1">
+          <li>Pullup banner (if provided): 1-2</li>
+          <li>Complimentary conference passes: 2</li>
+          <li>Company swag in welcome pack (if provided)</li>
+          <li>Recruiting email to attendees: 1</li>
+          <li>Retweet to all PyCon Africa's subscribers: 1</li>
+        </ul>
+        <p class="font-semibold text-gray-900 mb-2">Basic benefits</p>
+        <ul class="list-disc list-inside text-gray-900 text-base leading-relaxed space-y-1">
+          <li>Company Logo and Link on PyCon Africa Sponsors page</li>
+          <li>Company biography on PyCon Africa website sponsors page: 150 words</li>
+          <li>Company Logo on program overview</li>
+          <li>Company name and logo in attendees emails</li>
+          <li>Company name and quotes in press releases</li>
+        </ul>
+      </div>
+
+      <!-- Regional Silver -->
+      <div class="shadow-lg leading-relaxed p-10 mb-8 rounded-lg bg-white w-full">
+        <h2 class="text-2xl font-bold text-gray-900 mb-2">Regional Silver ($ 1800)</h2>
+        <p class="text-gray-700 italic mb-6">Regional sponsorship packages can be claimed only by organisations based in Africa.</p>
+        <h3 class="text-lg font-bold text-gray-900 mb-4">Details</h3>
+        <p class="text-gray-900 text-base leading-relaxed">Regional Silver sponsors can enjoy the same benefits as our international Silver sponsors.</p>
+      </div>
+
+      <!-- Bronze Sponsor -->
+      <div class="shadow-lg leading-relaxed p-10 mb-8 rounded-lg bg-white w-full">
+        <h2 class="text-2xl font-bold text-gray-900 mb-2">Bronze Sponsor ($ 1000)</h2>
+        <p class="text-gray-700 italic mb-6">Bronze sponsors enjoy the following benefits</p>
+        <h3 class="text-lg font-bold text-gray-900 mb-4">Details</h3>
+        <p class="font-semibold text-gray-900 mb-2">Standard benefits</p>
+        <ul class="list-disc list-inside text-gray-900 text-base leading-relaxed mb-4 space-y-1">
+          <li>Pullup banner (if provided): 1-2</li>
+          <li>Complimentary conference passes: 1</li>
+          <li>Company swag in welcome pack (if provided)</li>
+          <li>Retweet to all PyCon Africa's subscribers: 1</li>
+        </ul>
+        <p class="font-semibold text-gray-900 mb-2">Basic benefits</p>
+        <ul class="list-disc list-inside text-gray-900 text-base leading-relaxed space-y-1">
+          <li>Company Logo and Link on PyCon Africa Sponsors page</li>
+          <li>Company Logo on program overview</li>
+          <li>Company name and logo in attendees emails</li>
+          <li>Company name and quotes in press releases</li>
+        </ul>
+      </div>
+
+      <!-- Regional Bronze -->
+      <div class="shadow-lg leading-relaxed p-10 mb-8 rounded-lg bg-white w-full">
+        <h2 class="text-2xl font-bold text-gray-900 mb-2">Regional Bronze ($ 530)</h2>
+        <p class="text-gray-700 italic mb-6">Regional sponsorship packages can be claimed only by organisations based in Africa.</p>
+        <h3 class="text-lg font-bold text-gray-900 mb-4">Details</h3>
+        <p class="text-gray-900 text-base leading-relaxed">Regional Bronze sponsors can enjoy the same benefits as our international Bronze sponsors.</p>
+      </div>
+
+      <!-- Contributing Sponsor -->
+      <div class="shadow-lg leading-relaxed p-10 mb-8 rounded-lg bg-white w-full">
+        <h2 class="text-2xl font-bold text-gray-900 mb-2">Contributing Sponsor ($ 500)</h2>
+        <p class="text-gray-700 italic mb-6">Contributing sponsors enjoy the following benefits</p>
+        <h3 class="text-lg font-bold text-gray-900 mb-4">Details</h3>
+        <p class="font-semibold text-gray-900 mb-2">Basic benefits</p>
+        <ul class="list-disc list-inside text-gray-900 text-base leading-relaxed space-y-1">
+          <li>Company Logo and Link on PyCon Africa Sponsors page</li>
+          <li>Company Logo on program overview</li>
+          <li>Company name and logo in attendees emails</li>
+          <li>Company name and quotes in press releases</li>
+        </ul>
+      </div>
+
+      <!-- Regional Contributing -->
+      <div class="shadow-lg leading-relaxed p-10 mb-8 rounded-lg bg-white w-full">
+        <h2 class="text-2xl font-bold text-gray-900 mb-2">Regional Contributing Sponsor ($ 260)</h2>
+        <p class="text-gray-700 italic mb-6">Regional sponsorship packages can be claimed only by organisations based in Africa.</p>
+        <h3 class="text-lg font-bold text-gray-900 mb-4">Details</h3>
+        <p class="text-gray-900 text-base leading-relaxed">Regional Contributing sponsors can enjoy the same benefits as our international Contributing sponsors.</p>
+      </div>
+
+      <!-- Diversity Sponsor -->
+      <div class="shadow-lg leading-relaxed p-10 mb-8 rounded-lg bg-white w-full">
+        <h2 class="text-2xl font-bold text-gray-900 mb-2">Diversity Sponsor ($ 3000)</h2>
+        <p class="text-gray-700 italic mb-6">Contribute to our diversity efforts directly.</p>
+        <h3 class="text-lg font-bold text-gray-900 mb-4">Details</h3>
+        <p class="text-gray-900 text-base leading-relaxed">This can be added on as an extra on any of our other sponsorship packages, or it can be standalone.</p>
+      </div>
+
+      <!-- Coffee break (tutorial days) -->
+      <div class="shadow-lg leading-relaxed p-10 mb-8 rounded-lg bg-white w-full">
+        <h2 class="text-2xl font-bold text-gray-900 mb-2">Coffee break (tutorial days) ($ 1500)</h2>
+        <p class="text-gray-700 italic mb-6">Provide coffee for our tutorial attendees.</p>
+        <h3 class="text-lg font-bold text-gray-900 mb-4">Details</h3>
+        <p class="text-gray-900 text-base leading-relaxed">This can be added on as an extra on any of our other sponsorship packages, or it can be standalone.</p>
+      </div>
+
+      <!-- Coffee break (Conference days) -->
+      <div class="shadow-lg leading-relaxed p-10 mb-8 rounded-lg bg-white w-full">
+        <h2 class="text-2xl font-bold text-gray-900 mb-2">Coffee break (Conference days) ($ 2500)</h2>
+        <p class="text-gray-700 italic mb-6">Provide coffee for our conference participants.</p>
+        <h3 class="text-lg font-bold text-gray-900 mb-4">Details</h3>
+        <p class="text-gray-900 text-base leading-relaxed">This can be added on as an extra on any of our other sponsorship packages, or it can be standalone.</p>
+      </div>
+
+      <!-- Media -->
+      <div class="shadow-lg leading-relaxed p-10 mb-8 rounded-lg bg-white w-full">
+        <h2 class="text-2xl font-bold text-gray-900 mb-2">Media ($ 2500)</h2>
+        <p class="text-gray-700 italic mb-6">Sponsor our photography and audio visual efforts.</p>
+        <h3 class="text-lg font-bold text-gray-900 mb-4">Details</h3>
+        <p class="text-gray-900 text-base leading-relaxed">This can be added on as an extra on any of our other sponsorship packages, or it can be standalone.</p>
+      </div>
+
+      <!-- Developer Sprints -->
+      <div class="shadow-lg leading-relaxed p-10 mb-8 rounded-lg bg-white w-full">
+        <h2 class="text-2xl font-bold text-gray-900 mb-2">Developer Sprints ($ 2300)</h2>
+        <p class="text-gray-700 italic mb-6">Fuel open source development by sponsoring our development and collaboration sprints.</p>
+        <h3 class="text-lg font-bold text-gray-900 mb-4">Details</h3>
+        <p class="text-gray-900 text-base leading-relaxed">This can be added on as an extra on any of our other sponsorship packages, or it can be standalone.</p>
+      </div>
+
+      <!-- In Kind -->
+      <div class="shadow-lg leading-relaxed p-10 mb-8 rounded-lg bg-white w-full">
+        <h2 class="text-2xl font-bold text-gray-900 mb-2">In Kind ($0)</h2>
+        <p class="text-gray-700 italic mb-6">These are sponsors that support us by providing services at our event</p>
+        <h3 class="text-lg font-bold text-gray-900 mb-4">Details</h3>
+        <p class="text-gray-900 text-base leading-relaxed">These are sponsors that support us by providing products or services.</p>
+      </div>
+
+      <!-- Notes -->
+      <div class="shadow-lg leading-relaxed p-10 mb-8 rounded-lg bg-white w-full border-l-4 border-teal-600">
+        <p class="text-gray-900 text-base leading-relaxed mb-4">
+          <strong>* Named Travel Grant Awardees</strong> - In addition to listed sponsorship recognition, have your company exclusively recognized by the grant awarded to selected delegates named after your organization. Exclusive media coverage and promotion of named grant awardees included.
+        </p>
+        <p class="text-gray-900 text-base leading-relaxed mb-0">
+          <strong>* Privacy policy</strong> - Participant details will not be shared without their explicit permission. Participants are allowed to share their information with you at your stall. Give them a good reason to do so. Make a compelling pitch for yourself or offer goodies in exchange for contact information.
+        </p>
+      </div>
+
+      <p class="text-gray-900 text-base leading-relaxed mb-8">
+        Please contact <a href="mailto:sponsorship@pycon.africa" class="text-pycon-teal hover:underline font-medium">sponsorship@pycon.africa</a> if you are interested in sponsoring PyCon Africa 2026, or if you have any questions about sponsorship.
+      </p>
+
+      <div class="text-center">
+        <a href="https://drive.google.com/file/d/1kFroSEsjlMDYiGPmuYnvSxAaTe-HfIRp/view?usp=drive_link" target="_blank" rel="noopener" class="inline-block no-underline text-center" style="background-color: #d97706; color: #ffffff; padding: 14px 32px; font-size: 1.125rem; font-weight: 600; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.15); transition: background-color 0.2s, box-shadow 0.2s;" onmouseover="this.style.backgroundColor='#b45309'; this.style.boxShadow='0 6px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.backgroundColor='#d97706'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.15)';">
+          <i class="fa fa-download" aria-hidden="true" style="margin-right: 8px;"></i>Download Full Prospectus
+        </a>
+      </div>
     </div>
-    
-
- 
-
+  </div>
+</div>
 {% endblock %}

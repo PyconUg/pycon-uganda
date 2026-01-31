@@ -1,4 +1,150 @@
 /* Add here all your css styles (customizations) */
+
+/* Apply Kanchenjunga font similar to pyconza2025 */
+body,
+a, li, p, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Kanchenjunga', sans-serif;
+}
+
+/* Navbar styling matching pyconza2025 */
+.navbar-container {
+  max-width: 1280px; /* max-w-7xl */
+  margin: 0 auto;
+  padding: 0.5rem 1rem; /* reduced from py-5 px-5 */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo-img {
+  height: 100%;
+  width: auto;
+}
+
+.nav-desktop {
+  display: flex;
+  gap: 1rem; /* space-x-4 */
+}
+
+@media (max-width: 1023px) {
+  .nav-desktop {
+    display: none; /* hidden lg:block */
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav-desktop {
+    display: flex;
+  }
+}
+
+/* Nav item styling matching pyconza2025 */
+.nav-item {
+  font-weight: 600; /* font-semibold */
+  color: #e5e7eb; /* text-gray-200 */
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: 'Kanchenjunga', sans-serif;
+}
+
+.nav-item:hover {
+  color: #ffffff; /* text-white */
+}
+
+.nav-item:focus {
+  outline: none;
+}
+
+/* Nav dropdown wrapper */
+.nav-dropdown-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* Nav dropdown menu */
+.nav-dropdown-menu {
+  position: absolute;
+  left: 0;
+  margin-top: 0.5rem; /* mt-2 */
+  min-width: fit-content;
+  background-color: #1f2937; /* bg-gray-800 */
+  border: 1px solid #475569; /* border-slate-700 */
+  border-radius: 0.375rem; /* rounded-md */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; /* gap-5 */
+  padding: 0.5rem; /* p-2 */
+  white-space: nowrap; /* text-nowrap */
+}
+
+.nav-dropdown-menu .nav-item {
+  display: block;
+  padding: 0.25rem 0;
+}
+
+/* Mobile navigation */
+.nav-mobile {
+  display: block;
+  position: relative;
+  padding-right: 1rem; /* pr-4 */
+}
+
+@media (min-width: 1024px) {
+  .nav-mobile {
+    display: none; /* lg:hidden */
+  }
+}
+
+.nav-mobile-toggle {
+  padding: 0.75rem 0; /* py-3 */
+  color: #ffffff; /* text-white */
+  font-weight: 700; /* font-bold */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  font-family: 'Kanchenjunga', sans-serif;
+}
+
+.nav-mobile-menu {
+  position: absolute;
+  width: 20rem; /* w-80 */
+  right: 0.75rem; /* right-3 */
+  margin-top: 0.5rem; /* mt-2 */
+  background-color: #374151; /* bg-gray-700 */
+  border: 1px solid #6b7280; /* border-gray-500 */
+  border-radius: 0.375rem; /* rounded-md */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; /* gap-5 */
+  padding: 0.5rem; /* p-2 */
+}
+
+.nav-item-indent {
+  margin-left: 1rem; /* ml-4 */
+}
+
+/* Header background matching pyconza2025 */
+header.bg-gray-700,
+header[class*="bg-gray-700"] {
+  background-color: #374151; /* bg-gray-700 */
+}
+
+header.bg-black,
+header[class*="bg-black"] {
+  background-color: #000000; /* bg-black */
+}
+
 .promo {
     background: #2d2d2d;
     min-width: 100vw;
@@ -649,146 +795,6 @@
     color: #e5e5e5;
 }
 
-.footer {
-    background: #525252;
-    color: #e5e5e5;
-    padding: 2rem 0;
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-}
-
-@media (min-width: 768px) {
-    .footer-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-.footer-section {
-    text-align: center;
-}
-
-@media (min-width: 768px) {
-    .footer-section {
-        text-align: left;
-    }
-}
-
-.footer-logo {
-    max-width: 150px;
-    margin-bottom: 1rem;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-@media (min-width: 768px) {
-    .footer-logo {
-        margin-left: 0;
-    }
-}
-
-.footer-text {
-    color: #e5e5e5;
-    line-height: 1.6;
-}
-
-.footer-heading {
-    font-weight: 600;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-    font-size: 1.4rem;
-    color: #e5e5e5;
-}
-
-.footer-link-list,
-.footer-contact-list {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-link-list li,
-.footer-contact-list li {
-    margin-bottom: 1rem;
-}
-
-.footer-link {
-    color: #e5e5e5;
-    text-decoration: none;
-}
-
-.footer-link:hover {
-    color: #60a5fa;
-}
-
-.footer-sublist {
-    list-style: disc;
-    margin-left: 1.5rem;
-    margin-top: 0.5rem;
-}
-
-.footer-sublink {
-    color: #60a5fb;
-    text-decoration: underline;
-    line-height: 1.25rem;
-}
-
-.footer-sublink:hover {
-    color: #e5e5e5;
-}
-
-.footer-contact-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    color: #e5e5e5;
-}
-
-@media (min-width: 768px) {
-    .footer-contact-item {
-        justify-content: flex-start;
-    }
-}
-
-.footer-icon {
-    width: 1.25rem;
-    height: 1.25rem;
-    fill: #e5e5e5;
-    transition: fill 0.3s ease, transform 0.3s ease;
-}
-
-.footer-icon:hover {
-    fill: #60a5fa;
-    transform: scale(1.1);
-}
-
-.copyright {
-    text-align: center;
-    padding: 1.5rem;
-    background-color: #404040;
-    color: #e5e5e5;
-}
-
-.copyright-link {
-    font-weight: 600;
-    color: #A3A3A3;
-    text-decoration: none;
-}
-
-.copyright-link:hover {
-    color: #60a5fa;
-}
-
 @media (max-width: 768px) {
     .bg-section {
         display: none;
@@ -874,5 +880,91 @@
   /* Show dropdown on toggle click */
   .navbar-expand-md .dropdown.show .dropdown-menu {
     display: block;
+  }
+}
+
+/* Navbar Black Background Styling */
+.u-header__section.g-bg-black {
+  background-color: #000 !important;
+}
+
+.navbar-link-white {
+  color: #fff !important;
+}
+
+.navbar-link-white:hover,
+.navbar-link-white:focus {
+  color: #fff !important;
+  opacity: 0.8;
+}
+
+.navbar-nav .nav-link.navbar-link-white {
+  color: #fff !important;
+}
+
+.navbar-nav .nav-link.navbar-link-white:hover {
+  color: #fff !important;
+  opacity: 0.8;
+}
+
+/* Ensure all nav links in black navbar are white */
+.g-bg-black .navbar-nav .nav-link {
+  color: #fff !important;
+}
+
+.g-bg-black .navbar-nav .nav-link:hover {
+  color: #fff !important;
+  opacity: 0.8;
+}
+
+/* Hide Bootstrap's default dropdown caret */
+.navbar-nav .dropdown-toggle::after {
+  display: none !important;
+}
+
+/* Dropdown toggle chevron styling */
+.navbar-nav .dropdown-toggle .fa-chevron-down {
+  font-size: 0.75rem;
+  margin-left: 0.25rem;
+  vertical-align: middle;
+}
+
+/* Dropdown menu styling for black navbar */
+.g-bg-black .dropdown-menu {
+  background-color: #fff;
+  border: none;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.g-bg-black .dropdown-item .nav-link {
+  color: #000 !important;
+}
+
+.g-bg-black .dropdown-item .nav-link:hover {
+  color: #000 !important;
+  background-color: #f8f9fa;
+}
+
+/* Hamburger menu color for black navbar */
+.g-bg-black .hamburger-inner,
+.g-bg-black .hamburger-inner::before,
+.g-bg-black .hamburger-inner::after {
+  background-color: #fff !important;
+}
+
+/* Sponsor page header spacing to account for fixed navbar */
+.sponsor-header-section {
+  margin-top: 80px;
+  padding-top: 120px !important;
+}
+
+@media (max-width: 768px) {
+  .sponsor-header-section {
+    margin-top: 60px;
+    padding-top: 80px !important;
+  }
+  
+  .sponsor-main-title {
+    font-size: 2.5rem !important;
   }
 }

@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load i18n static %}
+{% block meta_title %}{% trans "About PyCon Africa 2026 | PyCon Africa 2026" %}{% endblock %}
+
+{% block content %}
+{% include '2026/navbar.html' %}
+
+    <!-- Breadcrumbs -->
+    <section class="bg-gray-100 py-20 pt-32">
+      <div class="max-w-7xl mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold text-gray-900">About PyCon Africa 2026</h2>
+        <ul class="flex flex-wrap gap-2 list-none justify-center mt-4">
+          <li>
+            <a class="text-gray-700 hover:text-blue-600 no-underline" href="/2026/">Home</a>
+            <i class="text-gray-400 ml-2">/</i>
+          </li>
+          <li>
+            <a class="text-gray-700 hover:text-blue-600 no-underline" href="/2026/about/pycon-africa-2026/">About</a>
+            <i class="text-gray-400 ml-2">/</i>
+          </li>
+          <li class="text-blue-600">
+            <span>About PyCon Africa 2026</span>
+          </li>
+        </ul>
+        <i class="fa-brands fa-python text-4xl mt-4 inline-block text-gray-400"></i>
+      </div>
+    </section>
+
+    <!-- body -->
+    <div class="max-w-7xl mx-auto px-4 pt-12 pb-16">
+        <div class="flex flex-wrap gap-6">
+          <!-- About PyCon Africa 2026 (Common Across All Regions) -->
+          <div class="shadow-lg leading-relaxed p-10 mb-8 rounded-lg bg-white w-full">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">About PyCon Africa 2026</h2>
+            <p class="text-gray-900 text-base leading-relaxed mb-4">
+              PyCon Africa 2026 is the continent's premier annual gathering of the Python community, bringing together developers, researchers, students, industry professionals, and open-source contributors from across Africa and beyond.
+            </p>
+            <p class="text-gray-900 text-base leading-relaxed mb-4">
+              In October 2026, Uganda will proudly host PyCon Africa in collaboration with regional Python communities from Kenya, Tanzania, Rwanda, and South Sudan, reinforcing the spirit of Pan-African collaboration, knowledge sharing, and open-source growth.
+            </p>
+            <p class="text-gray-900 text-base leading-relaxed mb-4">
+              PyCon Africa is a non-profit, volunteer-run conference, dedicated to growing Python adoption, fostering diversity, and strengthening Africa's role in the global Python ecosystem.
+            </p>
+          </div>
+
+          <!-- Program Overview -->
+          <div class="shadow-lg leading-relaxed p-10 mb-8 rounded-lg bg-white w-full">
+            <h2 class="uppercase text-xl font-bold mb-6 text-gray-900">
+              <span class="text-pycon-teal">Program Overview</span>
+            </h2>
+            <p class="text-gray-900 text-base leading-relaxed mb-4">
+              The PyCon Africa 2026 program will include:
+            </p>
+            <ul class="list-disc list-inside text-gray-900 text-base leading-relaxed mb-4 space-y-2">
+              <li>Keynote talks and technical sessions from African and global Python leaders</li>
+              <li>Hands-on tutorials and workshops for beginners to advanced practitioners</li>
+              <li>Community-led panels and discussions on Python's role in industry, research, and social impact</li>
+              <li>Hackathons, sprints, and collaborative projects focused on African challenges</li>
+              <li>Networking and community-building activities across borders</li>
+            </ul>
+            <p class="text-gray-900 text-base leading-relaxed">
+              The conference will reflect the diversity of the Python community and uphold a strong <a href="/2026/coc/" class="text-pycon-teal hover:underline font-medium">Code of Conduct</a> to ensure a safe, inclusive, and welcoming environment for all.
+            </p>
+          </div>
+        </div>
+    </div>
+{% endblock %}

@@ -3,19 +3,19 @@
 
 <!-- Speakers Section -->
 <section id="speakers" class="g-pt-50 g-pb-50">
-  <div class="container">
+  <div class="max-w-7xl mx-auto px-4">
     <div class="text-center g-mb-50">
       <h2 class="h1 g-font-weight-300">Our Speakers</h2>
       <p class="lead">Meet some of our distinguished speakers for PyCon Uganda 2024</p>
     </div>
 
-    <div class="row">
+    <div class="flex flex-wrap gap-4">
       {% get_speakers as keynote_speakers other_speakers %}
 
       <!-- Keynote Speakers -->
       <div class="col-12">
         <h3>Keynote Speakers</h3>
-        <div class="row">
+        <div class="flex flex-wrap gap-4">
           {% for speaker in keynote_speakers %}
           <div class="col-md-3 g-mb-30">
             <div class="card text-center">
@@ -45,7 +45,7 @@
       <!-- Random Speakers -->
       <div class="col-12">
         <h3>Featured Speakers</h3>
-        <div class="row">
+        <div class="flex flex-wrap gap-4">
           {% for speaker in other_speakers %}
           <div class="col-md-3 g-mb-30">
             <div class="card text-center">

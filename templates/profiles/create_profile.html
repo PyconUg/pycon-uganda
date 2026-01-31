@@ -12,7 +12,7 @@
 
     <!-- Breadcrumbs -->
     <section class="g-bg-gray-light-v5 g-py-80 g-pt-150">
-      <div class="container text-center">
+      <div class="max-w-7xl mx-auto px-4 text-center">
         <h2 class="h2 g-color-black g-font-weight-600">Create your Profile {% if user_profile.surname %}{{ request.user.user_profile.name }} {% else %}{% firstof user.get_short_name user.get_username|capfirst %}{% endif %}</h2>
 
         <ul class="u-list-inline">
@@ -32,8 +32,8 @@
    
   
       <section class="g-mb-100">
-        <div class="container">
-          <div class="row">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="flex flex-wrap gap-4">
             <!-- Profile Sidebar -->
             <div class="col-lg-3 g-mb-50 g-mb-0--lg"> 
               <!-- Profile Pic --> 
@@ -96,7 +96,7 @@
    
               <div class="col-lg-9">
                 <section class="g-brd-around g-brd-gray-light-v4">
-                  <div class="container g-py-50--md g-py-20">
+                  <div class="max-w-7xl mx-auto px-4 g-py-50--md g-py-20">
                     
                     <div class="panel wow fadeInLeft col-md-7">  
                         <p class="mad-sub-title">Enter your profile details below</p>

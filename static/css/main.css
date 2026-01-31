@@ -1,0 +1,784 @@
+@import "tailwindcss";
+
+@theme {
+    --color-pycon-yellow: #FFD700;
+    --color-pycon-green: #4CAF50;
+    --color-pycon-blue: #2196F3;
+    --color-pycon-red: #F44336;
+    --color-pycon-light-blue: #90CAF9;
+    --color-pycon-teal: #177e89;
+}
+
+@layer base {
+    :root {
+        --font-open-sans: "Open Sans", Helvetica, Arial, sans-serif;
+        --font-family-kanchenjunga: 'Kanchenjunga', sans-serif;
+    }
+
+    a, li, p, h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-family-kanchenjunga);
+    }
+
+    h1 {
+        @apply font-bold text-4xl lg:text-6xl text-gray-900 mb-6 leading-tight;
+    }
+
+    h2 {
+        @apply font-bold text-3xl lg:text-4xl text-gray-900 mb-6 leading-tight;
+    }
+
+    h3 {
+        @apply font-semibold text-2xl lg:text-3xl text-gray-900 mb-4 leading-tight;
+    }
+
+    h4 {
+        @apply font-semibold text-xl lg:text-2xl text-gray-800 mb-3 leading-tight;
+    }
+
+    h5 {
+        @apply font-semibold text-lg lg:text-xl text-gray-800 mb-3 leading-tight;
+    }
+
+    h6 {
+        @apply font-semibold text-base lg:text-lg text-gray-700 mb-2 leading-tight;
+    }
+
+    a {
+        @apply cursor-pointer underline;
+    }
+
+    button {
+        @apply cursor-pointer;
+    }
+
+    p {
+        @apply text-lg;
+    }
+
+    ul {
+        @apply list-disc list-inside ml-6 space-y-2;
+    }
+
+    ol {
+        @apply list-decimal list-inside space-y-2;
+    }
+
+    form {
+        @apply space-y-3;
+    }
+
+    table {
+        @apply border border-gray-300 text-left text-sm;
+    }
+
+    thead {
+        @apply bg-gray-100 border-b;
+    }
+
+    th {
+        @apply px-4 py-2 text-gray-700 font-bold;
+    }
+
+    tbody {
+        @apply divide-y divide-gray-200;
+    }
+
+    tr {
+        @apply hover:bg-gray-50;
+    }
+
+    td {
+        @apply px-4 py-2;
+    }
+}
+
+@layer components {
+    .heading-hero {
+        @apply font-bold text-4xl lg:text-6xl text-gray-900 mb-6 leading-tight;
+    }
+
+    .heading-section {
+        @apply font-bold text-3xl lg:text-4xl text-gray-900 mb-8 text-center;
+    }
+
+    .heading-card {
+        @apply font-semibold text-xl lg:text-2xl mb-4 leading-tight;
+    }
+
+    .heading-light {
+        @apply text-white;
+    }
+
+    .heading-branded {
+        @apply text-transparent bg-clip-text bg-gradient-to-r from-pycon-green via-pycon-blue to-pycon-red;
+    }
+
+    .navbar-container {
+        @apply max-w-7xl mx-auto py-1 px-5 flex flex-row justify-between items-center;
+    }
+
+    .navbar-logo-img {
+        @apply w-auto;
+        max-height: 100px;
+        height: auto;
+    }
+
+    .nav-desktop {
+        @apply flex gap-4;
+    }
+
+    @media (max-width: 1023px) {
+        .nav-desktop {
+            @apply hidden;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .nav-desktop {
+            @apply flex;
+        }
+    }
+
+    .nav-item {
+        @apply font-semibold text-gray-200 hover:text-white uppercase no-underline;
+    }
+
+    .nav-dropdown-wrapper {
+        @apply relative inline-block;
+    }
+
+    .nav-dropdown-menu {
+        @apply absolute left-0 mt-2 min-w-fit bg-gray-800 border border-slate-700 rounded-md shadow-lg z-50 flex flex-col gap-5 p-2 whitespace-nowrap;
+    }
+
+    .nav-dropdown-menu .nav-item {
+        @apply block py-1;
+    }
+
+    .nav-mobile {
+        @apply block relative pr-4;
+    }
+
+    @media (min-width: 1024px) {
+        .nav-mobile {
+            @apply hidden;
+        }
+    }
+
+    .nav-mobile-toggle {
+        @apply py-1 text-white font-bold cursor-pointer flex items-center bg-transparent border-0;
+    }
+
+    .nav-mobile-menu {
+        @apply absolute w-80 right-3 mt-2 bg-gray-700 border border-gray-500 rounded-md shadow-lg z-50 flex flex-col gap-5 p-2;
+    }
+
+    .nav-item-indent {
+        @apply ml-4;
+    }
+
+    .btn {
+        @apply w-fit px-8 py-3 bg-yellow-600 no-underline rounded-xl text-white font-bold cursor-pointer hover:bg-yellow-500 text-center items-center;
+    }
+
+    .btn-small {
+        @apply py-1 px-4;
+    }
+
+    .btn-success {
+        @apply bg-green-700 hover:bg-green-600;
+    }
+
+    .btn-secondary {
+        @apply bg-orange-700 hover:bg-orange-600;
+    }
+
+    input[type="submit"] {
+        @apply mt-3;
+    }
+
+    .alert {
+        @apply border rounded-2xl p-3;
+    }
+
+    .alert-primary {
+        @apply border-yellow-700 bg-yellow-50;
+    }
+
+    .alert-danger {
+        @apply border-orange-700 bg-orange-50;
+    }
+
+    .alert-warning {
+        @apply border-yellow-700 bg-yellow-50;
+    }
+
+    .alert-success {
+        @apply border-green-700 bg-green-50;
+    }
+
+    .alert-info {
+        @apply border-blue-700 bg-blue-50;
+    }
+
+    .card {
+        @apply p-3;
+    }
+
+    .badge {
+        @apply border rounded-xl px-2 py-1 text-xs;
+    }
+
+    .bg-danger {
+        @apply border-orange-700 bg-orange-50;
+    }
+
+    .bg-warning {
+        @apply border-yellow-700 bg-yellow-50;
+    }
+
+    .bg-success {
+        @apply border-green-700 bg-green-50;
+    }
+
+    .bg-info {
+        @apply border-blue-700 bg-blue-50;
+    }
+
+    /* Promo / hero section */
+    .promo {
+        @apply min-w-screen relative overflow-hidden mt-0;
+        background: #2d2d2d;
+    }
+
+    .promo-video-background {
+        @apply absolute inset-0 z-[1] overflow-hidden;
+    }
+
+    .promo-image-background {
+        @apply absolute inset-0 z-[1] bg-cover bg-center bg-no-repeat;
+    }
+
+    .promo-video-iframe {
+        @apply absolute pointer-events-none;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100vw;
+        height: 100vh;
+        min-width: 177.77vh;
+        min-height: 56.25vw;
+    }
+
+    .promo-video-overlay {
+        @apply absolute inset-0 z-[2];
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5));
+    }
+
+    .promo-grid {
+        @apply grid grid-cols-1 min-h-[90vh] max-w-6xl relative z-[3];
+        margin-left: 6%;
+        margin-right: auto;
+    }
+
+    .promo-detail {
+        @apply flex flex-col justify-center text-left items-start relative z-[3] bg-transparent;
+        padding: 2rem 2rem 2rem 20px;
+    }
+
+    .promo-title {
+        @apply font-bold text-white mb-4 leading-tight;
+        font-size: 5rem;
+        line-height: 1.2;
+    }
+
+    .promo-tagline {
+        @apply font-bold text-white mb-8 leading-snug;
+        font-size: 2rem;
+    }
+
+    .promo-description-wrapper {
+        @apply flex gap-6 mb-8 items-start;
+    }
+
+    .promo-description-bar {
+        @apply w-2.5 flex-shrink-0 self-stretch min-h-20;
+        background-color: #FD6B6B;
+    }
+
+    .promo-description {
+        @apply text-white font-medium flex-1 pl-8 m-0;
+        font-size: 1.25rem;
+        line-height: 1.6;
+    }
+
+    .promo-event-info {
+        @apply flex flex-col gap-4 mb-8;
+    }
+
+    .promo-info-item {
+        @apply flex items-center gap-3 text-white text-base;
+    }
+
+    .promo-main-buttons {
+        @apply flex gap-4 mb-8 flex-wrap;
+    }
+
+    .promo-btn-learn-more {
+        @apply inline-flex justify-center items-center font-semibold text-white no-underline border-0 transition-colors duration-300 rounded;
+        font-size: 1rem;
+        padding: 0.625rem 1.5rem;
+        background-color: #dc3545;
+    }
+
+    .promo-btn-learn-more:hover {
+        background-color: #c82333;
+        color: #fff;
+    }
+
+    .promo-btn-get-ticket {
+        @apply inline-flex justify-center items-center font-semibold no-underline border-2 border-black transition-colors duration-300 rounded;
+        font-size: 1rem;
+        padding: 0.625rem 1.5rem;
+        color: #000;
+        background-color: #fff;
+    }
+
+    .promo-btn-get-ticket:hover {
+        background-color: #000;
+        color: #fff;
+    }
+
+    .promo-btn, .tickets a {
+        @apply inline-flex justify-center items-center uppercase font-semibold text-white no-underline border transition-colors duration-300;
+        font-size: 1rem;
+        padding: 0.75rem 1.5rem;
+        background-color: #177e89;
+        border-color: #177e89;
+    }
+
+    .promo-btn:hover {
+        @apply bg-white text-[#177e89] border-[#177e89];
+    }
+
+    .promo-keyword-buttons {
+        @apply flex gap-3 flex-wrap mt-4;
+    }
+
+    .keyword-btn {
+        @apply inline-block py-1.5 px-3 text-xs font-semibold text-white rounded-full no-underline border-2 border-transparent cursor-default transition-all duration-200;
+    }
+
+    .keyword-learn {
+        @apply bg-black border-white;
+    }
+
+    .keyword-build {
+        @apply bg-[#ff9800];
+    }
+
+    .keyword-connect {
+        @apply bg-[#dc3545];
+    }
+
+    .keyword-grow {
+        @apply bg-[#2196f3];
+    }
+
+    /* About / sections */
+    .bg-section {
+        @apply bg-no-repeat bg-cover;
+        height: 90vh;
+    }
+
+    .about-section {
+        @apply pt-8;
+        background-color: #1f2937;
+    }
+
+    .about-section h2, .about-section h3, .about-section p {
+        @apply text-gray-200;
+    }
+
+    .text-danger {
+        @apply text-[#dc3545];
+    }
+
+    /* Sponsor section */
+    .sponsor-section {
+        @apply mt-8 relative;
+    }
+
+    .sponsor-container {
+        @apply flex flex-col gap-8 p-8;
+    }
+
+    .sponsor-cta {
+        @apply flex-1 text-center max-w-full;
+        position: sticky;
+        top: 6rem;
+    }
+
+    .sponsor-title {
+        @apply font-bold text-2xl text-black leading-10;
+    }
+
+    .sponsor-description {
+        @apply leading-7 text-gray-700 my-4 mx-auto max-w-[90%];
+    }
+
+    .sponsor-button {
+        @apply inline-flex items-center justify-center font-semibold uppercase text-white no-underline border border-white transition-colors duration-300 mx-auto;
+        font-size: 1rem;
+        padding: 0.75rem 1.5rem;
+        background-color: #177e89;
+    }
+
+    .sponsor-button:hover {
+        @apply bg-gray-800;
+    }
+
+    .sponsor-list {
+        @apply flex-1;
+    }
+
+    .sponsor-category {
+        @apply mb-8;
+    }
+
+    .category-title {
+        @apply font-semibold text-2xl leading-8 text-black;
+    }
+
+    .sponsor-grid {
+        @apply grid grid-cols-1 gap-4;
+    }
+
+    .sponsor-card {
+        @apply block no-underline relative overflow-hidden;
+        background-color: #fff8e1;
+        border: 1px solid #000;
+    }
+
+    .sponsor-logo-wrapper {
+        @apply relative;
+        padding-bottom: 50%;
+    }
+
+    .sponsor-logo {
+        @apply absolute w-full h-full object-contain;
+        inset: 2.5rem;
+    }
+
+    .subscribe {
+        @apply bg-white border-2 rounded-lg p-4;
+        border-color: #177e89;
+    }
+
+    .subscribe:hover {
+        @apply text-gray-200;
+        background: #177e89;
+    }
+
+    .tickets h2 {
+        @apply font-bold text-2xl;
+        color: #0e1d4d !important;
+    }
+
+    /* Footer */
+    .footer {
+        @apply text-gray-200 py-8;
+        background: #525252;
+    }
+
+    .footer-container {
+        @apply max-w-6xl mx-auto px-4;
+    }
+
+    .footer-grid {
+        @apply grid grid-cols-1 gap-8 items-start;
+    }
+
+    .footer-section {
+        @apply text-center;
+    }
+
+    .footer-logo {
+        @apply max-w-[150px] mb-4 block mx-auto;
+    }
+
+    .footer-heading {
+        @apply font-semibold uppercase mb-4 text-lg text-gray-200;
+    }
+
+    .footer-text {
+        @apply text-gray-200 leading-relaxed;
+    }
+
+    .footer-link-list, .footer-contact-list {
+        @apply list-none p-0;
+    }
+
+    .footer-link-list li, .footer-contact-list li {
+        @apply mb-4;
+    }
+
+    .footer-link {
+        @apply text-gray-200 no-underline;
+    }
+
+    .footer-link:hover {
+        @apply text-blue-400;
+    }
+
+    .footer-sublist {
+        @apply list-disc ml-6 mt-2;
+    }
+
+    .footer-sublink {
+        @apply text-blue-400 underline leading-5;
+    }
+
+    .footer-sublink:hover {
+        @apply text-gray-200;
+    }
+
+    .footer-contact-item {
+        @apply flex items-center justify-center gap-3 text-gray-200;
+    }
+
+    .footer-icon {
+        width: 1rem;
+        height: 1rem;
+        flex-shrink: 0;
+        fill: currentColor;
+    }
+
+    .footer-text--narrow {
+        max-width: 100%;
+    }
+    @media (min-width: 768px) {
+        .footer-text--narrow {
+            max-width: 24rem;
+        }
+    }
+
+    .footer-links-editions {
+        list-style: none;
+        margin-left: 0;
+    }
+
+    .copyright {
+        @apply text-center py-6 px-4 text-gray-200;
+        background-color: #404040;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .copyright-attribution {
+        @apply text-sm leading-relaxed mt-2;
+        max-width: 56ch;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .copyright-link {
+        @apply font-semibold no-underline text-gray-300;
+    }
+
+    .copyright-link:hover {
+        @apply text-blue-400;
+    }
+
+    .sponsor-header-section {
+        @apply mt-20;
+        padding-top: 120px !important;
+    }
+
+    /* Crispy / form widget safelist */
+    .django-markitup-widget {
+        @apply appearance-none border block w-full border-gray-300 bg-white py-2 px-4 text-gray-700 rounded-lg focus:outline-none leading-normal;
+    }
+}
+
+@layer utilities {
+    .text-pycon-yellow {
+        color: var(--color-pycon-yellow);
+    }
+
+    .text-pycon-green {
+        color: var(--color-pycon-green);
+    }
+
+    .text-pycon-blue {
+        color: var(--color-pycon-blue);
+    }
+
+    .text-pycon-red {
+        color: var(--color-pycon-red);
+    }
+
+    .text-pycon-light-blue {
+        color: var(--color-pycon-light-blue);
+    }
+
+    .text-pycon-teal {
+        color: var(--color-pycon-teal);
+    }
+
+    .bg-translucent {
+        background-color: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(4px);
+    }
+
+    .list-custom {
+        list-style-type: none;
+        margin-left: 0;
+    }
+
+    .text-outline-white {
+        text-shadow:
+            -1px -1px 0 #fff,
+            1px -1px 0 #fff,
+            -1px 1px 0 #fff,
+            1px 1px 0 #fff;
+    }
+}
+
+/* Media overrides for promo/footer (complex breakpoints) */
+@media (min-width: 768px) {
+    .promo-detail {
+        padding: 3rem 3rem 3rem 20px;
+    }
+
+    .sponsor-container {
+        @apply flex-row;
+    }
+
+    .sponsor-cta {
+        @apply text-left;
+    }
+
+    .sponsor-description {
+        @apply my-4 mx-0 max-w-none;
+    }
+
+    .sponsor-button {
+        @apply mx-0;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footer-section {
+        @apply text-left;
+    }
+
+    .footer-logo {
+        @apply ml-0 mr-0;
+    }
+
+    .footer-contact-item {
+        @apply justify-start;
+    }
+}
+
+@media (min-width: 992px) {
+    .sponsor-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .sponsor-logo-wrapper {
+        padding-bottom: 60%;
+    }
+
+    .sponsor-logo {
+        inset: 1.5rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .promo-detail {
+        padding: 3rem 4rem;
+    }
+
+    .promo-title {
+        font-size: 6rem;
+        line-height: 1.1;
+    }
+
+    .promo-tagline {
+        font-size: 2.5rem;
+    }
+
+    .promo-description {
+        font-size: 1.5rem;
+    }
+
+    .promo-btn, .tickets a {
+        font-size: 1.125rem;
+        padding: 1rem 2rem;
+    }
+
+    .promo-btn-learn-more, .promo-btn-get-ticket {
+        font-size: 1.125rem;
+        padding: 0.75rem 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .promo {
+        margin-top: 0;
+    }
+
+    .promo-grid {
+        min-height: auto;
+    }
+
+    .promo-video-overlay {
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6));
+    }
+
+    .promo-title {
+        font-size: 3rem;
+    }
+
+    .promo-tagline {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .promo-description {
+        font-size: 1.125rem;
+    }
+
+    .promo-main-buttons {
+        @apply flex-col gap-3 mb-6;
+    }
+
+    .promo-btn-learn-more, .promo-btn-get-ticket {
+        font-size: 0.9375rem;
+        padding: 0.5rem 1.25rem;
+        @apply w-full text-center;
+    }
+
+    .promo-detail {
+        padding: 1.5rem 1.5rem 1.5rem 20px;
+    }
+
+    .bg-section {
+        display: none;
+    }
+
+    .sponsor-header-section {
+        margin-top: 60px;
+        padding-top: 80px !important;
+    }
+}
+
+@media (max-width: 1025px) {
+    .promo {
+        margin-top: 0;
+    }
+}

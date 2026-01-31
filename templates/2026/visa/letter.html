@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load i18n static %}
+{% block meta_title %}{% trans "Get a Visa Letter | PyCon Africa 2026" %}{% endblock %}
+
+{% block content %}
+{% include '2026/navbar.html' %}
+
+    <!-- Header -->
+    <div class="max-w-7xl mx-auto px-4 pt-12 pb-8">
+      <h1 class="text-5xl font-bold text-gray-900 text-center">Get a Visa Letter</h1>
+    </div>
+
+    <!-- body -->
+    <div class="max-w-7xl mx-auto px-4 pb-16">
+        <div class="max-w-4xl mx-auto">
+          <!-- Invitation Letter / Visa Support -->
+          <div class="mb-8">
+            <h3 class="text-xl font-bold text-gray-900 mb-4">Invitation Letter / Visa Support</h3>
+            <p class="text-gray-900 text-base leading-relaxed mb-4">
+              If you require a conference invitation letter for your visa application, please contact the PyCon Africa 2026 Organising Team.
+            </p>
+            <p class="text-gray-900 text-base leading-relaxed mb-4">
+              📧 Email: <a href="mailto:visa@pyconafrica.org" class="text-blue-600 hover:underline">visa@pyconafrica.org</a>
+            </p>
+            <p class="text-gray-900 text-base leading-relaxed mb-2">Please include:</p>
+            <ul class="list-disc list-inside text-gray-900 text-base leading-relaxed space-y-2">
+              <li>Full name (as shown in passport)</li>
+              <li>Passport number and nationality</li>
+              <li>PyCon Africa 2026 registration confirmation</li>
+              <li>Intended travel dates</li>
+            </ul>
+            <p class="text-gray-900 text-base leading-relaxed mt-4">
+              Alternatively, you can request a visa letter through our online form.
+            </p>
+          </div>
+        </div>
+    </div>
+{% endblock %}
+

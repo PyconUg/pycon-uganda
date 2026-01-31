@@ -10,6 +10,7 @@ This Repository was bootstraped from a [PyconUg/pycon-africa@ca86f37](https://gi
 
 * [Python 3.11](https://python.org)
 * [uv](https://docs.astral.sh/uv/)
+* [Node.js](https://nodejs.org/) (for Tailwind CSS build)
 
 Once those are installed, you can do the following:
 
@@ -44,7 +45,22 @@ For Windows
 cp .env.example .env
 ```
 
-6. Get your database set up 
+6. Build Tailwind CSS (main site styling)
+
+The site uses Tailwind CSS v4. After changing `static/css/main.css` or template classes, rebuild the CSS:
+
+```
+npm install
+npm run tailwind
+```
+
+This writes `static/vendor/main.css`. For development with automatic rebuild on file changes:
+
+```
+npm run tailwind-w
+```
+
+7. Get your database set up 
 
 ```
 # run the migrations 
@@ -56,7 +72,7 @@ python manage.py migrate
 uv run manage.py migrate
 ```
 
-7. Run the seeder script to add some tables to the database
+8. Run the seeder script to add some tables to the database
 ```
 python manage.py runscript -v2 seeder.py
 
@@ -65,7 +81,7 @@ python manage.py runscript -v2 seeder.py
 uv run manage.py runscript -v2 seeder.py
 ```
 
-8. Now everything is set up; you can run the application
+9. Now everything is set up; you can run the application
 
 ```
 # Run the server 

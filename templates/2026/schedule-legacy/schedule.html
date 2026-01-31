@@ -51,7 +51,7 @@
 
     <!-- Breadcrumbs -->
     <section class="g-bg-gray-light-v5 g-py-80 g-pt-150">
-      <div class="container text-center">
+      <div class="max-w-7xl mx-auto px-4 text-center">
         <h2 class="h2 g-color-black g-font-weight-600">Schedule</h2>
 
         <ul class="u-list-inline">
@@ -66,7 +66,7 @@
         <i class="fa-regular fa-calendar-week" style="font-size:41px;"></i>
       </div>
        
-        <div class="container"> 
+        <div class="max-w-7xl mx-auto px-4"> 
           <hr class="g-brd-gray-light-v4 g-my-60"> 
           {% if perms.conference_schedule.add_schedule or perms.conference_schedule.change_schedule %}                      
           <a href="/organizers/conference_schedule/" target="/" class="btn btn-md u-btn-inset u-btn-inset--rounded u-btn-lightred g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-brd-2 g-rounded-50 g-mr-10 g-mb-15">
@@ -93,7 +93,7 @@
    
           <section>   
             <!-- Primary color, horizontal, navigation justified, rounded corners -->
-            <div class="row"> 
+            <div class="flex flex-wrap gap-4"> 
               <div class="col-md-12">
                 <div id="shortcode16">
                   <div class="shortcode-html">
@@ -131,7 +131,7 @@
                                 {% endif %}
                                 rounded g-pa-10 g-mb-10"> <!-- Reduced padding for mobile -->
                 
-                                    <div class="row">
+                                    <div class="flex flex-wrap gap-4">
                                         <div class="col-12 col-md-8">
                                             <!-- Event or Talk Title -->
                                             {% if schedule.is_an_event %}
