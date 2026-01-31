@@ -3,7 +3,7 @@ name = "pycon-africa"
 version = "0.1.0"
 description = ""
 authors = []
-requires-python = "==3.11.*"
+requires-python = ">=3.10,<3.11"
 readme = "README.md"
 dependencies = [
     "django>=5.0.3,<6",
