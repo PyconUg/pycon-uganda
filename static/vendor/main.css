@@ -4779,11 +4779,12 @@
   .promo-grid {
     position: relative;
     z-index: 3;
-    margin-inline: auto;
     display: grid;
     min-height: 90vh;
     max-width: var(--container-6xl);
     grid-template-columns: repeat(1, minmax(0, 1fr));
+    margin-left: 6%;
+    margin-right: auto;
   }
   .promo-detail {
     position: relative;
