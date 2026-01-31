@@ -5,7 +5,7 @@
     <!-- Logo -->
     <div>
       <a href="/">
-        <img src="{% static '2026/img/PYCON_AFRICA_2026_UG_OFFICIAL_LOGO.png' %}" class="navbar-logo-img" alt="PyCon Africa 2026" style="max-width: 150px; height: auto;">
+        <img src="{% static '2026/img/Pycon_Africa_2026.png' %}" class="navbar-logo-img" alt="PyCon Africa 2026" style="max-width: 150px; height: auto;">
       </a>
     </div>
 
@@ -19,9 +19,11 @@
           <i class="fa fa-chevron-down" aria-hidden="true" x-show="!open" style="display: none;"></i>
         </button>
         <div x-show="open" @click.outside="open = false" class="nav-dropdown-menu" style="display: none;">
-          <a class="nav-item" href="/2026/about/">About Us</a>
-          <a class="nav-item" href="/2026/about/team/">Team</a>
-          <a class="nav-item" href="/2026/fin-aid/">Financial Assistance</a>
+          <a class="nav-item" href="/2026/about/pycon-africa-2026">About PyCon Africa 2026</a>
+          <a class="nav-item" href="/2026/about/kenya-region">PYCON AFRICA 2026 – KENYA REGION</a>
+          <a class="nav-item" href="/2026/about/rwanda-region">PYCON AFRICA 2026 – RWANDA REGION</a>
+          <a class="nav-item" href="/2026/about/tanzania-region">PYCON AFRICA 2026 – TANZANIA REGION</a>
+          <a class="nav-item" href="/2026/about/south-sudan-region">PYCON AFRICA 2026 – SOUTH SUDAN REGION</a>
         </div>
       </div>
 
@@ -79,7 +81,7 @@
       </div>
 
       <!-- South Africa -->
-      <a class="nav-item" href="/pyconza2025/">SOUTH AFRICA</a>
+      <a class="nav-item" href="/pyconza2025/">UGANDA</a>
 
       <!-- Sponsors Dropdown -->
       <div class="nav-dropdown-wrapper" x-data="{open:false}">

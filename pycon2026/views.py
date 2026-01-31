@@ -14,8 +14,32 @@ def hopin(request):
 
 def about(request):
     context = {}
-    template = '2026/about/about.html'
-    return render(request, template, context)
+    return render(request, '2026/about/pycon_africa_2026.html', context)
+
+
+def about_pycon_africa_2026(request):
+    context = {}
+    return render(request, '2026/about/pycon_africa_2026.html', context)
+
+
+def about_kenya_region(request):
+    context = {}
+    return render(request, '2026/about/kenya_region.html', context)
+
+
+def about_rwanda_region(request):
+    context = {}
+    return render(request, '2026/about/rwanda_region.html', context)
+
+
+def about_tanzania_region(request):
+    context = {}
+    return render(request, '2026/about/tanzania_region.html', context)
+
+
+def about_south_sudan_region(request):
+    context = {}
+    return render(request, '2026/about/south_sudan_region.html', context)
 
 def scheduIe(request):
     context = {}
@@ -26,6 +50,11 @@ def conduct(request):
     context = {}
     template = '2026/conduct/conduct.html'
     return render(request, template, context)
+
+
+def coc(request):
+    context = {}
+    return render(request, '2026/coc/coc.html', context)
 
 def guidelines(request):
     context = {}
