@@ -4539,11 +4539,12 @@
     align-items: center;
     justify-content: space-between;
     padding-inline: calc(var(--spacing) * 5);
-    padding-block: calc(var(--spacing) * 5);
+    padding-block: calc(var(--spacing) * 4);
   }
   .navbar-logo-img {
-    height: 100%;
     width: auto;
+    max-height: 56px;
+    height: auto;
   }
   .nav-desktop {
     display: flex;

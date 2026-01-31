@@ -114,11 +114,13 @@
     }
 
     .navbar-container {
-        @apply max-w-7xl mx-auto py-5 px-5 flex flex-row justify-between items-center;
+        @apply max-w-7xl mx-auto py-4 px-5 flex flex-row justify-between items-center;
     }
 
     .navbar-logo-img {
-        @apply h-full w-auto;
+        @apply w-auto;
+        max-height: 56px;
+        height: auto;
     }
 
     .nav-desktop {
