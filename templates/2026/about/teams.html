@@ -10,37 +10,16 @@
 
 {% block content %}
 
-<!-- ========== HEADER ========== -->
 {% include '2026/navbar.html' %}
-<!-- ========== END HEADER ========== -->
 
-<!-- Breadcrumbs -->
-<section class="g-bg-gray-light-v5 g-py-80 g-pt-150">
-  <div class="max-w-7xl mx-auto px-4 text-center">
-    <h2 class="h2 g-color-black g-font-weight-600">Team</h2>
+    <!-- Header -->
+    <div class="max-w-7xl mx-auto px-4 pt-12 pb-8">
+      <h1 class="text-5xl font-bold text-gray-900 text-center">Team</h1>
+    </div>
 
-    <ul class="u-list-inline">
-      <li class="list-inline-item g-mr-5">
-        <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="/2026/">Home</a>
-        <i class="g-color-gray-light-v2 g-ml-5">/</i>
-      </li>
-      <li class="list-inline-item g-mr-5">
-        <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="/2026/about/">About Us</a>
-        <i class="g-color-gray-light-v2 g-ml-5">/</i>
-      </li>
-      <li class="list-inline-item g-color-primary">
-        <span>Team</span>
-      </li>
-    </ul><br>
-    <i class="fa-solid fa-people-group" style="font-size:41px;"></i>
-  </div>
-</section>
-<!-- End Breadcrumbs -->
-
-<!-- Body -->
-<div class="max-w-7xl mx-auto px-4 g-pt-50">
-  <div class="flex flex-wrap gap-4">
-    <div class="u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30 g-mb-20 col-md-12">
+    <!-- Body -->
+    <div class="max-w-7xl mx-auto px-4 pb-16">
+        <div class="max-w-4xl mx-auto">
       <p class="g-color-black g-font-size-16">
         PyCon Africa is organized by a multi-national team of volunteers on behalf of the global Python
         programming community. This page will list all the committees and their members to highlight
@@ -190,8 +169,6 @@
         </div>
       </article>
       <!--================ End of Icon Box ================-->
+        </div>
     </div>
-  </div>
-</div>
-<!-- End Body -->
 {% endblock %}
