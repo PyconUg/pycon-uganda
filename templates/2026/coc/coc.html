@@ -5,107 +5,95 @@
 {% block content %}
 {% include '2026/navbar.html' %}
 
-<!-- Breadcrumbs -->
-<section class="bg-gray-100 py-20 pt-32">
-  <div class="max-w-7xl mx-auto px-4 text-center">
-    <h2 class="text-3xl font-bold text-gray-900">PyCon Africa 2026 - Code of Conduct</h2>
-    <ul class="flex flex-wrap gap-2 list-none justify-center mt-4">
-      <li>
-        <a class="text-gray-700 hover:text-blue-600 no-underline" href="/2026/">Home</a>
-        <i class="text-gray-400 ml-2">/</i>
-      </li>
-      <li class="text-blue-600">
-        <span>Code of Conduct</span>
-      </li>
-    </ul>
-    <i class="fa-solid fa-scale-balanced text-4xl mt-4 inline-block text-gray-400"></i>
-  </div>
-</section>
-
-<!-- body -->
-<div class="max-w-7xl mx-auto px-4 pt-12 pb-16">
-  <div class="flex flex-wrap gap-6">
-    <div class="shadow-lg leading-relaxed p-10 mb-8 rounded-lg bg-white w-full">
-      <p class="text-gray-900 text-base leading-relaxed mb-4">
-        PyCon Africa is a community-driven conference designed for networking and collaboration among developers from all over Africa.
-      </p>
-      <p class="text-gray-900 text-base leading-relaxed mb-4">
-        We highly value each member's participation in the Python community and strive to ensure that all attendees enjoy a fulfilling experience. As such, respect and courtesy are expected from everyone during the conference and at all related events.
-      </p>
-      <p class="text-gray-900 text-base leading-relaxed mb-6">
-        To clarify the expected behaviour, all staff, attendees, speakers, exhibitors, partners, organizers, and volunteers at any PyCon Africa event must adhere to the following Code of Conduct. This policy is enforced throughout the event by the organizers.
-      </p>
-
-      <h2 class="uppercase text-xl font-bold mb-4 text-gray-900 mt-8">
-        <span class="text-pycon-teal">Our Community</span>
-      </h2>
-      <p class="text-gray-900 text-base leading-relaxed mb-4">
-        The Python Software Community across Africa is vibrant, consisting of members with diverse skills, personalities, cultures, and experiences. It's through these differences that our community finds strength and achieves growth. We encourage all community interactions to be guided by the following principles, which help steer our interactions and maintain a positive, successful, and growing community:
-      </p>
-      <ul class="list-disc list-inside text-gray-900 text-base leading-relaxed mb-6 space-y-2">
-        <li><strong>Being open:</strong> Community members are open to collaboration, whether it's on PEPs, patches, problems, or other initiatives.</li>
-        <li><strong>Focusing on what is best for the community:</strong> Our actions and decisions should reflect respect for our community processes and contribute positively.</li>
-        <li><strong>Acknowledging time and effort:</strong> We value the volunteer efforts throughout our community and are considerate in our feedback and discussions.</li>
-        <li><strong>Being respectful of differing viewpoints and experiences:</strong> Constructive comments and criticism are vital for our growth and improvement.</li>
-        <li><strong>Showing empathy towards other community members:</strong> We strive to be mindful in our interactions, recognizing the diversity in our community.</li>
-        <li><strong>Being considerate and respectful:</strong> We treat others with respect, recognizing their contributions and differing needs.</li>
-        <li><strong>Gracefully accepting constructive criticism:</strong> Disagreements, when approached with openness and respect, can lead to growth and understanding.</li>
-        <li><strong>Using welcoming and inclusive language:</strong> Our community thrives on involvement from all people, making a concerted effort to be inclusive to all.</li>
-      </ul>
-
-      <h2 class="uppercase text-xl font-bold mb-4 text-gray-900 mt-8">
-        <span class="text-pycon-teal">Our Standards</span>
-      </h2>
-      <p class="text-gray-900 text-base leading-relaxed mb-6">
-        Every member of our community deserves respect, and we are committed to making participation in our community a harassment-free experience for everyone, regardless of personal and demographic characteristics.
-      </p>
-
-      <h2 class="uppercase text-xl font-bold mb-4 text-gray-900 mt-8">
-        <span class="text-pycon-teal">Inappropriate Behaviour</span>
-      </h2>
-      <p class="text-gray-900 text-base leading-relaxed mb-4">Unacceptable behaviors include but are not limited to:</p>
-      <ul class="list-disc list-inside text-gray-900 text-base leading-relaxed mb-6 space-y-2">
-        <li>Harassment in any form.</li>
-        <li>Intimidation, stalking, or following.</li>
-        <li>Invasive recording or photography.</li>
-        <li>Publishing others' private information without explicit permission.</li>
-        <li>Offensive comments related to personal characteristics.</li>
-        <li>Unwelcome sexual attention or advances.</li>
-        <li>Advocating for, or encouraging, any of the above behaviour.</li>
-      </ul>
-
-      <h2 class="uppercase text-xl font-bold mb-4 text-gray-900 mt-8">
-        <span class="text-pycon-teal">Weapons Policy</span>
-      </h2>
-      <p class="text-gray-900 text-base leading-relaxed mb-6">
-        No weapons will be allowed at PyCon Africa events, consistent with venue policies.
-      </p>
-
-      <h2 class="uppercase text-xl font-bold mb-4 text-gray-900 mt-8">
-        <span class="text-pycon-teal">Consequences</span>
-      </h2>
-      <p class="text-gray-900 text-base leading-relaxed mb-6">
-        Participants asked to stop any inappropriate behaviour are expected to comply immediately. If a participant engages in behaviour that violates this code, the conference organizers may take any action they deem appropriate, from issuing a warning to the offender to expelling them from the conference with no refund.
-      </p>
-
-      <h2 class="uppercase text-xl font-bold mb-4 text-gray-900 mt-8">
-        <span class="text-pycon-teal">Scope</span>
-      </h2>
-      <p class="text-gray-900 text-base leading-relaxed mb-4">
-        This Code of Conduct applies to all participants at PyCon Africa events, including:
-      </p>
-      <ul class="list-disc list-inside text-gray-900 text-base leading-relaxed mb-4 space-y-2">
-        <li>Talks, workshops, parties, and any associated social events.</li>
-        <li>Online interactions related to the conference, including posts related to the conference on social media.</li>
-      </ul>
-      <p class="text-gray-900 text-base leading-relaxed mb-6">
-        This Code of Conduct applies both within conference spaces and in public spaces when an individual is representing PyCon Africa or its community. Instances of abusive, harassing, or otherwise unacceptable behaviour may be reported by contacting the event organizing team at <a href="mailto:coc@pycon.africa" class="text-pycon-teal hover:underline font-medium">coc@pycon.africa</a> / <a href="mailto:team@pycon.ug" class="text-pycon-teal hover:underline font-medium">team@pycon.ug</a>.
-      </p>
-
-      <p class="text-gray-900 text-base leading-relaxed mt-8 pt-6 border-t border-gray-200">
-        <strong>NB:</strong> This code of conduct has been adapted from the Python Software Foundation, under whose guidance local Python communities operate. The full original code of conduct can be found on their website.
-      </p>
+    <!-- Header -->
+    <div class="max-w-7xl mx-auto px-4 pt-12 pb-8">
+      <h1 class="text-5xl font-bold text-gray-900 text-center">Code of Conduct</h1>
     </div>
-  </div>
-</div>
+
+    <!-- body -->
+    <div class="max-w-7xl mx-auto px-4 pb-16">
+        <div class="max-w-4xl mx-auto">
+          <div class="mb-8">
+            <p class="text-gray-900 text-base leading-relaxed mb-4">
+              PyCon Africa is a community-driven conference designed for networking and collaboration among developers from all over Africa.
+            </p>
+            <p class="text-gray-900 text-base leading-relaxed mb-4">
+              We highly value each member's participation in the Python community and strive to ensure that all attendees enjoy a fulfilling experience. As such, respect and courtesy are expected from everyone during the conference and at all related events.
+            </p>
+            <p class="text-gray-900 text-base leading-relaxed mb-6">
+              To clarify the expected behaviour, all staff, attendees, speakers, exhibitors, partners, organizers, and volunteers at any PyCon Africa event must adhere to the following Code of Conduct. This policy is enforced throughout the event by the organizers.
+            </p>
+
+            <h2 class="text-xl font-bold text-gray-900 mb-4 mt-8">
+              <span class="text-pycon-teal">Our Community</span>
+            </h2>
+            <p class="text-gray-900 text-base leading-relaxed mb-4">
+              The Python Software Community across Africa is vibrant, consisting of members with diverse skills, personalities, cultures, and experiences. It's through these differences that our community finds strength and achieves growth. We encourage all community interactions to be guided by the following principles, which help steer our interactions and maintain a positive, successful, and growing community:
+            </p>
+            <ul class="list-disc list-inside text-gray-900 text-base leading-relaxed mb-6 space-y-2">
+              <li><strong>Being open:</strong> Community members are open to collaboration, whether it's on PEPs, patches, problems, or other initiatives.</li>
+              <li><strong>Focusing on what is best for the community:</strong> Our actions and decisions should reflect respect for our community processes and contribute positively.</li>
+              <li><strong>Acknowledging time and effort:</strong> We value the volunteer efforts throughout our community and are considerate in our feedback and discussions.</li>
+              <li><strong>Being respectful of differing viewpoints and experiences:</strong> Constructive comments and criticism are vital for our growth and improvement.</li>
+              <li><strong>Showing empathy towards other community members:</strong> We strive to be mindful in our interactions, recognizing the diversity in our community.</li>
+              <li><strong>Being considerate and respectful:</strong> We treat others with respect, recognizing their contributions and differing needs.</li>
+              <li><strong>Gracefully accepting constructive criticism:</strong> Disagreements, when approached with openness and respect, can lead to growth and understanding.</li>
+              <li><strong>Using welcoming and inclusive language:</strong> Our community thrives on involvement from all people, making a concerted effort to be inclusive to all.</li>
+            </ul>
+
+            <h2 class="text-xl font-bold text-gray-900 mb-4 mt-8">
+              <span class="text-pycon-teal">Our Standards</span>
+            </h2>
+            <p class="text-gray-900 text-base leading-relaxed mb-6">
+              Every member of our community deserves respect, and we are committed to making participation in our community a harassment-free experience for everyone, regardless of personal and demographic characteristics.
+            </p>
+
+            <h2 class="text-xl font-bold text-gray-900 mb-4 mt-8">
+              <span class="text-pycon-teal">Inappropriate Behaviour</span>
+            </h2>
+            <p class="text-gray-900 text-base leading-relaxed mb-4">Unacceptable behaviors include but are not limited to:</p>
+            <ul class="list-disc list-inside text-gray-900 text-base leading-relaxed mb-6 space-y-2">
+              <li>Harassment in any form.</li>
+              <li>Intimidation, stalking, or following.</li>
+              <li>Invasive recording or photography.</li>
+              <li>Publishing others' private information without explicit permission.</li>
+              <li>Offensive comments related to personal characteristics.</li>
+              <li>Unwelcome sexual attention or advances.</li>
+              <li>Advocating for, or encouraging, any of the above behaviour.</li>
+            </ul>
+
+            <h2 class="text-xl font-bold text-gray-900 mb-4 mt-8">
+              <span class="text-pycon-teal">Weapons Policy</span>
+            </h2>
+            <p class="text-gray-900 text-base leading-relaxed mb-6">
+              No weapons will be allowed at PyCon Africa events, consistent with venue policies.
+            </p>
+
+            <h2 class="text-xl font-bold text-gray-900 mb-4 mt-8">
+              <span class="text-pycon-teal">Consequences</span>
+            </h2>
+            <p class="text-gray-900 text-base leading-relaxed mb-6">
+              Participants asked to stop any inappropriate behaviour are expected to comply immediately. If a participant engages in behaviour that violates this code, the conference organizers may take any action they deem appropriate, from issuing a warning to the offender to expelling them from the conference with no refund.
+            </p>
+
+            <h2 class="text-xl font-bold text-gray-900 mb-4 mt-8">
+              <span class="text-pycon-teal">Scope</span>
+            </h2>
+            <p class="text-gray-900 text-base leading-relaxed mb-4">
+              This Code of Conduct applies to all participants at PyCon Africa events, including:
+            </p>
+            <ul class="list-disc list-inside text-gray-900 text-base leading-relaxed mb-4 space-y-2">
+              <li>Talks, workshops, parties, and any associated social events.</li>
+              <li>Online interactions related to the conference, including posts related to the conference on social media.</li>
+            </ul>
+            <p class="text-gray-900 text-base leading-relaxed mb-6">
+              This Code of Conduct applies both within conference spaces and in public spaces when an individual is representing PyCon Africa or its community. Instances of abusive, harassing, or otherwise unacceptable behaviour may be reported by contacting the event organizing team at <a href="mailto:coc@pycon.africa" class="text-pycon-teal hover:underline font-medium">coc@pycon.africa</a> / <a href="mailto:team@pycon.ug" class="text-pycon-teal hover:underline font-medium">team@pycon.ug</a>.
+            </p>
+
+            <p class="text-gray-900 text-base leading-relaxed mt-8 pt-6 border-t border-gray-200">
+              <strong>NB:</strong> This code of conduct has been adapted from the Python Software Foundation, under whose guidance local Python communities operate. The full original code of conduct can be found on their website.
+            </p>
+          </div>
+        </div>
+    </div>
 {% endblock %}
