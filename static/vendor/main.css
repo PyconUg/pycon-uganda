@@ -2449,9 +2449,6 @@
   .list-disc {
     list-style-type: disc;
   }
-  .list-none {
-    list-style-type: none;
-  }
   .appearance-auto {
     appearance: auto;
   }
@@ -2664,9 +2661,6 @@
   }
   .gap-5 {
     gap: calc(var(--spacing) * 5);
-  }
-  .gap-6 {
-    gap: calc(var(--spacing) * 6);
   }
   .space-y-1 {
     :where(& > :not(:last-child)) {
@@ -3716,9 +3710,6 @@
   .text-gray-100 {
     color: var(--color-gray-100);
   }
-  .text-gray-400 {
-    color: var(--color-gray-400);
-  }
   .text-gray-500 {
     color: var(--color-gray-500);
   }
@@ -4189,13 +4180,6 @@
       }
     }
   }
-  .hover\:text-blue-600 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-blue-600);
-      }
-    }
-  }
   .hover\:underline {
     &:hover {
       @media (hover: hover) {
@@ -4554,7 +4538,7 @@
   }
   .navbar-logo-img {
     width: auto;
-    max-height: 100px;
+    max-height: 160px;
     height: auto;
   }
   .nav-desktop {

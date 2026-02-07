@@ -131,3 +131,4 @@ secrets.py
 **/secrets.py
 
 node_modules/
+package-lock.json
