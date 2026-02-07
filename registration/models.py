@@ -456,6 +456,7 @@ class RegistrationProfile(models.Model):
             'activation_key': self.activation_key,
             'expiration_days': settings.ACCOUNT_ACTIVATION_DAYS,
             'site': site,
+            'request': request,
         }
         prefix = getattr(settings, 'REGISTRATION_EMAIL_SUBJECT_PREFIX', '')
         subject = prefix + render_to_string(
