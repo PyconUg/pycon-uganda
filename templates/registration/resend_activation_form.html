@@ -4,62 +4,32 @@
 
 
 {% block content %}
-
-<!-- ========== HEADER ========== -->
 {% include '2026/navbar.html' %}
-<!-- ========== END HEADER ========== -->
- 
-<div class="shortcode-html">
-  <section class="g-bg-size-cover g-bg-pos-center g-bg-cover g-bg-black-opacity-0_5--after g-color-white g-py-50 g-mb-20" style="background-image: url(../../assets/img-temp/1920x800/img4.jpg);">
-    <div class="max-w-7xl mx-auto px-4 g-bg-cover__inner">
-      <header class="g-mb-20">
-        <h3 class="h5 g-font-weight-300 g-mb-5"> </h3>
-        <h2 class="h1 g-font-weight-300 text-uppercase"> 
-        </h2>
-      </header>
- 
+
+<div class="auth-page-content">
+  <section class="g-bg-gray-light-v5 py-4" style="padding-bottom: 4rem;">
+    <div class="container px-3 px-md-4">
+      <div class="row justify-content-center">
+        <div class="col-12 col-sm-10 col-lg-7 col-xl-6 text-center mx-auto" style="max-width: 36rem;">
+          <h1 class="h2 g-color-black g-font-weight-600 mb-4">{% trans "Resend Activation Email" %}</h1>
+
+          <form novalidate class="mad-contact-form mad-form--fields-white login text-left" method="POST" action="">
+            {% csrf_token %}
+            <div class="form-group">
+              <div class="form-col">
+                {{ form | crispy }}
+              </div>
+            </div>
+            <div class="d-grid gap-2 mb-4">
+              <button class="btn btn-lg u-btn-primary rounded primaryAction" type="submit">{% trans "Submit" %}</button>
+            </div>
+          </form>
+
+          <p class="g-color-gray-dark-v5 g-font-size-13 mb-0">{% trans "Already have an account?" %} <a
+              class="g-font-weight-600" href="{% url 'auth_login' %}">{% trans "Login here" %}</a></p>
+        </div>
+      </div>
     </div>
   </section>
 </div>
-
-    <!-- Signup -->
-    <section class="g-bg-gray-light-v5">
-      <div class="max-w-7xl mx-auto px-4 g-py-100">
-        <div class="row justify-content-center">
-          <div class="col-sm-10 col-md-9 col-lg-6">
-            <div class="u-shadow-v21 g-bg-white rounded g-py-40 g-px-30">
-              <header class="text-center mb-4">
-                <h2 class="h2 g-color-black g-font-weight-600">Resend Activation Email</h2>
-              </header>
-
-              <!-- Form --> 
-              <form novalidate class="mad-contact-form mad-form--fields-white login" method="POST" action="">
-                {% csrf_token %} 
-              <div class="form-group">
-                <div class="form-col">
-                    {{ form | crispy }}
-                </div>
-              </div>
-               <br> 
-              <div class="d-grid gap-5">
-                <button class="btn btn-lg btn-md btn-block u-btn-primary rounded primaryAction" type="submit">Submit</button><br> 
-              </div>  
-              <!-- End Form -->
-
-              <footer class="text-center">
-                <p class="g-color-gray-dark-v5 g-font-size-13 mb-0">Already have an account? <a class="g-font-weight-600"  href="/accounts/login/"><b>Login here</b></a>
-                </p>
-              </footer>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- End Signup -->
-
- 
 {% endblock %}
-
-
- 
- 

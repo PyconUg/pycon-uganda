@@ -7,17 +7,16 @@
 {% include '2026/navbar.html' %}
 
 <div class="auth-page-content">
-  <section class="g-bg-gray-light-v5 py-4">
-    <div class="container">
+  <section class="g-bg-gray-light-v5 py-4" style="padding-bottom: 4rem;">
+    <div class="container px-3 px-md-4">
       <div class="row justify-content-center">
-        <div class="col-sm-10 col-md-8 col-lg-5">
-          <div class="u-shadow-v21 g-bg-white rounded g-py-40 g-px-30 text-center border border-light">
-            <h1 class="h2 g-color-black g-font-weight-600 g-mb-4">{% trans "Account Activated" %}</h1>
-            <p class="g-color-gray-dark-v2 g-mb-4">{% trans "Activation completed!" %} 😀</p>
-            {% if not user.is_authenticated %}
-            <a class="btn btn-lg u-btn-primary rounded" href="{% url 'auth_login' %}"><i class="fa-solid fa-key me-2" aria-hidden="true"></i>{% trans "Log in here" %}</a>
-            {% endif %}
-          </div>
+        <div class="col-12 col-sm-10 col-lg-7 col-xl-6 text-center mx-auto" style="max-width: 36rem;">
+          <h1 class="h2 g-color-black g-font-weight-600 mb-3">{% trans "Account Activated" %}</h1>
+          <p class="g-color-gray-dark-v2 mb-4">{% trans "Activation completed!" %} 😀</p>
+          {% if not user.is_authenticated %}
+          <a class="btn btn-lg u-btn-primary rounded" href="{% url 'auth_login' %}"><i class="fa-solid fa-key me-2"
+              aria-hidden="true"></i>{% trans "Log in here" %}</a>
+          {% endif %}
         </div>
       </div>
     </div>
@@ -25,7 +24,7 @@
 </div>
 {% endblock %}
 
-  
+
 
 
 {% comment %}
