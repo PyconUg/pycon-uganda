@@ -3,14 +3,16 @@
 {% block footer %}
 <footer class="footer">
   <div class="footer-container">
-    <div class="footer-grid">
-      <div class="footer-section footer-about">
-        <img src="{% static '2026/img/Pycon_Africa_2026.png' %}" alt="PyCon Africa 2026 Logo" class="footer-logo">
+    <div class="footer-grid" style="display: flex; flex-direction: row; align-items: flex-start; gap: 2rem; flex-wrap: nowrap;">
+      <div class="footer-section footer-about" style="flex-shrink: 0; margin-left: -19rem;">
+        <img src="{% static '2026/img/Pycon_Africa_2026_OFFICIAL_YELLOW.png' %}" alt="PyCon Africa 2026 Logo" class="footer-logo" style="width: 340px; height: auto; max-width: none;">
+      </div>
+      <div class="footer-section footer-text-section" style="flex: 1; margin-left: 8rem;">
         <p class="footer-text footer-text--narrow">
           PyCon Africa is an annual event of the Python Conferences you can attend in Africa. We shall talk about Python applications in data, web, and other domains. This is a platform where Python users, developers, library developers, and companies that use Python come together.
         </p>
       </div>
-      <div class="footer-section footer-links">
+      <div class="footer-section footer-links"  style="flex: 1; margin-left: 8rem;">
         <h6 class="footer-heading">Useful Links</h6>
         <ul class="footer-link-list">
           <li><a href="/" class="footer-link">Home</a></li>
@@ -60,9 +62,9 @@
       </div>
     </div>
   </div>
-  <div class="copyright">
-    <span>© <script>document.write(new Date().getFullYear());</script> Copyright: </span>
-    <a href="https://africa.pycon.org/" class="copyright-link">PyCon Africa</a>
-  </div>
 </footer>
+<div class="copyright" style="border-top: 2px solid #d3d3d3;">
+  <span>© <script>document.write(new Date().getFullYear());</script> Copyright: </span>
+  <a href="https://africa.pycon.org/" class="copyright-link">PyCon Africa</a>
+</div>
 {% endblock %}
