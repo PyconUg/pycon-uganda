@@ -2,125 +2,69 @@
 {% load i18n static sponsors_tags keynotes_tag schedule_tags %}
 
 {% block meta_title %}
-  {% if page %}
-    {{ page.meta_title }}
-  {% else %}
-    {% trans "Home | PyCon Africa 2026" %}
-  {% endif %}
+{% if page %}
+{{ page.meta_title }}
+{% else %}
+{% trans "Home | PyCon Africa 2026" %}
+{% endif %}
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static '2026/css/custom.css' %}">
 {% endblock %}
 
 {% block content %}
 {% include '2026/navbar.html' %}
 
-<script
-  src="//code.tidio.co/00hkw5reeffaallvkbjizeykysxulx6p.js"
-  async
-></script>
+<script src="//code.tidio.co/00hkw5reeffaallvkbjizeykysxulx6p.js" async></script>
 
-<section class="promo">
-  <!-- Hero background image (conference/audience) -->
-  <div class="promo-image-background" style="background-image: url('{% static '2026/img/PyConAfrica-0309.jpg' %}');"></div>
-  <!-- Dark overlay for readability -->
-  <div class="promo-video-overlay"></div>
-  
-  <div class="promo-grid">
-    <div class="promo-detail">
-      <div class="detail-text">
-        <h1 class="promo-title">
-          <span>PyCon</span> Africa 2026
-        </h1>
-        
-        <!-- Tagline -->
-        <h2 class="promo-tagline">Where Africa Builds the Future with Python.</h2>
+<section class="hero-section">
+  <div class="hero-background" style="background-image: url('{% static '2026/img/pycon.png' %}');"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content flex justify-center flex-col hero-content-height">
+    <div class="flex justify-center" style="margin-top: -15rem;">
+      <img src="{% static '2026/img/Pycon_Africa_2026_OFFICIAL_YELLOW.png' %}" alt="PyCon Africa 2026 Logo" width="483px"
+        height="454px" />
+    </div>
 
-        <!-- Description with vertical pink bar -->
-        <div class="promo-description-wrapper">
-          <div class="promo-description-bar"></div>
-          <p class="promo-description">
-            Join developers, data scientists, startups, educators, and tech leaders from across Africa and beyond for Africa's largest Python conference, hosted in Uganda.
-          </p>
+    <div class="flex justify-center flex-col text-center hero-text-container" style="margin-top: -2rem !important;">
+      <h1 class="hero-title">PyCon Africa 2026 Code, Community, and Opportunity</h1>
+      <p class="hero-description" style="margin-top: 1rem !important;">Learn, Build, and Lead Africa's Python Future in Africa</p>
+    </div>
+
+    <!-- Date and Venue Info -->
+    <div class="flex flex-col md:flex-row items-center justify-center w-full md:w-[464px] h-auto md:h-[51px] mx-auto mt-6 text-white gap-4 md:gap-[39px] px-4" style="margin-top: 3rem !important;">
+      <!-- Date Section -->
+      <div class="flex items-center gap-4">
+        <i class="far fa-calendar-alt text-white" style="font-size: 50px;" aria-hidden="true"></i>
+        <div class="flex flex-col leading-tight mr-4">
+          <span class="font-medium whitespace-nowrap" style="font-size: 18px;">Wed 07 – Sun 11</span>
+          <span class="font-medium whitespace-nowrap" style="font-size: 18px;">October 2026</span>
         </div>
+      </div>
 
-        <!-- Date and Location Info -->
-        <div class="promo-event-info">
-          <div class="promo-info-item">
-            <i class="fa fa-calendar-alt" aria-hidden="true"></i>
-            <span>7th October - 11th October</span>
-          </div>
-          <div class="promo-info-item">
-            <i class="fa fa-map-marker-alt" aria-hidden="true"></i>
-            <span>Kampala, Uganda</span>
-          </div>
+      <!-- Vertical Separator -->
+      <div class="hidden md:block flex-shrink-0" style="width: 2px; height: 51px; background-color: #ffffff !important; opacity: 1 !important;"></div>
+
+      <!-- Venue Section -->
+      <div class="flex items-center gap-4">
+        <i class="far fa-map-marker-alt text-white" style="font-size: 50px;" aria-hidden="true"></i>
+        <div class="flex flex-col leading-tight">
+          <span class="font-medium whitespace-nowrap" style="font-size: 18px;">TBD</span>
+          <span class="font-medium whitespace-nowrap" style="font-size: 18px;">Kampala Uganda</span>
         </div>
-
-        <!-- Main CTA Buttons -->
-        <div class="promo-main-buttons">
-          <a
-            class="btn promo-btn-learn-more"
-            href="/2026/about/pycon-africa-2026/"
-            >Learn More</a
-          >
-          <a
-            class="btn promo-btn-get-ticket"
-            target="_self"
-            href="/2026/sponsor-us/"
-            >Sponsor Us</a
-          >
-        </div>
-
-        <!-- Keyword Buttons -->
-        <div class="promo-keyword-buttons">
-          <span class="keyword-btn keyword-learn">Learn</span>
-          <span class="keyword-btn keyword-build">Build</span>
-          <span class="keyword-btn keyword-connect">Connect</span>
-          <span class="keyword-btn keyword-grow">Grow</span>
-        </div>
-
-        <!-- Commented out old content -->
-        <!-- <h1 class="promo-title"></h1> -->
-
-        <!-- <div class="flex space-x-4">
-          <div>
-            <span class="font-semibold">Date</span>
-            <p class="text-gray-500 md:text-xl text-lg">TBA</p>
-          </div>
-          <div>
-            <span class="font-semibold">Venue</span>
-            <p class="text-gray-500 md:text-xl text-lg">
-              Kampala, Uganda
-            </p>
-          </div>
-        </div> -->
-
-        <!-- <div class="promo-buttons">
-          <a
-            class="btn promo-btn"
-            target="_blank"
-            href="https://www.quicket.co.ug/events/309365-pycon-africa-2026/"
-            >Buy Tickets</a
-          >
-          <a
-            class="btn promo-btn"
-            target="_blank"
-            href="https://www.quicket.co.ug/events/309365-pycon-africa-2026/#merchandise"
-            >Buy Merch</a
-          >
-          <a class="btn promo-btn" href="/2026/talks/submit_talk/">Submit A Talk</a>
-          <a class="btn promo-btn" target="_self" href="/2026/sponsor-us/"
-            >Sponsor Us</a
-          >
-        </div> -->
       </div>
     </div>
-    <!-- Commented out side image -->
-    <!-- <div
-      class="promo-bg"
-      style="
-        background: url({% static '2026/img/pyconug-pallet.webp' %}) no-repeat;
-        background-size: cover;
-        background-position: center;
-      "
-    ></div> -->
+
+    <!-- Action Buttons -->
+    <div class="flex items-center justify-center hero-action-buttons" style="position: absolute; top: 653px; left: 51.5%; transform: translateX(-50%); gap: 10px;">
+      <a href="#" class="text-white whitespace-nowrap" style="width: 160px; height: 50px; padding: 20px 40px; border-radius: 5px; background-color: #FF5252; display: flex; align-items: center; justify-content: center; font-family: sans-serif; font-weight: 500; font-size: 20px; line-height: 150%; letter-spacing: 0px; text-decoration: none;">
+        Register
+      </a>
+      <a href="/2026/sponsor-us/" class="text-white font-medium whitespace-nowrap" style="width: 190px; height: 50px; padding: 20px 40px; border-radius: 5px; background-color: #084C61; display: flex; align-items: center; justify-content: center; font-family: sans-serif; font-size: 20px; text-decoration: none;">
+        Sponsor Us
+      </a>
+    </div>
   </div>
 </section>
 
@@ -351,15 +295,8 @@
     <div class="col-lg-6">
       <!-- Vimeo Example -->
       <div class="embed-responsive embed-responsive-16by9">
-        <iframe
-          src="https://www.youtube.com/embed/-xRWy2Pw4cE?si=OwSkcA--yLPoG4fw"
-          width="530"
-          height="300"
-          frameborder="0"
-          webkitallowfullscreen
-          mozallowfullscreen
-          allowfullscreen
-        ></iframe>
+        <iframe src="https://www.youtube.com/embed/-xRWy2Pw4cE?si=OwSkcA--yLPoG4fw" width="530" height="300"
+          frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
       </div>
       <!-- End Vimeo Example -->
     </div>
