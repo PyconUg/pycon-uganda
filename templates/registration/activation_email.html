@@ -25,9 +25,15 @@
     </p>
     
     <p>
-        <a href="http://{{site.domain}}{% url 'registration_activate' activation_key %}">
-            {{site.domain}}{% url 'registration_activate' activation_key %}
+        {% if request %}
+        <a href="{{ request.scheme }}://{{ request.get_host }}{% url 'registration_activate' activation_key %}">
+            {{ request.scheme }}://{{ request.get_host }}{% url 'registration_activate' activation_key %}
         </a>
+        {% else %}
+        <a href="http://{{ site.domain }}{% url 'registration_activate' activation_key %}">
+            {{ site.domain }}{% url 'registration_activate' activation_key %}
+        </a>
+        {% endif %}
     </p>
     <p>
         {% blocktrans with site_name=site.name %}

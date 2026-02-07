@@ -1,64 +1,69 @@
 {% extends "base.html" %}
 {% load i18n tz static avatar_tags crispy_forms_tags markdown_extras countries profile_tags talks_tags %}
-{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Profile || PyCon Uganda" %}{% endif %}{% endblock %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Profile | PyCon Uganda 2026" %}{% endif %}{% endblock %}
 
+{% block extra_css %}
+<style>
+  .profile-breadcrumb { list-style: none !important; display: flex; flex-wrap: wrap; align-items: center; gap: 0.25rem; }
+  .profile-breadcrumb .breadcrumb-item { display: inline; }
+  .profile-breadcrumb .breadcrumb-item + .breadcrumb-item::before { content: "/"; padding: 0 0.35rem; color: #6c757d; }
+  .profile-card-avatar { width: 7rem; height: 7rem; border-radius: 50%; object-fit: cover; border: 2px solid #fff; box-shadow: 0 0.125rem 0.5rem rgba(0,0,0,0.08); }
+  .profile-card-avatar-wrap { position: relative; display: inline-block; }
+  .profile-card-avatar-wrap .status-dot { position: absolute; bottom: 0.25rem; right: 0.25rem; width: 0.875rem; height: 0.875rem; background: #198754; border: 2px solid #fff; border-radius: 50%; }
+  .profile-welcome-center { overflow: visible; max-width: 28rem; }
+  .profile-welcome .welcome-card { background: #fff; border-radius: 1rem; box-shadow: 0 0.25rem 1rem rgba(0,0,0,0.06); border: none; overflow: visible; }
+  .profile-welcome .welcome-card .card-body { padding: 2rem 1.5rem; text-align: center; overflow: visible; }
+  .profile-welcome .welcome-header { color: #212529; font-weight: 600; font-size: 1.5rem; margin-bottom: 1rem; }
+  .profile-welcome .welcome-header .greeting-name { color: #212529; }
+  .profile-welcome .last-login-label { color: #6c757d; font-weight: 600; font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  .profile-welcome .profile-welcome-muted { color: #6c757d; }
+  .profile-welcome .welcome-card .card-title { color: #212529; font-weight: 600; font-size: 1.125rem; margin-bottom: 0.5rem; }
+  .profile-welcome .welcome-card .card-text { color: #495057; line-height: 1.65; font-size: 0.9375rem; }
+  .profile-welcome .welcome-card .card-text .fw-semibold { color: #495057; }
+  .profile-welcome .btn-cta { background: #e8590c; color: #fff; border: 0; font-weight: 600; padding: 0.6rem 1.25rem; border-radius: 0.5rem; }
+  .profile-welcome .btn-cta:hover { background: #d44d0a; color: #fff; }
+  .profile-welcome .welcome-footer-link { color: #495057; text-decoration: none; font-size: 0.875rem; margin-top: 1.25rem; display: inline-flex; align-items: center; gap: 0.35rem; }
+  .profile-welcome .welcome-footer-link:hover { color: #212529; }
+</style>
+{% endblock %}
 
 {% block content %}
+{% include '2026/navbar.html' %}
 
-<!-- ========== HEADER ========== -->
-{% include '2025/navbar.html' %}
-<!-- ========== END HEADER ========== -->
-  
-    <!-- Breadcrumbs -->
-    <section class="g-bg-gray-light-v5 g-py-80 g-pt-150">
-      <div class="max-w-7xl mx-auto px-4 text-center"> 
-        <h1 class="h2 g-color-black g-font-weight-600"> Hello {% if user_profile %}{{ request.user.user_profile.name }} {% else %}{% firstof user.get_short_name user.get_username|capfirst %}{% endif %}</h1> 
-        <span class="d-block text-white mb-3 h6"><a class="badge bg-dark text-white rounded-pill ms-1" ><span class=" fw-bold">Welcome to your Profile</span></a></span>
-       
-        <ul class="u-list-inline">
-          <li class="list-inline-item g-mr-5">
-            <a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover" href="#">Home</a>
-            <i class="g-color-gray-light-v2 g-ml-5">/</i>
-          </li> 
-          <li class="list-inline-item g-color-primary">
-            <span>Profile</span>
-          </li>
-        </ul><br> 
-        <i class="fa-solid fa-user-vneck" style="font-size:41px;"></i>
+<div class="auth-page-content">
+  {% if user_profile %}
+  <!-- Page header when user has profile -->
+  <header class="g-bg-gray-light-v5 py-3 border-bottom border-light">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="mb-2">
+        <ol class="breadcrumb mb-0 g-font-size-13 bg-transparent p-0 profile-breadcrumb">
+          <li class="breadcrumb-item"><a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover" href="/">{% trans "Home" %}</a></li>
+          <li class="breadcrumb-item active g-color-gray-dark-v3" aria-current="page">{% trans "Profile" %}</li>
+        </ol>
+      </nav>
+      <h1 class="h2 g-color-black g-font-weight-600 mb-0">{% trans "Hello" %}, {{ request.user.user_profile.name }}</h1>
+    </div>
+  </header>
 
-      </div>
-      
-    </section>
-    <!-- End Breadcrumbs --> 
- 
- 
-
-    <section class="g-mb-100 g-pt-50">
-      <div class="max-w-7xl mx-auto px-4"> 
-          <div class="u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30" > 
-            <div class="flex flex-wrap gap-4">
-              <!-- Profile Sidebar -->
-              <div class="col-lg-3 g-mb-50 g-mb-0--lg"> 
-                <!-- Profile Pic --> 
-                  {% include 'profiles/profilepic_side.html' %}
-                <!-- End Profile Pic  -->   
-
-                <!-- Sidebar Navigation -->
-                <div class="list-group list-group-border-0 g-mb-40">
-                  <div class="media"> 
-                    <div class="media-body">
-                      <div><b><small class="text-danger">LAST LOGIN</small></b></div>
-                      <div class="g-font-size-12 g-color-gray-dark-v3"><b><small>Date:</small></b>  {{ request.user.last_login.date }}</div>
-                      <div class="g-font-size-12  g-color-gray-dark-v3"><b><small>Time:</small></b>  {{ request.user.last_login.time }}</div> 
-                    </div>
-                  </div>
-                </div> 
-                  
-                
-                {% if user_profile %}   
-                
-                      <!-- Overall -->
-                      <a href="/accounts/profile/" class="list-group-item list-group-item-action justify-content-between active">
+  <section class="g-mb-80 g-pt-4" style="padding-bottom: 4rem;">
+    <div class="container">
+      <div class="row g-4 align-items-start">
+        <!-- Profile Sidebar -->
+        <div class="col-lg-3 order-2 order-lg-1">
+          <div class="card border-0 shadow-sm rounded g-bg-gray-light-v5 overflow-hidden">
+            <div class="card-body p-4">
+              <div class="mb-3 mx-auto rounded overflow-hidden" style="max-width: 10rem;">
+                {% include 'profiles/profilepic_side.html' %}
+              </div>
+              {% if request.user.last_login %}
+              <div class="small g-color-gray-dark-v3 mb-3 pb-3 border-bottom border-light">
+                <span class="text-danger fw-bold text-uppercase">{% trans "Last login" %}</span><br>
+                {{ request.user.last_login|date:"M. j, Y" }} · {{ request.user.last_login|time:"g:i a" }}
+              </div>
+              {% endif %}
+              <div class="list-group list-group-flush list-group-border-0">
+                {% if user_profile %}
+                      <a href="{% url 'profiles:profile_home' %}" class="list-group-item list-group-item-action d-flex align-items-center active">
                         <span><i class="fa-solid fa-house-user fa-fade g-pos-rel g-top-1 g-mr-8"></i> My Profile</span> 
                       </a> 
                       <!-- End Overall -->
@@ -110,9 +115,9 @@
 
                     
                           {% if perms.schedule.add_talkschedule or perms.schedule.change_talkschedule %}
-                          <a href="/organizers/conference_schedule/" target="/" class="list-group-item list-group-item-action justify-content-between active">
+                          <a href="/organizers/conference_schedule/" target="_blank" class="list-group-item list-group-item-action justify-content-between">
                               <span><i class="fa-solid fa-calendar-week g-pos-rel g-top-1 g-mr-8"></i> Create/Add to the Schedule</span>
-                          </a> 
+                          </a>
                       {% endif %}   
 
 
@@ -120,28 +125,21 @@
 
  
                 {% else %}
-                
-                   <!-- Overall -->
-                   <a href="/accounts/profile/" class="list-group-item list-group-item-action justify-content-between active">
-                    <span><i class="fa-solid fa-house-user fa-fade g-pos-rel g-top-1 g-mr-8"></i> My Profile</span> 
-                  </a> 
-                  <!-- End Overall -->
-                {% endif %}<br>
+                  <a href="{% url 'profiles:profile_home' %}" class="list-group-item list-group-item-action d-flex align-items-center active border-0 px-0">
+                    <span><i class="fa-solid fa-house-user g-pos-rel g-top-1 g-mr-8"></i> {% trans "My Profile" %}</span>
+                  </a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Profile Sidebar -->
 
-                </div>
-                <!-- End Sidebar Navigation -->  
-              <!-- End Profile Sidebar --> 
-            
-            
-            
-            
-            
-            
-              {% if user_profile %} 
+              {% if user_profile %}
               <!-- Profile Content -->
               {% for user_p in user_profile %}
-              {% for detail in details %} 
-              <div class="col-lg-9">
+              {% for detail in details %}
+              <div class="col-lg-9 order-1 order-lg-2">
 
           <!-- Figure Body --> 
               <div class="d-flex justify-content-between g-mb-10">
@@ -228,9 +226,9 @@
                               <div class="d-flex justify-content-between">
                                 <h5 class="h6 g-font-weight-600 g-color-black">What it takes to speak at PyCon Uganda</h5> 
                               </div>
-                              <p>We are inviting speakers of all experience levels and backgrounds to contribute to our conference program at PyCon Uganda 2025! ...</p>
+                              <p>We are inviting speakers of all experience levels and backgrounds to contribute to our conference program at PyCon Uganda 2026! ...</p>
                               
-                              <p><a href="/2025/talks/speaking/"class="btn btn-sm u-btn-outline-darkgray g-rounded-50 g-mr-10 g-mb-15"><b>Read more...</b></a></p>
+                              <p><a href="/2026/talks/speaking/" class="btn btn-sm u-btn-outline-darkgray g-rounded-50 g-mr-10 g-mb-15"><b>Read more...</b></a></p>
                                     
                               
                                    
@@ -268,30 +266,45 @@
               {% endfor %}
               {% endfor %}
               <!-- End Profile Content -->
-              {% else %} 
-    
-                <div class="col-lg-9">
-                  <section class="g-brd-around g-brd-gray-light-v4">
-                    <div class="max-w-7xl mx-auto px-4 g-py-50--md g-py-20">
-                      <h2 class="h2 text-uppercase text-center  g-font-weight-300"> Thanks for Signing up! @{% firstof user.get_short_name user.get_username %} 🥳</h2>
-                      <p class="mb-0   g-mb-25"><br>
-                        We're thrilled to have you join this vibrant community of Python enthusiasts, developers, 
-                        and innovators from across Africa and beyond. To get started, we kindly ask you to create your profile.  
-                        Please click on the "Create Profile" button below to begin. <br><br>🥂 Here's to an exciting journey ahead at PyCon Uganda 2025!
-                      </p>
-                      <a class="btn btn-md u-btn-primary rounded-0 text-center "  href="{% url 'profiles:create_profile' %}">Create Profile &raquo;</a>
-                    </div>
-                  </section> 
-                </div>   
               {% endif %}
-    
-            </div>
-        </div>
       </div>
-    </section>
+    </div>
+  </section>
+  {% else %}
+  <!-- No profile yet: single-card welcome (reference design, no blue) -->
+  <section class="profile-welcome pt-4 pb-5" style="padding-bottom: 4rem;">
+    <div class="container text-center">
+      <div class="profile-welcome-center mx-auto">
+        <h1 class="welcome-header mb-4">{% trans "Welcome" %}, <span class="greeting-name">{% firstof user.get_short_name user.get_username|capfirst %}!</span></h1>
 
+        <div class="card welcome-card">
+          <div class="card-body">
+            <div class="profile-card-avatar-wrap mb-3">
+              <img class="profile-card-avatar" src="/robohash/{% firstof user.get_short_name user.get_username|capfirst %}/?width=200&height=200" alt="">
+              <span class="status-dot" aria-hidden="true"></span>
+            </div>
+            {% if request.user.last_login %}
+            <div class="mb-3 small">
+              <div class="last-login-label">{% trans "Last login" %}</div>
+              <div class="profile-welcome-muted">{{ request.user.last_login|date:"M. j, Y" }} · {{ request.user.last_login|time:"g:i a" }}</div>
+            </div>
+            {% endif %}
 
- 
+            <h2 class="card-title">{% trans "Thanks for signing up!" %} 🥳</h2>
+            <p class="card-text mb-2">{% trans "We're thrilled to have you join this vibrant community of" %} <span class="fw-semibold">{% trans "Python enthusiasts, developers, and innovators." %}</span></p>
+            <p class="card-text mb-4">{% trans "To get started, please complete your profile. This helps our community members connect and grow together." %}</p>
+
+            <a class="btn btn-cta" href="{% url 'profiles:create_profile' %}">{% trans "Create Profile" %} <i class="fa-solid fa-arrow-right ms-1" aria-hidden="true"></i></a>
+          </div>
+        </div>
+
+        <a class="welcome-footer-link" href="/">PyCon Africa</a>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+</div>
+
 {% endblock %}
 
 
