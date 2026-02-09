@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+{% load i18n static %}
+{% block meta_title %}{% trans "Flying to Uganda | PyCon Africa 2026" %}{% endblock %}
+
+{% block content %}
+{% include '2026/navbar.html' %}
+
+    <!-- Header -->
+    <div class="max-w-7xl mx-auto px-4 pt-12 pb-8">
+      <h1 class="text-5xl font-bold text-gray-900 text-center">Flying to Uganda</h1>
+    </div>
+
+    <!-- body -->
+    <div class="max-w-7xl mx-auto px-4 pb-16">
+        <div class="max-w-4xl mx-auto">
+          <!-- Introduction -->
+          <div class="mb-8">
+            <p class="text-gray-900 text-base leading-relaxed mb-4">
+              The closest international airport to the PyCon Africa 2026 host city is Entebbe International Airport (EBB).
+              It is Uganda's main international gateway and is located approximately 40 km from Kampala, where most
+              conference venues and hotels are based.
+            </p>
+          </div>
+
+          <!-- Free Wi-Fi at the Airport -->
+          <div class="mb-8">
+            <h3 class="text-xl font-bold text-gray-900 mb-4">Free Wi-Fi at the Airport</h3>
+            <p class="text-gray-900 text-base leading-relaxed mb-4">
+              You may need to get in touch with colleagues, hotel staff, or request transport once you land.
+              Free Wi-Fi is available at Entebbe International Airport, though connection speeds may vary. For more reliable
+              connectivity during your stay, we recommend purchasing a local SIM card on arrival.
+            </p>
+          </div>
+
+          <!-- Buying a Local SIM Card -->
+          <div class="mb-8">
+            <h3 class="text-xl font-bold text-gray-900 mb-4">Buying a Local SIM Card</h3>
+            <p class="text-gray-900 text-base leading-relaxed mb-4">
+              You can buy a SIM card directly at the airport arrivals terminal.
+              Uganda's major telecom providers include:
+            </p>
+            <ul class="list-disc list-inside text-gray-900 text-base leading-relaxed space-y-2 mb-4">
+              <li>MTN Uganda</li>
+              <li>Airtel Uganda</li>
+              <li>Lycamobile Uganda (availability may vary)</li>
+            </ul>
+            <p class="text-gray-900 text-base leading-relaxed mb-4">
+              These providers offer reliable voice and data services, with affordable internet bundles suitable for conference
+              attendees.
+            </p>
+            <p class="text-gray-900 text-base leading-relaxed mb-2">You will need:</p>
+            <ul class="list-disc list-inside text-gray-900 text-base leading-relaxed space-y-2">
+              <li>Your passport for SIM registration</li>
+              <li>Mobile money activation (optional but useful)</li>
+            </ul>
+          </div>
+
+          <!-- Transport from the Airport -->
+          <div class="mb-8">
+            <h3 class="text-xl font-bold text-gray-900 mb-4">Transport from the Airport</h3>
+            <p class="text-gray-900 text-base leading-relaxed mb-4">
+              Once you land at Entebbe International Airport, you will have several options to get to Kampala or directly to the
+              conference venue.
+            </p>
+            
+            <h4 class="text-lg font-bold text-gray-900 mb-3">Ride-Hailing Apps</h4>
+            <p class="text-gray-900 text-base leading-relaxed mb-3">
+              These are the most convenient and recommended transport options:
+            </p>
+            <ul class="list-disc list-inside text-gray-900 text-base leading-relaxed space-y-2 mb-4">
+              <li>Uber</li>
+              <li>SafeCar</li>
+              <li>SafeBoda</li>
+            </ul>
+            <p class="text-gray-900 text-base leading-relaxed mb-4">
+              You can request a ride using airport Wi-Fi or mobile data once you have a local SIM card.
+              SafeBoda also offers motorcycle taxis if you prefer quicker travel during heavy traffic.
+            </p>
+
+            <h4 class="text-lg font-bold text-gray-900 mb-3">Airport Taxis</h4>
+            <p class="text-gray-900 text-base leading-relaxed mb-3">
+              Official airport taxis are available outside the arrivals terminal.
+            </p>
+            <ul class="list-disc list-inside text-gray-900 text-base leading-relaxed space-y-2 mb-4">
+              <li>Fares are typically fixed or negotiated before departure.</li>
+              <li>Payment can be made in cash or mobile money.</li>
+            </ul>
+            <p class="text-gray-900 text-base leading-relaxed mb-4">
+              Always use registered airport taxi services.
+            </p>
+
+            <h4 class="text-lg font-bold text-gray-900 mb-3">Hotel Shuttles</h4>
+            <p class="text-gray-900 text-base leading-relaxed">
+              Some conference partner hotels may offer:
+            </p>
+            <ul class="list-disc list-inside text-gray-900 text-base leading-relaxed space-y-2">
+              <li>Complimentary airport pickups</li>
+              <li>Shared shuttle services</li>
+            </ul>
+            <p class="text-gray-900 text-base leading-relaxed mt-4">
+              Check with your hotel in advance to arrange pickup.
+            </p>
+          </div>
+
+          <!-- Travel Time to Kampala -->
+          <div class="mb-8">
+            <h3 class="text-xl font-bold text-gray-900 mb-4">Travel Time to Kampala</h3>
+            <p class="text-gray-900 text-base leading-relaxed mb-4">
+              Estimated travel time from Entebbe to Kampala:
+            </p>
+            <ul class="list-disc list-inside text-gray-900 text-base leading-relaxed space-y-2">
+              <li>45 – 60 minutes (off-peak)</li>
+              <li>1.5 – 2.5 hours (rush hour)</li>
+            </ul>
+            <p class="text-gray-900 text-base leading-relaxed mt-4">
+              Traffic is usually heavier in the mornings and evenings.
+            </p>
+          </div>
+
+          <!-- Travel Tips -->
+          <div class="mb-8">
+            <h3 class="text-xl font-bold text-gray-900 mb-4">Travel Tips</h3>
+            <ul class="list-disc list-inside text-gray-900 text-base leading-relaxed space-y-2">
+              <li>Keep local currency (UGX) for small payments.</li>
+              <li>Confirm transport fares before starting the trip.</li>
+              <li>Avoid unregistered drivers.</li>
+              <li>Share your trip via ride-hailing apps for safety.</li>
+            </ul>
+          </div>
+        </div>
+    </div>
+{% endblock %}
+
