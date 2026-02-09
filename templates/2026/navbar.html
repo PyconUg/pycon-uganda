@@ -20,10 +20,6 @@
         </button>
         <div x-show="open" @click.outside="open = false" class="nav-dropdown-menu" style="display: none;">
           <a class="nav-item" href="/2026/about/pycon-africa-2026/">About PyCon Africa 2026</a>
-          <a class="nav-item" href="/2026/about/kenya-region/">PYCON AFRICA 2026 – KENYA REGION</a>
-          <a class="nav-item" href="/2026/about/rwanda-region/">PYCON AFRICA 2026 – RWANDA REGION</a>
-          <a class="nav-item" href="/2026/about/tanzania-region/">PYCON AFRICA 2026 – TANZANIA REGION</a>
-          <a class="nav-item" href="/2026/about/south-sudan-region/">PYCON AFRICA 2026 – SOUTH SUDAN REGION</a>
         </div>
       </div>
 
@@ -41,6 +37,22 @@
         </div>
       </div>
       {% endcomment %}
+
+       <!-- Regions -->
+      <div class="nav-dropdown-wrapper" x-data="{open:false}">
+        <button class="nav-item" @click="open=!open">
+          REGIONS
+          <i class="fa fa-chevron-up" aria-hidden="true" x-show="open" style="display: none;"></i>
+          <i class="fa fa-chevron-down" aria-hidden="true" x-show="!open" style="display: none;"></i>
+        </button>
+        <div x-show="open" @click.outside="open = false" class="nav-dropdown-menu" style="display: none;">
+          <!-- <a class="nav-item" href="/2026/travel/">Travel Guide</a> -->
+          <a class="nav-item" href="/2026/region/kenya-region/">PYCON AFRICA 2026 – KENYA REGION</a>
+          <a class="nav-item" href="/2026/region/rwanda-region/">PYCON AFRICA 2026 – RWANDA REGION</a>
+          <a class="nav-item" href="/2026/region/tanzania-region/">PYCON AFRICA 2026 – TANZANIA REGION</a>
+          <a class="nav-item" href="/2026/region/south-sudan-region/">PYCON AFRICA 2026 – SOUTH SUDAN REGION</a>
+        </div>
+      </div>
 
       <!-- Venue -->
       <div class="nav-dropdown-wrapper" x-data="{open:false}">
@@ -96,9 +108,9 @@
         <div x-show="open" @click.outside="open = false" class="nav-dropdown-menu" style="display: none;">
           <a class="nav-item" href="/2026/visa/apply/">APPLYING FOR A VISA</a>
           <a class="nav-item" href="/2026/visa/letter/">GET A VISA LETTER</a>
-          <!-- <a class="nav-item" href="/2026/visa/bus/">ARRIVING BY BUS TO KAMPALA</a> -->
-          <!-- <a class="nav-item" href="/2026/visa/flying/">FLYING TO UGANDA</a> -->
-          <!-- <a class="nav-item" href="/2026/travel/">TRAVEL GUIDE</a> -->
+          <a class="nav-item" href="/2026/visa/bus/">ARRIVING BY BUS TO KAMPALA</a>
+          <a class="nav-item" href="/2026/visa/flying/">FLYING TO UGANDA</a>
+          <a class="nav-item" href="/2026/travel/">TRAVEL GUIDE</a>
         </div>
       </div>
 
@@ -179,9 +191,12 @@
         <span class="nav-item">UGANDA</span>
         <a class="nav-item nav-item-indent" href="/2026/visa/apply/">APPLYING FOR A VISA</a>
         <a class="nav-item nav-item-indent" href="/2026/visa/letter/">GET A VISA LETTER</a>
+        <a class="nav-item" href="/2026/visa/bus/">ARRIVING BY BUS TO KAMPALA</a>
+        <a class="nav-item" href="/2026/visa/flying/">FLYING TO UGANDA</a>
+        <a class="nav-item" href="/2026/travel/">TRAVEL GUIDE</a>
 
         <!-- South Africa -->
-        <a class="nav-item" href="/pyconza2025/">SOUTH AFRICA</a>
+        <!-- <a class="nav-item" href="/pyconza2025/">SOUTH AFRICA</a> -->
 
         <!-- Sponsors -->
         <span class="nav-item">SPONSORS</span>
