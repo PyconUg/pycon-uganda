@@ -1,62 +1,27 @@
 {% extends "base.html" %}
 {% load i18n static crispy_forms_tags %}
-{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Log in || PyCon Uganda" %}{% endif %}{% endblock %}
-
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Activation email sent | PyCon Uganda 2026" %}{% endif %}{% endblock %}
 
 {% block content %}
+{% include '2026/navbar.html' %}
 
-<!-- ========== HEADER ========== -->
-{% include '2025/navbar.html' %}
-<!-- ========== END HEADER ========== -->
- 
-<div class="shortcode-html">
-  <section class="g-bg-size-cover g-bg-pos-center g-bg-cover g-bg-black-opacity-0_5--after g-color-white g-py-50 g-mb-20" style="background-image: url(../../assets/img-temp/1920x800/img4.jpg);">
-    <div class="max-w-7xl mx-auto px-4 g-bg-cover__inner">
-      <header class="g-mb-20">
-        <h3 class="h5 g-font-weight-300 g-mb-5"> </h3>
-        <h2 class="h1 g-font-weight-300 text-uppercase"> 
-        </h2>
-      </header>
- 
+<div class="auth-page-content">
+  <section class="g-bg-gray-light-v5 py-4" style="padding-bottom: 4rem;">
+    <div class="container px-3 px-md-4">
+      <div class="row justify-content-center">
+        <div class="col-12 col-sm-10 col-lg-7 col-xl-6 text-center mx-auto" style="max-width: 36rem;">
+          <h1 class="h2 g-color-black g-font-weight-600 mb-3" style="white-space: nowrap;">{% trans "Activation email sent" %}</h1>
+          <p class="g-color-gray-dark-v2 mb-4">{% trans "Activate your account" %} 👋</p>
+          <p class="text-muted mb-4 mx-auto" style="max-width: 32em; line-height: 1.6;">{% trans "Please check your email and spam folder to complete the registration process." %}</p>
+          <a class="btn btn-lg u-btn-primary rounded" href="{% url 'registration_resend_activation' %}">{% trans "Resend activation code" %}</a>
+        </div>
+      </div>
     </div>
   </section>
 </div>
-
-
-
-
-    <!-- Signup -->
-    <section class="g-bg-gray-light-v5">
-      <div class="max-w-7xl mx-auto px-4 g-py-100">
-        <div class="row justify-content-center">
-          <div class="col-sm-10 col-md-9 col-lg-6">
-            <div class="u-shadow-v21 g-bg-white rounded g-py-40 g-px-30">
-              <header class="text-center mb-4">
-                <h2 class="h2 g-color-black g-font-weight-600">Activation email sent</h2>
-              </header>
-              <div class=" "> 
-                <div class="align-center">
-                    <h4>Activate your account 🙂</h3>
-                    <p class="text-size-medium">{% trans "Please check your email/spam to complete the registration process." %}</p>
-                       
-
-                          <p><a class="btn btn-lg btn-md btn-block u-btn-primary rounded " href="/accounts/activate/resend">Resend activation code</a></p>
-                       
-                  </div>
-                
-              </div> 
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- End Signup -->
-
- 
- 
 {% endblock %}
 
- 
+
 
 {% comment %}
 **registration/registration_complete.html**
