@@ -53,10 +53,27 @@
   .cp-form-card input[type="tel"],
   .cp-form-card input[type="number"],
   .cp-form-card input[type="password"],
-  .cp-form-card select {
+  .cp-form-card select,
+  .cp-form-card input[type="file"] {
     border: 1px solid #d1d5db !important;
     border-radius: 0.5rem;
     width: 100% !important;
+  }
+  .cp-form-card input[type="file"] {
+    padding: 0.5rem 0.75rem;
+    background: #fff;
+  }
+  /* Select — use native arrow, hide crispy_tailwind's SVG chevron + country flag */
+  .cp-form-card select {
+    appearance: auto !important;
+    -webkit-appearance: menulist !important;
+    background-image: none !important;
+  }
+  .cp-form-card select + div {
+    display: none !important;
+  }
+  .cp-form-card .country-select-flag {
+    display: none !important;
   }
   .cp-form-card textarea {
     width: 100% !important;
