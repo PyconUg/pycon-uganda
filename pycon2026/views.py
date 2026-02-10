@@ -101,6 +101,14 @@ def visa_letter(request):
     context = {}
     return render(request, '2026/visa/letter.html', context)
 
+def visa_bus(request):
+    context = {}
+    return render(request, '2026/visa/bus.html', context)
+
+def visa_flying(request):
+    context = {}
+    return render(request, '2026/visa/flying.html', context)
+
 def fin_aid(request):
     context = {}
     template = '2026/fin-aid/fin-aid.html'
