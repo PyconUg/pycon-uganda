@@ -57,14 +57,14 @@
   <main>
     {% block content %}
     {% endblock %}
-
-    {% include '2026/footer.html' %}
-
-    <!-- Back to top -->
-    <a href="#" id="js-go-to" class="fixed bottom-4 right-4 z-50 p-3 rounded-full bg-gray-700 text-white hover:bg-gray-600 shadow-lg focus:outline-none focus:ring-2 focus:ring-gray-500" aria-label="Back to top">
-      <i class="fas fa-arrow-up"></i>
-    </a>
   </main>
+
+  {% include '2026/footer.html' %}
+
+  <!-- Back to top -->
+  <a href="#" id="js-go-to" class="fixed bottom-4 right-4 z-50 p-3 rounded-full bg-gray-700 text-white hover:bg-gray-600 shadow-lg focus:outline-none focus:ring-2 focus:ring-gray-500" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </a>
 
   <!-- Alpine.js -->
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>

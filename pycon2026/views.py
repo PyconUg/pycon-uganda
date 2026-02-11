@@ -41,6 +41,14 @@ def about_south_sudan_region(request):
     context = {}
     return render(request, '2026/about/south_sudan_region.html', context)
 
+def privacy_policy(request):
+    context = {}
+    return render(request, '2026/about/privacy_policy.html', context)
+
+def contact_us(request):
+    context = {}
+    return render(request, '2026/about/contact_us.html', context)
+
 def scheduIe(request):
     context = {}
     template = '2026/schedule/schedule.html'
@@ -147,10 +155,6 @@ def ngombor(request):
         'description': 'PyLadies Uganda is a group of women developers who love the Python programming language.',
     }
     return render(request, '2026/community/ngombor.html', context)
-
-
-def privacy_2026(request):
-    return render(request, '2026/privacy/privacy_policy.html')
 
 
 def past_events(request):

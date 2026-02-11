@@ -1,6 +1,6 @@
 {% load static %}
 
-<header class="bg-black" id="main-header">
+<header class="{% if request.path == '/' or request.path == '' %}bg-black{% else %}bg-gray-700{% endif %}" id="main-header">
   <div class="navbar-container">
     <!-- Logo -->
     <div>
@@ -20,9 +20,10 @@
         </button>
         <div x-show="open" @click.outside="open = false" class="nav-dropdown-menu" style="display: none;">
           <a class="nav-item" href="/2026/about/pycon-africa-2026/">About PyCon Africa 2026</a>
+          <a class="nav-item" href="/2026/about/privacy-policy/">Privacy Policy</a>
+          <a class="nav-item" href="/2026/about/contact-us/">Contact Us</a>
           <!-- <a class="nav-item" href="/2026/travel/">Travel Guide</a> -->
           <a class="nav-item" href="/2026/coc/">Code of Conduct</a>
-          <a class="nav-item" href="/2026/privacy-policy/">Privacy Policy</a>
         </div>
       </div>
 
@@ -151,6 +152,9 @@
         <!-- About -->
         <span class="nav-item">ABOUT</span>
         <a class="nav-item nav-item-indent" href="/2026/about/">About Us</a>
+        <a class="nav-item nav-item-indent" href="/2026/about/pycon-africa-2026/">About PyCon Africa 2026</a>
+        <a class="nav-item nav-item-indent" href="/2026/about/privacy-policy/">Privacy Policy</a>
+        <a class="nav-item nav-item-indent" href="/2026/about/contact-us/">Contact Us</a>
         <a class="nav-item nav-item-indent" href="/2026/about/team/">Team</a>
         <a class="nav-item nav-item-indent" href="/2026/fin-aid/">Financial Assistance</a>
         <a class="nav-item nav-item-indent" href="/2026/privacy-policy/">Privacy Policy</a>

@@ -2209,9 +2209,6 @@
   .h-\[35vh\] {
     height: 35vh;
   }
-  .h-\[51px\] {
-    height: 51px;
-  }
   .h-auto {
     height: auto;
   }
@@ -2242,6 +2239,9 @@
   .min-h-screen {
     min-height: 100vh;
   }
+  .w-1 {
+    width: calc(var(--spacing) * 1);
+  }
   .w-1\/2 {
     width: calc(1/2 * 100%);
   }
@@ -2265,12 +2265,6 @@
   }
   .w-100 {
     width: calc(var(--spacing) * 100);
-  }
-  .w-\[1px\] {
-    width: 1px;
-  }
-  .w-\[464px\] {
-    width: 464px;
   }
   .w-auto {
     width: auto;
@@ -2687,9 +2681,6 @@
   }
   .gap-5 {
     gap: calc(var(--spacing) * 5);
-  }
-  .gap-\[39px\] {
-    gap: 39px;
   }
   .space-y-1 {
     :where(& > :not(:last-child)) {
@@ -3537,6 +3528,9 @@
   .pb-2 {
     padding-bottom: calc(var(--spacing) * 2);
   }
+  .pb-3 {
+    padding-bottom: calc(var(--spacing) * 3);
+  }
   .pb-5 {
     padding-bottom: calc(var(--spacing) * 5);
   }
@@ -3629,6 +3623,15 @@
   .text-xs {
     font-size: var(--text-xs);
     line-height: var(--tw-leading, var(--text-xs--line-height));
+  }
+  .text-\[18px\] {
+    font-size: 18px;
+  }
+  .text-\[36px\] {
+    font-size: 36px;
+  }
+  .text-\[60px\] {
+    font-size: 60px;
   }
   .leading-relaxed {
     --tw-leading: var(--leading-relaxed);
@@ -3776,8 +3779,23 @@
   .text-gray-900 {
     color: var(--color-gray-900);
   }
+  .text-pycon-blue {
+    color: var(--color-pycon-blue);
+  }
+  .text-pycon-green {
+    color: var(--color-pycon-green);
+  }
+  .text-pycon-light-blue {
+    color: var(--color-pycon-light-blue);
+  }
+  .text-pycon-red {
+    color: var(--color-pycon-red);
+  }
   .text-pycon-teal {
     color: var(--color-pycon-teal);
+  }
+  .text-pycon-yellow {
+    color: var(--color-pycon-yellow);
   }
   .text-teal-600 {
     color: var(--color-teal-600);
@@ -4362,12 +4380,6 @@
   .md\:px-8 {
     @media (width >= 48rem) {
       padding-inline: calc(var(--spacing) * 8);
-    }
-  }
-  .md\:text-xl {
-    @media (width >= 48rem) {
-      font-size: var(--text-xl);
-      line-height: var(--tw-leading, var(--text-xl--line-height));
     }
   }
   .lg\:block {

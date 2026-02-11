@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% load i18n static %}
+{% block meta_title %}{% trans "Contact Us | PyCon Africa 2026" %}{% endblock %}
+
+{% block content %}
+{% include '2026/navbar.html' %}
+
+    <!-- Header -->
+    <div class="max-w-7xl mx-auto px-4 pt-12 pb-8">
+      <h1 class="text-[60px] font-bold text-gray-900 text-center">Contact Us</h1>
+    </div>
+
+    <!-- body -->
+    <div class="max-w-7xl mx-auto px-4 pb-16">
+        <div class="max-w-4xl mx-auto">
+          <!-- Introduction -->
+          <div class="mb-6">
+            <p class="text-gray-900 text-[18px] leading-relaxed mb-2">
+              Thank you for your interest in PyCon Africa! We're here to help with any questions or concerns related to the event. Please find the appropriate contact information below depending on your inquiry.
+            </p>
+          </div>
+
+          <!-- General Inquiries -->
+          <div class="mb-6">
+            <h3 class="text-[36px] font-extrabold text-gray-900 mb-3">General Inquiries</h3>
+            <p class="text-gray-900 text-[18px] leading-relaxed mb-2">
+              For all general questions about PyCon Africa, please email us at:
+            </p>
+            <p class="text-gray-900 text-[18px] leading-relaxed">
+              <a href="mailto:team@pycon.africa" class="text-gray-900 hover:underline font-medium">team@pycon.africa</a>
+            </p>
+          </div>
+
+          <!-- Communications -->
+          <div class="mb-6">
+            <h3 class="text-[36px] font-extrabold text-gray-900 mb-3">Communications</h3>
+            <p class="text-gray-900 text-[18px] leading-relaxed mb-2">
+              For all communications-related questions or media requests, reach out to:
+            </p>
+            <p class="text-gray-900 text-[18px] leading-relaxed">
+              <a href="mailto:comms@pycon.africa" class="text-gray-900 hover:underline font-medium">comms@pycon.africa</a>
+            </p>
+          </div>
+
+          <!-- Financial Aid -->
+          <div class="mb-6">
+            <h3 class="text-[36px] font-extrabold text-gray-900 mb-3">Financial Aid</h3>
+            <p class="text-gray-900 text-[18px] leading-relaxed mb-2">
+              If you have inquiries regarding financial aid or support, please contact:
+            </p>
+            <p class="text-gray-900 text-[18px] leading-relaxed">
+              <a href="mailto:fin-aid@pycon.africa" class="text-gray-900 hover:underline font-medium">fin-aid@pycon.africa</a>
+            </p>
+          </div>
+
+          <!-- Sponsorship Opportunities -->
+          <div class="mb-6">
+            <h3 class="text-[36px] font-extrabold text-gray-900 mb-3">Sponsorship Opportunities</h3>
+            <p class="text-gray-900 text-[18px] leading-relaxed mb-2">
+              Interested in sponsoring PyCon Africa? Reach out to our sponsorship team at:
+            </p>
+            <p class="text-gray-900 text-[18px] leading-relaxed">
+              <a href="mailto:sponsorship@pycon.africa" class="text-gray-900 hover:underline font-medium">sponsorship@pycon.africa</a>
+            </p>
+          </div>
+
+          <!-- Social Media & Community -->
+          <div class="mb-6">
+            <h3 class="text-[36px] font-extrabold text-gray-900 mb-3">Social Media & Community</h3>
+            <p class="text-gray-900 text-[18px] leading-relaxed mb-2">
+              For quick updates, community support, and to join the conversation, follow us on social media:
+            </p>
+            <ul class="list-disc list-inside text-gray-900 text-[18px] leading-relaxed space-y-1">
+              <li>Twitter: <a href="https://twitter.com/PyConAfrica" target="_blank" rel="noopener noreferrer" class="text-gray-900 hover:underline">@PyConAfrica</a></li>
+              <li>Mastodon: <a href="https://mastodon.social/@pyconafrica" target="_blank" rel="noopener noreferrer" class="text-gray-900 hover:underline">@pyconafrica@mastodon.social</a></li>
+              <li>Instagram: <a href="https://www.instagram.com/pyconafrica" target="_blank" rel="noopener noreferrer" class="text-gray-900 hover:underline">@pyconafrica</a></li>
+              <li>Facebook: <a href="https://www.facebook.com/pyconafrica" target="_blank" rel="noopener noreferrer" class="text-gray-900 hover:underline">PyCon Africa</a></li>
+              <li>LinkedIn: <a href="https://www.linkedin.com/company/pyconafrica" target="_blank" rel="noopener noreferrer" class="text-gray-900 hover:underline">PyCon Africa</a></li>
+              <li>Discord: <a href="https://discord.gg/pyconafrica" target="_blank" rel="noopener noreferrer" class="text-gray-900 hover:underline">Join our Community</a></li>
+              <li>YouTube: <a href="https://www.youtube.com/@PyconAfrica" target="_blank" rel="noopener noreferrer" class="text-gray-900 hover:underline">PyCon Africa</a></li>
+            </ul>
+          </div>
+
+          <!-- Note -->
+          <div class="mb-6 p-4 bg-gray-100 rounded-lg">
+            <p class="text-gray-900 text-[18px] leading-relaxed">
+              <strong>Note:</strong> You can also use <a href="mailto:team@pycon.africa" class="text-gray-900 hover:underline">team@pycon.africa</a> for requests related to communications, financial aid, and sponsorship if you're unsure whom to contact.
+            </p>
+          </div>
+
+          <!-- Closing -->
+          <div class="mb-6">
+            <p class="text-gray-900 text-[18px] leading-relaxed font-medium">
+              Thank you for being part of the PyCon Africa community!
+            </p>
+          </div>
+        </div>
+    </div>
+{% endblock %}
+
