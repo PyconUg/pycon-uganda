@@ -35,6 +35,7 @@ urlpatterns = [
     path('community/pyladies-wksp/', view=views.pyladies_wksp, name='pyladies_wksp'),   
     # path('community/ngombor/', view=views.ngombor, name='ngombor')
     path('privacy-policy/', view=views.privacy_2026, name='privacy_policy'),
+    path('past-events/', view=views.past_events, name='past_events'),
 ]
 
 
