@@ -1,5 +1,41 @@
 /* Add here all your css styles (customizations) */
 
+/* Sticky Footer Layout */
+html {
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body {
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+main {
+  flex: 1 0 auto !important;
+}
+
+footer.footer {
+  flex-shrink: 0 !important;
+  margin-top: auto !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+  line-height: 1.2 !important;
+}
+
+footer.footer > div {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 /* Apply Kanchenjunga font similar to pyconza2025 */
 body,
 a, li, p, h1, h2, h3, h4, h5, h6 {
@@ -1065,7 +1101,16 @@ header[class*="bg-black"] {
 }
 
 .hero-title {
-  font-size: 3rem !important;
+  font-size: 3.5rem !important;
+  font-weight: 700 !important;
+  color: #fff !important;
+  line-height: 1.2 !important;
+  margin-bottom: 1rem !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+.hero-subtitle {
+  font-size: 2rem !important;
   font-weight: 700 !important;
   color: #fff !important;
   line-height: 1.2 !important;
@@ -1091,6 +1136,11 @@ header[class*="bg-black"] {
     margin-bottom: 0.75rem;
   }
   
+  .hero-subtitle {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+  
   .hero-description {
     font-size: 1.125rem;
   }
@@ -1109,6 +1159,10 @@ header[class*="bg-black"] {
   
   .hero-title {
     font-size: 3.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 3rem;
   }
   
   .hero-description {
