@@ -45,6 +45,10 @@ def privacy_policy(request):
     context = {}
     return render(request, '2026/about/privacy_policy.html', context)
 
+def contact_us(request):
+    context = {}
+    return render(request, '2026/about/contact_us.html', context)
+
 def scheduIe(request):
     context = {}
     template = '2026/schedule/schedule.html'

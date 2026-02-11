@@ -9,6 +9,7 @@ urlpatterns = [
     path('about/', view=views.about, name='about'),
     path('about/pycon-africa-2026/', view=views.about_pycon_africa_2026, name='about_pycon_africa_2026'),
     path('about/privacy-policy/', view=views.privacy_policy, name='privacy_policy'),
+    path('about/contact-us/', view=views.contact_us, name='contact_us'),
     path('region/kenya-region/', view=views.about_kenya_region, name='about_kenya_region'),
     path('region/rwanda-region/', view=views.about_rwanda_region, name='about_rwanda_region'),
     path('region/tanzania-region/', view=views.about_tanzania_region, name='about_tanzania_region'),
