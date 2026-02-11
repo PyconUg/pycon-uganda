@@ -9,7 +9,7 @@ To activate this account, please click the following link within the next
 {{ expiration_days }} days:
 {% endblocktrans %}
 
-http://{{site.domain}}{% url 'registration_activate' activation_key %}
+{% if request %}{{ request.scheme }}://{{ request.get_host }}{% url 'registration_activate' activation_key %}{% else %}http://{{ site.domain }}{% url 'registration_activate' activation_key %}{% endif %}
 
 {% blocktrans with site_name=site.name %}
 Sincerely,

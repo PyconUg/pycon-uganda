@@ -3,16 +3,16 @@
 {% block footer %}
 <footer class="footer">
   <div class="footer-container">
-    <div class="footer-grid" style="display: flex; flex-direction: row; align-items: flex-start; gap: 2rem; flex-wrap: nowrap;">
-      <div class="footer-section footer-about" style="flex-shrink: 0; margin-left: -19rem;">
-        <img src="{% static '2026/img/Pycon_Africa_2026_OFFICIAL_YELLOW.png' %}" alt="PyCon Africa 2026 Logo" class="footer-logo" style="width: 340px; height: auto; max-width: none;">
+    <div class="footer-grid" style="display: flex; flex-direction: row; align-items: flex-start; gap: 2.5rem; flex-wrap: wrap; padding: 1rem 0;">
+      <div class="footer-section footer-about" style="flex-shrink: 0;">
+        <img src="{% static '2026/img/Pycon_Africa_2026_OFFICIAL_YELLOW.png' %}" alt="PyCon Africa 2026 Logo" class="footer-logo" style="width: 180px; height: auto; max-width: none;">
       </div>
-      <div class="footer-section footer-text-section" style="flex: 1; margin-left: 8rem;">
+      <div class="footer-section footer-text-section" style="flex: 1; min-width: 200px;">
         <p class="footer-text footer-text--narrow">
           PyCon Africa is an annual event of the Python Conferences you can attend in Africa. We shall talk about Python applications in data, web, and other domains. This is a platform where Python users, developers, library developers, and companies that use Python come together.
         </p>
       </div>
-      <div class="footer-section footer-links"  style="flex: 1; margin-left: 8rem;">
+      <div class="footer-section footer-links" style="flex: 1; min-width: 150px;">
         <h6 class="footer-heading">Useful Links</h6>
         <ul class="footer-link-list">
           <li><a href="/" class="footer-link">Home</a></li>
