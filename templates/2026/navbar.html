@@ -20,6 +20,8 @@
         </button>
         <div x-show="open" @click.outside="open = false" class="nav-dropdown-menu" style="display: none;">
           <a class="nav-item" href="/2026/about/pycon-africa-2026/">About PyCon Africa 2026</a>
+          <!-- <a class="nav-item" href="/2026/travel/">Travel Guide</a> -->
+          <a class="nav-item" href="/2026/coc/">Code of Conduct</a>
         </div>
       </div>
 
@@ -55,17 +57,14 @@
       </div>
 
       <!-- Venue -->
-      <div class="nav-dropdown-wrapper" x-data="{open:false}">
+      <!-- <div class="nav-dropdown-wrapper" x-data="{open:false}">
         <button class="nav-item" @click="open=!open">
           VENUE
           <i class="fa fa-chevron-up" aria-hidden="true" x-show="open" style="display: none;"></i>
           <i class="fa fa-chevron-down" aria-hidden="true" x-show="!open" style="display: none;"></i>
         </button>
-        <div x-show="open" @click.outside="open = false" class="nav-dropdown-menu" style="display: none;">
-          <!-- <a class="nav-item" href="/2026/travel/">Travel Guide</a> -->
-          <a class="nav-item" href="/2026/coc/">Code of Conduct</a>
-        </div>
-      </div>
+
+      </div> -->
 
       <!-- Talks Dropdown -->
       {% comment %}
