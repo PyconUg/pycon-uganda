@@ -1,5 +1,41 @@
 /* Add here all your css styles (customizations) */
 
+/* Sticky Footer Layout */
+html {
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body {
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+main {
+  flex: 1 0 auto !important;
+}
+
+footer.footer {
+  flex-shrink: 0 !important;
+  margin-top: auto !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+  line-height: 1.2 !important;
+}
+
+footer.footer > div {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 /* Apply Kanchenjunga font similar to pyconza2025 */
 body,
 a, li, p, h1, h2, h3, h4, h5, h6 {

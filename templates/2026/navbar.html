@@ -1,6 +1,6 @@
 {% load static %}
 
-<header class="bg-black" id="main-header">
+<header class="{% if request.path == '/' or request.path == '' %}bg-black{% else %}bg-gray-700{% endif %}" id="main-header">
   <div class="navbar-container">
     <!-- Logo -->
     <div>
