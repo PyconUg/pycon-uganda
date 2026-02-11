@@ -4382,6 +4382,16 @@
       padding-inline: calc(var(--spacing) * 8);
     }
   }
+  .lg\:block {
+    @media (width >= 64rem) {
+      display: block;
+    }
+  }
+  .lg\:hidden {
+    @media (width >= 64rem) {
+      display: none;
+    }
+  }
 }
 @layer base {
   :root {

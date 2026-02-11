@@ -1,6 +1,23 @@
 {% load static %}
 
 {% block footer %}
+<style>
+  @media (max-width: 768px) {
+    .copyright {
+      flex-direction: column !important;
+      align-items: center !important;
+      text-align: center !important;
+      padding: 1rem 1rem !important;
+      gap: 1.5rem !important;
+    }
+    .copyright > div:first-child {
+      text-align: center !important;
+    }
+    .copyright > div:last-child {
+      justify-content: center !important;
+    }
+  }
+</style>
 <!-- <footer class="footer"> -->
   <!-- <div class="footer-container">
     <div class="footer-grid" style="display: flex; flex-direction: row; align-items: flex-start; gap: 2.5rem; flex-wrap: wrap; padding: 1rem 0;">
