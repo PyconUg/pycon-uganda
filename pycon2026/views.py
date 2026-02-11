@@ -147,6 +147,7 @@ def ngombor(request):
         'description': 'PyLadies Uganda is a group of women developers who love the Python programming language.',
     }
     return render(request, '2026/community/ngombor.html', context)
-        
 
 
+def privacy_2026(request):
+    return render(request, '2026/privacy/privacy_policy.html')

@@ -34,6 +34,7 @@ urlpatterns = [
     path('community/django-girls/', view=views.django_girls, name='django_girls'),
     path('community/pyladies-wksp/', view=views.pyladies_wksp, name='pyladies_wksp'),   
     # path('community/ngombor/', view=views.ngombor, name='ngombor')
+    path('privacy-policy/', view=views.privacy_2026, name='privacy_policy'),
 ]
 
 
