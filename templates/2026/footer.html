@@ -1,8 +1,26 @@
 {% load static %}
 
 {% block footer %}
+<style>
+  @media (max-width: 768px) {
+    .copyright {
+      flex-direction: column !important;
+      align-items: center !important;
+      text-align: center !important;
+      padding: 0.5rem 1rem !important;
+      line-height: 1.2 !important;
+      gap: 1.5rem !important;
+    }
+    .copyright > div:first-child {
+      text-align: center !important;
+    }
+    .copyright > div:last-child {
+      justify-content: center !important;
+    }
+  }
+</style>
 <footer class="footer">
-  <div class="footer-container">
+  <!-- <div class="footer-container">
     <div class="footer-grid" style="display: flex; flex-direction: row; align-items: flex-start; gap: 2.5rem; flex-wrap: wrap; padding: 1rem 0;">
       <div class="footer-section footer-about" style="flex-shrink: 0;">
         <img src="{% static '2026/img/Pycon_Africa_2026_OFFICIAL_YELLOW.png' %}" alt="PyCon Africa 2026 Logo" class="footer-logo" style="width: 180px; height: auto; max-width: none;">
@@ -16,7 +34,7 @@
         <h6 class="footer-heading">Useful Links</h6>
         <ul class="footer-link-list">
           <li><a href="/" class="footer-link">Home</a></li>
-          <li><a href="/2026/coc/" class="footer-link">Code Of Conduct</a></li>
+          <li><a href="/2026/coc/" class="footer-link">Code Of Conduct</a></li> -->
           <!-- <li><a href="https://www.quicket.co.ug/events/309365-pycon-uganda-2026/" class="footer-link" target="_blank" rel="noopener">Tickets</a></li> -->
           <!-- <li><a href="/privacy-policy" class="footer-link">Privacy Policy</a></li> -->
           <!-- <li><a href="/2026/h&g/" class="footer-link">Health and Safety Guidelines</a></li> -->
@@ -27,7 +45,7 @@
               <li><a href="https://pyconug.netlify.app/2023" target="_blank" rel="noopener" class="footer-sublink">PyCon Africa 2023</a></li>
             </ul>
           </li> -->
-        </ul>
+        <!-- </ul>
       </div>
       <div class="footer-section footer-contact">
         <h6 class="footer-heading">Contact</h6>
@@ -61,10 +79,38 @@
         </ul>
       </div>
     </div>
+  </div> -->
+  <div style="border-top: 2px solid #d3d3d3; width: 100%; margin: 0; padding: 0;">
+    <div class="copyright" style="display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.5rem 2rem; max-width: 1200px; margin: 0 auto; line-height: 1.2;">
+      <div style="text-align: left; font-size: 16px; line-height: 1.2; margin: 0; padding: 0;">
+        <span>© <script>document.write(new Date().getFullYear());</script> Copyright: </span>
+        <a href="https://africa.pycon.org/" class="copyright-link" style="line-height: 1.2;">PyCon Africa</a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 1.5rem; line-height: 1.2; margin: 0; padding: 0;">
+        <a href="https://twitter.com/PyConAfrica" target="_blank" rel="noopener noreferrer" class="copyright-link" aria-label="X (formerly Twitter)" style="font-size: 30px;">
+          <i class="fab fa-x-twitter"></i>
+        </a>
+        <a href="https://mastodon.social/@pyconafrica" target="_blank" rel="noopener noreferrer" class="copyright-link" aria-label="Mastodon" style="font-size: 30px;">
+          <i class="fab fa-mastodon"></i>
+        </a>
+        <a href="https://www.instagram.com/pyconafrica" target="_blank" rel="noopener noreferrer" class="copyright-link" aria-label="Instagram" style="font-size: 30px;">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/pyconafrica" target="_blank" rel="noopener noreferrer" class="copyright-link" aria-label="Facebook" style="font-size: 30px;">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.linkedin.com/company/pyconafrica" target="_blank" rel="noopener noreferrer" class="copyright-link" aria-label="LinkedIn" style="font-size: 30px;">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://discord.gg/pyconafrica" target="_blank" rel="noopener noreferrer" class="copyright-link" aria-label="Discord" style="font-size: 30px;">
+          <i class="fab fa-discord"></i>
+        </a>
+        <a href="https://www.youtube.com/@PyconAfrica" target="_blank" rel="noopener noreferrer" class="copyright-link" aria-label="YouTube" style="font-size: 30px;">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
+    </div>
   </div>
 </footer>
-<div class="copyright" style="border-top: 2px solid #d3d3d3;">
-  <span>© <script>document.write(new Date().getFullYear());</script> Copyright: </span>
-  <a href="https://africa.pycon.org/" class="copyright-link">PyCon Africa</a>
-</div>
+
 {% endblock %}
