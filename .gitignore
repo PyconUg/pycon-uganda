@@ -9,6 +9,9 @@ secrets.py
 media/
 migrations/
 
+# Ignore generated vendor CSS
+static/vendor/main.css
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
