@@ -1,108 +1,73 @@
 {% extends "base.html" %}
-{% load i18n static markdown_extras crispy_forms_tags %}
-
-{% block meta_title %}
-  {% if page %}
-    {{ page.meta_title }}
-  {% else %}
-    {% trans "Schedule || PyCon Africa 2026" %}
-  {% endif %}
-{% endblock %}
+{% load i18n static %}
+{% block meta_title %}{% trans "Guidelines and advice | PyCon Africa 2026" %}{% endblock %}
 
 {% block content %}
-  {% include '2026/navbar.html' %}
+{% include '2026/navbar.html' %}
 
-  <main class=""> 
-    <section class=" bg-cyan-900 text-zinc-300">
-    <div class="flex flex-col justify-center items-center h-[35vh]">
-      <div><h1 class="text-3xl font-extrabold sm:text-5xl text-white">PyCon Africa 2026 Schedule</h1></div>
-      <div><p class="text-base p-4 font-medium">Timetable of sessions for Pycon Africa 2026</p></div></div>
-    </section>
-    
-    <section class="w-full">
-      <div class="flex justify-center pt-6 w-full bg-white">
-        <div class="flex flex-col md:flex-row items-center space-y-3 md:space-y-0 md:space-x-4 px-4 md:px-8 w-full max-w-7xl"
-         role="tablist" aria-orientation="horizontal"><button class="
-    bg-pyconug-darkBlue text-white shadow-md
-    transition-all duration-200 ease-in-out
-    text-lg font-semibold w-full md:flex-1
-    py-3 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-pyconug-lightBlue
-  " id="headlessui-tabs-tab-:rm:" role="tab" aria-selected="true" tabindex="0" data-headlessui-state="selected"
-   type="button" aria-controls="headlessui-tabs-panel-:rr:">8th August</button><button class="
-    bg-gray-100 text-pyconug-darkBlue hover:bg-gray-200
-    transition-all duration-200 ease-in-out
-    text-lg font-semibold w-full md:flex-1
-    py-3 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-pyconug-lightBlue
-  " id="headlessui-tabs-tab-:rn:" role="tab" aria-selected="false" tabindex="-1" data-headlessui-state="" 
-  type="button" aria-controls="headlessui-tabs-panel-:rs:">9th August</button><button class="
-    bg-gray-100 text-pyconug-darkBlue hover:bg-gray-200
-    transition-all duration-200 ease-in-out
-    text-lg font-semibold w-full md:flex-1
-    py-3 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-pyconug-lightBlue
-  " id="headlessui-tabs-tab-:ro:" role="tab" aria-selected="false" tabindex="-1" data-headlessui-state="" 
-  type="button" aria-controls="headlessui-tabs-panel-:rt:"> 10th August)</button><button class="
-    bg-gray-100 text-pyconug-darkBlue hover:bg-gray-200
-    transition-all duration-200 ease-in-out
-    text-lg font-semibold w-full md:flex-1
-    py-3 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-pyconug-lightBlue " id="headlessui-tabs-tab-:rp:" 
-    role="tab" aria-selected="false" tabindex="-1" data-headlessui-state="" 
-  
-  
-  type="button" aria-controls="headlessui-tabs-panel-:rv:">Workshops</button>
-</div>
-</div>
+    <!-- Header -->
+    <div class="max-w-7xl mx-auto px-4 pt-12 pb-8">
+      <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 text-center">Guidelines and advice</h1>
+    </div>
 
-<div class="w-full"><div class="pt-4" id="headlessui-tabs-panel-:rr:" role="tabpanel" tabindex="0" data-headlessui-state="selected" 
-  aria-labelledby="headlessui-tabs-tab-:rm:"><div class="flex h-screen flex-col bg-gray-100">
-  
-    <div class="p-4  bg-white mb-4 
-  flex flex-col items-center"><div class="flex flex-wrap justify-center gap-4">
-    <div class="flex items-center bg-gray-50 
-    rounded-full px-3 py-1 transition-transform hover:scale-105">
-    <div class="w-4 h-4 bg-slate-300 text-gray-800 border border-gray-300 rounded-full mr-2"></div>
+    <!-- Body -->
+    <div class="max-w-7xl mx-auto px-4 pb-16">
+      <div class="max-w-4xl mx-auto text-gray-900">
+        <p class="text-lg leading-relaxed mb-6">
+          We are glad you are interested in speaking at PyCon Africa!
+        </p>
+        <p class="text-lg leading-relaxed mb-6">
+          This document is a guide to help you submit the best possible proposal for PyCon Africa 2026 and offers tips to make your proposal more likely to be accepted. Please note that we receive many more proposals for talks, tutorials, and posters than we can accept. However, following the recommendations provided here can increase your chances of acceptance.
+        </p>
+        <p class="text-lg leading-relaxed mb-8 rounded-lg bg-amber-50 border border-amber-200 px-4 py-3">
+          <strong>Note:</strong> All talk proposals must be written in <strong>English</strong>. This ensures reviewers and attendees from across the continent (and beyond) can fairly evaluate and enjoy your talk.
+        </p>
 
-    <!-- <span class="text-sm text-gray-700">Breakfast/Lunch Break</span></div>
-    <div class="flex items-center bg-gray-50 rounded-full px-3 py-1 transition-transform hover:scale-105">
-      <div class="w-4 h-4 bg-blue-300 text-gray-800 border border-gray-300 rounded-full mr-2">
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Topics and Advice</h2>
+        <p class="text-lg leading-relaxed mb-4">
+          What excites you about Python development or the community lately? What do you wish someone had told you when you were starting out? What has been the slowest or most frustrating thing you've had to learn over the past few years, and could you put together a talk that would assist in that process for the next Pythonista who tackles the same problem?
+        </p>
+        <p class="text-lg leading-relaxed mb-4">
+          Recent articles, blog posts, tweets, and open source projects from the community can be a good source of talk topics and ideas, as can your own experiences as a developer.
+        </p>
+        <p class="text-lg leading-relaxed mb-3">
+          There are also international community members who have blogged about the talk proposal process. Here are a few of the most prominent resources, and a Google search will yield several more:
+        </p>
+        <ul class="list-disc list-inside space-y-2 mb-8 text-lg">
+          <li><a href="https://hynek.me/articles/speaking/" target="_blank" rel="noopener noreferrer" class="text-pycon-teal hover:underline">On Conference Speaking — Hynek Schlawack (2017)</a></li>
+          <li><a href="https://www.njl.us/essays/pycon-talks/" target="_blank" rel="noopener noreferrer" class="text-pycon-teal hover:underline">How to Get Your Talk Into PyCon — from Ned Jackson Lovely, chair of the talk selection committee for 2016 and 2017!</a></li>
+          <li><a href="https://akaptur.com/blog/2014/09/11/rejected-pycon-proposals/" target="_blank" rel="noopener noreferrer" class="text-pycon-teal hover:underline">Rejected PyCon Proposals — Allison Kaptur (2014)</a></li>
+          <li><a href="https://za.pycon.org/pages/talks/guidelines/" target="_blank" rel="noopener noreferrer" class="text-pycon-teal hover:underline">Example PyCon talk proposals — Brandon Rhodes (2013)</a></li>
+          <li><a href="https://www.craigkerstiens.com/2012/06/19/pro-tips-for-conference-talks/" target="_blank" rel="noopener noreferrer" class="text-pycon-teal hover:underline">Pro Tips for Conference Talks — Craig Kerstiens (2012)</a></li>
+          <li><a href="https://doughellmann.com/posts/how-i-review-a-pycon-talk-proposal/" target="_blank" rel="noopener noreferrer" class="text-pycon-teal hover:underline">How I Review a PyCon Talk Proposal — Doug Hellmann (2011)</a></li>
+        </ul>
 
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Good Ideas</h2>
+        <ul class="list-disc list-inside space-y-3 mb-8 text-lg leading-relaxed">
+          <li>Submit your proposal early. The program committee will endeavour to provide feedback to talks that come into our system, and we will work with you to improve your proposal if we have issues with it, but this is only feasible if your proposal is submitted well before the deadline.</li>
+          <li>Be sure to answer some basic questions:
+            <ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+              <li>Who is the intended audience for your talk? (Be specific; "Python programmers" is not a good answer.)</li>
+              <li>What will attendees get out of your talk? When they leave the room, what will they know that they didn't know before?</li>
+            </ul>
+          </li>
+          <li>Your outline should be an enumeration of what you intend to say, along with time estimates.</li>
+          <li>It is not necessary to have completely written your talk already, but you should have an idea of what the points you intend to make are and roughly how long you will spend on each one.</li>
+          <li>If you are requesting a 45-minute slot, remember that these are in very limited supply. Be sure to explain how you will change your talk if we can only offer you a 30-minute slot.</li>
+          <li>Your time allocated slot includes 5–10 minute discussions/Q&A.</li>
+          <li>Ensure that your talk will be relevant to a non-trivial set of people. If your talk is on a particular Python package or piece of software, it should be something that a significant number of people use or want to use. If your talk is about a package that you are writing, ensure that it's gained some acceptance before submitting a talk. If a tool you're excited about is not used widely, consider shifting the focus of your talk to a related best practice or theme which will have broader applicability and a larger audience.</li>
+          <li>Include links to source code, articles, blog posts, videos, or other resources that add context to your proposal.</li>
+          <li>If you've given a talk, tutorial, or other presentation before, especially at an earlier PyCon or another conference, include that information as well as a link to slides or a video if they're available.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Bad Ideas</h2>
+        <ul class="list-disc list-inside space-y-3 mb-8 text-lg leading-relaxed">
+          <li><strong>Avoid infomercials.</strong> That doesn't mean you can't talk about your work or company at PyCon Africa. For instance, we welcome talks on how you or your company solved a problem or notable open-source projects that may benefit attendees. On the other hand, talks on "how to use our product" (or similar) usually aren't appropriate.</li>
+          <li>Avoid presenting a proposal for code that is incomplete. The program committee is very skeptical of "conference-driven development".</li>
+          <li>Avoid "state of our project" talks, unless you can make a compelling argument that the talk will be well-attended and that attendees will gain value from it.</li>
+          <li>Do not assume that everyone on the Program Committee will know who you are simply because you have presented at PyCon in the past.</li>
+          <li>Everyone should submit a detailed proposal. During the first round of review, we won't even see your name on the proposal!</li>
+        </ul>
       </div>
-      
-      <span class="text-sm text-gray-700">Django Girls</span></div>
-      <div class="flex items-center bg-gray-50 rounded-full px-3 py-1 transition-transform hover:scale-105">
-        <div class="w-4 h-4 bg-[#9ADBEC] text-cyan-900 border border-gray-300 rounded-full mr-2"></div>
-        <span class="text-sm text-gray-700">Community Summit</span></div>
-        <div class="flex items-center bg-gray-50 rounded-full px-3 py-1 transition-transform hover:scale-105">
-          <div class="w-4 h-4 bg-[#167E89] text-white border border-gray-300 rounded-full mr-2"></div>
-          <span class="text-sm text-gray-700">PyLadies</span></div>
-          <div class="flex items-center bg-gray-50 rounded-full px-3 py-1 transition-transform hover:scale-105">
-          <div class="w-4 h-4 bg-[#D8A3DD] text-gray-900 border border-gray-300 rounded-full mr-2"></div>
-          <span class="text-sm text-gray-700">PyData</span></div>
-          <div class="flex items-center bg-gray-50 rounded-full px-3 py-1 transition-transform hover:scale-105">
-          <div class="w-4 h-4 bg-[#C9A36A] text-gray-100 border border-gray-300 rounded-full mr-2"></div>
-          <span class="text-sm text-gray-700">Open Source Sprints</span></div></div> -->
-
-
-        </div>
-        
-        <div class="md:hidden flex justify-between items-center p-4"><button class="p-2">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" 
-        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left w-6 h-6">
-        <path d="m15 18-6-6 6-6"></path></svg></button>
-        <h2 class="text-lg font-bold text-gray-700 uppercase tracking-wide">Main Auditorium</h2>
-        <button class="p-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" 
-          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right w-6 h-6"><path d="m9 18 6-6-6-6"></path>
-        </svg></button></div><div class="flex-1 overflow-y-auto mt-4"><div class="md:hidden px-4"><div class="mb-2 rounded-lg bg-gray-200 text-gray-800 p-2 sm:p-3 pb-6 text-xs sm:text-sm " 
-        style="height: 224px; min-height: 12em;"><div class="flex flex-col justify-between h-full"><div><span class="font-semibold break-words pr-1 block mb-1">Registration</span></div><div 
-        class="mt-auto"><span class="text-xxs sm:text-xs text-black bg-white bg-opacity-75 px-1 py-0.5 rounded inline-block"><time>8:30</time><span 
-          class="mx-1">-</span><time>9:00</time></span></div></div></div><div class="mb-2 rounded-lg bg-gray-200 text-gray-800 p-2 sm:p-3 pb-6 
-          text-xs sm:text-sm " style="height: 224px; min-height: 12em;"><div class="flex flex-col justify-between h-full">
-            
-          <div><span class="font-semibold break-words pr-1 block mb-1">Welcome to PyCon Africa</span></div><div class="mt-auto"><span 
-            class="text-xxs sm:text-xs text-black bg-white bg-opacity-75 px-1 py-0.5 rounded inline-block"><time>9:00</time>
-            <span class="mx-1">-</span><time>9:15</time></span></div></div></div><div class="mb-2 rounded-lg bg-gray-200 text-gray-800 p-2 sm:p-3 pb-6 
-            text-xs sm:text-sm " style="height: 112px; min-height: 12em;"><div class="flex flex-col justify-between h-full"><div><span 
-              class="font-semibold break-words pr-1 block mb-1">Coffee/Tea Break</span></div><div class="mt-auto"><span class="text-xxs sm:text-xs
-              text-black bg-white bg-opacity-75 px-1 py-0.5 rounded inline-block"><time>11:00</time><span class="mx-1">-</span><time>12:00</time></span></div></div></div><div class="mb-2 rounded-lg bg-gray-200 text-gray-800 p-2 sm:p-3 pb-6 text-xs sm:text-sm " style="height: 112px; min-height: 12em;"><div class="flex flex-col justify-between h-full"><div><span class="font-semibold break-words pr-1 block mb-1">Pulitzer Center Sponsor Talk</span><p class="text-xxs sm:text-xs break-words text-gray-600">Ivan Mukiibi</p></div><div class="mt-auto"><span class="text-xxs sm:text-xs text-black bg-white bg-opacity-75 px-1 py-0.5 rounded inline-block"><time>12:00</time><span class="mx-1">-</span><time>13:00</time></span></div></div></div><div class="mb-2 rounded-lg bg-slate-300 text-gray-800 p-2 sm:p-3 pb-6 text-xs sm:text-sm " style="height: 112px; min-height: 12em;"><div class="flex flex-col justify-between h-full"><div><span class="font-semibold break-words pr-1 block mb-1">Lunch Break</span></div><div class="mt-auto"><span class="text-xxs sm:text-xs text-black bg-white bg-opacity-75 px-1 py-0.5 rounded inline-block"><time>13:00</time><span class="mx-1">-</span><time>14:00</time></span></div></div></div><div class="mb-2 rounded-lg bg-gray-200 text-gray-800 p-2 sm:p-3 pb-6 text-xs sm:text-sm " style="height: 112px; min-height: 12em;"><div class="flex flex-col justify-between h-full"><div><span class="font-semibold break-words pr-1 block mb-1">Chaos Africa Sponsor Talk</span><p class="text-xxs sm:text-xs break-words text-gray-600">Brayan Kai</p></div><div class="mt-auto"><span class="text-xxs sm:text-xs text-black bg-white bg-opacity-75 px-1 py-0.5 rounded inline-block"><time>14:00</time><span class="mx-1">-</span><time>15:00</time></span></div></div></div><div class="mb-2 rounded-lg bg-gray-200 text-gray-800 p-2 sm:p-3 pb-6 text-xs sm:text-sm " style="height: 112px; min-height: 12em;"><div class="flex flex-col justify-between h-full"><div><span class="font-semibold break-words pr-1 block mb-1">Posit Talk</span><p class="text-xxs sm:text-xs break-words text-gray-600">Hassan Kibirige</p></div><div class="mt-auto"><span class="text-xxs sm:text-xs text-black bg-white bg-opacity-75 px-1 py-0.5 rounded inline-block"><time>15:00</time><span class="mx-1">-</span><time>16:00</time></span></div></div></div><div class="mb-2 rounded-lg bg-gray-200 text-gray-800 p-2 sm:p-3 pb-6 text-xs sm:text-sm " style="height: 112px; min-height: 12em;"><div class="flex flex-col justify-between h-full"><div><span class="font-semibold break-words pr-1 block mb-1">Open Source Panel</span></div><div class="mt-auto"><span class="text-xxs sm:text-xs text-black bg-white bg-opacity-75 px-1 py-0.5 rounded inline-block"><time>16:00</time><span class="mx-1">-</span><time>17:00</time></span></div></div></div></div><div class="hidden md:grid md:grid-cols-3 md:divide-x"><div class="p-4"><h2 class="mb-4 text-lg font-bold text-gray-700 uppercase tracking-wide border-b-2 border-gray-300 pb-2">pacific Hall</h2><div class="mb-2 rounded-lg bg-gray-200 text-gray-800 p-2 sm:p-3 pb-6 text-xs sm:text-sm " style="height: 224px; min-height: 12em;"><div class="flex flex-col justify-between h-full"><div><span class="font-semibold break-words pr-1 block mb-1">Tea</span></div><div class="mt-auto"><span class="text-xxs sm:text-xs text-black bg-white bg-opacity-75 px-1 py-0.5 rounded inline-block"><time>7:00</time><span class="mx-1">-</span><time>9:00</time></span></div></div></div><div class="mb-2 rounded-lg bg-gray-200 text-gray-800 p-2 sm:p-3 pb-6 text-xs sm:text-sm " style="height: 224px; min-height: 12em;"><div class="flex flex-col justify-between h-full"><div><span class="font-semibold break-words pr-1 block mb-1">Registration and Badge Pickup</span></div><div class="mt-auto"><span class="text-xxs sm:text-xs text-black bg-white bg-opacity-75 px-1 py-0.5 rounded inline-block"><time>9:00</time><span class="mx-1">-</span><time>11:00</time></span></div></div></div><div class="mb-2 rounded-lg bg-gray-200 text-gray-800 p-2 sm:p-3 pb-6 text-xs sm:text-sm " style="height: 112px; min-height: 12em;"><div class="flex flex-col justify-between h-full"><div><span class="font-semibold break-words pr-1 block mb-1">Welcome and PyCon Official Opening Address</span></div><div class="mt-auto"><span class="text-xxs sm:text-xs text-black bg-white bg-opacity-75 px-1 py-0.5 rounded inline-block"><time>11:00</time><span class="mx-1">-</span><time>12:00</time></span></div></div></div><div class="mb-2 rounded-lg bg-gray-200 text-gray-800 p-2 sm:p-3 pb-6 text-xs sm:text-sm " style="height: 112px; min-height: 12em;"><div class="flex flex-col justify-between h-full"><div><span class="font-semibold break-words pr-1 block mb-1">Pulitzer Center Sponsor Talk</span><p class="text-xxs sm:text-xs break-words text-gray-600">Ivan Mukiibi</p></div><div class="mt-auto"><span class="text-xxs sm:text-xs text-black bg-white bg-opacity-75 px-1 py-0.5 rounded inline-block"><time>12:00</time><span class="mx-1">-</span><time>13:00</time></span></div></div></div><div class="mb-2 rounded-lg bg-slate-300 text-gray-800 p-2 sm:p-3 pb-6 text-xs sm:text-sm " style="height: 112px; min-height: 12em;"><div class="flex flex-col justify-between h-full"><div><span class="font-semibold break-words pr-1 block mb-1">Lunch Break</span></div><div class="mt-auto"><span class="text-xxs sm:text-xs text-black bg-white bg-opacity-75 px-1 py-0.5 rounded inline-block"><time>13:00</time><span class="mx-1">-</span><time>14:00</time></span></div></div></div><div class="mb-2 rounded-lg bg-gray-200 text-gray-800 p-2 sm:p-3 pb-6 text-xs sm:text-sm " style="height: 112px; min-height: 12em;"><div class="flex flex-col justify-between h-full"><div><span class="font-semibold break-words pr-1 block mb-1">Chaos Africa Sponsor Talk</span><p class="text-xxs sm:text-xs break-words text-gray-600">Brayan Kai</p></div><div class="mt-auto"><span class="text-xxs sm:text-xs text-black bg-white bg-opacity-75 px-1 py-0.5 rounded inline-block"><time>14:00</time><span class="mx-1">-</span><time>15:00</time></span></div></div></div><div class="mb-2 rounded-lg bg-gray-200 text-gray-800 p-2 sm:p-3 pb-6 text-xs sm:text-sm " style="height: 112px; min-height: 12em;"><div class="flex flex-col justify-between h-full"><div><span class="font-semibold break-words pr-1 block mb-1">Posit Talk</span><p class="text-xxs sm:text-xs break-words text-gray-600">Hassan Kibirige</p></div><div class="mt-auto"><span class="text-xxs sm:text-xs text-black bg-white bg-opacity-75 px-1 py-0.5 rounded inline-block"><time>15:00</time><span class="mx-1">-</span><time>16:00</time></span></div></div></div><div class="mb-2 rounded-lg bg-gray-200 text-gray-800 p-2 sm:p-3 pb-6 text-xs sm:text-sm " style="height: 112px; min-height: 12em;"><div class="flex flex-col justify-between h-full"><div><span class="font-semibold break-words pr-1 block mb-1">Open Source Panel</span></div><div class="mt-auto"><span class="text-xxs sm:text-xs text-black bg-white bg-opacity-75 px-1 py-0.5 rounded inline-block"><time>16:00</time><span class="mx-1">-</span><time>17:00</time></span></div></div></div></div><div class="p-4"><h2 class="mb-4 text-lg font-bold text-gray-700 uppercase tracking-wide border-b-2 border-gray-300 pb-2">volta Room</h2><div class="mb-2 rounded-lg bg-gray-200 text-gray-800 p-2 sm:p-3 pb-6 text-xs sm:text-sm " style="height: 224px; min-height: 12em;"><div class="flex flex-col justify-between h-full"><div><span class="font-semibold break-words pr-1 block mb-1">Tea</span></div><div class="mt-auto"><span class="text-xxs sm:text-xs text-black bg-white bg-opacity-75 px-1 py-0.5 rounded inline-block"><time>7:00</time><span class="mx-1">-</span><time>9:00</time></span></div></div></div><div class="mb-2 rounded-lg bg-gray-200 text-gray-800 p-2 sm:p-3 pb-6 text-xs sm:text-sm " style="height: 224px; min-height: 12em;"><div class="flex flex-col justify-between h-full"><div><span class="font-semibold break-words pr-1 block mb-1">Registration and Badge Pickup</span></div><div class="mt-auto"><span class="text-xxs sm:text-xs text-black bg-white bg-opacity-75 px-1 py-0.5 rounded inline-block"><time>9:00</time><span class="mx-1">-</span><time>11:00</time></span></div></div></div><div class="mb-2 rounded-lg bg-gray-200 text-gray-800 p-2 sm:p-3 pb-6 text-xs sm:text-sm " style="height: 112px; min-height: 12em;"><div class="flex flex-col justify-between h-full"><div><span class="font-semibold break-words pr-1 block mb-1">Welcome and PyCon Official Opening Address</span></div><div class="mt-auto"><span class="text-xxs sm:text-xs text-black bg-white bg-opacity-75 px-1 py-0.5 rounded inline-block"><time>11:00</time><span class="mx-1">-</span><time>12:00</time></span></div></div></div><div class="mb-2 rounded-lg bg-[#9ADBEC] text-cyan-900 p-2 sm:p-3 pb-6 text-xs sm:text-sm " style="height: 112px; min-height: 12em;"><div class="flex flex-col justify-between h-full"><div><span class="font-semibold break-words pr-1 block mb-1">Community Summit </span></div><div class="mt-auto"><span class="text-xxs sm:text-xs text-black bg-white bg-opacity-75 px-1 py-0.5 rounded inline-block"><time>12:00</time><span class="mx-1">-</span><time>13:00</time></span></div></div></div><div class="mb-2 rounded-lg bg-slate-300 text-gray-800 p-2 sm:p-3 pb-6 text-xs sm:text-sm " style="height: 112px; min-height: 12em;"><div class="flex flex-col justify-between h-full"><div><span class="font-semibold break-words pr-1 block mb-1">Lunch Break</span></div><div class="mt-auto"><span class="text-xxs sm:text-xs text-black bg-white bg-opacity-75 px-1 py-0.5 rounded inline-block"><time>13:00</time><span class="mx-1">-</span><time>14:00</time></span></div></div></div><div class="mb-2 rounded-lg bg-[#9ADBEC] text-cyan-900 p-2 sm:p-3 pb-6 text-xs sm:text-sm " style="height: 224px; min-height: 12em;"><div class="flex flex-col justify-between h-full"><div><span class="font-semibold break-words pr-1 block mb-1">Community Summit </span></div><div class="mt-auto"><span class="text-xxs sm:text-xs text-black bg-white bg-opacity-75 px-1 py-0.5 rounded inline-block"><time>14:00</time><span class="mx-1">-</span><time>16:00</time></span></div></div></div><div class="mb-2 rounded-lg bg-gray-200 text-gray-800 p-2 sm:p-3 pb-6 text-xs sm:text-sm " style="height: 112px; min-height: 12em;"><div class="flex flex-col justify-between h-full"><div><span class="font-semibold break-words pr-1 block mb-1">Open Source Panel</span></div><div class="mt-auto"><span class="text-xxs sm:text-xs text-black bg-white bg-opacity-75 px-1 py-0.5 rounded inline-block"><time>16:00</time><span class="mx-1">-</span><time>17:00</time></span></div></div></div></div><div class="p-4"><h2 class="mb-4 text-lg font-bold text-gray-700 uppercase tracking-wide border-b-2 border-gray-300 pb-2">video Conference Room</h2><div class="mb-2 rounded-lg bg-gray-200 text-gray-800 p-2 sm:p-3 pb-6 text-xs sm:text-sm " style="height: 224px; min-height: 12em;"><div class="flex flex-col justify-between h-full"><div><span class="font-semibold break-words pr-1 block mb-1">Tea</span></div><div class="mt-auto"><span class="text-xxs sm:text-xs text-black bg-white bg-opacity-75 px-1 py-0.5 rounded inline-block"><time>7:00</time><span class="mx-1">-</span><time>9:00</time></span></div></div></div><div class="mb-2 rounded-lg bg-gray-200 text-gray-800 p-2 sm:p-3 pb-6 text-xs sm:text-sm " style="height: 224px; min-height: 12em;"><div class="flex flex-col justify-between h-full"><div><span class="font-semibold break-words pr-1 block mb-1">Registration and Badge Pickup</span></div><div class="mt-auto"><span class="text-xxs sm:text-xs text-black bg-white bg-opacity-75 px-1 py-0.5 rounded inline-block"><time>9:00</time><span class="mx-1">-</span><time>11:00</time></span></div></div></div><div class="mb-2 rounded-lg bg-gray-200 text-gray-800 p-2 sm:p-3 pb-6 text-xs sm:text-sm " style="height: 112px; min-height: 12em;"><div class="flex flex-col justify-between h-full"><div><span class="font-semibold break-words pr-1 block mb-1">Welcome and PyCon Official Opening Address</span></div><div class="mt-auto"><span class="text-xxs sm:text-xs text-black bg-white bg-opacity-75 px-1 py-0.5 rounded inline-block"><time>11:00</time><span class="mx-1">-</span><time>12:00</time></span></div></div></div><div class="mb-2 rounded-lg bg-[#C9A36A] text-gray-100 p-2 sm:p-3 pb-6 text-xs sm:text-sm " style="height: 112px; min-height: 12em;"><div class="flex flex-col justify-between h-full"><div><span class="font-semibold break-words pr-1 block mb-1">Open Source Sprint</span></div><div class="mt-auto"><span class="text-xxs sm:text-xs text-black bg-white bg-opacity-75 px-1 py-0.5 rounded inline-block"><time>12:00</time><span class="mx-1">-</span><time>13:00</time></span></div></div></div><div class="mb-2 rounded-lg bg-slate-300 text-gray-800 p-2 sm:p-3 pb-6 text-xs sm:text-sm " style="height: 112px; min-height: 12em;"><div class="flex flex-col justify-between h-full"><div><span class="font-semibold break-words pr-1 block mb-1">Lunch Break</span></div><div class="mt-auto"><span class="text-xxs sm:text-xs text-black bg-white bg-opacity-75 px-1 py-0.5 rounded inline-block"><time>13:00</time><span class="mx-1">-</span><time>14:00</time></span></div></div></div><div class="mb-2 rounded-lg bg-[#C9A36A] text-gray-100 p-2 sm:p-3 pb-6 text-xs sm:text-sm " style="height: 224px; min-height: 12em;"><div class="flex flex-col justify-between h-full"><div><span class="font-semibold break-words pr-1 block mb-1">Open Source Sprint</span></div><div class="mt-auto"><span class="text-xxs sm:text-xs text-black bg-white bg-opacity-75 px-1 py-0.5 rounded inline-block"><time>14:00</time><span class="mx-1">-</span><time>16:00</time></span></div></div></div><div class="mb-2 rounded-lg bg-gray-200 text-gray-800 p-2 sm:p-3 pb-6 text-xs sm:text-sm " style="height: 112px; min-height: 12em;"><div class="flex flex-col justify-between h-full"><div><span class="font-semibold break-words pr-1 block mb-1">Open Source Panel</span></div><div class="mt-auto"><span class="text-xxs sm:text-xs text-black bg-white bg-opacity-75 px-1 py-0.5 rounded inline-block"><time>16:00</time><span class="mx-1">-</span><time>17:00</time></span></div></div></div></div></div></div></div></div><span id="headlessui-tabs-panel-:rs:" role="tabpanel" tabindex="-1" style="position: fixed; top: 1px; left: 1px; width: 1px; height: 0px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border-width: 0px;" aria-labelledby="headlessui-tabs-tab-:rn:"></span><span id="headlessui-tabs-panel-:rt:" role="tabpanel" tabindex="-1" style="position: fixed; top: 1px; left: 1px; width: 1px; height: 0px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border-width: 0px;" aria-labelledby="headlessui-tabs-tab-:ro:"></span><span id="headlessui-tabs-panel-:ru:" role="tabpanel" tabindex="-1" style="position: fixed; top: 1px; left: 1px; width: 1px; height: 0px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border-width: 0px;" aria-labelledby="headlessui-tabs-tab-:rp:"></span><span id="headlessui-tabs-panel-:rv:" role="tabpanel" tabindex="-1" style="position: fixed; top: 1px; left: 1px; width: 1px; height: 0px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border-width: 0px;" aria-labelledby="headlessui-tabs-tab-:rq:"></span></div></section></main>
-
-  <br /><br /><br />
+    </div>
 {% endblock %}
