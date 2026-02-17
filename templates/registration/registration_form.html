@@ -19,6 +19,11 @@
 
         <form method="post" action="" class="space-y-4">
           {% csrf_token %}
+          {% if form.non_field_errors %}
+          <div class="bg-red-50 border border-red-200 rounded-lg p-4 mb-4" role="alert">
+            {{ form.non_field_errors }}
+          </div>
+          {% endif %}
           <div class="form-group">
             {{ form | crispy }}
           </div>
