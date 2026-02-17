@@ -13,6 +13,7 @@ urlpatterns = [
     path('talks/submit/', view=views.submit, name='submit'),
     path('talks/how_to_apply/', view=views.how_to_apply, name='how_to_apply'),
     path('talks/guide/', view=views.guide, name='guide'),
+    path('talks/recording-release/', view=views.recording_release, name='recording_release'),
     path('talks/mentorship/', view=views.mentorship, name='mentorship'),
     path('region/kenya-region/', view=views.about_kenya_region, name='about_kenya_region'),
     path('region/rwanda-region/', view=views.about_rwanda_region, name='about_rwanda_region'),
