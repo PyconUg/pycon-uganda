@@ -1,20 +1,39 @@
-{% extends "base2.html" %}
+{% extends "base.html" %}
+{% load i18n static %}
+
+{% block meta_title %}{% trans "Profile updated | PyCon Africa 2026" %}{% endblock %}
 
 {% block content %}
-<div class="flex flex-wrap gap-4">
-    <div class="col-md-2">
+{% include '2026/navbar.html' %}
 
+<div class="auth-page-content min-h-screen bg-gray-50">
+  <main class="max-w-3xl mx-auto px-4 py-10 sm:py-12">
+    <div class="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 sm:p-8 text-center">
+      <div class="flex justify-center mb-4">
+        <div class="h-12 w-12 sm:h-14 sm:w-14 flex items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+          <i class="fa-solid fa-circle-check text-xl" aria-hidden="true"></i>
+        </div>
+      </div>
+      <h1 class="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
+        {% trans "Profile update successful!" %}
+      </h1>
+      <p class="text-sm sm:text-base text-gray-600 mb-6">
+        {% trans "Your profile changes have been saved. Thank you for keeping your information up to date." %}
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 sm:justify-center">
+        <a href="/accounts/profile/"
+           class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold rounded-lg bg-pycon-teal text-white hover:bg-teal-700 shadow-sm hover:shadow">
+          <i class="fa-solid fa-user w-4 text-center mr-2" aria-hidden="true"></i>
+          <span>{% trans "Back to my profile" %}</span>
+        </a>
+        <a href="{% url 'talks:submit_talk' year=2026 %}"
+           class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold rounded-lg border border-gray-300 text-pycon-teal bg-white hover:bg-gray-50">
+          <i class="fa-solid fa-microphone w-4 text-center mr-2" aria-hidden="true"></i>
+          <span>{% trans "Submit a talk" %}</span>
+        </a>
+      </div>
     </div>
-	    <div class="col-md-8">
-				<h2> Profile Update Successful! </h2>
-				<br>
-				<p>Your changes have been updated successfully.
-				</p>
-
-	   </div>
-    <div class="col-md-2">
-
-    </div>
+  </main>
 </div>
 
 {% endblock %}
