@@ -481,7 +481,13 @@ class RegistrationProfile(models.Model):
             else:
                 email_message.attach_alternative(message_html, 'text/html')
 
-        email_message.send()
+        try:
+            email_message.send()
+        except Exception as e:
+            import logging
+            logging.getLogger(__name__).exception(
+                "Failed to send activation email to %s: %s", self.user.email, e
+            )
 
 
 class SupervisedRegistrationManager(RegistrationManager):
