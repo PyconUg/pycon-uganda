@@ -45,6 +45,18 @@ def privacy_policy(request):
     context = {}
     return render(request, '2026/about/privacy_policy.html', context)
 
+def submit(request):
+    context = {}
+    return render(request, '2026/talks/submit.html', context)
+
+def guide(request):
+    context = {}
+    return render(request, '2026/talks/guide.html', context)
+
+def mentorship(request):
+    context = {}
+    return render(request, '2026/talks/mentorship.html', context)
+
 def contact_us(request):
     context = {}
     return render(request, '2026/about/contact_us.html', context)
