@@ -23,14 +23,14 @@
   <div class="hero-overlay"></div>
   <div class="hero-content flex justify-center flex-col hero-content-height">
     <div class="flex justify-center" style="margin-top: -15rem;">
-      <img src="{% static '2026/img/Pycon_Africa_2026_OFFICIAL_YELLOW.png' %}" alt="PyCon Africa 2026 Logo" width="483px"
-        height="454px" />
+      <img src="{% static '2026/img/logo final.png' %}" alt="PyCon Africa 2026 Logo" width="200px"
+        height="auto" />
     </div>
 
     <div class="flex justify-center flex-col text-center hero-text-container" style="margin-top: -2rem !important;">
-      <h1 class="hero-title">PyCon Africa 2026</h1>
-      <h1 class="hero-subtitle">Code, Community, and Opportunity</h1>
-      <p class="hero-description" style="margin-top: 0.5rem !important;">Learn, Build, and Lead Africa's Python Future in Africa</p>
+      <!-- <h1 class="hero-title">PyCon Africa 2026</h1> -->
+      <h2 class="hero-subtitle mt-10">Code, Community, and Opportunity</h2>
+      <p class="hero-description">Learn, Build, and Lead Python's Future in Africa</p>
     </div>
 
     <!-- Date and Venue Info -->
@@ -137,8 +137,7 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
             <div class="bg-white shadow-lg rounded-lg p-6 text-center flex flex-col">
-                <div class="mb-6 h-64 bg-cover bg-center rounded-lg" style="background-image: url('/static/2026/img/pythonbeginners.JPG')">
-                </div>
+                <img src="{% static '2026/img/pythonbeginners.jpg' %}" class="w-full h-64 object-cover rounded-t-lg" alt="Beginners Day Image">
                 <h3 class="text-pycon-green text-xl font-bold mb-4">Beginners Day</h3>
                 <p class="text-gray-700 mb-6 flex-grow">Free hands-on workshops for complete newcomers to Python. No experience needed!</p>
                 <!-- <div class="mt-auto">
@@ -147,8 +146,7 @@
             </div>
 
             <div class="bg-white shadow-lg rounded-lg p-6 text-center flex flex-col">
-                <div class="mb-6 h-64 bg-cover bg-center rounded-lg" style="background-image: url('/static/2026/img/mainconferencedays.JPG')">
-                </div>
+                <img src="{% static '2026/img/mainconferencedays.jpg' %}" class="w-full h-64 object-cover rounded-t-lg" alt="Main Conference Days Image">
                 <h3 class="text-pycon-blue text-xl font-bold mb-4">Main Conference Days</h3>
                 <p class="text-gray-700 mb-6 flex-grow">Inspiring talks, hands-on workshops, and networking with amazing speakers from across the continent and beyond</p>
                 <!-- <div class="mt-auto">
@@ -157,8 +155,7 @@
             </div>
 
             <div class="bg-white shadow-lg rounded-lg p-6 text-center flex flex-col">
-                <div class="mb-6 h-64 bg-cover bg-center rounded-lg" style="background-image: url('/static/2026/img/pythonsprints.JPG')">
-                </div>
+              <img src="{% static '2026/img/pythonsprints.jpg' %}" class="w-full h-64 object-cover rounded-t-lg" alt="Sprints Image">
                <h3 class="text-pycon-red text-xl font-semibold mb-4">Sprints</h3>
                 <p class="text-gray-700 mb-6 flex-grow">Collaboration on new and established open-source Python projects with fellow developers</p>
                 <!-- <div class="mt-auto">
