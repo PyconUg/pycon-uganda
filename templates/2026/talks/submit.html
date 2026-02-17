@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load i18n static %}
+{% block meta_title %}{% trans "Submit a Talk | PyCon Africa 2026" %}{% endblock %}
+
+{% block content %}
+{% include '2026/navbar.html' %}
+
+    <!-- Header -->
+    <div class="max-w-7xl mx-auto px-4 pt-12 pb-8">
+      <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 text-center">Submit a Talk</h1>
+      <p class="text-gray-600 text-center mt-4 text-lg max-w-2xl mx-auto">
+        Share your knowledge with the Python community at PyCon Africa 2026 in Kampala.
+      </p>
+    </div>
+
+    <!-- Body -->
+    <div class="max-w-7xl mx-auto px-4 pb-16">
+      <div class="max-w-4xl mx-auto">
+        <div class="mb-8">
+          <p class="text-gray-900 text-lg leading-relaxed mb-6">
+            We welcome proposals for talks, tutorials, and workshops. Whether you're a first-time speaker or a seasoned presenter, we'd love to hear from you. Submissions can cover any Python-related topic: from web development and data science to community, education, and open source.
+          </p>
+          <p class="text-gray-900 text-lg leading-relaxed mb-8">
+            You'll need to be logged in to submit. If you don't have an account yet, you can register for free. Once you're ready, use the button below to go to the submission form.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4">
+            {% if user.is_authenticated %}
+              <a href="{% url 'talks:submit_talk' year=2026 %}" class="inline-flex items-center justify-center px-6 py-3 text-lg font-semibold text-white bg-pycon-teal hover:bg-teal-700 rounded-lg transition-colors">
+                Submit your talk proposal
+              </a>
+            {% else %}
+              <a href="{% url 'auth_login' %}?next={% url 'talks:submit_talk' year=2026 %}" class="inline-flex items-center justify-center px-6 py-3 text-lg font-semibold text-white bg-pycon-teal hover:bg-teal-700 rounded-lg transition-colors">
+                Log in to submit a talk
+              </a>
+              <a href="{% url 'registration_register' %}?next={% url 'talks:submit_talk' year=2026 %}" class="inline-flex items-center justify-center px-6 py-3 text-lg font-semibold text-gray-800 bg-gray-200 hover:bg-gray-300 rounded-lg transition-colors">
+                Create an account
+              </a>
+            {% endif %}
+          </div>
+        </div>
+
+        <div class="border-t border-gray-200 pt-8">
+          <h2 class="text-xl font-bold text-gray-900 mb-4">More resources</h2>
+          <ul class="space-y-2 text-gray-700">
+            <li><a href="{% url 'pycon2026:guide' %}" class="text-pycon-teal hover:underline">Speaker guide</a> – Tips for writing a strong proposal</li>
+            <li><a href="{% url 'pycon2026:mentorship' %}" class="text-pycon-teal hover:underline">Speaker mentorship</a> – Get support as a first-time speaker</li>
+            <li><a href="{% url 'talks:talk_list' year=2026 %}" class="text-pycon-teal hover:underline">My submitted talks</a> – View and manage your proposals</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+{% endblock %}
