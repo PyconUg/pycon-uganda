@@ -1,69 +1,79 @@
-{% if submitted_talks.exists %}
-<ul class="list-unstyled">
-    {% for talk in submitted_talks %} 
-    <li class="d-flex justify-content-start g-brd-around g-brd-gray-light-v4 g-pa-20 g-mb-10"> 
-        <div class="align-self-center g-px-10">
-          <h5 class="h6 g-font-weight-600 g-color-black g-mb-3">
-              <span class="g-mr-5"><a href="/{{ talk.event_year.year }}/talks/{{ talk.pk }}/talk_details/">{{ talk.title }}</a></span> 
-            </h5> 
-            <br>
-            <button class="btn btn-xs u-btn-outline-darkgray g-mr-10 g-mb-15   g-font-size-6">
-                <i class="fa fa-check-circle g-mr-3"></i>
-                <i><b>Submitted:</b> {{ talk.created_date }}</i>
-              </button>
-        </div>
-        <div class="align-self-center ml-auto">
-          {% if talk.status == "S" %} 
-          <span class="u-label u-label--sm g-bg-yellow g-color-black g-rounded-20 g-px-10">{{ talk.get_status_display }}</span>
-          {% elif talk.status == "A" %}  
-            <span class="u-label u-label--sm g-bg-teal  g-rounded-20 g-px-10">{{ talk.get_status_display }}</span>  
-          {% elif talk.status == "W" %}  
-          <span class="u-label u-label--sm g-bg-aqua  g-rounded-20 g-px-10">{{ talk.get_status_display }}</span>                  
-          {% elif talk.status == "R" %}   
-          <span class="u-label u-label--sm g-bg-pink g-rounded-20 g-px-10">{{ talk.get_status_display }}</span>        
-          {% elif talk.status == "RS" %}        
-          <span class="u-label u-label--sm g-bg-indigo g-rounded-20 g-px-10">{{ talk.get_status_display }}</span>             
-          {% endif %}  
-        </div>
-      </li>
-      {% endfor %}
-</ul>
-{% elif invited_talks.exists %}
+{% load i18n %}
 
-<ul class="list-unstyled">
-  {% for talk in invited_talks %}
-  <li class="d-flex justify-content-start g-brd-around g-brd-gray-light-v4 g-pa-20 g-mb-10">
-    <div class="align-self-center g-px-10">
-      <h5 class="h6 g-font-weight-600 g-color-black g-mb-3">
-        <a href="/{{ talk.event_year.year }}/talks/{{ talk.pk }}/talk_details/">{{ talk.title }}</a>
-      </h5>
-      {% if talk.user.user_profile %}
-      <p>You will join {{ talk.user.user_profile.name }} {{ talk.user.user_profile.surname }} in this session</p>
-      {% else %}
-      <p>Session details will be updated soon.</p>
+{% if submitted_talks.exists %}
+<ul class="space-y-3">
+  {% for talk in submitted_talks %}
+  <li class="rounded-lg border border-gray-200 bg-white px-3 py-3 sm:px-4 sm:py-3">
+    <div class="flex items-start justify-between gap-3">
+      <div class="min-w-0">
+        <a href="/{{ talk.event_year.year }}/talks/{{ talk.pk }}/talk_details/"
+           class="text-sm sm:text-base font-semibold text-pycon-teal hover:underline wrap-break-word">
+          {{ talk.title }}
+        </a>
+        <p class="mt-1 inline-flex items-center gap-1 rounded-full bg-amber-50 px-2.5 py-1 text-[11px] sm:text-xs font-medium text-amber-800">
+          <i class="fa-solid fa-circle-check text-[10px]" aria-hidden="true"></i>
+          <span>{% trans "Submitted" %}: {{ talk.created_date }}</span>
+        </p>
+      </div>
+      {% if talk.status %}
+      <span class="inline-flex items-center rounded-full px-3 py-1 text-[11px] sm:text-xs font-semibold
+                   {% if talk.status == 'A' %} bg-emerald-100 text-emerald-800
+                   {% elif talk.status == 'R' %} bg-rose-100 text-rose-800
+                   {% elif talk.status == 'W' %} bg-indigo-100 text-indigo-800
+                   {% elif talk.status == 'RS' %} bg-sky-100 text-sky-800
+                   {% else %} bg-amber-100 text-amber-800 {% endif %}">
+        {{ talk.get_status_display }}
+      </span>
       {% endif %}
-    </div>
-    <div class="align-self-center ml-auto">
-      <span class="u-label u-label--sm g-bg-{{ talk.status|lower }} g-rounded-20 g-px-10">{{ talk.get_status_display }}</span>
     </div>
   </li>
   {% endfor %}
 </ul>
+
+{% elif invited_talks.exists %}
+
+<ul class="space-y-3">
+  {% for talk in invited_talks %}
+  <li class="rounded-lg border border-gray-200 bg-white px-3 py-3 sm:px-4 sm:py-3">
+    <div class="flex items-start justify-between gap-3">
+      <div class="min-w-0">
+        <a href="/{{ talk.event_year.year }}/talks/{{ talk.pk }}/talk_details/"
+           class="text-sm sm:text-base font-semibold text-pycon-teal hover:underline wrap-break-word">
+          {{ talk.title }}
+        </a>
+        {% if talk.user.user_profile %}
+        <p class="mt-1 text-xs sm:text-sm text-gray-600">
+          {% blocktrans %}You will join {{ talk.user.user_profile.name }} {{ talk.user.user_profile.surname }} in this session.{% endblocktrans %}
+        </p>
+        {% else %}
+        <p class="mt-1 text-xs sm:text-sm text-gray-600">
+          {% trans "Session details will be updated soon." %}
+        </p>
+        {% endif %}
+      </div>
+      <span class="inline-flex items-center rounded-full px-3 py-1 text-[11px] sm:text-xs font-semibold bg-indigo-100 text-indigo-800">
+        {{ talk.get_status_display }}
+      </span>
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+
 {% else %}
 <div class="space-y-3">
-  <h5 class="text-sm font-semibold text-gray-900">No proposal found</h5>
+  <h5 class="text-sm font-semibold text-gray-900">{% trans "No proposal found" %}</h5>
   <p class="text-sm text-gray-600">
-    You currently have no proposal submitted.
+    {% trans "You currently have no proposal submitted." %}
   </p>
   {% if event_year %}
     <a href="{% url 'talks:submit_talk' year=event_year.year %}"
        class="inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-white bg-amber-500 hover:bg-amber-600 rounded-lg shadow-sm hover:shadow">
-      Submit a new talk
+      {% trans "Submit a new talk" %}
     </a>
   {% else %}
     <a href="{% url 'talks:submit_talk' year=2026 %}"
        class="inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-white bg-amber-500 hover:bg-amber-600 rounded-lg shadow-sm hover:shadow">
-      Submit a new talk
+      {% trans "Submit a new talk" %}
     </a>
   {% endif %}
 </div>

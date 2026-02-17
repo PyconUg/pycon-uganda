@@ -39,23 +39,6 @@
 {% include '2026/navbar.html' %}
 
 <div class="auth-page-content min-h-screen bg-gray-50">
-  <!-- Header -->
-  <header class="bg-white border-b border-gray-200">
-    <div class="max-w-7xl mx-auto px-4 py-3 sm:py-4 sm:px-6 lg:px-8">
-      <nav aria-label="breadcrumb" class="mb-1.5 sm:mb-2">
-        <ol class="flex flex-wrap items-center gap-1 text-xs sm:text-sm text-gray-500 list-none p-0 m-0">
-          <li><a class="text-pycon-teal hover:underline" href="/2026/">{% trans "Home" %}</a></li>
-          <li><span class="text-gray-400" aria-hidden="true">/</span></li>
-          <li><a class="text-pycon-teal hover:underline" href="/accounts/profile/">{% trans "Profile" %}</a></li>
-          <li><span class="text-gray-400" aria-hidden="true">/</span></li>
-          <li class="text-gray-700" aria-current="page">{% trans "My Submitted Talks" %}</li>
-        </ol>
-      </nav>
-      <h1 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900">
-        {% if user_profile %}{{ request.user.user_profile.name }}{% else %}{% firstof user.get_short_name user.get_username|capfirst %}{% endif %} – {% trans "Proposals" %}
-      </h1>
-    </div>
-  </header>
 
   <section class="max-w-6xl mx-auto px-4 py-6 sm:py-8 sm:px-6 lg:px-8">
     <div class="flex flex-col md:flex-row gap-6 lg:gap-10">
