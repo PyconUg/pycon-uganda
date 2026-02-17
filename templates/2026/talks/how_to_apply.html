@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load i18n static %}
+{% block meta_title %}{% trans "How to Submit a Talk or Workshop | PyCon Africa 2026" %}{% endblock %}
+
+{% block content %}
+{% include '2026/navbar.html' %}
+
+    <!-- Header -->
+    <div class="max-w-7xl mx-auto px-4 pt-12 pb-8">
+      <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 text-center">How to submit a talk or workshop</h1>
+    </div>
+
+    <!-- Body -->
+    <div class="max-w-7xl mx-auto px-4 pb-16">
+      <div class="max-w-4xl mx-auto">
+        <p class="text-gray-900 text-lg leading-relaxed mb-8">
+          You can submit proposals through this website.
+        </p>
+
+        <ol class="list-decimal list-inside text-gray-900 text-lg leading-relaxed space-y-4 mb-8">
+          <li>
+            First you need to create a profile or log in. You can do that <a href="{% url 'auth_login' %}" class="text-pycon-teal hover:underline font-medium">here</a>
+          </li>
+          <li>
+            Next up, go to <a href="{% url 'profiles:profile_home' %}" class="text-pycon-teal hover:underline font-medium">your profile</a>
+          </li>
+          <li>
+            Make sure you edit your &ldquo;bio&rdquo;. This is a piece of text that describes you. This can talk about your experience, career and interests.
+          </li>
+          <li>
+            Click on the button that says &ldquo;<a href="{% url 'talks:submit_talk' year=2026 %}" class="text-pycon-teal hover:underline font-medium">Submit a talk proposal</a>&rdquo;
+          </li>
+          <li>
+            Fill in the form – remember, all proposals must be in English
+          </li>
+        </ol>
+
+        <p class="text-gray-900 text-lg leading-relaxed">
+          Please avoid using generative AI for writing your proposals. We only let humans do talks and run workshops, not AIs ;)
+        </p>
+      </div>
+    </div>
+{% endblock %}

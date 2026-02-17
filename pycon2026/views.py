@@ -57,6 +57,10 @@ def mentorship(request):
     context = {}
     return render(request, '2026/talks/mentorship.html', context)
 
+def how_to_apply(request):
+    context = {}
+    return render(request, '2026/talks/how_to_apply.html', context)
+
 def contact_us(request):
     context = {}
     return render(request, '2026/about/contact_us.html', context)
