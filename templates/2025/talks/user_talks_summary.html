@@ -50,21 +50,21 @@
   {% endfor %}
 </ul>
 {% else %}
-<div class="js-scrollbar card-block  u-info-v1-1 g-bg-white-gradient-v1--after g-height-400 g-pa-0">
-    <ul class="list-unstyled">
-      <li class="d-flex justify-content-start g-brd-around g-brd-gray-light-v4 g-pa-20 g-mb-10"> 
-        <div class="media-body">
-          <div class="d-flex justify-content-between">
-            <h5 class="h6 g-font-weight-600 g-color-black">No Proposal found</h5> 
-          </div>
-          <p>You currently have no proposal submmited</p>
-          
-          <p><a href="{% url 'talks:submit_talk' year=2025 %}" class="btn btn-sm u-btn-outline-darkgray g-rounded-50 g-mr-10 g-mb-15"><b>Hey!🤓 Submit a new Talk here</b></a></p>
-                 
-           
-        </div> 
-      </li> 
-
-    </ul>
-  </div>
+<div class="space-y-3">
+  <h5 class="text-sm font-semibold text-gray-900">No proposal found</h5>
+  <p class="text-sm text-gray-600">
+    You currently have no proposal submitted.
+  </p>
+  {% if event_year %}
+    <a href="{% url 'talks:submit_talk' year=event_year.year %}"
+       class="inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-white bg-amber-500 hover:bg-amber-600 rounded-lg shadow-sm hover:shadow">
+      Submit a new talk
+    </a>
+  {% else %}
+    <a href="{% url 'talks:submit_talk' year=2026 %}"
+       class="inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-white bg-amber-500 hover:bg-amber-600 rounded-lg shadow-sm hover:shadow">
+      Submit a new talk
+    </a>
+  {% endif %}
+</div>
 {% endif %}

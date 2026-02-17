@@ -1,310 +1,290 @@
 {% extends "base.html" %}
 {% load i18n tz static avatar_tags crispy_forms_tags markdown_extras countries profile_tags talks_tags %}
-{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Profile | PyCon Uganda 2026" %}{% endif %}{% endblock %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Profile | PyCon Africa 2026" %}{% endif %}{% endblock %}
 
 {% block extra_css %}
 <style>
-  .profile-breadcrumb { list-style: none !important; display: flex; flex-wrap: wrap; align-items: center; gap: 0.25rem; }
-  .profile-breadcrumb .breadcrumb-item { display: inline; }
-  .profile-breadcrumb .breadcrumb-item + .breadcrumb-item::before { content: "/"; padding: 0 0.35rem; color: #6c757d; }
-  .profile-card-avatar { width: 7rem; height: 7rem; border-radius: 50%; object-fit: cover; border: 2px solid #fff; box-shadow: 0 0.125rem 0.5rem rgba(0,0,0,0.08); }
-  .profile-card-avatar-wrap { position: relative; display: inline-block; }
-  .profile-card-avatar-wrap .status-dot { position: absolute; bottom: 0.25rem; right: 0.25rem; width: 0.875rem; height: 0.875rem; background: #198754; border: 2px solid #fff; border-radius: 50%; }
-  .profile-welcome-center { overflow: visible; max-width: 28rem; }
-  .profile-welcome .welcome-card { background: #fff; border-radius: 1rem; box-shadow: 0 0.25rem 1rem rgba(0,0,0,0.06); border: none; overflow: visible; }
-  .profile-welcome .welcome-card .card-body { padding: 2rem 1.5rem; text-align: center; overflow: visible; }
-  .profile-welcome .welcome-header { color: #212529; font-weight: 600; font-size: 1.5rem; margin-bottom: 1rem; }
-  .profile-welcome .welcome-header .greeting-name { color: #212529; }
-  .profile-welcome .last-login-label { color: #6c757d; font-weight: 600; font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.04em; }
-  .profile-welcome .profile-welcome-muted { color: #6c757d; }
-  .profile-welcome .welcome-card .card-title { color: #212529; font-weight: 600; font-size: 1.125rem; margin-bottom: 0.5rem; }
-  .profile-welcome .welcome-card .card-text { color: #495057; line-height: 1.65; font-size: 0.9375rem; }
-  .profile-welcome .welcome-card .card-text .fw-semibold { color: #495057; }
-  .profile-welcome .btn-cta { background: #e8590c; color: #fff; border: 0; font-weight: 600; padding: 0.6rem 1.25rem; border-radius: 0.5rem; }
-  .profile-welcome .btn-cta:hover { background: #d44d0a; color: #fff; }
-  .profile-welcome .welcome-footer-link { color: #495057; text-decoration: none; font-size: 0.875rem; margin-top: 1.25rem; display: inline-flex; align-items: center; gap: 0.35rem; }
-  .profile-welcome .welcome-footer-link:hover { color: #212529; }
+  .profile-card-avatar { width: 7rem; height: 7rem; border-radius: 50%; object-fit: cover; border: 2px solid #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+  @media (max-width: 640px) {
+    .profile-card-avatar { width: 5.5rem; height: 5.5rem; }
+  }
+  .profile-avatar-wrap { position: relative; display: inline-block; }
+  .profile-avatar-wrap .status-dot { position: absolute; bottom: 0.25rem; right: 0.25rem; width: 0.75rem; height: 0.75rem; background: #22c55e; border: 2px solid #fff; border-radius: 50%; }
+  @media (max-width: 640px) {
+    .profile-avatar-wrap .status-dot { width: 0.625rem; height: 0.625rem; bottom: 0.125rem; right: 0.125rem; }
+  }
+  .profile-nav-link { display: flex; align-items: center; gap: 0.5rem; padding: 0.625rem 0.75rem; color: #374151; text-decoration: none; border-radius: 0.5rem; font-size: 0.9375rem; }
+  @media (max-width: 640px) {
+    .profile-nav-link { padding: 0.75rem; font-size: 0.875rem; }
+  }
+  .profile-nav-link:hover { background: #f3f4f6; color: #111827; }
+  .profile-nav-link.active { background: #0d9488; color: #fff; }
+  .profile-nav-link.active:hover { background: #0f766e; color: #fff; }
+  .profile-social-link { display: inline-flex; align-items: center; justify-content: center; width: 2.25rem; height: 2.25rem; border-radius: 50%; background: #f3f4f6; color: #6b7280; text-decoration: none; }
+  @media (max-width: 640px) {
+    .profile-social-link { width: 2rem; height: 2rem; }
+  }
+  .profile-social-link:hover { background: #0d9488; color: #fff; }
+  .profile-welcome-card { max-width: 32rem; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+  @media (max-width: 640px) {
+    .profile-welcome-card { max-width: 100%; }
+  }
+  .profile-stat-card { border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1.25rem; text-align: center; background: #fff; }
+  @media (max-width: 640px) {
+    .profile-stat-card { padding: 1rem; }
+  }
 </style>
 {% endblock %}
 
 {% block content %}
 {% include '2026/navbar.html' %}
 
-<div class="auth-page-content">
+<div class="auth-page-content min-h-screen bg-gray-50">
   {% if user_profile %}
-  <!-- Page header when user has profile -->
-  <header class="g-bg-gray-light-v5 py-3 border-bottom border-light">
-    <div class="container">
-      <nav aria-label="breadcrumb" class="mb-2">
-        <ol class="breadcrumb mb-0 g-font-size-13 bg-transparent p-0 profile-breadcrumb">
-          <li class="breadcrumb-item"><a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover" href="/">{% trans "Home" %}</a></li>
-          <li class="breadcrumb-item active g-color-gray-dark-v3" aria-current="page">{% trans "Profile" %}</li>
-        </ol>
-      </nav>
-      <h1 class="h2 g-color-black g-font-weight-600 mb-0">{% trans "Hello" %}, {{ request.user.user_profile.name }}</h1>
-    </div>
-  </header>
+ 
 
-  <section class="g-mb-80 g-pt-4" style="padding-bottom: 4rem;">
-    <div class="container">
-      <div class="row g-4 align-items-start">
-        <!-- Profile Sidebar -->
-        <div class="col-lg-3 order-2 order-lg-1">
-          <div class="card border-0 shadow-sm rounded g-bg-gray-light-v5 overflow-hidden">
-            <div class="card-body p-4">
-              <div class="mb-3 mx-auto rounded overflow-hidden" style="max-width: 10rem;">
+  <section class="max-w-6xl mx-auto px-4 py-6 sm:py-8 sm:px-6 lg:px-8 flex flex-col md:flex-row gap-6 lg:gap-10">
+    <div class="flex flex-col lg:flex-row gap-6 lg:gap-10">
+      <!-- Profile Sidebar -->
+      <aside class="w-full lg:w-64 shrink-0 lg:order-1 order-2">
+        <div class="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden lg:sticky lg:top-24">
+          <div class="p-4 sm:p-5">
+            <div class="mb-4 flex justify-center">
+              <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden shrink-0 border-2 border-gray-100 shadow-sm [&_img]:w-full [&_img]:h-full [&_img]:object-cover">
                 {% include 'profiles/profilepic_side.html' %}
               </div>
-              {% if request.user.last_login %}
-              <div class="small g-color-gray-dark-v3 mb-3 pb-3 border-bottom border-light">
-                <span class="text-danger fw-bold text-uppercase">{% trans "Last login" %}</span><br>
-                {{ request.user.last_login|date:"M. j, Y" }} · {{ request.user.last_login|time:"g:i a" }}
-              </div>
+            </div>
+            {% if request.user.last_login %}
+            <div class="text-xs text-gray-500 mb-4 pb-4 border-b border-gray-100">
+              <span class="font-medium text-gray-400 uppercase tracking-wide">{% trans "Last login" %}</span><br>
+              <span class="text-gray-600">{{ request.user.last_login|date:"M. j, Y" }} · {{ request.user.last_login|time:"g:i a" }}</span>
+            </div>
+            {% endif %}
+            <nav class="flex flex-col gap-0.5" aria-label="Profile menu">
+              <a href="{% url 'profiles:profile_home' %}" class="profile-nav-link active">
+                <i class="fa-solid fa-house w-4 text-center" aria-hidden="true"></i>
+                <span>My Profile</span>
+              </a>
+              <a href="{% url 'profiles:profile_update' pk=request.user.user_profile.profile_id.hashid %}" class="profile-nav-link">
+                <i class="fa-solid fa-id-card w-4 text-center" aria-hidden="true"></i>
+                <span>Update my Profile</span>
+              </a>
+              <a href="/accounts/password/change/" class="profile-nav-link">
+                <i class="fa-solid fa-lock w-4 text-center" aria-hidden="true"></i>
+                <span>Change Password</span>
+              </a>
+              <a href="{% url 'talks:talk_list' year=year %}" class="profile-nav-link">
+                <i class="fa-solid fa-microphone w-4 text-center" aria-hidden="true"></i>
+                <span>My Submitted Talks</span>
+              </a>
+              <a href="{% url 'talks:submit_talk' year=year %}" class="profile-nav-link">
+                <i class="fa-solid fa-plus w-4 text-center" aria-hidden="true"></i>
+                <span>Submit a new Talk</span>
+              </a>
+              {% if perms.reviews.add_review or request.user.reviewer_profile or request.user.is_superuser %}
+              <a href="{% url 'talks:talks_to_review' year=year %}" class="profile-nav-link">
+                <i class="fa-solid fa-list-check w-4 text-center" aria-hidden="true"></i>
+                <span>Review Proposals</span>
+              </a>
               {% endif %}
-              <div class="list-group list-group-flush list-group-border-0">
-                {% if user_profile %}
-                      <a href="{% url 'profiles:profile_home' %}" class="list-group-item list-group-item-action d-flex align-items-center active">
-                        <span><i class="fa-solid fa-house-user fa-fade g-pos-rel g-top-1 g-mr-8"></i> My Profile</span> 
-                      </a> 
-                      <!-- End Overall -->
-                      
-                      <!-- Overall -->
-                      <a href="{% url 'profiles:profile_update' pk=request.user.user_profile.profile_id.hashid  %}" class="list-group-item list-group-item-action justify-content-between">
-                        <span><i class="fa-light fa-id-card g-pos-rel g-top-1 g-mr-8"></i>  Update my Profile</span> 
-                      </a>
-                      <!-- End Overall -->
-        
-                      <!-- Profile -->
-                      <a href="/accounts/password/change/" class="list-group-item list-group-item-action justify-content-between">
-                        <span><i class="fa-light fa-lock g-pos-rel g-top-1 g-mr-8"></i>  Change Password</span>
-                      </a>
-                      <!-- End Profile -->
-        
-                      <!-- Profile -->
-                      <a href="{% url 'talks:talk_list' year=year %}" class="list-group-item list-group-item-action justify-content-between">
-                        <span><i class="fa-light fa-podium-star g-pos-rel g-top-1 g-mr-8"></i>  My Submitted Talks</span>
-                      </a>
-                      <!-- End Profile -->
-      
-                      <!-- My Submitted Talks -->
-                      <a href="{% url 'talks:submit_talk' year=year %}" class="list-group-item list-group-item-action justify-content-between">
-                          <span><i class="fa-thin fa-podium g-pos-rel g-top-1 g-mr-8"></i>  Submit a new Talk</span>
-                        </a>
-                        <!-- End Profile -->
+              {% if request.user.is_superuser or request.user.reviewer_profile %}
+              <a href="{% url 'talks:reviewed_talks_by_category' year=year %}" class="profile-nav-link">
+                <i class="fa-solid fa-list w-4 text-center" aria-hidden="true"></i>
+                <span>Proposals by Category</span>
+              </a>
+              <a href="{% url 'talks:reviewed_talks_by_type' year=year %}" class="profile-nav-link">
+                <i class="fa-solid fa-list w-4 text-center" aria-hidden="true"></i>
+                <span>Proposals by Type</span>
+              </a>
+              {% endif %}
+              {% if perms.schedule.add_talkschedule or perms.schedule.change_talkschedule %}
+              <a href="/organizers/conference_schedule/" target="_blank" rel="noopener noreferrer" class="profile-nav-link">
+                <i class="fa-solid fa-calendar-days w-4 text-center" aria-hidden="true"></i>
+                <span>Create/Add to the Schedule</span>
+              </a>
+              {% endif %}
+            </nav>
+          </div>
+        </div>
+      </div>
 
+      {% if user_profile %}
+      <!-- Profile Content -->
+      {% for user_p in user_profile %}
+      {% for detail in details %}
+      <div class="flex-1 min-w-0 lg:order-2 order-1">
+        <div class="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden p-4 sm:p-6 lg:p-8">
+          <!-- Name and title -->
+          <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6">
+            <div class="flex-1 min-w-0">
+              <h2 class="text-lg sm:text-xl font-bold text-gray-900 mb-1 break-words">{{ user_p.surname }} {{ user_p.name }}</h2>
+              <p class="text-gray-600 text-xs sm:text-sm uppercase tracking-wide break-words">
+                {% if user_p.profession %}{{ user_p.profession }}{% endif %}{% if user_p.organization %} at {{ user_p.organization }}{% endif %}
+              </p>
+              {% if user_p.city or user_p.country %}
+              <p class="text-gray-500 text-xs sm:text-sm mt-1 flex items-center gap-1 flex-wrap">
+                <i class="fa-solid fa-location-dot w-4 text-center shrink-0" aria-hidden="true"></i>
+                <span class="break-words">from {{ user_p.city }}{% if user_p.country %}, {{ user_p.country.name }}{% endif %}</span>
+              </p>
+              {% endif %}
+            </div>
+            <!-- Social links -->
+            <ul class="flex flex-wrap gap-2 list-none p-0 m-0 shrink-0">
+              {% if user_p.website %}
+              <li>
+                <a class="profile-social-link" href="{{ user_p.website }}" target="_blank" rel="noopener noreferrer" title="Website">
+                  <i class="fa-solid fa-globe" aria-hidden="true"></i>
+                </a>
+              </li>
+              {% endif %}
+              {% if user_p.twitter_handle %}
+              <li>
+                <a class="profile-social-link" href="https://www.twitter.com/{{ user_p.twitter_handle }}" target="_blank" rel="noopener noreferrer" title="Twitter">
+                  <i class="fa-brands fa-twitter" aria-hidden="true"></i>
+                </a>
+              </li>
+              {% endif %}
+              {% if user_p.github_username %}
+              <li>
+                <a class="profile-social-link" href="https://www.github.com/{{ user_p.github_username }}" target="_blank" rel="noopener noreferrer" title="GitHub">
+                  <i class="fa-brands fa-github" aria-hidden="true"></i>
+                </a>
+              </li>
+              {% endif %}
+              {% if user_p.linkedin %}
+              <li>
+                <a class="profile-social-link" href="{{ user_p.linkedin }}" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                  <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                </a>
+              </li>
+              {% endif %}
+            </ul>
+          </div>
 
-                      {% if perms.reviews.add_review or request.user.reviewer_profile or request.user.is_superuser %} 
-                        <!-- Review Talks -->
-                        <a href="{% url 'talks:talks_to_review' year=year %}" class="list-group-item list-group-item-action justify-content-between">
-                          <span><i class="fa-thin fa-ballot-check g-pos-rel g-top-1 g-mr-8"></i> Review Proposals</span>
-                        </a>
-                        <!-- End Profile --> 
-                      {% endif %}
-                      
-                      {% if request.user.is_superuser or request.user.reviewer_profile %}
-                     <!-- Review Talks List-->
-                     <a href="{% url 'talks:reviewed_talks_by_category' year=year %}" class="list-group-item list-group-item-action justify-content-between">
-                      <span><i class="fa-thin fa-list-check g-pos-rel g-top-1 g-mr-8"></i> Proposals by Category</span>
-                    </a>
-                    
-                    <a href="{% url 'talks:reviewed_talks_by_type' year=year %}" class="list-group-item list-group-item-action justify-content-between ">
-                      <span><i class="fa-thin fa-list-check g-pos-rel g-top-1 g-mr-8"></i> Proposals by Type</span>
-                    </a>
-                    <!-- End Profile --> 
-                          {% endif %}
+          <!-- Bio -->
+          <div class="mb-6 sm:mb-8">
+            <div class="markdownx-preview text-gray-700 text-sm sm:text-base leading-relaxed">{{ user_p.biography | markdown | safe }}</div>
+          </div>
+          {{ form.media }}
 
-                    
-                          {% if perms.schedule.add_talkschedule or perms.schedule.change_talkschedule %}
-                          <a href="/organizers/conference_schedule/" target="_blank" class="list-group-item list-group-item-action justify-content-between">
-                              <span><i class="fa-solid fa-calendar-week g-pos-rel g-top-1 g-mr-8"></i> Create/Add to the Schedule</span>
-                          </a>
-                      {% endif %}   
+          <hr class="border-gray-200 my-6 sm:my-8">
 
+          {% invitation_list %}
 
-
-
- 
-                {% else %}
-                  <a href="{% url 'profiles:profile_home' %}" class="list-group-item list-group-item-action d-flex align-items-center active border-0 px-0">
-                    <span><i class="fa-solid fa-house-user g-pos-rel g-top-1 g-mr-8"></i> {% trans "My Profile" %}</span>
-                  </a>
-                {% endif %}
+          <!-- Speaking & My Talks panels -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mt-6 sm:mt-8">
+            <div class="bg-gray-50 rounded-lg border border-gray-100 p-4 sm:p-5">
+              <h3 class="text-sm sm:text-base font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                <i class="fa-solid fa-microphone text-pycon-teal shrink-0" aria-hidden="true"></i>
+                <span>Speaking</span>
+              </h3>
+              <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4">
+                We are inviting speakers of all experience levels and backgrounds to contribute to our conference program at PyCon Africa 2026!
+              </p>
+              <a href="{% url 'pycon2026:submit' %}" class="inline-flex items-center gap-1 text-xs sm:text-sm font-medium text-pycon-teal hover:underline">
+                Read more
+                <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+              </a>
+            </div>
+            <div class="bg-gray-50 rounded-lg border border-gray-100 p-4 sm:p-5">
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0 mb-3">
+                <h3 class="text-sm sm:text-base font-semibold text-gray-900 flex items-center gap-2">
+                  <i class="fa-solid fa-podium-star text-pycon-teal shrink-0" aria-hidden="true"></i>
+                  <span>My Talks</span>
+                </h3>
+                <a href="{% url 'talks:submit_talk' year=year %}" class="text-xs sm:text-sm font-medium text-pycon-teal hover:underline shrink-0">
+                  Submit a Talk
+                </a>
+              </div>
+              <div class="my-talks-summary">
+                {% user_talks_summary request.user %}
               </div>
             </div>
           </div>
         </div>
-        <!-- End Profile Sidebar -->
-
-              {% if user_profile %}
-              <!-- Profile Content -->
-              {% for user_p in user_profile %}
-              {% for detail in details %}
-              <div class="col-lg-9 order-1 order-lg-2">
-
-          <!-- Figure Body --> 
-              <div class="d-flex justify-content-between g-mb-10">
-                <div class="g-mb-20">
-                  <h4 class="h4 g-mb-5">{{ user_p.surname }} {{ user_p.name }}</h4>
-                  <em class="d-block g-font-style-normal g-font-size-default text-uppercase g-color-primary">{% if user_p.profession %} {{ user_p.profession }} {% else %}{% endif %} {% if user_p.organization %} at {{ user_p.organization }}{% else %}{% endif %}.</em>
-                  <li class="list-inline-item g-mr-20">
-                    <small> <i class="bi bi-geo"></i>from {{ user_p.city }}, {{ user_p.country.name }}<i class=" {{ user_p.country.flag_css }}"></i></small>
-                      </li>
-                </div>
-
-                <!-- Figure Social Icons -->  
-                <ul class="list-inline">
-                                  {% if user_p.website %}
-                                  <li class="list-inline-item g-mx-2">
-                                    <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover g-color-gray-light-v1 g-bg-gray-light-v5 g-color-gray-light-v1--hover rounded-circle"  href="{{ user_p.website }}" target="/">
-                                      <i class="g-font-size-default g-line-height-1 u-icon__elem-regular fa-regular fa-globe-pointer"></i>
-                                      <i class="g-font-size-default g-line-height-0_8 u-icon__elem-hover fa-regular fa-globe-pointer"></i>
-                                    </a> 
-                                  </li> 
-                                    {% else %}
-                                    {% endif %}
-                                    {% if user_p.twitter_handle %} 
-                                      <li class="list-inline-item g-mx-2">
-                                        <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover g-color-gray-light-v1 g-bg-gray-light-v5 g-color-gray-light-v1--hover rounded-circle"  href="https://www.twitter.com/{{ user_p.twitter_handle }}" target="/">
-                                          <i class="g-font-size-default g-line-height-1 u-icon__elem-regular fa-brands fa-twitter"></i>
-                                          <i class="g-font-size-default g-line-height-0_8 u-icon__elem-hover fa-brands fa-twitter"></i>
-                                        </a>
-                                      </li>
-                                    {% else %}
-                                    {% endif %}
-                                    {% if user_p.github_username %}  
-                                      <li class="list-inline-item g-mx-2">
-                                        <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover g-color-gray-light-v1 g-bg-gray-light-v5 g-color-gray-light-v1--hover rounded-circle"  href="https://www.github.com/{{ user_p.github_username }}" target="/">
-                                          <i class="g-font-size-default g-line-height-1 u-icon__elem-regular fa-brands fa-github"></i>
-                                          <i class="g-font-size-default g-line-height-0_8 u-icon__elem-hover fa-brands fa-github"></i>
-                                        </a>
-                                      </li>
-                                    {% else %}
-                                    {% endif %}
-                                    {% if user_p.linkedin %}  
-                                      <li class="list-inline-item g-mx-2">
-                                        <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover g-color-gray-light-v1 g-bg-gray-light-v5 g-color-gray-light-v1--hover rounded-circle" href="{{ user_p.linkedin }}" target="/">
-                                          <i class="g-font-size-default g-line-height-1 u-icon__elem-regular fa-brands fa-linkedin"></i>
-                                          <i class="g-font-size-default g-line-height-0_8 u-icon__elem-hover fa-brands fa-linkedin"></i>
-                                        </a>
-                                      </li>
-                                    {% else %}
-                                    {% endif %}  
-                  
-                </ul>
-                <!-- End Figure Social Icons -->
-              </div>
-
-              <!-- Figure Info -->
-              <div class="g-mb-50"> 
-                  <p class="markdownx-preview">{{ user_p.biography | markdown | safe }}</p>
-                  {{ form.media }} 
-              </div>
-              <!-- End Info -->
-       
-    <hr class="u-divider-linear-gradient u-divider-linear-gradient--gray-light-v2 g-my-50">
-                  
-                {% invitation_list %}
-
-                <!-- Projects & Activities Panels -->
-                <div class="row g-mb-40">
-                  <div class="col-lg-6 g-mb-40 g-mb-0--lg">
-                    <!-- Latest Projects Panel -->
-                    <div class="card border-0">
-                      <!-- Panel Header -->
-                      <div class="card-header d-flex align-items-center justify-content-between g-bg-gray-light-v5 border-0 g-mb-15">
-                        <h3 class="h6 mb-0">
-                          <i class="fa-solid fa-microphone-stand g-color-black" style="font-size:21px;"></i> &nbsp;&nbsp; Speaking
-                          </h3> 
-                      </div>
-                      <!-- End Panel Header -->
-
-                      <!-- Panel Body -->
-                      <div class="js-scrollbar card-block u-info-v1-1 g-bg-white-gradient-v1--after g-height-400 g-pa-0">
-                        <ul class="list-unstyled">
-                          <li class="media g-brd-around g-brd-gray-light-v4 g-brd-left-3 g-brd-blue-left rounded g-pa-20 g-mb-10"> 
-                            <div class="media-body">
-                              <div class="d-flex justify-content-between">
-                                <h5 class="h6 g-font-weight-600 g-color-black">What it takes to speak at PyCon Uganda</h5> 
-                              </div>
-                              <p>We are inviting speakers of all experience levels and backgrounds to contribute to our conference program at PyCon Uganda 2026! ...</p>
-                              
-                              <p><a href="/2026/talks/speaking/" class="btn btn-sm u-btn-outline-darkgray g-rounded-50 g-mr-10 g-mb-15"><b>Read more...</b></a></p>
-                                    
-                              
-                                   
-                                
-                            </div>
-                          </li> 
-                        </ul>
-                      </div>
-                      <!-- End Panel Body -->
-                    </div>
-                    <!-- End Latest Projects Panel -->
-                  </div>
-
-                  <div class="col-lg-6">
-                    <!-- Activities Panel -->
-                    <div class="card border-0">
-                      <div class="card-header d-flex align-items-center justify-content-between g-bg-gray-light-v5 border-0 g-mb-15">
-                        <h3 class="h6 mb-0">
-                          <i class="fa-light fa-podium g-color-black" style="font-size:21px;"></i> &nbsp;&nbsp; My Talks
-                          </h3> 
-                           <a href="{% url 'talks:submit_talk' year=year %}"class="btn btn-sm u-btn-outline-darkgray g-rounded-50  "> <i class="fa-solid fa-exclamation fa-bounce"></i> <b>Submit a Talk</b></a>
-                      </div>
-
-                      <div class="my-talks-summary">
-                        {% user_talks_summary request.user %}
-                      </div>
-                    
-                    </div>
-                    <!-- End Activities Panel -->
-                  </div>
-                </div>
-                <!-- End Projects & Activities Panels -->
-    
-              </div> 
-              {% endfor %}
-              {% endfor %}
-              <!-- End Profile Content -->
-              {% endif %}
       </div>
+      {% endfor %}
+      {% endfor %}
+      {% endif %}
     </div>
   </section>
   {% else %}
-  <!-- No profile yet: single-card welcome (reference design, no blue) -->
-  <section class="profile-welcome pt-4 pb-5" style="padding-bottom: 4rem;">
-    <div class="container text-center">
-      <div class="profile-welcome-center mx-auto">
-        <h1 class="welcome-header mb-4">{% trans "Welcome" %}, <span class="greeting-name">{% firstof user.get_short_name user.get_username|capfirst %}!</span></h1>
+  <!-- No profile yet: welcome card (example layout) -->
+  <section class="min-h-[70vh] flex flex-col items-center justify-center px-4 py-8 sm:py-12 sm:px-6 lg:px-8 bg-white">
+    <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 text-center mb-2 px-2">{% trans "Hello" %}, {% firstof user.get_short_name user.get_username %}</h1>
+    <p class="text-gray-500 text-center text-xs sm:text-sm mb-6 sm:mb-10 px-2">{% trans "We're glad to have you in the community." %}</p>
 
-        <div class="card welcome-card">
-          <div class="card-body">
-            <div class="profile-card-avatar-wrap mb-3">
-              <img class="profile-card-avatar" src="/robohash/{% firstof user.get_short_name user.get_username|capfirst %}/?width=200&height=200" alt="">
-              <span class="status-dot" aria-hidden="true"></span>
-            </div>
-            {% if request.user.last_login %}
-            <div class="mb-3 small">
-              <div class="last-login-label">{% trans "Last login" %}</div>
-              <div class="profile-welcome-muted">{{ request.user.last_login|date:"M. j, Y" }} · {{ request.user.last_login|time:"g:i a" }}</div>
-            </div>
-            {% endif %}
+    <div class="w-full profile-welcome-card mx-auto bg-white rounded-2xl border border-gray-100 overflow-hidden p-6 sm:p-8 lg:p-10">
+      <!-- Breadcrumb-style nav -->
+      <div class="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-gray-500 mb-4 sm:mb-6">
+        <a href="{% url 'profiles:profile_home' %}" class="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200">
+          <i class="fa-solid fa-house text-xs" aria-hidden="true"></i>
+          <span>Dashboard</span>
+        </a>
+        <span class="text-gray-300 hidden sm:inline" aria-hidden="true">›</span>
+        <span class="px-2.5 sm:px-3 py-1.5 rounded-full bg-gray-100 text-gray-700 font-medium">Profile Setup</span>
+      </div>
 
-            <h2 class="card-title">{% trans "Thanks for signing up!" %} 🥳</h2>
-            <p class="card-text mb-2">{% trans "We're thrilled to have you join this vibrant community of" %} <span class="fw-semibold">{% trans "Python enthusiasts, developers, and innovators." %}</span></p>
-            <p class="card-text mb-4">{% trans "To get started, please complete your profile. This helps our community members connect and grow together." %}</p>
-
-            <a class="btn btn-cta" href="{% url 'profiles:create_profile' %}">{% trans "Create Profile" %} <i class="fa-solid fa-arrow-right ms-1" aria-hidden="true"></i></a>
-          </div>
+      <!-- Avatar with status dot -->
+      <div class="flex justify-center mb-5">
+        <div class="profile-avatar-wrap">
+          <img class="profile-card-avatar w-24 h-24 sm:w-28 sm:h-28" src="/robohash/{% firstof user.get_short_name user.get_username|capfirst %}/?width=200&height=200" alt="">
+          <span class="status-dot" aria-hidden="true"></span>
         </div>
+      </div>
 
-        <a class="welcome-footer-link" href="/">PyCon Africa</a>
+      {% if request.user.last_login %}
+      <div class="text-center mb-5">
+        <div class="text-[10px] sm:text-xs font-semibold text-amber-600 uppercase tracking-wider">{% trans "Last login" %}</div>
+        <div class="text-sm text-gray-500 mt-0.5">{{ request.user.last_login|date:"M. j, Y" }} · {{ request.user.last_login|time:"g:i a" }}</div>
+      </div>
+      {% endif %}
+
+      <h2 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 text-center mb-1">{% trans "Thanks for signing up!" %} 👋</h2>
+      <p class="text-center text-gray-500 text-xs sm:text-sm mb-4 sm:mb-6">@{% firstof user.get_username user.get_short_name %}</p>
+
+      <div class="max-w-lg mx-auto text-left space-y-3 sm:space-y-4 mb-6 sm:mb-8">
+        <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+          {% trans "We're thrilled to have you join this vibrant community of" %} <strong class="text-gray-800">{% trans "Python enthusiasts, developers, and innovators" %}</strong> {% trans "from across Africa and beyond." %}
+        </p>
+        <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+          {% trans "To get started, we kindly ask you to create your profile. This helps other community members connect with you and see your expertise." %}
+        </p>
+      </div>
+
+      <div class="flex flex-col items-center">
+        <a class="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 bg-amber-500 hover:bg-amber-600 text-white text-sm sm:text-base font-semibold rounded-xl shadow-md hover:shadow-lg transition-all w-full sm:w-auto" href="{% url 'profiles:create_profile' %}">
+          {% trans "Create Profile" %}
+          <i class="fa-solid fa-arrow-right text-xs sm:text-sm" aria-hidden="true"></i>
+        </a>
+        <p class="mt-4 sm:mt-6 text-xs sm:text-sm text-gray-400 text-center px-2">🎉 {% trans "Here's an exciting journey ahead at PyCon Africa 2026!" %}</p>
       </div>
     </div>
+
+    <!-- Stat cards -->
+    <div class="w-full max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mt-6 sm:mt-10 px-2">
+      <div class="profile-stat-card">
+        <div class="flex justify-center mb-2"><i class="fa-solid fa-users text-xl sm:text-2xl text-sky-500" aria-hidden="true"></i></div>
+        <div class="text-[10px] sm:text-xs uppercase tracking-wider text-gray-400 font-medium">{% trans "Community" %}</div>
+        <div class="text-base sm:text-lg font-bold text-gray-800 mt-1">500+ {% trans "Members" %}</div>
+      </div>
+      <div class="profile-stat-card">
+        <div class="flex justify-center mb-2"><i class="fa-solid fa-calendar-days text-xl sm:text-2xl text-sky-500" aria-hidden="true"></i></div>
+        <div class="text-[10px] sm:text-xs uppercase tracking-wider text-gray-400 font-medium">{% trans "Conference" %}</div>
+        <div class="text-base sm:text-lg font-bold text-gray-800 mt-1">{% trans "Aug 2026" %}</div>
+      </div>
+      <div class="profile-stat-card">
+        <div class="flex justify-center mb-2"><i class="fa-solid fa-laptop-code text-xl sm:text-2xl text-sky-500" aria-hidden="true"></i></div>
+        <div class="text-[10px] sm:text-xs uppercase tracking-wider text-gray-400 font-medium">{% trans "Workshops" %}</div>
+        <div class="text-base sm:text-lg font-bold text-gray-800 mt-1">{% trans "12 Tracks" %}</div>
+      </div>
+    </div>
+
+    <p class="mt-6 sm:mt-10">
+      <a class="text-xs sm:text-sm text-gray-400 hover:text-gray-600 transition-colors" href="/">PyCon Africa</a>
+    </p>
   </section>
   {% endif %}
 </div>
 
 {% endblock %}
-
-
