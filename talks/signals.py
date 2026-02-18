@@ -19,10 +19,10 @@ def send_status_change_email(sender, instance, **kwargs):
             original = sender.objects.get(pk=instance.pk)
             if original.status != instance.status:
                 subject_templates = {
-                    'A': 'PyCon Uganda - Congratulations, Your Proposal Has Been Accepted',
-                    'W': 'PyCon Uganda - Your Proposal Is On The Waiting List',
-                    'R': 'PyCon Uganda - Your Proposal Has Been Rejected',
-                    'S': 'PyCon Uganda - Your Proposal Has Been Submitted'
+                    'A': 'PyCon Africa 2026 - Congratulations, Your Proposal Has Been Accepted',
+                    'W': 'PyCon Africa 2026 - Your Proposal Is On The Waiting List',
+                    'R': 'PyCon Africa 2026 - Your Proposal Has Been Rejected',
+                    'S': 'PyCon Africa 2026 - Your Proposal Has Been Submitted'
                 }
                 template_names = {
                     'A': 'emails/talks/proposal_accepted.html',
@@ -30,7 +30,7 @@ def send_status_change_email(sender, instance, **kwargs):
                     'R': 'emails/talks/proposal_rejected.html',
                     'S': 'emails/talks/proposal_submitted.html'
                 }
-                subject = subject_templates.get(instance.status, 'PyCon Uganda - Your Proposal Status Update')
+                subject = subject_templates.get(instance.status, 'PyCon Africa 2026 - Your Proposal Status Update')
                 html_template = template_names.get(instance.status, 'emails/talks/proposal_status_changed.html')
 
                 # Retrieve the user's profile to get the full name
@@ -60,7 +60,7 @@ def send_status_change_email(sender, instance, **kwargs):
                 })
                 text_content = strip_tags(html_content)
 
-                from_email = 'PyCon Uganda Program\'s Team <program@pycon.ug>'
+                from_email = 'PyCon Africa 2026 Programme Team <program@pycon.ug>'
                 
                 email = EmailMultiAlternatives(
                     subject,

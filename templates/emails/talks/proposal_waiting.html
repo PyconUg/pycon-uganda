@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Your Proposal Is On The Waiting List - PyCon Uganda 2024</title>
+    <title>Your Proposal Is On The Waiting List - PyCon Africa {{ proposal.event_year.year }}</title>
     <style>
         body { font-family: Arial, sans-serif; }
         .content { max-width: 600px; margin: auto; }
@@ -18,7 +18,7 @@
         </div>
         <div class="details">
             <p>Dear {{ full_name }},</p>
-            <p>Thank you for submitting your proposal titled "<strong>{{ proposal.title }}</strong>" for PyCon Uganda 2024. After careful consideration, we would like to inform you that your proposal has been placed on our waiting list.</p>
+            <p>Thank you for submitting your proposal titled "<strong>{{ proposal.title }}</strong>" for PyCon Africa {{ proposal.event_year.year }}. After careful consideration, we would like to inform you that your proposal has been placed on our waiting list.</p>
         </div>
         
         <div class="next-steps">
@@ -31,7 +31,7 @@
                 </tr>
                 <tr>
                     <th>Prepare Ahead:</th>
-                    <td>We recommend preparing your presentation materials in case your proposal is accepted. Please review the <a href="https://africa.pycon.org/2024/speaker-guidelines/">Speaker Guidelines</a> to ensure you are ready.</td>
+                    <td>We recommend preparing your presentation materials in case your proposal is accepted. Please review the <a href="https://africa.pycon.org/2026/speaker-guidelines/">Speaker Guidelines</a> to ensure you are ready.</td>
                 </tr>
                 <tr>
                     <th>Contact Us:</th>
@@ -40,12 +40,12 @@
             </table>
         </div>
 
-        <p>We appreciate your contribution and your enthusiasm for PyCon Uganda 2024. We hope to see you at the conference, whether as a speaker or an attendee.</p>
+        <p>We appreciate your contribution and your enthusiasm for PyCon Africa {{ proposal.event_year.year }}. We hope to see you at the conference, whether as a speaker or an attendee.</p>
         <br>
-        <p>Best regards,<br>The PyCon Uganda Program Team</p>
+        <p>Best regards,<br>The PyCon Africa Program Team</p>
     </div>
     <div class="footer">
-        <p>© 2024 PyCon Uganda. All rights reserved.</p>
+        <p>© {{ proposal.event_year.year }} PyCon Africa. All rights reserved.</p>
         <p>Contact us: <a href="mailto:program@pycon.ug">program@pycon.ug</a></p>
     </div>
 </body>

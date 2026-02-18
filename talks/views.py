@@ -419,9 +419,9 @@ def send_speaker_invitation(request, year, pk):
         invitation, created = SpeakerInvitation.objects.get_or_create(talk=proposal, invitee=user)
 
         if created:
-            email_body = f"Dear Speaker,\n\nYou have been invited by {sender_name} to join a session titled '{proposal.title}' during  PyCon Uganda {event_year.year}. \n\nPlease visit our site (https://africa.pycon.org/) to respond to this invitation.\n\nBest,\nPyCon Uganda's Team"
+            email_body = f"Dear Speaker,\n\nYou have been invited by {sender_name} to join a session titled '{proposal.title}' during PyCon Africa 2026.\n\nPlease visit our site (https://africa.pycon.org/) to respond to this invitation.\n\nBest,\nPyCon Africa 2026 Team"
             send_mail(
-                f'Invitation to Speak at PyCon Uganda - {proposal.title}',
+                f'Invitation to Speak at PyCon Africa 2026 - {proposal.title}',
                 email_body,
                 'noreply@pycon.ug',
                 [user_email],
@@ -771,7 +771,7 @@ def respond_to_invitation(request, year, pk):
             html_template = ""
             
             if proposal.user_response == 'A':
-                subject = "Thank You for Accepting to Speak at PyCon Uganda"
+                subject = "Thank You for Accepting to Speak at PyCon Africa 2026"
                 html_template = 'emails/talks/accepted_response.html'
             elif proposal.user_response == 'R':
                 subject = "Thank You for Your Response"
@@ -786,7 +786,7 @@ def respond_to_invitation(request, year, pk):
             email = EmailMultiAlternatives(
                 subject,
                 text_content,
-                'PyCon Uganda Program\'s Team <program@pycon.ug>',
+                'PyCon Africa 2026 Programme Team <program@pycon.ug>',
                 [proposal.user.email]
             )
             email.attach_alternative(html_content, "text/html")

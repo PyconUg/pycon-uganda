@@ -128,7 +128,7 @@ EMAIL_USE_SSL = os.getenv("EMAIL_USE_SSL", _default_ssl).strip().lower() in ("tr
 EMAIL_USE_TLS = os.getenv("EMAIL_USE_TLS", _default_tls).strip().lower() in ("true", "1", "yes")
 DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL", "")
 SERVER_EMAIL = os.getenv("SERVER_EMAIL", "")
-EMAIL_TIMEOUT = 15
+EMAIL_TIMEOUT = 30
 
 if DEBUG:
     INSTALLED_APPS += ["debug_toolbar"]
@@ -269,7 +269,7 @@ CRISPY_TEMPLATE_PACK = "tailwind"
 
 # Registration App account settings
 ACCOUNT_ACTIVATION_DAYS = 7
-REGISTRATION_EMAIL_SUBJECT_PREFIX = "[PyCon Uganda]"
+REGISTRATION_EMAIL_SUBJECT_PREFIX = "[PyCon Africa 2026]"
 SEND_ACTIVATION_EMAIL = True
 REGISTRATION_AUTO_LOGIN = False
 
