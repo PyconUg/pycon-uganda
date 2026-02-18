@@ -20,7 +20,7 @@ class ProposalForm(forms.ModelForm):
         
         if user and not user.is_staff:
             self.fields['talk_type'].choices = [
-                ('Lightning Talk', "Lightning Talk - 15 mins"),
+                ('Lightning Talk', "Lightning Talk - 5 mins"),
                 ('Short Talk', "Short Talk - 30 mins"),
                 ('Long Talk', "Long Talk - 45 mins"),
                 ('Tutorial', "Tutorial - 2 hours"),
