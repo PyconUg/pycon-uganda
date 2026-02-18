@@ -50,7 +50,7 @@ try:
     # Update Site
     site = Site.objects.get(id=1)
     site.domain = "ug.pycon.org"
-    site.name = "PyCon Uganda"
+    site.name = "PyCon Africa"
     site.save()
     print("Site updated successfully.")
 
