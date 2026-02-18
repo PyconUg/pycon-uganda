@@ -118,6 +118,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
+
 EMAIL_HOST = os.getenv("EMAIL_HOST") or os.getenv("EMAIL_SMTP_SERVER") or ""
 EMAIL_PORT = int(os.getenv("EMAIL_PORT", "465"))
 EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER", "")
@@ -128,18 +129,15 @@ EMAIL_USE_SSL = os.getenv("EMAIL_USE_SSL", _default_ssl).strip().lower() in ("tr
 EMAIL_USE_TLS = os.getenv("EMAIL_USE_TLS", _default_tls).strip().lower() in ("true", "1", "yes")
 DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL", "")
 SERVER_EMAIL = os.getenv("SERVER_EMAIL", "")
-EMAIL_TIMEOUT = 15
+EMAIL_TIMEOUT = 30
 
 if DEBUG:
     INSTALLED_APPS += ["debug_toolbar"]
     MIDDLEWARE.insert(0, "debug_toolbar.middleware.DebugToolbarMiddleware")
-    INTERNAL_IPS = [
-    "127.0.0.1",
-    ]
+    INTERNAL_IPS = ["127.0.0.1"]
     _use_smtp = os.getenv("USE_SMTP_EMAIL", "").strip().lower() in ("true", "1", "yes")
     if not _use_smtp:
         EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-
     else:
         EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 else:
@@ -269,7 +267,7 @@ CRISPY_TEMPLATE_PACK = "tailwind"
 
 # Registration App account settings
 ACCOUNT_ACTIVATION_DAYS = 7
-REGISTRATION_EMAIL_SUBJECT_PREFIX = "[PyCon Uganda]"
+REGISTRATION_EMAIL_SUBJECT_PREFIX = "[PyCon Africa 2026]"
 SEND_ACTIVATION_EMAIL = True
 REGISTRATION_AUTO_LOGIN = False
 
