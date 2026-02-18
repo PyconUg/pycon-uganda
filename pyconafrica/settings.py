@@ -118,7 +118,6 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-
 EMAIL_HOST = os.getenv("EMAIL_HOST") or os.getenv("EMAIL_SMTP_SERVER") or ""
 EMAIL_PORT = int(os.getenv("EMAIL_PORT", "465"))
 EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER", "")
@@ -134,10 +133,13 @@ EMAIL_TIMEOUT = 30
 if DEBUG:
     INSTALLED_APPS += ["debug_toolbar"]
     MIDDLEWARE.insert(0, "debug_toolbar.middleware.DebugToolbarMiddleware")
-    INTERNAL_IPS = ["127.0.0.1"]
+    INTERNAL_IPS = [
+    "127.0.0.1",
+    ]
     _use_smtp = os.getenv("USE_SMTP_EMAIL", "").strip().lower() in ("true", "1", "yes")
     if not _use_smtp:
         EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
     else:
         EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 else:
