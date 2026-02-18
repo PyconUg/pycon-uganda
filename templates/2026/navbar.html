@@ -46,9 +46,6 @@
         </div>
       </div>
 
-      <!-- Past Events -->
-      <a class="nav-item" href="/2026/past-events/">PAST EVENTS</a>
-
        <!-- Regions -->
       <div class="nav-dropdown-wrapper" x-data="{open:false}">
         <button class="nav-item" @click="open=!open">
@@ -136,6 +133,9 @@
         </div>
       </div>
 
+      <!-- Past Events -->
+      <a class="nav-item" href="/2026/past-events/">PAST EVENTS</a>
+
       <!-- User Authentication -->
       {% if user.is_authenticated %}
       <div class="nav-dropdown-wrapper" x-data="{open:false}">
@@ -181,10 +181,6 @@
         <!-- Blog -->
         <a class="nav-item" href="https://pyconafrica.blogspot.com/" target="_blank" rel="noopener noreferrer">BLOG</a>
 
-        <!-- Past Events -->
-        <span class="nav-item">PAST EVENTS</span>
-        <a class="nav-item nav-item-indent" href="/2026/past-events/">Past Events</a>
-
         <!-- Venue -->
         <span class="nav-item">VENUE</span>
         <a class="nav-item nav-item-indent" href="/2026/travel/">Travel Guide</a>
@@ -214,6 +210,9 @@
         <a class="nav-item nav-item-indent" href="/2026/sponsor-us/">Sponsor Us</a>
         {% comment %}<a class="nav-item nav-item-indent" href="/2026/our-sponsors/">Our Sponsors</a>{% endcomment %}
         <a class="nav-item nav-item-indent" href="https://drive.google.com/file/d/1kFroSEsjlMDYiGPmuYnvSxAaTe-HfIRp/view?usp=drive_link" target="_blank">PyCon Africa 2026 Sponsorship Prospectus</a>
+
+        <!-- Past Events -->
+        <a class="nav-item" href="/2026/past-events/">PAST EVENTS</a>
 
         <!-- User Authentication -->
         {% if user.is_authenticated %}
