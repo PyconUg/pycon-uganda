@@ -1093,11 +1093,15 @@ header[class*="bg-black"] {
   }
 }
 
+.hero-logo {
+  padding: 2rem 0 !important;
+}
+
 .hero-text-container {
   max-width: 800px !important;
   width: 100% !important;
   margin: 0 auto 0 !important;
-  padding: 0 1rem !important;
+  padding: 2rem 1rem !important;
 }
 
 .hero-title {
@@ -1114,6 +1118,7 @@ header[class*="bg-black"] {
   font-weight: 700 !important;
   color: #fff !important;
   line-height: 1.2 !important;
+  margin-top: 0.75rem !important;
   margin-bottom: 1rem !important;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
 }
@@ -1122,6 +1127,7 @@ header[class*="bg-black"] {
   font-size: 1.25rem !important;
   color: #fff !important;
   line-height: 1.6 !important;
+  margin-bottom: 0.75rem !important;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5) !important;
 }
 
