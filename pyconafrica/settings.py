@@ -19,7 +19,8 @@ from pathlib import Path
 from sre_constants import IN
 from dotenv import load_dotenv
 
-load_dotenv()
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+load_dotenv(os.path.join(BASE_DIR, ".env"))
 
 SILENCED_SYSTEM_CHECKS = ['django_recaptcha.recaptcha_test_key_error']
 
@@ -27,11 +28,9 @@ DEBUG = os.getenv("DEBUG_STATE", "False").strip().lower() in ("true", "1", "yes"
 
 SECRET_KEY = os.getenv("SECRET_KEY")
 
+
 ALLOWED_HOSTS = ["*"]
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
-
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SILENCED_SYSTEM_CHECKS = ['django_recaptcha.recaptcha_test_key_error']
 
@@ -119,20 +118,32 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
+EMAIL_HOST = os.getenv("EMAIL_HOST") or os.getenv("EMAIL_SMTP_SERVER") or ""
+EMAIL_PORT = int(os.getenv("EMAIL_PORT", "465"))
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER", "")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD", "")
+_default_ssl = str(EMAIL_PORT == 465).lower()
+_default_tls = str(EMAIL_PORT == 587).lower()
+EMAIL_USE_SSL = os.getenv("EMAIL_USE_SSL", _default_ssl).strip().lower() in ("true", "1", "yes")
+EMAIL_USE_TLS = os.getenv("EMAIL_USE_TLS", _default_tls).strip().lower() in ("true", "1", "yes")
+DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL", "")
+SERVER_EMAIL = os.getenv("SERVER_EMAIL", "")
+EMAIL_TIMEOUT = 30
+
 if DEBUG:
     INSTALLED_APPS += ["debug_toolbar"]
     MIDDLEWARE.insert(0, "debug_toolbar.middleware.DebugToolbarMiddleware")
     INTERNAL_IPS = [
     "127.0.0.1",
     ]
-    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+    _use_smtp = os.getenv("USE_SMTP_EMAIL", "").strip().lower() in ("true", "1", "yes")
+    if not _use_smtp:
+        EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+    else:
+        EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 else:
     EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-    EMAIL_HOST = os.getenv("EMAIL_SMTP_SERVER")
-    EMAIL_PORT = 587
-    EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
-    EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
-    EMAIL_USE_TLS = True
 
 ROOT_URLCONF = "pyconafrica.urls"
 
@@ -258,7 +269,7 @@ CRISPY_TEMPLATE_PACK = "tailwind"
 
 # Registration App account settings
 ACCOUNT_ACTIVATION_DAYS = 7
-REGISTRATION_EMAIL_SUBJECT_PREFIX = "[PyCon Uganda]"
+REGISTRATION_EMAIL_SUBJECT_PREFIX = "[PyCon Africa 2026]"
 SEND_ACTIVATION_EMAIL = True
 REGISTRATION_AUTO_LOGIN = False
 
@@ -369,3 +380,4 @@ CLOUDINARY_STORAGE = {
     "API_KEY": os.getenv("CLOUDINARY_API_KEY"),
     "API_SECRET": os.getenv("CLOUDINARY_API_SECRET"),
 }
+

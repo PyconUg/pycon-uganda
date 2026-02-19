@@ -10,6 +10,11 @@ urlpatterns = [
     path('about/pycon-africa-2026/', view=views.about_pycon_africa_2026, name='about_pycon_africa_2026'),
     path('about/privacy-policy/', view=views.privacy_policy, name='privacy_policy'),
     path('about/contact-us/', view=views.contact_us, name='contact_us'),
+    path('talks/submit/', view=views.submit, name='submit'),
+    path('talks/how_to_apply/', view=views.how_to_apply, name='how_to_apply'),
+    path('talks/guide/', view=views.guide, name='guide'),
+    path('talks/recording-release/', view=views.recording_release, name='recording_release'),
+    path('talks/mentorship/', view=views.mentorship, name='mentorship'),
     path('region/kenya-region/', view=views.about_kenya_region, name='about_kenya_region'),
     path('region/rwanda-region/', view=views.about_rwanda_region, name='about_rwanda_region'),
     path('region/tanzania-region/', view=views.about_tanzania_region, name='about_tanzania_region'),
@@ -37,6 +42,7 @@ urlpatterns = [
     path('community/pyladies-wksp/', view=views.pyladies_wksp, name='pyladies_wksp'),   
     # path('community/ngombor/', view=views.ngombor, name='ngombor')
     path('past-events/', view=views.past_events, name='past_events'),
+
 ]
 
 

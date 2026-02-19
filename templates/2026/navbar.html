@@ -5,7 +5,7 @@
     <!-- Logo -->
     <div>
       <a href="/">
-        <img src="{% static '2026/img/Pycon_Africa_2026_OFFICIAL_YELLOW.png' %}" class="navbar-logo-img" alt="PyCon Africa 2026" style="max-width: 220px;">
+        <img src="{% static '2026/img/logo final.png' %}" class="navbar-logo-img" alt="PyCon Africa 2026" style="max-width: 80px;">
       </a>
     </div>
 
@@ -27,8 +27,24 @@
         </div>
       </div>
 
-      <!-- Past Events -->
-      <a class="nav-item" href="/2026/past-events/">PAST EVENTS</a>
+      <!-- Blog -->
+      <a class="nav-item" href="https://pyconafrica.blogspot.com/" target="_blank" rel="noopener noreferrer">BLOG</a>
+
+        <!-- Talks -->
+      <div class="nav-dropdown-wrapper" x-data="{open:false}">
+        <button class="nav-item" @click="open=!open">
+          TALKS
+          <i class="fa fa-chevron-up" aria-hidden="true" x-show="open" style="display: none;"></i>
+          <i class="fa fa-chevron-down" aria-hidden="true" x-show="!open" style="display: none;"></i>
+        </button>
+        <div x-show="open" @click.outside="open = false" class="nav-dropdown-menu" style="display: none;">
+          <a class="nav-item" href="/2026/talks/submit/">SUBMIT YOUR TALK</a>
+          <a class="nav-item" href="/2026/talks/how_to_apply/">HOW TO SUBMIT A TALK OR WORKSHOP</a>
+          <a class="nav-item" href="/2026/talks/guide/">SPEAKER GUIDELINES</a>
+          <a class="nav-item" href="/2026/talks/recording-release/">RECORDING RELEASE</a>
+          {% comment %}<a class="nav-item" href="/2026/talks/mentorship/">SPEAKER MENTORSHIP</a>{% endcomment %}
+        </div>
+      </div>
 
        <!-- Regions -->
       <div class="nav-dropdown-wrapper" x-data="{open:false}">
@@ -117,6 +133,9 @@
         </div>
       </div>
 
+      <!-- Past Events -->
+      <a class="nav-item" href="/2026/past-events/">PAST EVENTS</a>
+
       <!-- User Authentication -->
       {% if user.is_authenticated %}
       <div class="nav-dropdown-wrapper" x-data="{open:false}">
@@ -159,9 +178,8 @@
         <a class="nav-item nav-item-indent" href="/2026/fin-aid/">Financial Assistance</a>
         <a class="nav-item nav-item-indent" href="/2026/privacy-policy/">Privacy Policy</a>
 
-        <!-- Past Events -->
-        <span class="nav-item">PAST EVENTS</span>
-        <a class="nav-item nav-item-indent" href="/2026/past-events/">Past Events</a>
+        <!-- Blog -->
+        <a class="nav-item" href="https://pyconafrica.blogspot.com/" target="_blank" rel="noopener noreferrer">BLOG</a>
 
         <!-- Venue -->
         <span class="nav-item">VENUE</span>
@@ -170,9 +188,11 @@
 
         <!-- Talks -->
         <span class="nav-item">TALKS</span>
-        <a class="nav-item nav-item-indent" href="/2026/schedule/">Schedule</a>
-        <a class="nav-item nav-item-indent" href="/2026/speakers_list/">Speakers</a>
-        <a class="nav-item nav-item-indent" href="/2026/talks/submit_talk/">Submit a Proposal</a>
+        <a class="nav-item nav-item-indent" href="/2026/talks/submit/">Submit Your Talk</a>
+        <a class="nav-item nav-item-indent" href="/2026/talks/how_to_apply/">How to submit a talk or workshop</a>
+        <a class="nav-item nav-item-indent" href="/2026/talks/guide/">Speaker Guidelines</a>
+        <a class="nav-item nav-item-indent" href="/2026/talks/recording-release/">Recording Release</a>
+        {% comment %}<a class="nav-item nav-item-indent" href="/2026/talks/mentorship/">Speaker Mentorship</a>{% endcomment %}
 
         <!-- Uganda -->
         <span class="nav-item">UGANDA</span>
@@ -190,6 +210,9 @@
         <a class="nav-item nav-item-indent" href="/2026/sponsor-us/">Sponsor Us</a>
         {% comment %}<a class="nav-item nav-item-indent" href="/2026/our-sponsors/">Our Sponsors</a>{% endcomment %}
         <a class="nav-item nav-item-indent" href="https://drive.google.com/file/d/1kFroSEsjlMDYiGPmuYnvSxAaTe-HfIRp/view?usp=drive_link" target="_blank">PyCon Africa 2026 Sponsorship Prospectus</a>
+
+        <!-- Past Events -->
+        <a class="nav-item" href="/2026/past-events/">PAST EVENTS</a>
 
         <!-- User Authentication -->
         {% if user.is_authenticated %}
