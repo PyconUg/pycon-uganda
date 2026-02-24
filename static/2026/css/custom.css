@@ -1177,9 +1177,39 @@ header[class*="bg-black"] {
 }
 
 /* Hero Action Buttons - Mobile Responsive */
+.hero-action-buttons {
+  flex-shrink: 0;
+}
+
+.hero-action-btn {
+  text-decoration: none !important;
+}
+
 @media (max-width: 768px) {
   .hero-action-buttons {
-    top: 755px !important;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px !important;
+    margin-top: 2rem !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .hero-action-btn {
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 48px !important;
+    padding: 12px 20px !important;
+    font-size: 16px !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .hero-action-btn {
+    min-width: 180px;
+    height: 50px !important;
+    padding: 20px 32px !important;
+    font-size: 18px !important;
   }
 }
 
