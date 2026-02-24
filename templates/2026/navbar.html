@@ -38,10 +38,15 @@
           <i class="fa fa-chevron-down" aria-hidden="true" x-show="!open" style="display: none;"></i>
         </button>
         <div x-show="open" @click.outside="open = false" class="nav-dropdown-menu" style="display: none;">
-          <a class="nav-item" href="/2026/talks/submit/">Proposing a Talk</a>
-          <a class="nav-item" href="/2026/talks/how_to_apply/">HOW TO SUBMIT A TALK OR WORKSHOP</a>
-          <a class="nav-item" href="/2026/talks/guide/">SPEAKER GUIDELINES</a>
-          <a class="nav-item" href="/2026/talks/recording-release/">RECORDING RELEASE</a>
+          {% comment %}<a class="nav-item" href="/2026/speakers_list/">Our Speakers</a>{% endcomment %}
+          <a class="nav-item" href="/2026/talks/proposals/">Proposals</a>
+          <a class="nav-item" href="/2026/talks/proposing_a_talk/">Proposing a Talk</a>
+          {% if user.is_authenticated %}
+            <a class="nav-item" href="{% url 'talks:submit_talk' year=2026 %}">Submit a Proposal</a>
+          {% else %}
+            <a class="nav-item" href="{% url 'auth_login' %}?next={% url 'talks:submit_talk' year=2026 %}">Submit a Proposal</a>
+          {% endif %}
+          <a class="nav-item" href="/2026/talks/recording-release/">Recording Release</a>
           {% comment %}<a class="nav-item" href="/2026/talks/mentorship/">SPEAKER MENTORSHIP</a>{% endcomment %}
         </div>
       </div>
@@ -133,8 +138,19 @@
         </div>
       </div>
 
-      <!-- Past Events -->
-      <a class="nav-item" href="/2026/past-events/">PAST EVENTS</a>
+      <div class="nav-dropdown-wrapper" x-data="{open:false}">
+        <button class="nav-item" @click="open=!open">
+          PAST
+          <i class="fa fa-chevron-up" aria-hidden="true" x-show="open" style="display: none;"></i>
+          <i class="fa fa-chevron-down" aria-hidden="true" x-show="!open" style="display: none;"></i>
+        </button>
+        <div x-show="open" @click.outside="open = false" class="nav-dropdown-menu" style="display: none;">
+          <a class="nav-item" href="https://za.pycon.org/" target="_blank" rel="noopener noreferrer">2025</a>
+          <a class="nav-item" href="https://africa.pycon.org/2024/" target="_blank" rel="noopener noreferrer">2024</a>
+          <a class="nav-item" href="https://africa.pycon.org/2020/" target="_blank" rel="noopener noreferrer">2020</a>
+          <a class="nav-item" href="https://africa.pycon.org/2019/" target="_blank" rel="noopener noreferrer">2019</a>
+        </div>
+      </div>
 
       <!-- User Authentication -->
       {% if user.is_authenticated %}
@@ -186,11 +202,16 @@
         <a class="nav-item nav-item-indent" href="/2026/travel/">Travel Guide</a>
         <a class="nav-item nav-item-indent" href="/2026/coc/">Code of Conduct</a>
 
-        <!-- Talks -->
-        <span class="nav-item">TALKS</span>
-        <a class="nav-item nav-item-indent" href="/2026/talks/submit/">Submit Your Talk</a>
-        <a class="nav-item nav-item-indent" href="/2026/talks/how_to_apply/">How to submit a talk or workshop</a>
-        <a class="nav-item nav-item-indent" href="/2026/talks/guide/">Speaker Guidelines</a>
+        <!-- Speak at PyCon -->
+        <span class="nav-item">SPEAK AT PYCON</span>
+        {% comment %}<a class="nav-item nav-item-indent" href="/2026/speakers_list/">Our Speakers</a>{% endcomment %}
+        <a class="nav-item nav-item-indent" href="/2026/talks/proposals/">Proposals</a>
+        <a class="nav-item nav-item-indent" href="/2026/talks/proposing_a_talk/">Proposing a Talk</a>
+        {% if user.is_authenticated %}
+          <a class="nav-item nav-item-indent" href="{% url 'talks:submit_talk' year=2026 %}">Submit a Proposal</a>
+        {% else %}
+          <a class="nav-item nav-item-indent" href="{% url 'auth_login' %}?next={% url 'talks:submit_talk' year=2026 %}">Submit a Proposal</a>
+        {% endif %}
         <a class="nav-item nav-item-indent" href="/2026/talks/recording-release/">Recording Release</a>
         {% comment %}<a class="nav-item nav-item-indent" href="/2026/talks/mentorship/">Speaker Mentorship</a>{% endcomment %}
 
@@ -211,8 +232,12 @@
         {% comment %}<a class="nav-item nav-item-indent" href="/2026/our-sponsors/">Our Sponsors</a>{% endcomment %}
         <a class="nav-item nav-item-indent" href="https://drive.google.com/file/d/1kFroSEsjlMDYiGPmuYnvSxAaTe-HfIRp/view?usp=drive_link" target="_blank">PyCon Africa 2026 Sponsorship Prospectus</a>
 
-        <!-- Past Events -->
-        <a class="nav-item" href="/2026/past-events/">PAST EVENTS</a>
+        <!-- Past -->
+        <span class="nav-item">PAST</span>
+        <a class="nav-item nav-item-indent" href="https://za.pycon.org/" target="_blank" rel="noopener noreferrer">2025</a>
+        <a class="nav-item nav-item-indent" href="https://africa.pycon.org/2024/" target="_blank" rel="noopener noreferrer">2024</a>
+        <a class="nav-item nav-item-indent" href="https://africa.pycon.org/2020/" target="_blank" rel="noopener noreferrer">2020</a>
+        <a class="nav-item nav-item-indent" href="https://africa.pycon.org/2019/report/" target="_blank" rel="noopener noreferrer">2019 report</a>
 
         <!-- User Authentication -->
         {% if user.is_authenticated %}
