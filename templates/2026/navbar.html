@@ -184,69 +184,120 @@
       </button>
 
       <div x-show="open" style="display:none;" class="nav-mobile-menu" @click.outside="open = false">
-        <!-- About -->
-        <span class="nav-item">ABOUT</span>
-        <a class="nav-item nav-item-indent" href="/2026/about/pycon-africa-2026/">About Us</a>
-        <a class="nav-item nav-item-indent" href="/2026/coc/">Code of Conduct</a>
-        <a class="nav-item nav-item-indent" href="/2026/about/privacy-policy/">Privacy Policy</a>
-        <a class="nav-item nav-item-indent" href="/2026/about/contact-us/">Contact Us</a>
+        <!-- About (dropdown) -->
+        <div x-data="{ openSection: false }">
+          <button class="nav-item w-full flex items-center justify-between" @click="openSection = !openSection" type="button">
+            ABOUT
+            <i class="fa fa-chevron-up" aria-hidden="true" x-show="openSection" style="display:none;"></i>
+            <i class="fa fa-chevron-down" aria-hidden="true" x-show="!openSection" style="display:none;"></i>
+          </button>
+          <div x-show="openSection" style="display:none;" class="mt-2 flex flex-col gap-2">
+            <a class="nav-item nav-item-indent" href="/2026/about/pycon-africa-2026/">About Us</a>
+            <a class="nav-item nav-item-indent" href="/2026/coc/">Code of Conduct</a>
+            <a class="nav-item nav-item-indent" href="/2026/about/privacy-policy/">Privacy Policy</a>
+            <a class="nav-item nav-item-indent" href="/2026/about/contact-us/">Contact Us</a>
+          </div>
+        </div>
 
         <!-- Blog -->
         <a class="nav-item" href="https://pyconafrica.blogspot.com/" target="_blank" rel="noopener noreferrer">BLOG</a>
 
-        <!-- Speak at PyCon -->
-        <span class="nav-item">SPEAK AT PYCON</span>
-        {% comment %}<a class="nav-item nav-item-indent" href="/2026/speakers_list/">Our Speakers</a>{% endcomment %}
-        <a class="nav-item nav-item-indent" href="/2026/talks/proposals/">Proposals</a>
-        <a class="nav-item nav-item-indent" href="/2026/talks/proposing_a_talk/">Proposing a Talk</a>
+        <!-- Speak at PyCon (dropdown) -->
+        <div x-data="{ openSection: false }">
+          <button class="nav-item w-full flex items-center justify-between" @click="openSection = !openSection" type="button">
+            SPEAK AT PYCON
+            <i class="fa fa-chevron-up" aria-hidden="true" x-show="openSection" style="display:none;"></i>
+            <i class="fa fa-chevron-down" aria-hidden="true" x-show="!openSection" style="display:none;"></i>
+          </button>
+          <div x-show="openSection" style="display:none;" class="mt-2 flex flex-col gap-2">
+            {% comment %}<a class="nav-item nav-item-indent" href="/2026/speakers_list/">Our Speakers</a>{% endcomment %}
+            <a class="nav-item nav-item-indent" href="/2026/talks/proposals/">Proposals</a>
+            <a class="nav-item nav-item-indent" href="/2026/talks/proposing_a_talk/">Proposing a Talk</a>
+            {% if user.is_authenticated %}
+              <a class="nav-item nav-item-indent" href="{% url 'talks:submit_talk' year=2026 %}">Submit a Proposal</a>
+            {% else %}
+              <a class="nav-item nav-item-indent" href="{% url 'auth_login' %}?next={% url 'talks:submit_talk' year=2026 %}">Submit a Proposal</a>
+            {% endif %}
+            <a class="nav-item nav-item-indent" href="/2026/talks/recording-release/">Recording Release</a>
+          </div>
+        </div>
+
+        <!-- Regions (dropdown) -->
+        <div x-data="{ openSection: false }">
+          <button class="nav-item w-full flex items-center justify-between" @click="openSection = !openSection" type="button">
+            REGIONS
+            <i class="fa fa-chevron-up" aria-hidden="true" x-show="openSection" style="display:none;"></i>
+            <i class="fa fa-chevron-down" aria-hidden="true" x-show="!openSection" style="display:none;"></i>
+          </button>
+          <div x-show="openSection" style="display:none;" class="mt-2 flex flex-col gap-2">
+            <a class="nav-item nav-item-indent" href="/2026/region/kenya-region/">PYCON AFRICA 2026 – KENYA REGION</a>
+            <a class="nav-item nav-item-indent" href="/2026/region/rwanda-region/">PYCON AFRICA 2026 – RWANDA REGION</a>
+            <a class="nav-item nav-item-indent" href="/2026/region/tanzania-region/">PYCON AFRICA 2026 – TANZANIA REGION</a>
+            <a class="nav-item nav-item-indent" href="/2026/region/south-sudan-region/">PYCON AFRICA 2026 – SOUTH SUDAN REGION</a>
+          </div>
+        </div>
+
+        <!-- Uganda (dropdown) -->
+        <div x-data="{ openSection: false }">
+          <button class="nav-item w-full flex items-center justify-between" @click="openSection = !openSection" type="button">
+            UGANDA
+            <i class="fa fa-chevron-up" aria-hidden="true" x-show="openSection" style="display:none;"></i>
+            <i class="fa fa-chevron-down" aria-hidden="true" x-show="!openSection" style="display:none;"></i>
+          </button>
+          <div x-show="openSection" style="display:none;" class="mt-2 flex flex-col gap-2">
+            <a class="nav-item nav-item-indent" href="/2026/visa/apply/">APPLYING FOR A VISA</a>
+            <a class="nav-item nav-item-indent" href="/2026/visa/letter/">GET A VISA LETTER</a>
+            <a class="nav-item nav-item-indent" href="/2026/visa/bus/">ARRIVING BY BUS TO KAMPALA</a>
+            <a class="nav-item nav-item-indent" href="/2026/visa/flying/">FLYING TO UGANDA</a>
+          </div>
+        </div>
+
+        <!-- Sponsor (dropdown) -->
+        <div x-data="{ openSection: false }">
+          <button class="nav-item w-full flex items-center justify-between" @click="openSection = !openSection" type="button">
+            SPONSOR
+            <i class="fa fa-chevron-up" aria-hidden="true" x-show="openSection" style="display:none;"></i>
+            <i class="fa fa-chevron-down" aria-hidden="true" x-show="!openSection" style="display:none;"></i>
+          </button>
+          <div x-show="openSection" style="display:none;" class="mt-2 flex flex-col gap-2">
+            <a class="nav-item nav-item-indent" href="/2026/sponsor-us/">Sponsor Us</a>
+          </div>
+        </div>
+
+        <!-- Past (dropdown) -->
+        <div x-data="{ openSection: false }">
+          <button class="nav-item w-full flex items-center justify-between" @click="openSection = !openSection" type="button">
+            PAST
+            <i class="fa fa-chevron-up" aria-hidden="true" x-show="openSection" style="display:none;"></i>
+            <i class="fa fa-chevron-down" aria-hidden="true" x-show="!openSection" style="display:none;"></i>
+          </button>
+          <div x-show="openSection" style="display:none;" class="mt-2 flex flex-col gap-2">
+            <a class="nav-item nav-item-indent" href="https://za.pycon.org/" target="_blank" rel="noopener noreferrer">2025</a>
+            <a class="nav-item nav-item-indent" href="https://africa.pycon.org/2024/" target="_blank" rel="noopener noreferrer">2024</a>
+            <a class="nav-item nav-item-indent" href="https://africa.pycon.org/2020/" target="_blank" rel="noopener noreferrer">2020</a>
+            <a class="nav-item nav-item-indent" href="https://africa.pycon.org/2019/report/" target="_blank" rel="noopener noreferrer">2019 report</a>
+          </div>
+        </div>
+
+        <!-- Account -->
         {% if user.is_authenticated %}
-          <a class="nav-item nav-item-indent" href="{% url 'talks:submit_talk' year=2026 %}">Submit a Proposal</a>
-        {% else %}
-          <a class="nav-item nav-item-indent" href="{% url 'auth_login' %}?next={% url 'talks:submit_talk' year=2026 %}">Submit a Proposal</a>
-        {% endif %}
-        <a class="nav-item nav-item-indent" href="/2026/talks/recording-release/">Recording Release</a>
-        {% comment %}<a class="nav-item nav-item-indent" href="/2026/talks/mentorship/">Speaker Mentorship</a>{% endcomment %}
-
-        <!-- Regions -->
-        <span class="nav-item">REGIONS</span>
-        <a class="nav-item nav-item-indent" href="/2026/region/kenya-region/">PYCON AFRICA 2026 – KENYA REGION</a>
-        <a class="nav-item nav-item-indent" href="/2026/region/rwanda-region/">PYCON AFRICA 2026 – RWANDA REGION</a>
-        <a class="nav-item nav-item-indent" href="/2026/region/tanzania-region/">PYCON AFRICA 2026 – TANZANIA REGION</a>
-        <a class="nav-item nav-item-indent" href="/2026/region/south-sudan-region/">PYCON AFRICA 2026 – SOUTH SUDAN REGION</a>
-
-        <!-- Uganda -->
-        <span class="nav-item">UGANDA</span>
-        <a class="nav-item nav-item-indent" href="/2026/visa/apply/">APPLYING FOR A VISA</a>
-        <a class="nav-item nav-item-indent" href="/2026/visa/letter/">GET A VISA LETTER</a>
-        <a class="nav-item" href="/2026/visa/bus/">ARRIVING BY BUS TO KAMPALA</a>
-        <a class="nav-item" href="/2026/visa/flying/">FLYING TO UGANDA</a>
-        <!-- <a class="nav-item" href="/2026/travel/">TRAVEL GUIDE</a> -->
-
-        <!-- Sponsor -->
-        <span class="nav-item">SPONSOR</span>
-        <a class="nav-item nav-item-indent" href="/2026/sponsor-us/">Sponsor Us</a>
-        {% comment %}<a class="nav-item nav-item-indent" href="/2026/our-sponsors/">Our Sponsors</a>{% endcomment %}
-
-        <!-- Past -->
-        <span class="nav-item">PAST</span>
-        <a class="nav-item nav-item-indent" href="https://za.pycon.org/" target="_blank" rel="noopener noreferrer">2025</a>
-        <a class="nav-item nav-item-indent" href="https://africa.pycon.org/2024/" target="_blank" rel="noopener noreferrer">2024</a>
-        <a class="nav-item nav-item-indent" href="https://africa.pycon.org/2020/" target="_blank" rel="noopener noreferrer">2020</a>
-        <a class="nav-item nav-item-indent" href="https://africa.pycon.org/2019/report/" target="_blank" rel="noopener noreferrer">2019 report</a>
-
-        <!-- User Authentication -->
-        {% if user.is_authenticated %}
-        <span class="nav-item">
-          <i class='fa-solid fa-user' aria-hidden='true'></i> {{user.username}}
-        </span>
-        <a class="nav-item nav-item-indent" href="{% url 'profiles:profile_home' %}">My Profile</a>
-        {% if request.user.is_superuser %}
-        <a class="nav-item nav-item-indent" href="/organizers/">Admin Dashboard</a>
-        {% endif %}
-        <form method="POST" action="/accounts/logout/" style="display: inline;">
-          {% csrf_token %}
-          <button type="submit" class="nav-item nav-item-indent">Log out</button>
-        </form>
+        <div x-data="{ openSection: false }">
+          <button class="nav-item w-full flex items-center justify-between" @click="openSection = !openSection" type="button">
+            <span><i class="fa-solid fa-user" aria-hidden="true"></i> {{ user.username }}</span>
+            <i class="fa fa-chevron-up" aria-hidden="true" x-show="openSection" style="display:none;"></i>
+            <i class="fa fa-chevron-down" aria-hidden="true" x-show="!openSection" style="display:none;"></i>
+          </button>
+          <div x-show="openSection" style="display:none;" class="mt-2 flex flex-col gap-2">
+            <a class="nav-item nav-item-indent" href="{% url 'profiles:profile_home' %}">My Profile</a>
+            {% if request.user.is_superuser %}
+            <a class="nav-item nav-item-indent" href="/organizers/">Admin Dashboard</a>
+            {% endif %}
+            <form method="POST" action="/accounts/logout/" style="display: inline;">
+              {% csrf_token %}
+              <button type="submit" class="nav-item nav-item-indent">Log out</button>
+            </form>
+          </div>
+        </div>
         {% else %}
         <a class="nav-item" href="/accounts/login/">SIGN UP / LOG IN</a>
         {% endif %}
