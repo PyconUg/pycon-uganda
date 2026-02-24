@@ -49,9 +49,9 @@ def submit(request):
     context = {}
     return render(request, '2026/talks/submit.html', context)
 
-def guide(request):
+def proposing_a_talk(request):
     context = {}
-    return render(request, '2026/talks/guide.html', context)
+    return render(request, '2026/talks/proposing_a_talk.html', context)
 
 def mentorship(request):
     context = {}
@@ -64,6 +64,10 @@ def how_to_apply(request):
 def recording_release(request):
     context = {}
     return render(request, '2026/talks/recording_release.html', context)
+
+def proposals(request):
+    context = {}
+    return render(request, '2026/talks/proposals.html', context)
 
 def contact_us(request):
     context = {}

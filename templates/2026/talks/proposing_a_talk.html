@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% load i18n static %}
-{% block meta_title %}{% trans "Guidelines and advice | PyCon Africa 2026" %}{% endblock %}
+{% block meta_title %}{% trans "Proposing a Talk | PyCon Africa 2026" %}{% endblock %}
 
 {% block content %}
 {% include '2026/navbar.html' %}
 
     <!-- Header -->
     <div class="max-w-7xl mx-auto px-4 pt-12 pb-8">
-      <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 text-center">Guidelines and advice</h1>
+      <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 text-center">Proposing a Talk</h1>
     </div>
 
     <!-- Body -->
@@ -17,11 +17,17 @@
           We are glad you are interested in speaking at PyCon Africa!
         </p>
         <p class="text-lg leading-relaxed mb-6">
-          This document is a guide to help you submit the best possible proposal for PyCon Africa 2026 and offers tips to make your proposal more likely to be accepted. Please note that we receive many more proposals for talks, tutorials, and posters than we can accept. However, following the recommendations provided here can increase your chances of acceptance.
+          This document is a guide to help you submit the best possible proposal for PyCon Africa 2024 and offers tips to make your proposal more likely to be accepted. Please note that we receive many more proposals for talks, tutorials, and posters than we can accept. However, following the recommendations provided here can increase your chances of acceptance.
         </p>
-        <p class="text-lg leading-relaxed mb-8 rounded-lg bg-amber-50 border border-amber-200 px-4 py-3">
-          <strong>Note:</strong> All talk proposals must be written in <strong>English</strong>. This ensures reviewers and attendees from across the continent (and beyond) can fairly evaluate and enjoy your talk.
-        </p>
+
+        <div class="rounded-lg bg-amber-50 border border-amber-200 px-4 py-4 mb-10">
+          <h2 class="text-xl font-bold text-gray-900 mb-3">Important Dates</h2>
+          <ul class="list-disc list-inside space-y-2 text-lg leading-relaxed">
+            <li><strong>CFP Talks/Workshops Opened:</strong> 9th February 2026</li>
+            <li><strong>CFP Talks/Workshops Closed:</strong> 16th April 2026</li>
+            <li><strong>Accepted Talks Announced:</strong> 10th May 2026</li>
+          </ul>
+        </div>
 
         <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Topics and Advice</h2>
         <p class="text-lg leading-relaxed mb-4">
@@ -44,7 +50,7 @@
 
         <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Good Ideas</h2>
         <ul class="list-disc list-inside space-y-3 mb-8 text-lg leading-relaxed">
-          <li>Submit your proposal early. The program committee will endeavour to provide feedback to talks that come into our system, and we will work with you to improve your proposal if we have issues with it, but this is only feasible if your proposal is submitted well before the deadline.</li>
+          <li>Submit your proposal early. The program committee will provide feedback to talks that come into our system, and we will work with you to improve your proposal if we have issues with it, but this is only feasible if your proposal is submitted well before the deadline.</li>
           <li>Be sure to answer some basic questions:
             <ul class="list-disc list-inside ml-6 mt-2 space-y-1">
               <li>Who is the intended audience for your talk? (Be specific; "Python programmers" is not a good answer.)</li>
@@ -54,7 +60,7 @@
           <li>Your outline should be an enumeration of what you intend to say, along with time estimates.</li>
           <li>It is not necessary to have completely written your talk already, but you should have an idea of what the points you intend to make are and roughly how long you will spend on each one.</li>
           <li>If you are requesting a 45-minute slot, remember that these are in very limited supply. Be sure to explain how you will change your talk if we can only offer you a 30-minute slot.</li>
-          <li>Your time allocated slot includes 5–10 minute discussions/Q&A.</li>
+          <li>Your time allocated slot includes 5-10 minute discussions/Q&A.</li>
           <li>Ensure that your talk will be relevant to a non-trivial set of people. If your talk is on a particular Python package or piece of software, it should be something that a significant number of people use or want to use. If your talk is about a package that you are writing, ensure that it's gained some acceptance before submitting a talk. If a tool you're excited about is not used widely, consider shifting the focus of your talk to a related best practice or theme which will have broader applicability and a larger audience.</li>
           <li>Include links to source code, articles, blog posts, videos, or other resources that add context to your proposal.</li>
           <li>If you've given a talk, tutorial, or other presentation before, especially at an earlier PyCon or another conference, include that information as well as a link to slides or a video if they're available.</li>
@@ -68,6 +74,19 @@
           <li>Do not assume that everyone on the Program Committee will know who you are simply because you have presented at PyCon in the past.</li>
           <li>Everyone should submit a detailed proposal. During the first round of review, we won't even see your name on the proposal!</li>
         </ul>
+
+        <div class="mt-10">
+          {% if user.is_authenticated %}
+            <a href="{% url 'talks:submit_talk' year=2026 %}" class="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white bg-pycon-teal hover:bg-teal-700 rounded-lg transition-colors">
+              Submit a talk
+            </a>
+          {% else %}
+            <a href="{% url 'auth_login' %}?next={% url 'talks:submit_talk' year=2026 %}" class="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white bg-pycon-teal hover:bg-teal-700 rounded-lg transition-colors">
+              Log in to submit a talk
+            </a>
+          {% endif %}
+        </div>
       </div>
     </div>
 {% endblock %}
+
