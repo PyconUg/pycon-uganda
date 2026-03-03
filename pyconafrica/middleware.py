@@ -6,20 +6,27 @@ from django.http import HttpResponsePermanentRedirect
 
 class RedirectToAfricaMiddleware:
     """
-    Middleware that redirects all requests to africa.pycon.org
+    Middleware that redirects all requests from ug.pycon.org to africa.pycon.org
     """
     def __init__(self, get_response):
         self.get_response = get_response
 
     def __call__(self, request):
-        # Redirect all requests to africa.pycon.org
-        redirect_url = f"https://africa.pycon.org{request.path}"
-        if request.GET:
-            # Preserve query parameters if any
-            query_string = request.GET.urlencode()
-            redirect_url = f"{redirect_url}?{query_string}"
+        # Check if request is coming from ug.pycon.org
+        host = request.get_host()
         
-        return HttpResponsePermanentRedirect(redirect_url)
+        # Only redirect if host is ug.pycon.org (with or without www)
+        if host in ['ug.pycon.org', 'www.ug.pycon.org']:
+            redirect_url = f"https://africa.pycon.org{request.path}"
+            if request.GET:
+                # Preserve query parameters if any
+                query_string = request.GET.urlencode()
+                redirect_url = f"{redirect_url}?{query_string}"
+            
+            return HttpResponsePermanentRedirect(redirect_url)
+        
+        # If no redirect needed, continue with normal request processing
+        return self.get_response(request)
 
 
 class RedirectFromAfricaMiddleware:
