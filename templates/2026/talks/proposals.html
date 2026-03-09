@@ -1,0 +1,159 @@
+{% extends "base.html" %}
+{% load i18n static %}
+{% block meta_title %}{% trans "Proposals | PyCon Africa 2026" %}{% endblock %}
+
+{% block content %}
+{% include '2026/navbar.html' %}
+
+<!-- Header -->
+<div class="max-w-7xl mx-auto px-4 pt-12 pb-8">
+  <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 text-center">Speak at PyCon Africa</h1>
+</div>
+
+<!-- Body -->
+<div class="max-w-7xl mx-auto px-4 pb-16">
+  <div class="max-w-4xl mx-auto text-gray-900">
+    <p class="text-lg leading-relaxed mb-6">
+      Thank you for wanting to Speak at PyCon Africa!
+    </p>
+    <p class="text-lg leading-relaxed mb-6">
+      We are inviting speakers of all experience levels and backgrounds to contribute to our conference program at PyCon Africa 2026!
+      Whether you use Python professionally, as a hobby, or are simply enthusiastic about Python, programming, and open source communities,
+      we would love to hear from you. Your ideas are crucial to the richness of our conference.
+    </p>
+    <p class="text-lg leading-relaxed mb-6">
+      Part of our mission is to create materials that support Python education and advocacy not only in Africa but around the globe.
+      Therefore, we plan to record all presentations at PyCon Africa 2026 and release the recordings on our web and YouTube channels.
+      For more details, please see our
+      <a href="/2026/talks/recording-release/" class="text-pycon-teal hover:underline font-medium">PyCon Africa Recording Release</a>.
+    </p>
+
+    <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Where to Submit Your Proposal</h2>
+    <ul class="list-disc list-inside space-y-3 mb-8 text-lg leading-relaxed">
+      <li>
+        Sign up for a new account by
+        <a href="{% url 'registration_register' %}" class="text-pycon-teal hover:underline font-medium">clicking here</a>.
+      </li>
+      <li>
+        Access your
+        <a href="{% url 'profiles:profile_home' %}" class="text-pycon-teal hover:underline font-medium">Profile</a>
+        and create it if you haven't done so already.
+      </li>
+      <li>
+        Once your profile is set, you'll see a “Submit a New Talk” button (or you can go straight to the submission form).
+      </li>
+    </ul>
+    <p class="text-lg leading-relaxed mb-8">
+      We encourage prospective speakers to submit their proposals early due to the competitive selection process. Early submissions allow for feedback before the CFP deadline.
+    </p>
+
+    <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Guidelines for Proposal Submission</h2>
+    <p class="text-lg leading-relaxed mb-6">
+      The Python Community in Africa is diverse, encompassing a wide range of experiences from beginners to expert developers.
+      We are seeking talks that cater to this varied audience. Thus, we welcome proposals that are suitable for all levels of Python proficiency.
+      We thrive on featuring talks that range from introductory to advanced. If you are reading this and are interested in speaking, please submit a proposal!
+    </p>
+
+    <p class="text-lg leading-relaxed mb-4">
+      For PyCon Africa 2026, the conference will revolve around four main categories:
+    </p>
+
+    <h3 class="text-xl font-bold text-gray-900 mt-8 mb-2">General Python and Web/DevOps</h3>
+    <p class="text-lg leading-relaxed mb-3">Topics of interest include, but are not limited to:</p>
+    <ul class="list-disc list-inside space-y-2 mb-6 text-lg leading-relaxed">
+      <li>Frameworks (Django, Flask, Pyramid, etc.)</li>
+      <li>Background Tasks (Celery, etc.)</li>
+      <li>WSGI Orchestration (Ansible, Fabric, etc.)</li>
+      <li>Continuous Integration, Core &amp; Internals Testing, Enterprise solutions.</li>
+    </ul>
+
+    <h3 class="text-xl font-bold text-gray-900 mt-8 mb-2">Emerging Technologies</h3>
+    <ul class="list-disc list-inside space-y-2 mb-6 text-lg leading-relaxed">
+      <li>Data Science, Machine Learning, and AI.</li>
+      <li>Embedded Python and IoT: MicroPython, Python on Hardware, Robotics, Arduino, and Raspberry Pi.</li>
+      <li>Game Design and 3D Modelling - Python in developing games and 3-D modelling.</li>
+    </ul>
+
+    <h3 class="text-xl font-bold text-gray-900 mt-8 mb-2">General Community</h3>
+    <p class="text-lg leading-relaxed mb-6">
+      Discussions on culture and society, such as Diversity, Health, Productivity, Workplace Issues, Privacy, Community Building, Coding for Causes.
+    </p>
+
+    <h3 class="text-xl font-bold text-gray-900 mt-8 mb-2">Education</h3>
+    <p class="text-lg leading-relaxed mb-8">
+      The advent of new coding assistants, such as Anaconda Assistant, PyCharm AI, Copilot, and ChatGPT has marked a significant advancement in how we teach, learn, and engage with code.
+      We are calling on educators to share how Python is taught, ensuring that anyone, anywhere, can harness the power of coding.
+    </p>
+
+    <p class="text-lg leading-relaxed mb-3">
+      Still unsure what to propose? Any topic of interest to the developer community is welcome. Here are a few pointers:
+    </p>
+    <ul class="list-disc list-inside space-y-2 mb-8 text-lg leading-relaxed">
+      <li>Lessons learned from using Python in your projects.</li>
+      <li>Educational content on niche topics, new technologies, or scientific papers.</li>
+      <li>Contributions to the language/ecosystem.</li>
+      <li>Insights from other programming paradigms that could benefit the Python community.</li>
+      <li>Discussions on tech culture, including diversity, health, productivity, and workplace issues.</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Talks and Workshops</h2>
+    <h3 class="text-xl font-bold text-gray-900 mt-6 mb-2">Talks</h3>
+    <p class="text-lg leading-relaxed mb-6">
+      Talks are 30 minutes long, with some 45-minute slots available for in-depth discussions. We encourage proposals on any topic related to Python or its community.
+    </p>
+    <h3 class="text-xl font-bold text-gray-900 mt-6 mb-2">Workshops</h3>
+    <p class="text-lg leading-relaxed mb-8">
+      Workshops are more detailed and run for about 2 hours, including a coffee break. They require substantial preparation but are deeply rewarding experiences that advance both Python and its community.
+    </p>
+
+    <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Your Submission</h2>
+    <p class="text-lg leading-relaxed mb-6">
+      When submitting your proposal, please include a clear and concise abstract. This will be published in the conference program.
+      Mention any open-source tools you discuss and clarify if your talk will feature a case study or a technical discussion.
+    </p>
+    <p class="text-lg leading-relaxed mb-6">
+      This year, we are also introducing an optional preview video with your submission. This 5-minute video should outline the topics you'll cover and your presentation approach, aiding the review process.
+    </p>
+    <p class="text-lg leading-relaxed mb-6">
+      PyCon Africa is committed to a diverse and inclusive speaker lineup. Before submitting, please ensure you have read and agree to our Code of Conduct.
+    </p>
+
+    <div class="rounded-lg border border-amber-200 bg-amber-50 px-4 py-4 text-lg leading-relaxed mt-10">
+      <p class="font-semibold mb-2">Important note</p>
+      <p>
+        Proposal submissions that are solely or to a large extent written or include AI-generated text by a large-scale language model (LLM) such as ChatGPT will not be accepted and disregarded without a second chance to submit.
+      </p>
+    </div>
+
+    <div class="rounded-lg border border-gray-200 bg-white px-4 py-4 text-lg leading-relaxed mt-6">
+      <p class="font-semibold mb-2">Code of Conduct</p>
+      <p class="mb-0">
+        All speakers are expected to have read and adhere to the conference Code of Conduct. In particular for speakers: slide contents and spoken material should be appropriate for a professional audience including people of many different backgrounds. Sexual language and imagery are not appropriate, and neither is language or imagery that denigrates or demeans people based on race, gender, religion, sexual orientation, physical appearance, disability, or body size, or any other dimension of diversity.
+      </p>
+    </div>
+
+    <div class="rounded-lg border border-gray-200 bg-white px-4 py-4 text-lg leading-relaxed mt-6">
+      <p class="font-semibold mb-2">Financial support</p>
+      <p class="mb-0">
+        PyCon Africa does not want expenses to discourage you from submitting a proposal. Speakers will be given free conference tickets and considered first for awarded grants, however, this is not guaranteed as we have a very limited budget. Kindly indicate when filling out the grant application that you have submitted a speaking proposal. Proposal reviewers are not privy to this information and this will not affect your proposal review.
+      </p>
+    </div>
+
+    <div class="mt-10 flex flex-col sm:flex-row gap-4">
+      <a href="/2026/talks/proposing_a_talk/" class="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-gray-900 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors">
+        Proposing a talk
+      </a>
+      {% if user.is_authenticated %}
+        <a href="{% url 'talks:submit_talk' year=2026 %}" class="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white bg-pycon-teal hover:bg-teal-700 rounded-lg transition-colors">
+          Submit a proposal
+        </a>
+      {% else %}
+        <a href="{% url 'auth_login' %}?next={% url 'talks:submit_talk' year=2026 %}" class="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white bg-pycon-teal hover:bg-teal-700 rounded-lg transition-colors">
+          Log in to submit
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}
+

@@ -110,6 +110,9 @@ INSTALLED_APPS = [
 MIDDLEWARE = [ 
     #"django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
+    # Redirect middleware: Enable this if this Django app serves africa.pycon.org
+    # It will redirect /2024/, /2020/, and /2019/ to pyconafrica.pythonanywhere.com
+    "pyconafrica.middleware.RedirectFromAfricaMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
