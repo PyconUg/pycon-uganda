@@ -325,9 +325,8 @@ TINYMCE_EXTRA_MEDIA = {
     "js": [...],
 }
 
-
-# Using the new No Captcha reCaptcha
-NOCAPTCHA = True
+RECAPTCHA_PUBLIC_KEY = os.getenv("RECAPTCHA_PUBLIC_KEY")
+RECAPTCHA_PRIVATE_KEY = os.getenv("RECAPTCHA_PRIVATE_KEY")
 
 # Sets the default site
 SITE_ID = 1
@@ -383,4 +382,3 @@ CLOUDINARY_STORAGE = {
     "API_KEY": os.getenv("CLOUDINARY_API_KEY"),
     "API_SECRET": os.getenv("CLOUDINARY_API_SECRET"),
 }
-
